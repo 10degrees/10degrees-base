@@ -3,7 +3,7 @@ $old-ie: false !default;
 @import "common/_variables";
 @import "mixins/_mixins";
 @import "vendor/_normalise";
-// @import "common/_global";
+@import "common/_global";
 @import "common/_type";
 @import "common/_utilities";
 // Vendor
@@ -11,7 +11,7 @@ $old-ie: false !default;
 @import "vendor/animate/_animate";
 @import "vendor/magnific-popup/_main";
 @import "vendor/_datepicker";
-@import "vendor/_slick";
+// @import "vendor/_slick";
 // 10° components
 @import "components/_breadcrumbs";
 @import "components/_fancy-gallery";

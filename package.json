@@ -1,7 +1,7 @@
 {
-  "name": "tendegrees-starter",
+  "name": "tendegrees-base",
   "version": "1.0.0",
-  "description": "10 Degrees starter theme",
+  "description": "10 Degrees base theme",
   "main": "index.js",
   "scripts": {
     "dev": "npm run prewatch && npm run development",
