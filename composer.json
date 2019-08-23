@@ -1,0 +1,7 @@
+{
+    "name": "10degrees/10degrees-base",
+    "type": "wordpress-theme",
+    "require": {
+      "composer/installers": "v1.0.6"
+    }
+  }
