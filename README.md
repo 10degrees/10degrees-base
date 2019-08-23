@@ -33,4 +33,4 @@ Alter as required from the [browserslist](https://github.com/ai/browserslist) sy
 * Rewrite and compile JS, changing dependencies to node modules where appropriate
 * Add Babel to polyfill JS support for older browsers
 * Add Bootstrap SCSS components via node, and compile
-*
+* Fix multiple CSS and JS files in `/dist` when using `npm run watch`
