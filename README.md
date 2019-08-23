@@ -1,35 +1,21 @@
 # How to use
 
-### Dependencies
+## Dependencies
 
 These dependencies are required on your computer. This is not a per-theme requirement.
 
-1) Ensure Node is installed. You can install/upgrade using the MacOS download from [nodejs.org](https://nodejs.org/en/).
+Ensure Node is installed. You can install/upgrade using the MacOS download from [nodejs.org](https://nodejs.org/en/).
 
-2) Ensure gulp is installed globally: `npm install gulp -g`
+## Theme Setup
 
-### Theme Setup
+From the theme root folder, run `composer install && npm install`
 
-1) From the theme root folder, run `npm install`
+## Compiling assets
 
-2) Set `projectURL` in `gulpfile.js`
+* `npm run watch` to watch files for compilation on development
+* `npm run prod` to compile files for production
 
-	Find and replace @textdomain with the textdomain
-	Find and replace @theme with the theme name
-
-3) Adjust scripts you need to compile in the gulp `scripts` task
-
-4) Run one of the following to
-
-	`gulp` (for a full build)
-	`gulp watch` only runs the `sass-main` and `scripts` tasks.
-	`gulp watch-reload` only runs the `sass-main` and `scripts` tasks. Uses BrowserSync to live reload changes on `localhost:3000`
-
-There is no need to touch anything in /assets - this is now a dir of compiled files.
-
-* Place all files in the appropriate folder in /src, and they will be processed and added to /assets.
-* There is no SVG folder in /assets. icons.svg is processed into /assets/img
-* Style SVG icons in /src/scss/components/_svg-icons.scss
+Assets are compiled to `/dist`.
 
 ### Parameters
 

@@ -1,0 +1,38 @@
+{
+  "name": "10D-base",
+  "version": "2.0.0",
+  "description": "10 Degrees Base WordPress Theme",
+  "main": "gulpfile.js",
+  "author": "10 Degrees",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^8.1.1",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-svgmin": "^1.2.3",
+    "gulp-svgstore": "^6.1.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-wp-pot": "^2.0.6",
+    "node-sass": "^4.11.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org:10degrees/10d-master"
+  },
+  "keywords": [
+    "wordpress"
+  ]
+}
