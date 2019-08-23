@@ -1,6 +1,7 @@
 let mix = require("laravel-mix");
 require("laravel-mix-versionhash");
 require("laravel-mix-copy-watched");
+require("laravel-mix-imagemin");
 
 /*
  |--------------------------------------------------------------------------
@@ -23,18 +24,12 @@ mix
   .sass("src/scss/wp-login.scss", "dist/css")
   .options({
     processCssUrls: false,
-    postCss: [
-      require("postcss-css-variables")()
-      //   require("stylelint")({
-      //     ignoreFiles: "spectre.scss"
-      //   }),
-      //   require("postcss-reporter")({})
-    ]
+    postCss: [require("postcss-css-variables")()]
   })
   .sourceMaps()
   .versionHash({
     delimiter: "-"
   })
-  .copyWatched("src/img/*.{jpg,jpeg,png,gif,svg}", "dist/img", {
-    base: "src/img"
+  .imagemin("img/**.*", {
+    context: "src"
   });

@@ -40,7 +40,10 @@
     "last 2 versions"
   ],
   "devDependencies": {
+    "copy-webpack-plugin": "^5.0.4",
+    "imagemin-webpack-plugin": "^2.4.2",
     "laravel-mix-copy-watched": "^2.1.4",
+    "laravel-mix-imagemin": "^1.0.3",
     "vue-template-compiler": "^2.6.10"
   }
 }
