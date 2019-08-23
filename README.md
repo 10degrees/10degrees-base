@@ -27,3 +27,10 @@ This is defined in package.json, under browserslist. The default is:
     "last 2 versions"
 
 Alter as required from the [browserslist](https://github.com/ai/browserslist) syntax.
+
+## To Do
+
+* Rewrite and compile JS, changing dependencies to node modules where appropriate
+* Add Babel to polyfill JS support for older browsers
+* Add Bootstrap SCSS components via node, and compile
+*
