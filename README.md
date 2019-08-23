@@ -8,7 +8,10 @@ Ensure Node is installed. You can install/upgrade using the MacOS download from 
 
 ## Theme Setup
 
-From the theme root folder, run `composer install && npm install`
+From the theme root folder, run:
+
+* `composer install`
+* `npm install`
 
 ## Compiling assets
 
