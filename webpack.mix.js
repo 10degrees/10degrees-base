@@ -1,5 +1,6 @@
 let mix = require("laravel-mix");
 require("laravel-mix-versionhash");
+require("laravel-mix-copy-watched");
 
 /*
  |--------------------------------------------------------------------------
@@ -33,4 +34,7 @@ mix
   .sourceMaps()
   .versionHash({
     delimiter: "-"
+  })
+  .copyWatched("src/img/*.{jpg,jpeg,png,gif,svg}", "dist/img", {
+    base: "src/img"
   });
