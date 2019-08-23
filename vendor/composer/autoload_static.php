@@ -74,12 +74,17 @@ class ComposerStaticInit0a4337e738a9a0f04b32281d989a16a1
         ),
         'E' => 
         array (
+            'ExtCPTs\\Tests\\' => 14,
             'Egulias\\EmailValidator\\' => 23,
         ),
         'D' => 
         array (
             'Doctrine\\Common\\Lexer\\' => 22,
             'Doctrine\\Common\\Inflector\\' => 26,
+        ),
+        'C' => 
+        array (
+            'Composer\\Installers\\' => 20,
         ),
         'A' => 
         array (
@@ -196,6 +201,10 @@ class ComposerStaticInit0a4337e738a9a0f04b32281d989a16a1
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
+        'ExtCPTs\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/johnbillion/extended-cpts/tests/phpunit',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
@@ -207,6 +216,10 @@ class ComposerStaticInit0a4337e738a9a0f04b32281d989a16a1
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'Composer\\Installers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
         'App\\' => 
         array (

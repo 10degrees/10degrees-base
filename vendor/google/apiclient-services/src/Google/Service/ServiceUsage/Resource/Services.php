@@ -28,6 +28,7 @@ class Google_Service_ServiceUsage_Resource_Services extends Google_Service_Resou
   /**
    * Enable multiple services on a project. The operation is atomic: if enabling
    * any service fails, then the entire batch fails, and no state changes occur.
+   * To enable a single service, use the `EnableService` method instead.
    * (services.batchEnable)
    *
    * @param string $parent Parent to enable services on.
