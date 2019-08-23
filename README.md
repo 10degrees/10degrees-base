@@ -24,7 +24,7 @@ Assets are compiled to `/dist`.
 
 Browser support
 
-This is defined in package.json, under browserslist. The default is:
+This is defined in `package.json`, under browserslist. The default is:
 
     "> 1%",
     "last 2 versions"
@@ -37,3 +37,5 @@ Alter as required from the [browserslist](https://github.com/ai/browserslist) sy
 * Add Babel to polyfill JS support for older browsers
 * Add Bootstrap SCSS components via node, and compile
 * Fix multiple CSS and JS files in `/dist` when using `npm run watch`
+* Remove `gulpfile.js`; this is only currently needed to complile WordPress translation files from PHP
+* Create `.pot` file from both PHP and JS strings, see [https://www.bluehost.com/blog/developers-corner/javascript-translations-in-gutenberg-9931/](https://www.bluehost.com/blog/developers-corner/javascript-translations-in-gutenberg-9931/)]
