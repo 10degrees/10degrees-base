@@ -1,0 +1,7 @@
+$base-color: #363b3f;
+$highlight-color: #bb3131;
+$notification-color: #6e949c;
+@import "../../../../../wp-admin/css/colors/_admin.scss";
+.wp-core-ui .button-primary {
+  text-shadow: none;
+}

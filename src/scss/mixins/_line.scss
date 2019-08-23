@@ -1,0 +1,11 @@
+/**
+ * Line mixin. Used to create a burger icon
+ */
+@mixin line($button-size) {
+    display: inline-block;
+    width: $button-size;
+    height: $button-size/8;
+    background: $burger-color;
+    border-radius: $button-size/16;
+    transition: .3s;
+}

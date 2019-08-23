@@ -1,0 +1,378 @@
+.woocommerce {
+    a.remove {
+        &:hover {}
+    }
+    .woocommerce-message,
+    .woocommerce-error,
+    .woocommerce-info {
+        &:before {}
+        .button {}
+        li {}
+    }
+    .woocommerce-message {
+        &:before {}
+    }
+    .woocommerce-info {
+        &:before {}
+    }
+    .woocommerce-error {
+        &:before {}
+    }
+    small.note {}
+    .woocommerce-breadcrumb {
+        a {}
+    }
+    .quantity {
+        .qty {}
+    }
+    span.onsale {}
+    /**
+	 * Product loops
+	 */
+    .products ul,
+    ul.products {
+        li {}
+    }
+    ul.products {
+        li.product {
+            .onsale {}
+            h3 {}
+            a {}
+            a img {}
+            strong {}
+            .star-rating {}
+            .button {}
+            .price {
+                del {}
+                ins {}
+                .from {}
+            }
+        }
+    }
+    .woocommerce-result-count {}
+    .woocommerce-ordering {
+        select {}
+    }
+    nav.woocommerce-pagination {
+        ul {
+            li {
+                a,
+                span {}
+                span.current,
+                a:hover,
+                a:focus {}
+            }
+        }
+    }
+    /**
+	 * Buttons
+	 */
+    a.button,
+    button.button,
+    input.button,
+    #respond input#submit {
+        &.loading {
+            &:after {}
+        }
+        &.added {
+            &:after {}
+        }
+        &:hover {}
+        &.alt {
+            &:hover {}
+            &.disabled,
+            &:disabled,
+            &:disabled[disabled],
+            &.disabled:hover,
+            &:disabled:hover,
+            &:disabled[disabled]:hover {}
+        }
+        &:disabled,
+        &.disabled,
+        &:disabled[disabled] {
+            &:hover {}
+        }
+    }
+    .cart .button,
+    .cart input.button {}
+    a.added_to_cart {}
+    /**
+	 * Reviews
+	 */
+    #reviews {
+        h2 small {
+            a {}
+        }
+        h3 {}
+        #respond {}
+        #comment {}
+        #comments {
+            .add_review {
+                @include clearfix();
+            }
+            h2 {}
+            ol.commentlist {
+                @include clearfix();
+                li {
+                    .meta {}
+                    img.avatar {}
+                    .comment-text {
+                        @include clearfix();
+                        p {}
+                        p.meta {}
+                    }
+                }
+                ul.children {
+                    .star-rating {}
+                }
+                #respond {}
+            }
+            .commentlist>li:before {}
+        }
+    }
+    /**
+	 * Star ratings
+	 */
+    .star-rating {
+        &:before {}
+        span {}
+        span:before {}
+    }
+    .woocommerce-product-rating {
+        @include clearfix();
+        .star-rating {}
+    }
+    .products {
+        .star-rating {}
+    }
+    .hreview-aggregate {
+        .star-rating {}
+    }
+    #review_form {
+        #respond {
+            @include clearfix();
+            p {}
+            .form-submit {
+                input {}
+            }
+            textarea {}
+        }
+    }
+    p.stars {
+        a {
+            &:last-child {}
+            &.star-1,
+            &.star-2,
+            &.star-3,
+            &.star-4,
+            &.star-5 {
+                &:after {}
+            }
+            &.star-1 {
+                &:after {}
+                &:hover:after,
+                &.active:after {}
+            }
+            &.star-2 {
+                width: 3em;
+                &:after {}
+                &:hover:after,
+                &.active:after {}
+            }
+            &.star-3 {
+                width: 4em;
+                &:after {}
+                &:hover:after,
+                &.active:after {}
+            }
+            &.star-4 {
+                width: 5em;
+                &:after {}
+                &:hover:after,
+                &.active:after {}
+            }
+            &.star-5 {
+                width: 6em;
+                border: 0;
+                &:after {}
+                &:hover:after,
+                &.active:after {}
+            }
+        }
+    }
+    /**
+	 * Tables
+	 */
+    table.shop_attributes {
+        th {}
+        td {
+            p {}
+        }
+        .alt td,
+        .alt th {}
+    }
+    table.shop_table {
+        th {}
+        td {
+            small {}
+        }
+        tbody:first-child {
+            tr:first-child {
+                th,
+                td {}
+            }
+        }
+        tfoot td,
+        tfoot th,
+        tbody th {}
+    }
+    table.my_account_orders {
+        th,
+        td {}
+        .button {}
+        .order-actions {
+            .button {}
+        }
+    }
+    td.product-name {
+        dl.variation {
+            @include clearfix();
+            dt,
+            dd {}
+            dt {}
+            dd {
+                p:last-child {}
+            }
+        }
+        p.backorder_notification {}
+    }
+    td.product-quantity {}
+    /**
+	 * Cart sidebar
+	 */
+    ul.cart_list,
+    ul.product_list_widget {
+        li {
+            @include clearfix();
+            a {}
+            img {}
+            dl {
+                @include clearfix();
+                dt,
+                dd {}
+                dt {}
+                dd {
+                    p:last-child {}
+                }
+            }
+            .star-rating {}
+        }
+    }
+    &.widget_shopping_cart,
+    .widget_shopping_cart {
+        .total {
+            strong {}
+        }
+        .cart_list {
+            li {
+                a.remove {}
+            }
+        }
+        .buttons {
+            @include clearfix();
+        }
+    }
+    /**
+	 * Forms
+	 */
+    form {
+        .form-row {
+            [placeholder]:focus::-webkit-input-placeholder {}
+            label {}
+            label.hidden {}
+            label.inline {}
+            select {}
+            .required {}
+            .input-checkbox {}
+            input.input-text,
+            textarea {}
+            textarea {}
+            .select2-container {}
+            &.woocommerce-invalid {
+                .select2-container,
+                input.input-text,
+                select {}
+            }
+            &.woocommerce-validated {
+                .select2-container,
+                input.input-text,
+                select {}
+            }
+             ::-webkit-input-placeholder {}
+             :-moz-placeholder {}
+             :-ms-input-placeholder {}
+        }
+    }
+    form.login,
+    form.checkout_coupon,
+    form.register {}
+    ul#shipping_method {
+        li {}
+        .amount {}
+    }
+    p.woocommerce-shipping-contents {}
+    /**
+	 * Order page
+	 */
+    .order_details {
+        @include clearfix();
+        li {
+            strong {}
+            &:last-of-type {}
+        }
+    }
+    /**
+	 * Layered nav widget
+	 */
+    .widget_layered_nav {
+        ul {
+            li {
+                @include clearfix();
+                a,
+                span {}
+            }
+            li.chosen {
+                a {
+                    &:before {}
+                }
+            }
+        }
+    }
+    .widget_layered_nav_filters {
+        ul {
+            li {
+                a {
+                    &:before {}
+                }
+            }
+        }
+    }
+    /**
+	 * Price filter widget
+	 */
+    .widget_price_filter {
+        .price_slider {}
+        .price_slider_amount {
+            .button {}
+            .button {}
+        }
+        .ui-slider {}
+        .ui-slider .ui-slider-handle {}
+        .ui-slider .ui-slider-range {}
+        .price_slider_wrapper .ui-widget-content {}
+        .ui-slider-horizontal {}
+        .ui-slider-horizontal .ui-slider-range {}
+        .ui-slider-horizontal .ui-slider-range-min {}
+        .ui-slider-horizontal .ui-slider-range-max {}
+    }
+}

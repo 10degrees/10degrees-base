@@ -1,0 +1,158 @@
+# Copyright (C) 2019 @theme
+# This file is distributed under the same license as the @theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: @theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 404.php:10
+msgid "Sorry, but the page you were trying to view does not exist."
+msgstr ""
+
+#: base.php:9
+msgid "Skip to main content"
+msgstr ""
+
+#: front-page.php:3
+msgid "Front page"
+msgstr ""
+
+#: index.php:5
+msgid "Sorry, no results were found."
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:31, Lib/activation-DEPRECATED???.php:32
+msgid "Theme Activation"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:53
+msgid "%s Theme Activation"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:55
+msgid "These settings are optional and should usually be used only on a fresh installation"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:56
+msgid "After theme activation, find and replace \",'tend' \" to set the textdomain and replace 'tend' in style.css"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:63, Lib/activation-DEPRECATED???.php:66
+msgid "Create static front page?"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:68, Lib/activation-DEPRECATED???.php:80, Lib/activation-DEPRECATED???.php:92, Lib/activation-DEPRECATED???.php:104
+msgid "Yes"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:69, Lib/activation-DEPRECATED???.php:81, Lib/activation-DEPRECATED???.php:93, Lib/activation-DEPRECATED???.php:105
+msgid "No"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:71
+msgid "Create a page called Home and set it to be the static front page"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:75
+msgid "Change permalink structure?"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:78
+msgid "Update permalink structure?"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:83
+msgid "Change permalink structure to /&#37;postname&#37;/"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:87, Lib/activation-DEPRECATED???.php:90
+msgid "Create navigation menu?"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:95
+msgid "Create the Primary Navigation menu and set the location"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:99, Lib/activation-DEPRECATED???.php:102
+msgid "Add pages to menu?"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:107
+msgid "Add all current published pages to the Primary Navigation"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:130, Lib/activation-DEPRECATED???.php:151
+msgid "Home"
+msgstr ""
+
+#: Lib/activation-DEPRECATED???.php:177, Lib/activation-DEPRECATED???.php:180, Lib/activation-DEPRECATED???.php:194
+msgid "Primary Navigation"
+msgstr ""
+
+#: page-templates/template-custom.php:2
+msgid "Custom Template"
+msgstr ""
+
+#: partials/comment.php:4
+msgid "%1$s"
+msgstr ""
+
+#: partials/comment.php:5
+msgid "(Edit)"
+msgstr ""
+
+#: partials/comment.php:9
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: partials/comments.php:18
+msgid "&larr; Older comments"
+msgstr ""
+
+#: partials/comments.php:21
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: partials/comments.php:29, partials/comments.php:33
+msgid "Comments are closed."
+msgstr ""
+
+#: partials/post-header.php:5
+msgid "By"
+msgstr ""
+
+#: Lib/Boot/Init.php:100
+msgid "Continued"
+msgstr ""
+
+#: Lib/Boot/RegisterMenus.php:24
+msgid "Main Menu"
+msgstr ""
+
+#: Lib/Boot/RegisterMenus.php:25
+msgid "Footer Menu"
+msgstr ""
+
+#: Lib/Boot/RegisterWidgets.php:35
+msgid "$label"
+msgstr ""
+
+#: Lib/Helpers/td_title.php:13
+msgid "Latest Posts"
+msgstr ""
+
+#: Lib/Helpers/td_title.php:55
+msgid "Search Results for %s"
+msgstr ""
+
+#: Lib/Helpers/td_title.php:58
+msgid "Page Not Found"
+msgstr ""

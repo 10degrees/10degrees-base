@@ -1,0 +1,91 @@
+h3.accordion__title {
+    display: none;
+}
+.accordion__header {
+    display: block;
+    width: 100%;
+    background-color: lightgrey;
+    border: 0;
+    text-align: left;
+    padding: 15px 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    margin: 0px 0px 10px 0px;
+    &:focus {
+        outline: none;
+        border: 1px dotted $brand;
+    }
+    &:after {
+        position: absolute;
+        display: inline-block;
+        right: 20px;
+        top: 6px;
+        color: $brand;
+        transition: all 0.3s ease;
+        font-size: 30px;
+    }
+    .arrow {
+        width:30px;
+        height:20px;
+        float:right;
+    }
+    svg {
+        float:right;
+        fill:$brand;
+    }
+    /* title closed */
+    &[aria-expanded="false"] {
+        .open{
+            display:none;
+        }    
+        .closed{
+            display:inline-block
+        }
+    }
+    /* title opened */
+    &[aria-expanded="true"] {
+         font-weight: bold;
+        .open{
+            display:inline-block;
+        }    
+        .closed{
+            display:none;
+        }
+    }
+}
+.accordion__panel {
+    background-color: lightgrey;
+    padding: 15px 20px;
+    border-bottom: 1px solid lightgrey;
+    margin-bottom: 10px;
+    &[aria-hidden="false"] {
+        transition: all 1s ease;
+        border-bottom-color: $brand;
+    }
+}
+.js {
+    .accordion__header {
+        /* title closed */ 
+        &[aria-hidden="true"]:after {
+            // To Do
+            content: "\02C5";
+        }
+        /* title opened */
+        &[aria-hidden="false"]{
+            font-weight: bold;
+            &:after {
+                // To Do
+                content: "\02C4";  
+            }
+        }
+    }
+    .accordion__panel {
+        &[aria-hidden=true] {
+            display: none;
+        }         
+        &[aria-hidden="false"] {
+            border-bottom-color: $brand;
+        }        
+    }
+}

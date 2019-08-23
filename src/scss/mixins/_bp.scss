@@ -1,0 +1,39 @@
+// Breakpoint mixins
+// Usage  @include bp(md) {}
+@mixin bp($point) {
+    @if $point==sm {
+        @media only screen and (min-width: #{$bp-sm}) {
+            @content;
+        }
+    }
+    @if $point==md {
+        @media only screen and (min-width: #{$bp-md}) {
+            @content;
+        }
+    }
+    @if $point==lg {
+        @media only screen and (min-width: #{$bp-lg}) {
+            @content;
+        }
+    }
+    @if $point==sm-max {
+        @media only screen and (max-width: #{$bp-sm-max}) {
+            @content;
+        }
+    }
+    @if $point==md-max {
+        @media only screen and (max-width: #{$bp-md-max}) {
+            @content;
+        }
+    }
+    @if $point==lg-max {
+        @media only screen and (max-width: #{$bp-lg-max}) {
+            @content;
+        }
+    }
+    @if $point==xlg {
+        @media only screen and (min-width: #{$bp-xlg}) {
+            @content;
+        }
+    }
+}

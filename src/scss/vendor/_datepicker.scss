@@ -1,0 +1,26 @@
+.ui-widget {
+  background: $brand;
+  border: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  box-shadow: 0 1px 3px darken($brand, 50%);
+}
+
+.ui-datepicker-header {
+  border: none;
+  border-bottom: 1px solid $brand;
+  background: transparent;
+  font-weight: normal;
+  // font-size: 11px;
+  text-transform: uppercase;
+  padding-top: 7px;
+}
+
+.ui-datepicker-header .ui-state-hover {
+  cursor: pointer;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  opacity: 0.5;
+}

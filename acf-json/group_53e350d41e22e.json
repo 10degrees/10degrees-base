@@ -1,0 +1,104 @@
+{
+    "key": "group_53e350d41e22e",
+    "title": "Social Networks",
+    "fields": [
+        {
+            "key": "field_547f3b0351d21",
+            "label": "Twitter",
+            "name": "twitter_link",
+            "type": "url",
+            "instructions": "Add your Twitter link",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_53e350ddcb813",
+            "label": "LinkedIn",
+            "name": "linkedin_link",
+            "type": "url",
+            "instructions": "Add your LinkedIn link",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_547f3b0151d20",
+            "label": "Facebook",
+            "name": "facebook_link",
+            "type": "url",
+            "instructions": "Add your Facebook Link",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_53e3510bbe225",
+            "label": "YouTube",
+            "name": "youtube_link",
+            "type": "url",
+            "instructions": "Add your YouTube link",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_59c2887c0a80c",
+            "label": "Instagram",
+            "name": "instagram_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-social-networks"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1505921208
+}

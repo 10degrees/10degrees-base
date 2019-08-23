@@ -1,0 +1,14 @@
+.breadcrumbs {
+    @include make-column(12);
+    margin: 25px 0;
+    font-size: 14px;
+    
+    > span {
+        margin-left: 5px;
+    }
+    
+    a, a:visited {
+        color: $text-color;
+        text-decoration: none;
+    }
+}

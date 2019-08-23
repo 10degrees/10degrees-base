@@ -1,0 +1,97 @@
+.lines-button {
+    display: inline-block;
+}
+
+@include bp(md-max) {
+    // mobile nav styles
+    #menu-primary-navigation {
+        background: black;
+        right: auto !important;
+        width: 75%;
+        padding: 20px;
+        position: fixed;
+        padding-top: calc(100vh / 48);
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 9999;
+        transform: translateZ(0) translateX(-100%);
+        -ms-transform: translateZ(0) translateX(-100%);
+        -webkit-transform: translateZ(0) translateX(-100%);
+        transition: all .3s ease-in-out;
+        overflow-x: hidden;
+        ul {
+            margin: 0
+        }
+        li {
+            
+            display: block;
+        }
+        &.nav-open {
+            transform: translateZ(0) translateX(0%);
+            -ms-transform: translateZ(0) translateX(0%);
+            -webkit-transform: translateZ(0) translateX(0%);
+            li {
+                
+            }
+        }
+    }
+}
+
+@include bp(md) {
+    .lines-button {
+        display: none;
+    }
+    #menu-primary-navigation {
+        float: right;
+        margin: 0;
+        position: relative;
+        padding: 0;
+        background: $brand;
+        @include list-unstyled();
+        ul {
+            margin-top: 0;
+        }
+        li {
+            float: left;
+            position: relative;
+            margin-left: 20px;
+            padding: 10px 0;
+            a {
+                color: white;
+                padding: 10px 0;
+                display: block;
+                &:hover,
+                &:focus {}
+            }
+            ul.dropdown-menu {
+                @include list-unstyled();
+                margin-top: 0;
+                position: absolute;
+                visibility: hidden;
+                z-index: 8999;
+                background: $brand;
+                min-width: 200px;
+                li {
+                    // sub sub menus
+                    ul {
+                        padding-top: 6px;
+                        padding-bottom: 2px;
+                        li {
+                            float: none;
+                        }
+                    }
+                }
+            }
+            &:hover ul {
+                top: auto;
+                visibility: visible;
+            }
+        }
+        li.current-menu-item,
+        li.current_page_item,
+        li.current_page_ancestor {
+            a {}
+        }
+    }
+}

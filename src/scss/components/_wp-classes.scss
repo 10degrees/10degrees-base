@@ -1,0 +1,57 @@
+.aligncenter {
+    display: block;
+    margin: 12px auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.alignleft,
+.alignright {
+    margin-bottom: 12px;
+    max-width: 100%;
+    height: auto;
+}
+
+.alignnone {
+    @include img-responsive();
+}
+
+.alignnone img {
+    @include img-responsive();
+}
+
+figure.alignnone {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    @include img-responsive();
+}
+
+.wp-caption {
+    max-width: 100%;
+    background: #eee;
+    padding: 5px;
+    /* images inside wp-caption */
+    img {
+        max-width: 100%;
+        margin-bottom: 0;
+        width: 100%;
+    }
+    p.wp-caption-text {
+        font-size: 0.85em;
+        margin: 4px 0 7px;
+        text-align: center;
+    }
+}
+
+@include bp(sm) {
+    // Only float images if not on an extra small device like smartphones
+    .alignleft {
+        float: left;
+        margin-right: 20px;
+    }
+    .alignright {
+        float: right;
+        margin-left: 20px;
+    }
+}

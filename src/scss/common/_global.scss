@@ -1,0 +1,57 @@
+//
+// Scaffolding
+// This is a bit of a reset and some defaults
+* {
+  box-sizing:border-box;
+}
+
+*:before,
+*:after {
+  box-sizing:border-box;
+}
+
+// Body reset
+html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// Links
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+figure {
+  margin: 0;
+}
+
+// Images
+img {
+  vertical-align: middle;
+}
+
+// Horizontal rules
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid $hr-border;
+}

@@ -1,0 +1,17 @@
+// Having problems styling these SVGs? Check https://tympanus.net/codrops/2015/07/16/styling-svg-use-content-css/
+// Default style for SVG icons
+svg.icon {
+    display: inline-block;
+    fill: currentColor;
+    position: relative;
+    top: -0.0625em;
+    vertical-align: middle;
+    width: 1em;
+    height: 1em; // Icon-specific
+    //If you include classes for <use> elements, then they cannot exceed the size of the parent SVG element
+    &.icon-twitter {
+        color: $twitter;
+        height: 50px;
+        width: 50px;
+    }
+}

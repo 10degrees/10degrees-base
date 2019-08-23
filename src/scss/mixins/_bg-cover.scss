@@ -1,0 +1,5 @@
+@mixin bg-cover($height) {
+    background: no-repeat center center;
+    background-size: cover;
+    height: $height;
+}

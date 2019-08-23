@@ -1,0 +1,64 @@
+    .single-product.woocommerce {
+        div.product {
+            .product_title {}
+            span.price,
+            p.price {
+                ins {}
+                del {}
+            }
+            p.stock {}
+            .stock {}
+            .out-of-stock {}
+            .woocommerce-product-rating {}
+            div.images {
+                img {}
+                div.thumbnails {}
+            }
+            div.summary {}
+            div.social {
+                span {
+                    span {}
+                    .stButton .chicklets {}
+                }
+                iframe {}
+            }
+            .woocommerce-tabs {
+                ul.tabs {
+                    li {
+                        a {
+                            &:hover {}
+                        }
+                        &.active {
+                            a {}
+                            &:before {}
+                            &:after {}
+                        }
+                        &:before,
+                        &:after {}
+                        &:before {}
+                        &:after {}
+                    }
+                    &:before {}
+                }
+                .panel {}
+            }
+        }
+        .variations {
+            td,
+            th {}
+            label {}
+            select {}
+            td.label {}
+            td {}
+        }
+        .woocommerce-variation-description {
+            p {}
+        }
+        .reset_variations {}
+        .wc-no-matching-variations {}
+        .button {}
+        .group_table {
+            td.label {}
+            td {}
+        }
+    }

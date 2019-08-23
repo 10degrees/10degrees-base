@@ -1,0 +1,15 @@
+@import "common/_variables";
+@import "mixins/_mixins";
+@import "common/_type";
+@import "common/_block-editor";
+
+.wp-block {
+    max-width: $container-lg;
+}
+.wp-block {
+    &[data-align="wide"],
+    &[data-align="full"] {
+        max-width: unset;
+        width: calc(100%-45px);
+    }
+}
