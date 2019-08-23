@@ -14,9 +14,10 @@ class Enqueue
         add_action('wp_enqueue_scripts', [$this, 'styles'], 100);
 		add_action('wp_enqueue_scripts', [$this, 'scripts'], 100);
         add_action('admin_init', [$this, 'editorStyle'], 100);
+        add_action('admin_init', [$this, 'adminStyle'], 100);
 
-        add_action('wp_enqueue_scripts', [$this, 'googleFont'], 99);
-        add_action('wp_enqueue_scripts', [$this, 'typekitFont'], 100);
+        // add_action('wp_enqueue_scripts', [$this, 'googleFont'], 99);
+        // add_action('wp_enqueue_scripts', [$this, 'typekitFont'], 100);
 
         add_filter('style_loader_src', [$this, 'removeWpVersion'], 9999);
         add_filter('script_loader_src', [$this, 'removeWpVersion'], 9999);
@@ -31,7 +32,7 @@ class Enqueue
     {
         wp_enqueue_style(
             'main',
-            get_template_directory_uri() . get_asset_path('css/main.css')
+            get_template_directory_uri() . get_asset_path('/css/main.css')
         );
 
         // Either use both of the below (for IE support) or none
@@ -47,19 +48,13 @@ class Enqueue
     public function scripts()
     {
         if (!is_admin()) {
-            wp_deregister_script('jquery');
-            wp_register_script('jquery', get_stylesheet_directory_uri() . '/assets/js/jquery-3.2.1.min.js');
-            wp_enqueue_script('jquery');
-            
-            wp_register_script('jquery-migrate', get_stylesheet_directory_uri() . '/assets/js/jquery-migrate-3.0.1.min.js', array('jquery'), '3.0.1', false);
-            wp_enqueue_script('jquery-migrate');
 
             // The following output in the footer, after jQuery
             if (is_single() && comments_open() && get_option('thread_comments')) {
                 wp_enqueue_script('comment-reply');
             }
 
-            wp_register_script('main-js', get_template_directory_uri() . get_asset_path('js/main.js'), array('jquery'), '', true);
+            wp_register_script('main-js', get_template_directory_uri() . get_asset_path('/js/main.js'), array('jquery'), '', true);
             wp_enqueue_script('main-js');
         }
     }
@@ -71,7 +66,16 @@ class Enqueue
      */
     public function editorStyle()
     {
-        add_editor_style('assets/css/wp-editor.css');
+        add_editor_style(get_asset_path('/css/wp-editor.css'));
+    }
+    /**
+     *
+     * Custom stylesheet for wp-admin
+     *
+     */
+    public function adminStyle()
+    {
+        add_editor_style(get_asset_path('/css/wp-admin.css'));
     }
 
     /**

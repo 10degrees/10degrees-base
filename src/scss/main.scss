@@ -33,5 +33,5 @@ $old-ie: false !default;
 @import "templates/woocommerce/_woocommerce";
 // Print
 @media only print {
-    @import "common/_print";
+  @import "common/_print";
 }

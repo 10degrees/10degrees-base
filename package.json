@@ -1,7 +1,7 @@
 {
-  "name": "tendegrees-base",
-  "version": "3.0.0",
-  "description": "10 Degrees base WordPress theme",
+  "name": "tendegrees-starter",
+  "version": "1.0.0",
+  "description": "10 Degrees starter theme",
   "main": "index.js",
   "scripts": {
     "dev": "npm run prewatch && npm run development",
@@ -38,5 +38,8 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "devDependencies": {
+    "vue-template-compiler": "^2.6.10"
+  }
 }
