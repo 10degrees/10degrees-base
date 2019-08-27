@@ -1,5 +1,5 @@
-var scrollToError = {
-    init: function() {
+class ScrollToError {
+    init() {
         $(document).ready(function() {
             var formPresent = $(".gform_validation_error").length;
             if (formPresent != "0") {
@@ -17,3 +17,5 @@ var scrollToError = {
         });
     }
 };
+
+export default ScrollToError;

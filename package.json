@@ -22,13 +22,18 @@
     "cross-env": "^5.2.0",
     "del-cli": "^2.0.0",
     "font-awesome": "^4.7.0",
+    "jquery": "^3.4.1",
     "laravel-mix": "^4.0.16",
+    "laravel-mix-polyfill": "^1.1.0",
     "laravel-mix-versionhash": "^1.0.7",
+    "magnific-popup": "^1.1.0",
+    "modernizr": "^3.7.1",
     "postcss-css-variables": "^0.12.0",
     "postcss-reporter": "^6.0.1",
     "resolve-url-loader": "2.3.1",
     "sass": "^1.21.0",
-    "sass-loader": "7.*"
+    "sass-loader": "7.*",
+    "slick-carousel": "^1.8.1"
   },
   "browserslist": [
     "> 1%",

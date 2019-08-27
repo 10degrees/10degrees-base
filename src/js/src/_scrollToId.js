@@ -1,5 +1,5 @@
-var scrollToId = {
-    init: function() {
+class ScrollToId {
+    init() {
         $(".scrollToId").click(function(e) {
             e.preventDefault();
 
@@ -14,3 +14,5 @@ var scrollToId = {
         });
     }
 };
+
+export default ScrollToId;

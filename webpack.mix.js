@@ -2,6 +2,7 @@ let mix = require("laravel-mix");
 require("laravel-mix-versionhash");
 require("laravel-mix-copy-watched");
 require("laravel-mix-imagemin");
+require('laravel-mix-polyfill');
 
 /*
  |--------------------------------------------------------------------------
@@ -32,4 +33,8 @@ mix
   })
   .imagemin("img/**.*", {
     context: "src"
+  })
+  .polyfill({
+    enabled: true,
+    targets: false
   });
