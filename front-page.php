@@ -8,11 +8,17 @@
 
 the_post();
 
-get_template_part( 'partials/page', 'header' );
+get_template_part('partials/page', 'header');
 ?>
 
 <div class="fp__content">
-    <div class="fp__container">
-        <?php the_content(); ?>
+
+    <div class="container fp__container">
+        <div class="row">
+            <div class="col-sm">
+                <?php the_content(); ?>
+            </div>
+        </div>
     </div>
+
 </div>

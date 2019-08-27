@@ -1,3 +1,11 @@
 <header class="article__header">
-    <h1><?php echo td_title(); ?></h1>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h1><?php echo td_title(); ?></h1>
+            </div>
+        </div>
+
+    </div>
 </header>

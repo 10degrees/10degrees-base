@@ -2,17 +2,21 @@
 // Scaffolding
 // This is a bit of a reset and some defaults
 * {
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 *:before,
 *:after {
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 // Body reset
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.container {
+  max-width: $container;
 }
 
 // Reset fonts for relevant elements
@@ -53,5 +57,5 @@ img {
 hr {
   margin: 20px 0;
   border: 0;
-  border-top: 1px solid $hr-border;
+  border-top: 1px solid $brand;
 }

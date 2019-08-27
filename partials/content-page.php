@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying page content in page.php
  *
@@ -11,9 +12,13 @@
 
     <?php get_template_part('partials/page', 'header'); ?>
 
-    <div class="article__content">
-        <div class="article__container">
-            <?php the_content(); ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="article__content">
+                    <?php the_content(); ?>
+                </div>
+            </div>
         </div>
     </div>
 

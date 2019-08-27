@@ -1,37 +1,16 @@
+@import "./bootstrap";
+@import "./variables";
+
 $old-ie: false !default;
-// Common
-@import "common/_variables";
+
+// // Mixins
 @import "mixins/_mixins";
-@import "vendor/_normalise";
+
+// // Common
+// @import "common/_variables";
 @import "common/_global";
-@import "common/_type";
-@import "common/_utilities";
-// Vendor
-@import "vendor/grid/_grid";
-@import "vendor/animate/_animate";
-@import "vendor/magnific-popup/_main";
-@import "vendor/_datepicker";
-// @import "vendor/_slick";
-// 10° components
+
+// // 10° components
+@import "components/_banner";
 @import "components/_breadcrumbs";
-@import "components/_fancy-gallery";
-@import "components/_menu-icon"; // */ TO-DO Remove in favour of SVG/*
-@import "components/_menu";
-@import "components/_pagination";
-@import "components/_wp-classes";
-@import "components/_accordion"; // */ TO-DO Remove in favour of 10up accordion/*
-// @import "components/_fonts";
-@import "components/_svg-icons";
-@import "components/_gravity-forms"; // Gravity Forms simple overrides */ TO-DO /*
-@import "components/_forms"; // Gravity Forms simple overrides */ TO-DO /*
-// Global base
-@import "common/_base";
-// Templates
-@import "templates/_front-page";
-@import "templates/_page";
-@import "templates/_page-builder";
-@import "templates/woocommerce/_woocommerce";
-// Print
-@media only print {
-  @import "common/_print";
-}
+@import "components/_footer";
