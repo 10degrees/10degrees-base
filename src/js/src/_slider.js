@@ -1,6 +1,7 @@
-var slider = {
+require('slick-carousel');
+class Slider {
 
-	init: function() {
+	init() {
 
 		var $this = this;
 
@@ -20,7 +21,7 @@ var slider = {
 
 		});
 		
-	},
+	}
 
 	/**	
 	 * Defaults to true
@@ -28,7 +29,7 @@ var slider = {
 	 * @param  slick slider instance
 	 * @return bool
 	 */
-	autoplay: function(instance) {
+	autoplay(instance) {
 
 		if ($(instance).attr('data-autoplay') == 'false') {
 
@@ -38,7 +39,7 @@ var slider = {
 
 		return true;
 
-	},
+	}
 
 	/**	
 	 * Defaults to 5000
@@ -46,7 +47,7 @@ var slider = {
 	 * @param  slick slider instance
 	 * @return bool
 	 */
-	speed: function(instance) {
+	speed(instance) {
 
 		if ($(instance).attr('data-speed')) {
 
@@ -56,7 +57,7 @@ var slider = {
 
 		return 5000;
 
-	},
+	}
 
 	/**	
 	 * Defaults to false
@@ -64,7 +65,7 @@ var slider = {
 	 * @param  slick slider instance
 	 * @return bool
 	 */
-	arrows: function(instance) {
+	arrows(instance) {
 
 		if ($(instance).attr('data-has-arrows') == 'true') {
 
@@ -74,7 +75,7 @@ var slider = {
 
 		return false;
 
-	},
+	}
 
 	/**	
 	 * Defaults to false
@@ -82,7 +83,7 @@ var slider = {
 	 * @param  slick slider instance
 	 * @return bool
 	 */
-	dots: function(instance) {
+	dots(instance) {
 
 		if ($(instance).attr('data-has-dots') == 'true') {
 
@@ -92,7 +93,7 @@ var slider = {
 
 		return false;
 
-	},
+	}
 
 	/**	
 	 * Defaults to true
@@ -100,7 +101,7 @@ var slider = {
 	 * @param  slick slider instance
 	 * @return bool
 	 */
-	pauseOnHover: function(instance) {
+	pauseOnHover(instance) {
 
 		if ($(instance).attr('data-pause-on-hover') == 'false') {
 
@@ -110,7 +111,7 @@ var slider = {
 
 		return true;
 
-	},
+	}
 
 	/**
 	 * Default to a nice svg arrow
@@ -118,7 +119,7 @@ var slider = {
 	 * @param  slick slider instance
 	 * @return bool
 	 */
-	nextArrow: function(instance) {
+	nextArrow(instance) {
 
 		if ($(instance).attr('data-next-arrow')) {
 
@@ -128,7 +129,7 @@ var slider = {
 
 		return '<div class="slick-next"><i class="fas fa-arrow-right"></i></div>';
 
-	},
+	}
 
 	/**
 	 * Default to a nice svg arrow
@@ -136,7 +137,7 @@ var slider = {
 	 * @param  slick slider instance
 	 * @return bool
 	 */
-	prevArrow: function(instance) {
+	prevArrow(instance) {
 
 		if ($(instance).attr('data-prev-arrow')) {
 
@@ -149,3 +150,5 @@ var slider = {
 	}
 
 };
+
+export default Slider;

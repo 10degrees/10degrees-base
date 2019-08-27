@@ -1,10 +1,11 @@
-var ajaxForm = {
+class AjaxForm {
 
-	formClass: '.js-ajax-form',
+	constructor(){
+		this.formClass = '.js-ajax-form';
+		this.form = false;
+	}
 
-	form: false,
-
-	init: function() {
+	init() {
 
 		var $this = this;
 
@@ -20,9 +21,9 @@ var ajaxForm = {
 
 		$this.maybeSubmitOnLoad();
 
-	},
+	}
 
-	submit: function() {
+	submit() {
 
 		this.loadingState();
 
@@ -48,9 +49,9 @@ var ajaxForm = {
 			},
 		});
 
-	},
+	}
 
-	success: function(result) {
+	success(result) {
 
 		var refresh_target = this.form.attr('data-refresh');
 
@@ -60,9 +61,9 @@ var ajaxForm = {
 
 		}
 
-	},
+	}
 
-	loadingState: function() {
+	loadingState() {
 
 		var refresh_target = this.form.attr('data-refresh');
 
@@ -72,9 +73,9 @@ var ajaxForm = {
 
 		}
 
-	},
+	}
 
-	maybeSubmitOnLoad: function() {
+	maybeSubmitOnLoad() {
 
 		$.each($(this.formClass), function() {
 
@@ -89,3 +90,5 @@ var ajaxForm = {
 	}
 
 };
+
+export default AjaxForm;
