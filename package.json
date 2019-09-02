@@ -2,6 +2,7 @@
   "name": "tendegrees-base",
   "version": "1.0.0",
   "description": "10 Degrees base theme",
+  "repository": "https://github.com/10degrees/10degrees-base",
   "main": "index.js",
   "scripts": {
     "dev": "npm run prewatch && npm run development",
