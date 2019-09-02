@@ -88,3 +88,4 @@ Thumbs.db
 !CHANGELOG.md
 !composer.json
 !wp-config.php
+!.change.sh
