@@ -2,7 +2,9 @@ let mix = require("laravel-mix");
 require("laravel-mix-versionhash");
 require("laravel-mix-copy-watched");
 require("laravel-mix-imagemin");
-require('laravel-mix-polyfill');
+require("laravel-mix-polyfill");
+
+let wpPot = require("wp-pot");
 
 /*
  |--------------------------------------------------------------------------
@@ -38,3 +40,9 @@ mix
     enabled: true,
     targets: false
   });
+
+wpPot({
+  destFile: "lang/@textdomain.pot",
+  domain: "@textdomain",
+  package: "@theme"
+});
