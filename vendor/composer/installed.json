@@ -403,13 +403,13 @@
         "authors": [
             {
                 "name": "Neuman Vong",
-                "role": "Developer",
-                "email": "neuman+pear@twilio.com"
+                "email": "neuman+pear@twilio.com",
+                "role": "Developer"
             },
             {
                 "name": "Anant Narayanan",
-                "role": "Developer",
-                "email": "anant@php.net"
+                "email": "anant@php.net",
+                "role": "Developer"
             }
         ],
         "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
@@ -417,17 +417,17 @@
     },
     {
         "name": "google/apiclient",
-        "version": "v2.2.3",
-        "version_normalized": "2.2.3.0",
+        "version": "v2.2.4",
+        "version_normalized": "2.2.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/googleapis/google-api-php-client.git",
-            "reference": "4bfd3edc21cceaf45fc216a4196e1993cf7a89eb"
+            "reference": "d6c7563bdf88d6a0719ea63e21c74dc86032364e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/4bfd3edc21cceaf45fc216a4196e1993cf7a89eb",
-            "reference": "4bfd3edc21cceaf45fc216a4196e1993cf7a89eb",
+            "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/d6c7563bdf88d6a0719ea63e21c74dc86032364e",
+            "reference": "d6c7563bdf88d6a0719ea63e21c74dc86032364e",
             "shasum": ""
         },
         "require": {
@@ -442,6 +442,8 @@
         },
         "require-dev": {
             "cache/filesystem-adapter": "^0.3.2",
+            "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+            "phpcompatibility/php-compatibility": "^9.2",
             "phpunit/phpunit": "~4.8.36",
             "squizlabs/php_codesniffer": "~2.3",
             "symfony/css-selector": "~2.1",
@@ -450,7 +452,7 @@
         "suggest": {
             "cache/filesystem-adapter": "For caching certs and tokens (using Google_Client::setCache)"
         },
-        "time": "2019-05-21T18:06:55+00:00",
+        "time": "2019-08-19T18:09:46+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -478,17 +480,17 @@
     },
     {
         "name": "google/apiclient-services",
-        "version": "v0.110",
-        "version_normalized": "0.110.0.0",
+        "version": "v0.112",
+        "version_normalized": "0.112.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/googleapis/google-api-php-client-services.git",
-            "reference": "9d9e0a4e180cf09a52ab04535ca4f669031f8c54"
+            "reference": "0cc6d74aa99f5af8385c7b87599b97460e036dc2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/9d9e0a4e180cf09a52ab04535ca4f669031f8c54",
-            "reference": "9d9e0a4e180cf09a52ab04535ca4f669031f8c54",
+            "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/0cc6d74aa99f5af8385c7b87599b97460e036dc2",
+            "reference": "0cc6d74aa99f5af8385c7b87599b97460e036dc2",
             "shasum": ""
         },
         "require": {
@@ -497,7 +499,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.8"
         },
-        "time": "2019-08-17T00:23:23+00:00",
+        "time": "2019-08-31T00:23:10+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -763,8 +765,8 @@
     },
     {
         "name": "illuminate/container",
-        "version": "v5.8.33",
-        "version_normalized": "5.8.33.0",
+        "version": "v5.8.34",
+        "version_normalized": "5.8.34.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/container.git",
@@ -810,8 +812,8 @@
     },
     {
         "name": "illuminate/contracts",
-        "version": "v5.8.33",
-        "version_normalized": "5.8.33.0",
+        "version": "v5.8.34",
+        "version_normalized": "5.8.34.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/contracts.git",
@@ -856,8 +858,8 @@
     },
     {
         "name": "illuminate/filesystem",
-        "version": "v5.8.33",
-        "version_normalized": "5.8.33.0",
+        "version": "v5.8.34",
+        "version_normalized": "5.8.34.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/filesystem.git",
@@ -910,8 +912,8 @@
     },
     {
         "name": "illuminate/support",
-        "version": "v5.8.33",
-        "version_normalized": "5.8.33.0",
+        "version": "v5.8.34",
+        "version_normalized": "5.8.34.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/support.git",
@@ -973,8 +975,8 @@
     },
     {
         "name": "illuminate/translation",
-        "version": "v5.8.33",
-        "version_normalized": "5.8.33.0",
+        "version": "v5.8.34",
+        "version_normalized": "5.8.34.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/translation.git",
@@ -1021,17 +1023,17 @@
     },
     {
         "name": "illuminate/validation",
-        "version": "v5.8.33",
-        "version_normalized": "5.8.33.0",
+        "version": "v5.8.34",
+        "version_normalized": "5.8.34.0",
         "source": {
             "type": "git",
             "url": "https://github.com/illuminate/validation.git",
-            "reference": "9f0c04d5cbe39fcafc0f3c56c1bba7c681a8ff92"
+            "reference": "dec713980d95b41e2ce915e1d6d844a969321261"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/illuminate/validation/zipball/9f0c04d5cbe39fcafc0f3c56c1bba7c681a8ff92",
-            "reference": "9f0c04d5cbe39fcafc0f3c56c1bba7c681a8ff92",
+            "url": "https://api.github.com/repos/illuminate/validation/zipball/dec713980d95b41e2ce915e1d6d844a969321261",
+            "reference": "dec713980d95b41e2ce915e1d6d844a969321261",
             "shasum": ""
         },
         "require": {
@@ -1047,7 +1049,7 @@
         "suggest": {
             "illuminate/database": "Required to use the database presence verifier (5.8.*)."
         },
-        "time": "2019-08-15T16:21:14+00:00",
+        "time": "2019-08-24T09:33:02+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1075,17 +1077,17 @@
     },
     {
         "name": "johnbillion/extended-cpts",
-        "version": "4.3.1",
-        "version_normalized": "4.3.1.0",
+        "version": "4.3.2",
+        "version_normalized": "4.3.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/johnbillion/extended-cpts.git",
-            "reference": "eb4ff89ffbfe8baafa3638a091435b1cd6479f0b"
+            "reference": "6446170b222869e1e0770c130ead47def5261b51"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/eb4ff89ffbfe8baafa3638a091435b1cd6479f0b",
-            "reference": "eb4ff89ffbfe8baafa3638a091435b1cd6479f0b",
+            "url": "https://api.github.com/repos/johnbillion/extended-cpts/zipball/6446170b222869e1e0770c130ead47def5261b51",
+            "reference": "6446170b222869e1e0770c130ead47def5261b51",
             "shasum": ""
         },
         "require": {
@@ -1108,7 +1110,7 @@
             "seravo/wp-custom-bulk-actions": "Custom Bulk Actions",
             "wpackagist-plugin/rewrite-testing": "Rewrite Rule Testing"
         },
-        "time": "2019-08-13T12:32:52+00:00",
+        "time": "2019-08-25T21:14:07+00:00",
         "type": "library",
         "extra": {
             "wordpress-install-dir": "tests/wordpress"
@@ -1713,23 +1715,23 @@
     },
     {
         "name": "symfony/finder",
-        "version": "v4.3.3",
-        "version_normalized": "4.3.3.0",
+        "version": "v4.3.4",
+        "version_normalized": "4.3.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/finder.git",
-            "reference": "9638d41e3729459860bb96f6247ccb61faaa45f2"
+            "reference": "86c1c929f0a4b24812e1eb109262fc3372c8e9f2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/finder/zipball/9638d41e3729459860bb96f6247ccb61faaa45f2",
-            "reference": "9638d41e3729459860bb96f6247ccb61faaa45f2",
+            "url": "https://api.github.com/repos/symfony/finder/zipball/86c1c929f0a4b24812e1eb109262fc3372c8e9f2",
+            "reference": "86c1c929f0a4b24812e1eb109262fc3372c8e9f2",
             "shasum": ""
         },
         "require": {
             "php": "^7.1.3"
         },
-        "time": "2019-06-28T13:16:30+00:00",
+        "time": "2019-08-14T12:26:46+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1764,17 +1766,17 @@
     },
     {
         "name": "symfony/http-foundation",
-        "version": "v4.3.3",
-        "version_normalized": "4.3.3.0",
+        "version": "v4.3.4",
+        "version_normalized": "4.3.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/http-foundation.git",
-            "reference": "8b778ee0c27731105fbf1535f51793ad1ae0ba2b"
+            "reference": "d804bea118ff340a12e22a79f9c7e7eb56b35adc"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/8b778ee0c27731105fbf1535f51793ad1ae0ba2b",
-            "reference": "8b778ee0c27731105fbf1535f51793ad1ae0ba2b",
+            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/d804bea118ff340a12e22a79f9c7e7eb56b35adc",
+            "reference": "d804bea118ff340a12e22a79f9c7e7eb56b35adc",
             "shasum": ""
         },
         "require": {
@@ -1786,7 +1788,7 @@
             "predis/predis": "~1.0",
             "symfony/expression-language": "~3.4|~4.0"
         },
-        "time": "2019-07-23T11:21:36+00:00",
+        "time": "2019-08-26T08:55:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1821,17 +1823,17 @@
     },
     {
         "name": "symfony/mime",
-        "version": "v4.3.3",
-        "version_normalized": "4.3.3.0",
+        "version": "v4.3.4",
+        "version_normalized": "4.3.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/mime.git",
-            "reference": "6b7148029b1dd5eda1502064f06d01357b7b2d8b"
+            "reference": "987a05df1c6ac259b34008b932551353f4f408df"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/mime/zipball/6b7148029b1dd5eda1502064f06d01357b7b2d8b",
-            "reference": "6b7148029b1dd5eda1502064f06d01357b7b2d8b",
+            "url": "https://api.github.com/repos/symfony/mime/zipball/987a05df1c6ac259b34008b932551353f4f408df",
+            "reference": "987a05df1c6ac259b34008b932551353f4f408df",
             "shasum": ""
         },
         "require": {
@@ -1840,10 +1842,10 @@
             "symfony/polyfill-mbstring": "^1.0"
         },
         "require-dev": {
-            "egulias/email-validator": "^2.0",
+            "egulias/email-validator": "^2.1.10",
             "symfony/dependency-injection": "~3.4|^4.1"
         },
-        "time": "2019-07-19T16:21:19+00:00",
+        "time": "2019-08-22T08:16:11+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2064,23 +2066,23 @@
     },
     {
         "name": "symfony/translation",
-        "version": "v4.3.3",
-        "version_normalized": "4.3.3.0",
+        "version": "v4.3.4",
+        "version_normalized": "4.3.4.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/translation.git",
-            "reference": "4e3e39cc485304f807622bdc64938e4633396406"
+            "reference": "28498169dd334095fa981827992f3a24d50fed0f"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/translation/zipball/4e3e39cc485304f807622bdc64938e4633396406",
-            "reference": "4e3e39cc485304f807622bdc64938e4633396406",
+            "url": "https://api.github.com/repos/symfony/translation/zipball/28498169dd334095fa981827992f3a24d50fed0f",
+            "reference": "28498169dd334095fa981827992f3a24d50fed0f",
             "shasum": ""
         },
         "require": {
             "php": "^7.1.3",
             "symfony/polyfill-mbstring": "~1.0",
-            "symfony/translation-contracts": "^1.1.2"
+            "symfony/translation-contracts": "^1.1.6"
         },
         "conflict": {
             "symfony/config": "<3.4",
@@ -2107,7 +2109,7 @@
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2019-07-18T10:34:59+00:00",
+        "time": "2019-08-26T08:55:16+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2142,17 +2144,17 @@
     },
     {
         "name": "symfony/translation-contracts",
-        "version": "v1.1.5",
-        "version_normalized": "1.1.5.0",
+        "version": "v1.1.6",
+        "version_normalized": "1.1.6.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/translation-contracts.git",
-            "reference": "cb4b18ad7b92a26e83b65dde940fab78339e6f3c"
+            "reference": "325b17c24f3ee23cbecfa63ba809c6d89b5fa04a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/cb4b18ad7b92a26e83b65dde940fab78339e6f3c",
-            "reference": "cb4b18ad7b92a26e83b65dde940fab78339e6f3c",
+            "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/325b17c24f3ee23cbecfa63ba809c6d89b5fa04a",
+            "reference": "325b17c24f3ee23cbecfa63ba809c6d89b5fa04a",
             "shasum": ""
         },
         "require": {
@@ -2161,7 +2163,7 @@
         "suggest": {
             "symfony/translation-implementation": ""
         },
-        "time": "2019-06-13T11:15:36+00:00",
+        "time": "2019-08-02T12:15:04+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

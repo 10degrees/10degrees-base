@@ -15,24 +15,26 @@
  * the License.
  */
 
-class Google_Service_Dataflow_ListSnapshotsResponse extends Google_Collection
+class Google_Service_AlertCenter_BatchUndeleteAlertsRequest extends Google_Collection
 {
-  protected $collection_key = 'snapshots';
-  protected $snapshotsType = 'Google_Service_Dataflow_Snapshot';
-  protected $snapshotsDataType = 'array';
+  protected $collection_key = 'alertId';
+  public $alertId;
+  public $customerId;
 
-  /**
-   * @param Google_Service_Dataflow_Snapshot
-   */
-  public function setSnapshots($snapshots)
+  public function setAlertId($alertId)
   {
-    $this->snapshots = $snapshots;
+    $this->alertId = $alertId;
   }
-  /**
-   * @return Google_Service_Dataflow_Snapshot
-   */
-  public function getSnapshots()
+  public function getAlertId()
   {
-    return $this->snapshots;
+    return $this->alertId;
+  }
+  public function setCustomerId($customerId)
+  {
+    $this->customerId = $customerId;
+  }
+  public function getCustomerId()
+  {
+    return $this->customerId;
   }
 }

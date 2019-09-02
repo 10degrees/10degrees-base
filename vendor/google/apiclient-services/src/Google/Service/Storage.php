@@ -280,6 +280,10 @@ class Google_Service_Storage extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
+                'optionsRequestedPolicyVersion' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
+                ),
                 'provisionalUserProject' => array(
                   'location' => 'query',
                   'type' => 'string',

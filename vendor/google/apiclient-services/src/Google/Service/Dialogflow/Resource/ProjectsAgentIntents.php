@@ -67,14 +67,14 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentIntents extends Google_Ser
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2Intent $postBody
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string intentView Optional. The resource view to apply to the
+   * returned intent.
    * @opt_param string languageCode Optional. The language of training phrases,
    * parameters and rich messages defined in `intent`. If not specified, the
    * agent's default language is used. [Many
    * languages](https://cloud.google.com/dialogflow/docs/reference/language) are
    * supported. Note: languages must be enabled in the agent before they can be
    * used.
-   * @opt_param string intentView Optional. The resource view to apply to the
-   * returned intent.
    * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2Intent
    */
   public function create($parent, Google_Service_Dialogflow_GoogleCloudDialogflowV2Intent $postBody, $optParams = array())
@@ -130,6 +130,8 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentIntents extends Google_Ser
    * `projects//agent`.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string intentView Optional. The resource view to apply to the
+   * returned intent.
    * @opt_param string languageCode Optional. The language to list training
    * phrases, parameters and rich messages for. If not specified, the agent's
    * default language is used. [Many
@@ -140,8 +142,6 @@ class Google_Service_Dialogflow_Resource_ProjectsAgentIntents extends Google_Ser
    * a previous list request.
    * @opt_param int pageSize Optional. The maximum number of items to return in a
    * single page. By default 100 and at most 1000.
-   * @opt_param string intentView Optional. The resource view to apply to the
-   * returned intent.
    * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2ListIntentsResponse
    */
   public function listProjectsAgentIntents($parent, $optParams = array())

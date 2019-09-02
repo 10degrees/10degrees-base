@@ -15,25 +15,35 @@
  * the License.
  */
 
-class Google_Service_Dataflow_SnapshotJobRequest extends Google_Model
+class Google_Service_AlertCenter_Status extends Google_Collection
 {
-  public $location;
-  public $ttl;
+  protected $collection_key = 'details';
+  public $code;
+  public $details;
+  public $message;
 
-  public function setLocation($location)
+  public function setCode($code)
   {
-    $this->location = $location;
+    $this->code = $code;
   }
-  public function getLocation()
+  public function getCode()
   {
-    return $this->location;
+    return $this->code;
   }
-  public function setTtl($ttl)
+  public function setDetails($details)
   {
-    $this->ttl = $ttl;
+    $this->details = $details;
   }
-  public function getTtl()
+  public function getDetails()
   {
-    return $this->ttl;
+    return $this->details;
+  }
+  public function setMessage($message)
+  {
+    $this->message = $message;
+  }
+  public function getMessage()
+  {
+    return $this->message;
   }
 }

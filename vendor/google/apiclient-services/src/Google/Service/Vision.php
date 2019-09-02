@@ -533,6 +533,16 @@ class Google_Service_Vision extends Google_Service
                   'type' => 'string',
                 ),
               ),
+            ),'purge' => array(
+              'path' => 'v1/{+parent}/products:purge',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'parent' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
             ),
           )
         )

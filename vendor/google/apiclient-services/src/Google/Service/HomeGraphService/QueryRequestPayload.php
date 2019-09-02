@@ -15,6 +15,24 @@
  * the License.
  */
 
-class Google_Service_Dataflow_DeleteSnapshotResponse extends Google_Model
+class Google_Service_HomeGraphService_QueryRequestPayload extends Google_Collection
 {
+  protected $collection_key = 'devices';
+  protected $devicesType = 'Google_Service_HomeGraphService_AgentDeviceId';
+  protected $devicesDataType = 'array';
+
+  /**
+   * @param Google_Service_HomeGraphService_AgentDeviceId
+   */
+  public function setDevices($devices)
+  {
+    $this->devices = $devices;
+  }
+  /**
+   * @return Google_Service_HomeGraphService_AgentDeviceId
+   */
+  public function getDevices()
+  {
+    return $this->devices;
+  }
 }

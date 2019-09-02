@@ -113,8 +113,6 @@ class Google_Service_CloudSearch_Resource_IndexingDatasourcesItems extends Googl
    * datasources/{source_id}
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string connectorName Name of connector making this call. Format:
-   * datasources/{source_id}/connectors/{ID}
    * @opt_param bool brief When set to true, the indexing system only populates
    * the following fields: name, version, metadata.hash, structured_data.hash,
    * content.hash. If this value is false, then all the fields are populated in
@@ -126,6 +124,8 @@ class Google_Service_CloudSearch_Resource_IndexingDatasourcesItems extends Googl
    * The default value is 10
    * @opt_param bool debugOptions.enableDebugging If you are asked by Google to
    * help with debugging, set this field. Otherwise, ignore this field.
+   * @opt_param string connectorName Name of connector making this call. Format:
+   * datasources/{source_id}/connectors/{ID}
    * @return Google_Service_CloudSearch_ListItemsResponse
    */
   public function listIndexingDatasourcesItems($name, $optParams = array())

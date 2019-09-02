@@ -15,26 +15,16 @@
  * the License.
  */
 
-class Google_Service_ContainerAnalysis_AuditLogConfig extends Google_Collection
+class Google_Service_Vision_ProductSetPurgeConfig extends Google_Model
 {
-  protected $collection_key = 'exemptedMembers';
-  public $exemptedMembers;
-  public $logType;
+  public $productSetId;
 
-  public function setExemptedMembers($exemptedMembers)
+  public function setProductSetId($productSetId)
   {
-    $this->exemptedMembers = $exemptedMembers;
+    $this->productSetId = $productSetId;
   }
-  public function getExemptedMembers()
+  public function getProductSetId()
   {
-    return $this->exemptedMembers;
-  }
-  public function setLogType($logType)
-  {
-    $this->logType = $logType;
-  }
-  public function getLogType()
-  {
-    return $this->logType;
+    return $this->productSetId;
   }
 }
