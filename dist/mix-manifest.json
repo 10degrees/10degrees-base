@@ -4,8 +4,12 @@
   "/css/wp-admin.css": "/css/wp-admin-a79d3d.css",
   "/css/wp-editor.css": "/css/wp-editor-a79d3d.css",
   "/css/wp-login.css": "/css/wp-login-a79d3d.css",
+  "/img/custom-button.png": "/img/custom-button.png",
   "/img/logo-login.svg": "/img/logo-login.svg",
   "/img/logo.svg": "/img/logo.svg",
-  "/img/custom-button.png": "/img/custom-button.png",
-  "/img/3625172797_7799a48f38_z.jpg": "/img/3625172797_7799a48f38_z.jpg"
+  "/img/3625172797_7799a48f38_z.jpg": "/img/3625172797_7799a48f38_z.jpg",
+  "/fonts/open-sans-v17-latin-700.woff": "/fonts/open-sans-v17-latin-700.woff",
+  "/fonts/open-sans-v17-latin-700.woff2": "/fonts/open-sans-v17-latin-700.woff2",
+  "/fonts/open-sans-v17-latin-regular.woff": "/fonts/open-sans-v17-latin-regular.woff",
+  "/fonts/open-sans-v17-latin-regular.woff2": "/fonts/open-sans-v17-latin-regular.woff2"
 }
