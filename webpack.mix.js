@@ -36,6 +36,7 @@ mix
   .imagemin("img/**.*", {
     context: "src"
   })
+  .copyWatched("src/fonts", "dist/fonts")
   .polyfill({
     enabled: true,
     targets: false

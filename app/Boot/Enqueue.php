@@ -12,7 +12,7 @@ class Enqueue
     public function __construct()
     {
         add_action('wp_enqueue_scripts', [$this, 'styles'], 100);
-		add_action('wp_enqueue_scripts', [$this, 'scripts'], 100);
+        add_action('wp_enqueue_scripts', [$this, 'scripts'], 100);
         add_action('admin_init', [$this, 'editorStyle'], 100);
         add_action('admin_init', [$this, 'adminStyle'], 100);
 
@@ -48,7 +48,6 @@ class Enqueue
     public function scripts()
     {
         if (!is_admin()) {
-
             // The following output in the footer, after jQuery
             if (is_single() && comments_open() && get_option('thread_comments')) {
                 wp_enqueue_script('comment-reply');
@@ -82,10 +81,13 @@ class Enqueue
      *
      * Google Fonts
      *
+     * Now with support for font-display
+     * @link https://css-tricks.com/font-display-masses/
+     *
      */
     public function googleFont()
     {
-        wp_enqueue_style('td-google-font', 'https://fonts.googleapis.com/css?family=Open+Sans', false);
+        wp_enqueue_style('td-google-font', 'https://fonts.googleapis.com/css?family=Open+Sans&display=swap', false);
     }
 
     /**
