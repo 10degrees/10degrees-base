@@ -15,6 +15,8 @@
 
         <main id="main">
 
+            <i class="fas fa-ban"></i>
+
             <?php get_template_part('partials/breadcrumbs'); ?>
 
             <?php include \App\Boot\BaseWrapper::$main_template; ?>

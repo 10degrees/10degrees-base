@@ -20,7 +20,10 @@ let wpPot = require("wp-pot");
 
 mix
   .setPublicPath("dist")
-  .js("src/js/src/main.js", "dist/js")
+  .js([
+    "src/js/src/main.js", 
+    "src/js/lib/all.js"
+  ], "dist/js")
   .sass("src/scss/main.scss", "dist/css")
   .sass("src/scss/wp-admin.scss", "dist/css")
   .sass("src/scss/wp-editor.scss", "dist/css")
@@ -29,7 +32,6 @@ mix
     processCssUrls: false,
     postCss: [require("postcss-css-variables")()]
   })
-  .sourceMaps()
   .versionHash({
     delimiter: "-"
   })
@@ -41,6 +43,7 @@ mix
     enabled: true,
     targets: false
   })
+  .sourceMaps()
   .copy('node_modules/font-awesome/fonts', 'dist/fonts');
 
 wpPot({
