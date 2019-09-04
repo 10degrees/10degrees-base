@@ -3,14 +3,17 @@
 
 $old-ie: false !default;
 
-// // Mixins
+//Vendor
+@import "node_modules/font-awesome/scss/font-awesome";
+
+// Mixins
 @import "mixins/_mixins";
 
-// // Common
+// Common
 // @import "common/_variables";
 @import "common/_global";
 
-// // 10° components
+// 10° components
 @import "components/_banner";
 @import "components/_breadcrumbs";
 @import "components/_footer";

@@ -40,7 +40,8 @@ mix
   .polyfill({
     enabled: true,
     targets: false
-  });
+  })
+  .copy('node_modules/font-awesome/fonts', 'dist/fonts');
 
 wpPot({
   destFile: "lang/@textdomain.pot",
