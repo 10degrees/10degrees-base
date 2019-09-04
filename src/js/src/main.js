@@ -1,6 +1,6 @@
 /**
  *
- * To create new scripts create a partial inside src and right your code there either inside
+ * To create new scripts create a partial inside src and write your code there either inside
  * a function or object oriented.
  *
  * Then call it on the relevant page below or in the common function to be run on every page.
