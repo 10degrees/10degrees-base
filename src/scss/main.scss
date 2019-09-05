@@ -1,12 +1,10 @@
 @import "./bootstrap";
 
-$old-ie: false !default;
-
-//Variables
+// Variables
 @import "variables/_variables";
 
-//Vendor
-@import "node_modules/font-awesome/scss/font-awesome";
+// Vendor
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
 
 // Mixins
 @import "mixins/_mixins";

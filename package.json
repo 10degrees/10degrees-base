@@ -11,11 +11,15 @@
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run prewatch && npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prewatch": "del-cli dist -f"
+    "prewatch": "del-cli dist -f",
+    "runprod": "npm run prod  && exit 0"
   },
   "keywords": [
     "wordpress",
     "wordpress-theme"
+  ],
+  "pre-push": [
+    "runprod"
   ],
   "author": "10 Degrees",
   "license": "ISC",
@@ -23,7 +27,6 @@
     "bootstrap": "^4.3.1",
     "cross-env": "^5.2.0",
     "del-cli": "^2.0.0",
-    "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "laravel-mix": "^4.0.16",
     "laravel-mix-polyfill": "^1.1.0",
@@ -48,6 +51,7 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "laravel-mix-copy-watched": "^2.1.4",
     "laravel-mix-imagemin": "^1.0.3",
+    "pre-push": "^0.1.1",
     "vue-template-compiler": "^2.6.10",
     "wp-pot": "^1.7.2"
   }

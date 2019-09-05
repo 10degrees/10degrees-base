@@ -24489,46 +24489,6 @@ function () {
 
 /***/ }),
 
-/***/ "./src/js/src/_mobile-nav.js":
-/*!***********************************!*\
-  !*** ./src/js/src/_mobile-nav.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var MobileNav =
-/*#__PURE__*/
-function () {
-  function MobileNav() {
-    _classCallCheck(this, MobileNav);
-  }
-
-  _createClass(MobileNav, [{
-    key: "init",
-    value: function init() {
-      $('.nav-control').click(function () {
-        $('#menu-primary-navigation').toggleClass('nav-open');
-        $('.nav-control').toggleClass('x close');
-      });
-    }
-  }]);
-
-  return MobileNav;
-}();
-
-;
-/* harmony default export */ __webpack_exports__["default"] = (MobileNav);
-
-/***/ }),
-
 /***/ "./src/js/src/_slider.js":
 /*!*******************************!*\
   !*** ./src/js/src/_slider.js ***!
@@ -24726,7 +24686,7 @@ function () {
       try {
         self.main();
       } catch (error) {
-        console.error('bootStrap.js error');
+        console.error('bootstrapMenu.js error');
         console.error(error);
       }
     }
@@ -24775,7 +24735,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utilities_ajaxForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utilities/_ajaxForm */ "./src/js/src/utilities/_ajaxForm.js");
 /* harmony import */ var _utilities_scrollToError__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utilities/_scrollToError */ "./src/js/src/utilities/_scrollToError.js");
 /* harmony import */ var _utilities_scrollToId__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utilities/_scrollToId */ "./src/js/src/utilities/_scrollToId.js");
-/* harmony import */ var _mobile_nav__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_mobile-nav */ "./src/js/src/_mobile-nav.js");
+/* harmony import */ var _utilities_mobile_nav__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utilities/_mobile-nav */ "./src/js/src/utilities/_mobile-nav.js");
 /* harmony import */ var _components_bootstrapMenu__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/_bootstrapMenu */ "./src/js/src/components/_bootstrapMenu.js");
 
 
@@ -24806,7 +24766,7 @@ window.$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.
     // All pages
     common: {
       init: function init() {
-        new _mobile_nav__WEBPACK_IMPORTED_MODULE_7__["default"]().init();
+        new _utilities_mobile_nav__WEBPACK_IMPORTED_MODULE_7__["default"]().init();
         new _utilities_scrollToId__WEBPACK_IMPORTED_MODULE_6__["default"]().init();
         new _utilities_scrollToError__WEBPACK_IMPORTED_MODULE_5__["default"]().init();
         new _slider__WEBPACK_IMPORTED_MODULE_3__["default"]().init();
@@ -24944,6 +24904,46 @@ function () {
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (AjaxForm);
+
+/***/ }),
+
+/***/ "./src/js/src/utilities/_mobile-nav.js":
+/*!*********************************************!*\
+  !*** ./src/js/src/utilities/_mobile-nav.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var MobileNav =
+/*#__PURE__*/
+function () {
+  function MobileNav() {
+    _classCallCheck(this, MobileNav);
+  }
+
+  _createClass(MobileNav, [{
+    key: "init",
+    value: function init() {
+      $('.nav-control').click(function () {
+        $('#menu-primary-navigation').toggleClass('nav-open');
+        $('.nav-control').toggleClass('x close');
+      });
+    }
+  }]);
+
+  return MobileNav;
+}();
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (MobileNav);
 
 /***/ }),
 
@@ -25092,16 +25092,16 @@ function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Karl\Local Sites\10dbase\app\public\wp-content\themes\10degrees-base\src\js\src\main.js */"./src/js/src/main.js");
-__webpack_require__(/*! C:\Users\Karl\Local Sites\10dbase\app\public\wp-content\themes\10degrees-base\src\js\lib\all.js */"./src/js/lib/all.js");
-__webpack_require__(/*! C:\Users\Karl\Local Sites\10dbase\app\public\wp-content\themes\10degrees-base\src\js\lib\bootstrap.min.js */"./src/js/lib/bootstrap.min.js");
-__webpack_require__(/*! C:\Users\Karl\Local Sites\10dbase\app\public\wp-content\themes\10degrees-base\src\scss\main.scss */"./src/scss/main.scss");
-__webpack_require__(/*! C:\Users\Karl\Local Sites\10dbase\app\public\wp-content\themes\10degrees-base\src\scss\wp-admin.scss */"./src/scss/wp-admin.scss");
-__webpack_require__(/*! C:\Users\Karl\Local Sites\10dbase\app\public\wp-content\themes\10degrees-base\src\scss\wp-editor.scss */"./src/scss/wp-editor.scss");
-module.exports = __webpack_require__(/*! C:\Users\Karl\Local Sites\10dbase\app\public\wp-content\themes\10degrees-base\src\scss\wp-login.scss */"./src/scss/wp-login.scss");
+__webpack_require__(/*! /Users/matt/code/10d-alpha/wp-content/themes/10degrees-base/src/js/src/main.js */"./src/js/src/main.js");
+__webpack_require__(/*! /Users/matt/code/10d-alpha/wp-content/themes/10degrees-base/src/js/lib/all.js */"./src/js/lib/all.js");
+__webpack_require__(/*! /Users/matt/code/10d-alpha/wp-content/themes/10degrees-base/src/js/lib/bootstrap.min.js */"./src/js/lib/bootstrap.min.js");
+__webpack_require__(/*! /Users/matt/code/10d-alpha/wp-content/themes/10degrees-base/src/scss/main.scss */"./src/scss/main.scss");
+__webpack_require__(/*! /Users/matt/code/10d-alpha/wp-content/themes/10degrees-base/src/scss/wp-admin.scss */"./src/scss/wp-admin.scss");
+__webpack_require__(/*! /Users/matt/code/10d-alpha/wp-content/themes/10degrees-base/src/scss/wp-editor.scss */"./src/scss/wp-editor.scss");
+module.exports = __webpack_require__(/*! /Users/matt/code/10d-alpha/wp-content/themes/10degrees-base/src/scss/wp-login.scss */"./src/scss/wp-login.scss");
 
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main-47a24b.js.map
+//# sourceMappingURL=main.js.map
