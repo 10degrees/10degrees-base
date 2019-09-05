@@ -10,12 +10,19 @@
 // Require the classes
 window.$ = require("jquery");
 
-import AjaxForm from './_ajaxForm';
+//Vendor
 import Magnific from './_magnific';
-import MobileNav from './_mobile-nav';
-import ScrollToError from './_scrollToError';
-import ScrollToId from './_scrollToId';
 import Slider from './_slider';
+
+//Utilities
+import AjaxForm from './utilities/_ajaxForm';
+import ScrollToError from './utilities/_scrollToError';
+import ScrollToId from './utilities/_scrollToId';
+import MobileNav from './utilities/_mobile-nav';
+
+//Components
+import BootstrapMenu from './components/_bootstrapMenu';
+
 
 (function($) {
     var App = {
@@ -29,6 +36,7 @@ import Slider from './_slider';
                 new Slider().init();
                 new Magnific().init();
                 new AjaxForm().init();
+                new BootstrapMenu().init();
             }
         },
         // Home page

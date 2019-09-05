@@ -1,7 +1,9 @@
 @import "./bootstrap";
-@import "./variables";
 
 $old-ie: false !default;
+
+//Variables
+@import "variables/_variables";
 
 //Vendor
 @import "node_modules/font-awesome/scss/font-awesome";
@@ -10,10 +12,12 @@ $old-ie: false !default;
 @import "mixins/_mixins";
 
 // Common
-// @import "common/_variables";
 @import "common/_global";
 
 // 10° components
-@import "components/_banner";
 @import "components/_breadcrumbs";
+
+// Page components
+@import "components/_header";
+@import "components/_main";
 @import "components/_footer";

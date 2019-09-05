@@ -10698,6 +10698,15 @@ h3 {
     border-color: #dee2e6;
   }
 }
+/***************************
+Global
+***************************/
+/***************************
+Breakpoints
+***************************/
+/*****************************
+Brand Colours
+*****************************/
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -13803,6 +13812,30 @@ hr {
   border-top: 1px solid #000;
 }
 
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+body.admin-bar {
+  min-height: calc(100vh - 46px);
+}
+@media only screen and (min-width: 768px) {
+  body.admin-bar {
+    min-height: calc(100vh - 32px);
+  }
+}
+body #main {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
 .breadcrumbs {
   margin: 25px 0;
   font-size: 14px;
@@ -13815,4 +13848,26 @@ hr {
   color: red;
   text-decoration: none;
 }
-/*# sourceMappingURL=main-914f4c.css.map*/
+
+header____primary {
+  border: 1px red solid;
+}
+header____primary #navbar-content {
+  border: 1px red solid;
+}
+
+.footer {
+  background-color: #000;
+  color: white;
+}
+.footer .footer__nav ul {
+  padding-left: 0;
+}
+.footer .footer__nav li {
+  display: inline;
+  margin-right: 2%;
+}
+.footer .footer__nav a {
+  color: white;
+}
+/*# sourceMappingURL=main-e51d62.css.map*/

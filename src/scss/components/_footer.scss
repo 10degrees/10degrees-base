@@ -1,0 +1,20 @@
+
+.footer {
+    background-color: $brand;
+    color: white;
+    .footer__inner {
+        
+    }
+    .footer__nav {
+        ul {
+            padding-left: 0;
+        }
+        li {
+            display: inline;
+            margin-right: 2%;
+        }
+        a {
+            color: white;
+        }
+    }
+}

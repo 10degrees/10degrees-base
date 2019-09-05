@@ -20,7 +20,7 @@ let wpPot = require("wp-pot");
 
 mix.sourceMaps(true, "source-map")
     .setPublicPath("dist")
-    .js(["src/js/src/main.js", "src/js/lib/all.js"], "dist/js")
+    .js(["src/js/src/main.js", "src/js/lib/all.js", "src/js/lib/bootstrap.min.js"], "dist/js")
     .sass("src/scss/main.scss", "dist/css")
     .sass("src/scss/wp-admin.scss", "dist/css")
     .sass("src/scss/wp-editor.scss", "dist/css")

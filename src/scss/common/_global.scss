@@ -33,6 +33,7 @@ textarea {
 a {
   color: $link-color;
   text-decoration: none;
+
   &:hover,
   &:focus {
     color: $link-hover-color;
@@ -58,4 +59,23 @@ hr {
   margin: 20px 0;
   border: 0;
   border-top: 1px solid $brand;
+}
+
+//Stick footer
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &.admin-bar {
+    @include bp(md) {
+      min-height: calc(100vh - 32px);
+    }
+
+    min-height:calc(100vh - 46px);
+  }
+
+  #main {
+    flex-grow: 1;
+  }
 }

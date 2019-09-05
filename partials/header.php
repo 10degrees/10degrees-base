@@ -1,28 +1,40 @@
-<header class="banner">
-    <div class="container banner__inner">
+<header class="header header__primary">
 
-        <div class="row banner__container">
-            <div class="col-sm banner__logo" itemscope itemtype="http://schema.org/Organization">
-                <a itemprop="url" href="<?php echo esc_url(home_url('/')); ?>">
-                    <?php td_get_svg('logo.svg'); ?>
-                    <span class="screen-reader-text"><?php echo get_bloginfo('name'); ?></span>
-                </a>
-            </div>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        
+        <a class="navbar-brand" itemprop="url" href="<?php echo esc_url(home_url('/')); ?>">
 
-            <div class="col-sm banner__nav">
-                <nav>
-                    <?php if (has_nav_menu('primary_navigation')) {
-                        wp_nav_menu(array('theme_location' => 'primary_navigation', 'depth' => 4));
-                    }; ?>
-                </nav>
-            </div>
+            <?php if (get_option('options_site_logo')) : ?>
 
-            <div class="col-sm banner__nav-control">
-                <button class="nav-control" type="button" role="button" aria-label="Toggle Navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+                <?php td_print_svg(wp_get_attachment_url(get_option('options_site_logo'))); ?>
+
+            <?php endif; ?>
+            
+            <span class="screen-reader-text"><?php echo get_bloginfo('name'); ?></span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar-content">
+
+            <?php
+            wp_nav_menu(array(
+                'theme_location' => 'primary_navigation',
+                'menu_id'        => 'primary_navigation',
+                'container'      => false,
+                'depth'          => 5,
+                'menu_class'     => 'navbar-nav ml-auto bootstrap-walker-nav-menu',
+                'walker'         => new App\Walkers\BootstrapWalker(),
+                'fallback_cb'    => 'App\Walkers\BootstrapWalker::fallback',
+            ));
+            ?>
+
         </div>
 
-    </div>
+    </nav>
+
 </header>
