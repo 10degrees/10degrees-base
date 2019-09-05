@@ -41,7 +41,7 @@ mix
     enabled: true,
     targets: false
   })
-  .copy("node_modules/font-awesome/fonts", "dist/fonts")
+  // .copy("node_modules/font-awesome/fonts", "dist/fonts")
   .copyWatched("src/fonts", "dist/fonts")
   .webpackConfig({
     watchOptions: {
