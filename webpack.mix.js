@@ -36,12 +36,10 @@ mix
   .imagemin("img/**.*", {
     context: "src"
   })
-  .copyWatched("src/fonts", "dist/fonts")
   .polyfill({
     enabled: true,
     targets: false
   })
-  // .copy("node_modules/font-awesome/fonts", "dist/fonts")
   .copyWatched("src/fonts", "dist/fonts")
   .webpackConfig({
     watchOptions: {
