@@ -47,14 +47,19 @@ class Enqueue
      */
     public function scripts()
     {
+        wp_register_script('manifest', get_template_directory_uri() . get_asset_path('/js/manifest.js'), '', '', true);
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', get_template_directory_uri() . get_asset_path('/js/vendor.js'), [], '', true);
+        wp_register_script('main', get_template_directory_uri() . get_asset_path('/js/main.js'), ['jquery'], '', true);
+
         if (!is_admin()) {
             // The following output in the footer, after jQuery
             if (is_single() && comments_open() && get_option('thread_comments')) {
                 wp_enqueue_script('comment-reply');
             }
-
-            wp_register_script('main-js', get_template_directory_uri() . get_asset_path('/js/main.js'), array('jquery'), '', true);
-            wp_enqueue_script('main-js');
+            wp_enqueue_script('manifest');
+            wp_enqueue_script('jquery');
+            wp_enqueue_script('main');
         }
     }
 

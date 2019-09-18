@@ -21,10 +21,8 @@ let wpPot = require("wp-pot");
 mix
   .sourceMaps(true, "source-map")
   .setPublicPath("dist")
-  .js(
-    ["src/js/src/main.js", "src/js/lib/all.js", "src/js/lib/bootstrap.min.js"],
-    "dist/js"
-  )
+  .extract()
+  .js(["src/js/src/main.js"], "dist/js")
   .sass("src/scss/main.scss", "dist/css")
   .sass("src/scss/wp-admin.scss", "dist/css")
   .sass("src/scss/wp-editor.scss", "dist/css")
@@ -41,9 +39,27 @@ mix
     targets: false
   })
   .copyWatched("src/fonts", "dist/fonts")
+  .copy("src/js/lib/google-map-init.js", "dist/js")
   .webpackConfig({
     watchOptions: {
       ignored: /node_modules/
+    },
+    module: {
+      rules: [
+        {
+          test: require.resolve("jquery"),
+          use: [
+            {
+              loader: "expose-loader",
+              options: "jQuery"
+            },
+            {
+              loader: "expose-loader",
+              options: "$"
+            }
+          ]
+        }
+      ]
     }
   });
 
