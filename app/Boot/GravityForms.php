@@ -6,7 +6,9 @@ class GravityForms
 {
 	public function __construct()
 	{
-		add_filter( 'gform_submit_button', [$this, 'convertGFormsSubmitToButton'], 10, 5 );
+		add_filter( 'gform_submit_button', [$this, 'convertGFormsToButton'], 10, 5 );
+        add_filter( 'gform_next_button', [$this, 'convertGFormsToButton'], 10, 5 );
+        add_filter( 'gform_previous_button', [$this, 'convertGFormsToButton'], 10, 5 );
 		add_filter( 'gform_address_types', [$this, 'ukAddressFormat'], 10, 2 );
 		// add_filter( 'gform_field_validation', [$this, 'ukCustomAddressValidation'], 10, 4 );
 		
@@ -14,30 +16,33 @@ class GravityForms
 		add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 	}
 	
-	/**
-	 * Change Gravity Forms submit input to a button element
-	 *
-	 * It's not perfect - it leaves some inapplicable attributes in the 
-	 * element but I can live with that to avoid a whole bunch more 
-	 * str_replace and it leaves the important onclick and tab 
-	 * index intact
-	 * 
-	 * @see https://gist.github.com/mannieschumpert/8334811 
-	 * 
-	 * @param  string $button
-	 * @param  array $form
-	 * @return string
-	 */
-	public function convertGFormsSubmitToButton( $button, $form ) 
-	{
-		$button = str_replace( 'input', 'button', $button );
 	
-		$button = str_replace( '/', '', $button );
-	
-		$button .= "{$form['button']['text']}</button>";
-	
-		return $button;
-	}
+    /**
+     * Change Gravity Forms form nav inputs to a button elements
+     *
+     * It's perfect
+     * 
+     * @param  string $button
+     * @param  array $form
+     * @return string
+     */
+    public function convertGFormsToButton( $button, $form ) 
+    {
+
+        preg_match("/value=['\"](.*?)['\"]/", $button, $matches);
+
+        if(isset($matches[1])) {
+
+            $button = str_replace( 'input', 'button', $button );
+        
+            $button = str_replace( '/', '', $button );
+        
+            $button .= "{$matches[1]}</button>";
+        
+            return $button;
+
+        }
+    }
 
 	/*
 	* Add UK address type
