@@ -11,7 +11,7 @@ function get_asset_path( $filename ) {
     // Cache the decoded manifest so that we only read it in once.
     static $manifest = null;
     if ( null === $manifest ) {
-        $manifest_path = get_stylesheet_directory() . '/dist/mix-manifest.json';
+        $manifest_path = get_stylesheet_directory() . '/dist/rev-manifest.json';
         $manifest = file_exists( $manifest_path )
             ? json_decode( file_get_contents( $manifest_path ), true )
             : [];

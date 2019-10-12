@@ -1,25 +1,25 @@
-<?php get_template_part( 'partials/page', 'header' ); ?>
+<?php
+/**
+ * Index template
+ *
+ * @package      10degrees-base
+ * @author       10 Degrees
+ * @since        2.0.0
+ * @license      GPL-2.0+
+**/
 
-<?php if ( ! have_posts() ) { ?>
-	<div class="alert">
-		<p><?php _e( 'Sorry, no results were found.', '@textdomain' ); ?></p>
-	</div>
-	<?php get_search_form();
-} ?>
+if (! have_posts()) : ?>
+    <div class="alert">
+        <p><?php _e('Sorry, no results were found.', '@textdomain'); ?></p>
+    </div>
+    <?php get_search_form();
+endif;
 
-<?php while ( have_posts() ) {
-	the_post(); ?>
-		
-	<article <?php post_class(); ?>>
-		<header>
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<?php get_template_part( 'partials/entry-meta' ); ?>
-		</header>
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
-		</div>
-	</article>
+while (have_posts()) :
+    the_post();
+    get_template_part('partials/content');
+endwhile;
 
-<?php } ?>
-
-<?php if ( $wp_query->max_num_pages > 1 ) { td_page_navi(); } ?>
+if ($wp_query->max_num_pages > 1) {
+    td_page_navi();
+}
