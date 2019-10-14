@@ -1,9 +1,23 @@
-:root {
-  --primary-color: pink;
-  --text-color: #000;
-  --accent-color: #cd2653;
-  --secondary-color: #6d6d6d;
-  --border-color: #dcd7ca;
-  --background-color: #f5efe0;
-  --header-footer-background-color: #fff;
+@import "common/_reset.scss";
+@import "common/_root.scss";
+@import "common/_type.scss";
+
+@import "mixins/_index.scss";
+
+article {
+  background: var(--primary-colour);
+}
+
+article > * {
+  @include container;
+  & + * {
+    margin-top: 1em;
+  }
+  &.wp-block-quote.is-style-large {
+    margin: 0;
+    padding: 0;
+    background: rebeccapurple;
+    max-width: 100%;
+    text-align: center;
+  }
 }

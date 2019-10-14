@@ -1,0 +1,24 @@
+//
+// Typography
+// --------------------------------------------------
+
+$sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$serif: Georgia, "Times New Roman", Times, serif;
+$monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$base-font: $sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.4;
+
+// Added to sort out ems breakpoints. See variables -> breakpoints for more
+html {
+  font-size: 100%;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+body,
+.editor-styles-wrapper {
+  font-family: $base-font;
+  font-size: $base-font-size;
+}

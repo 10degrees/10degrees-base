@@ -1,5 +1,5 @@
 // Initialize modules
-//https://coder-coder.com/gulp-4-walk-through/
+// https://coder-coder.com/gulp-4-walk-through/
 // Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
 const { src, dest, watch, series, parallel } = require("gulp");
 // Importing all the Gulp-related packages we want to use
@@ -12,6 +12,7 @@ const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 const rev = require("gulp-rev");
 const del = require("del");
+const rename = require("gulp-rename");
 var replace = require("gulp-replace");
 
 // File paths
@@ -26,10 +27,19 @@ function buildCSS() {
     .pipe(sourcemaps.init()) // initialize sourcemaps first
     .pipe(sass()) // compile SCSS to CSS
     .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
-    .pipe(sourcemaps.write("maps")) // write sourcemaps file in current directory
     .pipe(rev())
+    .pipe(sourcemaps.write("maps")) // write sourcemaps file in current directory
     .pipe(dest("dist/css")) // put final CSS in dist folder
-    .pipe(rev.manifest())
+    .pipe(
+      rename(function(path) {
+        path.dirname += "/css";
+      })
+    )
+    .pipe(
+      rev.manifest({
+        cwd: "./dist"
+      })
+    )
     .pipe(dest("dist"));
 }
 
@@ -49,7 +59,7 @@ function cleanCSS() {
 }
 
 // Watch task: watch SCSS and JS files for changes
-// If any change, run scss and js tasks simultaneously
+// If any change, run SCSS and JS tasks simultaneously
 function watchTask() {
   watch([srcFiles.scssPath], series(cleanCSS, buildCSS));
 }
@@ -57,5 +67,5 @@ function watchTask() {
 // Export the default Gulp task so it can be run
 // Runs the scss and js tasks simultaneously
 // then runs cacheBust, then watch task
-exports.default = series(cleanCSS, parallel(buildCSS), watchTask);
-exports.clean = series(cleanCSS);
+exports.default = series(cleanCSS, parallel(buildCSS));
+exports.watch = series(cleanCSS, parallel(buildCSS), watchTask);
