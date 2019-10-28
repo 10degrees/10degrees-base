@@ -1,22 +1,23 @@
-@import "./bootstrap";
+@import "common/_reset.scss";
+@import "common/_root.scss";
+@import "common/_type.scss";
 
-// Variables
-@import "variables/_variables";
+@import "mixins/_index.scss";
 
-// Vendor
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-// @import "~slick-carousel/slick/slick.scss";
+article {
+  background: var(--primary-colour);
+}
 
-// Mixins
-@import "mixins/_mixins";
-
-// Common
-@import "common/_global";
-
-// 10° components
-@import "components/_breadcrumbs";
-
-// Page components
-@import "components/_header";
-@import "components/_main";
-@import "components/_footer";
+article > * {
+  @include container;
+  & + * {
+    margin-top: 1em;
+  }
+  &.wp-block-quote.is-style-large {
+    margin: 0;
+    padding: 0;
+    background: rebeccapurple;
+    max-width: 100%;
+    text-align: center;
+  }
+}

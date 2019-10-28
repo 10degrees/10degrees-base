@@ -26,7 +26,7 @@ class Login
 	 */
 	public function login_css()
 	{
-	    echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . get_asset_path('/css/wp-login.css') . '" />';
+	    echo '<link rel="stylesheet" type="text/css" href="' . get_template_directory_uri() . td_asset_path('/css/wp-login.css') . '" />';
 	}
 
 	/**

@@ -12,101 +12,13 @@ $base-line-height: 1.4;
 
 // Added to sort out ems breakpoints. See variables -> breakpoints for more
 html {
-    font-size: 100%;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
+  font-size: 100%;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 }
 
-body {
-    font-family: $base-font;
-    font-size: $base-font-size;
-    color: $text-color;
-    background-color: $body-bg;
-}
-
-// Headings
-// -------------------------
-.editor-post-title__input,
-.wp-block-heading h2,
-.wp-block-heading h3,
-.wp-block-heading h4,
-.wp-block-heading h5,
-.wp-block-heading h6,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: $base-font;
-    margin-top: 0;
-    margin-bottom: #{$base-line-height}rem;
-}
-
-h1,
-.h1 {
-}
-
-h2,
-.h2 {
-}
-
-h3,
-.h3 {
-}
-
-h4,
-.h4 {
-}
-
-h5,
-.h5 {
-}
-
-h6,
-.h6 {
-}
-
-// Body text
-// -------------------------
-
-p {
-    margin: 0 0 #{$base-line-height}rem;
-}
-
-small,
-.small {
-    font-size: 90%;
-}
-
-// Unordered and Ordered lists
-ul,
-ol {
-    margin-top: 0;
-    margin-bottom: #{$base-line-height}rem;
-    ul,
-    ol {
-        margin-bottom: 0;
-    }
-}
-
-// Blockquotes
-blockquote {
-    margin: #{$base-line-height}rem 0px;
-    position: relative;
-    padding: 20px 3em;
-    border-left: 2px solid;
-    p,
-    ul,
-    ol {
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-}
-cite {
-    font-weight: normal;
-    display: block;
-    font-style: normal;
-    text-align: right;
+body,
+.editor-styles-wrapper {
+  font-family: $base-font;
+  font-size: $base-font-size;
 }

@@ -1,59 +1,38 @@
 {
-  "name": "tendegrees-base",
+  "name": "frontend-boilerplate",
   "version": "1.0.0",
-  "description": "10 Degrees base theme",
-  "repository": "https://github.com/10degrees/10degrees-base",
-  "main": "index.js",
-  "scripts": {
-    "dev": "npm run prewatch && npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run development -- --watch",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run prewatch && npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prewatch": "del-cli dist -f",
-    "runprod": "npm run prod  && exit 0"
+  "description": "Simple front-end boilerplate using Gulp 4",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecodercoder/frontend-boilerplate.git"
   },
   "keywords": [
-    "wordpress",
-    "wordpress-theme"
+    "gulp",
+    "boilerplate",
+    "html",
+    "css",
+    "javascript"
   ],
-  "pre-push": [
-    "runprod"
-  ],
-  "author": "10 Degrees",
+  "author": "@thecodercoder",
   "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "cross-env": "^5.2.0",
-    "del-cli": "^2.0.0",
-    "expose-loader": "^0.7.5",
-    "jquery": "^3.4.1",
-    "laravel-mix": "^4.0.16",
-    "laravel-mix-polyfill": "^1.1.0",
-    "laravel-mix-versionhash": "^1.0.7",
-    "magnific-popup": "^1.1.0",
-    "modernizr": "^3.7.1",
-    "popper.js": "^1.15.0",
-    "postcss-css-variables": "^0.12.0",
-    "postcss-reporter": "^6.0.1",
-    "resolve-url-loader": "2.3.1",
-    "sass": "^1.21.0",
-    "sass-loader": "7.*",
-    "slick-carousel": "^1.8.1"
+  "bugs": {
+    "url": "https://github.com/thecodercoder/frontend-boilerplate/issues"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
+  "homepage": "https://github.com/thecodercoder/frontend-boilerplate#readme",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.10.2",
-    "copy-webpack-plugin": "^5.0.4",
-    "imagemin-webpack-plugin": "^2.4.2",
-    "laravel-mix-copy-watched": "^2.1.4",
-    "laravel-mix-imagemin": "^1.0.3",
-    "pre-push": "^0.1.1",
-    "vue-template-compiler": "^2.6.10",
-    "wp-pot": "^1.7.2"
-  }
+    "autoprefixer": "^9.6.0",
+    "cssnano": "^4.1.10",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  },
+  "dependencies": {}
 }

@@ -1,0 +1,7 @@
+@mixin container {
+  margin: 0 15px;
+  @media only screen and (min-width: 1160px) {
+    margin: 0 auto;
+    max-width: var(--max-content-width);
+  }
+}
