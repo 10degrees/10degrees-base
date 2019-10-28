@@ -1,9 +1,14 @@
 <?php
+/**
+ * Page template
+ *
+ * @package      10degrees-base
+ * @author       10 Degrees
+ * @since        2.0.0
+ * @license      GPL-2.0+
+**/
 
-while ( have_posts() ) {
-
-	the_post();
-	
-	get_template_part( 'partials/content', 'page' );
-
-}
+while (have_posts()) :
+    the_post();
+    get_template_part('partials/content', 'page');
+endwhile;
