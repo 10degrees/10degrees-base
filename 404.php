@@ -1,14 +1,19 @@
-<?php get_template_part( 'partials/page', 'header' ); ?>
-
 <?php
-if ( get_option( 'options_404_error_page_text' ) ) {
+/**
+ * 404 template
+ *
+ * @package      10degrees-base
+ * @author       10 Degrees
+ * @since        2.0.0
+ * @license      GPL-2.0+
+**/
 
-	echo get_option( 'options_404_error_page_text' );
+get_template_part('partials/page', 'header');
 
-} else {
-
-	_e( 'Sorry, but the page you were trying to view does not exist.', '@textdomain' );
-
-}
+if ($option_text = get_option('options_404_error_page_text')) :
+    esc_html_e($option_text);
+else :
+    esc_html_e('Sorry, that page does not exist.', '@textdomain');
+endif;
 
 get_search_form();
