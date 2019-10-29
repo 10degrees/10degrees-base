@@ -1,8 +1,8 @@
-@import "common/_reset.scss";
-@import "common/_root.scss";
-@import "common/_type.scss";
+@import "../common/_reset.scss";
+@import "../common/_root.scss";
+@import "../common/_type.scss";
 
-@import "mixins/_index.scss";
+@import "../mixins/_index.scss";
 
 article {
   background: var(--primary-colour);

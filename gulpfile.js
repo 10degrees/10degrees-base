@@ -32,7 +32,7 @@ function buildCSS() {
     .pipe(dest("dist/css")) // put final CSS in dist folder
     .pipe(
       rename(function(path) {
-        path.dirname += "/css";
+        path.dirname = "/css/" + path.dirname;
       })
     )
     .pipe(

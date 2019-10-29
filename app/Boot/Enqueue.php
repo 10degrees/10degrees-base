@@ -12,7 +12,7 @@ class Enqueue
         add_action('wp_enqueue_scripts', [$this, 'styles'], 100);
         add_action('wp_enqueue_scripts', [$this, 'scripts'], 100);
         // add_action('admin_init', [$this, 'classicEditorStyle'], 100);
-        // add_action('admin_init', [$this, 'adminStyle'], 100);
+        add_action('admin_init', [$this, 'adminStyle'], 100);
         add_action('enqueue_block_editor_assets', [$this, 'blockEditorStyle'], 1, 1);
         add_action('enqueue_block_editor_assets', [$this, 'blockEditorScript'], 1, 1);
         // add_action('wp_enqueue_scripts', [$this, 'googleFont'], 99);
@@ -28,7 +28,7 @@ class Enqueue
     {
         wp_enqueue_style(
             'main',
-            get_template_directory_uri() . td_asset_path('css/main.css')
+            get_template_directory_uri() . td_asset_path('css/theme/main.css')
         );
     }
 
@@ -74,7 +74,7 @@ class Enqueue
      */
     public function adminStyle()
     {
-        add_editor_style(td_asset_path('/css/wp-admin.css'));
+        wp_enqueue_style('td-admin-main', get_stylesheet_directory_uri() . td_asset_path('css/admin/admin-main.css'), '', '', true);
     }
 
     /**

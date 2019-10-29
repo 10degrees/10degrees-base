@@ -1,6 +1,8 @@
 {
+  "css/admin/admin-main.css": "css/admin/admin-main-bdd0c2ee05.css",
   "css/editor-style-block.css": "css/editor-style-block-e41cd0fc0e.css",
-  "css/main.css": "css/main-6e33ea2069.css",
-  "maps/css/editor-style-block.css": "maps/css/editor-style-block-e41cd0fc0e.css.map",
-  "maps/css/main.css": "maps/css/main-6e33ea2069.css.map"
+  "css/maps/admin/admin-main.css": "css/maps/admin/admin-main-bdd0c2ee05.css.map",
+  "css/maps/editor-style-block.css": "css/maps/editor-style-block-e41cd0fc0e.css.map",
+  "css/maps/theme/main.css": "css/maps/theme/main-793b1755d0.css.map",
+  "css/theme/main.css": "css/theme/main-793b1755d0.css"
 }
