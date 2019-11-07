@@ -7,9 +7,6 @@
  *
  */
 
-// Require the classes
-window.$ = window.jQuery = require("jquery");
-
 //Vendor
 import Magnific from "./_magnific";
 import Slider from "./_slider";
