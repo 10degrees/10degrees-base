@@ -1,0 +1,44 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active
+
+@mixin button-variant($color, $background, $border) { 
+    
+    color: $color;
+    background-color: $background;
+    border-color: $border;
+    padding: 5px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    -webkit-appearance: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    white-space: nowrap;
+
+    &:hover, &:focus, &:active, &.active {
+
+        color: $color;
+        background-color: darken($background, 10%);
+        border-color: darken($border, 12%);
+        text-decoration: none;
+
+    }
+
+}
+
+// Use this to create new button styles, e.g.
+//.button--green {
+//    
+//    @include button-variant(white, green, darkgreen);
+//
+//} 
+
+// Standard button
+@mixin button() {
+    @include button-variant(white, $brand, green);
+}

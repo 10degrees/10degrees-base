@@ -1,15 +1,15 @@
 {
   "css/admin.css": "css/admin-bdd0c2ee05.css",
-  "css/editor-block.css": "css/editor-block-e41cd0fc0e.css",
+  "css/editor-block.css": "css/editor-block-d41d8cd98f.css",
   "css/editor-classic.css": "css/editor-classic-d41d8cd98f.css",
   "css/login.css": "css/login-974071dec6.css",
-  "css/main.css": "css/main-e693048e2a.css",
+  "css/main.css": "css/main-0c299b9bc6.css",
   "css/maps/admin.css": "css/maps/admin-bdd0c2ee05.css.map",
-  "css/maps/editor-block.css": "css/maps/editor-block-e41cd0fc0e.css.map",
+  "css/maps/editor-block.css": "css/maps/editor-block-d41d8cd98f.css.map",
   "css/maps/editor-classic.css": "css/maps/editor-classic-d41d8cd98f.css.map",
   "css/maps/login.css": "css/maps/login-974071dec6.css.map",
-  "css/maps/main.css": "css/maps/main-e693048e2a.css.map",
+  "css/maps/main.css": "css/maps/main-0c299b9bc6.css.map",
   "js/admin.js": "js/admin-05eabc5d55.js",
-  "js/editor-block.js": "js/editor-block-bad10d6e6a.js",
+  "js/editor-block.js": "js/editor-block-b7838b3ba8.js",
   "js/main.js": "js/main-ed95e2541f.js"
 }

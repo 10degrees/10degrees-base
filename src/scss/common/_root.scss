@@ -1,11 +1,13 @@
-:root {
-  --max-content-width: 1140px;
-  --primary-colour: pink;
-  --text-colour: #000;
-  --accent-colour: #cd2653;
-  --secondary-colour: #6d6d6d;
-  --border-colour: #dcd7ca;
-  --background-colour: #f5efe0;
-  --header-footer-background-colour: red;
-  --font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+/*
+ * CSS custom properties
+ * We can finally spell "colour" correctly 👍
+ */
+html {
+  --primary-colour: #{$primary-colour};
+  --secondary-colour: #{$secondary-colour};
+  --tertiary-colour: #{$tertiary-colour};
+  --link-colour: #{$link-colour};
+  --link-hover-colour: #{$link-hover-colour};
+  --max-content-width: #{$max-content-width};
+  --max-container-width: #{$max-container-width};
 }
