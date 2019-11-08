@@ -8,14 +8,14 @@
  */
 
 //Utilities
-import AjaxForm from "../common/_ajaxForm";
-import ScrollToId from "../common/_scrollToId";
-import ScrollToError from "../common/_scrollToError";
-import MobileNav from "../common/_mobile-nav";
+import AjaxForm from "./common/_ajaxForm";
+import ScrollToId from "./common/_scrollToId";
+import ScrollToError from "./common/_scrollToError";
+import MobileNav from "./common/_mobile-nav";
 
 //Vendor
-import Magnific from "../common/_magnific";
-import Slider from "../common/_slider";
+import Magnific from "./common/_magnific";
+import Slider from "./common/_slider";
 
 (function($) {
   var App = {

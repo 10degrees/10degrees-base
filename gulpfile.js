@@ -24,7 +24,7 @@ const babel = require("rollup-plugin-babel");
 // File paths
 const srcFiles = {
   scssPath: "src/scss/**/*.scss",
-  jsPath: ["src/js/theme/main.js", "src/js/admin/admin-main.js"],
+  jsPath: ["src/js/main.js", "src/js/admin.js", "src/js/editor-block.js"],
   imgPath: "src/img/**/*",
   fontPath: "src/fonts/**/*",
   phpPath: "**/*.php"
@@ -150,6 +150,11 @@ function cleanDistCssJs() {
   ]);
 }
 
+// Delete dist/maps/admin and dist/maps/theme
+function cleanDistMapsDirs() {
+  return del(["dist/css/maps/admin", "dist/css/maps/theme"]);
+}
+
 // Delete images in /dist
 function cleanDistImages() {
   return del(["dist/img/*"]);
@@ -166,8 +171,19 @@ function cleanLang() {
 // Watch files for changes
 async function watchTask() {
   watch(
-    [srcFiles.scssPath, "src/js/theme/main.js", "src/js/admin/admin-main.js"],
-    series([cleanDistCssJs, buildCSS, buildJS, notifyWatchTask])
+    [
+      srcFiles.scssPath,
+      "src/js/main.js",
+      "src/js/admin.js",
+      "src/js/editor-block.js"
+    ],
+    series([
+      cleanDistCssJs,
+      buildCSS,
+      buildJS,
+      cleanDistMapsDirs,
+      notifyWatchTask
+    ])
   );
 }
 
@@ -200,6 +216,7 @@ exports.default = series(
   compressImages,
   copyFonts,
   buildPot,
+  cleanDistMapsDirs,
   notifyDefaultTask
 );
 /*

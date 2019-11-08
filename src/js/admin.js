@@ -1,5 +1,5 @@
 //Utilities
-import AjaxForm from "../common/_ajaxForm";
+import AjaxForm from "./common/_ajaxForm";
 
 new AjaxForm().init();
 
