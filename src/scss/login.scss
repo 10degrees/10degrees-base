@@ -1,7 +1,7 @@
 /*
  * Styles for /wp-login.php
  */
-@import "../common/_variables";
+@import "common/_variables";
 
 $brand: blue;
 $login-color: $brand;
@@ -9,7 +9,7 @@ $login-color: $brand;
   background: white;
   /* Set the size of the login logo */
   h1 a {
-    background-image: url("../../img/logo-login.svg");
+    background-image: url("../img/logo-login.svg");
     background-size: 250px;
     width: 320px;
     height: 150px;

@@ -28,6 +28,7 @@
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
+    "gulp-better-rollup": "^4.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^6.1.1",
     "gulp-notify": "^3.2.0",
@@ -38,7 +39,11 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
-    "gulp-wp-pot": "^2.3.5"
+    "gulp-wp-pot": "^2.3.5",
+    "rollup": "^1.26.3",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-uglify": "^6.0.3",
+    "slick-carousel": "^1.8.1"
   },
   "dependencies": {}
 }

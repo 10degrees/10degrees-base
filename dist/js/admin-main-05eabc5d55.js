@@ -1,3 +1,5 @@
+'use strict';
+
 class AjaxForm {
   constructor() {
     this.formClass = '.js-ajax-form';
@@ -60,5 +62,6 @@ class AjaxForm {
 
 }
 
-;
-export default AjaxForm;
+//Utilities
+new AjaxForm().init();
+console.log("admin-main");

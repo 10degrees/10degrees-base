@@ -26,7 +26,7 @@ class Login
      */
     public function loginCss()
     {
-        echo '<link rel="stylesheet" sheeit type="text/css" href="' . get_stylesheet_directory_uri() . td_asset_path('css/admin/login.css') . '" />';
+        echo '<link rel="stylesheet" sheeit type="text/css" href="' . get_stylesheet_directory_uri() . td_asset_path('css/login.css') . '" />';
     }
 
     /**

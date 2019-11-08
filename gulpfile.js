@@ -7,7 +7,6 @@ const sourcemaps = require("gulp-sourcemaps");
 const sass = require("gulp-sass");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
-const babel = require("gulp-babel");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
@@ -18,11 +17,14 @@ const del = require("del");
 const rename = require("gulp-rename");
 const notify = require("gulp-notify");
 const replace = require("gulp-replace");
+const rollup = require("gulp-better-rollup");
+const babel = require("rollup-plugin-babel");
+// const uglify = require("rollup-plugin-uglify");
 
 // File paths
 const srcFiles = {
   scssPath: "src/scss/**/*.scss",
-  jsPath: "src/js/theme/*.js",
+  jsPath: ["src/js/theme/main.js", "src/js/admin/admin-main.js"],
   imgPath: "src/img/**/*",
   fontPath: "src/fonts/**/*",
   phpPath: "**/*.php"
@@ -55,7 +57,7 @@ async function buildCSS() {
 }
 
 // Build browser-compatible JS from source JS
-async function buildJS() {
+async function oldBuildJS() {
   return (
     src([srcFiles.jsPath])
       // .pipe(concat())
@@ -74,6 +76,42 @@ async function buildJS() {
           merge: true
         })
       )
+      .pipe(dest("dist"))
+  );
+}
+
+// Build browser-compatible JS from source JS
+async function buildJS() {
+  return (
+    src(srcFiles.jsPath)
+      .pipe(sourcemaps.init())
+      .pipe(
+        rollup(
+          {
+            // There is no `input` option as rollup integrates into the gulp pipeline
+            plugins: [babel()]
+          },
+          {
+            // Rollups `sourcemap` option is unsupported. Use `gulp-sourcemaps` plugin instead
+            format: "cjs"
+          }
+        )
+      )
+      // inlining the sourcemap into the exported .js file
+      .pipe(rev())
+      .pipe(dest("dist/js"))
+      .pipe(
+        rename(function(path) {
+          path.dirname = "/js/" + path.dirname;
+        })
+      )
+      .pipe(
+        rev.manifest(manifestDest, {
+          base: "dist",
+          merge: true
+        })
+      )
+      .pipe(sourcemaps.write())
       .pipe(dest("dist"))
   );
 }
@@ -128,8 +166,8 @@ function cleanLang() {
 // Watch files for changes
 async function watchTask() {
   watch(
-    [srcFiles.scssPath, srcFiles.jsPath],
-    series([cleanDistCssJs, notifyWatchTask])
+    [srcFiles.scssPath, "src/js/theme/main.js", "src/js/admin/admin-main.js"],
+    series([cleanDistCssJs, buildCSS, buildJS, notifyWatchTask])
   );
 }
 
@@ -177,3 +215,5 @@ exports.watch = series(
   watchTask,
   notifyWatchTask
 );
+
+// exports.rollup = series(rollupJS);
