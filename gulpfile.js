@@ -91,7 +91,17 @@ async function buildJS() {
         rollup(
           {
             // There is no `input` option as rollup integrates into the gulp pipeline
-            plugins: [babel()] 
+            plugins: [
+              babel({
+                presets: [[
+                  "@babel/preset-env",
+                  {
+                    "targets": "> 0.25%, not dead"
+                  }
+                ]]
+              }),
+              terser()
+            ] 
           },
           {
             // Rollups `sourcemap` option is unsupported. Use `gulp-sourcemaps` plugin instead
