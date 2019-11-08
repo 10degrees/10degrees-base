@@ -19,7 +19,9 @@ const notify = require("gulp-notify");
 const replace = require("gulp-replace");
 const rollup = require("gulp-better-rollup");
 const babel = require("rollup-plugin-babel");
-// const uglify = require("rollup-plugin-uglify");
+//const uglify = require("rollup-plugin-uglify");
+
+const {terser} = require("rollup-plugin-terser");
 
 // File paths
 const srcFiles = {
@@ -89,7 +91,7 @@ async function buildJS() {
         rollup(
           {
             // There is no `input` option as rollup integrates into the gulp pipeline
-            plugins: [babel()]
+            plugins: [babel()] 
           },
           {
             // Rollups `sourcemap` option is unsupported. Use `gulp-sourcemaps` plugin instead
