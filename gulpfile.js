@@ -1,4 +1,4 @@
-// Forked from https://coder-coder.com/gulp-4-walk-through/
+// Developed from https://coder-coder.com/gulp-4-walk-through/
 
 // Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
 const { src, dest, watch, series, parallel } = require("gulp");
@@ -17,7 +17,7 @@ const rev = require("gulp-rev");
 const del = require("del");
 const rename = require("gulp-rename");
 const notify = require("gulp-notify");
-var replace = require("gulp-replace");
+const replace = require("gulp-replace");
 
 // File paths
 const srcFiles = {
@@ -28,10 +28,13 @@ const srcFiles = {
   phpPath: "**/*.php"
 };
 
+// rev-manifest.json destination path
+const manifestDest = "dist/rev-manifest.json";
+
 // Build CSS from SCSS
 async function buildCSS() {
   return src(srcFiles.scssPath)
-    .pipe(sourcemaps.init()) // initialize sourcemaps first
+    .pipe(sourcemaps.init()) // initialize sourcemaps
     .pipe(sass()) // compile SCSS to CSS
     .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
     .pipe(rev())
@@ -43,7 +46,7 @@ async function buildCSS() {
       })
     )
     .pipe(
-      rev.manifest("dist/rev-manifest.json", {
+      rev.manifest(manifestDest, {
         base: "dist",
         merge: true
       })
@@ -66,7 +69,7 @@ async function buildJS() {
         })
       )
       .pipe(
-        rev.manifest("dist/rev-manifest.json", {
+        rev.manifest(manifestDest, {
           base: "dist",
           merge: true
         })
@@ -87,7 +90,7 @@ async function copyFonts() {
   return src([srcFiles.fontPath]).pipe(dest("./dist/fonts"));
 }
 
-// Build .pot
+// Build .pot for string translation
 async function buildPot() {
   return src([srcFiles.phpPath])
     .pipe(
@@ -99,33 +102,78 @@ async function buildPot() {
     .pipe(dest("lang/@textdomain.pot"));
 }
 
-// Delete compiled files in /dist
-function cleanDist() {
+// Delete compiled CSS, JS and source maps in /dist
+function cleanDistCssJs() {
   return del([
     "dist/css/**/*.css",
     "dist/css/**/*.map",
     "dist/js/**/*.js",
-    "dist/js/**/*.map",
-    "dist/img/*",
-    "dist/fonts/*"
+    "dist/js/**/*.map"
   ]);
 }
 
-// Watch task: watch files for changes
-function watchTask() {
-  watch([srcFiles.scssPath], series([cleanDist]));
+// Delete images in /dist
+function cleanDistImages() {
+  return del(["dist/img/*"]);
+}
+// Delete fonts in /dist
+function cleanDistFonts() {
+  return del(["dist/fonts/*"]);
+}
+// Delete .pot in /lang
+function cleanLang() {
+  return del(["lang/*"]);
 }
 
-function notifyTask() {
+// Watch files for changes
+async function watchTask() {
+  watch(
+    [srcFiles.scssPath, srcFiles.jsPath],
+    series([cleanDistCssJs, notifyWatchTask])
+  );
+}
+
+// Notify - Default
+async function notifyDefaultTask() {
   notify({
-    title: "My notification",
-    message: "Hello, there!"
-  });
+    title: "Gulp task complete",
+    message: "Compiled CSS and JS, and rebuilt assets 💥"
+  }).write("");
 }
 
-// Export default Gulp task
-// Run with "gulp"
-exports.default = series([cleanDist, buildJS, buildCSS]);
-// Export watch Gulp task
-// Run with "gulp watch"
-exports.watch = series(cleanDist, parallel([buildCSS]), watchTask);
+// Notify - Watch
+async function notifyWatchTask() {
+  notify({
+    title: "Gulp watch task complete",
+    message: "Compiled CSS and JS 😎"
+  }).write("");
+}
+
+/*
+Export default Gulp task
+Usage: "gulp"
+This task does everything to build production-ready assets.
+To add images, fonts or to build the .pot, you need to run this task.
+*/
+exports.default = series(
+  parallel(cleanDistCssJs, cleanDistImages, cleanDistFonts, cleanLang),
+  buildJS,
+  buildCSS,
+  compressImages,
+  copyFonts,
+  buildPot,
+  notifyDefaultTask
+);
+/*
+Export watch Gulp task
+Usage: "gulp watch"
+This task only builds compiled CSS and JS
+watchTask() runs the actual watch function
+*/
+exports.watch = series(
+  cleanDistCssJs,
+  buildCSS,
+  buildJS,
+  watchTask,
+  notifyWatchTask
+);
