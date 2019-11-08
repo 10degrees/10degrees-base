@@ -3,13 +3,13 @@
 namespace App\Boot;
 
 /**
- * Enqueue scripts, styles and fonts here.
+ * Enqueue scripts, styles and fonts.
  */
 class Enqueue
 {
     public function __construct()
     {
-        add_action('wp_enqueue_scripts', [$this, 'styles'], 100);
+        add_action('wp_enqueue_scripts', [$this, 'style'], 100);
         add_action('wp_enqueue_scripts', [$this, 'scripts'], 100);
         add_action('admin_init', [$this, 'adminStyle'], 100);
         add_action('admin_init', [$this, 'adminScript'], 100);
@@ -25,7 +25,7 @@ class Enqueue
     /**
      * CSS for front end
      */
-    public function styles()
+    public function style()
     {
         wp_enqueue_style(
             'main',
