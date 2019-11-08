@@ -11,11 +11,11 @@ class Enqueue
     {
         add_action('wp_enqueue_scripts', [$this, 'styles'], 100);
         add_action('wp_enqueue_scripts', [$this, 'scripts'], 100);
-        // add_action('admin_init', [$this, 'classicEditorStyle'], 100);
         add_action('admin_init', [$this, 'adminStyle'], 100);
         add_action('admin_init', [$this, 'adminScript'], 100);
         add_action('enqueue_block_editor_assets', [$this, 'blockEditorStyle'], 1, 1);
         add_action('enqueue_block_editor_assets', [$this, 'blockEditorScript'], 1, 1);
+        // add_action('admin_init', [$this, 'classicEditorStyle'], 100);
         // add_action('wp_enqueue_scripts', [$this, 'googleFont'], 99);
         // add_action('wp_enqueue_scripts', [$this, 'typekitFont'], 100);
         add_filter('style_loader_src', [$this, 'removeWpVersion'], 9999);
@@ -46,17 +46,9 @@ class Enqueue
     }
 
     /**
-     * JavaScript for admin
-     */
-    public function adminScript()
-    {
-        wp_enqueue_script('td-admin-script', get_stylesheet_directory_uri() . td_asset_path('js/admin-main.js'), '', '', true);
-    }
-
-    /**
      * CSS for Block Editor
      */
-    public function adminblockEditorStyle()
+    public function blockEditorStyle()
     {
         wp_enqueue_style('td-block-editor-style', get_stylesheet_directory_uri() . td_asset_path('css/editor-style-block.css'), '', '', 'all');
     }
@@ -77,13 +69,20 @@ class Enqueue
         add_editor_style(get_stylesheet_directory_uri() . td_asset_path('/css/editor-style-classic.css'));
     }
 
-
     /**
      * CSS for wp-admin
      */
     public function adminStyle()
     {
         wp_enqueue_style('td-admin-main', get_stylesheet_directory_uri() . td_asset_path('css/admin-main.css'), '', '', true);
+    }
+
+    /**
+     * JavaScript for wp-admin
+     */
+    public function adminScript()
+    {
+        wp_enqueue_script('td-admin-script', get_stylesheet_directory_uri() . td_asset_path('js/admin-main.js'), '', '', true);
     }
 
     /**
