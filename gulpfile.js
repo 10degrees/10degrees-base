@@ -76,7 +76,7 @@ async function buildJS() {
                 presets: [[
                   "@babel/preset-env",
                   {
-                    "targets": "> 0.25%, not dead"
+                    "targets": "> 1%, last 2 versions"
                   }
                 ]]
               }),
