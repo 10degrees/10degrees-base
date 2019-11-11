@@ -59,30 +59,7 @@ async function buildCSS() {
 }
 
 // Build browser-compatible JS from source JS
-async function oldBuildJS() {
-  return (
-    src([srcFiles.jsPath])
-      // .pipe(concat())
-      .pipe(babel())
-      // .pipe(uglify())
-      .pipe(rev())
-      .pipe(dest("dist/js"))
-      .pipe(
-        rename(function(path) {
-          path.dirname = "/js/" + path.dirname;
-        })
-      )
-      .pipe(
-        rev.manifest(manifestDest, {
-          base: "dist",
-          merge: true
-        })
-      )
-      .pipe(dest("dist"))
-  );
-}
-
-// Build browser-compatible JS from source JS
+// Rollup is a lightweight module bundler
 async function buildJS() {
   return (
     src(srcFiles.jsPath)

@@ -40,7 +40,7 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
+  background-color: white;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -61,7 +61,7 @@ img {
 }
 
 /* Natural flow and rhythm in articles by default
- * This is opinionated and intended to make working with component-based system easier
+ * This is opinionated and intended to make working with component-based systems easier
  * If you don't know about the lobotomised owl, search that term for the ALA article
  * @link https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/
  */

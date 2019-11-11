@@ -1,7 +1,7 @@
 'use strict';
 
 wp.domReady(() => {
-  wp.blocks.unregisterBlockStyle("core/button", "default");
+  //   wp.blocks.unregisterBlockStyle("core/button", "default");
   wp.blocks.unregisterBlockStyle("core/button", "outline");
   wp.blocks.unregisterBlockStyle("core/button", "squared");
   wp.blocks.unregisterBlockStyle("core/separator", "default");
@@ -26,10 +26,6 @@ wp.domReady(() => {
   wp.blocks.registerBlockStyle("core/heading", {
     name: "underline",
     label: "Underline"
-  });
-  wp.blocks.registerBlockStyle("core/heading", {
-    name: "fancy",
-    label: "Fancy"
   });
   wp.blocks.registerBlockStyle("core/separator", {
     name: "line",

@@ -1,0 +1,25 @@
+// Only display content to screen readers
+//
+// See: http://a11yproject.com/posts/how-to-hide-content/
+// Updated: https://core.trac.wordpress.org/ticket/40970
+@mixin sr-only {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+// WP Core convention
+@mixin screen-reader-text {
+    @include sr-only();
+}
+
+.screen-reader-text {
+    @include screen-reader-text();
+}

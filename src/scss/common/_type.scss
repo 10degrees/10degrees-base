@@ -1,24 +1,120 @@
-//
-// Typography
-// --------------------------------------------------
+/*
+ * Base typography
+ */
 
-$sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$serif: Georgia, "Times New Roman", Times, serif;
-$monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
-
-$base-font: $sans-serif;
-$base-font-size: 16px;
-$base-line-height: 1.4;
-
-// Added to sort out ems breakpoints. See variables -> breakpoints for more
 html {
   font-size: 100%;
   font-size: $base-font-size;
   line-height: $base-line-height;
 }
 
-body,
-.editor-styles-wrapper {
+body {
   font-family: $base-font;
   font-size: $base-font-size;
+  color: $text-colour;
+  background-color: $base-background-colour;
+  font-weight: $base-font-weight;
+}
+
+// Headings
+.editor-post-title__input,
+.wp-block-heading h2,
+.wp-block-heading h3,
+.wp-block-heading h4,
+.wp-block-heading h5,
+.wp-block-heading h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $base-font;
+  margin-top: 0;
+  margin-bottom: #{$base-line-height}rem;
+}
+
+// Heading-specific sizes
+// Use heading classes to change visual display while retaining semantic hierarchy
+h1,
+.h1 {
+}
+
+h2,
+.h2 {
+}
+
+h3,
+.h3 {
+}
+
+h4,
+.h4 {
+}
+
+h5,
+.h5 {
+}
+
+h6,
+.h6 {
+}
+
+// Paragraphs
+p {
+  margin: 0 0 #{$base-line-height}rem;
+}
+
+// Small
+small,
+.small {
+  font-size: 90%;
+}
+
+// Unordered and Ordered lists
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: #{$base-line-height}rem;
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+// Links
+a {
+  color: $link-colour;
+  @supports (--prop: 0) {
+    color: var(--link-colour);
+  }
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-colour;
+    @supports (--prop: 0) {
+      color: var(--link-hover-colour);
+    }
+    text-decoration: underline;
+  }
+}
+
+// Blockquotes and citations
+blockquote {
+  margin: #{$base-line-height}rem 0px;
+  position: relative;
+  padding: 20px 3em;
+  border-left: 2px solid;
+  p,
+  ul,
+  ol {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+cite {
+  display: block;
+  font-style: normal;
 }
