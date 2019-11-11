@@ -1,1 +1,1 @@
-{"version":3,"sources":["admin.scss"],"names":[],"mappings":"AAGA,sBACE,6BAAgC","file":"../admin-bdd0c2ee05.css","sourcesContent":["/*\n * Styles for /wp-admin\n */\nbody.wp-admin #wpwrap {\n  font-family: Georgia !important ;\n}\n"]}
+{"version":3,"sources":["admin.scss"],"names":[],"mappings":"AAGA,sBACE,6BAAgC","file":"../admin-bdd0c2ee05.css","sourcesContent":["/*\r\n * Styles for /wp-admin\r\n */\r\nbody.wp-admin #wpwrap {\r\n  font-family: Georgia !important ;\r\n}\r\n"]}
