@@ -19,7 +19,8 @@ const notify = require("gulp-notify");
 const replace = require("gulp-replace");
 const rollup = require("gulp-better-rollup");
 const babel = require("rollup-plugin-babel");
-
+const nodeResolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
 const {terser} = require("rollup-plugin-terser");
 
 // File paths
@@ -90,7 +91,10 @@ async function buildJS() {
         rollup(
           {
             // There is no `input` option as rollup integrates into the gulp pipeline
+            external: ['jquery'],
             plugins: [
+              nodeResolve(),
+              commonjs(),
               babel({
                 presets: [[
                   "@babel/preset-env",
@@ -100,11 +104,14 @@ async function buildJS() {
                 ]]
               }),
               terser()
-            ] 
+            ]
           },
           {
             // Rollups `sourcemap` option is unsupported. Use `gulp-sourcemaps` plugin instead
-            format: "cjs"
+            format: "iife",
+            globals: {
+              'jquery': 'jQuery'
+            }
           }
         )
       )

@@ -40,9 +40,12 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "gulp-wp-pot": "^2.3.5",
+    "magnific-popup": "^1.1.0",
     "rollup": "^1.26.3",
     "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^5.1.2",
     "slick-carousel": "^1.8.1"
   },
