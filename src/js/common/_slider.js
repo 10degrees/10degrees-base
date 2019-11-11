@@ -1,4 +1,4 @@
-require('slick-carousel');
+import 'slick-carousel';
 class Slider {
 
 	init() {

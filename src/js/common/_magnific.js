@@ -1,4 +1,4 @@
-require('magnific-popup');
+import 'magnific-popup';
 
 class Magnific {
 
