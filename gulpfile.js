@@ -19,7 +19,6 @@ const notify = require("gulp-notify");
 const replace = require("gulp-replace");
 const rollup = require("gulp-better-rollup");
 const babel = require("rollup-plugin-babel");
-//const uglify = require("rollup-plugin-uglify");
 
 const {terser} = require("rollup-plugin-terser");
 
