@@ -20,7 +20,6 @@ const replace = require("gulp-replace");
 const rollup = require("gulp-better-rollup");
 const babel = require("rollup-plugin-babel");
 const nodeResolve = require('rollup-plugin-node-resolve');
-const commonjs = require('rollup-plugin-commonjs');
 const {terser} = require("rollup-plugin-terser");
 
 // File paths
@@ -71,7 +70,6 @@ async function buildJS() {
             external: ['jquery'],
             plugins: [
               nodeResolve(),
-              commonjs(),
               babel({
                 presets: [[
                   "@babel/preset-env",
