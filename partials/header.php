@@ -8,7 +8,7 @@
                 if ($logo = get_field('site_logo', 'option')) :
                     echo wp_get_attachment_image($logo['id']);
                 else :
-                    esc_html_e('Add a logo in Settings', '@textdomain');
+                    esc_html_e('Add a logo in Site Settings', '@textdomain');
                 endif;
                 ?>
                 <span class="screen-reader-text"><?php echo get_bloginfo('name'); ?></span>
