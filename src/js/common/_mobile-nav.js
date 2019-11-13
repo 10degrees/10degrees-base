@@ -14,14 +14,13 @@ class MobileNav {
 	}
 
 	addDropdownToggle(){
-		$('.menu-item.dropdown').click(function(e) {
+		$('.menu-item.dropdown > .nav-link').click(function(e) {
 			e.preventDefault();
 
-			$(this).find('> .dropdown-menu').toggleClass('-open');
+			$(this).parent().find('> .dropdown-menu').toggleClass('-open');
 
-			let link = $(this).find('> .nav-link');
-			let newExpandedAttr = link.attr('aria-expanded') == 'true' ? 'false' : 'true';
-			link.attr('aria-expanded', newExpandedAttr);
+			let newExpandedAttr = $(this).attr('aria-expanded') == 'true' ? 'false' : 'true';
+			$(this).attr('aria-expanded', newExpandedAttr);
 		});
 	}
 };
