@@ -36,7 +36,7 @@
             padding: 5px 0;
         }
 
-        .nav-link.dropdown-toggle::after {
+        .dropdown-toggle::after {
             display: inline-block;
             margin-left: 5px;
             vertical-align: 5px;
@@ -45,6 +45,11 @@
             border-right: 5px solid transparent;
             border-bottom: 0;
             border-left: 5px solid transparent;
+        }
+
+        .dropdown-toggle[aria-expanded="true"]::after{
+            border-bottom: 5px solid;
+            border-top: 0;
         }
 
         .dropdown-menu {
