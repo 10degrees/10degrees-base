@@ -2,12 +2,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 
     flex-wrap: wrap;
 
     padding: 10px 15px;
 
     background-color: #f8f9fa;
+
+    .logo img {
+        width: 60px;
+        height: auto;
+    }
 
     
     .nav.-primary {

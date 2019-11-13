@@ -3,8 +3,8 @@
         <div class="logo" itemscope itemtype="http://schema.org/Organization">
             <a itemprop="url" href="<?php echo esc_url(home_url('/')); ?>">
                 <?php
-                if (get_option('options_site_logo')) :
-                    td_print_svg(wp_get_attachment_url(get_option('options_site_logo')));
+                if ($logo = get_field('site_logo', 'option')) :
+                    echo wp_get_attachment_image($logo['id']);
                 else :
                     esc_html_e('Add a logo in Settings', '@textdomain');
                 endif;
@@ -21,7 +21,7 @@
         wp_nav_menu(array(
             'theme_location' => 'primary_navigation',
             'container'      => 'nav',
-            'container_class'      => 'nav -primary -open',
+            'container_class'      => 'nav -primary',
             'container_id'   => 'nav-primary',
             'depth'          => 5,
             'menu_class'     => '',
