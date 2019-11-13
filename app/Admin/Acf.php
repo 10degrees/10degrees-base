@@ -24,20 +24,6 @@ class Acf
 
 	public function defineOptionsPages()
 	{
-		if ( function_exists( 'acf_add_options_sub_page' ) ) 
-		{
-			acf_add_options_sub_page( array(
-				'title' => 'Social Networks',
-				'parent' => 'options-general.php',
-				'capability' => 'manage_options',
-			));
-			acf_add_options_sub_page( array(
-			    'title' => '404 Error Page',
-			    'parent' => 'options-general.php',
-				'capability' => 'manage_options',
-			));
-		}
-
 		if( function_exists('acf_add_options_page') ){
 			acf_add_options_page( array(
                 'title' => 'Site Settings',
