@@ -73,15 +73,15 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: partials/footer.php:14
+#: partials/footer.php:15
 msgid "WordPress by"
 msgstr ""
 
-#: partials/footer.php:14
+#: partials/footer.php:15
 msgid "10 Degrees"
 msgstr ""
 
-#: partials/header.php:9
+#: partials/header.php:11
 msgid "Add a logo in Settings"
 msgstr ""
 
