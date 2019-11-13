@@ -41,15 +41,15 @@
             display: none;
 
             padding-left: 10px;
+
+            &.-open {
+                display: block;
+            }
         }
 
-        .dropdown-menu.-open {
+        &.-open {
             display: block;
         }
-    }
-
-    .nav.-primary.-open {
-        display: block;
     }
 
     @include bp(md){
@@ -78,12 +78,14 @@
                 padding: 0;
             }
 
-            .menu-item:last-child .nav-link {
-                margin-right: 0;
-            }
+            .menu-item {
+                &.dropdown {
+                    position: relative;
+                }
 
-            .menu-item.dropdown {
-                position: relative;
+                &:last-child .nav-link {
+                    margin-right: 0;
+                }
 
                 .dropdown-menu {
                     position: absolute;
