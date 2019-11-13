@@ -166,7 +166,7 @@ async function watchTask() {
   watch(
     [
       srcFiles.scssPath,
-      "src/js/main.js",
+      "src/js/**/*.js",
       "src/js/admin.js",
       "src/js/editor-block.js"
     ],
