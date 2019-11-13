@@ -7,6 +7,9 @@ class MobileNav {
 	addNavigationToggle(){
 		$('.header .toggle').click(function() {
 			$('#nav-primary').toggleClass('-open');
+
+			let newText = $(this).find('.icon').text() == 'Open' ? 'Close' : 'Open';
+			$(this).find('.icon').text(newText);
 		});
 	}
 
@@ -15,12 +18,10 @@ class MobileNav {
 			e.preventDefault();
 
 			$(this).find('> .dropdown-menu').toggleClass('-open');
+
 			let link = $(this).find('> .nav-link');
-			if(link.attr('aria-expanded') == "true"){
-				link.attr('aria-expanded', "false");
-			} else {
-				link.attr('aria-expanded', "true");
-			}
+			let newExpandedAttr = link.attr('aria-expanded') == 'true' ? 'false' : 'true';
+			link.attr('aria-expanded', newExpandedAttr);
 		});
 	}
 };

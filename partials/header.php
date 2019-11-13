@@ -14,7 +14,7 @@
         </div>
 
         <button class="toggle" type="button"  aria-controls="nav-primary" aria-expanded="false" aria-label="<?php esc_html_e( 'Toggle Navigation', 'theme-textdomain' ); ?>">
-            <span>Open</span>
+            <span class="icon">Open</span>
         </button>
 
         <?php
