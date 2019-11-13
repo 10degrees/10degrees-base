@@ -1,5 +1,7 @@
 <header class="header -primary">
 
+    <div class="container content">
+
         <div class="logo" itemscope itemtype="http://schema.org/Organization">
             <a itemprop="url" href="<?php echo esc_url(home_url('/')); ?>">
                 <?php
@@ -30,5 +32,6 @@
         ));
         ?>
 
+    </div>
 
 </header>

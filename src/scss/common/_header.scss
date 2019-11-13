@@ -1,14 +1,14 @@
 .header.-primary {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    padding: 10px 15px;
-
     background-color: #f8f9fa;
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        flex-wrap: wrap;
+    }
 
     .logo img {
         width: 60px;
@@ -53,7 +53,6 @@
     }
 
     @include bp(md){
-        padding: 20px 30px;
 
         .logo {
             margin-right: 15px;
