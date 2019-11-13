@@ -14,7 +14,7 @@ class MobileNav {
 	}
 
 	addDropdownToggle(){
-		$('.menu-item.dropdown > .nav-link').click(function(e) {
+		$('.menu-item.menu-item-has-children > .nav-link').click(function(e) {
 			e.preventDefault();
 
 			$(this).parent().find('> .dropdown-menu').toggleClass('-open');

@@ -32,13 +32,13 @@
 
         .nav-link.dropdown-toggle::after {
             display: inline-block;
-            margin-left: .255em;
-            vertical-align: .255em;
+            margin-left: 5px;
+            vertical-align: 5px;
             content: "";
-            border-top: .3em solid;
-            border-right: .3em solid transparent;
+            border-top: 5px solid;
+            border-right: 5px solid transparent;
             border-bottom: 0;
-            border-left: .3em solid transparent;
+            border-left: 5px solid transparent;
         }
 
         .dropdown-menu {
@@ -84,7 +84,7 @@
             }
 
             .menu-item {
-                &.dropdown {
+                &.menu-item-has-children {
                     position: relative;
                 }
 
@@ -97,12 +97,32 @@
                     left: 0;
                     top: 35px;
 
-                    padding: 10px;
+                    padding: 0 10px;
 
                     background-color: #fff;
                     border: 1px solid #efefef;
 
                     min-width: 150px;
+
+                    .nav-link {
+                        margin: 10px 0;
+                    }
+
+                    .menu-item-has-children > .dropdown-toggle::after {
+                        display: inline-block;
+                        margin-left: 7.5px;
+                        vertical-align: initial;
+                        content: "";
+                        border-left: 5px solid;
+                        border-top: 5px solid transparent;
+                        border-right: 0;
+                        border-bottom: 5px solid transparent;
+                    }
+
+                    .dropdown-menu {
+                        left: calc(100% + 10px); // 10px for the .dropdown-menu padding, 1px for the border
+                        top: -1px; // To acount for the 1px border
+                    }
                 }
             }
         }
