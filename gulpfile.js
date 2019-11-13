@@ -5,8 +5,6 @@ const { src, dest, watch, series, parallel } = require("gulp");
 // Importing all the Gulp-related packages
 const sourcemaps = require("gulp-sourcemaps");
 const sass = require("gulp-sass");
-const concat = require("gulp-concat");
-const uglify = require("gulp-uglify");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
@@ -16,7 +14,6 @@ const rev = require("gulp-rev");
 const del = require("del");
 const rename = require("gulp-rename");
 const notify = require("gulp-notify");
-const replace = require("gulp-replace");
 const rollup = require("gulp-better-rollup");
 const babel = require("rollup-plugin-babel");
 const nodeResolve = require('rollup-plugin-node-resolve');
