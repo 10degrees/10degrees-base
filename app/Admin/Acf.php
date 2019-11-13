@@ -37,6 +37,15 @@ class Acf
 				'capability' => 'manage_options',
 			));
 		}
+
+		if( function_exists('acf_add_options_page') ){
+			acf_add_options_page( array(
+                'title' => 'Site Settings',
+                'capability' => 'manage_options',
+                'position' => '59.1',
+                'icon_url' => 'dashicons-admin-settings'
+            ));
+		}
 	}
 
 	public function hideAcfFromMenu() 
