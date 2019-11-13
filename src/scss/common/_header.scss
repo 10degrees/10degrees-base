@@ -16,6 +16,12 @@
         width: 60px;
         height: auto;
     }
+
+    .toggle {
+        background-color: transparent;
+        border: 1px solid #a7a7a7;
+        border-radius: 5px;
+    }
     
     .nav.-primary {
         display: none;
@@ -92,6 +98,7 @@
                     margin-right: 0;
                 }
 
+                // First level dropdown menu
                 .dropdown-menu {
                     position: absolute;
                     left: 0;
@@ -107,11 +114,12 @@
                     .nav-link {
                         margin: 10px 0;
                     }
-
+                    
+                    // Second level and above dropdown toggle
                     .menu-item-has-children > .dropdown-toggle::after {
                         display: inline-block;
                         margin-left: 7.5px;
-                        vertical-align: initial;
+                        vertical-align: middle;
                         content: "";
                         border-left: 5px solid;
                         border-top: 5px solid transparent;
@@ -119,6 +127,7 @@
                         border-bottom: 5px solid transparent;
                     }
 
+                    // Second level and above dropdown menu
                     .dropdown-menu {
                         left: calc(100% + 10px); // 10px for the .dropdown-menu padding, 1px for the border
                         top: -1px; // To acount for the 1px border
