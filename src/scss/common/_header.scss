@@ -90,7 +90,7 @@
             }
 
             .nav-link {
-                margin-right: 10px;
+                margin-right: 30px;
                 padding: 0;
             }
 
@@ -109,7 +109,7 @@
                     left: 0;
                     top: 35px;
 
-                    padding: 0 10px;
+                    padding: 0 15px;
 
                     background-color: #fff;
                     border: 1px solid #efefef;
@@ -134,7 +134,7 @@
 
                     // Second level and above dropdown menu
                     .dropdown-menu {
-                        left: calc(100% + 10px); // 10px for the .dropdown-menu padding, 1px for the border
+                        left: calc(100% + 15px); // 15px for the .dropdown-menu padding
                         top: -1px; // To acount for the 1px border
                     }
                 }
