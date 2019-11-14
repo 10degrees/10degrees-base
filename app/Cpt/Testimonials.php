@@ -75,7 +75,9 @@ class Testimonials
         register_extended_taxonomy(
             'testimonial-categories',
             $this->postType,
-            [],
+            [
+                'meta_box' => 'radio'
+            ],
             [
                 'plural' => 'Testimonial Categories',
                 'slug' => 'testimonial-categories'

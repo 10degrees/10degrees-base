@@ -4,9 +4,21 @@
             $number_to_show = get_field('number_of_testimonials');
             $category = get_field('category');
 
+            $tax_query = array();
+            if ($category) {
+                $tax_query = array(
+                    array(
+                        'taxonomy' => 'testimonial-categories',
+                        'field' => 'slug',
+                        'terms' => $category->slug
+                    )
+                );
+            }
+
             $testimonials = new WP_Query(array(
                 'post_type' => 'testimonial',
-                'posts_per_page' => $number_to_show
+                'posts_per_page' => $number_to_show,
+                'tax_query' => $tax_query
             ));
 
             while ($testimonials->have_posts()) {
