@@ -11,7 +11,7 @@ html {
 body {
   font-family: $base-font;
   font-size: $base-font-size;
-  color: $text-colour;
+  @include prop(color, --text-colour);
   background-color: $base-background-colour;
   font-weight: $base-font-weight;
 }
@@ -84,18 +84,12 @@ ol {
 
 // Links
 a {
-  color: $link-colour;
-  @supports (--prop: 0) {
-    color: var(--link-colour);
-  }
+  @include prop(color, --link-colour);
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: $link-hover-colour;
-    @supports (--prop: 0) {
-      color: var(--link-hover-colour);
-    }
+    @include prop(color, --link-hover-colour);
     text-decoration: underline;
   }
 }

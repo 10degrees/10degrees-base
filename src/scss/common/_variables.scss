@@ -16,13 +16,18 @@ $grey-8: #616161;
 $grey-9: #424242;
 $grey-10: #212121;
 
-// Design colours
-$text-colour: $grey-9;
-$primary-colour: red;
-$secondary-colour: green;
-$tertiary-colour: pink;
-$link-colour: blue;
-$link-hover-colour: darkblue;
+// Project variables.
+// Colours and container widths.
+$variables: (
+  "--primary-colour": red,
+  "--secondary-colour": green,
+  "--tertiary-colour": pink,
+  "--text-colour": #{$grey-9},
+  "--link-colour": blue,
+  "--link-hover-colour": darkblue,
+  "--max-content-width": 920px,
+  "--max-container-width": 1200px
+);
 
 // Base background-color
 $base-background-colour: white;
@@ -43,20 +48,8 @@ $monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 // Default font
 $base-font: $sans-serif;
 
-/* Widths */
-
-// Content
-$max-content-width: 920px;
-
-// Grid
-$max-container-width: 1200px;
-
 // Breakpoints
 $bp-sm: 480px;
-$bp-sm-max: ($bp-sm - 1);
 $bp-md: 768px;
-$bp-md-max: ($bp-md - 1);
 $bp-lg: 1024px;
-$bp-lg-max: ($bp-lg - 1);
 $bp-xlg: 1200px;
-$bp-xlg-max: ($bp-xlg - 1);

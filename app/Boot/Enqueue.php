@@ -10,6 +10,7 @@ class Enqueue
     public function __construct()
     {
         add_action('wp_enqueue_scripts', [$this, 'style'], 100);
+        // add_action('wp_enqueue_scripts', [$this, 'styleIe'], 100);
         add_action('wp_enqueue_scripts', [$this, 'scripts'], 100);
         add_action('admin_init', [$this, 'adminStyle'], 100);
         add_action('admin_init', [$this, 'adminScript'], 100);
@@ -29,8 +30,30 @@ class Enqueue
     {
         wp_enqueue_style(
             'td-main',
-            get_template_directory_uri() . td_asset_path('css/main.css')
+            get_template_directory_uri() . td_asset_path('css/main.css'),
+            '',
+            false,
+            'screen'
         );
+    }
+
+    /**
+     * CSS for Internet Explorer IE9 and below
+     *
+     * Can also target specific IE versions
+     *
+     * @link https://developer.wordpress.org/reference/functions/wp_style_add_data/
+     */
+    public function styleIe()
+    {
+        wp_enqueue_style(
+            'td-ie',
+            get_template_directory_uri() . td_asset_path('css/ie.css'),
+            'td-main',
+            false,
+            'screen'
+        );
+        wp_style_add_data('td-ie', 'conditional', 'IE');
     }
 
     /**
@@ -50,7 +73,7 @@ class Enqueue
      */
     public function blockEditorStyle()
     {
-        wp_enqueue_style('td-editor-block-style', get_stylesheet_directory_uri() . td_asset_path('css/editor-block.css'), '', '', 'all');
+        wp_enqueue_style('td-editor-block-style', get_stylesheet_directory_uri() . td_asset_path('css/editor-block.css'), '', '', 'screen');
     }
 
     /**
@@ -74,7 +97,7 @@ class Enqueue
      */
     public function adminStyle()
     {
-        wp_enqueue_style('td-admin', get_stylesheet_directory_uri() . td_asset_path('css/admin.css'), '', '', true);
+        wp_enqueue_style('td-admin', get_stylesheet_directory_uri() . td_asset_path('css/admin.css'), '', '', 'screen');
     }
 
     /**

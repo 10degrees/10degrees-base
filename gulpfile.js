@@ -16,8 +16,8 @@ const rename = require("gulp-rename");
 const notify = require("gulp-notify");
 const rollup = require("gulp-better-rollup");
 const babel = require("rollup-plugin-babel");
-const nodeResolve = require('rollup-plugin-node-resolve');
-const {terser} = require("rollup-plugin-terser");
+const nodeResolve = require("rollup-plugin-node-resolve");
+const { terser } = require("rollup-plugin-terser");
 
 // File paths
 const srcFiles = {
@@ -33,25 +33,27 @@ const manifestDest = "dist/rev-manifest.json";
 
 // Build CSS from SCSS
 async function buildCSS() {
-  return src(srcFiles.scssPath)
-    .pipe(sourcemaps.init()) // initialize sourcemaps
-    .pipe(sass()) // compile SCSS to CSS
-    .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
-    .pipe(rev())
-    .pipe(sourcemaps.write("maps")) // write sourcemaps file in current directory
-    .pipe(dest("dist/css")) // put final CSS in dist folder
-    .pipe(
-      rename(function(path) {
-        path.dirname = "/css/" + path.dirname;
-      })
-    )
-    .pipe(
-      rev.manifest(manifestDest, {
-        base: "dist",
-        merge: true
-      })
-    )
-    .pipe(dest("dist"));
+  return (
+    src(srcFiles.scssPath)
+      .pipe(sourcemaps.init()) // initialize sourcemaps
+      .pipe(sass()) // compile SCSS to CSS
+      // .pipe(postcss([autoprefixer(), cssnano()])) // PostCSS plugins
+      .pipe(rev())
+      .pipe(sourcemaps.write("maps")) // write sourcemaps file in current directory
+      .pipe(dest("dist/css")) // put final CSS in dist folder
+      .pipe(
+        rename(function(path) {
+          path.dirname = "/css/" + path.dirname;
+        })
+      )
+      .pipe(
+        rev.manifest(manifestDest, {
+          base: "dist",
+          merge: true
+        })
+      )
+      .pipe(dest("dist"))
+  );
 }
 
 // Build browser-compatible JS from source JS
@@ -64,16 +66,18 @@ async function buildJS() {
         rollup(
           {
             // There is no `input` option as rollup integrates into the gulp pipeline
-            external: ['jquery'],
+            external: ["jquery"],
             plugins: [
               nodeResolve(),
               babel({
-                presets: [[
-                  "@babel/preset-env",
-                  {
-                    "targets": "> 1%, last 2 versions"
-                  }
-                ]]
+                presets: [
+                  [
+                    "@babel/preset-env",
+                    {
+                      targets: "> 1%, last 2 versions"
+                    }
+                  ]
+                ]
               }),
               terser()
             ]
@@ -82,7 +86,7 @@ async function buildJS() {
             // Rollups `sourcemap` option is unsupported. Use `gulp-sourcemaps` plugin instead
             format: "iife",
             globals: {
-              'jquery': 'jQuery'
+              jquery: "jQuery"
             }
           }
         )

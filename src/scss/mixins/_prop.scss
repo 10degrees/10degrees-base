@@ -1,0 +1,5 @@
+// CSS Custom Properties mixin
+@mixin prop($prop, $value) {
+  #{$prop}: map-get($variables, $value);
+  #{$prop}: var($value, map-get($variables, $value));
+}
