@@ -1,4 +1,5 @@
-Hide admin bar on mobile @media screen and (max-width: 675px) {
+// Hide admin bar on mobile
+@media screen and (max-width: 675px) {
   #wpadminbar {
     display: none;
   }
