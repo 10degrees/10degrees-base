@@ -206,12 +206,11 @@ cite {
   max-width: 1200px;
   max-width: var(--max-container-width, 1200px);
   margin: 0 auto;
-  width: 100%;
   padding-right: 15px;
   padding-left: 15px; }
 
 .header.-primary {
-  background-color: #f8f9fa;
+  background-color: #f5f5f5;
   padding: 10px 0; }
   .header.-primary .content {
     display: flex;
@@ -224,7 +223,7 @@ cite {
     height: auto; }
   .header.-primary .toggle {
     background-color: transparent;
-    border: 1px solid #a7a7a7;
+    border: 1px solid #bdbdbd;
     border-radius: 5px; }
   .header.-primary .nav.-primary {
     display: none;
@@ -232,7 +231,8 @@ cite {
     flex-grow: 1;
     margin: 20px 0; }
     .header.-primary .nav.-primary a {
-      display: inline-block;
+      display: block;
+      position: relative;
       padding: 5px 0; }
     .header.-primary .nav.-primary .menu-item-has-children > a::after {
       display: inline-block;
@@ -242,7 +242,10 @@ cite {
       border-top: 5px solid;
       border-right: 5px solid transparent;
       border-bottom: 0;
-      border-left: 5px solid transparent; }
+      border-left: 5px solid transparent;
+      position: absolute;
+      top: 1em;
+      right: 0; }
     .header.-primary .nav.-primary .menu-item-has-children > [aria-expanded="true"]::after {
       border-bottom: 5px solid;
       border-top: 0; }
@@ -278,7 +281,7 @@ cite {
         top: 35px;
         padding: 0 15px;
         background-color: #fff;
-        border: 1px solid #efefef;
+        border: 1px solid #e0e0e0;
         white-space: nowrap; }
         .header.-primary .nav.-primary .menu-item .sub-menu a {
           margin: 10px 0; }
@@ -305,6 +308,13 @@ cite {
       display: inline-block;
       margin: 5px 0; }
 
+@media screen and (max-width: 675px) {
+  #wpadminbar {
+    display: none; }
+  html {
+    position: absolute;
+    top: -46px; } }
+
 article {
   background: var(--primary-colour); }
 
@@ -318,4 +328,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-d795869653.css.map */
+/*# sourceMappingURL=maps/main-d02b730dcf.css.map */

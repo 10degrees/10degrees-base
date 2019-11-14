@@ -6,8 +6,6 @@
     "keywords": [
       "wordpress",
       "theme",
-      "bootstrap",
-      "laravel-mix"
     ],
     "license": "MIT",
     "require": {
