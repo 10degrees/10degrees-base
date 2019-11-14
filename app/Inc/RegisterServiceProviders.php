@@ -19,6 +19,7 @@ class RegisterServiceProviders extends ServiceProvider
 		'\App\Providers\BlockServiceProvider',
 		'\App\Providers\ShortcodeServiceProvider',
 		'\App\Providers\ControllerServiceProvider',
+		'\App\Providers\FieldServiceProvider'
 		// '\App\Providers\WoocommerceServiceProvider',
 	];
 
