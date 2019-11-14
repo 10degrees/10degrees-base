@@ -14,10 +14,10 @@ class MobileNav {
 	}
 
 	addDropdownToggle(){
-		$('.menu-item.menu-item-has-children > .nav-link').click(function(e) {
+		$('.menu-item.menu-item-has-children > a').click(function(e) {
 			e.preventDefault();
 
-			$(this).parent().find('> .dropdown-menu').toggleClass('-open');
+			$(this).parent().find('> .sub-menu').toggleClass('-open');
 
 			let newExpandedAttr = $(this).attr('aria-expanded') == 'true' ? 'false' : 'true';
 			$(this).attr('aria-expanded', newExpandedAttr);

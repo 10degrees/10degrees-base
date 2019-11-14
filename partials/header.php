@@ -26,9 +26,7 @@
             'container_class'      => 'nav -primary',
             'container_id'   => 'nav-primary',
             'depth'          => 5,
-            'menu_class'     => '',
-            'walker'         => new App\Walkers\BootstrapWalker(),
-            'fallback_cb'    => 'App\Walkers\BootstrapWalker::fallback',
+            'menu_class'     => ''
         ));
         ?>
 
