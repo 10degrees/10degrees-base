@@ -16,5 +16,6 @@ class AdminServiceProvider extends ServiceProvider
 		'\App\Admin\DashboardBranding',
 		'\App\Admin\CleanUp',
 		'\App\Admin\Acf',
+		'\App\Admin\MenuOrder'
 	];
 }
