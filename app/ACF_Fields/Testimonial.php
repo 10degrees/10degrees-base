@@ -51,7 +51,7 @@ class Testimonial extends AbstractFieldRegistration
                     ),
                     'taxonomy' => 'testimonial-categories',
                     'field_type' => 'select',
-                    'allow_null' => 0,
+                    'allow_null' => 1,
                     'add_term' => 0,
                     'save_terms' => 0,
                     'load_terms' => 0,
