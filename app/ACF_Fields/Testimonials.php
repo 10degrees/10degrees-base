@@ -4,7 +4,7 @@ namespace App\ACF_Fields;
 
 use App\ACF_Fields\AbstractFieldRegistration;
 
-class Testimonial extends AbstractFieldRegistration
+class Testimonials extends AbstractFieldRegistration
 {
     /**
      * Register ACF fields for this group
@@ -13,7 +13,7 @@ class Testimonial extends AbstractFieldRegistration
     {
         acf_add_local_field_group(array(
             'key' => 'group_5c2f476d08b99',
-            'title' => 'Block: Testimonial',
+            'title' => 'Block: Testimonials',
             'fields' => array(
                 array(
                     'key' => 'field_5dcd6f4d6c883',
@@ -64,7 +64,7 @@ class Testimonial extends AbstractFieldRegistration
                     array(
                         'param' => 'block',
                         'operator' => '==',
-                        'value' => 'acf/testimonial',
+                        'value' => 'acf/testimonials',
                     ),
                 ),
             ),

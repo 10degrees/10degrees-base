@@ -4,7 +4,7 @@ namespace App\ACF_Blocks;
 
 use App\ACF_Blocks\AbstractBlockRegistration;
 
-class Testimonial extends AbstractBlockRegistration
+class Testimonials extends AbstractBlockRegistration
 {
     /**
      *
@@ -15,9 +15,9 @@ class Testimonial extends AbstractBlockRegistration
     {
         acf_register_block(
             [
-                'name'				=> 'testimonial',
-                'title'				=> __('Testimonial'),
-                'description'		=> __('A custom testimonial block.'),
+                'name'				=> 'testimonials',
+                'title'				=> __('Testimonials'),
+                'description'		=> __('Displays a number of testimonials from a category.'),
                 'render_callback'	=> [$this, 'render'],
                 'category'			=> 'common',
                 'icon'				=> 'admin-comments',
