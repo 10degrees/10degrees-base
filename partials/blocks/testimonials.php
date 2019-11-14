@@ -1,8 +1,11 @@
-<div class="testimonials">
+<section class="testimonials">
     <div class="container">
         <?php
-            $number_to_show = get_field('number_of_testimonials');
-            $category = get_field('category');
+        $number_to_show = get_field('number_of_testimonials');
+        $category = get_field('category');
+        ?>
+        <div class="grid" style="--columns: <?php echo $number_to_show; ?>;">
+            <?php
 
             $tax_query = array();
             if ($category) {
@@ -27,6 +30,7 @@
             }
 
             wp_reset_postdata();
-        ?>
+            ?>
+        </div>
     </div>
-</div>
+</section>
