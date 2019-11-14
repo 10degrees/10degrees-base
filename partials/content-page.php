@@ -10,16 +10,10 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <?php get_template_part('partials/page', 'header'); ?>
+    <header>
+        <h1><?php echo td_title(); ?></h1>
+    </header>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <div class="article__content">
-                    <?php the_content(); ?>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php the_content(); ?>
 
 </article>

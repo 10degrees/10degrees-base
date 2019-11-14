@@ -1,6 +1,0 @@
-.container {
-  @include prop(max-width, --max-container-width);
-  margin: 0 auto;
-  padding-right: 15px;
-  padding-left: 15px;
-}

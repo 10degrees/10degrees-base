@@ -1,0 +1,10 @@
+.page {
+  article {
+    > * {
+      @include container;
+      & + * {
+        margin-top: 1em;
+      }
+    }
+  }
+}

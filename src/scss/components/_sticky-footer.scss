@@ -1,0 +1,15 @@
+// Sticky footer
+// Ensures the footer doesn't float at the bottom of the content
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  &.admin-bar {
+    @include bp(md) {
+      min-height: calc(100vh - 32px);
+    }
+  }
+  #main {
+    flex-grow: 1;
+  }
+}

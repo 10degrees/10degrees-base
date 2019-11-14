@@ -1,0 +1,27 @@
+.footer {
+  background-color: $grey-2;
+  text-align: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  .nav {
+    margin-bottom: 1.5rem;
+    .menu-item a {
+      display: inline-block;
+      margin: 5px 0;
+    }
+  }
+  .copyright {
+    @include container;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+    @include bp(md) {
+      display: flex;
+      justify-content: space-between;
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

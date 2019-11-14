@@ -2,28 +2,30 @@
  * Styles for front end
  */
 
-@import "common/_reset.scss";
-@import "mixins/_prop";
+@import "common/reset.scss";
+@import "mixins/prop";
 
-@import "mixins/_screen-reader-text";
-@import "mixins/_bp";
+@import "mixins/screen-reader-text";
+@import "mixins/bp";
 
-@import "common/_variables";
-@import "common/_root.scss";
-@import "common/_type.scss";
-@import "common/_social-brands.scss";
+@import "common/variables";
+@import "common/root";
+@import "common/type";
+@import "common/social-brands";
 
 @import "mixins/screen-reader-text";
 @import "mixins/bp";
 
 @import "common/grid";
-@import "common/container";
-@import "common/header";
-@import "common/footer";
+@import "mixins/container";
+@import "components/sticky-footer";
+@import "components/header";
+@import "components/footer";
+@import "templates/page";
 
 @import "common/blocks/blocks";
 
-@import "common/_hide-admin-bar";
+@import "components/hide-admin-bar";
 
 // mixins
 // typography
@@ -69,15 +71,7 @@
 // @import "common/_type.scss";
 // @import "mixins/_index.scss";
 
-article {
-  background: var(--primary-colour);
-}
-
 article > * {
-  // @include container;
-  & + * {
-    margin-top: 1em;
-  }
   &.wp-block-quote.is-style-large {
     margin: 0;
     padding: 0;

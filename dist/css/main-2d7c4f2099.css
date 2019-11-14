@@ -61,9 +61,6 @@ img {
  * If you don't know about the lobotomised owl, search that term for the ALA article
  * @link https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/
  */
-article > * + * {
-  margin-top: 1em; }
-
 /* Inherit fonts for inputs and buttons */
 input,
 button,
@@ -107,7 +104,7 @@ select {
   --primary-colour: red;
   --secondary-colour: green;
   --tertiary-colour: pink;
-  --text-colour: #424242;
+  --text-colour: #212121;
   --link-colour: blue;
   --link-hover-colour: darkblue;
   --max-content-width: 920px;
@@ -124,8 +121,8 @@ html {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 16px;
-  color: #424242;
-  color: var(--text-colour, #424242);
+  color: #212121;
+  color: var(--text-colour, #212121);
   background-color: white;
   font-weight: 400; }
 
@@ -205,13 +202,25 @@ cite {
 .container {
   max-width: 1200px;
   max-width: var(--max-container-width, 1200px);
-  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
   padding-right: 15px;
   padding-left: 15px; }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+  @media only screen and (min-width: 768px) {
+    body.admin-bar {
+      min-height: calc(100vh - 32px); } }
+  body #main {
+    flex-grow: 1; }
+
 .header.-primary {
   background-color: #f5f5f5;
-  padding: 10px 0; }
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; }
   .header.-primary .content {
     display: flex;
     flex-direction: row;
@@ -299,14 +308,40 @@ cite {
           top: -1px; } }
 
 .footer {
-  background-color: #f8f9fa;
+  background-color: #f5f5f5;
   text-align: center;
-  padding: 5px; }
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem; }
   .footer .nav {
-    margin-bottom: 15px; }
+    margin-bottom: 1.5rem; }
     .footer .nav .menu-item a {
       display: inline-block;
       margin: 5px 0; }
+  .footer .copyright {
+    max-width: 1200px;
+    max-width: var(--max-container-width, 1200px);
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px; }
+    .footer .copyright p:last-child {
+      margin-bottom: 0; }
+    @media only screen and (min-width: 768px) {
+      .footer .copyright {
+        display: flex;
+        justify-content: space-between; }
+        .footer .copyright p {
+          margin-bottom: 0; } }
+
+.page article > * {
+  max-width: 1200px;
+  max-width: var(--max-container-width, 1200px);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px; }
+  .page article > * + * {
+    margin-top: 1em; }
 
 @media screen and (max-width: 675px) {
   #wpadminbar {
@@ -315,12 +350,6 @@ cite {
     position: absolute;
     top: -46px; } }
 
-article {
-  background: var(--primary-colour); }
-
-article > * + * {
-  margin-top: 1em; }
-
 article > *.wp-block-quote.is-style-large {
   margin: 0;
   padding: 0;
@@ -328,4 +357,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-d02b730dcf.css.map */
+/*# sourceMappingURL=maps/main-2d7c4f2099.css.map */
