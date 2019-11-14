@@ -13,7 +13,7 @@ class SiteSettings extends AbstractFieldRegistration
     {
         acf_add_local_field_group(array(
             'key' => 'group_5dcbdab2874f3',
-            'title' => 'Site Settings',
+            'title' => 'Site settings',
             'fields' => array(
                 array(
                     'key' => 'field_5dcbdabd8390f',
@@ -198,7 +198,7 @@ class SiteSettings extends AbstractFieldRegistration
             ),
             'menu_order' => 0,
             'position' => 'normal',
-            'style' => 'default',
+            'style' => 'seamless',
             'label_placement' => 'top',
             'instruction_placement' => 'label',
             'hide_on_screen' => '',

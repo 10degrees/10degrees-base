@@ -6,7 +6,7 @@ class Acf
 {
 	/**
 	 * Define the email domains that are allowed access to the acf settings in the dashboard
-	 * 
+	 *
 	 * @var array
 	 */
 	private $allowedDomains = [
@@ -26,7 +26,7 @@ class Acf
 	{
 		if( function_exists('acf_add_options_page') ){
 			acf_add_options_page( array(
-                'title' => 'Site Settings',
+                'title' => 'Site settings',
                 'capability' => 'manage_options',
                 'position' => '80.020',
                 'icon_url' => 'dashicons-admin-settings'
@@ -34,11 +34,11 @@ class Acf
 		}
 	}
 
-	public function hideAcfFromMenu() 
+	public function hideAcfFromMenu()
 	{
 	    $current_user = wp_get_current_user();
-	    
-	    if ($this->notAllowedToSeeAcf($current_user)) 
+
+	    if ($this->notAllowedToSeeAcf($current_user))
 	    {
 	        remove_menu_page( 'edit.php?post_type=acf-field-group' );
 	    }
@@ -57,11 +57,11 @@ class Acf
 	}
 
 	/**
-	 * 
+	 *
 	 * Set ACF 5 license key on theme activation
-	 * 
+	 *
 	 */
-	public function setLicenseKey() 
+	public function setLicenseKey()
 	{
 		if ( !get_option('acf_pro_license') && defined('ACF_5_KEY') )
 		{
@@ -71,7 +71,7 @@ class Acf
 			);
 
 			$save = maybe_serialize($save);
-			
+
 			$save = base64_encode($save);
 
 			update_option('acf_pro_license', $save);

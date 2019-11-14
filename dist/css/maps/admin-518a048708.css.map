@@ -1,1 +1,0 @@
-{"version":3,"file":"../admin-518a048708.css","sources":["admin.scss"],"sourcesContent":["/*\n * Styles for /wp-admin\n */\nbody.wp-admin #wpwrap {\n  font-family: Georgia !important ;\n}\n"],"names":[],"mappings":"AAAA;;GAEG;AACH,AAAA,IAAI,AAAA,SAAS,CAAC,OAAO,CAAC;EACpB,WAAW,EAAE,kBAAmB,GACjC"}
