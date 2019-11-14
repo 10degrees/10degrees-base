@@ -28,7 +28,7 @@ class Acf
 			acf_add_options_page( array(
                 'title' => 'Site Settings',
                 'capability' => 'manage_options',
-                'position' => '59.1',
+                'position' => '80.020',
                 'icon_url' => 'dashicons-admin-settings'
             ));
 		}
