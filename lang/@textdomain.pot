@@ -58,7 +58,11 @@ msgid "10 Degrees"
 msgstr ""
 
 #: partials/header.php:11
-msgid "Add a logo in Site Settings"
+msgid "Add a logo in Site settings"
+msgstr ""
+
+#: partials/header.php:18
+msgid "Toggle Navigation"
 msgstr ""
 
 #: partials/post-header.php:5
@@ -69,7 +73,27 @@ msgstr ""
 msgid "Custom"
 msgstr ""
 
-#: app/Boot/Init.php:103
+#: app/Admin/EditorColourPalette.php:25
+msgid "Primary"
+msgstr ""
+
+#: app/Admin/EditorColourPalette.php:30
+msgid "Secondary"
+msgstr ""
+
+#: app/Admin/EditorColourPalette.php:35
+msgid "Tertiary"
+msgstr ""
+
+#: app/Admin/EditorColourPalette.php:40
+msgid "White"
+msgstr ""
+
+#: app/Admin/EditorColourPalette.php:45
+msgid "Dark Grey"
+msgstr ""
+
+#: app/Boot/Init.php:109
 msgid "Continued"
 msgstr ""
 

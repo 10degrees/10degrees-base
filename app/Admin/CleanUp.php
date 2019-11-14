@@ -4,128 +4,139 @@ namespace App\Admin;
 
 class CleanUp
 {
-	public function __construct()
-	{
-		add_action( 'add_meta_boxes', [$this, 'removeYoastMetaBoxForNon'], 99 );
-		add_filter( 'wpseo_metabox_prio', [$this, 'moveYoastToBottomOfEditPage'] );
-		add_filter( 'tiny_mce_before_init', [$this, 'forceAdvancedWysiwyg'] );
-		add_action( 'admin_notices', [$this, 'restrictUpdateNotification'], 1 );
-		add_filter( 'admin_bar_menu', [$this, 'replaceHowdy'], 25 );
-		add_action( 'wp_dashboard_setup', [$this, 'cleanUpDashboard'] );
+    public function __construct()
+    {
+        add_action( 'add_meta_boxes', [$this, 'removeYoastMetaBoxForNon'], 99 );
+        add_action( 'add_meta_boxes', [$this, 'removeYoastMetaBoxForPostType'], 99 );
+        add_filter( 'wpseo_metabox_prio', [$this, 'moveYoastToBottomOfEditPage'] );
+        add_filter( 'tiny_mce_before_init', [$this, 'forceAdvancedWysiwyg'] );
+        add_action( 'admin_notices', [$this, 'restrictUpdateNotification'], 1 );
+        add_filter( 'admin_bar_menu', [$this, 'replaceHowdy'], 25 );
+        add_action( 'wp_dashboard_setup', [$this, 'cleanUpDashboard'] );
 
-	    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-	    remove_action( 'admin_print_styles', 'print_emoji_styles' );
+        remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+        remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-		$this->maybeDefineDisallowFileEdit();
-	}
+        $this->maybeDefineDisallowFileEdit();
+    }
 
-	/**
-	 *
-	 * Remove ability to modify themes and plugins
-	 * 
-	 */
-	public function maybeDefineDisallowFileEdit()
-	{
-		if (!defined('DISALLOW_FILE_EDIT')) 
-		{
-			define( 'DISALLOW_FILE_EDIT', true );
-		}
-	}
+    /**
+     *
+     * Remove ability to modify themes and plugins
+     *
+     */
+    public function maybeDefineDisallowFileEdit()
+    {
+        if (!defined('DISALLOW_FILE_EDIT'))
+        {
+            define( 'DISALLOW_FILE_EDIT', true );
+        }
+    }
 
-	/**
-	 *
-	 * Remove Yoast SEO meta from users below Editor
-	 * 
-	 */
-	public function removeYoastMetaBoxForNon() 
-	{
-		if ( ! current_user_can( 'edit_posts' ) ) 
-		{
-		    remove_meta_box( 'wpseo_meta', 'page', 'normal' );
-		    remove_meta_box( 'wpseo_meta', 'post', 'normal' );
-		}
-	}
+    /**
+     *
+     * Remove Yoast SEO meta from users below Editor
+     *
+     */
+    public function removeYoastMetaBoxForNon()
+    {
+        if ( ! current_user_can( 'edit_posts' ) )
+        {
+            remove_meta_box( 'wpseo_meta', 'page', 'normal' );
+            remove_meta_box( 'wpseo_meta', 'post', 'normal' );
+        }
+    }
 
-	/**
-	 *
-	 * Yoast SEO to bottom of edit screen
-	 * 
-	 */
-	public function moveYoastToBottomOfEditPage() 
-	{
-		return 'low';
-	}
+    /**
+     *
+     * Remove Yoast SEO meta for specified post types
+     *
+     */
+    public function removeYoastMetaBoxForPostType()
+    {
+        remove_meta_box('wpseo_meta', 'testimonial', 'normal');
+    }
 
-	/**
-	 *
-	 * Force the kitchen sink to always be on
-	 * 
-	 */
-	public function forceAdvancedWysiwyg( $args ) 
-	{
-		$args['wordpress_adv_hidden'] = false;
+    /**
+     *
+     * Yoast SEO to bottom of edit screen
+     *
+     */
+    public function moveYoastToBottomOfEditPage()
+    {
+        return 'low';
+    }
 
-		return $args;
-	}
+    /**
+     *
+     * Force the kitchen sink to always be on
+     *
+     */
+    public function forceAdvancedWysiwyg( $args )
+    {
+        $args['wordpress_adv_hidden'] = false;
 
-	/**
-	 *
-	 * Disable update notifications for non-admins
-	 * 
-	 */
-	public function restrictUpdateNotification() 
-	{
-		if ( ! current_user_can( 'activate_plugins' ) ) 
-		{
-			remove_action( 'admin_notices', 'update_nag', 3 );
-		}
-	}
+        return $args;
+    }
 
-	/**
-	 *
-	 * Replace How Are You (en-GB)
-	 * 
-	 */
-	public function replaceHowdy( $wp_admin_bar ) 
-	{
-		$my_account = $wp_admin_bar->get_node( 'my-account' );
+    /**
+     *
+     * Disable update notifications for non-admins
+     *
+     */
+    public function restrictUpdateNotification()
+    {
+        if ( ! current_user_can( 'activate_plugins' ) )
+        {
+            remove_action( 'admin_notices', 'update_nag', 3 );
+        }
+    }
 
-		$newtitle = str_replace( 'How are you,', 'Your account: ', $my_account->title );
+    /**
+     *
+     * Replace How Are You (en-GB)
+     *
+     */
+    public function replaceHowdy( $wp_admin_bar )
+    {
+        $my_account = $wp_admin_bar->get_node( 'my-account' );
 
-		$wp_admin_bar->add_node( array(
-		    'id' => 'my-account',
-		    'title' => $newtitle,
-		) );
-	}
-	
-	/**
-	 *
-	 * Remove dashboard widgets except Gravity Forms
-	 * 
-	 */
-	public function cleanUpDashboard() 
-	{
-		global $wp_meta_boxes;
+        $newtitle = str_replace( 'How are you,', 'Your account: ', $my_account->title );
 
-		// Dashboard core widgets :: Left Column
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links'] );
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments'] );
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'] );
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'] );
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['pb_backupbuddy_stats'] );
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['bruteprotect_dashboard_widget'] );
+        $wp_admin_bar->add_node( array(
+            'id' => 'my-account',
+            'title' => $newtitle,
+        ) );
+    }
 
-		// Additional dashboard core widgets :: Right Column
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts'] );
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
-		unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'] );
+    /**
+     *
+     * Remove dashboard widgets except Gravity Forms
+     *
+     */
+    public function cleanUpDashboard()
+    {
+        global $wp_meta_boxes;
 
-		// Remove the welcome panel
-		update_user_meta( get_current_user_id(), 'show_welcome_panel', '0' );
+        // Dashboard core widgets :: Left Column
+        unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links'] );
+        unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments'] );
+        unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'] );
+        unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'] );
+        unset( $wp_meta_boxes['dashboard']['normal']['core']['pb_backupbuddy_stats'] );
+        unset( $wp_meta_boxes['dashboard']['normal']['core']['bruteprotect_dashboard_widget'] );
 
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['rg_forms_dashboard'] );
-		unset( $wp_meta_boxes['dashboard']['normal']['core']['cws-wp-help-dashboard-widget'] );
-	}		
-	
+        // Additional dashboard core widgets :: Right Column
+        unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_recent_drafts'] );
+        unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press'] );
+        unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
+        unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'] );
+
+        // Remove the welcome panel
+        update_user_meta( get_current_user_id(), 'show_welcome_panel', '0' );
+
+        unset( $wp_meta_boxes['dashboard']['normal']['core']['rg_forms_dashboard'] );
+        unset( $wp_meta_boxes['dashboard']['normal']['core']['cws-wp-help-dashboard-widget'] );
+    }
+
 }
