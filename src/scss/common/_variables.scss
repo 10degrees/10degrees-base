@@ -18,6 +18,8 @@ $grey-10: #212121;
 
 // Project variables.
 // Colours and container widths.
+// If you alter variable names, also update EditorColourPalette.php
+// These cascade to block editor colour palette
 $variables: (
   "--primary-colour": red,
   "--secondary-colour": green,

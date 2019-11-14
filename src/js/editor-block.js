@@ -1,7 +1,8 @@
 wp.domReady(() => {
-  //   wp.blocks.unregisterBlockStyle("core/button", "default");
+  wp.blocks.unregisterBlockStyle("core/button", "default");
   wp.blocks.unregisterBlockStyle("core/button", "outline");
   wp.blocks.unregisterBlockStyle("core/button", "squared");
+  wp.blocks.unregisterBlockStyle("core/button", "fill");
 
   wp.blocks.unregisterBlockStyle("core/separator", "default");
   wp.blocks.unregisterBlockStyle("core/separator", "wide");
@@ -11,8 +12,8 @@ wp.domReady(() => {
   wp.blocks.unregisterBlockStyle("core/quote", "large");
 
   wp.blocks.registerBlockStyle("core/button", {
-    name: "default",
-    label: "Default",
+    name: "regular",
+    label: "Regular",
     isDefault: true
   });
 

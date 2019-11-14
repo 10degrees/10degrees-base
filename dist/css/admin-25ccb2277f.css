@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/*
+ * Styles for /wp-admin
+ */
+/*
+ * Project variables
+ */
+/* Colours */
+/* Typography */
+/*
+ * CSS custom properties
+ * We can finally spell "colour" correctly 👍
+ *
+ * Custom properties can be applied to html or :root
+ * :root will target root selector of SVGs as well, for example
+ */
+:root {
+  --primary-colour: red;
+  --secondary-colour: green;
+  --tertiary-colour: pink;
+  --text-colour: #424242;
+  --link-colour: blue;
+  --link-hover-colour: darkblue;
+  --max-content-width: 920px;
+  --max-container-width: 1200px; }
+
+/*
+ * Base typography
+ */
+html {
+  font-size: 100%;
+  font-size: 16px;
+  line-height: 1.5; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  color: #424242;
+  color: var(--text-colour, #424242);
+  background-color: white;
+  font-weight: 400; }
+
+.editor-post-title__input,
+.wp-block-heading h2,
+.wp-block-heading h3,
+.wp-block-heading h4,
+.wp-block-heading h5,
+.wp-block-heading h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  margin-top: 0;
+  margin-bottom: 1.5rem; }
+
+p {
+  margin: 0 0 1.5rem; }
+
+small,
+.small {
+  font-size: 90%; }
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 1.5rem; }
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin-bottom: 0; }
+
+a {
+  color: blue;
+  color: var(--link-colour, blue);
+  text-decoration: none; }
+  a:hover, a:focus {
+    color: darkblue;
+    color: var(--link-hover-colour, darkblue);
+    text-decoration: underline; }
+
+blockquote {
+  margin: 1.5rem 0px;
+  position: relative;
+  padding: 20px 3em;
+  border-left: 2px solid; }
+  blockquote p:last-child,
+  blockquote ul:last-child,
+  blockquote ol:last-child {
+    margin-bottom: 0; }
+
+cite {
+  display: block;
+  font-style: normal; }
+
+/*# sourceMappingURL=maps/admin-25ccb2277f.css.map */

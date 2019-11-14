@@ -1,6 +1,18 @@
 /*
  * Styles for /wp-admin
  */
-body.wp-admin #wpwrap {
-  // font-family: Georgia !important ;
-}
+
+//  @import "common/_reset.scss";
+@import "mixins/_prop";
+
+//  @import "mixins/_screen-reader-text";
+@import "mixins/_bp";
+
+@import "common/_variables";
+@import "common/_root.scss";
+@import "common/_type.scss";
+//  @import "common/_social-brands.scss";
+
+//  @import "common/container";
+//  @import "common/header";
+//  @import "common/footer";
