@@ -69,12 +69,19 @@ wp.domReady(() => {
   // Common Blocks
 
   // Formatting
+  wp.blocks.unregisterBlockType("core/freeform");
+  wp.blocks.unregisterBlockType("core/preformatted");
+  wp.blocks.unregisterBlockType("core/pullquote");
+  wp.blocks.unregisterBlockType("core/verse");
+
+  // layout Elements
+  wp.blocks.unregisterBlockType("core/more");
+  wp.blocks.unregisterBlockType("core/nextpage");
+  wp.blocks.unregisterBlockType("core/separator");
 
   // Widgets
-  wp.blocks.unregisterBlockType("core/archives");
   wp.blocks.unregisterBlockType("core/calendar");
   wp.blocks.unregisterBlockType("core/latest-comments");
-  wp.blocks.unregisterBlockType("core/categories");
   wp.blocks.unregisterBlockType("core/rss");
   wp.blocks.unregisterBlockType("core/tag-cloud");
 
@@ -112,5 +119,7 @@ wp.domReady(() => {
   wp.blocks.unregisterBlockType("core-embed/speaker-deck");
   wp.blocks.unregisterBlockType("core-embed/amazon-kindle");
 
-  wp.blocks.unregisterBlockType("core/how-to");
+  // Yoast
+  wp.blocks.unregisterBlockType("yoast/how-to-block");
+  wp.blocks.unregisterBlockType("yoast/faq-block");
 });
