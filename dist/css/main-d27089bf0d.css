@@ -141,6 +141,19 @@ h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin-top: 0;
   margin-bottom: 1.5rem; }
+  .wp-block-heading h1.is-style-underline,
+  .wp-block-heading h2.is-style-underline,
+  .wp-block-heading h3.is-style-underline,
+  .wp-block-heading h4.is-style-underline,
+  .wp-block-heading h5.is-style-underline,
+  .wp-block-heading h6.is-style-underline,
+  h1.is-style-underline,
+  h2.is-style-underline,
+  h3.is-style-underline,
+  h4.is-style-underline,
+  h5.is-style-underline,
+  h6.is-style-underline {
+    text-decoration: underline; }
 
 .editor-post-title .editor-post-title__input {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
@@ -471,4 +484,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-942bab0171.css.map */
+/*# sourceMappingURL=maps/main-d27089bf0d.css.map */

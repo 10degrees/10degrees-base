@@ -32,6 +32,10 @@ h6 {
   font-family: $base-font;
   margin-top: 0;
   margin-bottom: #{$base-line-height}rem;
+
+  &.is-style-underline {
+    text-decoration: underline;
+  }
 }
 
 .editor-post-title .editor-post-title__input {
