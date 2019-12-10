@@ -1,28 +1,14 @@
-/*
- * Base typography
- */
-
-html {
-  font-size: 100%;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
+.editor-post-title .editor-post-title__input {
+    font-family: $base-font;
 }
-
-body {
-  font-family: $base-font;
-  font-size: $base-font-size;
-  @include prop(color, --text-colour);
-  background-color: $base-background-colour;
-  font-weight: $base-font-weight;
-}
-
+  
 // Headings
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.wp-block-heading h1,
+.wp-block-heading h2,
+.wp-block-heading h3,
+.wp-block-heading h4,
+.wp-block-heading h5,
+.wp-block-heading h6 {
   font-family: $base-font;
   margin-top: 0;
   margin-bottom: #{$base-line-height}rem;
@@ -32,10 +18,7 @@ h6 {
   }
 }
 
-// Heading-specific sizes
-// Use heading classes to change visual display while retaining semantic hierarchy
-h1,
-.h1 {
+.editor-styles-wrapper .wp-block-heading h1 {
   font-size: 1.3125rem;
   line-height: 1.1428;
 
@@ -50,8 +33,7 @@ h1,
   }
 }
 
-h2,
-.h2 {
+.editor-styles-wrapper .wp-block-heading h2 {
   font-size: 1.125rem;
   line-height: 1.333;
 
@@ -66,8 +48,8 @@ h2,
   }
 }
 
-h3,
-.h3 {
+
+.editor-styles-wrapper .wp-block-heading h3 {
   font-size: 1.125rem;
   line-height: 1.333;
 
@@ -82,8 +64,8 @@ h3,
   }
 }
 
-h4,
-.h4 {
+
+.editor-styles-wrapper .wp-block-heading h4 {
   font-size: 1rem;
   line-height: 1.6;
 
@@ -93,8 +75,7 @@ h4,
   }
 }
 
-h5,
-.h5 {
+.editor-styles-wrapper .wp-block-heading h5 {
   font-size: 0.875rem;
   line-height: 1.1428;
 
@@ -104,14 +85,14 @@ h5,
   }
 }
 
-h6,
-.h6 {
+
+.editor-styles-wrapper .wp-block-heading h6 {
   font-size: 0.875rem;
   line-height: 1.1428;
 }
 
 // Paragraphs
-p {
+.editor-styles-wrapper .wp-block p {
   margin: 0 0 #{$base-line-height}rem;
 
   font-family: $base-font;
@@ -139,52 +120,4 @@ p.has-large-font-size {
     font-size: 1.5rem !important;
     line-height: 1.3333;
   }
-}
-
-// Small
-small,
-.small {
-  font-size: 90%;
-}
-
-// Unordered and Ordered lists
-ul,
-ol {
-  margin-top: 0;
-  margin-bottom: #{$base-line-height}rem;
-  ul,
-  ol {
-    margin-bottom: 0;
-  }
-}
-
-// Links
-a {
-  @include prop(color, --link-colour);
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    @include prop(color, --link-hover-colour);
-    text-decoration: underline;
-  }
-}
-
-// Blockquotes and citations
-blockquote {
-  margin: #{$base-line-height}rem 0px;
-  position: relative;
-  padding: 20px 3em;
-  border-left: 2px solid;
-  p,
-  ul,
-  ol {
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-cite {
-  display: block;
-  font-style: normal;
 }
