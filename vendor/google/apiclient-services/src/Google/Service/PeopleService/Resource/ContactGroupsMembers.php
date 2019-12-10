@@ -32,7 +32,8 @@ class Google_Service_PeopleService_Resource_ContactGroupsMembers extends Google_
    * `contactGroups/myContacts` and `contactGroups/starred`. Other system contact
    * groups are deprecated and can only have contacts removed. (members.modify)
    *
-   * @param string $resourceName The resource name of the contact group to modify.
+   * @param string $resourceName Required. The resource name of the contact group
+   * to modify.
    * @param Google_Service_PeopleService_ModifyContactGroupMembersRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_PeopleService_ModifyContactGroupMembersResponse

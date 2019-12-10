@@ -177,11 +177,11 @@ class Google_Service_AlertCenter extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'filter' => array(
+                'customerId' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'customerId' => array(
+                'filter' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),

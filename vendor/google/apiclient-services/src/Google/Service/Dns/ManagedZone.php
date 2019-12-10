@@ -23,6 +23,8 @@ class Google_Service_Dns_ManagedZone extends Google_Collection
   public $dnsName;
   protected $dnssecConfigType = 'Google_Service_Dns_ManagedZoneDnsSecConfig';
   protected $dnssecConfigDataType = '';
+  protected $forwardingConfigType = 'Google_Service_Dns_ManagedZoneForwardingConfig';
+  protected $forwardingConfigDataType = '';
   public $id;
   public $kind;
   public $labels;
@@ -70,6 +72,20 @@ class Google_Service_Dns_ManagedZone extends Google_Collection
   public function getDnssecConfig()
   {
     return $this->dnssecConfig;
+  }
+  /**
+   * @param Google_Service_Dns_ManagedZoneForwardingConfig
+   */
+  public function setForwardingConfig(Google_Service_Dns_ManagedZoneForwardingConfig $forwardingConfig)
+  {
+    $this->forwardingConfig = $forwardingConfig;
+  }
+  /**
+   * @return Google_Service_Dns_ManagedZoneForwardingConfig
+   */
+  public function getForwardingConfig()
+  {
+    return $this->forwardingConfig;
   }
   public function setId($id)
   {

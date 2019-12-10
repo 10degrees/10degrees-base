@@ -45,8 +45,6 @@ class Google_Service_Games extends Google_Service
   public $metagame;
   public $players;
   public $pushtokens;
-  public $questMilestones;
-  public $quests;
   public $revisions;
   public $rooms;
   public $scores;
@@ -440,82 +438,6 @@ class Google_Service_Games extends Google_Service
               'path' => 'pushtokens',
               'httpMethod' => 'PUT',
               'parameters' => array(),
-            ),
-          )
-        )
-    );
-    $this->questMilestones = new Google_Service_Games_Resource_QuestMilestones(
-        $this,
-        $this->serviceName,
-        'questMilestones',
-        array(
-          'methods' => array(
-            'claim' => array(
-              'path' => 'quests/{questId}/milestones/{milestoneId}/claim',
-              'httpMethod' => 'PUT',
-              'parameters' => array(
-                'questId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'milestoneId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'requestId' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),
-          )
-        )
-    );
-    $this->quests = new Google_Service_Games_Resource_Quests(
-        $this,
-        $this->serviceName,
-        'quests',
-        array(
-          'methods' => array(
-            'accept' => array(
-              'path' => 'quests/{questId}/accept',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'questId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
-            ),'list' => array(
-              'path' => 'players/{playerId}/quests',
-              'httpMethod' => 'GET',
-              'parameters' => array(
-                'playerId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-                'language' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'maxResults' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-              ),
             ),
           )
         )

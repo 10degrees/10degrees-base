@@ -15,11 +15,28 @@
  * the License.
  */
 
-class Google_Service_DataFusion_CounterOptions extends Google_Model
+class Google_Service_DataFusion_CounterOptions extends Google_Collection
 {
+  protected $collection_key = 'customFields';
+  protected $customFieldsType = 'Google_Service_DataFusion_CustomField';
+  protected $customFieldsDataType = 'array';
   public $field;
   public $metric;
 
+  /**
+   * @param Google_Service_DataFusion_CustomField
+   */
+  public function setCustomFields($customFields)
+  {
+    $this->customFields = $customFields;
+  }
+  /**
+   * @return Google_Service_DataFusion_CustomField
+   */
+  public function getCustomFields()
+  {
+    return $this->customFields;
+  }
   public function setField($field)
   {
     $this->field = $field;

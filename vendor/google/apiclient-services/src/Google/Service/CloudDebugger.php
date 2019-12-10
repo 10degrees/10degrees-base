@@ -87,13 +87,13 @@ class Google_Service_CloudDebugger extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'waitToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'successOnTimeout' => array(
                   'location' => 'query',
                   'type' => 'boolean',
+                ),
+                'waitToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),'update' => array(
@@ -125,10 +125,6 @@ class Google_Service_CloudDebugger extends Google_Service
               'path' => 'v2/debugger/debuggees',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'project' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'clientVersion' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -136,6 +132,10 @@ class Google_Service_CloudDebugger extends Google_Service
                 'includeInactive' => array(
                   'location' => 'query',
                   'type' => 'boolean',
+                ),
+                'project' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),
@@ -199,19 +199,19 @@ class Google_Service_CloudDebugger extends Google_Service
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'clientVersion' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
                 'action.value' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'includeInactive' => array(
+                'clientVersion' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'includeAllUsers' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),
-                'includeAllUsers' => array(
+                'includeInactive' => array(
                   'location' => 'query',
                   'type' => 'boolean',
                 ),

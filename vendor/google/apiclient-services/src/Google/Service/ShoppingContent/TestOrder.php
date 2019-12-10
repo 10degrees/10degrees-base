@@ -26,6 +26,7 @@ class Google_Service_ShoppingContent_TestOrder extends Google_Collection
   public $predefinedBillingAddress;
   public $predefinedDeliveryAddress;
   public $predefinedEmail;
+  public $predefinedPickupDetails;
   protected $promotionsType = 'Google_Service_ShoppingContent_OrderPromotion';
   protected $promotionsDataType = 'array';
   protected $shippingCostType = 'Google_Service_ShoppingContent_Price';
@@ -93,6 +94,14 @@ class Google_Service_ShoppingContent_TestOrder extends Google_Collection
   public function getPredefinedEmail()
   {
     return $this->predefinedEmail;
+  }
+  public function setPredefinedPickupDetails($predefinedPickupDetails)
+  {
+    $this->predefinedPickupDetails = $predefinedPickupDetails;
+  }
+  public function getPredefinedPickupDetails()
+  {
+    return $this->predefinedPickupDetails;
   }
   /**
    * @param Google_Service_ShoppingContent_OrderPromotion

@@ -67,6 +67,16 @@ class Google_Service_CloudIAP extends Google_Service
                   'required' => true,
                 ),
               ),
+            ),'getIapSettings' => array(
+              'path' => 'v1/{+name}:iapSettings',
+              'httpMethod' => 'GET',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
             ),'setIamPolicy' => array(
               'path' => 'v1/{+resource}:setIamPolicy',
               'httpMethod' => 'POST',
@@ -85,6 +95,20 @@ class Google_Service_CloudIAP extends Google_Service
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ),
+              ),
+            ),'updateIapSettings' => array(
+              'path' => 'v1/{+name}:iapSettings',
+              'httpMethod' => 'PATCH',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'updateMask' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),

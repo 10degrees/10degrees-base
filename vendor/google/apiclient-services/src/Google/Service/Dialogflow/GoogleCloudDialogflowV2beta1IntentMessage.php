@@ -19,6 +19,8 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
 {
   protected $basicCardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageBasicCard';
   protected $basicCardDataType = '';
+  protected $browseCarouselCardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard';
+  protected $browseCarouselCardDataType = '';
   protected $cardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageCard';
   protected $cardDataType = '';
   protected $carouselSelectType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageCarouselSelect';
@@ -29,6 +31,8 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
   protected $linkOutSuggestionDataType = '';
   protected $listSelectType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageListSelect';
   protected $listSelectDataType = '';
+  protected $mediaContentType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageMediaContent';
+  protected $mediaContentDataType = '';
   public $payload;
   public $platform;
   protected $quickRepliesType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageQuickReplies';
@@ -43,6 +47,8 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
   protected $simpleResponsesDataType = '';
   protected $suggestionsType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageSuggestions';
   protected $suggestionsDataType = '';
+  protected $tableCardType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTableCard';
+  protected $tableCardDataType = '';
   protected $telephonyPlayAudioType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio';
   protected $telephonyPlayAudioDataType = '';
   protected $telephonySynthesizeSpeechType = 'Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonySynthesizeSpeech';
@@ -65,6 +71,20 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
   public function getBasicCard()
   {
     return $this->basicCard;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard
+   */
+  public function setBrowseCarouselCard(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard $browseCarouselCard)
+  {
+    $this->browseCarouselCard = $browseCarouselCard;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageBrowseCarouselCard
+   */
+  public function getBrowseCarouselCard()
+  {
+    return $this->browseCarouselCard;
   }
   /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageCard
@@ -135,6 +155,20 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
   public function getListSelect()
   {
     return $this->listSelect;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageMediaContent
+   */
+  public function setMediaContent(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageMediaContent $mediaContent)
+  {
+    $this->mediaContent = $mediaContent;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageMediaContent
+   */
+  public function getMediaContent()
+  {
+    return $this->mediaContent;
   }
   public function setPayload($payload)
   {
@@ -235,6 +269,20 @@ class Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessage extend
   public function getSuggestions()
   {
     return $this->suggestions;
+  }
+  /**
+   * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTableCard
+   */
+  public function setTableCard(Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTableCard $tableCard)
+  {
+    $this->tableCard = $tableCard;
+  }
+  /**
+   * @return Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTableCard
+   */
+  public function getTableCard()
+  {
+    return $this->tableCard;
   }
   /**
    * @param Google_Service_Dialogflow_GoogleCloudDialogflowV2beta1IntentMessageTelephonyPlayAudio

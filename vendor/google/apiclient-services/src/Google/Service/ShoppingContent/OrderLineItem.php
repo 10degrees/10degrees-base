@@ -33,6 +33,7 @@ class Google_Service_ShoppingContent_OrderLineItem extends Google_Collection
   public $quantityDelivered;
   public $quantityOrdered;
   public $quantityPending;
+  public $quantityReadyForPickup;
   public $quantityReturned;
   public $quantityShipped;
   public $quantityUndeliverable;
@@ -154,6 +155,14 @@ class Google_Service_ShoppingContent_OrderLineItem extends Google_Collection
   public function getQuantityPending()
   {
     return $this->quantityPending;
+  }
+  public function setQuantityReadyForPickup($quantityReadyForPickup)
+  {
+    $this->quantityReadyForPickup = $quantityReadyForPickup;
+  }
+  public function getQuantityReadyForPickup()
+  {
+    return $this->quantityReadyForPickup;
   }
   public function setQuantityReturned($quantityReturned)
   {

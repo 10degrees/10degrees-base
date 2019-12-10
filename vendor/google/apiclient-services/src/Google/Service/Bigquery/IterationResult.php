@@ -18,6 +18,8 @@
 class Google_Service_Bigquery_IterationResult extends Google_Collection
 {
   protected $collection_key = 'clusterInfos';
+  protected $arimaResultType = 'Google_Service_Bigquery_ArimaResult';
+  protected $arimaResultDataType = '';
   protected $clusterInfosType = 'Google_Service_Bigquery_ClusterInfo';
   protected $clusterInfosDataType = 'array';
   public $durationMs;
@@ -26,6 +28,20 @@ class Google_Service_Bigquery_IterationResult extends Google_Collection
   public $learnRate;
   public $trainingLoss;
 
+  /**
+   * @param Google_Service_Bigquery_ArimaResult
+   */
+  public function setArimaResult(Google_Service_Bigquery_ArimaResult $arimaResult)
+  {
+    $this->arimaResult = $arimaResult;
+  }
+  /**
+   * @return Google_Service_Bigquery_ArimaResult
+   */
+  public function getArimaResult()
+  {
+    return $this->arimaResult;
+  }
   /**
    * @param Google_Service_Bigquery_ClusterInfo
    */

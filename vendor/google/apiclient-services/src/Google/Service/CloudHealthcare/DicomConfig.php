@@ -22,6 +22,7 @@ class Google_Service_CloudHealthcare_DicomConfig extends Google_Model
   protected $keepListDataType = '';
   protected $removeListType = 'Google_Service_CloudHealthcare_TagFilterList';
   protected $removeListDataType = '';
+  public $skipIdRedaction;
 
   public function setFilterProfile($filterProfile)
   {
@@ -58,5 +59,13 @@ class Google_Service_CloudHealthcare_DicomConfig extends Google_Model
   public function getRemoveList()
   {
     return $this->removeList;
+  }
+  public function setSkipIdRedaction($skipIdRedaction)
+  {
+    $this->skipIdRedaction = $skipIdRedaction;
+  }
+  public function getSkipIdRedaction()
+  {
+    return $this->skipIdRedaction;
   }
 }

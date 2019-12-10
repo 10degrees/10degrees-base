@@ -17,9 +17,18 @@
 
 class Google_Service_CloudHealthcare_DeidentifySummary extends Google_Model
 {
+  public $failureResourceCount;
   public $successResourceCount;
   public $successStoreCount;
 
+  public function setFailureResourceCount($failureResourceCount)
+  {
+    $this->failureResourceCount = $failureResourceCount;
+  }
+  public function getFailureResourceCount()
+  {
+    return $this->failureResourceCount;
+  }
   public function setSuccessResourceCount($successResourceCount)
   {
     $this->successResourceCount = $successResourceCount;

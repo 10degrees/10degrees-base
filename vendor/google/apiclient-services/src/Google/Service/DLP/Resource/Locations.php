@@ -25,21 +25,4 @@
  */
 class Google_Service_DLP_Resource_Locations extends Google_Service_Resource
 {
-  /**
-   * Returns a list of the sensitive information types that the DLP API supports.
-   * See https://cloud.google.com/dlp/docs/infotypes-reference to learn more.
-   * (locations.infoTypes)
-   *
-   * @param string $location The geographic location to list info types. Reserved
-   * for future extensions.
-   * @param Google_Service_DLP_GooglePrivacyDlpV2ListInfoTypesRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return Google_Service_DLP_GooglePrivacyDlpV2ListInfoTypesResponse
-   */
-  public function infoTypes($location, Google_Service_DLP_GooglePrivacyDlpV2ListInfoTypesRequest $postBody, $optParams = array())
-  {
-    $params = array('location' => $location, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('infoTypes', array($params), "Google_Service_DLP_GooglePrivacyDlpV2ListInfoTypesResponse");
-  }
 }

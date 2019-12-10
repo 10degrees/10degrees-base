@@ -75,6 +75,8 @@ class Google_Service_AndroidManagement_Policy extends Google_Collection
   protected $passwordRequirementsDataType = '';
   protected $permissionGrantsType = 'Google_Service_AndroidManagement_PermissionGrant';
   protected $permissionGrantsDataType = 'array';
+  protected $permittedAccessibilityServicesType = 'Google_Service_AndroidManagement_PackageNameList';
+  protected $permittedAccessibilityServicesDataType = '';
   protected $permittedInputMethodsType = 'Google_Service_AndroidManagement_PackageNameList';
   protected $permittedInputMethodsDataType = '';
   protected $persistentPreferredActivitiesType = 'Google_Service_AndroidManagement_PersistentPreferredActivity';
@@ -550,6 +552,20 @@ class Google_Service_AndroidManagement_Policy extends Google_Collection
   public function getPermissionGrants()
   {
     return $this->permissionGrants;
+  }
+  /**
+   * @param Google_Service_AndroidManagement_PackageNameList
+   */
+  public function setPermittedAccessibilityServices(Google_Service_AndroidManagement_PackageNameList $permittedAccessibilityServices)
+  {
+    $this->permittedAccessibilityServices = $permittedAccessibilityServices;
+  }
+  /**
+   * @return Google_Service_AndroidManagement_PackageNameList
+   */
+  public function getPermittedAccessibilityServices()
+  {
+    return $this->permittedAccessibilityServices;
   }
   /**
    * @param Google_Service_AndroidManagement_PackageNameList

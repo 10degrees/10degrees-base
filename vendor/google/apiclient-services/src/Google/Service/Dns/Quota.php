@@ -23,10 +23,14 @@ class Google_Service_Dns_Quota extends Google_Collection
   public $managedZones;
   public $managedZonesPerNetwork;
   public $networksPerManagedZone;
+  public $networksPerPolicy;
+  public $policies;
   public $resourceRecordsPerRrset;
   public $rrsetAdditionsPerChange;
   public $rrsetDeletionsPerChange;
   public $rrsetsPerManagedZone;
+  public $targetNameServersPerManagedZone;
+  public $targetNameServersPerPolicy;
   public $totalRrdataSizePerChange;
   protected $whitelistedKeySpecsType = 'Google_Service_Dns_DnsKeySpec';
   protected $whitelistedKeySpecsDataType = 'array';
@@ -71,6 +75,22 @@ class Google_Service_Dns_Quota extends Google_Collection
   {
     return $this->networksPerManagedZone;
   }
+  public function setNetworksPerPolicy($networksPerPolicy)
+  {
+    $this->networksPerPolicy = $networksPerPolicy;
+  }
+  public function getNetworksPerPolicy()
+  {
+    return $this->networksPerPolicy;
+  }
+  public function setPolicies($policies)
+  {
+    $this->policies = $policies;
+  }
+  public function getPolicies()
+  {
+    return $this->policies;
+  }
   public function setResourceRecordsPerRrset($resourceRecordsPerRrset)
   {
     $this->resourceRecordsPerRrset = $resourceRecordsPerRrset;
@@ -102,6 +122,22 @@ class Google_Service_Dns_Quota extends Google_Collection
   public function getRrsetsPerManagedZone()
   {
     return $this->rrsetsPerManagedZone;
+  }
+  public function setTargetNameServersPerManagedZone($targetNameServersPerManagedZone)
+  {
+    $this->targetNameServersPerManagedZone = $targetNameServersPerManagedZone;
+  }
+  public function getTargetNameServersPerManagedZone()
+  {
+    return $this->targetNameServersPerManagedZone;
+  }
+  public function setTargetNameServersPerPolicy($targetNameServersPerPolicy)
+  {
+    $this->targetNameServersPerPolicy = $targetNameServersPerPolicy;
+  }
+  public function getTargetNameServersPerPolicy()
+  {
+    return $this->targetNameServersPerPolicy;
   }
   public function setTotalRrdataSizePerChange($totalRrdataSizePerChange)
   {
