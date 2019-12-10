@@ -38,31 +38,107 @@ h6 {
 // Use heading classes to change visual display while retaining semantic hierarchy
 h1,
 .h1 {
+  font-size: 1.3125rem;
+  line-height: 1.1428;
+
+  @include bp(md) {
+    font-size: 2.25rem;
+    line-height: 1.1111;
+  }
+
+  @include bp(lg){
+    font-size: 3rem;
+    line-height: 0.9583;
+  }
 }
 
 h2,
 .h2 {
+  font-size: 1.125rem;
+  line-height: 1.333;
+
+  @include bp(md){
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  @include bp(lg){
+    font-size: 1.875rem;
+    line-height: 1.333;
+  }
 }
 
 h3,
 .h3 {
+  font-size: 1.125rem;
+  line-height: 1.333;
+
+  @include bp(md){
+    font-size: 1.3125rem;
+    line-height: 1.1428;
+  }
+
+  @include bp(lg){
+    font-size: 1.5rem;
+    line-height: 1.333;
+  }
 }
 
 h4,
 .h4 {
+  font-size: 0.625rem;
+  line-height: 1.6;
+
+  @include bp(md){
+    font-size: 1.125rem;
+    line-height: 1.333;
+  }
 }
 
 h5,
 .h5 {
+  font-size: 0.875rem;
+  line-height: 1.1428;
+
+  @include bp(lg){
+    font-size: 1rem;
+    line-height: 1.5;
+  }
 }
 
 h6,
 .h6 {
+  font-size: 0.875rem;
+  line-height: 1.1428;
 }
 
 // Paragraphs
 p {
   margin: 0 0 #{$base-line-height}rem;
+
+  font-size: 0.875rem;
+  line-height: 1.7142;
+
+  @include bp(md){
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+p.has-large-font-size,
+p.-large{
+  font-size: 0.875rem;
+  line-height: 1.7142;
+
+  @include bp(md){
+    font-size: 1.3125rem;
+    line-height: 1.5238;
+  }
+
+  @include bp(lg){
+    font-size: 1.5rem;
+    line-height: 1.3333;
+  }
 }
 
 // Small

@@ -17,6 +17,7 @@ class AdminServiceProvider extends ServiceProvider
         '\App\Admin\CleanUp',
         '\App\Admin\Acf',
         '\App\Admin\MenuOrder',
-        '\App\Admin\EditorColourPalette'
+        '\App\Admin\EditorColourPalette',
+        '\App\Admin\FontSizes'
     ];
 }
