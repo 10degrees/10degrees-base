@@ -13,8 +13,7 @@ class FontSizes
     }
 
     /**
-     * Set the colour palette according to colours defined in SCSS
-     * @see src/scss/common/_variables.scss
+     * Set the custom font sizes for text-based blocks
      */
     public function addFontSizes()
     {
