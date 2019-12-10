@@ -18,6 +18,7 @@ class AdminServiceProvider extends ServiceProvider
         '\App\Admin\Acf',
         '\App\Admin\MenuOrder',
         '\App\Admin\EditorColourPalette',
-        '\App\Admin\FontSizes'
+        '\App\Admin\FontSizes',
+        '\App\Admin\ReusableBlockMenu',
     ];
 }
