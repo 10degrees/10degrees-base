@@ -213,7 +213,25 @@ h6,
   line-height: 1.1428; }
 
 p {
-  margin: 0 0 1.5rem; }
+  margin: 0 0 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.7142; }
+  @media only screen and (min-width: 768px) {
+    p {
+      font-size: 1rem;
+      line-height: 1.5; } }
+
+p.has-large-font-size {
+  font-size: 0.875rem;
+  line-height: 1.7142; }
+  @media only screen and (min-width: 768px) {
+    p.has-large-font-size {
+      font-size: 1.3125rem;
+      line-height: 1.5238; } }
+  @media only screen and (min-width: 1024px) {
+    p.has-large-font-size {
+      font-size: 1.5rem;
+      line-height: 1.3333; } }
 
 small,
 .small {
@@ -427,4 +445,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-a8db82dc7e.css.map */
+/*# sourceMappingURL=maps/main-c8fbf52642.css.map */

@@ -115,6 +115,29 @@ h6,
 // Paragraphs
 p {
   margin: 0 0 #{$base-line-height}rem;
+
+  font-size: 0.875rem;
+  line-height: 1.7142;
+
+  @include bp(md){
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+p.has-large-font-size{
+  font-size: 0.875rem;
+  line-height: 1.7142;
+
+  @include bp(md){
+    font-size: 1.3125rem;
+    line-height: 1.5238;
+  }
+
+  @include bp(lg){
+    font-size: 1.5rem;
+    line-height: 1.3333;
+  }
 }
 
 // Small
