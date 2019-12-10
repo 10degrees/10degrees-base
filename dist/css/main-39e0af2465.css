@@ -189,7 +189,7 @@ h3,
 
 h4,
 .h4 {
-  font-size: 0.625rem;
+  font-size: 1rem;
   line-height: 1.6; }
   @media only screen and (min-width: 768px) {
     h4,
@@ -461,4 +461,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-5004b7f05a.css.map */
+/*# sourceMappingURL=maps/main-39e0af2465.css.map */
