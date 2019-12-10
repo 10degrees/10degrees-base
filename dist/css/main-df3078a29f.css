@@ -142,71 +142,85 @@ h6 {
   margin-top: 0;
   margin-bottom: 1.5rem; }
 
+.editor-styles-wrapper .wp-block-heading h1,
 h1,
 .h1 {
   font-size: 1.3125rem;
   line-height: 1.1428; }
   @media only screen and (min-width: 768px) {
+    .editor-styles-wrapper .wp-block-heading h1,
     h1,
     .h1 {
       font-size: 2.25rem;
       line-height: 1.1111; } }
   @media only screen and (min-width: 1024px) {
+    .editor-styles-wrapper .wp-block-heading h1,
     h1,
     .h1 {
       font-size: 3rem;
       line-height: 0.9583; } }
 
+.editor-styles-wrapper .wp-block-heading h2,
 h2,
 .h2 {
   font-size: 1.125rem;
   line-height: 1.333; }
   @media only screen and (min-width: 768px) {
+    .editor-styles-wrapper .wp-block-heading h2,
     h2,
     .h2 {
       font-size: 1.5rem;
       line-height: 1; } }
   @media only screen and (min-width: 1024px) {
+    .editor-styles-wrapper .wp-block-heading h2,
     h2,
     .h2 {
       font-size: 1.875rem;
       line-height: 1.333; } }
 
+.editor-styles-wrapper .wp-block-heading h3,
 h3,
 .h3 {
   font-size: 1.125rem;
   line-height: 1.333; }
   @media only screen and (min-width: 768px) {
+    .editor-styles-wrapper .wp-block-heading h3,
     h3,
     .h3 {
       font-size: 1.3125rem;
       line-height: 1.1428; } }
   @media only screen and (min-width: 1024px) {
+    .editor-styles-wrapper .wp-block-heading h3,
     h3,
     .h3 {
       font-size: 1.5rem;
       line-height: 1.333; } }
 
+.editor-styles-wrapper .wp-block-heading h4,
 h4,
 .h4 {
   font-size: 1rem;
   line-height: 1.6; }
   @media only screen and (min-width: 768px) {
+    .editor-styles-wrapper .wp-block-heading h4,
     h4,
     .h4 {
       font-size: 1.125rem;
       line-height: 1.333; } }
 
+.editor-styles-wrapper .wp-block-heading h5,
 h5,
 .h5 {
   font-size: 0.875rem;
   line-height: 1.1428; }
   @media only screen and (min-width: 1024px) {
+    .editor-styles-wrapper .wp-block-heading h5,
     h5,
     .h5 {
       font-size: 1rem;
       line-height: 1.5; } }
 
+.editor-styles-wrapper .wp-block-heading h6,
 h6,
 .h6 {
   font-size: 0.875rem;
@@ -448,4 +462,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-1747dee65d.css.map */
+/*# sourceMappingURL=maps/main-df3078a29f.css.map */

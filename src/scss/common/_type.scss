@@ -36,6 +36,7 @@ h6 {
 
 // Heading-specific sizes
 // Use heading classes to change visual display while retaining semantic hierarchy
+.editor-styles-wrapper .wp-block-heading h1,
 h1,
 .h1 {
   font-size: 1.3125rem;
@@ -52,6 +53,7 @@ h1,
   }
 }
 
+.editor-styles-wrapper .wp-block-heading h2,
 h2,
 .h2 {
   font-size: 1.125rem;
@@ -68,6 +70,7 @@ h2,
   }
 }
 
+.editor-styles-wrapper .wp-block-heading h3,
 h3,
 .h3 {
   font-size: 1.125rem;
@@ -84,6 +87,7 @@ h3,
   }
 }
 
+.editor-styles-wrapper .wp-block-heading h4,
 h4,
 .h4 {
   font-size: 1rem;
@@ -95,6 +99,7 @@ h4,
   }
 }
 
+.editor-styles-wrapper .wp-block-heading h5,
 h5,
 .h5 {
   font-size: 0.875rem;
@@ -106,6 +111,7 @@ h5,
   }
 }
 
+.editor-styles-wrapper .wp-block-heading h6,
 h6,
 .h6 {
   font-size: 0.875rem;
