@@ -1,19 +1,17 @@
 {
   "css/admin.css": "css/admin-be6c31d1b9.css",
-  "css/common/blocks/blocks.css": "css/common/blocks/blocks-d41d8cd98f.css",
   "css/editor-block.css": "css/editor-block-d41d8cd98f.css",
   "css/editor-classic.css": "css/editor-classic-d41d8cd98f.css",
   "css/ie.css": "css/ie-d41d8cd98f.css",
   "css/login.css": "css/login-c27042bc3d.css",
-  "css/main.css": "css/main-bb55b9bbbc.css",
+  "css/main.css": "css/main-9aaf60b1ff.css",
   "css/maps/admin.css": "css/maps/admin-be6c31d1b9.css.map",
-  "css/maps/common/blocks/blocks.css": "css/maps/common/blocks/blocks-d41d8cd98f.css.map",
   "css/maps/editor-block.css": "css/maps/editor-block-d41d8cd98f.css.map",
   "css/maps/editor-classic.css": "css/maps/editor-classic-d41d8cd98f.css.map",
   "css/maps/ie.css": "css/maps/ie-d41d8cd98f.css.map",
   "css/maps/login.css": "css/maps/login-c27042bc3d.css.map",
-  "css/maps/main.css": "css/maps/main-bb55b9bbbc.css.map",
+  "css/maps/main.css": "css/maps/main-9aaf60b1ff.css.map",
   "js/admin.js": "js/admin-834a8bac40.js",
-  "js/editor-block.js": "js/editor-block-a9e68d1c4d.js",
+  "js/editor-block.js": "js/editor-block-eff413e187.js",
   "js/main.js": "js/main-180df532fd.js"
 }
