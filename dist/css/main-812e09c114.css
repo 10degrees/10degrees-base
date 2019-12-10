@@ -221,15 +221,18 @@ p {
       font-size: 1rem;
       line-height: 1.5; } }
 
-p.has-large-font-size {
+p.has-large-font-size,
+p.-large {
   font-size: 0.875rem;
   line-height: 1.7142; }
   @media only screen and (min-width: 768px) {
-    p.has-large-font-size {
+    p.has-large-font-size,
+    p.-large {
       font-size: 1.3125rem;
       line-height: 1.5238; } }
   @media only screen and (min-width: 1024px) {
-    p.has-large-font-size {
+    p.has-large-font-size,
+    p.-large {
       font-size: 1.5rem;
       line-height: 1.3333; } }
 
@@ -445,4 +448,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-c8fbf52642.css.map */
+/*# sourceMappingURL=maps/main-812e09c114.css.map */
