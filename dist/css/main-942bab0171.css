@@ -126,7 +126,7 @@ body {
   background-color: white;
   font-weight: 400; }
 
-.editor-post-title__input,
+.wp-block-heading h1,
 .wp-block-heading h2,
 .wp-block-heading h3,
 .wp-block-heading h4,
@@ -141,6 +141,9 @@ h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin-top: 0;
   margin-bottom: 1.5rem; }
+
+.editor-post-title .editor-post-title__input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
 
 .editor-styles-wrapper .wp-block-heading h1,
 h1,
@@ -226,28 +229,34 @@ h6,
   font-size: 0.875rem;
   line-height: 1.1428; }
 
+.editor-styles-wrapper .wp-block p,
 p {
   margin: 0 0 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 0.875rem;
   line-height: 1.7142; }
   @media only screen and (min-width: 768px) {
+    .editor-styles-wrapper .wp-block p,
     p {
       font-size: 1rem;
       line-height: 1.5; } }
 
+.editor-styles-wrapper .wp-block p.has-large-font-size,
 p.has-large-font-size,
 p.-large {
-  font-size: 0.875rem;
+  font-size: 0.875rem !important;
   line-height: 1.7142; }
   @media only screen and (min-width: 768px) {
+    .editor-styles-wrapper .wp-block p.has-large-font-size,
     p.has-large-font-size,
     p.-large {
-      font-size: 1.3125rem;
+      font-size: 1.3125rem !important;
       line-height: 1.5238; } }
   @media only screen and (min-width: 1024px) {
+    .editor-styles-wrapper .wp-block p.has-large-font-size,
     p.has-large-font-size,
     p.-large {
-      font-size: 1.5rem;
+      font-size: 1.5rem !important;
       line-height: 1.3333; } }
 
 small,
@@ -462,4 +471,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-df3078a29f.css.map */
+/*# sourceMappingURL=maps/main-942bab0171.css.map */

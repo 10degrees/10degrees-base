@@ -17,7 +17,7 @@ body {
 }
 
 // Headings
-.editor-post-title__input,
+.wp-block-heading h1,
 .wp-block-heading h2,
 .wp-block-heading h3,
 .wp-block-heading h4,
@@ -32,6 +32,10 @@ h6 {
   font-family: $base-font;
   margin-top: 0;
   margin-bottom: #{$base-line-height}rem;
+}
+
+.editor-post-title .editor-post-title__input {
+  font-family: $base-font;
 }
 
 // Heading-specific sizes
@@ -119,8 +123,11 @@ h6,
 }
 
 // Paragraphs
+.editor-styles-wrapper .wp-block p,
 p {
   margin: 0 0 #{$base-line-height}rem;
+
+  font-family: $base-font;
 
   font-size: 0.875rem;
   line-height: 1.7142;
@@ -131,18 +138,19 @@ p {
   }
 }
 
+.editor-styles-wrapper .wp-block p.has-large-font-size,
 p.has-large-font-size,
 p.-large{
-  font-size: 0.875rem;
+  font-size: 0.875rem !important;
   line-height: 1.7142;
 
   @include bp(md){
-    font-size: 1.3125rem;
+    font-size: 1.3125rem !important;
     line-height: 1.5238;
   }
 
   @include bp(lg){
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
     line-height: 1.3333;
   }
 }
