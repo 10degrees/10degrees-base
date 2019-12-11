@@ -308,6 +308,11 @@ ol,
   .wp-block ul.is-style-icon,
   .wp-block ol.is-style-icon {
     list-style-image: url("../img/list-icon.svg"); }
+    ul.is-style-icon li,
+    ol.is-style-icon li,
+    .wp-block ul.is-style-icon li,
+    .wp-block ol.is-style-icon li {
+      padding-left: 5px; }
 
 a,
 .wp-block a {
@@ -523,4 +528,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-ced0a9b01e.css.map */
+/*# sourceMappingURL=maps/main-19e4a3d097.css.map */
