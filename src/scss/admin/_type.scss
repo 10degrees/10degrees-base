@@ -19,6 +19,11 @@
   }
 }
 
+.editor-styles-wrapper .wp-block p,
+.editor-styles-wrapper .wp-block ul {
+  font-family: $base-font;
+}
+
 .editor-styles-wrapper .wp-block-heading h1 {
   font-size: 1.3125rem;
   line-height: 1.1428;
@@ -96,8 +101,6 @@
 .editor-styles-wrapper .wp-block p {
   margin: 0 0 #{$base-line-height}rem;
 
-  font-family: $base-font;
-
   font-size: 0.875rem;
   line-height: 1.7142;
 
@@ -131,5 +134,24 @@
   &:focus {
     @include prop(color, --link-hover-colour);
     text-decoration: underline;
+  }
+}
+
+.wp-block ul {
+  margin-top: 0;
+  margin-bottom: #{$base-line-height}rem;
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+
+  li {
+    font-size: 0.875rem;
+    line-height: 1.7142;
+
+    @include bp(md){
+      font-size: 1rem;
+      line-height: 1.5;
+    }
   }
 }

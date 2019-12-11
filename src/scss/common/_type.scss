@@ -155,6 +155,16 @@ ol {
   ol {
     margin-bottom: 0;
   }
+
+  li {
+    font-size: 0.875rem;
+    line-height: 1.7142;
+
+    @include bp(md){
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
 }
 
 // Links

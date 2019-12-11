@@ -248,6 +248,15 @@ ol {
   ol ul,
   ol ol {
     margin-bottom: 0; }
+  ul li,
+  ol li {
+    font-size: 0.875rem;
+    line-height: 1.7142; }
+    @media only screen and (min-width: 768px) {
+      ul li,
+      ol li {
+        font-size: 1rem;
+        line-height: 1.5; } }
 
 a {
   color: blue;
@@ -447,4 +456,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-33a62b7f76.css.map */
+/*# sourceMappingURL=maps/main-a20eadd73b.css.map */

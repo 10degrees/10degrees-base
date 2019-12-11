@@ -23,6 +23,10 @@
   .wp-block-heading h6.is-style-underline {
     text-decoration: underline; }
 
+.editor-styles-wrapper .wp-block p,
+.editor-styles-wrapper .wp-block ul {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+
 .editor-styles-wrapper .wp-block-heading h1 {
   font-size: 1.3125rem;
   line-height: 1.1428; }
@@ -81,7 +85,6 @@
 
 .editor-styles-wrapper .wp-block p {
   margin: 0 0 1.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 0.875rem;
   line-height: 1.7142; }
   @media only screen and (min-width: 768px) {
@@ -110,4 +113,18 @@
     color: var(--link-hover-colour, darkblue);
     text-decoration: underline; }
 
-/*# sourceMappingURL=maps/editor-block-0838307c7b.css.map */
+.wp-block ul {
+  margin-top: 0;
+  margin-bottom: 1.5rem; }
+  .wp-block ul ul,
+  .wp-block ul ol {
+    margin-bottom: 0; }
+  .wp-block ul li {
+    font-size: 0.875rem;
+    line-height: 1.7142; }
+    @media only screen and (min-width: 768px) {
+      .wp-block ul li {
+        font-size: 1rem;
+        line-height: 1.5; } }
+
+/*# sourceMappingURL=maps/editor-block-7043d0e5ca.css.map */
