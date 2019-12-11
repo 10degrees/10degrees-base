@@ -7,8 +7,10 @@
 @import "mixins/bp";
 
 .editor-styles-wrapper {
-    @import "common/type";
-    @import "admin/type";
+	@import "common/type";
+	@import "admin/type";
+
+	@import "common/blocks/blockquote";
 }
 
 @import "admin/block-editor";
