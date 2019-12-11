@@ -535,6 +535,14 @@ body {
 	}
 }
  */
+.wp-block-table table {
+  border-collapse: collapse; }
+
+.wp-block-table table,
+.wp-block-table th,
+.wp-block-table td {
+  border: 1px solid #212121; }
+
 @media screen and (max-width: 675px) {
   #wpadminbar {
     display: none; }
@@ -549,4 +557,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-517e6bd86b.css.map */
+/*# sourceMappingURL=maps/main-166c464611.css.map */
