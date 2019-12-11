@@ -9,6 +9,7 @@ $colours : (
 
 .wp-block-button {
     .wp-block-button__link {
+
         @include prop(background-color, --primary-colour);
         color: white;
 
@@ -58,12 +59,16 @@ $colours : (
         }
 
         @each $name, $colour in $colours {
+            
             &.has-#{$name}-color{
+                @include prop(color, #{$colour});
+
                 &:hover,
                 &:focus,
                 &:active,
                 &.active{
                     @include prop(background-color, #{$colour});
+                    @include prop(border-color, #{$colour});
                     color: white;
                 }
             }
