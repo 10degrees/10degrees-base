@@ -10,12 +10,12 @@
  * alignwide.
  *
  * @param array $block
- * @param array|string $classes
+ * @param string $classes
  * @return void
  */
-function td_block_class( array $block, $classes = [] ) : void
+function td_block_class( array $block, string $classes ) : void
 {
-	if ( ! is_array( $classes ) ) $classes = [ trim( $classes ) ];
+	$classes = [ trim( $classes ) ];
 
 	if ( ! empty( $block['align'] ) ) $classes[] = 'align' . $block['align'];
 	if ( ! empty( $block['id']    ) ) $classes[] = str_replace( '_', '-', $block['id']   );

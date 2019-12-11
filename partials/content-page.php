@@ -8,7 +8,7 @@
  * @since 2.0.0
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'block-wrapper' ); ?>>
 
     <header>
         <h1><?php echo td_title(); ?></h1>

@@ -1,0 +1,13 @@
+.block-wrapper {
+	& > * {
+		@include content;
+	}
+	& > .alignfull {
+		max-width: unset;
+		padding-right: 0;
+		padding-left: 0;
+	}
+	& > .alignwide {
+		@include alignwide;
+	}
+}
