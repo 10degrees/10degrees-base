@@ -2,18 +2,31 @@
 
 namespace App\Boot;
 
-/*
- *
+/**
  * Set up some defaults, add theme supports, textdomain, excerpt niceness, etc.
  *
+ * @category Theme
+ * @package  TenDegrees/10degrees-base
+ * @author   10 Degrees <wordpress@10degrees.uk>
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html GPL-2.0+
+ * @link     https://github.com/10degrees/10degrees-base
+ * @since    2.0.0
  */
 class Init
 {
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->init();
     }
 
+    /**
+     * Init
+     *
+     * @return void
+     */
     public function init()
     {
         /*
@@ -105,9 +118,10 @@ class Init
         /*
          * Clean up the_excerpt()
          */
+        // phpcs:ignore
         add_filter('excerpt_more', function () {
             return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', '@textdomain') . '</a>';
-        });
+        });// phpcs:ignore
 
         /*
          * Excerpt length in words
@@ -115,8 +129,9 @@ class Init
          * @param  integer $length
          * @return integer
          */
+        // phpcs:ignore
         add_filter('excerpt_length', function ($length) {
             return 10;
-        }, 999);
+        }, 999);//phpcs:ignore
     }
 }

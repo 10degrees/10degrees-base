@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset name="10Degrees">
+
+    <description>10 Degrees base theme coding standard</description>
+
+    <!-- Use PSR-2 as a base -->
+    <rule ref="PSR2"/>
+
+    <file>./app/*</file>
+
+    <rule ref="PEAR">
+        <exclude name="PEAR.Commenting.FileComment.Missing"/>
+    </rule>
+
+    <!-- Allow PHP files with no PHP code in partials -->
+    <rule ref="Internal.NoCodeFound">
+         <exclude-pattern>partials</exclude-pattern>
+    </rule>
+
+    <!-- Allow long lines -->
+    <rule ref="Generic.Files.LineLength.TooLong">
+        <exclude-pattern>partials</exclude-pattern>
+    </rule>
+
+</ruleset>

@@ -4,9 +4,19 @@ namespace App\Boot;
 
 /**
  * Enqueue scripts, styles and fonts.
+ *
+ * @category Theme
+ * @package  TenDegrees/10degrees-base
+ * @author   10 Degrees <wordpress@10degrees.uk>
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html GPL-2.0+
+ * @link     https://github.com/10degrees/10degrees-base
+ * @since    2.0.0
  */
 class Enqueue
 {
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         add_action('wp_enqueue_scripts', [$this, 'style'], 100);
@@ -25,6 +35,8 @@ class Enqueue
 
     /**
      * CSS for front end
+     *
+     * @return void
      */
     public function style()
     {
@@ -43,6 +55,8 @@ class Enqueue
      * Can also target specific IE versions
      *
      * @link https://developer.wordpress.org/reference/functions/wp_style_add_data/
+     *
+     * @return void
      */
     public function styleIe()
     {
@@ -58,6 +72,8 @@ class Enqueue
 
     /**
      * JavaScript for front end
+     *
+     * @return void
      */
     public function scripts()
     {
@@ -70,6 +86,8 @@ class Enqueue
 
     /**
      * CSS for Block Editor
+     *
+     * @return void
      */
     public function blockEditorStyle()
     {
@@ -78,6 +96,8 @@ class Enqueue
 
     /**
      * JavaScript for Block Editor
+     *
+     * @return void
      */
     public function blockEditorScript()
     {
@@ -86,6 +106,8 @@ class Enqueue
 
     /**
      * CSS for Classic Editor
+     *
+     * @return void
      */
     public function classicEditorStyle()
     {
@@ -94,6 +116,8 @@ class Enqueue
 
     /**
      * CSS for wp-admin
+     *
+     * @return void
      */
     public function adminStyle()
     {
@@ -102,6 +126,8 @@ class Enqueue
 
     /**
      * JavaScript for wp-admin
+     *
+     * @return void
      */
     public function adminScript()
     {
@@ -112,7 +138,10 @@ class Enqueue
      * Google Fonts
      *
      * Now with support for font-display
+     *
      * @link https://css-tricks.com/font-display-masses/
+     *
+     * @return void
      */
     public function googleFont()
     {
@@ -121,6 +150,8 @@ class Enqueue
 
     /**
      * TypeKit Fonts
+     *
+     * @return void
      */
     public function typekitFont()
     {
@@ -130,7 +161,8 @@ class Enqueue
     /**
      * Remove WP version query strings from scripts and stylesheets
      *
-     * @param  string $src Url of external resource being called into the page
+     * @param string $src Url of external resource being called into the page
+     *
      * @return string
      */
     public function removeWpVersion($src)

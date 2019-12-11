@@ -2,11 +2,15 @@
 /**
  * Base template
  *
- * @package      10degrees-base
- * @author       10 Degrees
- * @since        2.0.0
- * @license      GPL-2.0+
-**/
+ * PHP version 7.2
+ *
+ * @category Theme
+ * @package  TenDegrees/10degrees-base
+ * @author   10 Degrees <wordpress@10degrees.uk>
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html GPL-2.0+
+ * @link     https://github.com/10degrees/10degrees-base
+ * @since    2.0.0
+ **/
 ?>
 <!doctype html>
 
@@ -27,7 +31,7 @@
 
         <main id="main">
             <?php get_template_part('partials/breadcrumbs'); ?>
-            <?php include \App\Boot\BaseWrapper::$main_template; ?>
+            <?php require \App\Boot\BaseWrapper::$main_template; ?>
         </main>
 
         <?php get_template_part('partials/footer'); ?>

@@ -2,6 +2,16 @@
 
 namespace App\Cpt;
 
+/**
+ * Registers testimonial CPT
+ *
+ * @category Theme
+ * @package  TenDegrees/10degrees-base
+ * @author   10 Degrees <wordpress@10degrees.uk>
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html GPL-2.0+
+ * @link     https://github.com/10degrees/10degrees-base
+ * @since    2.0.0
+ */
 class Testimonials
 {
     /**
@@ -25,11 +35,19 @@ class Testimonials
      */
     protected $singular = 'Testimonial title';
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->register();
     }
 
+    /**
+     * Register the CPT using Johnbillions extened CPTs library
+     *
+     * @return void
+     */
     public function register()
     {
         register_extended_post_type(
@@ -70,7 +88,7 @@ class Testimonials
                 ],
             ],
             [
-                # Override the base names used for labels:
+                //Override the base names used for labels:
                 'plural'   => $this->plural,
                 'slug'     => 'testimonials',
             ]

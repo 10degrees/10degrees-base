@@ -4,12 +4,13 @@ namespace App\Boot;
 
 /**
  * Remove bloat
- * 
- * @category Cleanup
- * @package  TenDegrees/Base
- * @author   10 Degrees <hello@10degrees.uk>
- * @license  https://opensource.org/licenses/MIT MIT 
- * @link     https://www.10degrees.uk
+ *
+ * @category Theme
+ * @package  TenDegrees/10degrees-base
+ * @author   10 Degrees <wordpress@10degrees.uk>
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html GPL-2.0+
+ * @link     https://github.com/10degrees/10degrees-base
+ * @since    2.0.0
  */
 class CleanUp
 {
@@ -38,23 +39,17 @@ class CleanUp
     /**
      * Filter emojis out of TinyMCE
      *
-     * @param array $plugins 
-     * 
+     * @param array $plugins TinyMCE plugins
+     *
      * @return void
      */
-    public function disableEmojisTinyMce( $plugins ) 
+    public function disableEmojisTinyMce($plugins)
     {
-
         if (is_array($plugins)) {
-
             return array_diff($plugins, array( 'wpemoji' ));
-
         } else {
-
             return array();
-
         }
-
     }
 
     /**
@@ -62,24 +57,17 @@ class CleanUp
      *
      * @param array  $urls          URLs to prefetch
      * @param string $relation_type type of DNS hint
-     * 
-     * @return void
+     *
+     * @return array $urls Array of URLs
      */
-    public function disableEmojiDnsPrefetch( $urls, $relation_type ) 
+    public function disableEmojiDnsPrefetch($urls, $relation_type)
     {
-
         if ('dns-prefetch' == $relation_type) {
-
             $emoji_url = 'https://s.w.org/images/core/emoji/2/svg/';
-
             $emoji_svg_url = apply_filters('emoji_svg_url', $emoji_url);
-
             $urls = array_diff($urls, array($emoji_svg_url));
-
         }
 
         return $urls;
-
     }
-
 }
