@@ -126,12 +126,6 @@ body {
   background-color: white;
   font-weight: 400; }
 
-.editor-post-title__input,
-.wp-block-heading h2,
-.wp-block-heading h3,
-.wp-block-heading h4,
-.wp-block-heading h5,
-.wp-block-heading h6,
 h1,
 h2,
 h3,
@@ -141,6 +135,13 @@ h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin-top: 0;
   margin-bottom: 1.5rem; }
+  h1.is-style-underline,
+  h2.is-style-underline,
+  h3.is-style-underline,
+  h4.is-style-underline,
+  h5.is-style-underline,
+  h6.is-style-underline {
+    text-decoration: underline; }
 
 h1,
 .h1 {
@@ -214,6 +215,7 @@ h6,
 
 p {
   margin: 0 0 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 0.875rem;
   line-height: 1.7142; }
   @media only screen and (min-width: 768px) {
@@ -221,18 +223,15 @@ p {
       font-size: 1rem;
       line-height: 1.5; } }
 
-p.has-large-font-size,
-p.-large {
+p.has-large-font-size {
   font-size: 0.875rem;
   line-height: 1.7142; }
   @media only screen and (min-width: 768px) {
-    p.has-large-font-size,
-    p.-large {
+    p.has-large-font-size {
       font-size: 1.3125rem;
       line-height: 1.5238; } }
   @media only screen and (min-width: 1024px) {
-    p.has-large-font-size,
-    p.-large {
+    p.has-large-font-size {
       font-size: 1.5rem;
       line-height: 1.3333; } }
 
@@ -448,4 +447,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-9aaf60b1ff.css.map */
+/*# sourceMappingURL=maps/main-30317dcbee.css.map */
