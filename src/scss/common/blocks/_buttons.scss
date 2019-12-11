@@ -1,5 +1,11 @@
 
 .wp-block-button {
+    // Default button style
+    &:not(.is-style-outline) .wp-block-button__link{
+        @include prop(background-color, --primary-colour);
+        color: white;
+    }
+
     .wp-block-button__link {
 
         &.has-primary-background-color {
@@ -50,6 +56,14 @@
 
         .wp-block-button__link {
             width: 100%;
+        }
+    }
+
+    &.is-style-outline .wp-block-button__link{
+        // Default outline button style
+        &:not(.has-text-color){
+            @include prop(color, --primary-colour);
+            background-color: white;
         }
     }
 }
