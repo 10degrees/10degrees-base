@@ -1,0 +1,8 @@
+.wp-block-separator {
+	width: 100%;
+	&.is-style-wide {
+		grid-column: container-start / container-end;
+	}
+	&.is-style-dots {
+	}
+}

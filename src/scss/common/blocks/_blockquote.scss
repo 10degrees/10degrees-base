@@ -1,0 +1,28 @@
+.wp-block-quote {
+	margin: #{$base-line-height}rem 0px;
+	position: relative;
+	padding: 20px 3em;
+	border-left: 2px solid;
+
+	p,
+	ul,
+	ol {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	cite {
+		display: block;
+		font-style: normal;
+	}
+	&.has-text-align-left {
+	}
+	&.has-text-align-center {
+		border: 0;
+	}
+	&.has-text-align-right {
+		border-left: 0;
+		border-right: 2px solid;
+	}
+}
