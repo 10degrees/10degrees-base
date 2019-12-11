@@ -184,6 +184,11 @@
         .editor-styles-wrapper .wp-block ol li {
           font-size: 1rem;
           line-height: 1.5; } }
+    .editor-styles-wrapper ul.is-style-icon,
+    .editor-styles-wrapper ol.is-style-icon,
+    .editor-styles-wrapper .wp-block ul.is-style-icon,
+    .editor-styles-wrapper .wp-block ol.is-style-icon {
+      list-style-image: url("../img/list-icon.svg"); }
   .editor-styles-wrapper a,
   .editor-styles-wrapper .wp-block a {
     color: blue;
@@ -230,4 +235,4 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-626ac66e13.css.map */
+/*# sourceMappingURL=maps/editor-block-c04816739a.css.map */

@@ -303,6 +303,11 @@ ol,
       .wp-block ol li {
         font-size: 1rem;
         line-height: 1.5; } }
+  ul.is-style-icon,
+  ol.is-style-icon,
+  .wp-block ul.is-style-icon,
+  .wp-block ol.is-style-icon {
+    list-style-image: url("../img/list-icon.svg"); }
 
 a,
 .wp-block a {
@@ -518,4 +523,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-e89e97bdd4.css.map */
+/*# sourceMappingURL=maps/main-ced0a9b01e.css.map */
