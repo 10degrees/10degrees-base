@@ -124,7 +124,8 @@ h6,
 
 // Paragraphs
 p,
-.wp-block p  {
+.wp-block p,
+.wp-block-button__link  {
   margin: 0 0 #{$base-line-height}rem;
 
   font-family: $base-font;
