@@ -6,5 +6,9 @@
 @import "mixins/prop";
 @import "mixins/bp";
 
-@import "admin/type";
+.editor-styles-wrapper {
+    @import "common/type";
+    @import "admin/type";
+}
+
 @import "admin/block-editor";
