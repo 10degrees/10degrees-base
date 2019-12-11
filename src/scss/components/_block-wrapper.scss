@@ -1,13 +1,52 @@
 .block-wrapper {
-	& > * {
-		@include content;
+	--gutter: 1rem;
+	--offset: 0;
+	--content: 1fr;
+
+	display: grid;
+	grid:
+		auto / [start] minmax(var(--gutter), auto) [container-start] minmax(
+			auto,
+			var(--offset)
+		)
+		[content-start] var(--content) [content-end] minmax(auto, var(--offset))
+		[container-end] minmax(var(--gutter), auto) [end];
+
+	@media (min-width: 960px) {
+		--offset: calc(
+			(var(--max-container-width) - var(--max-content-width)) / 2
+		);
+		--content: var(--max-content-width);
 	}
-	& > .alignfull {
-		max-width: unset;
-		padding-right: 0;
-		padding-left: 0;
+
+	& > * {
+		grid-column: content-start / content-end;
+
+		@include ie-only {
+			@include prop(max-width, --max-content-width);
+			margin: 0 auto;
+		}
 	}
 	& > .alignwide {
-		@include alignwide;
+		grid-column: container-start / container-end;
+
+		@include ie-only {
+			@include prop(max-width, --max-container-width);
+			margin: 0 auto;
+		}
+	}
+	& > .alignfull {
+		grid-column: start / end;
+
+		@include ie-only {
+			max-width: none;
+			margin: 0;
+		}
+	}
+	& > .alignleft {
+	}
+	& > .aligncenter {
+	}
+	& > .alignright {
 	}
 }
