@@ -340,6 +340,18 @@ cite {
   display: block;
   font-style: normal; }
 
+.wp-block-button .wp-block-button__link.has-primary-background-color {
+  background-color: red;
+  background-color: var(--primary-colour, red); }
+
+.wp-block-button .wp-block-button__link.has-secondary-background-color {
+  background-color: green;
+  background-color: var(--secondary-colour, green); }
+
+.wp-block-button .wp-block-button__link.has-tertiary-background-color {
+  background-color: pink;
+  background-color: var(--tertiary-colour, pink); }
+
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -537,4 +549,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-5674f0fd0d.css.map */
+/*# sourceMappingURL=maps/main-57218c532a.css.map */
