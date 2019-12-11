@@ -66,6 +66,11 @@ wp.domReady(() => {
     isDefault: true
   });
 
+  wp.blocks.registerBlockStyle("core/list", {
+    name: "icon",
+    label: "Icon"
+  });
+
   // Common Blocks
 
   // Formatting

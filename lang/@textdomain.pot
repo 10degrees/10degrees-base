@@ -17,6 +17,62 @@ msgstr ""
 msgid "Sorry, that page does not exist."
 msgstr ""
 
+#: app/Admin/EditorColourPalette.php:25
+msgid "Primary"
+msgstr ""
+
+#: app/Admin/EditorColourPalette.php:30
+msgid "Secondary"
+msgstr ""
+
+#: app/Admin/EditorColourPalette.php:35
+msgid "Tertiary"
+msgstr ""
+
+#: app/Admin/EditorColourPalette.php:40
+msgid "White"
+msgstr ""
+
+#: app/Admin/EditorColourPalette.php:45
+msgid "Dark Grey"
+msgstr ""
+
+#: app/Admin/FontSizes.php:24
+msgid "Small"
+msgstr ""
+
+#: app/Admin/FontSizes.php:29
+msgid "Normal"
+msgstr ""
+
+#: app/Admin/FontSizes.php:34
+msgid "Large"
+msgstr ""
+
+#: app/Boot/Init.php:109
+msgid "Continued"
+msgstr ""
+
+#: app/Boot/RegisterMenus.php:24
+msgid "Main Menu"
+msgstr ""
+
+#: app/Boot/RegisterMenus.php:25
+msgid "Footer Menu"
+msgstr ""
+
+#: app/Helpers/td_title.php:13
+msgid "Latest Posts"
+msgstr ""
+
+#: app/Helpers/td_title.php:55
+msgid "Search Results for %s"
+msgstr ""
+
+#: app/Helpers/td_title.php:58
+msgid "Page Not Found"
+msgstr ""
+
 #: base.php:21
 msgid "Skip to main content"
 msgstr ""
@@ -71,48 +127,4 @@ msgstr ""
 
 #: templates/custom.php:3
 msgid "Custom"
-msgstr ""
-
-#: app/Admin/EditorColourPalette.php:25
-msgid "Primary"
-msgstr ""
-
-#: app/Admin/EditorColourPalette.php:30
-msgid "Secondary"
-msgstr ""
-
-#: app/Admin/EditorColourPalette.php:35
-msgid "Tertiary"
-msgstr ""
-
-#: app/Admin/EditorColourPalette.php:40
-msgid "White"
-msgstr ""
-
-#: app/Admin/EditorColourPalette.php:45
-msgid "Dark Grey"
-msgstr ""
-
-#: app/Boot/Init.php:109
-msgid "Continued"
-msgstr ""
-
-#: app/Boot/RegisterMenus.php:24
-msgid "Main Menu"
-msgstr ""
-
-#: app/Boot/RegisterMenus.php:25
-msgid "Footer Menu"
-msgstr ""
-
-#: app/Helpers/td_title.php:13
-msgid "Latest Posts"
-msgstr ""
-
-#: app/Helpers/td_title.php:55
-msgid "Search Results for %s"
-msgstr ""
-
-#: app/Helpers/td_title.php:58
-msgid "Page Not Found"
 msgstr ""

@@ -168,12 +168,32 @@ small,
 
 // Unordered and Ordered lists
 ul,
-ol {
+ol,
+.wp-block ul,
+.wp-block ol {
   margin-top: 0;
   margin-bottom: #{$base-line-height}rem;
   ul,
   ol {
     margin-bottom: 0;
+  }
+
+  li {
+    font-size: 0.875rem;
+    line-height: 1.7142;
+
+    @include bp(md){
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  }
+
+  &.is-style-icon {
+    list-style-image: url('../img/list-icon.svg');
+
+    li {
+      padding-left: 5px;
+    }
   }
 }
 
