@@ -223,19 +223,16 @@ p {
       font-size: 1rem;
       line-height: 1.5; } }
 
-.editor-styles-wrapper .wp-block p.has-large-font-size,
 p.has-large-font-size {
-  font-size: 0.875rem !important;
+  font-size: 0.875rem;
   line-height: 1.7142; }
   @media only screen and (min-width: 768px) {
-    .editor-styles-wrapper .wp-block p.has-large-font-size,
     p.has-large-font-size {
-      font-size: 1.3125rem !important;
+      font-size: 1.3125rem;
       line-height: 1.5238; } }
   @media only screen and (min-width: 1024px) {
-    .editor-styles-wrapper .wp-block p.has-large-font-size,
     p.has-large-font-size {
-      font-size: 1.5rem !important;
+      font-size: 1.5rem;
       line-height: 1.3333; } }
 
 small,
@@ -450,4 +447,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-f081312223.css.map */
+/*# sourceMappingURL=maps/main-30317dcbee.css.map */

@@ -125,18 +125,17 @@ p {
   }
 }
 
-.editor-styles-wrapper .wp-block p.has-large-font-size,
 p.has-large-font-size {
-  font-size: 0.875rem !important;
+  font-size: 0.875rem;
   line-height: 1.7142;
 
   @include bp(md){
-    font-size: 1.3125rem !important;
+    font-size: 1.3125rem;
     line-height: 1.5238;
   }
 
   @include bp(lg){
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
     line-height: 1.3333;
   }
 }

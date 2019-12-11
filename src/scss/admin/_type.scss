@@ -1,3 +1,4 @@
+// Post Title
 .editor-post-title .editor-post-title__input {
     font-family: $base-font;
 }
@@ -106,8 +107,7 @@
   }
 }
 
-.editor-styles-wrapper .wp-block p.has-large-font-size,
-p.has-large-font-size {
+.editor-styles-wrapper .wp-block p.has-large-font-size {
   font-size: 0.875rem !important;
   line-height: 1.7142;
 
@@ -119,5 +119,17 @@ p.has-large-font-size {
   @include bp(lg){
     font-size: 1.5rem !important;
     line-height: 1.3333;
+  }
+}
+
+// Links
+.wp-block a {
+  @include prop(color, --link-colour);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    @include prop(color, --link-hover-colour);
+    text-decoration: underline;
   }
 }

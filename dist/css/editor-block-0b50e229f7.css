@@ -89,19 +89,25 @@
       font-size: 1rem;
       line-height: 1.5; } }
 
-.editor-styles-wrapper .wp-block p.has-large-font-size,
-p.has-large-font-size {
+.editor-styles-wrapper .wp-block p.has-large-font-size {
   font-size: 0.875rem !important;
   line-height: 1.7142; }
   @media only screen and (min-width: 768px) {
-    .editor-styles-wrapper .wp-block p.has-large-font-size,
-    p.has-large-font-size {
+    .editor-styles-wrapper .wp-block p.has-large-font-size {
       font-size: 1.3125rem !important;
       line-height: 1.5238; } }
   @media only screen and (min-width: 1024px) {
-    .editor-styles-wrapper .wp-block p.has-large-font-size,
-    p.has-large-font-size {
+    .editor-styles-wrapper .wp-block p.has-large-font-size {
       font-size: 1.5rem !important;
       line-height: 1.3333; } }
 
-/*# sourceMappingURL=maps/editor-block-be297fc211.css.map */
+.wp-block a {
+  color: blue;
+  color: var(--link-colour, blue);
+  text-decoration: none; }
+  .wp-block a:hover, .wp-block a:focus {
+    color: darkblue;
+    color: var(--link-hover-colour, darkblue);
+    text-decoration: underline; }
+
+/*# sourceMappingURL=maps/editor-block-0b50e229f7.css.map */
