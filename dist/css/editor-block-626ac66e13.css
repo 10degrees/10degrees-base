@@ -149,6 +149,10 @@
       .editor-styles-wrapper .wp-block p.has-large-font-size {
         font-size: 1.5rem;
         line-height: 1.3333; } }
+  .editor-styles-wrapper p.has-small-font-size,
+  .editor-styles-wrapper .wp-block p.has-small-font-size {
+    font-size: 0.875rem;
+    line-height: 1.7142; }
   .editor-styles-wrapper small,
   .editor-styles-wrapper .small {
     font-size: 90%; }
@@ -226,4 +230,4 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-50d1e17c3f.css.map */
+/*# sourceMappingURL=maps/editor-block-626ac66e13.css.map */

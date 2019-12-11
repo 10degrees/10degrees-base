@@ -266,6 +266,11 @@ p.has-large-font-size,
       font-size: 1.5rem;
       line-height: 1.3333; } }
 
+p.has-small-font-size,
+.wp-block p.has-small-font-size {
+  font-size: 0.875rem;
+  line-height: 1.7142; }
+
 small,
 .small {
   font-size: 90%; }
@@ -513,4 +518,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-12152b6e2b.css.map */
+/*# sourceMappingURL=maps/main-e89e97bdd4.css.map */

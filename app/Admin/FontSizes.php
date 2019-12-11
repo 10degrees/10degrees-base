@@ -21,14 +21,19 @@ class FontSizes
             'editor-font-sizes',
             [
                 [
+                    'name'  => __('Small', '@textdomain'),
+                    'slug'  => 'small',
+                    'size' => 12
+                ],
+                [
                     'name'  => __('Normal', '@textdomain'),
                     'slug'  => 'normal',
-                    'size' => '16'
+                    'size' => 16
                 ],
                 [
                     'name'  => __('Large', '@textdomain'),
                     'slug'  => 'large',
-                    'size' => '24'
+                    'size' => 24
                 ]
             ]
         );
