@@ -546,6 +546,8 @@ body {
 
 .wp-block-table table {
   border-collapse: collapse; }
+  .wp-block-table table td {
+    padding: 0.5em; }
 
 .wp-block-table table,
 .wp-block-table th,
@@ -566,4 +568,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-7ea66c08bc.css.map */
+/*# sourceMappingURL=maps/main-8539e75fcb.css.map */
