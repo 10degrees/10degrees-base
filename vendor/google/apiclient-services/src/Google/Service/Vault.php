@@ -42,6 +42,7 @@ class Google_Service_Vault extends Google_Service
   public $matters_holds;
   public $matters_holds_accounts;
   public $matters_savedQueries;
+  public $operations;
   
   /**
    * Constructs the internal representation of the Vault service.
@@ -116,14 +117,6 @@ class Google_Service_Vault extends Google_Service
               'path' => 'v1/matters',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'view' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -131,6 +124,14 @@ class Google_Service_Vault extends Google_Service
                 'state' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),'removePermissions' => array(
@@ -488,6 +489,26 @@ class Google_Service_Vault extends Google_Service
                 'pageSize' => array(
                   'location' => 'query',
                   'type' => 'integer',
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->operations = new Google_Service_Vault_Resource_Operations(
+        $this,
+        $this->serviceName,
+        'operations',
+        array(
+          'methods' => array(
+            'delete' => array(
+              'path' => 'v1/{+name}',
+              'httpMethod' => 'DELETE',
+              'parameters' => array(
+                'name' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
                 ),
               ),
             ),

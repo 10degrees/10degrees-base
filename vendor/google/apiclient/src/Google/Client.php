@@ -38,7 +38,7 @@ use Monolog\Handler\SyslogHandler as MonologSyslogHandler;
  */
 class Google_Client
 {
-  const LIBVER = "2.2.4";
+  const LIBVER = "2.4.0";
   const USER_AGENT_SUFFIX = "google-api-php-client/";
   const OAUTH2_REVOKE_URI = 'https://oauth2.googleapis.com/revoke';
   const OAUTH2_TOKEN_URI = 'https://oauth2.googleapis.com/token';
@@ -804,12 +804,24 @@ class Google_Client
    */
   public function execute(RequestInterface $request, $expectedClass = null)
   {
-    $request = $request->withHeader(
-        'User-Agent',
-        $this->config['application_name']
-        . " " . self::USER_AGENT_SUFFIX
-        . $this->getLibraryVersion()
-    );
+    $request = $request
+        ->withHeader(
+            'User-Agent',
+            sprintf(
+                '%s %s%s',
+                $this->config['application_name'],
+                self::USER_AGENT_SUFFIX,
+                $this->getLibraryVersion()
+            )
+        )
+        ->withHeader(
+            'x-goog-api-client',
+            sprintf(
+                'gl-php/%s gdcl/%s',
+                phpversion(),
+                $this->getLibraryVersion()
+            )
+        );
 
     if ($this->config['api_format_v2']) {
         $request = $request->withHeader(

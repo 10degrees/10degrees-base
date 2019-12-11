@@ -28,7 +28,7 @@ class Google_Service_Compute_Resource_RegionDisks extends Google_Service_Resourc
   /**
    * Adds existing resource policies to a regional disk. You can only add one
    * policy which will be applied to this disk for scheduling snapshot creation.
-   * (regionDisks.addResourcePolicies)
+   * (== suppress_warning http-rest-shadowed ==) (regionDisks.addResourcePolicies)
    *
    * @param string $project Project ID for this request.
    * @param string $region The name of the region for this request.
@@ -57,7 +57,8 @@ class Google_Service_Compute_Resource_RegionDisks extends Google_Service_Resourc
     return $this->call('addResourcePolicies', array($params), "Google_Service_Compute_Operation");
   }
   /**
-   * Creates a snapshot of this regional disk. (regionDisks.createSnapshot)
+   * Creates a snapshot of this regional disk. (== suppress_warning http-rest-
+   * shadowed ==) (regionDisks.createSnapshot)
    *
    * @param string $project Project ID for this request.
    * @param string $region Name of the region for this request.
@@ -89,7 +90,8 @@ class Google_Service_Compute_Resource_RegionDisks extends Google_Service_Resourc
    * Deletes the specified regional persistent disk. Deleting a regional disk
    * removes all the replicas of its data permanently and is irreversible.
    * However, deleting a disk does not delete any snapshots previously made from
-   * the disk. You must separately delete snapshots. (regionDisks.delete)
+   * the disk. You must separately delete snapshots. (== suppress_warning http-
+   * rest-shadowed ==) (regionDisks.delete)
    *
    * @param string $project Project ID for this request.
    * @param string $region Name of the region for this request.
@@ -117,7 +119,8 @@ class Google_Service_Compute_Resource_RegionDisks extends Google_Service_Resourc
     return $this->call('delete', array($params), "Google_Service_Compute_Operation");
   }
   /**
-   * Returns a specified regional persistent disk. (regionDisks.get)
+   * Returns a specified regional persistent disk. (== suppress_warning http-rest-
+   * shadowed ==) (regionDisks.get)
    *
    * @param string $project Project ID for this request.
    * @param string $region Name of the region for this request.
@@ -133,7 +136,8 @@ class Google_Service_Compute_Resource_RegionDisks extends Google_Service_Resourc
   }
   /**
    * Creates a persistent regional disk in the specified project using the data
-   * included in the request. (regionDisks.insert)
+   * included in the request. (== suppress_warning http-rest-shadowed ==)
+   * (regionDisks.insert)
    *
    * @param string $project Project ID for this request.
    * @param string $region Name of the region for this request.
@@ -163,7 +167,7 @@ class Google_Service_Compute_Resource_RegionDisks extends Google_Service_Resourc
   }
   /**
    * Retrieves the list of persistent disks contained within the specified region.
-   * (regionDisks.listRegionDisks)
+   * (== suppress_warning http-rest-shadowed ==) (regionDisks.listRegionDisks)
    *
    * @param string $project Project ID for this request.
    * @param string $region Name of the region for this request.
@@ -216,8 +220,8 @@ class Google_Service_Compute_Resource_RegionDisks extends Google_Service_Resourc
     return $this->call('list', array($params), "Google_Service_Compute_DiskList");
   }
   /**
-   * Removes resource policies from a regional disk.
-   * (regionDisks.removeResourcePolicies)
+   * Removes resource policies from a regional disk. (== suppress_warning http-
+   * rest-shadowed ==) (regionDisks.removeResourcePolicies)
    *
    * @param string $project Project ID for this request.
    * @param string $region The name of the region for this request.
@@ -246,7 +250,8 @@ class Google_Service_Compute_Resource_RegionDisks extends Google_Service_Resourc
     return $this->call('removeResourcePolicies', array($params), "Google_Service_Compute_Operation");
   }
   /**
-   * Resizes the specified regional persistent disk. (regionDisks.resize)
+   * Resizes the specified regional persistent disk. (== suppress_warning http-
+   * rest-shadowed ==) (regionDisks.resize)
    *
    * @param string $project The project ID for this request.
    * @param string $region Name of the region for this request.
@@ -275,7 +280,8 @@ class Google_Service_Compute_Resource_RegionDisks extends Google_Service_Resourc
     return $this->call('resize', array($params), "Google_Service_Compute_Operation");
   }
   /**
-   * Sets the labels on the target regional disk. (regionDisks.setLabels)
+   * Sets the labels on the target regional disk. (== suppress_warning http-rest-
+   * shadowed ==) (regionDisks.setLabels)
    *
    * @param string $project Project ID for this request.
    * @param string $region The region for this request.
@@ -304,8 +310,8 @@ class Google_Service_Compute_Resource_RegionDisks extends Google_Service_Resourc
     return $this->call('setLabels', array($params), "Google_Service_Compute_Operation");
   }
   /**
-   * Returns permissions that a caller has on the specified resource.
-   * (regionDisks.testIamPermissions)
+   * Returns permissions that a caller has on the specified resource. (==
+   * suppress_warning http-rest-shadowed ==) (regionDisks.testIamPermissions)
    *
    * @param string $project Project ID for this request.
    * @param string $region The name of the region for this request.

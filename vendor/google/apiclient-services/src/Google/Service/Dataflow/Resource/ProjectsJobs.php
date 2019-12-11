@@ -142,7 +142,6 @@ class Google_Service_Dataflow_Resource_ProjectsJobs extends Google_Service_Resou
    * @param string $projectId The project which owns the jobs.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string filter The kind of filter to use.
    * @opt_param string location The [regional endpoint]
    * (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that
    * contains this job.
@@ -153,6 +152,7 @@ class Google_Service_Dataflow_Resource_ProjectsJobs extends Google_Service_Resou
    * max_responses and an unspecified server-defined limit.
    * @opt_param string view Level of information requested in response. Default is
    * `JOB_VIEW_SUMMARY`.
+   * @opt_param string filter The kind of filter to use.
    * @return Google_Service_Dataflow_ListJobsResponse
    */
   public function listProjectsJobs($projectId, $optParams = array())

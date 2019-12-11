@@ -29,8 +29,9 @@ class Google_Service_SecurityCommandCenter_Resource_Organizations extends Google
    * Gets the settings for an organization.
    * (organizations.getOrganizationSettings)
    *
-   * @param string $name Name of the organization to get organization settings
-   * for. Its format is "organizations/[organization_id]/organizationSettings".
+   * @param string $name Required. Name of the organization to get organization
+   * settings for. Its format is
+   * "organizations/[organization_id]/organizationSettings".
    * @param array $optParams Optional parameters.
    * @return Google_Service_SecurityCommandCenter_OrganizationSettings
    */

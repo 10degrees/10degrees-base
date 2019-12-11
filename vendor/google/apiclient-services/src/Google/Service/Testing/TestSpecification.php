@@ -25,6 +25,8 @@ class Google_Service_Testing_TestSpecification extends Google_Model
   protected $androidTestLoopDataType = '';
   public $disablePerformanceMetrics;
   public $disableVideoRecording;
+  protected $iosTestLoopType = 'Google_Service_Testing_IosTestLoop';
+  protected $iosTestLoopDataType = '';
   protected $iosTestSetupType = 'Google_Service_Testing_IosTestSetup';
   protected $iosTestSetupDataType = '';
   protected $iosXcTestType = 'Google_Service_Testing_IosXcTest';
@@ -90,6 +92,20 @@ class Google_Service_Testing_TestSpecification extends Google_Model
   public function getDisableVideoRecording()
   {
     return $this->disableVideoRecording;
+  }
+  /**
+   * @param Google_Service_Testing_IosTestLoop
+   */
+  public function setIosTestLoop(Google_Service_Testing_IosTestLoop $iosTestLoop)
+  {
+    $this->iosTestLoop = $iosTestLoop;
+  }
+  /**
+   * @return Google_Service_Testing_IosTestLoop
+   */
+  public function getIosTestLoop()
+  {
+    return $this->iosTestLoop;
   }
   /**
    * @param Google_Service_Testing_IosTestSetup

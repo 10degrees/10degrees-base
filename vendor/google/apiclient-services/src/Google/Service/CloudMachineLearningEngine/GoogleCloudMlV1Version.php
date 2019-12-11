@@ -18,6 +18,8 @@
 class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1Version extends Google_Collection
 {
   protected $collection_key = 'packageUris';
+  protected $acceleratorConfigType = 'Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1AcceleratorConfig';
+  protected $acceleratorConfigDataType = '';
   protected $autoScalingType = 'Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1AutoScaling';
   protected $autoScalingDataType = '';
   public $createTime;
@@ -42,6 +44,20 @@ class Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1Version extends G
   public $serviceAccount;
   public $state;
 
+  /**
+   * @param Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1AcceleratorConfig
+   */
+  public function setAcceleratorConfig(Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1AcceleratorConfig $acceleratorConfig)
+  {
+    $this->acceleratorConfig = $acceleratorConfig;
+  }
+  /**
+   * @return Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1AcceleratorConfig
+   */
+  public function getAcceleratorConfig()
+  {
+    return $this->acceleratorConfig;
+  }
   /**
    * @param Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1AutoScaling
    */
