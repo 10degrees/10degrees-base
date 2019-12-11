@@ -29,8 +29,8 @@ class Google_Service_CloudIot_Resource_ProjectsLocationsRegistriesGroupsDevices 
    * List devices in a device registry.
    * (devices.listProjectsLocationsRegistriesGroupsDevices)
    *
-   * @param string $parent The device registry path. Required. For example,
-   * `projects/my-project/locations/us-central1/registries/my-registry`.
+   * @param string $parent Required. The device registry path. Required. For
+   * example, `projects/my-project/locations/us-central1/registries/my-registry`.
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken The value returned by the last

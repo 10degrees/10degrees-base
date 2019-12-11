@@ -30,8 +30,6 @@ class Google_Service_Vision_GoogleCloudVisionV1p4beta1AnnotateImageResponse exte
   protected $fullTextAnnotationDataType = '';
   protected $imagePropertiesAnnotationType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1ImageProperties';
   protected $imagePropertiesAnnotationDataType = '';
-  protected $imageQualityAnnotationType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1ImageQuality';
-  protected $imageQualityAnnotationDataType = '';
   protected $labelAnnotationsType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1EntityAnnotation';
   protected $labelAnnotationsDataType = 'array';
   protected $landmarkAnnotationsType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1EntityAnnotation';
@@ -42,8 +40,6 @@ class Google_Service_Vision_GoogleCloudVisionV1p4beta1AnnotateImageResponse exte
   protected $logoAnnotationsDataType = 'array';
   protected $productSearchResultsType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1ProductSearchResults';
   protected $productSearchResultsDataType = '';
-  protected $qualityOptimizationResultType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1QualityOptimizationResult';
-  protected $qualityOptimizationResultDataType = '';
   protected $safeSearchAnnotationType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1SafeSearchAnnotation';
   protected $safeSearchAnnotationDataType = '';
   protected $textAnnotationsType = 'Google_Service_Vision_GoogleCloudVisionV1p4beta1EntityAnnotation';
@@ -136,20 +132,6 @@ class Google_Service_Vision_GoogleCloudVisionV1p4beta1AnnotateImageResponse exte
     return $this->imagePropertiesAnnotation;
   }
   /**
-   * @param Google_Service_Vision_GoogleCloudVisionV1p4beta1ImageQuality
-   */
-  public function setImageQualityAnnotation(Google_Service_Vision_GoogleCloudVisionV1p4beta1ImageQuality $imageQualityAnnotation)
-  {
-    $this->imageQualityAnnotation = $imageQualityAnnotation;
-  }
-  /**
-   * @return Google_Service_Vision_GoogleCloudVisionV1p4beta1ImageQuality
-   */
-  public function getImageQualityAnnotation()
-  {
-    return $this->imageQualityAnnotation;
-  }
-  /**
    * @param Google_Service_Vision_GoogleCloudVisionV1p4beta1EntityAnnotation
    */
   public function setLabelAnnotations($labelAnnotations)
@@ -218,20 +200,6 @@ class Google_Service_Vision_GoogleCloudVisionV1p4beta1AnnotateImageResponse exte
   public function getProductSearchResults()
   {
     return $this->productSearchResults;
-  }
-  /**
-   * @param Google_Service_Vision_GoogleCloudVisionV1p4beta1QualityOptimizationResult
-   */
-  public function setQualityOptimizationResult(Google_Service_Vision_GoogleCloudVisionV1p4beta1QualityOptimizationResult $qualityOptimizationResult)
-  {
-    $this->qualityOptimizationResult = $qualityOptimizationResult;
-  }
-  /**
-   * @return Google_Service_Vision_GoogleCloudVisionV1p4beta1QualityOptimizationResult
-   */
-  public function getQualityOptimizationResult()
-  {
-    return $this->qualityOptimizationResult;
   }
   /**
    * @param Google_Service_Vision_GoogleCloudVisionV1p4beta1SafeSearchAnnotation

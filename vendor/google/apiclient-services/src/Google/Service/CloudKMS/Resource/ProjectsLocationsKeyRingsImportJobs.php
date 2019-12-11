@@ -48,7 +48,7 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsImportJobs exten
   /**
    * Returns metadata for a given ImportJob. (importJobs.get)
    *
-   * @param string $name The name of the ImportJob to get.
+   * @param string $name Required. The name of the ImportJob to get.
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudKMS_ImportJob
    */
@@ -68,8 +68,14 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsImportJobs exten
    * @param array $optParams Optional parameters.
    *
    * @opt_param int options.requestedPolicyVersion Optional. The policy format
-   * version to be returned. Acceptable values are 0 and 1. If the value is 0, or
-   * the field is omitted, policy format version 1 will be returned.
+   * version to be returned.
+   *
+   * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+   * rejected.
+   *
+   * Requests for policies with any conditional bindings must specify version 3.
+   * Policies without any conditional bindings may specify any valid value or
+   * leave the field unset.
    * @return Google_Service_CloudKMS_Policy
    */
   public function getIamPolicy($resource, $optParams = array())
@@ -85,18 +91,18 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsImportJobs exten
    * the format `projects/locations/keyRings`.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param int pageSize Optional limit on the number of ImportJobs to include
-   * in the response. Further ImportJobs can subsequently be obtained by including
-   * the ListImportJobsResponse.next_page_token in a subsequent request. If
-   * unspecified, the server will pick an appropriate default.
-   * @opt_param string filter Optional. Only include resources that match the
-   * filter in the response. For more information, see [Sorting and filtering list
-   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-   * @opt_param string pageToken Optional pagination token, returned earlier via
-   * ListImportJobsResponse.next_page_token.
+   * @opt_param string pageToken Optional. Optional pagination token, returned
+   * earlier via ListImportJobsResponse.next_page_token.
    * @opt_param string orderBy Optional. Specify how the results should be sorted.
    * If not specified, the results will be sorted in the default order. For more
    * information, see [Sorting and filtering list
+   * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
+   * @opt_param int pageSize Optional. Optional limit on the number of ImportJobs
+   * to include in the response. Further ImportJobs can subsequently be obtained
+   * by including the ListImportJobsResponse.next_page_token in a subsequent
+   * request. If unspecified, the server will pick an appropriate default.
+   * @opt_param string filter Optional. Only include resources that match the
+   * filter in the response. For more information, see [Sorting and filtering list
    * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
    * @return Google_Service_CloudKMS_ListImportJobsResponse
    */
@@ -108,7 +114,10 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsImportJobs exten
   }
   /**
    * Sets the access control policy on the specified resource. Replaces any
-   * existing policy. (importJobs.setIamPolicy)
+   * existing policy.
+   *
+   * Can return Public Errors: NOT_FOUND, INVALID_ARGUMENT and PERMISSION_DENIED
+   * (importJobs.setIamPolicy)
    *
    * @param string $resource REQUIRED: The resource for which the policy is being
    * specified. See the operation documentation for the appropriate value for this

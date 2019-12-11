@@ -32,7 +32,7 @@ class Google_Service_CloudFunctions_Resource_ProjectsLocationsFunctions extends 
    * Limits](https://cloud.google.com/functions/quotas#rate_limits).
    * (functions.callProjectsLocationsFunctions)
    *
-   * @param string $name The name of the function to be called.
+   * @param string $name Required. The name of the function to be called.
    * @param Google_Service_CloudFunctions_CallFunctionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudFunctions_CallFunctionResponse
@@ -48,8 +48,8 @@ class Google_Service_CloudFunctions_Resource_ProjectsLocationsFunctions extends 
    * the specified project, the long running operation will return
    * `ALREADY_EXISTS` error. (functions.create)
    *
-   * @param string $location The project and location in which the function should
-   * be created, specified in the format `projects/locations`
+   * @param string $location Required. The project and location in which the
+   * function should be created, specified in the format `projects/locations`
    * @param Google_Service_CloudFunctions_CloudFunction $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudFunctions_Operation
@@ -65,7 +65,8 @@ class Google_Service_CloudFunctions_Resource_ProjectsLocationsFunctions extends 
    * given function is used by some trigger, the trigger will be updated to remove
    * this function. (functions.delete)
    *
-   * @param string $name The name of the function which should be deleted.
+   * @param string $name Required. The name of the function which should be
+   * deleted.
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudFunctions_Operation
    */
@@ -137,8 +138,8 @@ class Google_Service_CloudFunctions_Resource_ProjectsLocationsFunctions extends 
    * Returns a function with the given name from the requested project.
    * (functions.get)
    *
-   * @param string $name The name of the function which details should be
-   * obtained.
+   * @param string $name Required. The name of the function which details should
+   * be obtained.
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudFunctions_CloudFunction
    */
@@ -158,8 +159,14 @@ class Google_Service_CloudFunctions_Resource_ProjectsLocationsFunctions extends 
    * @param array $optParams Optional parameters.
    *
    * @opt_param int options.requestedPolicyVersion Optional. The policy format
-   * version to be returned. Acceptable values are 0, 1, and 3. If the value is 0,
-   * or the field is omitted, policy format version 1 will be returned.
+   * version to be returned.
+   *
+   * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+   * rejected.
+   *
+   * Requests for policies with any conditional bindings must specify version 3.
+   * Policies without any conditional bindings may specify any valid value or
+   * leave the field unset.
    * @return Google_Service_CloudFunctions_Policy
    */
   public function getIamPolicy($resource, $optParams = array())

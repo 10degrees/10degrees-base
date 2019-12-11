@@ -18,6 +18,8 @@
 class Google_Service_Dataproc_ClusterConfig extends Google_Collection
 {
   protected $collection_key = 'initializationActions';
+  protected $autoscalingConfigType = 'Google_Service_Dataproc_AutoscalingConfig';
+  protected $autoscalingConfigDataType = '';
   public $configBucket;
   protected $encryptionConfigType = 'Google_Service_Dataproc_EncryptionConfig';
   protected $encryptionConfigDataType = '';
@@ -38,6 +40,20 @@ class Google_Service_Dataproc_ClusterConfig extends Google_Collection
   protected $workerConfigType = 'Google_Service_Dataproc_InstanceGroupConfig';
   protected $workerConfigDataType = '';
 
+  /**
+   * @param Google_Service_Dataproc_AutoscalingConfig
+   */
+  public function setAutoscalingConfig(Google_Service_Dataproc_AutoscalingConfig $autoscalingConfig)
+  {
+    $this->autoscalingConfig = $autoscalingConfig;
+  }
+  /**
+   * @return Google_Service_Dataproc_AutoscalingConfig
+   */
+  public function getAutoscalingConfig()
+  {
+    return $this->autoscalingConfig;
+  }
   public function setConfigBucket($configBucket)
   {
     $this->configBucket = $configBucket;

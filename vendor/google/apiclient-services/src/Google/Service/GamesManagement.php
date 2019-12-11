@@ -38,7 +38,6 @@ class Google_Service_GamesManagement extends Google_Service
   public $applications;
   public $events;
   public $players;
-  public $quests;
   public $rooms;
   public $scores;
   public $turnBasedMatches;
@@ -206,48 +205,6 @@ class Google_Service_GamesManagement extends Google_Service
                   'required' => true,
                 ),
               ),
-            ),
-          )
-        )
-    );
-    $this->quests = new Google_Service_GamesManagement_Resource_Quests(
-        $this,
-        $this->serviceName,
-        'quests',
-        array(
-          'methods' => array(
-            'reset' => array(
-              'path' => 'quests/{questId}/reset',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'questId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'resetAll' => array(
-              'path' => 'quests/reset',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'resetAllForAllPlayers' => array(
-              'path' => 'quests/resetAllForAllPlayers',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
-            ),'resetForAllPlayers' => array(
-              'path' => 'quests/{questId}/resetForAllPlayers',
-              'httpMethod' => 'POST',
-              'parameters' => array(
-                'questId' => array(
-                  'location' => 'path',
-                  'type' => 'string',
-                  'required' => true,
-                ),
-              ),
-            ),'resetMultipleForAllPlayers' => array(
-              'path' => 'quests/resetMultipleForAllPlayers',
-              'httpMethod' => 'POST',
-              'parameters' => array(),
             ),
           )
         )

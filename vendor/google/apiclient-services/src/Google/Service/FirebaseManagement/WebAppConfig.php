@@ -22,6 +22,7 @@ class Google_Service_FirebaseManagement_WebAppConfig extends Google_Model
   public $authDomain;
   public $databaseURL;
   public $locationId;
+  public $measurementId;
   public $messagingSenderId;
   public $projectId;
   public $storageBucket;
@@ -65,6 +66,14 @@ class Google_Service_FirebaseManagement_WebAppConfig extends Google_Model
   public function getLocationId()
   {
     return $this->locationId;
+  }
+  public function setMeasurementId($measurementId)
+  {
+    $this->measurementId = $measurementId;
+  }
+  public function getMeasurementId()
+  {
+    return $this->measurementId;
   }
   public function setMessagingSenderId($messagingSenderId)
   {

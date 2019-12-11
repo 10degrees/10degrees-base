@@ -17,7 +17,7 @@
 
 class Google_Service_ServiceNetworking_MetricDescriptor extends Google_Collection
 {
-  protected $collection_key = 'labels';
+  protected $collection_key = 'monitoredResourceTypes';
   public $description;
   public $displayName;
   protected $labelsType = 'Google_Service_ServiceNetworking_LabelDescriptor';
@@ -26,6 +26,7 @@ class Google_Service_ServiceNetworking_MetricDescriptor extends Google_Collectio
   protected $metadataType = 'Google_Service_ServiceNetworking_MetricDescriptorMetadata';
   protected $metadataDataType = '';
   public $metricKind;
+  public $monitoredResourceTypes;
   public $name;
   public $type;
   public $unit;
@@ -90,6 +91,14 @@ class Google_Service_ServiceNetworking_MetricDescriptor extends Google_Collectio
   public function getMetricKind()
   {
     return $this->metricKind;
+  }
+  public function setMonitoredResourceTypes($monitoredResourceTypes)
+  {
+    $this->monitoredResourceTypes = $monitoredResourceTypes;
+  }
+  public function getMonitoredResourceTypes()
+  {
+    return $this->monitoredResourceTypes;
   }
   public function setName($name)
   {

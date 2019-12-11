@@ -22,6 +22,7 @@ class Google_Service_Bigquery_Routine extends Google_Collection
   protected $argumentsDataType = 'array';
   public $creationTime;
   public $definitionBody;
+  public $description;
   public $etag;
   public $importedLibraries;
   public $language;
@@ -61,6 +62,14 @@ class Google_Service_Bigquery_Routine extends Google_Collection
   public function getDefinitionBody()
   {
     return $this->definitionBody;
+  }
+  public function setDescription($description)
+  {
+    $this->description = $description;
+  }
+  public function getDescription()
+  {
+    return $this->description;
   }
   public function setEtag($etag)
   {

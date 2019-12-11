@@ -18,9 +18,7 @@
 class Google_Service_CloudHealthcare_ImportResourcesRequest extends Google_Model
 {
   public $contentStructure;
-  protected $gcsErrorDestinationType = 'Google_Service_CloudHealthcare_GoogleCloudHealthcareV1alpha2FhirRestGcsErrorDestination';
-  protected $gcsErrorDestinationDataType = '';
-  protected $gcsSourceType = 'Google_Service_CloudHealthcare_GoogleCloudHealthcareV1alpha2FhirRestGcsSource';
+  protected $gcsSourceType = 'Google_Service_CloudHealthcare_GoogleCloudHealthcareV1beta1FhirRestGcsSource';
   protected $gcsSourceDataType = '';
 
   public function setContentStructure($contentStructure)
@@ -32,28 +30,14 @@ class Google_Service_CloudHealthcare_ImportResourcesRequest extends Google_Model
     return $this->contentStructure;
   }
   /**
-   * @param Google_Service_CloudHealthcare_GoogleCloudHealthcareV1alpha2FhirRestGcsErrorDestination
+   * @param Google_Service_CloudHealthcare_GoogleCloudHealthcareV1beta1FhirRestGcsSource
    */
-  public function setGcsErrorDestination(Google_Service_CloudHealthcare_GoogleCloudHealthcareV1alpha2FhirRestGcsErrorDestination $gcsErrorDestination)
-  {
-    $this->gcsErrorDestination = $gcsErrorDestination;
-  }
-  /**
-   * @return Google_Service_CloudHealthcare_GoogleCloudHealthcareV1alpha2FhirRestGcsErrorDestination
-   */
-  public function getGcsErrorDestination()
-  {
-    return $this->gcsErrorDestination;
-  }
-  /**
-   * @param Google_Service_CloudHealthcare_GoogleCloudHealthcareV1alpha2FhirRestGcsSource
-   */
-  public function setGcsSource(Google_Service_CloudHealthcare_GoogleCloudHealthcareV1alpha2FhirRestGcsSource $gcsSource)
+  public function setGcsSource(Google_Service_CloudHealthcare_GoogleCloudHealthcareV1beta1FhirRestGcsSource $gcsSource)
   {
     $this->gcsSource = $gcsSource;
   }
   /**
-   * @return Google_Service_CloudHealthcare_GoogleCloudHealthcareV1alpha2FhirRestGcsSource
+   * @return Google_Service_CloudHealthcare_GoogleCloudHealthcareV1beta1FhirRestGcsSource
    */
   public function getGcsSource()
   {

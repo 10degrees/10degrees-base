@@ -31,8 +31,6 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    *
    * @param Google_Service_PeopleService_Person $postBody
    * @param array $optParams Optional parameters.
-   *
-   * @opt_param string parent The resource name of the owning person resource.
    * @return Google_Service_PeopleService_Person
    */
   public function createContact(Google_Service_PeopleService_Person $postBody, $optParams = array())
@@ -45,7 +43,8 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    * Delete a contact person. Any non-contact data will not be deleted.
    * (people.deleteContact)
    *
-   * @param string $resourceName The resource name of the contact to delete.
+   * @param string $resourceName Required. The resource name of the contact to
+   * delete.
    * @param array $optParams Optional parameters.
    * @return Google_Service_PeopleService_PeopleEmpty
    */
@@ -58,14 +57,14 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
   /**
    * Delete a contact's photo. (people.deleteContactPhoto)
    *
-   * @param string $resourceName The resource name of the contact whose photo will
-   * be deleted.
+   * @param string $resourceName Required. The resource name of the contact whose
+   * photo will be deleted.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string personFields **Optional.** Not specifying any fields will
-   * skip the post mutate read. A field mask to restrict which fields on the
-   * person are returned. Multiple fields can be specified by separating them with
-   * commas. Valid values are:
+   * @opt_param string personFields Optional. A field mask to restrict which
+   * fields on the person are returned. Multiple fields can be specified by
+   * separating them with commas. Defaults to empty if not set, which will skip
+   * the post mutate get. Valid values are:
    *
    * * addresses * ageRanges * biographies * birthdays * braggingRights *
    * coverPhotos * emailAddresses * events * genders * imClients * interests *
@@ -88,8 +87,8 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    * The request throws a 400 error if 'personFields' is not specified.
    * (people.get)
    *
-   * @param string $resourceName The resource name of the person to provide
-   * information about.
+   * @param string $resourceName Required. The resource name of the person to
+   * provide information about.
    *
    * - To get information about the authenticated user, specify `people/me`. - To
    * get information about a google account, specify  `people/`account_id. - To
@@ -98,7 +97,7 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    * [`people.connections.list`](/people/api/rest/v1/people.connections/list).
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string personFields **Required.** A field mask to restrict which
+   * @opt_param string personFields Required. A field mask to restrict which
    * fields on the person are returned. Multiple fields can be specified by
    * separating them with commas. Valid values are:
    *
@@ -108,8 +107,8 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    * organizations * phoneNumbers * photos * relations * relationshipInterests *
    * relationshipStatuses * residences * sipAddresses * skills * taglines * urls *
    * userDefined
-   * @opt_param string requestMask.includeField **Required.** Comma-separated list
-   * of person fields to be included in the response. Each path should start with
+   * @opt_param string requestMask.includeField Required. Comma-separated list of
+   * person fields to be included in the response. Each path should start with
    * `person.`: for example, `person.names` or `person.photos`.
    * @return Google_Service_PeopleService_Person
    */
@@ -128,7 +127,7 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    *
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string personFields **Required.** A field mask to restrict which
+   * @opt_param string personFields Required. A field mask to restrict which
    * fields on each person are returned. Multiple fields can be specified by
    * separating them with commas. Valid values are:
    *
@@ -138,11 +137,11 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    * organizations * phoneNumbers * photos * relations * relationshipInterests *
    * relationshipStatuses * residences * sipAddresses * skills * taglines * urls *
    * userDefined
-   * @opt_param string requestMask.includeField **Required.** Comma-separated list
-   * of person fields to be included in the response. Each path should start with
+   * @opt_param string requestMask.includeField Required. Comma-separated list of
+   * person fields to be included in the response. Each path should start with
    * `person.`: for example, `person.names` or `person.photos`.
-   * @opt_param string resourceNames The resource names of the people to provide
-   * information about.
+   * @opt_param string resourceNames Required. The resource names of the people to
+   * provide information about.
    *
    * - To get information about the authenticated user, specify `people/me`. - To
    * get information about a google account, specify   `people/`account_id. - To
@@ -180,8 +179,8 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
    * @param Google_Service_PeopleService_Person $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updatePersonFields **Required.** A field mask to restrict
-   * which fields on the person are updated. Multiple fields can be specified by
+   * @opt_param string updatePersonFields Required. A field mask to restrict which
+   * fields on the person are updated. Multiple fields can be specified by
    * separating them with commas. All updated fields will be replaced. Valid
    * values are:
    *
@@ -200,7 +199,7 @@ class Google_Service_PeopleService_Resource_People extends Google_Service_Resour
   /**
    * Update a contact's photo. (people.updateContactPhoto)
    *
-   * @param string $resourceName Person resource name
+   * @param string $resourceName Required. Person resource name
    * @param Google_Service_PeopleService_UpdateContactPhotoRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_PeopleService_UpdateContactPhotoResponse
