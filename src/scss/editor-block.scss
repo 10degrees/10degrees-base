@@ -1,4 +1,10 @@
 //@import "common/variables";
 //@import "common/_root";
 
+@import "common/variables";
+
+@import "mixins/prop";
+@import "mixins/bp";
+
+@import "admin/type";
 @import "admin/block-editor";
