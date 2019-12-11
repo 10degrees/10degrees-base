@@ -1,15 +1,3 @@
-@mixin container {
-	@include prop(max-width, --max-container-width);
-	margin-right: auto;
-	margin-left: auto;
-	padding-right: 15px;
-	padding-left: 15px;
-}
-
-.container {
-	@include container;
-}
-
 @mixin content {
 	@include prop(max-width, --max-content-width);
 	margin-right: auto;
@@ -17,6 +5,7 @@
 	padding-right: 15px;
 	padding-left: 15px;
 }
+
 @mixin alignwide {
 	@include prop(max-width, --max-container-width);
 	margin-right: auto;

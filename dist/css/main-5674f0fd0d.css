@@ -357,14 +357,6 @@ cite {
   display: grid;
   grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); }
 
-.container {
-  max-width: 1200px;
-  max-width: var(--max-container-width, 1200px);
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px; }
-
 body {
   display: flex;
   flex-direction: column;
@@ -491,22 +483,20 @@ body {
         .footer .copyright p {
           margin-bottom: 0; } }
 
-.page article > * {
+.block-wrapper > * {
   max-width: 920px;
   max-width: var(--max-content-width, 920px);
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;
   padding-left: 15px; }
-  .page article > * + * {
-    margin-top: 1em; }
 
-.page article > .alignfull {
+.block-wrapper > .alignfull {
   max-width: unset;
   padding-right: 0;
   padding-left: 0; }
 
-.page article > .alignwide {
+.block-wrapper > .alignwide {
   max-width: 1200px;
   max-width: var(--max-container-width, 1200px);
   margin-right: auto;
@@ -514,6 +504,25 @@ body {
   padding-right: 15px;
   padding-left: 15px; }
 
+/* .page {
+	article {
+		> * {
+			@include content;
+			& + * {
+				margin-top: 1em;
+			}
+		}
+		& > .alignfull {
+			max-width: unset;
+			padding-right: 0;
+			padding-left: 0;
+		}
+		& > .alignwide {
+			@include alignwide;
+		}
+	}
+}
+ */
 @media screen and (max-width: 675px) {
   #wpadminbar {
     display: none; }
@@ -528,4 +537,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-19e4a3d097.css.map */
+/*# sourceMappingURL=maps/main-5674f0fd0d.css.map */
