@@ -12,46 +12,26 @@ $colours : (
 
         // Background Colours
 
-        &.has-primary-background-color {
-            @include prop(background-color, --primary-colour);
-        }
-
-        &.has-secondary-background-color {
-            @include prop(background-color, --secondary-colour);
-        }
-
-        &.has-tertiary-background-color {
-            @include prop(background-color, --tertiary-colour);
+        @each $name, $colour in $colours {
+            &.has-#{$name}-background-color{
+                @include prop(background-color, #{$colour});
+            }
         }
 
         &.has-white-background-color{
             background-color: white;
         }
 
-        &.has-grey-9-background-color {
-            @include prop(background-color, --text-colour);
-        }
-
         // Text Colours
 
-        &.has-primary-color{
-            @include prop(color, --primary-colour);
-        }
-
-        &.has-secondary-color{
-            @include prop(color, --secondary-colour);
-        }
-
-        &.has-tertiary-color{
-            @include prop(color, --tertiary-colour);
+        @each $name, $colour in $colours {
+            &.has-#{$name}-color{
+                @include prop(color, #{$colour});
+            }
         }
 
         &.has-white-color {
             color: white;
-        }
-
-        &.has-grey-9-color {
-            @include prop(color, --text-colour);
         }
     }
 

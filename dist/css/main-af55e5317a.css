@@ -354,12 +354,15 @@ cite {
   background-color: pink;
   background-color: var(--tertiary-colour, pink); }
 
-.wp-block-button .wp-block-button__link.has-white-background-color {
-  background-color: white; }
-
 .wp-block-button .wp-block-button__link.has-grey-9-background-color {
   background-color: #212121;
   background-color: var(--text-colour, #212121); }
+
+.wp-block-button .wp-block-button__link.has-white-background-color {
+  background-color: var(white, ); }
+
+.wp-block-button .wp-block-button__link.has-white-background-color {
+  background-color: white; }
 
 .wp-block-button .wp-block-button__link.has-primary-color {
   color: red;
@@ -373,12 +376,15 @@ cite {
   color: pink;
   color: var(--tertiary-colour, pink); }
 
-.wp-block-button .wp-block-button__link.has-white-color {
-  color: white; }
-
 .wp-block-button .wp-block-button__link.has-grey-9-color {
   color: #212121;
   color: var(--text-colour, #212121); }
+
+.wp-block-button .wp-block-button__link.has-white-color {
+  color: var(white, ); }
+
+.wp-block-button .wp-block-button__link.has-white-color {
+  color: white; }
 
 .wp-block-button.is-style-full {
   width: 100%; }
@@ -623,4 +629,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-f949eed8bd.css.map */
+/*# sourceMappingURL=maps/main-af55e5317a.css.map */
