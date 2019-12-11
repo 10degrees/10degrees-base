@@ -24,7 +24,8 @@
     text-decoration: underline; }
 
 .editor-styles-wrapper .wp-block p,
-.editor-styles-wrapper .wp-block ul {
+.editor-styles-wrapper .wp-block ul,
+.editor-styles-wrapper .wp-block ol {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
 
 .editor-styles-wrapper .wp-block-heading h1 {
@@ -113,18 +114,23 @@
     color: var(--link-hover-colour, darkblue);
     text-decoration: underline; }
 
-.wp-block ul {
+.editor-styles-wrapper .wp-block ul,
+.editor-styles-wrapper .wp-block ol {
   margin-top: 0;
   margin-bottom: 1.5rem; }
-  .wp-block ul ul,
-  .wp-block ul ol {
+  .editor-styles-wrapper .wp-block ul ul,
+  .editor-styles-wrapper .wp-block ul ol,
+  .editor-styles-wrapper .wp-block ol ul,
+  .editor-styles-wrapper .wp-block ol ol {
     margin-bottom: 0; }
-  .wp-block ul li {
+  .editor-styles-wrapper .wp-block ul li,
+  .editor-styles-wrapper .wp-block ol li {
     font-size: 0.875rem;
     line-height: 1.7142; }
     @media only screen and (min-width: 768px) {
-      .wp-block ul li {
+      .editor-styles-wrapper .wp-block ul li,
+      .editor-styles-wrapper .wp-block ol li {
         font-size: 1rem;
         line-height: 1.5; } }
 
-/*# sourceMappingURL=maps/editor-block-7043d0e5ca.css.map */
+/*# sourceMappingURL=maps/editor-block-1d3a997561.css.map */

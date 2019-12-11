@@ -20,7 +20,8 @@
 }
 
 .editor-styles-wrapper .wp-block p,
-.editor-styles-wrapper .wp-block ul {
+.editor-styles-wrapper .wp-block ul,
+.editor-styles-wrapper .wp-block ol {
   font-family: $base-font;
 }
 
@@ -137,7 +138,8 @@
   }
 }
 
-.wp-block ul {
+.editor-styles-wrapper .wp-block ul,
+.editor-styles-wrapper .wp-block ol {
   margin-top: 0;
   margin-bottom: #{$base-line-height}rem;
   ul,
