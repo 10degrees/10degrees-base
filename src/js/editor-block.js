@@ -69,24 +69,24 @@ wp.domReady(() => {
   // Common Blocks
 
   // Formatting
-  wp.blocks.unregisterBlockType("core/freeform");
-  wp.blocks.unregisterBlockType("core/preformatted");
-  wp.blocks.unregisterBlockType("core/pullquote");
-  wp.blocks.unregisterBlockType("core/verse");
+  // wp.blocks.unregisterBlockType("core/freeform");
+  // wp.blocks.unregisterBlockType("core/preformatted");
+  // wp.blocks.unregisterBlockType("core/pullquote");
+  // wp.blocks.unregisterBlockType("core/verse");
 
   // layout Elements
-  wp.blocks.unregisterBlockType("core/more");
-  wp.blocks.unregisterBlockType("core/nextpage");
-  wp.blocks.unregisterBlockType("core/separator");
+  // wp.blocks.unregisterBlockType("core/more");
+  // wp.blocks.unregisterBlockType("core/nextpage");
+  // wp.blocks.unregisterBlockType("core/separator");
 
   // Widgets
+  // wp.blocks.unregisterBlockType("core/latest-comments");
   wp.blocks.unregisterBlockType("core/calendar");
-  wp.blocks.unregisterBlockType("core/latest-comments");
   wp.blocks.unregisterBlockType("core/rss");
   wp.blocks.unregisterBlockType("core/tag-cloud");
 
   // Embeds
-  wp.blocks.unregisterBlockType("core-embed/wordpress");
+  // wp.blocks.unregisterBlockType("core-embed/wordpress");
   wp.blocks.unregisterBlockType("core-embed/soundcloud");
   wp.blocks.unregisterBlockType("core-embed/spotify");
   wp.blocks.unregisterBlockType("core-embed/flickr");
