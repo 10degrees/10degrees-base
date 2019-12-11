@@ -1,3 +1,12 @@
+$colours : (
+    'primary': --primary-colour,
+    'secondary': --secondary-colour,
+    'tertiary': --tertiary-colour,
+    'grey-9': --text-colour,
+    'white': white
+);
+
+
 .wp-block-button {
     .wp-block-button__link {
 
@@ -51,6 +60,31 @@
 
         .wp-block-button__link {
             width: 100%;
+        }
+    }
+
+    &.is-style-outline .wp-block-button__link{
+
+        @each $name, $colour in $colours {
+            &.has-#{$name}-color{
+                &:hover,
+                &:focus,
+                &:active,
+                &.active{
+                    @include prop(background-color, #{$colour});
+                    color: white;
+                }
+            }
+        }
+
+        &.has-white-color {
+            &:hover,
+            &:focus,
+            &:active,
+            &.active{
+                background-color: white;
+                @include prop(color, --text-colour);
+            }
         }
     }
 }
