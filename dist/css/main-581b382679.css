@@ -454,26 +454,38 @@ body {
         .footer .copyright p {
           margin-bottom: 0; } }
 
-.block-wrapper > * {
-  max-width: 920px;
-  max-width: var(--max-content-width, 920px);
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px; }
-
-.block-wrapper > .alignfull {
-  max-width: unset;
-  padding-right: 0;
-  padding-left: 0; }
-
-.block-wrapper > .alignwide {
-  max-width: 1200px;
-  max-width: var(--max-container-width, 1200px);
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px; }
+.block-wrapper {
+  --gutter: 1rem;
+  --offset: 0;
+  --content: 1fr;
+  display: grid;
+  grid: auto/[start] minmax(var(--gutter), auto) [container-start] minmax(auto, var(--offset)) [content-start] var(--content) [content-end] minmax(auto, var(--offset)) [container-end] minmax(var(--gutter), auto) [end]; }
+  @media (min-width: 960px) {
+    .block-wrapper {
+      --offset: calc(
+			(var(--max-container-width) - var(--max-content-width)) / 2
+		);
+      --content: var(--max-content-width); } }
+  .block-wrapper > * {
+    grid-column: content-start / content-end; }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .block-wrapper > * {
+        max-width: 920px;
+        max-width: var(--max-content-width, 920px);
+        margin: 0 auto; } }
+  .block-wrapper > .alignwide {
+    grid-column: container-start / container-end; }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .block-wrapper > .alignwide {
+        max-width: 1200px;
+        max-width: var(--max-container-width, 1200px);
+        margin: 0 auto; } }
+  .block-wrapper > .alignfull {
+    grid-column: start / end; }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .block-wrapper > .alignfull {
+        max-width: none;
+        margin: 0; } }
 
 /* .page {
 	article {
@@ -508,4 +520,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-cd187b87f4.css.map */
+/*# sourceMappingURL=maps/main-581b382679.css.map */
