@@ -11,5 +11,13 @@
         &.has-tertiary-background-color {
             @include prop(background-color, --tertiary-colour);
         }
+
+        &.has-white-background-color{
+            background-color: white;
+        }
+
+        &.has-grey-9-background-color {
+            @include prop(background-color, --text-colour);
+        }
     }
 }

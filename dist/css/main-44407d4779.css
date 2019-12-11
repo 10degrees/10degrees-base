@@ -352,6 +352,13 @@ cite {
   background-color: pink;
   background-color: var(--tertiary-colour, pink); }
 
+.wp-block-button .wp-block-button__link.has-white-background-color {
+  background-color: white; }
+
+.wp-block-button .wp-block-button__link.has-grey-9-background-color {
+  background-color: #212121;
+  background-color: var(--text-colour, #212121); }
+
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -561,4 +568,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-91257a1ea2.css.map */
+/*# sourceMappingURL=maps/main-44407d4779.css.map */

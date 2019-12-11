@@ -232,6 +232,13 @@
   background-color: pink;
   background-color: var(--tertiary-colour, pink); }
 
+.wp-block-button .wp-block-button__link.has-white-background-color {
+  background-color: white; }
+
+.wp-block-button .wp-block-button__link.has-grey-9-background-color {
+  background-color: #212121;
+  background-color: var(--text-colour, #212121); }
+
 .editor-styles-wrapper {
   font-family: var(--font-family) !important; }
 
@@ -252,4 +259,4 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-60c49083fc.css.map */
+/*# sourceMappingURL=maps/editor-block-cc86c6fafe.css.map */
