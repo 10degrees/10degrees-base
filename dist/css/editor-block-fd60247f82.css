@@ -258,6 +258,11 @@
   color: #212121;
   color: var(--text-colour, #212121); }
 
+.wp-block-button.is-style-full {
+  width: 100%; }
+  .wp-block-button.is-style-full .wp-block-button__link {
+    width: 100%; }
+
 .editor-styles-wrapper {
   font-family: var(--font-family) !important; }
 
@@ -278,4 +283,4 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-53e85b5702.css.map */
+/*# sourceMappingURL=maps/editor-block-fd60247f82.css.map */

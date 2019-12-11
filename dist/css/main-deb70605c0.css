@@ -378,6 +378,11 @@ cite {
   color: #212121;
   color: var(--text-colour, #212121); }
 
+.wp-block-button.is-style-full {
+  width: 100%; }
+  .wp-block-button.is-style-full .wp-block-button__link {
+    width: 100%; }
+
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -587,4 +592,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-d85c1ef191.css.map */
+/*# sourceMappingURL=maps/main-deb70605c0.css.map */

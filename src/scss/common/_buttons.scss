@@ -2,7 +2,7 @@
     .wp-block-button__link {
 
         // Background Colours
-        
+
         &.has-primary-background-color {
             @include prop(background-color, --primary-colour);
         }
@@ -44,6 +44,13 @@
         &.has-grey-9-color {
             @include prop(color, --text-colour);
         }
-        
+    }
+
+    &.is-style-full {
+        width: 100%;
+
+        .wp-block-button__link {
+            width: 100%;
+        }
     }
 }
