@@ -1,5 +1,8 @@
 .wp-block-button {
     .wp-block-button__link {
+
+        // Background Colours
+        
         &.has-primary-background-color {
             @include prop(background-color, --primary-colour);
         }
@@ -19,5 +22,28 @@
         &.has-grey-9-background-color {
             @include prop(background-color, --text-colour);
         }
+
+        // Text Colours
+
+        &.has-primary-color{
+            @include prop(color, --primary-colour);
+        }
+
+        &.has-secondary-color{
+            @include prop(color, --secondary-colour);
+        }
+
+        &.has-tertiary-color{
+            @include prop(color, --tertiary-colour);
+        }
+
+        &.has-white-color {
+            color: white;
+        }
+
+        &.has-grey-9-color {
+            @include prop(color, --text-colour);
+        }
+        
     }
 }
