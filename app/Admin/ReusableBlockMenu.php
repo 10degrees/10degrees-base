@@ -3,26 +3,50 @@
 namespace App\Admin;
 
 /**
- * Rearrange the admin menu items
+ * Add a menu page for reuseable blocks.
  */
 class ReusableBlockMenu
 {
+	/**
+	 * The name used on the edit page.
+	 *
+	 * @var string
+	 */
 	public $page_title = 'Reusable Blocks';
 
+
+	/**
+	 * The name used in the menu.
+	 *
+	 * @var string
+	 */
 	public $menu_title = 'Reusable Blocks';
 
+
+	/**
+	 * The dashicon used in the menu.
+	 *
+	 * @var string
+	 */
+	public $icon = 'dashicons-controls-repeat';
+
+
+	/**
+	 * Add the admin menu action.
+	 */
     public function __construct()
     {
 		add_action( 'admin_menu', [$this, 'addMenuPage'] );
     }
 
+
     /**
-     * Set the new admin menu item order
-     *
-     * @return  array  List of menu items in their new order (excluded items are left as they are)
-     */
+	 * Add the reuseable blocks page to the menu.
+	 *
+	 * @return void
+	 */
     public function addMenuPage()
     {
-        add_menu_page( $this->page_title, $this->menu_title, 'edit_posts', 'edit.php?post_type=wp_block', '', 'dashicons-editor-table', 22 );
+        add_menu_page( $this->page_title, $this->menu_title, 'edit_posts', 'edit.php?post_type=wp_block', '', $this->icon, 22 );
     }
 }

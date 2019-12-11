@@ -1,5 +1,3 @@
-
-
 <section <?php td_block_class( $block, 'testimonials' ); ?>>
     <div class="container">
         <?php
