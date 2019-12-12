@@ -544,8 +544,16 @@ body {
   .wp-block-separator.is-style-wide {
     grid-column: container-start / container-end; }
 
+@media only screen and (max-width: 480px) {
+  .wp-block-table {
+    -webkit-overflow-scrolling: touch; } }
+
+.wp-block-table.alignfull {
+  padding: 0 16px; }
+
 .wp-block-table table {
-  border-collapse: collapse; }
+  border-collapse: collapse;
+  min-width: 480px; }
   .wp-block-table table td {
     padding: 0.5em; }
 
@@ -568,4 +576,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-8539e75fcb.css.map */
+/*# sourceMappingURL=maps/main-0d018ed9c4.css.map */

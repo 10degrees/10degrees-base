@@ -1,6 +1,15 @@
 .wp-block-table {
+  @media only screen and (max-width: $bp-sm) {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &.alignfull {
+    padding: 0 16px;
+  }
+
   table {
     border-collapse: collapse;
+    min-width: $bp-sm;
 
     td {
       padding: 0.5em;
