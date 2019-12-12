@@ -5,13 +5,14 @@
 
 @import "mixins/prop";
 @import "mixins/bp";
+@import "mixins/buttons";
 
 .editor-styles-wrapper {
-	@import "common/type";
-	@import "common/colours";
-	@import "admin/type";
+    @import "common/type";
+    @import "common/colours";
+    @import "admin/type";
 
-	@import "common/blocks/blockquote";
+    @import "common/blocks/blocks";
 }
 
 @import "admin/block-editor";

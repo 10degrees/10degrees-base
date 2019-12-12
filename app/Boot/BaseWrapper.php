@@ -32,7 +32,7 @@ class BaseWrapper
      *
      * @param string $template Template slug
      */
-    public function __construct($template = 'base.php') 
+    public function __construct($template = 'base.php')
     {
         $this->slug = basename( $template, '.php' );
         $this->templates = array( $template );
@@ -47,7 +47,8 @@ class BaseWrapper
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         $this->templates = apply_filters('roots/wrap_' . $this->slug, $this->templates);
         return locate_template($this->templates);
     }
