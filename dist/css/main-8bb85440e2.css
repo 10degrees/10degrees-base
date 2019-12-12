@@ -471,36 +471,22 @@ body {
 
 .block-wrapper {
   --gutter: 1rem;
-  --offset: 0;
-  --content: 1fr;
+  --offset: calc((100% - var(--max-container-width)) / 2);
   display: grid;
-  grid: auto/[start] minmax(var(--gutter), auto) [container-start] minmax(auto, var(--offset)) [content-start] var(--content) [content-end] minmax(auto, var(--offset)) [container-end] minmax(var(--gutter), auto) [end]; }
-  @media (min-width: 960px) {
-    .block-wrapper {
-      --offset: calc(
-			(var(--max-container-width) - var(--max-content-width)) / 2
-		);
-      --content: var(--max-content-width); } }
+  gap: var(--gutter) 0;
+  grid: auto/[start] minmax(var(--gutter), var(--offset)) [container-start] minmax(auto, 1fr) [content-start] auto [content-end] minmax(auto, 1fr) [container-end] minmax(var(--gutter), var(--offset)) [end]; }
   .block-wrapper > * {
-    grid-column: content-start / content-end; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .block-wrapper > * {
-        max-width: 920px;
-        max-width: var(--max-content-width, 920px);
-        margin: 0 auto; } }
+    grid-column: content-start / content-end;
+    max-width: var(--max-content-width);
+    margin-top: 0;
+    margin-bottom: 0; }
   .block-wrapper > .alignwide {
-    grid-column: container-start / container-end; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .block-wrapper > .alignwide {
-        max-width: 1200px;
-        max-width: var(--max-container-width, 1200px);
-        margin: 0 auto; } }
+    grid-column: container-start / container-end;
+    max-width: var(--max-container-width);
+    justify-self: center; }
   .block-wrapper > .alignfull {
-    grid-column: start / end; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .block-wrapper > .alignfull {
-        max-width: none;
-        margin: 0; } }
+    grid-column: start / end;
+    max-width: unset; }
 
 /* .page {
 	article {
@@ -558,4 +544,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-6ee416ea43.css.map */
+/*# sourceMappingURL=maps/main-8bb85440e2.css.map */

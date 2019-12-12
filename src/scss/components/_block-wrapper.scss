@@ -1,52 +1,35 @@
 .block-wrapper {
 	--gutter: 1rem;
-	--offset: 0;
-	--content: 1fr;
-
+	--offset: calc((100% - var(--max-container-width)) / 2);
 	display: grid;
+	gap: var(--gutter) 0;
 	grid:
-		auto / [start] minmax(var(--gutter), auto) [container-start] minmax(
-			auto,
-			var(--offset)
-		)
-		[content-start] var(--content) [content-end] minmax(auto, var(--offset))
-		[container-end] minmax(var(--gutter), auto) [end];
-
-	@media (min-width: 960px) {
-		--offset: calc(
-			(var(--max-container-width) - var(--max-content-width)) / 2
-		);
-		--content: var(--max-content-width);
-	}
+		auto /
+		[start]
+		minmax(var(--gutter), var(--offset))
+		[container-start]
+		minmax(auto, 1fr)
+		[content-start]
+		auto
+		[content-end]
+		minmax(auto, 1fr)
+		[container-end]
+		minmax(var(--gutter), var(--offset))
+		[end];
 
 	& > * {
 		grid-column: content-start / content-end;
-
-		@include ie-only {
-			@include prop(max-width, --max-content-width);
-			margin: 0 auto;
-		}
+		max-width: var(--max-content-width);
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 	& > .alignwide {
 		grid-column: container-start / container-end;
-
-		@include ie-only {
-			@include prop(max-width, --max-container-width);
-			margin: 0 auto;
-		}
+		max-width: var(--max-container-width);
+		justify-self: center;
 	}
 	& > .alignfull {
 		grid-column: start / end;
-
-		@include ie-only {
-			max-width: none;
-			margin: 0;
-		}
-	}
-	& > .alignleft {
-	}
-	& > .aligncenter {
-	}
-	& > .alignright {
+		max-width: unset;
 	}
 }
