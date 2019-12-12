@@ -1,6 +1,17 @@
+//@import "common/variables";
+//@import "common/_root";
+
 @import "common/variables";
 
 @import "mixins/prop";
 @import "mixins/bp";
 
-@import "admin/type";
+.editor-styles-wrapper {
+	@import "common/type";
+	@import "common/colours";
+	@import "admin/type";
+
+	@import "common/blocks/blockquote";
+}
+
+@import "admin/block-editor";

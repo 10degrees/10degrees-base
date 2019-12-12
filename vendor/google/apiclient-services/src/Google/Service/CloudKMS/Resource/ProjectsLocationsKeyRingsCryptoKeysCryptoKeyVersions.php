@@ -88,7 +88,8 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeysCrypto
    * Before the destroy_time is reached, RestoreCryptoKeyVersion may be called to
    * reverse the process. (cryptoKeyVersions.destroy)
    *
-   * @param string $name The resource name of the CryptoKeyVersion to destroy.
+   * @param string $name Required. The resource name of the CryptoKeyVersion to
+   * destroy.
    * @param Google_Service_CloudKMS_DestroyCryptoKeyVersionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudKMS_CryptoKeyVersion
@@ -102,7 +103,7 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeysCrypto
   /**
    * Returns metadata for a given CryptoKeyVersion. (cryptoKeyVersions.get)
    *
-   * @param string $name The name of the CryptoKeyVersion to get.
+   * @param string $name Required. The name of the CryptoKeyVersion to get.
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudKMS_CryptoKeyVersion
    */
@@ -117,7 +118,8 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeysCrypto
    * must be ASYMMETRIC_SIGN or ASYMMETRIC_DECRYPT.
    * (cryptoKeyVersions.getPublicKey)
    *
-   * @param string $name The name of the CryptoKeyVersion public key to get.
+   * @param string $name Required. The name of the CryptoKeyVersion public key to
+   * get.
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudKMS_PublicKey
    */
@@ -154,6 +156,14 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeysCrypto
    * in the format `projects/locations/keyRings/cryptoKeys`.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string pageToken Optional. Optional pagination token, returned
+   * earlier via ListCryptoKeyVersionsResponse.next_page_token.
+   * @opt_param int pageSize Optional. Optional limit on the number of
+   * CryptoKeyVersions to include in the response. Further CryptoKeyVersions can
+   * subsequently be obtained by including the
+   * ListCryptoKeyVersionsResponse.next_page_token in a subsequent request. If
+   * unspecified, the server will pick an appropriate default.
+   * @opt_param string view The fields to include in the response.
    * @opt_param string orderBy Optional. Specify how the results should be sorted.
    * If not specified, the results will be sorted in the default order. For more
    * information, see [Sorting and filtering list
@@ -161,14 +171,6 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeysCrypto
    * @opt_param string filter Optional. Only include resources that match the
    * filter in the response. For more information, see [Sorting and filtering list
    * results](https://cloud.google.com/kms/docs/sorting-and-filtering).
-   * @opt_param string pageToken Optional pagination token, returned earlier via
-   * ListCryptoKeyVersionsResponse.next_page_token.
-   * @opt_param int pageSize Optional limit on the number of CryptoKeyVersions to
-   * include in the response. Further CryptoKeyVersions can subsequently be
-   * obtained by including the ListCryptoKeyVersionsResponse.next_page_token in a
-   * subsequent request. If unspecified, the server will pick an appropriate
-   * default.
-   * @opt_param string view The fields to include in the response.
    * @return Google_Service_CloudKMS_ListCryptoKeyVersionsResponse
    */
   public function listProjectsLocationsKeyRingsCryptoKeysCryptoKeyVersions($parent, $optParams = array())
@@ -189,7 +191,7 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeysCrypto
    * @param Google_Service_CloudKMS_CryptoKeyVersion $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask Required list of fields to be updated in this
+   * @opt_param string updateMask Required. List of fields to be updated in this
    * request.
    * @return Google_Service_CloudKMS_CryptoKeyVersion
    */
@@ -205,7 +207,8 @@ class Google_Service_CloudKMS_Resource_ProjectsLocationsKeyRingsCryptoKeysCrypto
    * Upon restoration of the CryptoKeyVersion, state will be set to DISABLED, and
    * destroy_time will be cleared. (cryptoKeyVersions.restore)
    *
-   * @param string $name The resource name of the CryptoKeyVersion to restore.
+   * @param string $name Required. The resource name of the CryptoKeyVersion to
+   * restore.
    * @param Google_Service_CloudKMS_RestoreCryptoKeyVersionRequest $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_CloudKMS_CryptoKeyVersion

@@ -112,6 +112,9 @@ class Google_Service_Directory extends Google_Service
   /** View user schemas on your domain. */
   const ADMIN_DIRECTORY_USERSCHEMA_READONLY =
       "https://www.googleapis.com/auth/admin.directory.userschema.readonly";
+  /** View and manage your data across Google Cloud Platform services. */
+  const CLOUD_PLATFORM =
+      "https://www.googleapis.com/auth/cloud-platform";
 
   public $asps;
   public $channels;

@@ -1,0 +1,16 @@
+@mixin _container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+@mixin content {
+	@include prop(max-width, --max-content-width);
+	@include _container;
+}
+
+@mixin alignwide {
+	@include prop(max-width, --max-container-width);
+	@include _container;
+}

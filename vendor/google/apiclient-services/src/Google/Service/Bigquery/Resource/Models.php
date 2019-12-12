@@ -28,9 +28,9 @@ class Google_Service_Bigquery_Resource_Models extends Google_Service_Resource
   /**
    * Deletes the model specified by modelId from the dataset. (models.delete)
    *
-   * @param string $projectId Project ID of the model to delete.
-   * @param string $datasetId Dataset ID of the model to delete.
-   * @param string $modelId Model ID of the model to delete.
+   * @param string $projectId Required. Project ID of the model to delete.
+   * @param string $datasetId Required. Dataset ID of the model to delete.
+   * @param string $modelId Required. Model ID of the model to delete.
    * @param array $optParams Optional parameters.
    */
   public function delete($projectId, $datasetId, $modelId, $optParams = array())
@@ -42,9 +42,9 @@ class Google_Service_Bigquery_Resource_Models extends Google_Service_Resource
   /**
    * Gets the specified model resource by model ID. (models.get)
    *
-   * @param string $projectId Project ID of the requested model.
-   * @param string $datasetId Dataset ID of the requested model.
-   * @param string $modelId Model ID of the requested model.
+   * @param string $projectId Required. Project ID of the requested model.
+   * @param string $datasetId Required. Dataset ID of the requested model.
+   * @param string $modelId Required. Model ID of the requested model.
    * @param array $optParams Optional parameters.
    * @return Google_Service_Bigquery_Model
    */
@@ -58,15 +58,15 @@ class Google_Service_Bigquery_Resource_Models extends Google_Service_Resource
    * Lists all models in the specified dataset. Requires the READER dataset role.
    * (models.listModels)
    *
-   * @param string $projectId Project ID of the models to list.
-   * @param string $datasetId Dataset ID of the models to list.
+   * @param string $projectId Required. Project ID of the models to list.
+   * @param string $datasetId Required. Dataset ID of the models to list.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string pageToken Page token, returned by a previous call to
+   * request the next page of results
    * @opt_param string maxResults The maximum number of results to return in a
    * single response page. Leverage the page tokens to iterate through the entire
    * collection.
-   * @opt_param string pageToken Page token, returned by a previous call to
-   * request the next page of results
    * @return Google_Service_Bigquery_ListModelsResponse
    */
   public function listModels($projectId, $datasetId, $optParams = array())
@@ -78,9 +78,9 @@ class Google_Service_Bigquery_Resource_Models extends Google_Service_Resource
   /**
    * Patch specific fields in the specified model. (models.patch)
    *
-   * @param string $projectId Project ID of the model to patch.
-   * @param string $datasetId Dataset ID of the model to patch.
-   * @param string $modelId Model ID of the model to patch.
+   * @param string $projectId Required. Project ID of the model to patch.
+   * @param string $datasetId Required. Dataset ID of the model to patch.
+   * @param string $modelId Required. Model ID of the model to patch.
    * @param Google_Service_Bigquery_Model $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_Bigquery_Model

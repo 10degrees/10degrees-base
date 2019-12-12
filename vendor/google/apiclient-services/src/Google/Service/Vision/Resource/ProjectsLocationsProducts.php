@@ -35,7 +35,8 @@ class Google_Service_Vision_Resource_ProjectsLocationsProducts extends Google_Se
    * characters. * Returns INVALID_ARGUMENT if product_category is missing or
    * invalid. (products.create)
    *
-   * @param string $parent The project in which the Product should be created.
+   * @param string $parent Required. The project in which the Product should be
+   * created.
    *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * @param Google_Service_Vision_Product $postBody
@@ -60,7 +61,7 @@ class Google_Service_Vision_Resource_ProjectsLocationsProducts extends Google_Se
    * search queries against ProductSets containing the product may still work
    * until all related caches are refreshed. (products.delete)
    *
-   * @param string $name Resource name of product to delete.
+   * @param string $name Required. Resource name of product to delete.
    *
    * Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @param array $optParams Optional parameters.
@@ -79,7 +80,7 @@ class Google_Service_Vision_Resource_ProjectsLocationsProducts extends Google_Se
    *
    * * Returns NOT_FOUND if the Product does not exist. (products.get)
    *
-   * @param string $name Resource name of the Product to get.
+   * @param string $name Required. Resource name of the Product to get.
    *
    * Format is: `projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID`
    * @param array $optParams Optional parameters.
@@ -99,8 +100,8 @@ class Google_Service_Vision_Resource_ProjectsLocationsProducts extends Google_Se
    * * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
    * (products.listProjectsLocationsProducts)
    *
-   * @param string $parent The project OR ProductSet from which Products should be
-   * listed.
+   * @param string $parent Required. The project OR ProductSet from which Products
+   * should be listed.
    *
    * Format: `projects/PROJECT_ID/locations/LOC_ID`
    * @param array $optParams Optional parameters.
@@ -177,8 +178,8 @@ class Google_Service_Vision_Resource_ProjectsLocationsProducts extends Google_Se
    * progress and results of the request. `Operation.metadata` contains
    * `BatchOperationMetadata`. (progress) (products.purge)
    *
-   * @param string $parent The project and location in which the Products should
-   * be deleted.
+   * @param string $parent Required. The project and location in which the
+   * Products should be deleted.
    *
    * Format is `projects/PROJECT_ID/locations/LOC_ID`.
    * @param Google_Service_Vision_PurgeProductsRequest $postBody

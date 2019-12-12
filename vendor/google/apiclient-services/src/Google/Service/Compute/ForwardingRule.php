@@ -32,6 +32,8 @@ class Google_Service_Compute_ForwardingRule extends Google_Collection
   public $ipVersion;
   public $kind;
   public $loadBalancingScheme;
+  protected $metadataFiltersType = 'Google_Service_Compute_MetadataFilter';
+  protected $metadataFiltersDataType = 'array';
   public $name;
   public $network;
   public $networkTier;
@@ -123,6 +125,20 @@ class Google_Service_Compute_ForwardingRule extends Google_Collection
   public function getLoadBalancingScheme()
   {
     return $this->loadBalancingScheme;
+  }
+  /**
+   * @param Google_Service_Compute_MetadataFilter
+   */
+  public function setMetadataFilters($metadataFilters)
+  {
+    $this->metadataFilters = $metadataFilters;
+  }
+  /**
+   * @return Google_Service_Compute_MetadataFilter
+   */
+  public function getMetadataFilters()
+  {
+    return $this->metadataFilters;
   }
   public function setName($name)
   {

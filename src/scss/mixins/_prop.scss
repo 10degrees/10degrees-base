@@ -1,5 +1,20 @@
 // CSS Custom Properties mixin
 @mixin prop($prop, $value) {
-  #{$prop}: map-get($variables, $value);
-  #{$prop}: var($value, map-get($variables, $value));
+	#{$prop}: map-get($variables, $value);
+	#{$prop}: var($value, map-get($variables, $value));
+}
+
+// helpful wrapper for colour
+@mixin colour($value) {
+	@include prop(color, $value);
+}
+
+// helpful wrapper for background colour
+@mixin background-colour($value) {
+	@include prop(background-color, $value);
+}
+
+// helpful wrapper for border colour
+@mixin border-colour($value) {
+	@include prop(border-color, $value);
 }

@@ -28,8 +28,8 @@ class Google_Service_SecurityCommandCenter_Resource_OrganizationsSources extends
   /**
    * Creates a source. (sources.create)
    *
-   * @param string $parent Resource name of the new source's parent. Its format
-   * should be "organizations/[organization_id]".
+   * @param string $parent Required. Resource name of the new source's parent. Its
+   * format should be "organizations/[organization_id]".
    * @param Google_Service_SecurityCommandCenter_Source $postBody
    * @param array $optParams Optional parameters.
    * @return Google_Service_SecurityCommandCenter_Source
@@ -43,8 +43,8 @@ class Google_Service_SecurityCommandCenter_Resource_OrganizationsSources extends
   /**
    * Gets a source. (sources.get)
    *
-   * @param string $name Relative resource name of the source. Its format is
-   * "organizations/[organization_id]/source/[source_id]".
+   * @param string $name Required. Relative resource name of the source. Its
+   * format is "organizations/[organization_id]/source/[source_id]".
    * @param array $optParams Optional parameters.
    * @return Google_Service_SecurityCommandCenter_Source
    */
@@ -75,8 +75,8 @@ class Google_Service_SecurityCommandCenter_Resource_OrganizationsSources extends
    * Lists all sources belonging to an organization.
    * (sources.listOrganizationsSources)
    *
-   * @param string $parent Resource name of the parent of sources to list. Its
-   * format should be "organizations/[organization_id]".
+   * @param string $parent Required. Resource name of the parent of sources to
+   * list. Its format should be "organizations/[organization_id]".
    * @param array $optParams Optional parameters.
    *
    * @opt_param string pageToken The value returned by the last

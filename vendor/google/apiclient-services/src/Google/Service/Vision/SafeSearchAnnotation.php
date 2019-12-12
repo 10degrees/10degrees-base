@@ -18,16 +18,10 @@
 class Google_Service_Vision_SafeSearchAnnotation extends Google_Model
 {
   public $adult;
-  public $adultConfidence;
   public $medical;
-  public $medicalConfidence;
-  public $nsfwConfidence;
   public $racy;
-  public $racyConfidence;
   public $spoof;
-  public $spoofConfidence;
   public $violence;
-  public $violenceConfidence;
 
   public function setAdult($adult)
   {
@@ -37,14 +31,6 @@ class Google_Service_Vision_SafeSearchAnnotation extends Google_Model
   {
     return $this->adult;
   }
-  public function setAdultConfidence($adultConfidence)
-  {
-    $this->adultConfidence = $adultConfidence;
-  }
-  public function getAdultConfidence()
-  {
-    return $this->adultConfidence;
-  }
   public function setMedical($medical)
   {
     $this->medical = $medical;
@@ -52,22 +38,6 @@ class Google_Service_Vision_SafeSearchAnnotation extends Google_Model
   public function getMedical()
   {
     return $this->medical;
-  }
-  public function setMedicalConfidence($medicalConfidence)
-  {
-    $this->medicalConfidence = $medicalConfidence;
-  }
-  public function getMedicalConfidence()
-  {
-    return $this->medicalConfidence;
-  }
-  public function setNsfwConfidence($nsfwConfidence)
-  {
-    $this->nsfwConfidence = $nsfwConfidence;
-  }
-  public function getNsfwConfidence()
-  {
-    return $this->nsfwConfidence;
   }
   public function setRacy($racy)
   {
@@ -77,14 +47,6 @@ class Google_Service_Vision_SafeSearchAnnotation extends Google_Model
   {
     return $this->racy;
   }
-  public function setRacyConfidence($racyConfidence)
-  {
-    $this->racyConfidence = $racyConfidence;
-  }
-  public function getRacyConfidence()
-  {
-    return $this->racyConfidence;
-  }
   public function setSpoof($spoof)
   {
     $this->spoof = $spoof;
@@ -93,14 +55,6 @@ class Google_Service_Vision_SafeSearchAnnotation extends Google_Model
   {
     return $this->spoof;
   }
-  public function setSpoofConfidence($spoofConfidence)
-  {
-    $this->spoofConfidence = $spoofConfidence;
-  }
-  public function getSpoofConfidence()
-  {
-    return $this->spoofConfidence;
-  }
   public function setViolence($violence)
   {
     $this->violence = $violence;
@@ -108,13 +62,5 @@ class Google_Service_Vision_SafeSearchAnnotation extends Google_Model
   public function getViolence()
   {
     return $this->violence;
-  }
-  public function setViolenceConfidence($violenceConfidence)
-  {
-    $this->violenceConfidence = $violenceConfidence;
-  }
-  public function getViolenceConfidence()
-  {
-    return $this->violenceConfidence;
   }
 }

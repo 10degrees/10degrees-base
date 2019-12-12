@@ -24,6 +24,7 @@ class Google_Service_RemoteBuildExecution_GoogleDevtoolsRemotebuildexecutionAdmi
   public $labels;
   public $machineType;
   public $minCpuPlatform;
+  public $networkAccess;
   public $reserved;
 
   /**
@@ -79,6 +80,14 @@ class Google_Service_RemoteBuildExecution_GoogleDevtoolsRemotebuildexecutionAdmi
   public function getMinCpuPlatform()
   {
     return $this->minCpuPlatform;
+  }
+  public function setNetworkAccess($networkAccess)
+  {
+    $this->networkAccess = $networkAccess;
+  }
+  public function getNetworkAccess()
+  {
+    return $this->networkAccess;
   }
   public function setReserved($reserved)
   {

@@ -102,6 +102,8 @@ class Google_Service_CloudMachineLearningEngine_Resource_ProjectsModelsVersions 
    * version.
    * @param array $optParams Optional parameters.
    *
+   * @opt_param string filter Optional. Specifies the subset of versions to
+   * retrieve.
    * @opt_param string pageToken Optional. A page token to request the next page
    * of results.
    *
@@ -112,8 +114,6 @@ class Google_Service_CloudMachineLearningEngine_Resource_ProjectsModelsVersions 
    * response message will contain a valid value in the `next_page_token` field.
    *
    * The default value is 20, and the maximum page size is 100.
-   * @opt_param string filter Optional. Specifies the subset of versions to
-   * retrieve.
    * @return Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1ListVersionsResponse
    */
   public function listProjectsModelsVersions($parent, $optParams = array())
@@ -137,11 +137,14 @@ class Google_Service_CloudMachineLearningEngine_Resource_ProjectsModelsVersions 
    *
    * For example, to change the description of a version to "foo", the
    * `update_mask` parameter would be specified as `description`, and the `PATCH`
-   * request body would specify the new value, as follows:     {
-   * "description": "foo"     }
+   * request body would specify the new value, as follows:
    *
-   * Currently the only supported update mask fields are `description` and
-   * `autoScaling.minNodes`.
+   * ``` {   "description": "foo" } ```
+   *
+   * Currently the only supported update mask fields are `description`,
+   * `autoScaling.minNodes`, and `manualScaling.nodes`. However, you can only
+   * update `manualScaling.nodes` if the version uses a [Compute Engine (N1)
+   * machine type](/ml-engine/docs/machine-types-online-prediction).
    * @return Google_Service_CloudMachineLearningEngine_GoogleLongrunningOperation
    */
   public function patch($name, Google_Service_CloudMachineLearningEngine_GoogleCloudMlV1Version $postBody, $optParams = array())

@@ -20,6 +20,12 @@ class Google_Service_Container_Cluster extends Google_Collection
   protected $collection_key = 'nodePools';
   protected $addonsConfigType = 'Google_Service_Container_AddonsConfig';
   protected $addonsConfigDataType = '';
+  protected $authenticatorGroupsConfigType = 'Google_Service_Container_AuthenticatorGroupsConfig';
+  protected $authenticatorGroupsConfigDataType = '';
+  protected $autoscalingType = 'Google_Service_Container_ClusterAutoscaling';
+  protected $autoscalingDataType = '';
+  protected $binaryAuthorizationType = 'Google_Service_Container_BinaryAuthorization';
+  protected $binaryAuthorizationDataType = '';
   public $clusterIpv4Cidr;
   protected $conditionsType = 'Google_Service_Container_StatusCondition';
   protected $conditionsDataType = 'array';
@@ -27,6 +33,8 @@ class Google_Service_Container_Cluster extends Google_Collection
   public $currentMasterVersion;
   public $currentNodeCount;
   public $currentNodeVersion;
+  protected $databaseEncryptionType = 'Google_Service_Container_DatabaseEncryption';
+  protected $databaseEncryptionDataType = '';
   protected $defaultMaxPodsConstraintType = 'Google_Service_Container_MaxPodsConstraint';
   protected $defaultMaxPodsConstraintDataType = '';
   public $description;
@@ -74,6 +82,8 @@ class Google_Service_Container_Cluster extends Google_Collection
   public $statusMessage;
   public $subnetwork;
   public $tpuIpv4CidrBlock;
+  protected $verticalPodAutoscalingType = 'Google_Service_Container_VerticalPodAutoscaling';
+  protected $verticalPodAutoscalingDataType = '';
   public $zone;
 
   /**
@@ -89,6 +99,48 @@ class Google_Service_Container_Cluster extends Google_Collection
   public function getAddonsConfig()
   {
     return $this->addonsConfig;
+  }
+  /**
+   * @param Google_Service_Container_AuthenticatorGroupsConfig
+   */
+  public function setAuthenticatorGroupsConfig(Google_Service_Container_AuthenticatorGroupsConfig $authenticatorGroupsConfig)
+  {
+    $this->authenticatorGroupsConfig = $authenticatorGroupsConfig;
+  }
+  /**
+   * @return Google_Service_Container_AuthenticatorGroupsConfig
+   */
+  public function getAuthenticatorGroupsConfig()
+  {
+    return $this->authenticatorGroupsConfig;
+  }
+  /**
+   * @param Google_Service_Container_ClusterAutoscaling
+   */
+  public function setAutoscaling(Google_Service_Container_ClusterAutoscaling $autoscaling)
+  {
+    $this->autoscaling = $autoscaling;
+  }
+  /**
+   * @return Google_Service_Container_ClusterAutoscaling
+   */
+  public function getAutoscaling()
+  {
+    return $this->autoscaling;
+  }
+  /**
+   * @param Google_Service_Container_BinaryAuthorization
+   */
+  public function setBinaryAuthorization(Google_Service_Container_BinaryAuthorization $binaryAuthorization)
+  {
+    $this->binaryAuthorization = $binaryAuthorization;
+  }
+  /**
+   * @return Google_Service_Container_BinaryAuthorization
+   */
+  public function getBinaryAuthorization()
+  {
+    return $this->binaryAuthorization;
   }
   public function setClusterIpv4Cidr($clusterIpv4Cidr)
   {
@@ -143,6 +195,20 @@ class Google_Service_Container_Cluster extends Google_Collection
   public function getCurrentNodeVersion()
   {
     return $this->currentNodeVersion;
+  }
+  /**
+   * @param Google_Service_Container_DatabaseEncryption
+   */
+  public function setDatabaseEncryption(Google_Service_Container_DatabaseEncryption $databaseEncryption)
+  {
+    $this->databaseEncryption = $databaseEncryption;
+  }
+  /**
+   * @return Google_Service_Container_DatabaseEncryption
+   */
+  public function getDatabaseEncryption()
+  {
+    return $this->databaseEncryption;
   }
   /**
    * @param Google_Service_Container_MaxPodsConstraint
@@ -495,6 +561,20 @@ class Google_Service_Container_Cluster extends Google_Collection
   public function getTpuIpv4CidrBlock()
   {
     return $this->tpuIpv4CidrBlock;
+  }
+  /**
+   * @param Google_Service_Container_VerticalPodAutoscaling
+   */
+  public function setVerticalPodAutoscaling(Google_Service_Container_VerticalPodAutoscaling $verticalPodAutoscaling)
+  {
+    $this->verticalPodAutoscaling = $verticalPodAutoscaling;
+  }
+  /**
+   * @return Google_Service_Container_VerticalPodAutoscaling
+   */
+  public function getVerticalPodAutoscaling()
+  {
+    return $this->verticalPodAutoscaling;
   }
   public function setZone($zone)
   {

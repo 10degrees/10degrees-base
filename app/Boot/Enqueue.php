@@ -77,6 +77,7 @@ class Enqueue
      */
     public function scripts()
     {
+        // die(td_asset_path('js/main.js'));
         wp_register_script('td-main', get_stylesheet_directory_uri() . td_asset_path('js/main.js'), ['jquery'], '', true);
         if (is_single() && comments_open() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');

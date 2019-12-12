@@ -1,10 +1,19 @@
-.page {
-  article {
-    > * {
-      @include container;
-      & + * {
-        margin-top: 1em;
-      }
-    }
-  }
+/* .page {
+	article {
+		> * {
+			@include content;
+			& + * {
+				margin-top: 1em;
+			}
+		}
+		& > .alignfull {
+			max-width: unset;
+			padding-right: 0;
+			padding-left: 0;
+		}
+		& > .alignwide {
+			@include alignwide;
+		}
+	}
 }
+ */

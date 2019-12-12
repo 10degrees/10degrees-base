@@ -66,12 +66,17 @@ wp.domReady(() => {
     isDefault: true
   });
 
+  wp.blocks.registerBlockStyle("core/list", {
+    name: "icon",
+    label: "Icon"
+  });
+
   // Common Blocks
 
   // Formatting
   // wp.blocks.unregisterBlockType("core/freeform");
   // wp.blocks.unregisterBlockType("core/preformatted");
-  // wp.blocks.unregisterBlockType("core/pullquote");
+  wp.blocks.unregisterBlockType("core/pullquote");
   // wp.blocks.unregisterBlockType("core/verse");
 
   // layout Elements

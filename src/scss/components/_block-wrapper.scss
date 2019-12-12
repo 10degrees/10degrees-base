@@ -1,0 +1,53 @@
+.block-wrapper {
+	/*
+	 * in order to have the max width of the content inside the max width of the
+	 * container, we need to calculate the offset. subtract the content width
+	 * from the container width, and divide by 2 (offset on either side of the
+	 * content)
+	 */
+	--offset: calc((100% - var(--max-container-width)) / 2);
+	display: grid;
+	gap: var(--vertical-gap) 0;
+	grid:
+		// auto sets the rows - basically default rows.
+		auto /
+		// set grid line - this is at the edge of the page
+		[start]
+		// minimum of the gutter, maximum of the offset (see above)
+		minmax(var(--horizontal-gap), var(--offset))
+		// set grid line - this is the start of the container
+		[container-start]
+		// minimum of auto (which collapses to nothing) maximum of 1 fr (which expands to fill the space remaining)
+		minmax(auto, 1fr)
+		// set grid line - this is the start of the content
+		[content-start]
+		// as the child has a maximum width set, this will expand up to the max width.
+		auto
+		// set grid line - this is the end of the content
+		[content-end]
+		// minimum of auto (which collapses to nothing) maximum of 1 fr (which expands to fill the space remaining)
+		minmax(auto, 1fr)
+		// set grid line - this is the end of the container
+		[container-end]
+		// minimum of the gutter, maximum of the offset (see above)
+		minmax(var(--horizontal-gap), var(--offset))
+		// set grid line - this is at the end of the page
+		[end];
+
+	& > * {
+		@include prop(max-width, --max-content-width);
+		// set the start and end points of the content
+		grid-column: content-start / content-end;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	& > .alignwide {
+		@include prop(max-width, --max-container-width);
+		// set the start and end points of the container
+		grid-column: container-start / container-end;
+	}
+	& > .alignfull {
+		grid-column: start / end;
+		max-width: unset;
+	}
+}

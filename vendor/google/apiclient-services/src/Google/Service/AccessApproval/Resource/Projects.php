@@ -26,6 +26,24 @@
 class Google_Service_AccessApproval_Resource_Projects extends Google_Service_Resource
 {
   /**
+   * Deletes the settings associated with a project, folder, or organization. This
+   * will have the effect of disabling Access Approval for the project, folder, or
+   * organization, but only if all ancestors also have Access Approval disabled.
+   * If Access Approval is enabled at a higher level of the hierarchy, then Access
+   * Approval will still be enabled at this level as the settings are inherited.
+   * (projects.deleteAccessApprovalSettings)
+   *
+   * @param string $name Name of the AccessApprovalSettings to delete.
+   * @param array $optParams Optional parameters.
+   * @return Google_Service_AccessApproval_AccessapprovalEmpty
+   */
+  public function deleteAccessApprovalSettings($name, $optParams = array())
+  {
+    $params = array('name' => $name);
+    $params = array_merge($params, $optParams);
+    return $this->call('deleteAccessApprovalSettings', array($params), "Google_Service_AccessApproval_AccessapprovalEmpty");
+  }
+  /**
    * Gets the settings associated with a project, folder, or organization.
    * (projects.getAccessApprovalSettings)
    *
@@ -52,8 +70,8 @@ class Google_Service_AccessApproval_Resource_Projects extends Google_Service_Res
    * @param Google_Service_AccessApproval_AccessApprovalSettings $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask The update mask applies to the settings. For the
-   * `FieldMask` definition, see https://developers.google.com/protocol-
+   * @opt_param string updateMask For the `FieldMask` definition, see
+   * https://developers.google.com/protocol-
    * buffers/docs/reference/google.protobuf#fieldmask If this field is left unset,
    * only the notification_emails field will be updated.
    * @return Google_Service_AccessApproval_AccessApprovalSettings

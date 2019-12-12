@@ -36,6 +36,8 @@ class Google_Service_Bigquery_JobStatistics extends Google_Collection
   protected $reservationUsageType = 'Google_Service_Bigquery_JobStatisticsReservationUsage';
   protected $reservationUsageDataType = 'array';
   public $reservationId;
+  protected $scriptStatisticsType = 'Google_Service_Bigquery_ScriptStatistics';
+  protected $scriptStatisticsDataType = '';
   public $startTime;
   public $totalBytesProcessed;
   public $totalSlotMs;
@@ -151,6 +153,20 @@ class Google_Service_Bigquery_JobStatistics extends Google_Collection
   public function getReservationId()
   {
     return $this->reservationId;
+  }
+  /**
+   * @param Google_Service_Bigquery_ScriptStatistics
+   */
+  public function setScriptStatistics(Google_Service_Bigquery_ScriptStatistics $scriptStatistics)
+  {
+    $this->scriptStatistics = $scriptStatistics;
+  }
+  /**
+   * @return Google_Service_Bigquery_ScriptStatistics
+   */
+  public function getScriptStatistics()
+  {
+    return $this->scriptStatistics;
   }
   public function setStartTime($startTime)
   {

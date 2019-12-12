@@ -19,11 +19,11 @@
  * Service definition for Licensing (v1).
  *
  * <p>
- * Views and manages licenses for your domain.</p>
+ * Licensing API to view and manage licenses for your domain</p>
  *
  * <p>
  * For more information about this service, see the API
- * <a href="https://developers.google.com/google-apps/licensing/" target="_blank">Documentation</a>
+ * <a href="https://developers.google.com/admin-sdk/licensing/" target="_blank">Documentation</a>
  * </p>
  *
  * @author Google, Inc.

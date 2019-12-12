@@ -84,13 +84,13 @@ class Google_Service_StreetViewPublish_Resource_Photo extends Google_Service_Res
    * @param string $photoId Required. ID of the Photo.
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string view Specifies if a download URL for the photo bytes should
-   * be returned in the Photo response.
    * @opt_param string languageCode The BCP-47 language code, such as "en-US" or
    * "sr-Latn". For more information, see
    * http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If
    * language_code is unspecified, the user's language preference for Google
    * services is used.
+   * @opt_param string view Required. Specifies if a download URL for the photo
+   * bytes should be returned in the Photo response.
    * @return Google_Service_StreetViewPublish_Photo
    */
   public function get($photoId, $optParams = array())
@@ -145,8 +145,8 @@ class Google_Service_StreetViewPublish_Resource_Photo extends Google_Service_Res
    * @param Google_Service_StreetViewPublish_Photo $postBody
    * @param array $optParams Optional parameters.
    *
-   * @opt_param string updateMask Mask that identifies fields on the photo
-   * metadata to update. If not present, the old Photo metadata is entirely
+   * @opt_param string updateMask Required. Mask that identifies fields on the
+   * photo metadata to update. If not present, the old Photo metadata is entirely
    * replaced with the new Photo metadata in this request. The update fails if
    * invalid fields are specified. Multiple fields can be specified in a comma-
    * delimited list.

@@ -83,11 +83,11 @@ class Google_Service_StreetViewPublish extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'view' => array(
+                'languageCode' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
-                'languageCode' => array(
+                'view' => array(
                   'location' => 'query',
                   'type' => 'string',
                 ),
@@ -128,11 +128,6 @@ class Google_Service_StreetViewPublish extends Google_Service
               'path' => 'v1/photos:batchGet',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'photoIds' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                  'repeated' => true,
-                ),
                 'view' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -140,6 +135,11 @@ class Google_Service_StreetViewPublish extends Google_Service
                 'languageCode' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'photoIds' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                  'repeated' => true,
                 ),
               ),
             ),'batchUpdate' => array(
@@ -150,14 +150,6 @@ class Google_Service_StreetViewPublish extends Google_Service
               'path' => 'v1/photos',
               'httpMethod' => 'GET',
               'parameters' => array(
-                'pageToken' => array(
-                  'location' => 'query',
-                  'type' => 'string',
-                ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'view' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -169,6 +161,14 @@ class Google_Service_StreetViewPublish extends Google_Service
                 'languageCode' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'pageToken' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),

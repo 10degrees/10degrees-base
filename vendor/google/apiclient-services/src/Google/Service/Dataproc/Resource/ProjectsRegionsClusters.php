@@ -207,6 +207,8 @@ class Google_Service_Dataproc_Resource_ProjectsRegionsClusters extends Google_Se
    * be updated:      Mask  Purpose      labels  Update labels
    * config.worker_config.num_instances  Resize primary worker group
    * config.secondary_worker_config.num_instances  Resize secondary worker group
+   * config.autoscaling_config.policy_uriUse, stop using, or  change autoscaling
+   * policies
    * @return Google_Service_Dataproc_Operation
    */
   public function patch($projectId, $region, $clusterName, Google_Service_Dataproc_Cluster $postBody, $optParams = array())

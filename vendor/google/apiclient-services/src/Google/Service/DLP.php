@@ -37,7 +37,7 @@ class Google_Service_DLP extends Google_Service
       "https://www.googleapis.com/auth/cloud-platform";
 
   public $infoTypes;
-  public $locations;
+  public $locations_infoTypes;
   public $organizations_deidentifyTemplates;
   public $organizations_inspectTemplates;
   public $organizations_storedInfoTypes;
@@ -48,6 +48,7 @@ class Google_Service_DLP extends Google_Service
   public $projects_inspectTemplates;
   public $projects_jobTriggers;
   public $projects_locations_content;
+  public $projects_locations_image;
   public $projects_storedInfoTypes;
   
   /**
@@ -92,20 +93,28 @@ class Google_Service_DLP extends Google_Service
           )
         )
     );
-    $this->locations = new Google_Service_DLP_Resource_Locations(
+    $this->locations_infoTypes = new Google_Service_DLP_Resource_LocationsInfoTypes(
         $this,
         $this->serviceName,
-        'locations',
+        'infoTypes',
         array(
           'methods' => array(
-            'infoTypes' => array(
+            'list' => array(
               'path' => 'v2/locations/{location}/infoTypes',
-              'httpMethod' => 'POST',
+              'httpMethod' => 'GET',
               'parameters' => array(
                 'location' => array(
                   'location' => 'path',
                   'type' => 'string',
                   'required' => true,
+                ),
+                'languageCode' => array(
+                  'location' => 'query',
+                  'type' => 'string',
+                ),
+                'filter' => array(
+                  'location' => 'query',
+                  'type' => 'string',
                 ),
               ),
             ),
@@ -229,10 +238,6 @@ class Google_Service_DLP extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -240,6 +245,10 @@ class Google_Service_DLP extends Google_Service
                 'orderBy' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),'patch' => array(
@@ -495,10 +504,6 @@ class Google_Service_DLP extends Google_Service
                   'type' => 'string',
                   'required' => true,
                 ),
-                'pageSize' => array(
-                  'location' => 'query',
-                  'type' => 'integer',
-                ),
                 'orderBy' => array(
                   'location' => 'query',
                   'type' => 'string',
@@ -514,6 +519,10 @@ class Google_Service_DLP extends Google_Service
                 'pageToken' => array(
                   'location' => 'query',
                   'type' => 'string',
+                ),
+                'pageSize' => array(
+                  'location' => 'query',
+                  'type' => 'integer',
                 ),
               ),
             ),
@@ -721,6 +730,46 @@ class Google_Service_DLP extends Google_Service
               ),
             ),'inspect' => array(
               'path' => 'v2/{+parent}/locations/{location}/content:inspect',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'parent' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'location' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),'reidentify' => array(
+              'path' => 'v2/{+parent}/locations/{location}/content:reidentify',
+              'httpMethod' => 'POST',
+              'parameters' => array(
+                'parent' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+                'location' => array(
+                  'location' => 'path',
+                  'type' => 'string',
+                  'required' => true,
+                ),
+              ),
+            ),
+          )
+        )
+    );
+    $this->projects_locations_image = new Google_Service_DLP_Resource_ProjectsLocationsImage(
+        $this,
+        $this->serviceName,
+        'image',
+        array(
+          'methods' => array(
+            'redact' => array(
+              'path' => 'v2/{+parent}/locations/{location}/image:redact',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'parent' => array(

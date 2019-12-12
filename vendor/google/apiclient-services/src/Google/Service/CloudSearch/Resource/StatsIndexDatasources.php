@@ -32,7 +32,6 @@ class Google_Service_CloudSearch_Resource_StatsIndexDatasources extends Google_S
    * for, in the following format: "datasources/{source_id}"
    * @param array $optParams Optional parameters.
    *
-   * @opt_param int toDate.year Year of date. Must be from 1 to 9999.
    * @opt_param int fromDate.month Month of date. Must be from 1 to 12.
    * @opt_param int fromDate.day Day of month. Must be from 1 to 31 and valid for
    * the year and month.
@@ -40,6 +39,7 @@ class Google_Service_CloudSearch_Resource_StatsIndexDatasources extends Google_S
    * @opt_param int toDate.day Day of month. Must be from 1 to 31 and valid for
    * the year and month.
    * @opt_param int toDate.month Month of date. Must be from 1 to 12.
+   * @opt_param int toDate.year Year of date. Must be from 1 to 9999.
    * @return Google_Service_CloudSearch_GetDataSourceIndexStatsResponse
    */
   public function get($name, $optParams = array())
