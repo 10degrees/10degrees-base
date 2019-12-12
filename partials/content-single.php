@@ -9,6 +9,5 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'block-wrapper' ); ?>>
     <?php get_template_part('partials/post', 'header'); ?>
-
-            <?php the_content(); ?>
+    <?php the_content(); ?>
 </article>

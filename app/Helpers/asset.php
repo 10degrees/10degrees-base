@@ -2,11 +2,14 @@
 /**
  * Get cache-busting hashed filename from rev-manifest.json.
  *
- * @param  string $filename Original name of the file.
+ * @param string $filename Original name of the file.
+ *
  * @return string Current cache-busting hashed name of the file.
  */
 function td_asset_path($filename)
 {
+    //@TODO capitalize this function
+    
     // Cache the decoded manifest so that we only read it in once.
     static $manifest = null;
     if (null === $manifest) {
@@ -28,7 +31,8 @@ function td_asset_path($filename)
 /**
  * Quick way to asset path.
  *
- * @param  string $filePath - Optional
+ * @param string $filePath - Optional
+ *
  * @return string - path to file (or just directory)
  */
 function td_img_path($filePath = '')
@@ -37,9 +41,10 @@ function td_img_path($filePath = '')
 }
 
 /**
- * print svg code from svg file in assets/img/ directory
+ * Print svg code from svg file in assets/img/ directory
  *
- * @param  $svg string fileName
+ * @param $svg string fileName
+ *
  * @return string - svg code
  */
 function td_get_svg($svg)
@@ -50,14 +55,15 @@ function td_get_svg($svg)
 /**
  * Print svg code from given path. Compatible with acf
  *
- * @param  string $icon Path to file
+ * @param string $icon Path to file
+ *
  * @return string - svg code
  */
 function td_print_svg($icon)
 {
     if (false !== strpos($icon, '.svg')) {
         $icon = str_replace(site_url(), '', $icon);
-        include(ABSPATH . $icon);
+        include ABSPATH . $icon;
     }
     return $icon;
 }

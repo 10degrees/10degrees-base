@@ -1,4 +1,5 @@
-<?php
+<?php 
+// phpcs:ignoreFile
 
 /**
  *
@@ -10,7 +11,6 @@ if (!defined('WPINC')) {
 }
 
 /**
- *
  * Composer
  *
  */
@@ -22,7 +22,7 @@ require __DIR__ . '/vendor/autoload.php';
  *
  */
 foreach (glob(get_template_directory() . '/app/Helpers/*.php') as $filename) {
-    require_once($filename);
+    include_once $filename;
 }
 
 /**

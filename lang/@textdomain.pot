@@ -13,83 +13,83 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:16
+#: 404.php:20
 msgid "Sorry, that page does not exist."
 msgstr ""
 
-#: app/Admin/EditorColourPalette.php:25
+#: app/Admin/EditorColourPalette.php:38
 msgid "Primary"
 msgstr ""
 
-#: app/Admin/EditorColourPalette.php:30
+#: app/Admin/EditorColourPalette.php:43
 msgid "Secondary"
 msgstr ""
 
-#: app/Admin/EditorColourPalette.php:35
+#: app/Admin/EditorColourPalette.php:48
 msgid "Tertiary"
 msgstr ""
 
-#: app/Admin/EditorColourPalette.php:40
+#: app/Admin/EditorColourPalette.php:53
 msgid "White"
 msgstr ""
 
-#: app/Admin/EditorColourPalette.php:45
+#: app/Admin/EditorColourPalette.php:58
 msgid "Dark Grey"
 msgstr ""
 
-#: app/Admin/FontSizes.php:24
+#: app/Admin/FontSizes.php:36
 msgid "Small"
 msgstr ""
 
-#: app/Admin/FontSizes.php:29
+#: app/Admin/FontSizes.php:41
 msgid "Normal"
 msgstr ""
 
-#: app/Admin/FontSizes.php:34
+#: app/Admin/FontSizes.php:46
 msgid "Large"
 msgstr ""
 
-#: app/Boot/Init.php:109
+#: app/Boot/Init.php:123
 msgid "Continued"
 msgstr ""
 
-#: app/Boot/RegisterMenus.php:24
+#: app/Boot/RegisterMenus.php:31
 msgid "Main Menu"
 msgstr ""
 
-#: app/Boot/RegisterMenus.php:25
+#: app/Boot/RegisterMenus.php:32
 msgid "Footer Menu"
 msgstr ""
 
-#: app/Helpers/td_title.php:13
+#: app/Helpers/td_title.php:14
 msgid "Latest Posts"
 msgstr ""
 
-#: app/Helpers/td_title.php:55
+#: app/Helpers/td_title.php:53
 msgid "Search Results for %s"
 msgstr ""
 
-#: app/Helpers/td_title.php:58
+#: app/Helpers/td_title.php:55
 msgid "Page Not Found"
 msgstr ""
 
-#: base.php:21
+#: base.php:25
 msgid "Skip to main content"
 msgstr ""
 
-#: index.php:13
+#: index.php:17
 msgid "Sorry, no results were found."
 msgstr ""
 
-#: partials/comment.php:4
+#: partials/comment.php:6
 msgid "%1$s"
 msgstr ""
 
-#: partials/comment.php:5
+#: partials/comment.php:9
 msgid "(Edit)"
 msgstr ""
 
-#: partials/comment.php:9
+#: partials/comment.php:13
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -113,11 +113,11 @@ msgstr ""
 msgid "10 Degrees"
 msgstr ""
 
-#: partials/header.php:11
+#: partials/header.php:9
 msgid "Add a logo in Site settings"
 msgstr ""
 
-#: partials/header.php:18
+#: partials/header.php:15
 msgid "Toggle Navigation"
 msgstr ""
 
