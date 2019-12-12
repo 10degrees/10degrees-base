@@ -626,6 +626,7 @@ body {
   @media only screen and (max-width: 480px) {
     .wp-block-table {
       grid-column: start / end;
+      overflow-x: auto;
       padding: 0 16px; } }
   @media only screen and (max-width: 480px) {
     .wp-block-table.alignwide {
@@ -656,4 +657,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-ce1b9ccad6.css.map */
+/*# sourceMappingURL=maps/main-14df6d1447.css.map */

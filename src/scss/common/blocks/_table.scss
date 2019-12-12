@@ -3,6 +3,7 @@
 
 	@include bp($max: sm) {
 		grid-column: start / end;
+		overflow-x: auto;
 		padding: 0 16px;
 	}
 
