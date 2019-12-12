@@ -16,20 +16,29 @@ $grey-8: #616161;
 $grey-9: #424242;
 $grey-10: #212121;
 
-// Project variables.
-// Colours and container widths.
-// If you alter variable names, also update EditorColourPalette.php
-// These cascade to block editor colour palette
+/*
+ * Colour variables.
+ *
+ * If you alter variable names, also update EditorColourPalette.php
+ * These cascade to block editor colour palette.
+ *
+ * Sass variables need to be #{interpolated}
+ */
 $colour-map: (
 	--primary: red,
 	--secondary: green,
 	--tertiary: pink,
-	--text: #{$grey-10},
+	--white: #fff,
+	--body-text: #{$grey-10},
 	--link: blue,
 	--link-hover: darkblue
 );
 
-// layout variables.
+/*
+ * Layout variables.
+ *
+ * Used for the block-wrapper and more layout options.
+ */
 $layout-map: (
 	--horizontal-gap: 1rem,
 	--vertical-gap: 2rem,
@@ -38,7 +47,7 @@ $layout-map: (
 );
 
 // merge maps to be output in the :root
-$variables: map-merge($colour-map, $layout-map);
+$root-variables: map-merge($colour-map, $layout-map);
 
 // Base background-color
 $base-background-colour: white;
@@ -59,7 +68,11 @@ $monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 // Default font
 $base-font: $sans-serif;
 
-// Breakpoints
+/*
+ * Breakpoint variables.
+ *
+ * Used for bp() mixin and bp() function
+ */
 $breakpoint-map: (
 	sm: 480px,
 	md: 768px,

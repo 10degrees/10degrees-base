@@ -22,7 +22,25 @@
  * Project variables
  */
 /* Colours */
+/*
+ * Colour variables.
+ *
+ * If you alter variable names, also update EditorColourPalette.php
+ * These cascade to block editor colour palette.
+ *
+ * Sass variables need to be interpolated
+ */
+/*
+ * Layout variables.
+ *
+ * Used for the block-wrapper and more layout options.
+ */
 /* Typography */
+/*
+ * Breakpoint variables.
+ *
+ * Used for bp() mixin and bp() function
+ */
 /*
  * CSS custom properties
  * We can finally spell "colour" correctly 👍
@@ -34,7 +52,8 @@
   --primary: red;
   --secondary: green;
   --tertiary: pink;
-  --text: #212121;
+  --white: #fff;
+  --body-text: #212121;
   --link: blue;
   --link-hover: darkblue;
   --horizontal-gap: 1rem;
@@ -42,4 +61,4 @@
   --max-content-width: 920px;
   --max-container-width: 1200px; }
 
-/*# sourceMappingURL=maps/admin-21f6a57a74.css.map */
+/*# sourceMappingURL=maps/admin-6a8d4cce97.css.map */

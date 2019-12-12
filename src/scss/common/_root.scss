@@ -6,7 +6,7 @@
  * :root will target root selector of SVGs as well, for example
  */
 :root {
-  @each $prop, $variable in $variables {
-    #{$prop}: $variable;
-  }
+	@each $prop, $variable in $root-variables {
+		#{$prop}: $variable;
+	}
 }

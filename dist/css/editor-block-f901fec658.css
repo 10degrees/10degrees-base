@@ -2,7 +2,25 @@
  * Project variables
  */
 /* Colours */
+/*
+ * Colour variables.
+ *
+ * If you alter variable names, also update EditorColourPalette.php
+ * These cascade to block editor colour palette.
+ *
+ * Sass variables need to be interpolated
+ */
+/*
+ * Layout variables.
+ *
+ * Used for the block-wrapper and more layout options.
+ */
 /* Typography */
+/*
+ * Breakpoint variables.
+ *
+ * Used for bp() mixin and bp() function
+ */
 /*
  * Generate a media query based on convenient names such as sm, md , lg. The
  * names are set in a $breakpoints-map.
@@ -33,8 +51,7 @@
   .editor-styles-wrapper body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-size: 16px;
-    color: #212121;
-    color: var(--text, #212121);
+    color: var(--text, );
     background-color: white;
     font-weight: 400; }
   .editor-styles-wrapper h1,
@@ -242,12 +259,18 @@
   .editor-styles-wrapper .has-tertiary-color {
     color: pink;
     color: var(--tertiary, pink); }
-  .editor-styles-wrapper .has-text-background-color {
+  .editor-styles-wrapper .has-white-background-color {
+    background-color: #fff;
+    background-color: var(--white, #fff); }
+  .editor-styles-wrapper .has-white-color {
+    color: #fff;
+    color: var(--white, #fff); }
+  .editor-styles-wrapper .has-body-text-background-color {
     background-color: #212121;
-    background-color: var(--text, #212121); }
-  .editor-styles-wrapper .has-text-color {
+    background-color: var(--body-text, #212121); }
+  .editor-styles-wrapper .has-body-text-color {
     color: #212121;
-    color: var(--text, #212121); }
+    color: var(--body-text, #212121); }
   .editor-styles-wrapper .has-link-background-color {
     background-color: blue;
     background-color: var(--link, blue); }
@@ -300,4 +323,4 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-72059e3874.css.map */
+/*# sourceMappingURL=maps/editor-block-f901fec658.css.map */

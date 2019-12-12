@@ -16,8 +16,6 @@
 		bottom: 0;
 		z-index: 9999;
 		transform: translateZ(0) translateX(-100%);
-		-ms-transform: translateZ(0) translateX(-100%);
-		-webkit-transform: translateZ(0) translateX(-100%);
 		transition: all 0.3s ease-in-out;
 		overflow-x: hidden;
 		ul {
@@ -28,8 +26,6 @@
 		}
 		&.nav-open {
 			transform: translateZ(0) translateX(0%);
-			-ms-transform: translateZ(0) translateX(0%);
-			-webkit-transform: translateZ(0) translateX(0%);
 			li {
 			}
 		}

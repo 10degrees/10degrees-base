@@ -24,27 +24,27 @@ class EditorColourPalette
                 [
                     'name'  => __('Primary', '@textdomain'),
                     'slug'  => 'primary',
-                    'color' => 'var(--primary-colour)',
+                    'color' => 'var(--primary)',
                 ],
                 [
                     'name'  => __('Secondary', '@textdomain'),
                     'slug'  => 'secondary',
-                    'color' => 'var(--secondary-colour)',
+                    'color' => 'var(--secondary)',
                 ],
                 [
                     'name'  => __('Tertiary', '@textdomain'),
-                    'slug'  => 'Tertiary',
-                    'color' => 'var(--tertiary-colour)',
+                    'slug'  => 'tertiary',
+                    'color' => 'var(--tertiary)',
                 ],
                 [
                     'name'  => __('White', '@textdomain'),
                     'slug'  => 'white',
-                    'color' => 'white',
+                    'color' => 'var(--white)',
                 ],
                 [
-                    'name'  => __('Dark Grey', '@textdomain'),
-                    'slug'  => 'grey-9',
-                    'color' => 'var(--text-colour)',
+                    'name'  => __('Body text', '@textdomain'),
+                    'slug'  => 'body-text',
+                    'color' => 'var(--body-text)',
                 ],
             ]
         );
