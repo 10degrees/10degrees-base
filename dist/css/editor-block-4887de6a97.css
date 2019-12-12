@@ -332,35 +332,19 @@
     .editor-styles-wrapper .wp-block-table td {
       border: 1px solid #212121; }
   .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link {
-    background-color: var(--primary-colour, );
-    color: white; }
-  .editor-styles-wrapper .wp-block-button .wp-block-button__link.has-primary-background-color {
-    background-color: var(--primary-colour, ); }
-  .editor-styles-wrapper .wp-block-button .wp-block-button__link.has-secondary-background-color {
-    background-color: var(--secondary-colour, ); }
-  .editor-styles-wrapper .wp-block-button .wp-block-button__link.has-tertiary-background-color {
-    background-color: var(--tertiary-colour, ); }
-  .editor-styles-wrapper .wp-block-button .wp-block-button__link.has-white-background-color {
-    background-color: white; }
-  .editor-styles-wrapper .wp-block-button .wp-block-button__link.has-grey-9-background-color {
-    background-color: var(--text-colour, ); }
-  .editor-styles-wrapper .wp-block-button .wp-block-button__link.has-primary-color {
-    color: var(--primary-colour, ); }
-  .editor-styles-wrapper .wp-block-button .wp-block-button__link.has-secondary-color {
-    color: var(--secondary-colour, ); }
-  .editor-styles-wrapper .wp-block-button .wp-block-button__link.has-tertiary-color {
-    color: var(--tertiary-colour, ); }
-  .editor-styles-wrapper .wp-block-button .wp-block-button__link.has-white-color {
-    color: white; }
-  .editor-styles-wrapper .wp-block-button .wp-block-button__link.has-grey-9-color {
-    color: var(--text-colour, ); }
+    background-color: red;
+    background-color: var(--primary, red);
+    color: #fff;
+    color: var(--white, #fff); }
   .editor-styles-wrapper .wp-block-button.is-style-full {
     width: 100%; }
     .editor-styles-wrapper .wp-block-button.is-style-full .wp-block-button__link {
       width: 100%; }
   .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
-    color: var(--primary-colour, );
-    background-color: white; }
+    background-color: #fff;
+    background-color: var(--white, #fff);
+    color: red;
+    color: var(--primary, red); }
 
 .editor-styles-wrapper {
   font-family: var(--font-family) !important; }
@@ -382,4 +366,4 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-28237dad1b.css.map */
+/*# sourceMappingURL=maps/editor-block-4887de6a97.css.map */
