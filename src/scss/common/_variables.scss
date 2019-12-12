@@ -60,7 +60,9 @@ $monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 $base-font: $sans-serif;
 
 // Breakpoints
-$bp-sm: 480px;
-$bp-md: 768px;
-$bp-lg: 1024px;
-$bp-xlg: 1200px;
+$breakpoint-map: (
+	sm: 480px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1200px
+);

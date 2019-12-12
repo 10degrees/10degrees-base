@@ -1,24 +1,38 @@
-// Breakpoint mixins
-// Usage  @include bp(md) {}
-@mixin bp($point) {
-  @if $point==sm {
-    @media only screen and (min-width: #{$bp-sm}) {
-      @content;
-    }
-  }
-  @if $point==md {
-    @media only screen and (min-width: #{$bp-md}) {
-      @content;
-    }
-  }
-  @if $point==lg {
-    @media only screen and (min-width: #{$bp-lg}) {
-      @content;
-    }
-  }
-  @if $point==xlg {
-    @media only screen and (min-width: #{$bp-xlg}) {
-      @content;
-    }
-  }
+// Breakpoint mixin
+
+/*
+ * Generate a media query based on convenient names such as sm, md , lg. The
+ * names are set in a $breakpoints-map.
+ *
+ * Usage:
+ *
+ * @include bp(sm); // @media only screen and (min-width: 480px)
+ *
+ * @include bp($max: sm);  // @media only screen and (max-width: 480px)
+ *
+ * @include bp(sm, md);  // @media only screen and (min-width: 480px) and (max-width: 768px)
+ *
+ * @include bp(sm, $type: print);  // @media print and (min-width: 480px)
+ *
+ * @include bp(sm, md, print);  // @media print and (min-width: 480px) and (max-width: 768px)
+ */
+
+@mixin bp($min: null, $max: null, $type: only screen) {
+	// get the value/s from the $breakpoints-map
+	$min-value: map-get($breakpoint-map, $min);
+	$max-value: map-get($breakpoint-map, $max);
+
+	// build the media query
+	$min: if($min, "(min-width:#{$min-value})", null);
+	$max: if($max, "(max-width:#{$max-value})", null);
+	$and: if($min and $max, " and ", null);
+
+	// output the media query with the @content
+	@media #{$type} and #{$min $and $max} {
+		@content;
+	}
+}
+
+@function bp($name) {
+	@return map-get($breakpoint-map, $name);
 }

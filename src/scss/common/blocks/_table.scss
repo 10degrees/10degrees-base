@@ -1,35 +1,33 @@
 .wp-block-table {
-  -webkit-overflow-scrolling: auto;
+	-webkit-overflow-scrolling: auto;
 
-  @media only screen and (max-width: $bp-sm) {
-    grid-column: start / end;
-    padding: 0 16px;
-  }
+	@include bp($max: sm) {
+		grid-column: start / end;
+		padding: 0 16px;
+	}
 
-  &.alignwide {
-    justify-self: auto;
+	&.alignwide {
+		@include bp($max: sm) {
+			grid-column: start / end;
+		}
+	}
 
-    @media only screen and (max-width: $bp-sm) {
-      grid-column: start / end;
-    }
-  }
+	&.alignfull {
+		padding: 0 16px;
+	}
 
-  &.alignfull {
-    padding: 0 16px;
-  }
+	table {
+		border-collapse: collapse;
+		min-width: bp(sm);
 
-  table {
-    border-collapse: collapse;
-    min-width: $bp-sm;
+		td {
+			padding: 0.5em;
+		}
+	}
 
-    td {
-      padding: 0.5em;
-    }
-  }
-
-  table,
-  th,
-  td {
-    border: 1px solid $grey-10;
-  }
+	table,
+	th,
+	td {
+		border: 1px solid $grey-10;
+	}
 }

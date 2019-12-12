@@ -3,6 +3,22 @@
  */
 /* Colours */
 /* Typography */
+/*
+ * Generate a media query based on convenient names such as sm, md , lg. The
+ * names are set in a $breakpoints-map.
+ *
+ * Usage:
+ *
+ * @include bp(sm); // @media only screen and (min-width: 480px)
+ *
+ * @include bp($max: sm);  // @media only screen and (max-width: 480px)
+ *
+ * @include bp(sm, md);  // @media only screen and (min-width: 480px) and (max-width: 768px)
+ *
+ * @include bp(sm, $type: print);  // @media print and (min-width: 480px)
+ *
+ * @include bp(sm, md, print);  // @media print and (min-width: 480px) and (max-width: 768px)
+ */
 .editor-styles-wrapper {
   /*
  * Base typography
@@ -284,4 +300,4 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-989d076f45.css.map */
+/*# sourceMappingURL=maps/editor-block-72059e3874.css.map */
