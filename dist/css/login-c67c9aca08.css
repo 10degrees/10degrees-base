@@ -12,6 +12,8 @@
  * These cascade to block editor colour palette.
  *
  * Sass variables need to be interpolated
+ *
+ * Don't use --text as this causes a collision with WordPRess default classes.
  */
 /*
  * Layout variables.
@@ -58,4 +60,4 @@
 .wp-admin #wp-auth-check-wrap #wp-auth-check {
   background-color: white; }
 
-/*# sourceMappingURL=maps/login-e9ffb6630f.css.map */
+/*# sourceMappingURL=maps/login-c67c9aca08.css.map */

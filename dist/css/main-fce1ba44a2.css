@@ -115,6 +115,8 @@ select {
  * These cascade to block editor colour palette.
  *
  * Sass variables need to be interpolated
+ *
+ * Don't use --text as this causes a collision with WordPRess default classes.
  */
 /*
  * Layout variables.
@@ -683,4 +685,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-feff24e82b.css.map */
+/*# sourceMappingURL=maps/main-fce1ba44a2.css.map */

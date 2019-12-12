@@ -8,8 +8,6 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('block-wrapper'); ?>>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
         <h1><?php echo td_title(); ?></h1>
     </header>
