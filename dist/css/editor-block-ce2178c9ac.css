@@ -45,7 +45,42 @@
  */
   /*
  * Loop through all colours and output WordPress colour classes.
- */ }
+ */
+  /*
+
+.wp-block-button {
+    // Default button style
+    &:not(.is-style-outline) .wp-block-button__link {
+    }
+
+    .wp-block-button__link {
+    }
+
+    &.is-style-full {
+        width: 100%;
+
+        .wp-block-button__link {
+            width: 100%;
+        }
+    }
+
+    &.is-style-outline .wp-block-button__link {
+        // Default outline button style
+        &:not(.has-text-color) {
+            @include background-colour(--white);
+            @include colour(--primary);
+        }
+    }
+}
+// set the default background
+.wp-block-button__link:not(.has-background) {
+    @include background-colour(--primary);
+}
+// set the default colour
+.wp-block-button__link:not(.has-text-color) {
+    @include colour(--white);
+}
+*/ }
   .editor-styles-wrapper html {
     font-size: 100%;
     font-size: 16px;
@@ -331,20 +366,6 @@
     .editor-styles-wrapper .wp-block-table th,
     .editor-styles-wrapper .wp-block-table td {
       border: 1px solid #212121; }
-  .editor-styles-wrapper .wp-block-button:not(.is-style-outline) .wp-block-button__link {
-    background-color: red;
-    background-color: var(--primary, red);
-    color: #fff;
-    color: var(--white, #fff); }
-  .editor-styles-wrapper .wp-block-button.is-style-full {
-    width: 100%; }
-    .editor-styles-wrapper .wp-block-button.is-style-full .wp-block-button__link {
-      width: 100%; }
-  .editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
-    background-color: #fff;
-    background-color: var(--white, #fff);
-    color: red;
-    color: var(--primary, red); }
 
 .editor-styles-wrapper {
   font-family: var(--font-family) !important; }
@@ -366,4 +387,4 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-4887de6a97.css.map */
+/*# sourceMappingURL=maps/editor-block-ce2178c9ac.css.map */

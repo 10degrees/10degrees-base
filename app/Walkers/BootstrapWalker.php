@@ -28,12 +28,13 @@ class BootstrapWalker extends \Walker_Nav_Menu
      * @param int      $depth  Depth of menu item. Used for padding
      * @param stdClass $args   An object of wp_nav_menu() arguments
      *
-     * @since 3.0.0
-     * @see   Walker::start_lvl()
+     * @since      3.0.0
+     * @see        Walker::start_lvl()
+     * @deprecated 3.0.0
      *
      * @return void
      */
-    public function start_lvl(&$output, $depth = 0, $args = array())
+    public function start_lvl(&$output, int $depth = 0, $args = array())
     {
         // Use the current menu id generated via start_el()
         $current_menu_id = $this->current_menu_id_bootstrap;
@@ -169,7 +170,7 @@ class BootstrapWalker extends \Walker_Nav_Menu
             $atts['class'] .= ' dropdown-item';
             $atts['id']    = 'menu-item-' . $item->ID;
         }
-        
+
         if (in_array('current-menu-item', $item->classes)) {
             $atts['class'] .= ' active';
         }

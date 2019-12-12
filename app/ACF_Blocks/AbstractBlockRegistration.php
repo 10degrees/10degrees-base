@@ -5,8 +5,6 @@ namespace App\ACF_Blocks;
 /**
  * Abstract block registration
  *
- * Provide a base class for singleton classes
- *
  * @category Theme
  * @package  TenDegrees/10degrees-base
  * @author   10 Degrees <wordpress@10degrees.uk>
@@ -18,6 +16,8 @@ abstract class AbstractBlockRegistration
 {
     /**
      * Constructor
+     *
+     * Only register the class if ACF is active
      */
     public function __construct()
     {

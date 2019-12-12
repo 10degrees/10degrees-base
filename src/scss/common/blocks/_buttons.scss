@@ -1,8 +1,8 @@
+/*
+
 .wp-block-button {
     // Default button style
     &:not(.is-style-outline) .wp-block-button__link {
-        @include background-colour(--primary);
-        @include colour(--white);
     }
 
     .wp-block-button__link {
@@ -24,3 +24,12 @@
         }
     }
 }
+// set the default background
+.wp-block-button__link:not(.has-background) {
+    @include background-colour(--primary);
+}
+// set the default colour
+.wp-block-button__link:not(.has-text-color) {
+    @include colour(--white);
+}
+*/

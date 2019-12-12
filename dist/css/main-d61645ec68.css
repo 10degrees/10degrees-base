@@ -673,23 +673,41 @@ body {
   .wp-block-table td {
     border: 1px solid #212121; }
 
-.wp-block-button:not(.is-style-outline) .wp-block-button__link {
-  background-color: red;
-  background-color: var(--primary, red);
-  color: #fff;
-  color: var(--white, #fff); }
+/*
 
-.wp-block-button.is-style-full {
-  width: 100%; }
-  .wp-block-button.is-style-full .wp-block-button__link {
-    width: 100%; }
+.wp-block-button {
+    // Default button style
+    &:not(.is-style-outline) .wp-block-button__link {
+    }
 
-.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
-  background-color: #fff;
-  background-color: var(--white, #fff);
-  color: red;
-  color: var(--primary, red); }
+    .wp-block-button__link {
+    }
 
+    &.is-style-full {
+        width: 100%;
+
+        .wp-block-button__link {
+            width: 100%;
+        }
+    }
+
+    &.is-style-outline .wp-block-button__link {
+        // Default outline button style
+        &:not(.has-text-color) {
+            @include background-colour(--white);
+            @include colour(--primary);
+        }
+    }
+}
+// set the default background
+.wp-block-button__link:not(.has-background) {
+    @include background-colour(--primary);
+}
+// set the default colour
+.wp-block-button__link:not(.has-text-color) {
+    @include colour(--white);
+}
+*/
 @media screen and (max-width: 675px) {
   #wpadminbar {
     display: none; }
@@ -704,4 +722,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-dd3a22d8b2.css.map */
+/*# sourceMappingURL=maps/main-d61645ec68.css.map */
