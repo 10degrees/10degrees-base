@@ -1,10 +1,17 @@
 .wp-block-table {
+  -webkit-overflow-scrolling: auto;
+
   @media only screen and (max-width: $bp-sm) {
-    -webkit-overflow-scrolling: touch;
+    grid-column: start / end;
+    padding: 0 16px;
   }
 
   &.alignwide {
     justify-self: auto;
+
+    @media only screen and (max-width: $bp-sm) {
+      grid-column: start / end;
+    }
   }
 
   &.alignfull {
