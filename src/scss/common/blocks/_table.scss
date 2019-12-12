@@ -3,6 +3,7 @@
 
   @media only screen and (max-width: $bp-sm) {
     grid-column: start / end;
+    overflow-x: auto;
     padding: 0 16px;
   }
 

@@ -594,6 +594,7 @@ body {
   @media only screen and (max-width: 480px) {
     .wp-block-table {
       grid-column: start / end;
+      overflow-x: auto;
       padding: 0 16px; } }
   .wp-block-table.alignwide {
     justify-self: auto; }
@@ -626,4 +627,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-962e937d2a.css.map */
+/*# sourceMappingURL=maps/main-10893a0931.css.map */
