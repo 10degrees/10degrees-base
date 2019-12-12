@@ -534,6 +534,9 @@ body {
   .wp-block-table {
     -webkit-overflow-scrolling: touch; } }
 
+.wp-block-table.alignwide {
+  justify-self: auto; }
+
 .wp-block-table.alignfull {
   padding: 0 16px; }
 
@@ -562,4 +565,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-26483e5ae7.css.map */
+/*# sourceMappingURL=maps/main-57802658ce.css.map */
