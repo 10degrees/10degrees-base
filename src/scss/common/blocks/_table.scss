@@ -1,0 +1,35 @@
+.wp-block-table {
+  -webkit-overflow-scrolling: auto;
+
+  @media only screen and (max-width: $bp-sm) {
+    grid-column: start / end;
+    padding: 0 16px;
+  }
+
+  &.alignwide {
+    justify-self: auto;
+
+    @media only screen and (max-width: $bp-sm) {
+      grid-column: start / end;
+    }
+  }
+
+  &.alignfull {
+    padding: 0 16px;
+  }
+
+  table {
+    border-collapse: collapse;
+    min-width: $bp-sm;
+
+    td {
+      padding: 0.5em;
+    }
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid $grey-10;
+  }
+}
