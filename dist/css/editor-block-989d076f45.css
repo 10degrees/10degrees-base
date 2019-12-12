@@ -6,6 +6,9 @@
 .editor-styles-wrapper {
   /*
  * Base typography
+ */
+  /*
+ * Loop through all colours and output WordPress colour classes.
  */ }
   .editor-styles-wrapper html {
     font-size: 100%;
@@ -15,7 +18,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     font-size: 16px;
     color: #212121;
-    color: var(--text-colour, #212121);
+    color: var(--text, #212121);
     background-color: white;
     font-weight: 400; }
   .editor-styles-wrapper h1,
@@ -197,14 +200,50 @@
   .editor-styles-wrapper a,
   .editor-styles-wrapper .wp-block a {
     color: blue;
-    color: var(--link-colour, blue);
+    color: var(--link, blue);
     text-decoration: none; }
     .editor-styles-wrapper a:hover, .editor-styles-wrapper a:focus,
     .editor-styles-wrapper .wp-block a:hover,
     .editor-styles-wrapper .wp-block a:focus {
       color: darkblue;
-      color: var(--link-hover-colour, darkblue);
+      color: var(--link-hover, darkblue);
       text-decoration: underline; }
+  .editor-styles-wrapper .has-primary-background-color {
+    background-color: red;
+    background-color: var(--primary, red); }
+  .editor-styles-wrapper .has-primary-color {
+    color: red;
+    color: var(--primary, red); }
+  .editor-styles-wrapper .has-secondary-background-color {
+    background-color: green;
+    background-color: var(--secondary, green); }
+  .editor-styles-wrapper .has-secondary-color {
+    color: green;
+    color: var(--secondary, green); }
+  .editor-styles-wrapper .has-tertiary-background-color {
+    background-color: pink;
+    background-color: var(--tertiary, pink); }
+  .editor-styles-wrapper .has-tertiary-color {
+    color: pink;
+    color: var(--tertiary, pink); }
+  .editor-styles-wrapper .has-text-background-color {
+    background-color: #212121;
+    background-color: var(--text, #212121); }
+  .editor-styles-wrapper .has-text-color {
+    color: #212121;
+    color: var(--text, #212121); }
+  .editor-styles-wrapper .has-link-background-color {
+    background-color: blue;
+    background-color: var(--link, blue); }
+  .editor-styles-wrapper .has-link-color {
+    color: blue;
+    color: var(--link, blue); }
+  .editor-styles-wrapper .has-link-hover-background-color {
+    background-color: darkblue;
+    background-color: var(--link-hover, darkblue); }
+  .editor-styles-wrapper .has-link-hover-color {
+    color: darkblue;
+    color: var(--link-hover, darkblue); }
   .editor-styles-wrapper .editor-post-title .editor-post-title__input {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
   .editor-styles-wrapper .wp-block-quote {
@@ -245,4 +284,4 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-32a13b661d.css.map */
+/*# sourceMappingURL=maps/editor-block-989d076f45.css.map */

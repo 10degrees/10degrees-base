@@ -20,16 +20,25 @@ $grey-10: #212121;
 // Colours and container widths.
 // If you alter variable names, also update EditorColourPalette.php
 // These cascade to block editor colour palette
-$variables: (
-  "--primary-colour": red,
-  "--secondary-colour": green,
-  "--tertiary-colour": pink,
-  "--text-colour": #{$grey-10},
-  "--link-colour": blue,
-  "--link-hover-colour": darkblue,
-  "--max-content-width": 920px,
-  "--max-container-width": 1200px
+$colour-map: (
+	--primary: red,
+	--secondary: green,
+	--tertiary: pink,
+	--text: #{$grey-10},
+	--link: blue,
+	--link-hover: darkblue
 );
+
+// layout variables.
+$layout-map: (
+	--horizontal-gap: 1rem,
+	--vertical-gap: 2rem,
+	--max-content-width: 920px,
+	--max-container-width: 1200px
+);
+
+// merge maps to be output in the :root
+$variables: map-merge($colour-map, $layout-map);
 
 // Base background-color
 $base-background-colour: white;
@@ -43,7 +52,7 @@ $base-font-weight: 400;
 
 // Font stacks
 $sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
-  Ubuntu, Cantarell, "Helvetica Neue", sans-serif; // System font stack
+	Ubuntu, Cantarell, "Helvetica Neue", sans-serif; // System font stack
 $serif: Georgia, "Times New Roman", Times, serif;
 $monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 

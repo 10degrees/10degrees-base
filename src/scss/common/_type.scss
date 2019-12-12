@@ -11,7 +11,7 @@ html {
 body {
 	font-family: $base-font;
 	font-size: $base-font-size;
-	@include prop(color, --text-colour);
+	@include colour(--text);
 	background-color: $base-background-colour;
 	font-weight: $base-font-weight;
 }
@@ -200,12 +200,12 @@ ol,
 // Links
 a,
 .wp-block a {
-	@include prop(color, --link-colour);
+	@include colour(--link);
 	text-decoration: none;
 
 	&:hover,
 	&:focus {
-		@include prop(color, --link-hover-colour);
+		@include colour(--link-hover);
 		text-decoration: underline;
 	}
 }

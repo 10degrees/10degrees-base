@@ -101,14 +101,67 @@ select {
  * :root will target root selector of SVGs as well, for example
  */
 :root {
-  --primary-colour: red;
-  --secondary-colour: green;
-  --tertiary-colour: pink;
-  --text-colour: #212121;
-  --link-colour: blue;
-  --link-hover-colour: darkblue;
+  --primary: red;
+  --secondary: green;
+  --tertiary: pink;
+  --text: #212121;
+  --link: blue;
+  --link-hover: darkblue;
+  --horizontal-gap: 1rem;
+  --vertical-gap: 2rem;
   --max-content-width: 920px;
   --max-container-width: 1200px; }
+
+/*
+ * Loop through all colours and output WordPress colour classes.
+ */
+.has-primary-background-color {
+  background-color: red;
+  background-color: var(--primary, red); }
+
+.has-primary-color {
+  color: red;
+  color: var(--primary, red); }
+
+.has-secondary-background-color {
+  background-color: green;
+  background-color: var(--secondary, green); }
+
+.has-secondary-color {
+  color: green;
+  color: var(--secondary, green); }
+
+.has-tertiary-background-color {
+  background-color: pink;
+  background-color: var(--tertiary, pink); }
+
+.has-tertiary-color {
+  color: pink;
+  color: var(--tertiary, pink); }
+
+.has-text-background-color {
+  background-color: #212121;
+  background-color: var(--text, #212121); }
+
+.has-text-color {
+  color: #212121;
+  color: var(--text, #212121); }
+
+.has-link-background-color {
+  background-color: blue;
+  background-color: var(--link, blue); }
+
+.has-link-color {
+  color: blue;
+  color: var(--link, blue); }
+
+.has-link-hover-background-color {
+  background-color: darkblue;
+  background-color: var(--link-hover, darkblue); }
+
+.has-link-hover-color {
+  color: darkblue;
+  color: var(--link-hover, darkblue); }
 
 /*
  * Base typography
@@ -122,7 +175,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 16px;
   color: #212121;
-  color: var(--text-colour, #212121);
+  color: var(--text, #212121);
   background-color: white;
   font-weight: 400; }
 
@@ -317,13 +370,13 @@ ol,
 a,
 .wp-block a {
   color: blue;
-  color: var(--link-colour, blue);
+  color: var(--link, blue);
   text-decoration: none; }
   a:hover, a:focus,
   .wp-block a:hover,
   .wp-block a:focus {
     color: darkblue;
-    color: var(--link-hover-colour, darkblue);
+    color: var(--link-hover, darkblue);
     text-decoration: underline; }
 
 .screen-reader-text {
@@ -470,20 +523,26 @@ body {
           margin-bottom: 0; } }
 
 .block-wrapper {
-  --gutter: 1rem;
+  /*
+	 * in order to have the max width of the content inside the max width of the
+	 * container, we need to calculate the offset. subtract the content width
+	 * from the container width, and divide by 2 (offset on either side of the
+	 * content)
+	 */
   --offset: calc((100% - var(--max-container-width)) / 2);
   display: grid;
-  gap: var(--gutter) 0;
-  grid: auto/[start] minmax(var(--gutter), var(--offset)) [container-start] minmax(auto, 1fr) [content-start] auto [content-end] minmax(auto, 1fr) [container-end] minmax(var(--gutter), var(--offset)) [end]; }
+  gap: var(--vertical-gap) 0;
+  grid: auto/[start] minmax(var(--horizontal-gap), var(--offset)) [container-start] minmax(auto, 1fr) [content-start] auto [content-end] minmax(auto, 1fr) [container-end] minmax(var(--horizontal-gap), var(--offset)) [end]; }
   .block-wrapper > * {
+    max-width: 920px;
+    max-width: var(--max-content-width, 920px);
     grid-column: content-start / content-end;
-    max-width: var(--max-content-width);
     margin-top: 0;
     margin-bottom: 0; }
   .block-wrapper > .alignwide {
-    grid-column: container-start / container-end;
-    max-width: var(--max-container-width);
-    justify-self: center; }
+    max-width: 1200px;
+    max-width: var(--max-container-width, 1200px);
+    grid-column: container-start / container-end; }
   .block-wrapper > .alignfull {
     grid-column: start / end;
     max-width: unset; }
@@ -544,4 +603,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-8bb85440e2.css.map */
+/*# sourceMappingURL=maps/main-44479e6092.css.map */
