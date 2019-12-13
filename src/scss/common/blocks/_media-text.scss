@@ -1,0 +1,20 @@
+@include bp($max: md) {
+  @supports (display: grid) {
+    .wp-block-media-text {
+      gap: 16px;
+    }
+  }
+
+  @supports not (display: grid) {
+    .wp-block-media-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .wp-block-media-text__media {
+        margin-bottom: 16px;
+        width: 100%;
+      }
+    }
+  }
+}
