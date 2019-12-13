@@ -88,6 +88,23 @@ select {
   width: 1px;
   word-wrap: normal !important; }
 
+.screen-reader-text--display-on-focus:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
 /*
  * Generate a media query based on convenient names such as sm, md , lg. The
  * names are set in a $breakpoints-map.
@@ -437,6 +454,23 @@ a,
   width: 1px;
   word-wrap: normal !important; }
 
+.screen-reader-text--display-on-focus:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
 /*
  * Generate a media query based on convenient names such as sm, md , lg. The
  * names are set in a $breakpoints-map.
@@ -735,4 +769,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-e4c102d621.css.map */
+/*# sourceMappingURL=maps/main-405d373e08.css.map */
