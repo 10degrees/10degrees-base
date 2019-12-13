@@ -34,7 +34,7 @@ msgid "White"
 msgstr ""
 
 #: app/Admin/EditorColourPalette.php:58
-msgid "Dark Grey"
+msgid "Body text"
 msgstr ""
 
 #: app/Admin/FontSizes.php:36
