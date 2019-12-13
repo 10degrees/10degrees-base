@@ -1,4 +1,4 @@
-<?php 
+<?php
 // phpcs:ignoreFile
 
 /**
@@ -24,6 +24,18 @@ require __DIR__ . '/vendor/autoload.php';
 foreach (glob(get_template_directory() . '/app/Helpers/*.php') as $filename) {
     include_once $filename;
 }
+
+/**
+ *
+ * Syntax-highlighting Code Block
+ *
+ */
+add_filter(
+    'syntax_highlighting_code_block_style',
+    function () {
+        return 'github';
+    }
+);
 
 /**
  *
