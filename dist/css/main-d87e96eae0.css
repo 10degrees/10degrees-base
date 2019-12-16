@@ -701,6 +701,9 @@ body {
   .blog article:first-of-type {
     margin-top: 24px; }
 
+.error404 header {
+  margin-top: 24px; }
+
 /* .page {
 	article {
 		> * {
@@ -860,4 +863,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-40a97df9d2.css.map */
+/*# sourceMappingURL=maps/main-d87e96eae0.css.map */
