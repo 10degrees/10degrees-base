@@ -46,7 +46,6 @@ add_action('init', function () {
     new \App\Inc\RegisterServiceProviders;
 });
 
-
 /**
  *
  * Wrap specific wp-block-embeds in a div to enable responsiveness
