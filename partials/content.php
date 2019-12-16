@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying post content in single.php
  *
