@@ -1,21 +1,21 @@
- <img src="https://raw.githubusercontent.com/10degrees/10degrees-base/master/dist/img/logo.svg?sanitize=true" height="150px" width="150">
+ <img src="https://raw.githubusercontent.com/10degrees/10degrees-base/master/src/img/logo.svg?sanitize=true" height="150px" width="150">
 
 # 10 Degrees base WordPress theme
 
 The 10 Degrees base WordPress theme is intended as a quick-start for developers and requires configuration before using. It uses a number of concepts from Laravel, and aims to make development more standardised and accessible. Where possible, [PSR-2](https://www.php-fig.org/psr/psr-2/) style guidelines are mandated with a custom ruleset.
 
-    * CSS: SASS preprocessor for CSS
-    * JavaScript: write ES6 and use Rollup for managing modules
-    * PHP: Namespaces and autoloader with many asbtractions and helper functions
-    * PHP: [base.php](base.php) wrapper, originally implemented by [Sage theme](https://roots.io/sage/)
+* CSS: SASS preprocessor for CSS
+* JavaScript: write ES6 and use Rollup for managing modules
+* PHP: Namespaces and autoloader with many asbtractions and helper functions
+* PHP: [base.php](base.php) wrapper, originally implemented by [Sage theme](https://roots.io/sage/)
 
 ## Requirements
 
-    * WordPress >= 4.7
-    * PHP >= 7.0
-    * Composer
-    * Node
-    * Gulp
+* WordPress >= 4.7
+* PHP >= 7.0
+* Composer
+* Node
+* Gulp
 
 Dependencies are managed through [Composer](https://getcomposer.org/) and [Node](https://nodejs.org). Please ensure both are installed. [Gulp](https://gulpjs.com/) is required to compile assets.
 
