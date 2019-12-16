@@ -721,6 +721,11 @@ body {
 [class*="wp-block-embed"][class*="-wordpress"] iframe {
   width: 100% !important; }
 
+@media only screen and (max-width: 480px) {
+  [class*="wp-block-embed"][class*="-facebook"] .fb_iframe_widget span,
+  [class*="wp-block-embed"][class*="-facebook"] .fb_iframe_widget iframe {
+    width: 100% !important; } }
+
 .blog article {
   margin-bottom: 24px; }
   .blog article:first-of-type {
@@ -890,4 +895,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-6e6f868cb5.css.map */
+/*# sourceMappingURL=maps/main-252a452e0c.css.map */

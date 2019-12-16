@@ -39,4 +39,14 @@
       width: 100% !important;
     }
   }
+
+  @include bp($max: sm) {
+    // Facebook block iframe styling for mobile
+    &[class*="-facebook"] {
+      .fb_iframe_widget span,
+      .fb_iframe_widget iframe {
+        width: 100% !important;
+      }
+    }
+  }
 }
