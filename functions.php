@@ -27,6 +27,18 @@ foreach (glob(get_template_directory() . '/app/Helpers/*.php') as $filename) {
 
 /**
  *
+ * Syntax-highlighting Code Block
+ *
+ */
+add_filter(
+    'syntax_highlighting_code_block_style',
+    function () {
+        return 'github';
+    }
+);
+
+/**
+ *
  * Finally boot the theme and all core functionality
  *
  */

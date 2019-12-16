@@ -22,7 +22,8 @@
 
         <?php wp_body_open(); ?>
 
-        <a href="#main" class="screen-reader-text"><?php esc_html_e('Skip to main content', '@textdomain'); ?></a>
+        <a href="#main" class="screen-reader-text screen-reader-text--display-on-focus"><?php esc_html_e('Skip to main content', '@textdomain'); ?></a>
+        <a href="#footer" class="screen-reader-text screen-reader-text--display-on-focus"><?php esc_html_e('Skip to footer', '@textdomain'); ?></a>
 
         <?php
             do_action('get_header');

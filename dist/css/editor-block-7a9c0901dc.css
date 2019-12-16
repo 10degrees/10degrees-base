@@ -409,6 +409,18 @@
       color: var(--primary);
       background-color: var(transparent-hover);
       border-color: var(--primary-hover); }
+  @media only screen and (max-width: 768px) {
+    @supports (display: grid) {
+      .editor-styles-wrapper .wp-block-media-text {
+        gap: 16px; } }
+    @supports not (display: grid) {
+      .editor-styles-wrapper .wp-block-media-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; }
+        .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__media {
+          margin-bottom: 16px;
+          width: 100%; } } }
 
 .editor-styles-wrapper {
   font-family: var(--font-family) !important; }
@@ -430,4 +442,4 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-662269bf52.css.map */
+/*# sourceMappingURL=maps/editor-block-7a9c0901dc.css.map */

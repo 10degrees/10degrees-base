@@ -88,6 +88,23 @@ select {
   width: 1px;
   word-wrap: normal !important; }
 
+.screen-reader-text--display-on-focus:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
 /*
  * Generate a media query based on convenient names such as sm, md , lg. The
  * names are set in a $breakpoints-map.
@@ -455,6 +472,23 @@ a,
   width: 1px;
   word-wrap: normal !important; }
 
+.screen-reader-text--display-on-focus:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
 /*
  * Generate a media query based on convenient names such as sm, md , lg. The
  * names are set in a $breakpoints-map.
@@ -784,6 +818,19 @@ body {
     @include colour(--white);
 }
 */
+@media only screen and (max-width: 768px) {
+  @supports (display: grid) {
+    .wp-block-media-text {
+      gap: 16px; } }
+  @supports not (display: grid) {
+    .wp-block-media-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .wp-block-media-text .wp-block-media-text__media {
+        margin-bottom: 16px;
+        width: 100%; } } }
+
 @media screen and (max-width: 675px) {
   #wpadminbar {
     display: none; }
@@ -798,4 +845,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-0f62bfbe47.css.map */
+/*# sourceMappingURL=maps/main-43854ecb93.css.map */

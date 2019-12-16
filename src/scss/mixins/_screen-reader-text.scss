@@ -15,6 +15,23 @@
     word-wrap: normal !important;
 }
 
+@mixin sr-only-show-on-focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+
 // WP Core convention
 @mixin screen-reader-text {
     @include sr-only();
@@ -22,4 +39,8 @@
 
 .screen-reader-text {
     @include screen-reader-text();
+}
+
+.screen-reader-text--display-on-focus:focus {
+    @include sr-only-show-on-focus();
 }
