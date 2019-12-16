@@ -4,7 +4,7 @@
       display: none !important;
     }
   }
-
+  // YouTube block iframe styling for mobile
   &[class*="-youtube"],
   &.is-type-video {
     .embed__container {
@@ -24,6 +24,13 @@
         height: 100% !important;
         border: 0;
       }
+    }
+  }
+
+  // Wordpress block iframe styling for mobile
+  &[class*="-wordpress"] {
+    iframe {
+      width: 100% !important;
     }
   }
 }
