@@ -57,7 +57,7 @@ function td_block_embed_html($html, $url)
     $classes = 'wp-block-embed';
     switch ($url) {
         case (false !== strpos($url, 'facebook.com')):
-            $classes = 'wp-block-embed-facebook is-provider-facebook';
+            $classes = 'wp-block-embed is-provider-facebook';
             $pattern = '/data-width="(\d+)"/';
             $html = preg_replace($pattern, 'data-width="auto"', $html);
             break;
@@ -66,7 +66,7 @@ function td_block_embed_html($html, $url)
     }
     return '<div class="' . $classes . '">' . $html . '</div>';
 }
-add_filter('block_embed_html', 'td_block_embed_html', 10, 4);
+add_filter('embed_oembed_html', 'td_block_embed_html', 10, 4);
 
 
 function gutenberg_examples_01_register_block()
