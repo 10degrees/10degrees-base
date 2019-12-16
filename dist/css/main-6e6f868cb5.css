@@ -874,6 +874,15 @@ body {
         margin-bottom: 16px;
         width: 100%; } } }
 
+.wp-block-audio audio {
+  min-width: 100%; }
+
+.wp-block-code {
+  overflow-x: auto; }
+
+.wp-block-preformatted {
+  white-space: normal; }
+
 article > *.wp-block-quote.is-style-large {
   margin: 0;
   padding: 0;
@@ -881,4 +890,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-24e2e1086b.css.map */
+/*# sourceMappingURL=maps/main-6e6f868cb5.css.map */
