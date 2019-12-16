@@ -715,6 +715,9 @@ body {
     height: 100% !important;
     border: 0; }
 
+[class*="wp-block-embed"][class*="-instagram"] iframe {
+  min-width: 100% !important; }
+
 [class*="wp-block-embed"][class*="-wordpress"] iframe {
   width: 100% !important; }
 
@@ -878,4 +881,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-d10d4d3822.css.map */
+/*# sourceMappingURL=maps/main-24e2e1086b.css.map */

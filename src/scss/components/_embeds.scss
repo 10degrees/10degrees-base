@@ -27,6 +27,12 @@
     }
   }
 
+  // Instagram block iframe styling for mobile
+  &[class*="-instagram"] {
+    iframe {
+      min-width: 100% !important;
+    }
+  }
   // Wordpress block iframe styling for mobile
   &[class*="-wordpress"] {
     iframe {
