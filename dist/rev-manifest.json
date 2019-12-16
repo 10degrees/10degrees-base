@@ -10,5 +10,8 @@
   "css/maps/editor-classic.css": "css/maps/editor-classic-d41d8cd98f.css.map",
   "css/maps/ie.css": "css/maps/ie-d41d8cd98f.css.map",
   "css/maps/login.css": "css/maps/login-c67c9aca08.css.map",
-  "css/maps/main.css": "css/maps/main-0ec43e9cc2.css.map"
+  "css/maps/main.css": "css/maps/main-0ec43e9cc2.css.map",
+  "js/admin.js": "js/admin-eb73c749fa.js",
+  "js/editor-block.js": "js/editor-block-ef8d6b890b.js",
+  "js/main.js": "js/main-180df532fd.js"
 }
