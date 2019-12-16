@@ -1,3 +1,20 @@
+.wp-block-button {
+    .wp-block-button__link {
+        @include button;
+
+        &:not(.has-text-color):not(.has-background) {
+            @include button-colours(--primary-text, --primary);
+        }
+    }
+    &.is-style-outline {
+        .wp-block-button__link {
+            &:not(.has-text-color):not(.has-background) {
+                @include button-colours(--primary, transparent, --primary);
+            }
+        }
+    }
+}
+
 /*
 
 .wp-block-button {

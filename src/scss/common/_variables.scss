@@ -27,13 +27,15 @@ $grey-10: #212121;
  * Don't use --text as this causes a collision with WordPRess default classes.
  */
 $colour-map: (
-	--primary: red,
-	--secondary: green,
-	--tertiary: pink,
-	--white: #fff,
-	--body-text: #{$grey-10},
-	--link: blue,
-	--link-hover: darkblue
+    --primary: red,
+    --primary-text: #fff,
+    --primary-hover: darkred,
+    --secondary: green,
+    --tertiary: pink,
+    --white: #fff,
+    --body-text: #{$grey-10},
+    --link: blue,
+    --link-hover: darkblue
 );
 
 /*
@@ -42,10 +44,10 @@ $colour-map: (
  * Used for the block-wrapper and more layout options.
  */
 $layout-map: (
-	--horizontal-gap: 1rem,
-	--vertical-gap: 2rem,
-	--max-content-width: 920px,
-	--max-container-width: 1200px
+    --horizontal-gap: 1rem,
+    --vertical-gap: 2rem,
+    --max-content-width: 920px,
+    --max-container-width: 1200px
 );
 
 // merge maps to be output in the :root
@@ -63,7 +65,7 @@ $base-font-weight: 400;
 
 // Font stacks
 $sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
-	Ubuntu, Cantarell, "Helvetica Neue", sans-serif; // System font stack
+    Ubuntu, Cantarell, "Helvetica Neue", sans-serif; // System font stack
 $serif: Georgia, "Times New Roman", Times, serif;
 $monospace: Menlo, Monaco, Consolas, "Courier New", monospace;
 
@@ -76,8 +78,8 @@ $base-font: $sans-serif;
  * Used for bp() mixin and bp() function
  */
 $breakpoint-map: (
-	sm: 480px,
-	md: 768px,
-	lg: 1024px,
-	xl: 1200px
+    sm: 480px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1200px
 );

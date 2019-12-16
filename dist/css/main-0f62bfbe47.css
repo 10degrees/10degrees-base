@@ -138,6 +138,8 @@ select {
  */
 :root {
   --primary: red;
+  --primary-text: #fff;
+  --primary-hover: darkred;
   --secondary: green;
   --tertiary: pink;
   --white: #fff;
@@ -159,6 +161,22 @@ select {
 .has-primary-color {
   color: red;
   color: var(--primary, red); }
+
+.has-primary-text-background-color {
+  background-color: #fff;
+  background-color: var(--primary-text, #fff); }
+
+.has-primary-text-color {
+  color: #fff;
+  color: var(--primary-text, #fff); }
+
+.has-primary-hover-background-color {
+  background-color: darkred;
+  background-color: var(--primary-hover, darkred); }
+
+.has-primary-hover-color {
+  color: darkred;
+  color: var(--primary-hover, darkred); }
 
 .has-secondary-background-color {
   background-color: green;
@@ -585,29 +603,54 @@ body {
           margin-bottom: 0; } }
 
 .block-wrapper {
-  /*
-	 * in order to have the max width of the content inside the max width of the
-	 * container, we need to calculate the offset. subtract the content width
-	 * from the container width, and divide by 2 (offset on either side of the
-	 * content)
-	 */
-  --offset: calc((100% - var(--max-container-width)) / 2);
   display: grid;
   gap: var(--vertical-gap) 0;
-  grid: auto/[start] minmax(var(--horizontal-gap), var(--offset)) [container-start] minmax(auto, 1fr) [content-start] auto [content-end] minmax(auto, 1fr) [container-end] minmax(var(--horizontal-gap), var(--offset)) [end]; }
+  /*
+
+[start]                                                                    [end]
+|                                                                              |
+|                                                                              |
+|  [content-start]                                               content-end]  |
++--+------------------------------------------------------------------------+--+
+|  |                                                                        |  |
+|  |                        +--------------------+                          |  |
+|  |                        |                    |                          |  |
+|  |                        | .block-wrapper > * |                          |  |
+|  |                        |                    |                          |  |
+|  |                        +--------------------+                          |  |
+|  |                                                                        |  |
+|  |                  +---------------------------------+                   |  |
+|  |                  |                                 |                   |  |
+|  |                  |   .block-wrapper > .alignwide   |                   |  |
+|  |                  |                                 |                   |  |
+|  |                  +---------------------------------+                   |  |
+|  |                                                                        |  |
++--+------------------------------------------------------------------------+--+
+|                                                                              |
+|                         .block-wrapper > .alignfull                          |
+|                                                                              |
++------------------------------------------------------------------------------+
+*/
+  grid: auto/[start] var(--horizontal-gap) [content-start] auto [content-end] var(--horizontal-gap) [end];
+  justify-items: center; }
   .block-wrapper > * {
     max-width: 920px;
     max-width: var(--max-content-width, 920px);
     grid-column: content-start / content-end;
-    margin-top: 0;
-    margin-bottom: 0; }
+    width: 100%;
+    margin: 0 auto; }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .block-wrapper > * {
+        margin-bottom: 2rem;
+        margin-bottom: var(--vertical-gap, 2rem);
+        margin-left: auto !important;
+        margin-right: auto !important; } }
   .block-wrapper > .alignwide {
     max-width: 1200px;
-    max-width: var(--max-container-width, 1200px);
-    grid-column: container-start / container-end; }
+    max-width: var(--max-container-width, 1200px); }
   .block-wrapper > .alignfull {
     grid-column: start / end;
-    max-width: unset; }
+    max-width: 100%; }
 
 /* .page {
 	article {
@@ -673,6 +716,39 @@ body {
   .wp-block-table td {
     border: 1px solid #212121; }
 
+.wp-block-button .wp-block-button__link {
+  padding: 5px;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap; }
+  .wp-block-button .wp-block-button__link:hover, .wp-block-button .wp-block-button__link:focus, .wp-block-button .wp-block-button__link:active, .wp-block-button .wp-block-button__link.active {
+    text-decoration: none; }
+  .wp-block-button .wp-block-button__link:not(.has-text-color):not(.has-background) {
+    color: var(--primary-text);
+    background-color: var(--primary);
+    border-color: var(--primary); }
+    .wp-block-button .wp-block-button__link:not(.has-text-color):not(.has-background):hover, .wp-block-button .wp-block-button__link:not(.has-text-color):not(.has-background):focus, .wp-block-button .wp-block-button__link:not(.has-text-color):not(.has-background):active, .wp-block-button .wp-block-button__link:not(.has-text-color):not(.has-background).active {
+      color: var(--primary-text);
+      background-color: var(--primary-hover);
+      border-color: var(--primary-hover); }
+
+.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):not(.has-background) {
+  color: var(--primary);
+  background-color: var(transparent);
+  border-color: var(--primary); }
+  .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):not(.has-background):hover, .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):not(.has-background):focus, .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):not(.has-background):active, .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color):not(.has-background).active {
+    color: var(--primary);
+    background-color: var(transparent-hover);
+    border-color: var(--primary-hover); }
+
 /*
 
 .wp-block-button {
@@ -722,4 +798,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-d61645ec68.css.map */
+/*# sourceMappingURL=maps/main-0f62bfbe47.css.map */

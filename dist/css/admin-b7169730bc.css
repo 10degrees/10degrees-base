@@ -52,6 +52,8 @@
  */
 :root {
   --primary: red;
+  --primary-text: #fff;
+  --primary-hover: darkred;
   --secondary: green;
   --tertiary: pink;
   --white: #fff;
@@ -63,4 +65,4 @@
   --max-content-width: 920px;
   --max-container-width: 1200px; }
 
-/*# sourceMappingURL=maps/admin-b3b66ed226.css.map */
+/*# sourceMappingURL=maps/admin-b7169730bc.css.map */

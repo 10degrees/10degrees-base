@@ -4,14 +4,11 @@
 
 // We're going to do some cleverness with our $variables map and buttons.
 
-@mixin button-variant($color, $background, $border) {
-    color: $color;
-    background-color: $background;
-    border-color: $border;
+@mixin button() {
     padding: 5px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-    border-radius: 0;
+    border: 2px solid transparent;
+    transition: all 0.25s ease;
+    border-radius: 4px;
     -webkit-appearance: none;
     display: inline-block;
     text-align: center;
@@ -25,11 +22,28 @@
     &:focus,
     &:active,
     &.active {
-        color: $color;
-        background-color: darken($background, 10%);
-        border-color: darken($border, 12%);
         text-decoration: none;
     }
+}
+
+@mixin button-colours($color, $background, $border: $background) {
+    color: var(#{$color});
+    background-color: var(#{$background});
+    border-color: var(#{$border});
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: var(#{$color});
+        background-color: var(#{$background}-hover);
+        border-color: var(#{$border}-hover);
+    }
+}
+
+@mixin button-variant($color, $background, $border: $background) {
+    @include button;
+    @include button-colours($color, $background, $border);
 }
 
 // Use this to create new button styles, e.g.
@@ -40,6 +54,6 @@
 //}
 
 // Standard button
-@mixin button() {
+@mixin button__old() {
     @include button-variant(white, $brand, green);
 }
