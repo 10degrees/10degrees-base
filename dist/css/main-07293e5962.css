@@ -849,13 +849,6 @@ body {
         margin-bottom: 16px;
         width: 100%; } } }
 
-@media screen and (max-width: 675px) {
-  #wpadminbar {
-    display: none; }
-  html {
-    position: absolute;
-    top: -46px; } }
-
 article > *.wp-block-quote.is-style-large {
   margin: 0;
   padding: 0;
@@ -863,4 +856,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-e64dd3dc81.css.map */
+/*# sourceMappingURL=maps/main-07293e5962.css.map */
