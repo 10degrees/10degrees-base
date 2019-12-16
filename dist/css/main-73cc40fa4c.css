@@ -643,6 +643,16 @@ body {
     grid-column: start / end;
     max-width: unset; }
 
+.pagination {
+  margin: 0 auto;
+  max-width: var(--max-content-width); }
+  .pagination ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    position: relative;
+    flex-direction: row; }
+
 /* .page {
 	article {
 		> * {
@@ -769,4 +779,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-405d373e08.css.map */
+/*# sourceMappingURL=maps/main-73cc40fa4c.css.map */

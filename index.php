@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Index template
  *
@@ -16,7 +17,7 @@ if (!have_posts()) : ?>
     <div class="alert">
         <p><?php _e('Sorry, no results were found.', '@textdomain'); ?></p>
     </div>
-    <?php get_search_form();
+<?php get_search_form();
 endif;
 
 while (have_posts()) :
@@ -24,6 +25,13 @@ while (have_posts()) :
     get_template_part('partials/content');
 endwhile;
 
+?>
+<!-- <div class="block-wrapper"> -->
+
+
+<?php
 if ($wp_query->max_num_pages > 1) {
     td_page_navi();
-}
+} ?>
+
+<!-- </div> -->
