@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying post content in single.php
  *
@@ -11,7 +12,7 @@
     <?php get_template_part('partials/post', 'header'); ?>
     <div class="article__content">
         <div class="article__container">
-            <?php the_content(); ?>
+            <?php the_excerpt(); ?>
         </div>
     </div>
 </article>
