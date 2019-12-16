@@ -1,0 +1,12 @@
+.pagination {
+  margin: 0 auto;
+  max-width: var(--max-content-width);
+
+  ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    position: relative;
+    flex-direction: row;
+  }
+}
