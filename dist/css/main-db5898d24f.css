@@ -696,6 +696,11 @@ body {
     position: relative;
     flex-direction: row; }
 
+.blog article {
+  margin-bottom: 24px; }
+  .blog article:first-of-type {
+    margin-top: 24px; }
+
 /* .page {
 	article {
 		> * {
@@ -855,4 +860,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-0ec43e9cc2.css.map */
+/*# sourceMappingURL=maps/main-db5898d24f.css.map */
