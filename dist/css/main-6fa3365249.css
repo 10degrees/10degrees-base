@@ -696,6 +696,25 @@ body {
     position: relative;
     flex-direction: row; }
 
+[class*="wp-block-embed"][class*="-youtube"] .wp-block-embed__wrapper:before {
+  display: none !important; }
+
+[class*="wp-block-embed"][class*="-youtube"] .embed__container, [class*="wp-block-embed"].is-type-video .embed__container {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25% !important; }
+  [class*="wp-block-embed"][class*="-youtube"] .embed__container iframe, [class*="wp-block-embed"].is-type-video .embed__container iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0; }
+
 .blog article {
   margin-bottom: 24px; }
   .blog article:first-of-type {
@@ -856,4 +875,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-07293e5962.css.map */
+/*# sourceMappingURL=maps/main-6fa3365249.css.map */
