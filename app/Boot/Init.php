@@ -111,6 +111,13 @@ class Init
         add_theme_support('disable-custom-colors');
 
         /*
+         * Add HTML5 support
+         *
+         * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
+         */
+        add_theme_support('html5', ['script', 'style', 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption']);
+
+        /*
          * Add post formats
          */
         // add_theme_support('post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio']);
