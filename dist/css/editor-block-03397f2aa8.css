@@ -427,11 +427,11 @@
     overflow-x: auto; }
   .editor-styles-wrapper .wp-block-preformatted {
     white-space: normal; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 480px) {
     .editor-styles-wrapper .wp-block-gallery .blocks-gallery-grid {
       justify-content: space-between; }
     .editor-styles-wrapper .wp-block-gallery .blocks-gallery-item {
-      display: block; } }
+      flex: 0 0 calc(50% - 8px); } }
   .editor-styles-wrapper .accordion .toggle {
     width: 100%;
     border: 0;
@@ -492,4 +492,4 @@
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-a9ed059acf.css.map */
+/*# sourceMappingURL=maps/editor-block-03397f2aa8.css.map */

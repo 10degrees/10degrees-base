@@ -935,11 +935,11 @@ body {
 .wp-block-preformatted {
   white-space: normal; }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
   .wp-block-gallery .blocks-gallery-grid {
     justify-content: space-between; }
   .wp-block-gallery .blocks-gallery-item {
-    display: block; } }
+    flex: 0 0 calc(50% - 8px); } }
 
 .accordion .toggle {
   width: 100%;
@@ -1329,4 +1329,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-8fd7f28643.css.map */
+/*# sourceMappingURL=maps/main-49a4c56585.css.map */
