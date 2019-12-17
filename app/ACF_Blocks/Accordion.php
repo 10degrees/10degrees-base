@@ -36,8 +36,7 @@ class Accordion extends AbstractBlockRegistration
                 'keywords' => array( 'accordion'),
                 'supports' => array(
                     'align' => array('wide', 'full')
-                ),
-                'enqueue_script' => get_stylesheet_directory_uri() . '/src/js/common/_accordion.js'
+                )
             ]
         );
     }
