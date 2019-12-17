@@ -10,7 +10,7 @@ yarn.lock
 node_modules/
 
 # ignore composer dependency directories
-vendor/
+/vendor/
 
 # ignore OS generated files
 ehthumbs.db
