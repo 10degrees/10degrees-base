@@ -20,7 +20,8 @@
             content:"";
             padding: 3px;
             display: inline-block;
-            border: solid white;
+            border-style: solid;
+            @include prop('border-color', --primary-text);
             border-width: 0 3px 3px 0;
 
             margin-left: 20px;

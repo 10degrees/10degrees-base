@@ -953,7 +953,9 @@ body {
     content: "";
     padding: 3px;
     display: inline-block;
-    border: solid white;
+    border-style: solid;
+    border-color: #fff;
+    border-color: var(--primary-text, #fff);
     border-width: 0 3px 3px 0;
     margin-left: 20px;
     transform: rotate(45deg);
@@ -1323,4 +1325,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-6c3cc97110.css.map */
+/*# sourceMappingURL=maps/main-f1561a2318.css.map */

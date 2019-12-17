@@ -445,7 +445,9 @@
       content: "";
       padding: 3px;
       display: inline-block;
-      border: solid white;
+      border-style: solid;
+      border-color: #fff;
+      border-color: var(--primary-text, #fff);
       border-width: 0 3px 3px 0;
       margin-left: 20px;
       transform: rotate(45deg);
@@ -487,4 +489,4 @@
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-8da258f8bc.css.map */
+/*# sourceMappingURL=maps/editor-block-72e19ef40e.css.map */
