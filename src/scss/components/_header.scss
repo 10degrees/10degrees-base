@@ -140,11 +140,18 @@
 
           // Second level and above dropdown menu
           .sub-menu {
-            left: calc(100% + 20px); // 15px for the .sub-menu padding
+            left: calc(100% + 20px); // 20px for the .sub-menu padding
             top: -1px; // To acount for the 1px border
           }
         }
       }
     }
+  }
+}
+
+
+.block-wrapper {
+  > header {
+    margin-top: 32px;
   }
 }
