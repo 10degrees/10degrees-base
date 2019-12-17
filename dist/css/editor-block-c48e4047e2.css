@@ -450,5 +450,7 @@
 
 .wp-block-embed {
   min-width: 100%; }
+  .wp-block-embed iframe {
+    max-width: 100% !important; }
 
-/*# sourceMappingURL=maps/editor-block-60439cbb1b.css.map */
+/*# sourceMappingURL=maps/editor-block-c48e4047e2.css.map */
