@@ -1,27 +1,32 @@
 .editor-styles-wrapper {
-	font-family: var(--font-family) !important;
+  font-family: var(--font-family) !important;
 }
 
 /* Post title width */
 .editor-post-title__block.wp-block {
-	max-width: var(--max-content-width);
-	/* Post title styling */
-	.editor-post-title__input {
-		font-family: var(--font-family) !important;
-	}
+  max-width: var(--max-content-width);
+  /* Post title styling */
+  .editor-post-title__input {
+    font-family: var(--font-family) !important;
+  }
 }
 
 /* Main column width */
 .wp-block {
-	max-width: var(--max-content-width);
+  max-width: var(--max-content-width);
 
-	/* Wide column width */
-	&[data-align="wide"] {
-		max-width: var(--max-container-width);
-	}
+  /* Wide column width */
+  &[data-align="wide"] {
+    max-width: var(--max-container-width);
+  }
 
-	/* Full column width */
-	&[data-align="full"] {
-		max-width: none;
-	}
+  /* Full column width */
+  &[data-align="full"] {
+    max-width: none;
+  }
+}
+
+// Twitter block iframe styling
+.wp-block-embed {
+  min-width: 100%;
 }

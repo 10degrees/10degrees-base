@@ -620,6 +620,12 @@
         .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__media {
           margin-bottom: 16px;
           width: 100%; } } }
+  .editor-styles-wrapper .wp-block-audio audio {
+    min-width: 100%; }
+  .editor-styles-wrapper .wp-block-code {
+    overflow-x: auto; }
+  .editor-styles-wrapper .wp-block-preformatted {
+    white-space: normal; }
 
 .editor-styles-wrapper {
   font-family: var(--font-family) !important; }
@@ -641,4 +647,7 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-48028fc51b.css.map */
+.wp-block-embed {
+  min-width: 100%; }
+
+/*# sourceMappingURL=maps/editor-block-c233d6225e.css.map */

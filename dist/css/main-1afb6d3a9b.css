@@ -759,7 +759,7 @@ body {
     max-width: 100%; }
 
 .pagination {
-  margin: 0 auto;
+  margin: 0 auto 24px;
   max-width: var(--max-content-width); }
   .pagination ul {
     display: flex;
@@ -767,6 +767,47 @@ body {
     justify-content: space-evenly;
     position: relative;
     flex-direction: row; }
+
+[class*="wp-block-embed"][class*="-youtube"] .wp-block-embed__wrapper:before {
+  display: none !important; }
+
+[class*="wp-block-embed"][class*="-youtube"] .embed__container, [class*="wp-block-embed"].is-type-video .embed__container {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  padding-bottom: 56.25% !important; }
+  [class*="wp-block-embed"][class*="-youtube"] .embed__container iframe, [class*="wp-block-embed"].is-type-video .embed__container iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0; }
+
+[class*="wp-block-embed"][class*="-twitter"] iframe {
+  width: 100% !important; }
+
+[class*="wp-block-embed"][class*="-instagram"] iframe {
+  min-width: 100% !important; }
+
+[class*="wp-block-embed"][class*="-wordpress"] iframe {
+  width: 100% !important; }
+
+@media only screen and (max-width: 480px) {
+  [class*="wp-block-embed"][class*="-facebook"] .fb_iframe_widget span,
+  [class*="wp-block-embed"][class*="-facebook"] .fb_iframe_widget iframe {
+    width: 100% !important; } }
+
+.blog article {
+  margin-bottom: 24px; }
+  .blog article:first-of-type {
+    margin-top: 24px; }
+
+.error404 .block-wrapper header {
+  margin-top: 24px; }
 
 /* .page {
 	article {
@@ -1065,12 +1106,14 @@ body {
         margin-bottom: 16px;
         width: 100%; } } }
 
-@media screen and (max-width: 675px) {
-  #wpadminbar {
-    display: none; }
-  html {
-    position: absolute;
-    top: -46px; } }
+.wp-block-audio audio {
+  min-width: 100%; }
+
+.wp-block-code {
+  overflow-x: auto; }
+
+.wp-block-preformatted {
+  white-space: normal; }
 
 article > *.wp-block-quote.is-style-large {
   margin: 0;
@@ -1079,4 +1122,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-9f4921d366.css.map */
+/*# sourceMappingURL=maps/main-1afb6d3a9b.css.map */

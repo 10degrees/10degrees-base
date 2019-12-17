@@ -26,11 +26,12 @@
 @import "components/footer";
 @import "components/block-wrapper";
 @import "components/pagination";
+@import "components/embeds";
+@import "templates/index";
+@import "templates/404";
 @import "templates/page";
 
 @import "common/blocks/blocks";
-
-@import "components/hide-admin-bar";
 
 // mixins
 // typography
