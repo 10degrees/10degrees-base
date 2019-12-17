@@ -46,7 +46,8 @@
       border-bottom: 0;
       border-left: 5px solid transparent;
       position: absolute;
-      top: 1em;
+      top: 50%;
+      transform: translate3d(0, -50%, 0);
       right: 0;
     }
 
@@ -97,6 +98,10 @@
       .menu-item {
         &.menu-item-has-children {
           position: relative;
+
+          > a::after {
+            right: -15px;
+          }
         }
 
         &:last-child a {
@@ -108,10 +113,14 @@
           position: absolute;
           left: 0;
           top: 35px;
-          padding: 0 15px;
+          padding: 0 20px 0 15px;
           background-color: #fff;
           border: 1px solid $grey-4;
           white-space: nowrap;
+
+          .menu-item-has-children > a::after {
+            margin-right: 5px;
+          }
 
           a {
             margin: 10px 0;
@@ -131,7 +140,7 @@
 
           // Second level and above dropdown menu
           .sub-menu {
-            left: calc(100% + 15px); // 15px for the .sub-menu padding
+            left: calc(100% + 20px); // 15px for the .sub-menu padding
             top: -1px; // To acount for the 1px border
           }
         }
