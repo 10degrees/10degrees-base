@@ -1,0 +1,11 @@
+@include bp($max: md) {
+  .wp-block-gallery {
+    .blocks-gallery-grid {
+      justify-content: space-between;
+    }
+
+    .blocks-gallery-item {
+      display: block;
+    }
+  }
+}

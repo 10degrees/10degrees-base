@@ -427,10 +427,14 @@
     overflow-x: auto; }
   .editor-styles-wrapper .wp-block-preformatted {
     white-space: normal; }
+  @media only screen and (max-width: 768px) {
+    .editor-styles-wrapper .wp-block-gallery .blocks-gallery-grid {
+      justify-content: space-between; }
+    .editor-styles-wrapper .wp-block-gallery .blocks-gallery-item {
+      display: block; } }
   .editor-styles-wrapper .accordion .toggle {
     width: 100%;
     border: 0;
-    background-color: transparent;
     text-align: left;
     padding: 10px 20px;
     background-color: red;
@@ -489,4 +493,4 @@
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-72e19ef40e.css.map */
+/*# sourceMappingURL=maps/editor-block-8ca831f72b.css.map */

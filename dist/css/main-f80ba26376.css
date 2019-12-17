@@ -935,10 +935,15 @@ body {
 .wp-block-preformatted {
   white-space: normal; }
 
+@media only screen and (max-width: 768px) {
+  .wp-block-gallery .blocks-gallery-grid {
+    justify-content: space-between; }
+  .wp-block-gallery .blocks-gallery-item {
+    display: block; } }
+
 .accordion .toggle {
   width: 100%;
   border: 0;
-  background-color: transparent;
   text-align: left;
   padding: 10px 20px;
   background-color: red;
@@ -1325,4 +1330,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-f1561a2318.css.map */
+/*# sourceMappingURL=maps/main-f80ba26376.css.map */
