@@ -938,7 +938,6 @@ body {
 .accordion .toggle {
   width: 100%;
   border: 0;
-  background-color: transparent;
   text-align: left;
   padding: 10px 20px;
   background-color: red;
@@ -953,7 +952,9 @@ body {
     content: "";
     padding: 3px;
     display: inline-block;
-    border: solid white;
+    border-style: solid;
+    border-color: #fff;
+    border-color: var(--primary-text, #fff);
     border-width: 0 3px 3px 0;
     margin-left: 20px;
     transform: rotate(45deg);
@@ -1323,4 +1324,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-556e1b0ebe.css.map */
+/*# sourceMappingURL=maps/main-0e05d9dbf0.css.map */

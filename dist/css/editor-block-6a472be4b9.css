@@ -430,7 +430,6 @@
   .editor-styles-wrapper .accordion .toggle {
     width: 100%;
     border: 0;
-    background-color: transparent;
     text-align: left;
     padding: 10px 20px;
     background-color: red;
@@ -445,7 +444,9 @@
       content: "";
       padding: 3px;
       display: inline-block;
-      border: solid white;
+      border-style: solid;
+      border-color: #fff;
+      border-color: var(--primary-text, #fff);
       border-width: 0 3px 3px 0;
       margin-left: 20px;
       transform: rotate(45deg);
@@ -487,4 +488,4 @@
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-2dc86e346d.css.map */
+/*# sourceMappingURL=maps/editor-block-6a472be4b9.css.map */
