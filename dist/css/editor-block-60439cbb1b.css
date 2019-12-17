@@ -448,4 +448,7 @@
   .wp-block[data-align="full"] {
     max-width: none; }
 
-/*# sourceMappingURL=maps/editor-block-d2246a4d8a.css.map */
+.wp-block-embed {
+  min-width: 100%; }
+
+/*# sourceMappingURL=maps/editor-block-60439cbb1b.css.map */
