@@ -12,6 +12,7 @@ import AjaxForm from "./common/_ajaxForm";
 import ScrollToId from "./common/_scrollToId";
 import ScrollToError from "./common/_scrollToError";
 import MobileNav from "./common/_mobile-nav";
+// import Accordion from './common/_accordion';
 
 //Vendor
 import Magnific from "./common/_magnific";
@@ -29,6 +30,7 @@ var App = {
       new MobileNav().init();
       new Magnific().init();
       new Slider().init();
+      //new Accordion();
     }
   },
   // Home page

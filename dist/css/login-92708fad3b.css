@@ -13,7 +13,7 @@
  *
  * Sass variables need to be interpolated
  *
- * Don't use --text as this causes a collision with WordPRess default classes.
+ * Don't use --text as this causes a collision with WordPress default classes.
  */
 /*
  * Layout variables.
@@ -60,4 +60,4 @@
 .wp-admin #wp-auth-check-wrap #wp-auth-check {
   background-color: white; }
 
-/*# sourceMappingURL=maps/login-d3fd12deba.css.map */
+/*# sourceMappingURL=maps/login-92708fad3b.css.map */

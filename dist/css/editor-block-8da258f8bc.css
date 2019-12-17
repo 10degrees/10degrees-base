@@ -10,7 +10,7 @@
  *
  * Sass variables need to be interpolated
  *
- * Don't use --text as this causes a collision with WordPRess default classes.
+ * Don't use --text as this causes a collision with WordPress default classes.
  */
 /*
  * Layout variables.
@@ -427,6 +427,34 @@
     overflow-x: auto; }
   .editor-styles-wrapper .wp-block-preformatted {
     white-space: normal; }
+  .editor-styles-wrapper .accordion .toggle {
+    width: 100%;
+    border: 0;
+    background-color: transparent;
+    text-align: left;
+    padding: 10px 20px;
+    background-color: red;
+    background-color: var(--primary, red);
+    color: #fff;
+    color: var(--primary-text, #fff);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer; }
+    .editor-styles-wrapper .accordion .toggle::after {
+      content: "";
+      padding: 3px;
+      display: inline-block;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      margin-left: 20px;
+      transform: rotate(45deg);
+      transition: transform 0.3s; }
+  .editor-styles-wrapper .accordion .content {
+    display: none;
+    padding: 0 20px; }
+  .editor-styles-wrapper .accordion.-open .toggle::after {
+    transform: rotate(225deg); }
 
 .editor-styles-wrapper {
   font-family: var(--font-family) !important; }
@@ -453,4 +481,10 @@
   .wp-block-embed iframe {
     max-width: 100% !important; }
 
-/*# sourceMappingURL=maps/editor-block-c48e4047e2.css.map */
+.acf-accordion[class*='block-'],
+.acf-accordion[class^='block-'] {
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+/*# sourceMappingURL=maps/editor-block-8da258f8bc.css.map */

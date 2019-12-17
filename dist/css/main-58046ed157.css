@@ -133,7 +133,7 @@ select {
  *
  * Sass variables need to be interpolated
  *
- * Don't use --text as this causes a collision with WordPRess default classes.
+ * Don't use --text as this causes a collision with WordPress default classes.
  */
 /*
  * Layout variables.
@@ -902,6 +902,37 @@ body {
 .wp-block-preformatted {
   white-space: normal; }
 
+.accordion .toggle {
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  text-align: left;
+  padding: 10px 20px;
+  background-color: red;
+  background-color: var(--primary, red);
+  color: #fff;
+  color: var(--primary-text, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer; }
+  .accordion .toggle::after {
+    content: "";
+    padding: 3px;
+    display: inline-block;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    margin-left: 20px;
+    transform: rotate(45deg);
+    transition: transform 0.3s; }
+
+.accordion .content {
+  display: none;
+  padding: 0 20px; }
+
+.accordion.-open .toggle::after {
+  transform: rotate(225deg); }
+
 article > *.wp-block-quote.is-style-large {
   margin: 0;
   padding: 0;
@@ -909,4 +940,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-540846ec65.css.map */
+/*# sourceMappingURL=maps/main-58046ed157.css.map */
