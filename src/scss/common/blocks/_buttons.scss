@@ -14,6 +14,16 @@
         }
     }
 }
+.link-button {
+    @include button;
+
+    @each $prop, $value in $colour-map {
+        $name: str-slice($prop, 3);
+        &.has-#{$name}-button-color {
+            @include button-colours(#{$prop}-text, $prop);
+        }
+    }
+}
 
 /*
 

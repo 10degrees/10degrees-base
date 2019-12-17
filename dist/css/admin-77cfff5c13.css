@@ -55,9 +55,17 @@
   --primary-text: #fff;
   --primary-hover: darkred;
   --secondary: green;
+  --secondary-text: #fff;
+  --secondary-hover: darkgreen;
   --tertiary: pink;
+  --tertiary-text: #212121;
+  --tertiary-hover: purple;
   --white: #fff;
+  --white-text: #212121;
+  --white-hover: #eeeeee;
   --body-text: #212121;
+  --body-text-text: #fff;
+  --body-text-hover: #616161;
   --link: blue;
   --link-hover: darkblue;
   --horizontal-gap: 1rem;
@@ -65,4 +73,4 @@
   --max-content-width: 920px;
   --max-container-width: 1200px; }
 
-/*# sourceMappingURL=maps/admin-b7169730bc.css.map */
+/*# sourceMappingURL=maps/admin-77cfff5c13.css.map */

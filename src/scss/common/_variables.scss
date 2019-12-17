@@ -31,9 +31,17 @@ $colour-map: (
     --primary-text: #fff,
     --primary-hover: darkred,
     --secondary: green,
+    --secondary-text: #fff,
+    --secondary-hover: darkgreen,
     --tertiary: pink,
+    --tertiary-text: #{$grey-10},
+    --tertiary-hover: purple,
     --white: #fff,
+    --white-text: #{$grey-10},
+    --white-hover: #{$grey-3},
     --body-text: #{$grey-10},
+    --body-text-text: #fff,
+    --body-text-hover: #{$grey-8},
     --link: blue,
     --link-hover: darkblue
 );
