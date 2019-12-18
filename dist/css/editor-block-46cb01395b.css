@@ -430,7 +430,8 @@
   .editor-styles-wrapper .ginput_right.address_country select,
   .editor-styles-wrapper .ginput_container_select select {
     height: 36px; }
-  .editor-styles-wrapper .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="image"]):not([type="file"]) {
+  .editor-styles-wrapper .gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="image"]):not([type="file"]),
+  .editor-styles-wrapper .gform_wrapper textarea {
     border: 1px solid;
     border-radius: 5px; }
   .editor-styles-wrapper .accordion .toggle {
@@ -494,4 +495,4 @@
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-a67212e396.css.map */
+/*# sourceMappingURL=maps/editor-block-46cb01395b.css.map */

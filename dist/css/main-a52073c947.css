@@ -939,7 +939,8 @@ body {
 .ginput_container_select select {
   height: 36px; }
 
-.gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="image"]):not([type="file"]) {
+.gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="image"]):not([type="file"]),
+.gform_wrapper textarea {
   border: 1px solid;
   border-radius: 5px; }
 
@@ -1332,4 +1333,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-bcd2d25df2.css.map */
+/*# sourceMappingURL=maps/main-a52073c947.css.map */
