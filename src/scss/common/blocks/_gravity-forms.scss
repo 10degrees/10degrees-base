@@ -1,0 +1,13 @@
+.ginput_container_select,
+.ginput_right.address_country {
+  select {
+    height: 36px;
+  }
+}
+
+.gform_wrapper {
+  input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="image"]):not([type="file"]) {
+    border: 1px solid;
+    border-radius: 5px;
+  }
+}

@@ -935,6 +935,14 @@ body {
 .wp-block-preformatted {
   white-space: normal; }
 
+.ginput_container_select select,
+.ginput_right.address_country select {
+  height: 36px; }
+
+.gform_wrapper input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="image"]):not([type="file"]) {
+  border: 1px solid;
+  border-radius: 5px; }
+
 .accordion .toggle {
   width: 100%;
   border: 0;
@@ -1324,4 +1332,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-0e05d9dbf0.css.map */
+/*# sourceMappingURL=maps/main-d0087130f1.css.map */
