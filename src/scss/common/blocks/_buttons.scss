@@ -1,62 +1,31 @@
-.wp-block-button {
-    .wp-block-button__link {
-        @include button;
-
-        &:not(.has-text-color):not(.has-background) {
-            @include button-colours(--primary-text, --primary);
-        }
-    }
-    &.is-style-outline {
-        .wp-block-button__link {
-            &:not(.has-text-color):not(.has-background) {
-                @include button-colours(--primary, transparent, --primary);
-            }
-        }
-    }
-}
 .link-button {
+    // include the button (except colours - these are set seperately)
     @include button;
 
-    @each $prop, $value in $colour-map {
-        $name: str-slice($prop, 3);
-        &.has-#{$name}-button-color {
-            @include button-colours(#{$prop}-text, $prop);
-        }
+    // set the default colours
+    &:not([class*="has-"]):not(.is-style-outline) {
+        @include button-colours(--primary);
     }
-}
-
-/*
-
-.wp-block-button {
-    // Default button style
-    &:not(.is-style-outline) .wp-block-button__link {
+    &:not([class*="has-"]).is-style-outline {
+        @include button-outline-colours(--primary);
     }
 
-    .wp-block-button__link {
-    }
-
+    // full width button
     &.is-style-full {
         width: 100%;
-
-        .wp-block-button__link {
-            width: 100%;
-        }
-    }
-
-    &.is-style-outline .wp-block-button__link {
-        // Default outline button style
-        &:not(.has-text-color) {
-            @include background-colour(--white);
-            @include colour(--primary);
-        }
     }
 }
-// set the default background
-.wp-block-button__link:not(.has-background) {
-    @include background-colour(--primary);
+
+// loop over available colours and create a classname
+@each $prop, $value in $colour-map {
+    // strip "--" from the beginning of the variable name.
+    $name: str-slice($prop, 3);
+
+    .has-#{$name}-button-color {
+        @include button-colours($prop);
+
+        &.is-style-outline {
+            @include button-outline-colours($prop);
+        }
+    }
 }
-// set the default colour
-.wp-block-button__link:not(.has-text-color) {
-    @include colour(--white);
-}
-*/

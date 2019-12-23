@@ -1,4 +1,4 @@
-import "./blocks/button.js";
+import "./blocks/link-button.js";
 
 wp.domReady(() => {
     wp.blocks.unregisterBlockStyle("core/button", "default");
@@ -82,6 +82,7 @@ wp.domReady(() => {
     wp.blocks.unregisterBlockType("core/verse");
 
     // layout Elements
+    //wp.blocks.unregisterBlockType("core/button");
     // wp.blocks.unregisterBlockType("core/more");
     // wp.blocks.unregisterBlockType("core/nextpage");
     // wp.blocks.unregisterBlockType("core/separator");

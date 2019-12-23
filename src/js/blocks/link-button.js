@@ -1,10 +1,30 @@
 const { __ } = wp.i18n;
-
-// Register block
-const { registerBlockType } = wp.blocks;
-
-// Register block
 const { createElement } = wp.element;
+
+const BLOCK_NAME = "custom-blocks/link-button";
+
+const blockIcon = createElement(
+    "svg",
+    { width: 24, height: 24 },
+    createElement("path", {
+        d:
+            "M19 6H5c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H5V8h14v8z"
+    })
+);
+
+const blockMeta = {
+    title: __("Link Button", "@textdomain"),
+    description: __("Add a customizable link button.", "@textdomain"),
+    icon: blockIcon,
+    category: "custom-blocks",
+    keywords: [__("button", "@textdomain"), __("link", "@textdomain")]
+};
+
+// Register block
+const { registerBlockType, registerBlockStyle } = wp.blocks;
+
+const classNames = (...args) =>
+    [...new Set([...args].filter(i => typeof i == "string"))].join(" ");
 
 // Register editor components
 const {
@@ -22,12 +42,8 @@ const {
 const { IconButton, Dashicon, PanelBody, PanelRow } = wp.components;
 
 // Register the block
-registerBlockType("ten-degrees/button", {
-    title: __("Button 2", "@textdomain"),
-    description: __("Add a customizable button.", "@textdomain"),
-    icon: "admin-links",
-    category: "common",
-    keywords: [__("button", "@textdomain"), __("link", "@textdomain")],
+registerBlockType(BLOCK_NAME, {
+    ...blockMeta,
     attributes: {
         buttonText: {
             type: "string"
@@ -59,7 +75,12 @@ registerBlockType("ten-degrees/button", {
         setButtonColor,
         buttonColor
     }) {
-        const { buttonText, buttonUrl, buttonAlignment } = attributes;
+        const {
+            buttonText,
+            buttonUrl,
+            buttonAlignment,
+            className
+        } = attributes;
 
         return [
             createElement(
@@ -98,7 +119,11 @@ registerBlockType("ten-degrees/button", {
                     placeholder: __("Button text...", "@textdomain"),
                     value: buttonText,
                     formattingControls: [],
-                    className: `link-button ${buttonColor.class || ""}`,
+                    className: classNames(
+                        "link-button",
+                        buttonColor.class,
+                        className
+                    ),
                     onChange: value => setAttributes({ buttonText: value })
                 }),
                 isSelected &&
@@ -132,7 +157,8 @@ registerBlockType("ten-degrees/button", {
             buttonUrl,
             buttonTarget,
             buttonAlignment,
-            buttonColor
+            buttonColor,
+            className
         } = attributes;
 
         const buttonColorClass =
@@ -140,17 +166,35 @@ registerBlockType("ten-degrees/button", {
 
         return createElement(
             "div",
-            { className: `has-text-align-${buttonAlignment}` },
+            {
+                className: buttonAlignment
+                    ? `has-text-align-${buttonAlignment}`
+                    : ""
+            },
             createElement(
                 "a",
                 {
                     href: buttonUrl,
                     target: buttonTarget ? "_blank" : null,
                     rel: buttonTarget ? "noopener noreferrer" : null,
-                    className: `link-button ${buttonColorClass}`
+                    className: classNames(
+                        "link-button",
+                        buttonColorClass,
+                        className
+                    )
                 },
                 createElement(RichText.Content, { value: buttonText })
             )
         );
     }
+});
+
+registerBlockStyle(BLOCK_NAME, {
+    name: "full",
+    label: "Full Width"
+});
+
+registerBlockStyle(BLOCK_NAME, {
+    name: "outline",
+    label: "Outline"
 });
