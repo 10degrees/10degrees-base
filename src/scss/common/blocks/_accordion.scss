@@ -1,0 +1,43 @@
+.accordion {
+    .toggle {
+        width: 100%;
+        border: 0;
+
+        text-align: left;
+        padding: 10px 20px;
+
+        @include background-color(--primary);
+        @include colour(--primary-text);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        cursor: pointer;
+
+        &::after {
+            content:"";
+            padding: 3px;
+            display: inline-block;
+            border-style: solid;
+            @include prop('border-color', --primary-text);
+            border-width: 0 3px 3px 0;
+
+            margin-left: 20px;
+
+            transform: rotate(45deg);
+            transition: transform 0.3s;
+        }
+    }
+
+    .content {
+        display: none;
+        padding: 0 20px;
+    }
+
+    &.-open{
+        .toggle::after {
+            transform: rotate(225deg);
+        }
+    }
+}

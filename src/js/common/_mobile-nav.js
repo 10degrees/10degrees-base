@@ -14,14 +14,36 @@ class MobileNav {
 	}
 
 	addDropdownToggle(){
-		$('.menu-item.menu-item-has-children > a').click(function(e) {
+
+		// Sub menu
+		$('.sub-menu .menu-item.menu-item-has-children > a').click(function(e) {
 			e.preventDefault();
 
 			$(this).parent().find('> .sub-menu').toggleClass('-open');
-
-			let newExpandedAttr = $(this).attr('aria-expanded') == 'true' ? 'false' : 'true';
-			$(this).attr('aria-expanded', newExpandedAttr);
+			e.stopPropagation();
 		});
+
+		// Parent menu
+		$("#menu-primary-menu > .menu-item.menu-item-has-children > a").click(function(e) {
+			e.preventDefault();
+
+			$('#menu-primary-menu > .menu-item > .sub-menu.-open').removeClass('-open');
+
+			$(this).parent().find('> .sub-menu').addClass('-open')
+			e.stopPropagation();
+
+
+			// let newExpandedAttr = $(this).attr('aria-expanded') == 'true' ? 'false' : 'true';
+			// $(this).attr('aria-expanded', newExpandedAttr);
+		});
+
+		// Hide menu on clicking anywhere
+		$(document).click(function(e) {
+			if (!$(e.target).is('#menu-primary-menu > .menu-item.menu-item-has-children > a').length) {
+				$('#menu-primary-menu > .menu-item > .sub-menu.-open').removeClass('-open');
+			}
+		});  
+
 	}
 };
 

@@ -27,6 +27,7 @@
 @import "components/block-wrapper";
 @import "components/pagination";
 @import "components/embeds";
+@import "components/magnific-popup";
 @import "templates/index";
 @import "templates/404";
 @import "templates/page";
@@ -47,7 +48,7 @@
 // // Vendor
 // @import "vendor/grid/_grid";
 // @import "vendor/animate/_animate";
-// @import "vendor/magnific-popup/_main";
+@import "vendor/magnific-popup/_main";
 // @import "vendor/_datepicker";
 // @import "vendor/_slick";
 // // 10° components

@@ -30,7 +30,7 @@
  *
  * Sass variables need to be interpolated
  *
- * Don't use --text as this causes a collision with WordPRess default classes.
+ * Don't use --text as this causes a collision with WordPress default classes.
  */
 /*
  * Layout variables.
@@ -73,4 +73,4 @@
   --max-content-width: 920px;
   --max-container-width: 1200px; }
 
-/*# sourceMappingURL=maps/admin-77cfff5c13.css.map */
+/*# sourceMappingURL=maps/admin-f877491b32.css.map */
