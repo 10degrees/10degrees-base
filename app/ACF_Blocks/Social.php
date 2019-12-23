@@ -3,6 +3,7 @@
 namespace App\ACF_Blocks;
 
 use App\ACF_Blocks\AbstractBlockRegistration;
+use App\Boot\Yoast;
 
 /**
  * Social
@@ -22,6 +23,18 @@ use App\ACF_Blocks\AbstractBlockRegistration;
  */
 class Social extends AbstractBlockRegistration
 {
+
+    /**
+     * Constructor
+     *
+     * Only register the class if ACF is active
+     */
+    public function __construct()
+    {
+        if (function_exists('acf_register_block_type') && is_plugin_active('wordpress-seo/wp-seo.php')) {
+            $this->register();
+        }
+    }
     /**
      * Declare ACF blocks for Block Editor
      *
@@ -54,12 +67,12 @@ class Social extends AbstractBlockRegistration
      */
     public function render($block)
     {
-        // convert name ("acf/testimonial") into path friendly slug ("testimonial")
         $slug = str_replace('acf/', '', $block['name']);
-        
-        // include a template part from within the "views/blocks" folder
-        if (file_exists(get_theme_file_path("/partials/blocks/{$slug}.php"))) {
-            include get_theme_file_path("/partials/blocks/{$slug}.php");
-        }
+
+        echo td_view("partials/blocks/{$slug}", [
+            'options' => Yoast::getSocialLinkOptions(),
+            'seo_data' => get_option('wpseo_social'),
+            'block' => $block
+        ]);
     }
 }

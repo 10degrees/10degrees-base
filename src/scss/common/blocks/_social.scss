@@ -1,0 +1,29 @@
+@import "../_social-brands";
+$icon-height: 20px;
+.social-block {
+    position: relative;
+    ul {
+        list-style: none;
+        display: flex;
+        height: $icon-height;
+    }
+    svg {
+        height: $icon-height;
+        width: auto;
+        &[data-icon="facebook-f"] path{
+            fill: $facebook;
+        }  
+        &[data-icon="twitter"] path{
+            fill: $twitter;
+        } 
+        &[data-icon="instagram"] path{
+            fill: $instagram;
+        } 
+        &[data-icon="pinterest"] path{
+            fill: $pinterest;
+        } 
+        &[data-icon="youtube"] path{
+            fill: $youtube;
+        } 
+    }
+}

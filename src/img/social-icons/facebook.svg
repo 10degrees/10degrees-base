@@ -1,1 +1,13 @@
-<svg height="24" viewBox="0 0 48 48" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m27.3303691 44h-8.8883949v-18.8883948h-4.4419742v-7.2765674h4.4419742v-4.3686083c0-5.93374831 2.5077812-9.4664295 9.6309471-9.4664295h5.9337483v7.2787906h-3.7060916c-2.7745664 0-2.9590929 1.0182303-2.9590929 2.9146287l-.011116 3.6416185h6.7185415l-.7870164 7.2765674h-5.9315251z" fill-rule="evenodd"/></svg>
+<svg 
+aria-hidden="true" 
+focusable="false" 
+data-prefix="fab" 
+data-icon="facebook-f" 
+role="img" xmlns="http://www.w3.org/2000/svg" 
+viewBox="0 0 320 512" 
+class="svg-inline--fa fa-facebook-f fa-w-10 fa-2x">
+    <path 
+    fill="currentColor" 
+    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" 
+    class=""></path>
+</svg>
