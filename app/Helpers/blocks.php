@@ -14,7 +14,7 @@
  *
  * @return void
  */
-function td_block_class(array $block, string $classes) : void
+function td_block_class(array $block, string $classes = '') : void
 {
     $classes = [ trim($classes) ];
 
