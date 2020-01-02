@@ -1,10 +1,10 @@
 .wp-block-file {
-  &.alignfull {
-    padding: 0 16px;
-  }
+    &.alignfull {
+        padding: 0 16px;
+    }
 
-  .wp-block-file__button {
-    @include button();
-    @include button-colours(--primary);
-  }
+    .wp-block-file__button {
+        @include button();
+        @include button-colours(--primary);
+    }
 }
