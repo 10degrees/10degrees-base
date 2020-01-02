@@ -57,3 +57,19 @@
 @mixin button__old() {
     @include button-variant(white, $brand, green);
 }
+
+@mixin button-unstyled {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    cursor: pointer;
+    &:active {
+        transform: scale(0.99);
+    }
+    &:focus {
+        // outline: 1px solid #fff;
+        // outline-offset: -4px;
+    }
+}

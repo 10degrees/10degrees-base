@@ -1,4 +1,4 @@
-# Copyright (C) 2019 @theme
+# Copyright (C) 2020 @theme
 # This file is distributed under the same license as the @theme package.
 msgid ""
 msgstr ""
@@ -86,15 +86,15 @@ msgid "Sorry, no results were found."
 msgstr ""
 
 #: partials/blocks/social.php:3
-msgid "Visit us on social media"
+msgid "Find us on social media"
 msgstr ""
 
 #: partials/blocks/social.php:5
 msgid "Skip social media links"
 msgstr ""
 
-#: partials/blocks/social.php:24
-msgid "Webshare"
+#: partials/blocks/social.php:20
+msgid "Share"
 msgstr ""
 
 #: partials/comment.php:6

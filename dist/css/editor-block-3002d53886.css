@@ -439,10 +439,14 @@
     .editor-styles-wrapper .social-block ul {
       list-style: none;
       display: flex;
-      height: 20px; }
+      height: 44px; }
+    .editor-styles-wrapper .social-block li {
+      margin-right: 10px; }
+      .editor-styles-wrapper .social-block li:last-child {
+        margin-right: 0; }
     .editor-styles-wrapper .social-block svg {
-      height: 20px;
-      width: 20px; }
+      height: 44px;
+      width: 44px; }
       .editor-styles-wrapper .social-block svg[data-icon="facebook-f"] path {
         fill: #3b5998; }
       .editor-styles-wrapper .social-block svg[data-icon="twitter"] path {
@@ -453,6 +457,17 @@
         fill: #bd081c; }
       .editor-styles-wrapper .social-block svg[data-icon="youtube"] path {
         fill: #e52d27; }
+    .editor-styles-wrapper .social-block .webshare-button {
+      display: inline-block;
+      border: none;
+      padding: 0;
+      margin: 0;
+      background: none;
+      cursor: pointer; }
+      .editor-styles-wrapper .social-block .webshare-button:active {
+        transform: scale(0.99); }
+      .editor-styles-wrapper .social-block .webshare-button svg path {
+        fill: red; }
   .editor-styles-wrapper .accordion .toggle {
     width: 100%;
     border: 0;
@@ -514,4 +529,4 @@
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-63e6afda90.css.map */
+/*# sourceMappingURL=maps/editor-block-3002d53886.css.map */

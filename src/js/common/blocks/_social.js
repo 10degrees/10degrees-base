@@ -30,9 +30,10 @@ class Social {
 
         // Must be triggered some kind of "user activation"
         btn.addEventListener("click", async () => {
+            alert('SHARE');
             navigator.share({
-                title: $(".piece-title > h1").text(),
-                text: $(".piece-standfirst > p").text(),
+                title: $("head title").text(),
+                text: $('[property="og:description"]').prop('content'),
                 url: location.href
             });
         });

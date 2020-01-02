@@ -949,10 +949,14 @@ body {
   .social-block ul {
     list-style: none;
     display: flex;
-    height: 20px; }
+    height: 44px; }
+  .social-block li {
+    margin-right: 10px; }
+    .social-block li:last-child {
+      margin-right: 0; }
   .social-block svg {
-    height: 20px;
-    width: 20px; }
+    height: 44px;
+    width: 44px; }
     .social-block svg[data-icon="facebook-f"] path {
       fill: #3b5998; }
     .social-block svg[data-icon="twitter"] path {
@@ -963,6 +967,17 @@ body {
       fill: #bd081c; }
     .social-block svg[data-icon="youtube"] path {
       fill: #e52d27; }
+  .social-block .webshare-button {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    cursor: pointer; }
+    .social-block .webshare-button:active {
+      transform: scale(0.99); }
+    .social-block .webshare-button svg path {
+      fill: red; }
 
 .accordion .toggle {
   width: 100%;
@@ -1353,4 +1368,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-44f0116a82.css.map */
+/*# sourceMappingURL=maps/main-24467f7a60.css.map */
