@@ -25,7 +25,7 @@ class Yoast
     /**
      * Get social link options for Yoast SEO
      *
-     * @return void
+     * @return array $options Array of social network options
      */
     public static function getSocialLinkOptions()
     {

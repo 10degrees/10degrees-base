@@ -952,7 +952,7 @@ body {
     height: 20px; }
   .social-block svg {
     height: 20px;
-    width: auto; }
+    width: 20px; }
     .social-block svg[data-icon="facebook-f"] path {
       fill: #3b5998; }
     .social-block svg[data-icon="twitter"] path {
@@ -1353,4 +1353,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-216ff2c78f.css.map */
+/*# sourceMappingURL=maps/main-44f0116a82.css.map */

@@ -1,46 +1,42 @@
 class Social {
+
     constructor() {
 
         var $this = this;
 
-        $(document).ready(function() { 
+        $(document).ready(function() {
 
-            $('.accordion').each(function() {
+            if (navigator.share) {
 
-                $this.initializeBlock($(this));
-            
-            })
+                $this.addWebShareButton();
+
+            } else {
+
+                console.log("WebShare API not supported");
+
+                $this.addWebShareButton();
+
+            }
 
         });
         
-        if( window.acf ) {
-
-            window.acf.addAction( 'render_block_preview/type=accordion', $this.initializeBlock);
-
-        }
-
     }
 
-    initializeBlock($block){
+    addWebShareButton() {
 
-        $block.find(".toggle").click(function() {
+        console.log("Adding the WebShare");
 
-            var accordion = $(this).parents('.accordion');
-    
-            // Show the content
-            $(accordion).toggleClass('-open');
+        const btn = document.querySelector(".webshare-button");
 
-            $(accordion).find('.content').slideToggle();
-    
-            // Set aria-expanded attribute
-            var currentExpanded = $(this).attr('aria-expanded');
-
-            (currentExpanded === "true") ? $(this).attr('aria-expanded', "false") : $(this).attr('aria-expanded', "true");
-
+        // Must be triggered some kind of "user activation"
+        btn.addEventListener("click", async () => {
+            navigator.share({
+                title: $(".piece-title > h1").text(),
+                text: $(".piece-standfirst > p").text(),
+                url: location.href
+            });
         });
-
     }
-
 }
 
 export default Social;

@@ -442,7 +442,7 @@
       height: 20px; }
     .editor-styles-wrapper .social-block svg {
       height: 20px;
-      width: auto; }
+      width: 20px; }
       .editor-styles-wrapper .social-block svg[data-icon="facebook-f"] path {
         fill: #3b5998; }
       .editor-styles-wrapper .social-block svg[data-icon="twitter"] path {
@@ -514,4 +514,4 @@
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-bd316a156d.css.map */
+/*# sourceMappingURL=maps/editor-block-63e6afda90.css.map */

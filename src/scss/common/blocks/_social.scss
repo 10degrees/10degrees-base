@@ -1,5 +1,6 @@
 @import "../_social-brands";
 $icon-height: 20px;
+$icon-width: 20px;
 .social-block {
     position: relative;
     ul {
@@ -9,7 +10,7 @@ $icon-height: 20px;
     }
     svg {
         height: $icon-height;
-        width: auto;
+        width: $icon-width;
         &[data-icon="facebook-f"] path{
             fill: $facebook;
         }  

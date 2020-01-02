@@ -11,6 +11,7 @@
         $output = array();
         
         foreach ($options as $social => $settings) {
+
             $url = !empty($seo_data[$settings['key']]) ? $seo_data[$settings['key']] : false;
             
             if (!empty($url) && !empty($settings['prepend'])) {
@@ -18,7 +19,9 @@
             }
 
             if ($url && !empty($settings['icon'])) {
-                $output[] = '<li><a href="' . esc_url_raw($url) . '">' . $settings['icon'] . '<span class="screen-reader-text">' . $social . '</span></a></li>';
+                $output[] = '<li><a href="' . esc_url_raw($url) . '" rel="noopener noreferrer">' . $settings['icon'] . '<span class="screen-reader-text">' . $social . '</span></a></li>';
+            } else if ($settings['key'] === 'webshare') {
+                $output[] = '<li><a class="webshare-button" "href="javascript:void(0)">' . $settings['icon'] . '<span class="screen-reader-text">' . __('Webshare', '@textdomain') . '</span></a></li>';
             }
         }
 

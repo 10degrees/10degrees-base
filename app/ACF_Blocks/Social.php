@@ -8,12 +8,6 @@ use App\Boot\Yoast;
 /**
  * Social
  *
- * Social //@TODO make proper descirptionsnsns
- * 
- * //@TODO create ACF fields
- * //@TODO finish creating partials
- * //@TODO style that when unblocked
- *
  * @category Theme
  * @package  TenDegrees/10degrees-base
  * @author   10 Degrees <wordpress@10degrees.uk>
@@ -23,7 +17,6 @@ use App\Boot\Yoast;
  */
 class Social extends AbstractBlockRegistration
 {
-
     /**
      * Constructor
      *
@@ -52,12 +45,11 @@ class Social extends AbstractBlockRegistration
                 'icon' => 'share',
                 'keywords' => array( 'social','custom'),
                 'supports' => array(
-                    'align' => array('wide', 'full')
+                'align' => array('wide', 'full')
                 )
             ]
         );
     }
-
     /**
      * Callback to render ACF blocks
      *
@@ -69,8 +61,17 @@ class Social extends AbstractBlockRegistration
     {
         $slug = str_replace('acf/', '', $block['name']);
 
+        $options = Yoast::getSocialLinkOptions();
+
+        $options_custom['webshare'] = [
+            'key' => 'webshare',
+            'icon' =>  td_get_svg('social-icons/share.svg')
+        ];
+
+        $options = array_merge($options_custom, $options);//Put WebShare first
+        
         echo td_view("partials/blocks/{$slug}", [
-            'options' => Yoast::getSocialLinkOptions(),
+            'options' => $options,
             'seo_data' => get_option('wpseo_social'),
             'block' => $block
         ]);

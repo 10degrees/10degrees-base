@@ -86,11 +86,15 @@ msgid "Sorry, no results were found."
 msgstr ""
 
 #: partials/blocks/social.php:3
-msgid "Social media links"
+msgid "Visit us on social media"
 msgstr ""
 
 #: partials/blocks/social.php:5
 msgid "Skip social media links"
+msgstr ""
+
+#: partials/blocks/social.php:24
+msgid "Webshare"
 msgstr ""
 
 #: partials/comment.php:6
