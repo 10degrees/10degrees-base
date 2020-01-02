@@ -1,12 +1,12 @@
 const { __ } = wp.i18n;
-const { createElement } = wp.element;
+const { createElement: el } = wp.element;
 
 const BLOCK_NAME = "custom-blocks/link-button";
 
-const blockIcon = createElement(
+const blockIcon = el(
     "svg",
     { width: 24, height: 24 },
-    createElement("path", {
+    el("path", {
         d:
             "M19 6H5c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H5V8h14v8z"
     })
@@ -49,35 +49,37 @@ const {
     BaseControl
 } = wp.components;
 
+const blockAttributes = {
+    buttonText: {
+        type: "string"
+    },
+    buttonUrl: {
+        type: "string",
+        source: "attribute",
+        selector: "a",
+        attribute: "href"
+    },
+    buttonTarget: {
+        type: "boolean",
+        default: false
+    },
+    buttonRel: {
+        type: "string",
+        default: null
+    },
+    buttonAlignment: {
+        type: "string",
+        default: "left"
+    },
+    buttonColor: {
+        type: "string"
+    }
+};
+
 // Register the block
 registerBlockType(BLOCK_NAME, {
     ...blockMeta,
-    attributes: {
-        buttonText: {
-            type: "string"
-        },
-        buttonUrl: {
-            type: "string",
-            source: "attribute",
-            selector: "a",
-            attribute: "href"
-        },
-        buttonTarget: {
-            type: "boolean",
-            default: false
-        },
-        buttonRel: {
-            type: "string",
-            default: null
-        },
-        buttonAlignment: {
-            type: "string",
-            default: "left"
-        },
-        buttonColor: {
-            type: "string"
-        }
-    },
+    attributes: blockAttributes,
 
     // Render the block components
     edit: withColors("buttonColor")(function({
@@ -97,30 +99,26 @@ registerBlockType(BLOCK_NAME, {
         } = attributes;
 
         return [
-            createElement(
+            el(
                 InspectorControls,
                 {},
-                createElement(
-                    PanelBody,
-                    {},
-                    createElement(PanelColorSettings, {
-                        title: __("Button colours", "@textdomain"),
-                        colorSettings: [
-                            {
-                                value: buttonColor.color,
-                                onChange: setButtonColor,
-                                label: __("Choose a colour", "@textdomain")
-                            }
-                        ]
-                    })
-                ),
-                createElement(
+                el(PanelColorSettings, {
+                    title: __("Button colours", "@textdomain"),
+                    colorSettings: [
+                        {
+                            value: buttonColor.color,
+                            onChange: setButtonColor,
+                            label: __("Choose a colour", "@textdomain")
+                        }
+                    ]
+                }),
+                el(
                     PanelBody,
                     { title: __("Link settings", "@textdomain") },
-                    createElement(
+                    el(
                         PanelRow,
                         {},
-                        createElement(ToggleControl, {
+                        el(ToggleControl, {
                             label: __("Open in new tab", "@textdomain"),
                             checked: buttonTarget,
                             onChange: value => {
@@ -143,10 +141,10 @@ registerBlockType(BLOCK_NAME, {
                             }
                         })
                     ),
-                    createElement(
+                    el(
                         PanelRow,
                         {},
-                        createElement(TextControl, {
+                        el(TextControl, {
                             label: __("Link rel", "@textdomain"),
                             value: buttonRel,
                             onChange: value =>
@@ -155,20 +153,20 @@ registerBlockType(BLOCK_NAME, {
                     )
                 )
             ),
-            createElement(
+            el(
                 BlockControls,
                 {},
-                createElement(AlignmentToolbar, {
+                el(AlignmentToolbar, {
                     value: buttonAlignment,
                     onChange: value => setAttributes({ buttonAlignment: value })
                 })
             ),
-            createElement(
+            el(
                 "div",
                 {
                     className: `has-text-align-${buttonAlignment}`
                 },
-                createElement(RichText, {
+                el(RichText, {
                     tagName: "span",
                     placeholder: __("Button text...", "@textdomain"),
                     value: buttonText,
@@ -179,25 +177,24 @@ registerBlockType(BLOCK_NAME, {
                         className
                     ),
                     onChange: value => setAttributes({ buttonText: value })
-                }),
-                isSelected &&
-                    createElement(
-                        BaseControl,
-                        {
-                            label: __("Link", "@textdomain"),
-                            id: "link-button-1",
-                            className: "wp-block-button__inline-link"
-                        },
-                        createElement(URLInput, {
-                            id: "link-button-1",
-                            className:
-                                "wp-block-button__inline-link-input is-full-width has-border",
-                            value: buttonUrl,
-                            onChange: value =>
-                                setAttributes({ buttonUrl: value })
-                        })
-                    )
-            )
+                })
+            ),
+            isSelected &&
+                el(
+                    BaseControl,
+                    {
+                        label: __("Link", "@textdomain"),
+                        id: "link-button-1",
+                        className: "wp-block-button__inline-link"
+                    },
+                    el(URLInput, {
+                        id: "link-button-1",
+                        className:
+                            "wp-block-button__inline-link-input is-full-width has-border",
+                        value: buttonUrl,
+                        onChange: value => setAttributes({ buttonUrl: value })
+                    })
+                )
         ];
     }),
 
@@ -216,14 +213,14 @@ registerBlockType(BLOCK_NAME, {
         const buttonColorClass =
             getColorClassName("button-color", buttonColor) || "";
 
-        return createElement(
+        return el(
             "div",
             {
                 className: buttonAlignment
                     ? `has-text-align-${buttonAlignment}`
                     : ""
             },
-            createElement(
+            el(
                 "a",
                 {
                     href: buttonUrl,
@@ -235,7 +232,7 @@ registerBlockType(BLOCK_NAME, {
                         className
                     )
                 },
-                createElement(RichText.Content, { value: buttonText })
+                el(RichText.Content, { value: buttonText })
             )
         );
     }
