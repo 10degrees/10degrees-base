@@ -39,7 +39,15 @@ const {
 } = wp.editor;
 
 // Register components
-const { IconButton, Dashicon, PanelBody } = wp.components;
+const {
+    IconButton,
+    Dashicon,
+    PanelBody,
+    PanelRow,
+    ToggleControl,
+    TextControl,
+    BaseControl
+} = wp.components;
 
 // Register the block
 registerBlockType(BLOCK_NAME, {
@@ -57,6 +65,10 @@ registerBlockType(BLOCK_NAME, {
         buttonTarget: {
             type: "boolean",
             default: false
+        },
+        buttonRel: {
+            type: "string",
+            default: null
         },
         buttonAlignment: {
             type: "string",
@@ -79,6 +91,8 @@ registerBlockType(BLOCK_NAME, {
             buttonText,
             buttonUrl,
             buttonAlignment,
+            buttonTarget,
+            buttonRel,
             className
         } = attributes;
 
@@ -99,6 +113,46 @@ registerBlockType(BLOCK_NAME, {
                             }
                         ]
                     })
+                ),
+                createElement(
+                    PanelBody,
+                    { title: __("Link settings", "@textdomain") },
+                    createElement(
+                        PanelRow,
+                        {},
+                        createElement(ToggleControl, {
+                            label: __("Open in new tab", "@textdomain"),
+                            checked: buttonTarget,
+                            onChange: value => {
+                                const attr = "noreferrer noopener";
+                                setAttributes({ buttonTarget: value });
+
+                                if (value) {
+                                    if (!attributes.buttonRel) {
+                                        setAttributes({
+                                            buttonRel: attr
+                                        });
+                                    }
+                                } else {
+                                    if (attributes.buttonRel == attr) {
+                                        setAttributes({
+                                            buttonRel: ""
+                                        });
+                                    }
+                                }
+                            }
+                        })
+                    ),
+                    createElement(
+                        PanelRow,
+                        {},
+                        createElement(TextControl, {
+                            label: __("Link rel", "@textdomain"),
+                            value: buttonRel,
+                            onChange: value =>
+                                setAttributes({ buttonRel: value })
+                        })
+                    )
                 )
             ),
             createElement(
@@ -128,22 +182,19 @@ registerBlockType(BLOCK_NAME, {
                 }),
                 isSelected &&
                     createElement(
-                        "form",
+                        BaseControl,
                         {
-                            onSubmit: e => e.preventDefault()
+                            label: __("Link", "@textdomain"),
+                            id: "link-button-1",
+                            className: "wp-block-button__inline-link"
                         },
-                        createElement(Dashicon, {
-                            icon: "admin-links"
-                        }),
                         createElement(URLInput, {
+                            id: "link-button-1",
+                            className:
+                                "wp-block-button__inline-link-input is-full-width has-border",
                             value: buttonUrl,
                             onChange: value =>
                                 setAttributes({ buttonUrl: value })
-                        }),
-                        createElement(IconButton, {
-                            icon: "editor-break",
-                            label: __("Apply", "@textdomain"),
-                            type: "submit"
                         })
                     )
             )
@@ -156,6 +207,7 @@ registerBlockType(BLOCK_NAME, {
             buttonText,
             buttonUrl,
             buttonTarget,
+            buttonRel,
             buttonAlignment,
             buttonColor,
             className
@@ -176,7 +228,7 @@ registerBlockType(BLOCK_NAME, {
                 {
                     href: buttonUrl,
                     target: buttonTarget ? "_blank" : null,
-                    rel: buttonTarget ? "noopener noreferrer" : null,
+                    rel: buttonRel,
                     className: classNames(
                         "link-button",
                         buttonColorClass,
