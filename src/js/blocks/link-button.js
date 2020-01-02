@@ -39,7 +39,7 @@ const {
 } = wp.editor;
 
 // Register components
-const { IconButton, Dashicon, PanelBody, PanelRow } = wp.components;
+const { IconButton, Dashicon, PanelBody } = wp.components;
 
 // Register the block
 registerBlockType(BLOCK_NAME, {
