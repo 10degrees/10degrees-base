@@ -79,11 +79,11 @@
 // @import "mixins/_index.scss";
 
 article > * {
-  &.wp-block-quote.is-style-large {
-    margin: 0;
-    padding: 0;
-    background: red;
-    max-width: 100%;
-    text-align: left;
-  }
+    &.wp-block-quote.is-style-large {
+        margin: 0;
+        padding: 0;
+        background: red;
+        max-width: 100%;
+        text-align: left;
+    }
 }

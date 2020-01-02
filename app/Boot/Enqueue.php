@@ -102,7 +102,7 @@ class Enqueue
      */
     public function blockEditorScript()
     {
-        wp_enqueue_script('td-editor-block-script', get_stylesheet_directory_uri() . td_asset_path('js/editor-block.js'), ['wp-blocks', 'wp-dom'], '', true);
+        wp_enqueue_script('td-editor-block-script', get_stylesheet_directory_uri() . td_asset_path('js/editor-block.js'), ['wp-blocks', 'wp-dom','wp-edit-post'], '', true);
     }
 
     /**

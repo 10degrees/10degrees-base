@@ -66,11 +66,3 @@ function td_block_embed_html($html, $url)
     return '<div class="' . $classes . '">' . $html . '</div>';
 }
 add_filter('embed_oembed_html', 'td_block_embed_html', 10, 4);
-
-
-function gutenberg_examples_01_register_block()
-{
-
-    register_block_type('ten-degrees/button', []);
-}
-add_action('init', 'gutenberg_examples_01_register_block');

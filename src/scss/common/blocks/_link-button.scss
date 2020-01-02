@@ -1,0 +1,31 @@
+.link-button {
+    // include the button (except colours - these are set seperately)
+    @include button;
+
+    // set the default colours
+    &:not([class*="has-"]):not(.is-style-outline) {
+        @include button-colours(--primary);
+    }
+    &:not([class*="has-"]).is-style-outline {
+        @include button-outline-colours(--primary);
+    }
+
+    // full width button
+    &.is-style-full {
+        width: 100%;
+    }
+}
+
+// loop over available colours and create a classname
+@each $prop, $value in $colour-map {
+    // strip "--" from the beginning of the variable name.
+    $name: str-slice($prop, 3);
+
+    .has-#{$name}-button-color {
+        @include button-colours($prop);
+
+        &.is-style-outline {
+            @include button-outline-colours($prop);
+        }
+    }
+}

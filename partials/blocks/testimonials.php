@@ -1,4 +1,4 @@
-<section <?php td_block_class( $block, 'testimonials' ); ?>>
+<section <?php td_block_class($block, 'testimonials'); ?>>
     <div class="container">
         <?php
         $number_to_show = get_field('number_of_testimonials');

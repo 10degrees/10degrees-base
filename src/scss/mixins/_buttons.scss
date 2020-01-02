@@ -1,14 +1,25 @@
-// Button variants
-//
-// Easily pump out default styles, as well as :hover, :focus, :active
+/**
+ * Button mixins.
+ *
+ * For WordPress to work with buttons more efficiently, we seperate colours from
+ * the rest of the button styles. This reduces the amount of duplicate CSS when
+ * compiled.
+ *
+ * Buttons have the class .link-button.
+ * Additional classes can be a combination of:
+ *   .is-style-full
+ *   .is-style-outline
+ *   .has-[colour-name]-button-color
+*/
 
-// We're going to do some cleverness with our $variables map and buttons.
-
+/**
+ * The button styles.
+ */
 @mixin button() {
-    padding: 5px;
+    padding: 0.5rem;
     border: 2px solid transparent;
     transition: all 0.25s ease;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     -webkit-appearance: none;
     display: inline-block;
     text-align: center;
@@ -26,34 +37,38 @@
     }
 }
 
-@mixin button-colours($color, $background, $border: $background) {
-    color: var(#{$color});
-    background-color: var(#{$background});
-    border-color: var(#{$border});
+/**
+ * The colours for a regular button.
+ */
+@mixin button-colours($color) {
+    @include colour(#{$color}-text);
+    @include background-colour($color);
+    @include border-colour($color);
 
     &:hover,
     &:focus,
     &:active,
     &.active {
-        color: var(#{$color});
-        background-color: var(#{$background}-hover);
-        border-color: var(#{$border}-hover);
+        @include colour(#{$color}-text);
+        @include background-colour(#{$color}-hover);
+        @include border-colour(#{$color}-hover);
     }
 }
 
-@mixin button-variant($color, $background, $border: $background) {
-    @include button;
-    @include button-colours($color, $background, $border);
-}
+/**
+ * The colours for an outlined button.
+ */
+@mixin button-outline-colours($color) {
+    @include colour($color);
+    background-color: transparent;
+    border-color: currentColor;
 
-// Use this to create new button styles, e.g.
-//.button--green {
-//
-//    @include button-variant(white, green, darkgreen);
-//
-//}
-
-// Standard button
-@mixin button__old() {
-    @include button-variant(white, $brand, green);
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        @include colour(#{$color}-text);
+        @include background-colour(#{$color}-hover);
+        @include border-colour(#{$color}-hover);
+    }
 }

@@ -1,4 +1,5 @@
-import Accordion from './common/blocks/_accordion';
+import "./blocks/link-button.js";
+import Accordion from "./common/blocks/_accordion";
 new Accordion();
 
 wp.domReady(() => {
@@ -83,6 +84,7 @@ wp.domReady(() => {
     wp.blocks.unregisterBlockType("core/verse");
 
     // layout Elements
+    wp.blocks.unregisterBlockType("core/button");
     // wp.blocks.unregisterBlockType("core/more");
     // wp.blocks.unregisterBlockType("core/nextpage");
     // wp.blocks.unregisterBlockType("core/separator");
