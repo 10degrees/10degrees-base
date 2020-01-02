@@ -15,7 +15,7 @@ use App\Boot\Yoast;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class Social extends AbstractBlockRegistration
+class SocialLinks extends AbstractBlockRegistration
 {
     /**
      * Constructor
@@ -37,13 +37,13 @@ class Social extends AbstractBlockRegistration
     {
         acf_register_block(
             [
-                'name' => 'social',
-                'title' => __('Social'),
-                'description' => __('A social.'), //@TODO add namespace
+                'name' => 'social-links',
+                'title' => __('Social links'),
+                'description' => __('Add links to social media.'), //@TODO add namespace
                 'render_callback' => [$this, 'render'],
                 'category' => 'common',
-                'icon' => 'share',
-                'keywords' => array( 'social','custom'),
+                'icon' => 'admin-links',
+                'keywords' => array( 'social','custom','links'),
                 'supports' => array(
                 'align' => array('wide', 'full')
                 )
@@ -62,13 +62,6 @@ class Social extends AbstractBlockRegistration
         $slug = str_replace('acf/', '', $block['name']);
 
         $options = Yoast::getSocialLinkOptions();
-
-        $options_custom['webshare'] = [
-            'key' => 'webshare',
-            'icon' =>  td_get_svg('social-icons/share.svg')
-        ];
-
-        $options = array_merge($options_custom, $options);//Put WebShare first
         
         echo td_view("partials/blocks/{$slug}", [
             'options' => $options,

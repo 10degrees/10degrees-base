@@ -1,4 +1,4 @@
-<div <?php td_block_class($block, 'social-block'); ?>>
+<div <?php td_block_class($block, 'social-links-block'); ?>>
 
     <span class="screen-reader-text"><?php esc_html_e('Find us on social media', '@textdomain'); ?></span>
 
@@ -17,7 +17,7 @@
             if ($url && !empty($settings['icon'])) {
                 $output[] = '<li><a href="' . esc_url_raw($url) . '" rel="noopener noreferrer">' . $settings['icon'] . '<span class="screen-reader-text">' . $social . '</span></a></li>';
             } elseif ($settings['key'] === 'webshare') {
-                $output[] = '<li><button class="webshare-button" href="javascript:void(0)">' . $settings['icon'] . '<span class="screen-reader-text">' . __('Share', '@textdomain') . '</span></button></li>';
+                $output[] = '<li class="webshare-list-item"><button class="webshare-button" href="javascript:void(0)">' . $settings['icon'] . '<span class="screen-reader-text">' . __('Share', '@textdomain') . '</span></button></li>';
             }
         }
 

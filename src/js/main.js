@@ -13,7 +13,7 @@ import ScrollToId from "./common/_scrollToId";
 import ScrollToError from "./common/_scrollToError";
 import MobileNav from "./common/_mobile-nav";
 import Accordion from './common/blocks/_accordion';
-import Social from './common/blocks/_social';
+import SocialShare from './common/blocks/_social-share';
 
 //Vendor
 import Magnific from "./common/_magnific";
@@ -32,7 +32,7 @@ var App = {
       new Magnific().init();
       new Slider().init();
       new Accordion();
-      new Social();
+      new SocialShare();
     }
   },
   // Home page

@@ -944,40 +944,37 @@ body {
   .wp-block-separator.is-style-block {
     width: 100%; }
 
-.social-block {
+.social-links-block {
   position: relative; }
-  .social-block ul {
+  .social-links-block ul {
     list-style: none;
     display: flex;
     height: 44px; }
-  .social-block li {
-    margin-right: 10px; }
-    .social-block li:last-child {
+  .social-links-block li {
+    margin-right: 8.8px;
+    min-width: 48.4px;
+    text-align: center; }
+    .social-links-block li:last-child {
       margin-right: 0; }
-  .social-block svg {
+  .social-links-block svg {
     height: 44px;
     width: 44px; }
-    .social-block svg[data-icon="facebook-f"] path {
-      fill: #3b5998; }
-    .social-block svg[data-icon="twitter"] path {
+    .social-links-block svg[data-icon="facebook-f"] {
+      width: 22.9988px; }
+      .social-links-block svg[data-icon="facebook-f"] path {
+        fill: #3b5998; }
+    .social-links-block svg[data-icon="twitter"] path {
       fill: #55acee; }
-    .social-block svg[data-icon="instagram"] path {
+    .social-links-block svg[data-icon="instagram"] path {
       fill: #405de6; }
-    .social-block svg[data-icon="pinterest"] path {
+    .social-links-block svg[data-icon="linkedin"] path {
+      fill: #0976b4; }
+    .social-links-block svg[data-icon="pinterest"] path {
       fill: #bd081c; }
-    .social-block svg[data-icon="youtube"] path {
-      fill: #e52d27; }
-  .social-block .webshare-button {
-    display: inline-block;
-    border: none;
-    padding: 0;
-    margin: 0;
-    background: none;
-    cursor: pointer; }
-    .social-block .webshare-button:active {
-      transform: scale(0.99); }
-    .social-block .webshare-button svg path {
-      fill: red; }
+    .social-links-block svg[data-icon="youtube"] {
+      width: 49.5px; }
+      .social-links-block svg[data-icon="youtube"] path {
+        fill: #e52d27; }
 
 .accordion .toggle {
   width: 100%;
@@ -1368,4 +1365,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-24467f7a60.css.map */
+/*# sourceMappingURL=maps/main-f9809ab1a4.css.map */
