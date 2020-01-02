@@ -12,3 +12,8 @@
     border-radius: 5px;
   }
 }
+
+.gform_button {
+  @include button();
+  @include button-colours(--primary);
+}
