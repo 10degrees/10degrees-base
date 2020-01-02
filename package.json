@@ -22,6 +22,7 @@
   "homepage": "https://github.com/thecodercoder/frontend-boilerplate#readme",
   "devDependencies": {
     "@babel/core": "^7.6.4",
+    "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
     "autoprefixer": "^9.6.0",
     "cssnano": "^4.1.10",

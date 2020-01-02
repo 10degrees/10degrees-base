@@ -894,6 +894,9 @@ body {
 	}
 }
  */
+.wp-block-audio audio {
+  min-width: 100%; }
+
 .wp-block-quote {
   margin: 1.5rem 0px;
   position: relative;
@@ -1460,6 +1463,81 @@ body {
     border-color: darkred;
     border-color: var(--primary-hover, darkred); }
 
+@media only screen and (max-width: 768px) {
+  @supports (display: grid) {
+    .wp-block-media-text {
+      gap: 16px; } }
+  @supports not (display: grid) {
+    .wp-block-media-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .wp-block-media-text .wp-block-media-text__media {
+        margin-bottom: 16px;
+        width: 100%; } } }
+
+.wp-block-preformatted {
+  white-space: normal; }
+
+.wp-block-table {
+  -webkit-overflow-scrolling: auto; }
+  @media only screen and (max-width: 480px) {
+    .wp-block-table {
+      grid-column: start / end;
+      overflow-x: auto;
+      padding: 0 16px; } }
+  @media only screen and (max-width: 480px) {
+    .wp-block-table.alignwide {
+      grid-column: start / end; } }
+  .wp-block-table.alignfull {
+    padding: 0 16px; }
+  .wp-block-table table {
+    border-collapse: collapse;
+    min-width: 480px; }
+    .wp-block-table table td {
+      padding: 0.5em; }
+  .wp-block-table table,
+  .wp-block-table th,
+  .wp-block-table td {
+    border: 1px solid #212121; }
+
+.wp-block-separator {
+  width: 50%; }
+  .wp-block-separator.is-style-block {
+    width: 100%; }
+
+.social-links-block {
+  position: relative; }
+  .social-links-block ul {
+    list-style: none;
+    display: flex;
+    height: 44px; }
+  .social-links-block li {
+    margin-right: 8.8px;
+    min-width: 48.4px;
+    text-align: center; }
+    .social-links-block li:last-child {
+      margin-right: 0; }
+  .social-links-block svg {
+    height: 44px;
+    width: 44px; }
+    .social-links-block svg[data-icon="facebook-f"] {
+      width: 22.9988px; }
+      .social-links-block svg[data-icon="facebook-f"] path {
+        fill: #3b5998; }
+    .social-links-block svg[data-icon="twitter"] path {
+      fill: #55acee; }
+    .social-links-block svg[data-icon="instagram"] path {
+      fill: #405de6; }
+    .social-links-block svg[data-icon="linkedin"] path {
+      fill: #0976b4; }
+    .social-links-block svg[data-icon="pinterest"] path {
+      fill: #bd081c; }
+    .social-links-block svg[data-icon="youtube"] {
+      width: 49.5px; }
+      .social-links-block svg[data-icon="youtube"] path {
+        fill: #e52d27; }
+
 .accordion .toggle {
   width: 100%;
   border: 0;
@@ -1849,4 +1927,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-71641837b9.css.map */
+/*# sourceMappingURL=maps/main-8cb3375a29.css.map */

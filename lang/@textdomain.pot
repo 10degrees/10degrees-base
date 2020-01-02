@@ -1,4 +1,4 @@
-# Copyright (C) 2019 @theme
+# Copyright (C) 2020 @theme
 # This file is distributed under the same license as the @theme package.
 msgid ""
 msgstr ""
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: 404.php:20
+#: 404.php:25
 msgid "Sorry, that page does not exist."
 msgstr ""
 
@@ -49,8 +49,12 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
-#: app/Boot/Init.php:123
+#: app/Boot/Init.php:130
 msgid "Continued"
+msgstr ""
+
+#: app/Boot/RegisterCustomBlocks.php:63
+msgid "Custom Blocks"
 msgstr ""
 
 #: app/Boot/RegisterMenus.php:31
@@ -77,8 +81,24 @@ msgstr ""
 msgid "Skip to main content"
 msgstr ""
 
-#: index.php:17
+#: base.php:26
+msgid "Skip to footer"
+msgstr ""
+
+#: index.php:18
 msgid "Sorry, no results were found."
+msgstr ""
+
+#: partials/blocks/social-links.php:3
+msgid "Find us on social media"
+msgstr ""
+
+#: partials/blocks/social-links.php:5
+msgid "Skip social media links"
+msgstr ""
+
+#: partials/blocks/social-links.php:20
+msgid "Share"
 msgstr ""
 
 #: partials/comment.php:6
