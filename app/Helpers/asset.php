@@ -41,15 +41,20 @@ function td_img_path($filePath = '')
 }
 
 /**
- * Print svg code from svg file in assets/img/ directory
+ * Get SVG from dist/img
  *
- * @param $svg string fileName
+ * Returns the SVG, the whole SVG and nothing
+ * but the SVG, so help me Matt Mullenweg.
  *
- * @return string - svg code
+ * @param $svg string File name & relative path e.g. social-icons/facebook.svg
+ *
+ * @return string The SVG XML markup
  */
 function td_get_svg($svg)
 {
-    return td_print_svg(td_img_path($svg));
+    ob_start();
+    td_print_svg(td_img_path($svg));
+    return ob_get_clean();
 }
 
 /**
@@ -57,7 +62,7 @@ function td_get_svg($svg)
  *
  * @param string $icon Path to file
  *
- * @return string - svg code
+ * @return void
  */
 function td_print_svg($icon)
 {
@@ -65,5 +70,4 @@ function td_print_svg($icon)
         $icon = str_replace(site_url(), '', $icon);
         include ABSPATH . $icon;
     }
-    return $icon;
 }

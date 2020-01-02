@@ -34,5 +34,6 @@ class ThemeServiceProvider extends ServiceProvider
         '\App\Boot\RealtimeFindAndReplace',
         '\App\Boot\Util',
         '\App\Boot\GravityForms',
+        '\App\Boot\Yoast',
     ];
 }
