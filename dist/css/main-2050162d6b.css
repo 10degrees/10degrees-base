@@ -1384,6 +1384,38 @@ body {
 .wp-block-code {
   overflow-x: auto; }
 
+.wp-block-preformatted {
+  white-space: normal; }
+
+.wp-block-file .wp-block-file__button {
+  padding: 0.5rem;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+  border-radius: 0.25rem;
+  -webkit-appearance: none;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  color: #fff;
+  color: var(--primary-text, #fff);
+  background-color: red;
+  background-color: var(--primary, red);
+  border-color: red;
+  border-color: var(--primary, red); }
+  .wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:focus, .wp-block-file .wp-block-file__button:active, .wp-block-file .wp-block-file__button.active {
+    text-decoration: none; }
+  .wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:focus, .wp-block-file .wp-block-file__button:active, .wp-block-file .wp-block-file__button.active {
+    color: #fff;
+    color: var(--primary-text, #fff);
+    background-color: darkred;
+    background-color: var(--primary-hover, darkred);
+    border-color: darkred;
+    border-color: var(--primary-hover, darkred); }
+
 .ginput_right.address_country select,
 .ginput_container_select select {
   height: 36px; }
@@ -1392,6 +1424,35 @@ body {
 .gform_wrapper textarea {
   border: 1px solid;
   border-radius: 5px; }
+
+.gform_button {
+  padding: 0.5rem;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+  border-radius: 0.25rem;
+  -webkit-appearance: none;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  white-space: nowrap;
+  color: #fff;
+  color: var(--primary-text, #fff);
+  background-color: red;
+  background-color: var(--primary, red);
+  border-color: red;
+  border-color: var(--primary, red); }
+  .gform_button:hover, .gform_button:focus, .gform_button:active, .gform_button.active {
+    text-decoration: none; }
+  .gform_button:hover, .gform_button:focus, .gform_button:active, .gform_button.active {
+    color: #fff;
+    color: var(--primary-text, #fff);
+    background-color: darkred;
+    background-color: var(--primary-hover, darkred);
+    border-color: darkred;
+    border-color: var(--primary-hover, darkred); }
 
 @media only screen and (max-width: 768px) {
   @supports (display: grid) {
@@ -1857,4 +1918,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-22d32343f1.css.map */
+/*# sourceMappingURL=maps/main-2050162d6b.css.map */
