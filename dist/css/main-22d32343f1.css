@@ -915,7 +915,6 @@ body {
     border-left: 0;
     border-right: 2px solid; }
 
-<<<<<<< HEAD:dist/css/main-1d709bfd42.css
 .wp-block-separator {
   width: 50%; }
   .wp-block-separator.is-style-block {
@@ -945,10 +944,6 @@ body {
 
 .link-button {
   padding: 0.5rem;
-=======
-.wp-block-button .wp-block-button__link {
-  padding: 5px;
->>>>>>> BT10D-53:dist/css/main-f9809ab1a4.css
   border: 2px solid transparent;
   transition: all 0.25s ease;
   border-radius: 0.25rem;
@@ -1370,36 +1365,22 @@ body {
       background-color: var(--link-hover-hover, );
       border-color: var(--link-hover-hover, ); }
 
-<<<<<<< HEAD:dist/css/main-1d709bfd42.css
-=======
-    .wp-block-button__link {
-    }
+@media only screen and (max-width: 768px) {
+  @supports (display: grid) {
+    .wp-block-media-text {
+      gap: 16px; } }
+  @supports not (display: grid) {
+    .wp-block-media-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .wp-block-media-text .wp-block-media-text__media {
+        margin-bottom: 16px;
+        width: 100%; } } }
 
-    &.is-style-full {
-        width: 100%;
+.wp-block-audio audio {
+  min-width: 100%; }
 
-        .wp-block-button__link {
-            width: 100%;
-        }
-    }
-
-    &.is-style-outline .wp-block-button__link {
-        // Default outline button style
-        &:not(.has-text-color) {
-            @include background-colour(--white);
-            @include colour(--primary);
-        }
-    }
-}
-// set the default background
-.wp-block-button__link:not(.has-background) {
-    @include background-colour(--primary);
-}
-// set the default colour
-.wp-block-button__link:not(.has-text-color) {
-    @include colour(--white);
-}
-*/
 .wp-block-code {
   overflow-x: auto; }
 
@@ -1412,7 +1393,6 @@ body {
   border: 1px solid;
   border-radius: 5px; }
 
->>>>>>> BT10D-53:dist/css/main-f9809ab1a4.css
 @media only screen and (max-width: 768px) {
   @supports (display: grid) {
     .wp-block-media-text {
@@ -1877,8 +1857,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-<<<<<<< HEAD:dist/css/main-1d709bfd42.css
-/*# sourceMappingURL=maps/main-1d709bfd42.css.map */
-=======
-/*# sourceMappingURL=maps/main-f9809ab1a4.css.map */
->>>>>>> BT10D-53:dist/css/main-f9809ab1a4.css
+/*# sourceMappingURL=maps/main-22d32343f1.css.map */
