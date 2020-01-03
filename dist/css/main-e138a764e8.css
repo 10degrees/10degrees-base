@@ -535,33 +535,24 @@ a,
     color: var(--link-hover, darkblue);
     text-decoration: underline; }
 
-svg,
-.wp-block svg {
+svg.svg-inline--fa {
   height: 44px;
   width: 44px; }
-  svg.fa-facebook-f,
-  .wp-block svg.fa-facebook-f {
+  svg.svg-inline--fa.fa-facebook-f {
     width: 22.9988px; }
-    svg.fa-facebook-f path,
-    .wp-block svg.fa-facebook-f path {
+    svg.svg-inline--fa.fa-facebook-f path {
       fill: #3b5998; }
-  svg.fa-twitter path,
-  .wp-block svg.fa-twitter path {
+  svg.svg-inline--fa.fa-twitter path {
     fill: #55acee; }
-  svg.fa-linkedin path,
-  .wp-block svg.fa-linkedin path {
+  svg.svg-inline--fa.fa-linkedin path {
     fill: #0976b4; }
-  svg.fa-instagram path,
-  .wp-block svg.fa-instagram path {
+  svg.svg-inline--fa.fa-instagram path {
     fill: #405de6; }
-  svg.fa-youtube,
-  .wp-block svg.fa-youtube {
+  svg.svg-inline--fa.fa-youtube {
     width: 49.5px; }
-    svg.fa-youtube path,
-    .wp-block svg.fa-youtube path {
+    svg.svg-inline--fa.fa-youtube path {
       fill: #e52d27; }
-  svg.fa-pinterest path,
-  .wp-block svg.fa-pinterest path {
+  svg.svg-inline--fa.fa-pinterest path {
     fill: #bd081c; }
 
 .screen-reader-text {
@@ -1966,4 +1957,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-9f06c6a3c5.css.map */
+/*# sourceMappingURL=maps/main-e138a764e8.css.map */
