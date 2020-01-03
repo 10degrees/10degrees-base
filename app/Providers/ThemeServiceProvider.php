@@ -24,6 +24,7 @@ class ThemeServiceProvider extends ServiceProvider
     protected $classes = [
         '\App\Boot\Init',
         '\App\Boot\BaseWrapper',
+        '\App\Boot\CliCommands',
         '\App\Boot\Enqueue',
         '\App\Boot\RegisterMenus',
         '\App\Boot\RegisterWidgets',
