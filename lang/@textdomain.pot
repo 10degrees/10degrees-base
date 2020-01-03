@@ -105,6 +105,14 @@ msgstr ""
 msgid "Skip sharing options"
 msgstr ""
 
+#: partials/blocks/social-share.php:14
+msgid "Share"
+msgstr ""
+
+#: partials/blocks/social-share.php:23
+msgid "Share on "
+msgstr ""
+
 #: partials/comment.php:6
 msgid "%1$s"
 msgstr ""
