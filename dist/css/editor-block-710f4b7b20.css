@@ -413,7 +413,8 @@
     .editor-styles-wrapper .wp-block-table th,
     .editor-styles-wrapper .wp-block-table td {
       border: 1px solid #212121; }
-  .editor-styles-wrapper .link-button {
+  .editor-styles-wrapper .link-button,
+  .editor-styles-wrapper .button {
     padding: 0.5rem;
     border: 2px solid transparent;
     transition: all 0.25s ease;
@@ -426,35 +427,50 @@
     cursor: pointer;
     background-image: none;
     white-space: nowrap; }
-    .editor-styles-wrapper .link-button:hover, .editor-styles-wrapper .link-button:focus, .editor-styles-wrapper .link-button:active, .editor-styles-wrapper .link-button.active {
+    .editor-styles-wrapper .link-button:hover, .editor-styles-wrapper .link-button:focus, .editor-styles-wrapper .link-button:active, .editor-styles-wrapper .link-button.active,
+    .editor-styles-wrapper .button:hover,
+    .editor-styles-wrapper .button:focus,
+    .editor-styles-wrapper .button:active,
+    .editor-styles-wrapper .button.active {
       text-decoration: none; }
-    .editor-styles-wrapper .link-button:not([class*="has-"]):not(.is-style-outline) {
+    .editor-styles-wrapper .link-button:not([class*="has-"]):not(.is-style-outline),
+    .editor-styles-wrapper .button:not([class*="has-"]):not(.is-style-outline) {
       color: #fff;
       color: var(--primary-text, #fff);
       background-color: red;
       background-color: var(--primary, red);
       border-color: red;
       border-color: var(--primary, red); }
-      .editor-styles-wrapper .link-button:not([class*="has-"]):not(.is-style-outline):hover, .editor-styles-wrapper .link-button:not([class*="has-"]):not(.is-style-outline):focus, .editor-styles-wrapper .link-button:not([class*="has-"]):not(.is-style-outline):active, .editor-styles-wrapper .link-button:not([class*="has-"]):not(.is-style-outline).active {
+      .editor-styles-wrapper .link-button:not([class*="has-"]):not(.is-style-outline):hover, .editor-styles-wrapper .link-button:not([class*="has-"]):not(.is-style-outline):focus, .editor-styles-wrapper .link-button:not([class*="has-"]):not(.is-style-outline):active, .editor-styles-wrapper .link-button:not([class*="has-"]):not(.is-style-outline).active,
+      .editor-styles-wrapper .button:not([class*="has-"]):not(.is-style-outline):hover,
+      .editor-styles-wrapper .button:not([class*="has-"]):not(.is-style-outline):focus,
+      .editor-styles-wrapper .button:not([class*="has-"]):not(.is-style-outline):active,
+      .editor-styles-wrapper .button:not([class*="has-"]):not(.is-style-outline).active {
         color: #fff;
         color: var(--primary-text, #fff);
         background-color: darkred;
         background-color: var(--primary-hover, darkred);
         border-color: darkred;
         border-color: var(--primary-hover, darkred); }
-    .editor-styles-wrapper .link-button:not([class*="has-"]).is-style-outline {
+    .editor-styles-wrapper .link-button:not([class*="has-"]).is-style-outline,
+    .editor-styles-wrapper .button:not([class*="has-"]).is-style-outline {
       color: red;
       color: var(--primary, red);
       background-color: transparent;
       border-color: currentColor; }
-      .editor-styles-wrapper .link-button:not([class*="has-"]).is-style-outline:hover, .editor-styles-wrapper .link-button:not([class*="has-"]).is-style-outline:focus, .editor-styles-wrapper .link-button:not([class*="has-"]).is-style-outline:active, .editor-styles-wrapper .link-button:not([class*="has-"]).is-style-outline.active {
+      .editor-styles-wrapper .link-button:not([class*="has-"]).is-style-outline:hover, .editor-styles-wrapper .link-button:not([class*="has-"]).is-style-outline:focus, .editor-styles-wrapper .link-button:not([class*="has-"]).is-style-outline:active, .editor-styles-wrapper .link-button:not([class*="has-"]).is-style-outline.active,
+      .editor-styles-wrapper .button:not([class*="has-"]).is-style-outline:hover,
+      .editor-styles-wrapper .button:not([class*="has-"]).is-style-outline:focus,
+      .editor-styles-wrapper .button:not([class*="has-"]).is-style-outline:active,
+      .editor-styles-wrapper .button:not([class*="has-"]).is-style-outline.active {
         color: #fff;
         color: var(--primary-text, #fff);
         background-color: darkred;
         background-color: var(--primary-hover, darkred);
         border-color: darkred;
         border-color: var(--primary-hover, darkred); }
-    .editor-styles-wrapper .link-button.is-style-full {
+    .editor-styles-wrapper .link-button.is-style-full,
+    .editor-styles-wrapper .button.is-style-full {
       width: 100%; }
   .editor-styles-wrapper .has-primary-button-color {
     color: #fff;
@@ -904,4 +920,4 @@
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-1709e21bf1.css.map */
+/*# sourceMappingURL=maps/editor-block-710f4b7b20.css.map */
