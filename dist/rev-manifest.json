@@ -13,5 +13,9 @@
   "css/maps/main.css": "css/maps/main-a7189ff0c0.css.map",
   "js/admin.js": "js/admin-eb73c749fa.js",
   "js/editor-block.js": "js/editor-block-ed49626f7d.js",
+<<<<<<< HEAD
   "js/main.js": "js/main-8ab521b47e.js"
+=======
+  "js/main.js": "js/main-2eba2ece0b.js"
+>>>>>>> BT10D-63
 }

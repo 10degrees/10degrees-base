@@ -7,7 +7,7 @@ class SocialShare {
     {
         var $this = this;
         $(document).ready(function() {
-            if (!navigator.share) {
+            if (navigator.share) {
                 $this.addWebShareButtonClickHandler();
                 $this.removeSocialSharebuttons();
             } else {
