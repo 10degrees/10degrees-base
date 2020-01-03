@@ -1,7 +1,8 @@
 $icon-width-facebook: $icon-height * 0.5227; //Use ratio for non-square icons : width/height
 $icon-width-youtube: $icon-height * 1.125; //Use ratio for non-square icons : width/height
 
-svg {
+svg,
+.wp-block svg {
     height: $icon-height;
     width: $icon-width;
     &.fa-facebook-f {
