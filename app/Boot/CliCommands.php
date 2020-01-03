@@ -43,36 +43,38 @@ class CliCommands
         $blockClassName = ucfirst($args[0]);
         $blockTitle = strtolower($blockName);
 
-        //Check if block already exists! (app/ACF_Blocks)
-        if (file_exists($path.'app/ACF_Blocks/'.$blockClassName.'.php')) {
-            \WP_CLI::error( 'Block file already exists. Get outta here!', false);
-        }
+        // //Check if block already exists! (app/ACF_Blocks)
+        // if (file_exists($path.'app/ACF_Blocks/'.$blockClassName.'.php')) {
+        //     \WP_CLI::error( 'Block file already exists. Get outta here!', false);
+        // }
 
-        //Create register block in app/ACF_Blocks
-        $template = file_get_contents($path.'partials/cli-templates/Block.php');
-        $template = preg_replace('/__BLOCK_CLASSNAME__/', $blockClassName, $template);
-        $template = preg_replace('/__BLOCK_TITLE__/', $blockTitle, $template);
-        $template = preg_replace('/__BLOCK_NAME__/', $blockTitle, $template);
-        $result = file_put_contents($path.'app/ACF_Blocks/'.$blockClassName.'.php',  $template);
+        // //Create register block in app/ACF_Blocks
+        // $template = file_get_contents($path.'partials/cli-templates/Block.php');
+        // $template = preg_replace('/__BLOCK_CLASSNAME__/', $blockClassName, $template);
+        // $template = preg_replace('/__BLOCK_TITLE__/', $blockTitle, $template);
+        // $template = preg_replace('/__BLOCK_NAME__/', $blockTitle, $template);
+        // $result = file_put_contents($path.'app/ACF_Blocks/'.$blockClassName.'.php',  $template);
 
-        //Reference in block service provider
+        // //Reference in block service provider
         $block_service_provider_file_contents = file_get_contents($path.'app/Providers/BlockServiceProvider.php');
-        $pattern = "'\\App\\ACF_Blocks\\".$blockClassName."'";
+        // $pattern = "'\\App\\ACF_Blocks\\".$blockClassName."'";
 
-        $result = preg_match($pattern, $block_service_provider_file_contents);
+        // $result = preg_match($pattern, $block_service_provider_file_contents);
 
         // if(!$result) {
         //     \WP_CLI::error('Block already registered. Get outta here!');
         // } else {
         //     \WP_CLI::error('No match in providers', false);
-            $pattern = "];$";
+        $pattern = "/];/";
 
-            $replace = "    \App\ACF_Blocks\\".$blockClassName.'\r\n    ];';
+        $replace = "]]]]]]";
 
-            $updated_provider = preg_replace($pattern, $replace,$block_service_provider_file_contents);
+        $block_service_provider_file_contents = preg_replace("/];/", "]]]]]]", $block_service_provider_file_contents);
 
-            $result = file_put_contents($path.'app/Providers/BlockServiceProvider.php');
-        // }
+
+        $result = file_put_contents($path.'app/Providers/BlockServiceProvider.php', $block_service_provider_file_contents);
+        
+            // }
         
         // //Create partial
         // file_put_contents();
