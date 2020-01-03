@@ -841,6 +841,8 @@
     overflow-x: auto; }
   .editor-styles-wrapper .wp-block-preformatted {
     white-space: normal; }
+  .editor-styles-wrapper .wp-block-file.alignfull {
+    padding: 0 16px; }
   .editor-styles-wrapper .wp-block-file .wp-block-file__button {
     padding: 0.5rem;
     border: 2px solid transparent;
@@ -869,6 +871,10 @@
       background-color: var(--primary-hover, darkred);
       border-color: darkred;
       border-color: var(--primary-hover, darkred); }
+  .editor-styles-wrapper .wp-block-image.alignfull figcaption {
+    padding: 0 16px; }
+  .editor-styles-wrapper .wp-block-gallery.alignfull .blocks-gallery-caption {
+    padding: 0 16px; }
   .editor-styles-wrapper .ginput_right.address_country select,
   .editor-styles-wrapper .ginput_container_select select {
     height: 36px; }
@@ -1041,4 +1047,4 @@
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-234b7157da.css.map */
+/*# sourceMappingURL=maps/editor-block-6f5516d95f.css.map */

@@ -1410,6 +1410,9 @@ body {
 .wp-block-preformatted {
   white-space: normal; }
 
+.wp-block-file.alignfull {
+  padding: 0 16px; }
+
 .wp-block-file .wp-block-file__button {
   padding: 0.5rem;
   border: 2px solid transparent;
@@ -1438,6 +1441,12 @@ body {
     background-color: var(--primary-hover, darkred);
     border-color: darkred;
     border-color: var(--primary-hover, darkred); }
+
+.wp-block-image.alignfull figcaption {
+  padding: 0 16px; }
+
+.wp-block-gallery.alignfull .blocks-gallery-caption {
+  padding: 0 16px; }
 
 .ginput_right.address_country select,
 .ginput_container_select select {
@@ -1948,4 +1957,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-b81d0acbdd.css.map */
+/*# sourceMappingURL=maps/main-a7189ff0c0.css.map */
