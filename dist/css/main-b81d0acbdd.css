@@ -146,6 +146,9 @@ select {
  *
  * Used for bp() mixin and bp() function
  */
+/**
+ * SVG icon defaults
+ */
 /*
  * CSS custom properties
  * We can finally spell "colour" correctly 👍
@@ -531,6 +534,26 @@ a,
     color: darkblue;
     color: var(--link-hover, darkblue);
     text-decoration: underline; }
+
+svg {
+  height: 44px;
+  width: 44px; }
+  svg.fa-facebook-f {
+    width: 22.9988px; }
+    svg.fa-facebook-f path {
+      fill: #3b5998; }
+  svg.fa-twitter path {
+    fill: #55acee; }
+  svg.fa-linkedin path {
+    fill: #0976b4; }
+  svg.fa-instagram path {
+    fill: #405de6; }
+  svg.fa-youtube {
+    width: 49.5px; }
+    svg.fa-youtube path {
+      fill: #e52d27; }
+  svg.fa-pinterest path {
+    fill: #bd081c; }
 
 .screen-reader-text {
   border: 0;
@@ -1501,33 +1524,40 @@ body {
   position: relative; }
   .social-links-block ul {
     list-style: none;
-    display: flex;
-    height: 44px; }
+    display: flex; }
   .social-links-block li {
     margin-right: 8.8px;
     min-width: 48.4px;
-    text-align: center; }
+    text-align: center;
+    line-height: 1px; }
     .social-links-block li:last-child {
       margin-right: 0; }
-  .social-links-block svg {
-    height: 44px;
-    width: 44px; }
-    .social-links-block svg[data-icon="facebook-f"] {
-      width: 22.9988px; }
-      .social-links-block svg[data-icon="facebook-f"] path {
-        fill: #3b5998; }
-    .social-links-block svg[data-icon="twitter"] path {
-      fill: #55acee; }
-    .social-links-block svg[data-icon="instagram"] path {
-      fill: #405de6; }
-    .social-links-block svg[data-icon="linkedin"] path {
-      fill: #0976b4; }
-    .social-links-block svg[data-icon="pinterest"] path {
-      fill: #bd081c; }
-    .social-links-block svg[data-icon="youtube"] {
-      width: 49.5px; }
-      .social-links-block svg[data-icon="youtube"] path {
-        fill: #e52d27; }
+  .social-links-block a {
+    display: block; }
+
+.social-share-block {
+  position: relative; }
+  .social-share-block ul {
+    list-style: none;
+    display: flex; }
+  .social-share-block li {
+    margin-right: 8.8px;
+    min-width: 48.4px;
+    text-align: center;
+    line-height: 1px; }
+    .social-share-block li:last-child {
+      margin-right: 0; }
+  .social-share-block button {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    cursor: pointer; }
+    .social-share-block button:active {
+      transform: scale(0.99); }
+  .social-share-block a {
+    display: block; }
 
 .accordion .toggle {
   width: 100%;
@@ -1918,4 +1948,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-2050162d6b.css.map */
+/*# sourceMappingURL=maps/main-b81d0acbdd.css.map */

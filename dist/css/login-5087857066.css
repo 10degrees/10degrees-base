@@ -26,6 +26,9 @@
  *
  * Used for bp() mixin and bp() function
  */
+/**
+ * SVG icon defaults
+ */
 .login {
   background: white;
   /* Set the size of the login logo */
@@ -60,4 +63,4 @@
 .wp-admin #wp-auth-check-wrap #wp-auth-check {
   background-color: white; }
 
-/*# sourceMappingURL=maps/login-92708fad3b.css.map */
+/*# sourceMappingURL=maps/login-5087857066.css.map */

@@ -23,6 +23,9 @@
  *
  * Used for bp() mixin and bp() function
  */
+/**
+ * SVG icon defaults
+ */
 /*
  * Generate a media query based on convenient names such as sm, md , lg. The
  * names are set in a $breakpoints-map.
@@ -944,33 +947,39 @@
     position: relative; }
     .editor-styles-wrapper .social-links-block ul {
       list-style: none;
-      display: flex;
-      height: 44px; }
+      display: flex; }
     .editor-styles-wrapper .social-links-block li {
       margin-right: 8.8px;
       min-width: 48.4px;
-      text-align: center; }
+      text-align: center;
+      line-height: 1px; }
       .editor-styles-wrapper .social-links-block li:last-child {
         margin-right: 0; }
-    .editor-styles-wrapper .social-links-block svg {
-      height: 44px;
-      width: 44px; }
-      .editor-styles-wrapper .social-links-block svg[data-icon="facebook-f"] {
-        width: 22.9988px; }
-        .editor-styles-wrapper .social-links-block svg[data-icon="facebook-f"] path {
-          fill: #3b5998; }
-      .editor-styles-wrapper .social-links-block svg[data-icon="twitter"] path {
-        fill: #55acee; }
-      .editor-styles-wrapper .social-links-block svg[data-icon="instagram"] path {
-        fill: #405de6; }
-      .editor-styles-wrapper .social-links-block svg[data-icon="linkedin"] path {
-        fill: #0976b4; }
-      .editor-styles-wrapper .social-links-block svg[data-icon="pinterest"] path {
-        fill: #bd081c; }
-      .editor-styles-wrapper .social-links-block svg[data-icon="youtube"] {
-        width: 49.5px; }
-        .editor-styles-wrapper .social-links-block svg[data-icon="youtube"] path {
-          fill: #e52d27; }
+    .editor-styles-wrapper .social-links-block a {
+      display: block; }
+  .editor-styles-wrapper .social-share-block {
+    position: relative; }
+    .editor-styles-wrapper .social-share-block ul {
+      list-style: none;
+      display: flex; }
+    .editor-styles-wrapper .social-share-block li {
+      margin-right: 8.8px;
+      min-width: 48.4px;
+      text-align: center;
+      line-height: 1px; }
+      .editor-styles-wrapper .social-share-block li:last-child {
+        margin-right: 0; }
+    .editor-styles-wrapper .social-share-block button {
+      display: inline-block;
+      border: none;
+      padding: 0;
+      margin: 0;
+      background: none;
+      cursor: pointer; }
+      .editor-styles-wrapper .social-share-block button:active {
+        transform: scale(0.99); }
+    .editor-styles-wrapper .social-share-block a {
+      display: block; }
   .editor-styles-wrapper .accordion .toggle {
     width: 100%;
     border: 0;
@@ -1032,4 +1041,4 @@
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-6307a1120d.css.map */
+/*# sourceMappingURL=maps/editor-block-234b7157da.css.map */

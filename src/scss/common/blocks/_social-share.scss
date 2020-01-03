@@ -1,6 +1,6 @@
 $icon-list-item-gap: 10px;
 
-.social-links-block {
+.social-share-block {
     position: relative;
     ul {
         list-style: none;
@@ -14,6 +14,9 @@ $icon-list-item-gap: 10px;
         &:last-child {
             margin-right: 0;
         }
+    }
+    button {
+        @include button-unstyled;
     }
     a {
         display: block;

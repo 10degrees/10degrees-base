@@ -15,9 +15,7 @@
                 $url = $settings['prepend'] . $url;
             }
             if ($url && !empty($settings['icon'])) {
-                $output[] = '<li><a href="' . esc_url_raw($url) . '" rel="noopener noreferrer">' . $settings['icon'] . '<span class="screen-reader-text">' . $social . '</span></a></li>';
-            } elseif ($settings['key'] === 'webshare') {
-                $output[] = '<li class="webshare-list-item"><button class="webshare-button" href="javascript:void(0)">' . $settings['icon'] . '<span class="screen-reader-text">' . __('Share', '@textdomain') . '</span></button></li>';
+                $output[] = '<li><a href="' . esc_url_raw($url) . '"  target="_blank" rel="noopener noreferrer">' . $settings['icon'] . '<span class="screen-reader-text">' . $social . '</span></a></li>';
             }
         }
 

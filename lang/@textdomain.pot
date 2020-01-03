@@ -97,8 +97,12 @@ msgstr ""
 msgid "Skip social media links"
 msgstr ""
 
-#: partials/blocks/social-links.php:20
-msgid "Share"
+#: partials/blocks/social-share.php:3
+msgid "Share this page"
+msgstr ""
+
+#: partials/blocks/social-share.php:5
+msgid "Skip sharing options"
 msgstr ""
 
 #: partials/comment.php:6
