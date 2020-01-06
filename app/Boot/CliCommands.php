@@ -21,7 +21,7 @@ class CliCommands
      */
     public function __construct()
     {
-        if(!class_exists('WP_CLI')) {
+        if (!class_exists('WP_CLI')) {
             return;
         }
         \WP_CLI::add_command('td', $this);
@@ -32,6 +32,7 @@ class CliCommands
      *
      * @param array $args       List of args
      * @param array $assoc_args Flag arguments
+     *
      * @return void
      */
     public function block($args, $assoc_args)
@@ -51,36 +52,36 @@ class CliCommands
         /**
          * Create block
          */
-         /**
-         * Check if block already exists! (app/ACF_Blocks)
-         */
+
+         //Check if block already exists! (app/ACF_Blocks)
         if (file_exists($path.'app/ACF_Blocks/'.$blockClassName.'.php')) {
-            \WP_CLI::error( 'Block file already exists. Get outta here!', false);
+            \WP_CLI::error('Block file already exists. Get outta here!', false);
         }
 
-        /**
-         * Create register block in app/ACF_Blocks
-         */
+        //Create block registration class in app/ACF_Blocks
         $template = file_get_contents($path.'partials/cli-templates/Block.php');
         $template = preg_replace('/__BLOCK_CLASSNAME__/', $blockClassName, $template);
         $template = preg_replace('/__BLOCK_TITLE__/', $blockTitle, $template);
         $template = preg_replace('/__BLOCK_NAME__/', $blockTitle, $template);
         $result = file_put_contents($path.'app/ACF_Blocks/'.$blockClassName.'.php',  $template);
 
-        if($result) {
-            \WP_CLI::line( 'Block registration class added' );
+        if ($result) {
+            \WP_CLI::line('Block registration class added');
         }
 
         /**
          * Reference in block service provider
          */
+
         //Get service procider file
         $block_service_provider_file_contents = file_get_contents($path.'app/Providers/BlockServiceProvider.php');
+
         //Pattern tries to match block classname
         $pattern = "'\\App\\ACF_Blocks\\".$blockClassName."'";
         $result = preg_match($pattern, $block_service_provider_file_contents);
-        //If already exists abort mission
+
         if ($result) {
+            //If already exists abort mission
             \WP_CLI::error('Block already registered. Get outta here! [1]');
         } else {
             //Add reference to newly created class at the end of the array
@@ -95,6 +96,7 @@ class CliCommands
         /**
          * Create partial
          */
+
         //Grab template
         $partial_contents = file_get_contents($path.'partials/cli-templates/block-partial.php');
         //Replace placeholder(s)
@@ -103,7 +105,7 @@ class CliCommands
         $result = file_put_contents($path.'partials/blocks/'.$blockTitle.'.php', $partial_contents);
 
         if ($result) {
-            \WP_CLI::line( 'Partial created' );
+            \WP_CLI::line('Partial created');
         }
 
         /**
@@ -119,11 +121,12 @@ class CliCommands
         $result = file_put_contents($path.'src/scss/common/_'.$blockName.'.scss', $scss_contents);
 
         if ($result) {
-            \WP_CLI::line( 'SCSS created' );
+            \WP_CLI::line('SCSS created');
         }
+
         //@TODO Reference in common
 
-        //@TODO Add JS (optional) & reference in main 
+        //@TODO Add JS (optional) & reference in main
         \WP_CLI::success('All done. Get outta here!');
     }
 }
