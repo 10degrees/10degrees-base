@@ -67,11 +67,13 @@ class CliCommands
             \WP_CLI::error('Block file already exists. Get outta here!', false);
         }
 
-        //Create block registration class in app/ACF_Blocks
+        //Get template
         $template = file_get_contents($path.'partials/cli-templates/Block.php');
+        //Replace placeholder(s)
         $template = preg_replace('/__BLOCK_CLASSNAME__/', $blockClassName, $template);
         $template = preg_replace('/__BLOCK_TITLE__/', $blockTitle, $template);
         $template = preg_replace('/__BLOCK_NAME__/', $blockTitle, $template);
+        //Write file
         $result = file_put_contents($path.'app/ACF_Blocks/'.$blockClassName.'.php',  $template);
 
         if ($result) {
@@ -90,7 +92,7 @@ class CliCommands
         $result = preg_match($pattern, $block_service_provider_file_contents);
 
         if ($result) {
-            //If already exists abort mission
+            //If already exists abort
             \WP_CLI::error('Block already registered. Get outta here! [1]');
         } else {
             //Add reference to newly created class at the end of the array
@@ -106,7 +108,7 @@ class CliCommands
          * Create partial
          */
 
-        //Grab template
+        //Get template
         $partial_contents = file_get_contents($path.'partials/cli-templates/block-partial.php');
         //Replace placeholder(s)
         $partial_contents = preg_replace('/__BLOCK_NAME__/', $blockTitle, $partial_contents);
@@ -122,7 +124,7 @@ class CliCommands
          */
         \WP_CLI::confirm('Would you like SCSS?', $assoc_args_scss = array());
         
-         //Grab template
+        //Get template
         $scss_contents = file_get_contents($path.'partials/cli-templates/block-style.scss');
         //Replace placeholder(s)
         $scss_contents = preg_replace('/__BLOCK_NAME__/', $blockName, $scss_contents);
@@ -132,6 +134,32 @@ class CliCommands
         if ($result) {
             \WP_CLI::line('SCSS created');
         }
+
+
+         /**
+         * Reference SCSS in _blocks.scss
+         */
+        //Get template
+        $scss_main_contents = file_get_contents($path.'src/scss/common/blocks/_blocks.scss');
+
+        $pattern = '@import "'.$blockName.'";';
+        $result = preg_match($pattern, $scss_main_contents);
+
+        if ($result) {
+            //If already exists abort
+            \WP_CLI::error('Block SCSS already added to _block.scss. Get outta here! [1]');
+        } else {
+            $scss_main_contents .= "\n";
+            $scss_main_contents .= '@import "_'.$blockName.'";';
+        }
+
+        $result = file_put_contents($path.'src/scss/common/blocks/_blocks.scss', $scss_main_contents);
+
+        
+        if ($result) {
+            \WP_CLI::line('SCSS file imported to _blocks.scss');
+        }
+        
 
         //@TODO Reference in common
 
