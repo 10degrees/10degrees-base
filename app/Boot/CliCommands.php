@@ -101,7 +101,7 @@ class CliCommands
             $replace .= "\n    ];";
             $block_service_provider_file_contents = preg_replace("/];/", $replace, $block_service_provider_file_contents);
             $result = file_put_contents($path.'app/Providers/BlockServiceProvider.php', $block_service_provider_file_contents);
-            \WP_CLI::line('Block registration class referenced in BlockServiceProvider');
+            \WP_CLI::line('Block registration class referenced created in BlockServiceProvider');
         }
         
         /**
@@ -161,9 +161,6 @@ class CliCommands
             \WP_CLI::line('SCSS file imported to _blocks.scss');
         }
         
-        //@TODO Reference in common
-
-        //@TODO Add JS (optional) & reference in main
         \WP_CLI::success('All done. Get outta here!');
     }
 }
