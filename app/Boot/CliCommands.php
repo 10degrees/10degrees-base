@@ -93,7 +93,7 @@ class CliCommands
 
         if ($result) {
             //If already exists abort
-            \WP_CLI::error('Block already registered. Get outta here! [1]');
+            \WP_CLI::line('Block already registered. Get outta here! [1]');
         } else {
             //Add reference to newly created class at the end of the array
             $pattern = "/];/";
@@ -147,12 +147,13 @@ class CliCommands
 
         if ($result) {
             //If already exists abort
-            \WP_CLI::error('Block SCSS already added to _block.scss. Get outta here! [1]');
+            \WP_CLI::line('Block SCSS already added to _block.scss. Get outta here! [1]');
         } else {
             $scss_main_contents .= "\n";
-            $scss_main_contents .= '@import "_'.$blockName.'";';
+            $scss_main_contents .= '@import "'.$blockName.'";';
         }
 
+        $scss_main_contents = preg_replace('/__BLOCK_NAME__/', $blockName, $scss_main_contents);
         $result = file_put_contents($path.'src/scss/common/blocks/_blocks.scss', $scss_main_contents);
 
         
@@ -160,7 +161,6 @@ class CliCommands
             \WP_CLI::line('SCSS file imported to _blocks.scss');
         }
         
-
         //@TODO Reference in common
 
         //@TODO Add JS (optional) & reference in main
