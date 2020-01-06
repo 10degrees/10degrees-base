@@ -1,39 +1,57 @@
 /*
  * Styles for front end
  */
+@import "common/_reset.scss";
 
-@import "common/reset.scss";
-@import "mixins/prop";
+@import "mixins/_prop";
+@import "mixins/_screen-reader-text";
+@import "mixins/_bp";
+@import "mixins/_bg-cover";
+@import "mixins/_bp";
+@import "mixins/_buttons";
+@import "mixins/_clearfix";
+@import "mixins/_custom-checkbox";
+@import "mixins/_embed-container";
+@import "mixins/_ie-only";
+@import "mixins/_image";
+@import "mixins/_list-unstyled";
+@import "mixins/_old-ie";
+@import "mixins/_screen-reader-text";
+@import "mixins/_containers";
 
-@import "mixins/screen-reader-text";
-@import "mixins/bp";
+@import "common/_variables";
+@import "common/_root";
+@import "common/_colours";
+@import "common/_type";
+@import "common/_social-brands";
+@import "common/_svg";
+@import "common/_grid";
+@import "common/blocks/_blocks";
 
-@import "common/variables";
-@import "common/root";
-@import "common/colours";
-@import "common/type";
-@import "common/social-brands";
-@import "common/svg";
+@import "components/_sticky-footer";
+@import "components/_header";
+@import "components/_footer";
+@import "components/_block-wrapper";
+@import "components/_pagination";
+@import "components/_embeds";
+@import "components/_magnific-popup";
+@import "components/_forms";
 
-@import "mixins/screen-reader-text";
-@import "mixins/bp";
-@import "mixins/ie-only";
-@import "mixins/buttons";
+@import "templates/_index";
+@import "templates/_404";
+@import "templates/_page";
 
-@import "common/grid";
-@import "mixins/containers";
-@import "components/sticky-footer";
-@import "components/header";
-@import "components/footer";
-@import "components/block-wrapper";
-@import "components/pagination";
-@import "components/embeds";
-@import "components/magnific-popup";
-@import "templates/index";
-@import "templates/404";
-@import "templates/page";
+@import "vendor/magnific-popup/_main";
 
-@import "common/blocks/blocks";
+article > * {
+    &.wp-block-quote.is-style-large {
+        margin: 0;
+        padding: 0;
+        background: red;
+        max-width: 100%;
+        text-align: left;
+    }
+}
 
 // mixins
 // typography
@@ -49,7 +67,7 @@
 // // Vendor
 // @import "vendor/grid/_grid";
 // @import "vendor/animate/_animate";
-@import "vendor/magnific-popup/_main";
+
 // @import "vendor/_datepicker";
 // @import "vendor/_slick";
 // // 10° components
@@ -78,13 +96,3 @@
 
 // @import "common/_type.scss";
 // @import "mixins/_index.scss";
-
-article > * {
-    &.wp-block-quote.is-style-large {
-        margin: 0;
-        padding: 0;
-        background: red;
-        max-width: 100%;
-        text-align: left;
-    }
-}
