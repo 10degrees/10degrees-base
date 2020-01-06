@@ -38,7 +38,16 @@ class CliCommands
     public function block($args, $assoc_args)
     {
         /**
-         * Setup vars for dicrectory and block names
+         * Setup vars for directory and block names
+         *
+         * $blockName is the kebab-case component name
+         *   - used for registration, scss/partial filename
+         *   - used in partial for classname
+         *   - used in scss for classname
+         *
+         * $blockClassName is the PascalCase component name
+         *   - used for ACF_Block registration classname
+         *   - added to BlockServiceProvider.php
          */
         $path = trailingslashit(get_template_directory());
         $blockName = strtolower($args[0]);
