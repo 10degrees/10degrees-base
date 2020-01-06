@@ -40,7 +40,7 @@ class CliCommands
          * Setup vars for dicrectory and block names
          */
         $path = trailingslashit(get_template_directory());
-        $blockName = $args[0];
+        $blockName = strtolower($args[0]);
         $blockClassNameParts = explode('-', $args[0]);
         $blockClassName = '';
         foreach ($blockClassNameParts as $part) {
@@ -102,11 +102,16 @@ class CliCommands
 
 
 
-        \WP_CLI::confirm( 'Would you like SCSS?', $assoc_args_scss = array() );
-        \WP_CLI::line( $assoc_args_scss[0]);
+        \WP_CLI::confirm('Would you like SCSS?', $assoc_args_scss = array());
+        
+        //Create scss
+        $scss_contents = file_get_contents($path.'partials/cli-templates/block-style.scss');
+        $scss_contents = preg_replace('/__BLOCK_NAME__/', $blockName, $scss_contents);
+        $result = file_put_contents($path.'src/scss/common/'.$blockName.'.scss', $scss_contents);
 
-
-
+        if ($result) {
+            \WP_CLI::line( 'SCSS created' );
+        }
         // //Add SCSS file & reference in common
         // file_put_contents();
 
