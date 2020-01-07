@@ -10,8 +10,15 @@
   "css/maps/editor-classic.css": "css/maps/editor-classic-d41d8cd98f.css.map",
   "css/maps/ie.css": "css/maps/ie-d41d8cd98f.css.map",
   "css/maps/login.css": "css/maps/login-5087857066.css.map",
+<<<<<<< HEAD
   "css/maps/main.css": "css/maps/main-ba6adc641b.css.map",
   "js/admin.js": "js/admin-eb73c749fa.js",
   "js/editor-block.js": "js/editor-block-ed49626f7d.js",
   "js/main.js": "js/main-68fa72b8c4.js"
+=======
+  "css/maps/main.css": "css/maps/main-a7189ff0c0.css.map",
+  "js/admin.js": "js/admin-1b122d557c.js",
+  "js/editor-block.js": "js/editor-block-c55337b5ba.js",
+  "js/main.js": "js/main-29c6515391.js"
+>>>>>>> gulpfile
 }

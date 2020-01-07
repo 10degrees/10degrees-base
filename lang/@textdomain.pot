@@ -113,6 +113,7 @@ msgstr ""
 msgid "Share on "
 msgstr ""
 
+<<<<<<< HEAD
 #: partials/cli-templates/block-partial.php:3
 msgid "__BLOCK_NAME__"
 msgstr ""
@@ -121,6 +122,8 @@ msgstr ""
 msgid "Skip __BLOCK_NAME__"
 msgstr ""
 
+=======
+>>>>>>> gulpfile
 #: partials/comment.php:6
 msgid "%1$s"
 msgstr ""

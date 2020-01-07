@@ -40,7 +40,11 @@ class SocialShare {
      */
     removeWebSharebutton() 
     {
+<<<<<<< HEAD
         jQuery(".webshare-list-item").remove();
+=======
+        $(".webshare-list-item").remove();
+>>>>>>> gulpfile
     }
     /**
      * Remove plain share buttons in favor
@@ -48,8 +52,13 @@ class SocialShare {
      */
     removeSocialSharebuttons() 
     {
+<<<<<<< HEAD
         jQuery(".webshare-list-item").each(function(){
             jQuery(this).remove();
+=======
+        $(".share-links li:not(.webshare-list-item)").each(function(){
+            $(this).remove();
+>>>>>>> gulpfile
         });
     }
 }
