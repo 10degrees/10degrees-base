@@ -6,6 +6,11 @@ class SocialShare {
     constructor() 
     {
         var $this = this;
+
+        if(!jQuery(".webshare-list-item").length) {
+            return;
+        }
+        
         $(document).ready(function() {
             if (navigator.share) {
                 $this.addWebShareButtonClickHandler();
@@ -35,8 +40,7 @@ class SocialShare {
      */
     removeWebSharebutton() 
     {
-        let item = document.querySelector(".webshare-list-item");
-        item.parentElement.removeChild(item);
+        jQuery(".webshare-list-item").remove();
     }
     /**
      * Remove plain share buttons in favor
@@ -44,8 +48,8 @@ class SocialShare {
      */
     removeSocialSharebuttons() 
     {
-        document.querySelectorAll(".share-links li:not(.webshare-list-item)").forEach(function(item){
-            item.parentElement.removeChild(item);
+        jQuery(".webshare-list-item").each(function(){
+            jQuery(this).remove();
         });
     }
 }
