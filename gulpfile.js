@@ -60,61 +60,6 @@ async function buildCSS() {
 // Build browser-compatible JS from source JS
 // Rollup is a lightweight module bundler
 async function buildJS() {
-<<<<<<< HEAD
-  return (
-    src(srcFiles.jsPath)
-      .pipe(sourcemaps.init())
-      .pipe(
-        rollup(
-          {
-            // There is no `input` option as rollup integrates into the gulp pipeline
-            external: ["jquery"],
-            plugins: [
-              nodeResolve({ browser: true}),
-              babel({
-                presets: [
-                  ['@babel/preset-env', {
-                    "targets": {
-                      "browsers": [
-                        "> 0.1%"
-                      ]
-                    },
-                    useBuiltIns: false
-                  },
-                ]
-                ],
-                
-              }),
-              terser(),
-            ]
-          },
-          {
-            // Rollups `sourcemap` option is unsupported. Use `gulp-sourcemaps` plugin instead
-            format: "iife",
-            globals: {
-              jquery: "jQuery"
-            }
-          }
-        )
-      )
-      // inlining the sourcemap into the exported .js file
-      .pipe(rev())
-      .pipe(dest("dist/js"))
-      .pipe(
-        rename(function(path) {
-          path.dirname = "/js/" + path.dirname;
-        })
-      )
-      .pipe(
-        rev.manifest(manifestDest, {
-          base: "dist",
-          merge: true
-        })
-      )
-      .pipe(sourcemaps.write())
-      .pipe(dest("dist"))
-  );
-=======
     return (
         src(srcFiles.jsPath)
             .pipe(sourcemaps.init())
@@ -172,7 +117,6 @@ async function buildJS() {
             .pipe(sourcemaps.write())
             .pipe(dest("dist"))
     );
->>>>>>> gulpfile
 }
 
 // Compress and copy images
