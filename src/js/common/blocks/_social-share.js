@@ -5,25 +5,6 @@ class SocialShare {
      */
     constructor() 
     {
-        const shareData = {
-            title: 'MDN',
-            text: 'Learn web development on MDN!',
-            url: 'https://developer.mozilla.org',
-          }
-          
-          const btn = document.querySelector('button');
-          const resultPara = document.querySelector('.result');
-          
-          // Must be triggered some kind of "user activation"
-          btn.addEventListener('click', async () => {
-            try {
-              await navigator.share(shareData)
-            } catch(err) {
-              resultPara.textContent = 'Error: ' + e
-            }
-            resultPara.textContent = 'MDN shared successfully'
-          });
-          
         var $this = this;
         $(document).ready(function() {
             if (navigator.share) {

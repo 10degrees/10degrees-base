@@ -18,6 +18,7 @@ const rollup = require("gulp-better-rollup");
 const babel = require("rollup-plugin-babel");
 const nodeResolve = require("rollup-plugin-node-resolve");
 const { terser } = require("rollup-plugin-terser");
+const commonjs = require("@rollup/plugin-commonjs");
 
 // File paths
 const srcFiles = {
@@ -69,6 +70,7 @@ async function buildJS() {
                         external: ["jquery"],
                         plugins: [
                             nodeResolve({ browser: true }),
+                            commonjs(),
                             babel({
                                 exclude: [/\/core-js\//],
                                 
