@@ -71,13 +71,12 @@ async function buildJS() {
               nodeResolve(),
               babel({
                 presets: [
-                  [
-                    "@babel/preset-env",
-                    {
-                      targets: "> 1%, last 2 versions"
-                    }
-                  ]
-                ]
+                  ['@babel/preset-env', {
+                    "targets":  "> 1%",
+                    "useBuiltIns": "usage",
+                    "corejs": '^2.6.11',
+                  }]
+                ],
               }),
               terser()
             ]

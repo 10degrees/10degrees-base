@@ -46,5 +46,7 @@
     "rollup-plugin-terser": "^5.1.2",
     "slick-carousel": "^1.8.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "core-js": "^2.6.11"
+  }
 }
