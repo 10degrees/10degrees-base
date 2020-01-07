@@ -19,6 +19,9 @@ const babel = require("rollup-plugin-babel");
 const nodeResolve = require("rollup-plugin-node-resolve");
 const { terser } = require("rollup-plugin-terser");
 
+const babelPollyfil = require("@babel/polyfill");
+const coreJS = require("core-js");
+
 // File paths
 const srcFiles = {
   scssPath: "src/scss/**/*.scss",
@@ -67,20 +70,27 @@ async function buildJS() {
           {
             // There is no `input` option as rollup integrates into the gulp pipeline
             external: ["jquery"],
+            
             plugins: [
-              nodeResolve(),
+              nodeResolve({ browser: true}),
               babel({
-                exclude: [/\/core-js\//],
-                babelrc: false,
+               
                 presets: [
                   ['@babel/preset-env', {
-                    "targets":  "> 1%",
-                    "useBuiltIns": "usage",
-                    "corejs": '^2.6.11',
-                  }]
+                    "targets": {
+                      "browsers": [
+                        "> 0.1%"
+                      ]
+                    },
+                    useBuiltIns: false
+                  },
+                ]
                 ],
+                
               }),
-              terser()
+              terser(),
+              babelPollyfil,
+              coreJS
             ]
           },
           {
