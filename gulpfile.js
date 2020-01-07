@@ -70,6 +70,8 @@ async function buildJS() {
             plugins: [
               nodeResolve(),
               babel({
+                exclude: [/\/core-js\//],
+                babelrc: false,
                 presets: [
                   ['@babel/preset-env', {
                     "targets":  "> 1%",
