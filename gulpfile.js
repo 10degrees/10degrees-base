@@ -72,8 +72,7 @@ async function buildJS() {
                             nodeResolve({ browser: true }),
                             commonjs(),
                             babel({
-                                exclude: [/\/core-js\//],
-                                
+                                exclude: [/\/core-js\//], //Prevent circular dependency
                                 presets: [
                                     [
                                         "@babel/preset-env",
@@ -81,12 +80,11 @@ async function buildJS() {
                                             targets: {
                                                 browsers: ["> 0.1%"]
                                             },
-                                            useBuiltIns: "usage",
+                                            useBuiltIns: "usage",//apply pollyfills
                                             corejs: "2",
                                         }
                                     ]
                                 ],
-                                
                             }),
                             terser()
                         ]
