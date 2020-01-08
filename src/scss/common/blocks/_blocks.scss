@@ -1,3 +1,4 @@
+@import "audio";
 @import "blockquote";
 @import "separator";
 @import "table";
@@ -6,7 +7,16 @@
 @import "audio";
 @import "code";
 @import "preformatted";
+@import "file";
+@import "image";
+@import "gallery";
 @import "gravity-forms";
+@import "media-text";
+@import "preformatted";
+@import "table";
+@import "separator";
+@import "social-links";
+@import "social-share";
 
 // ACF Blocks
 @import "accordion";

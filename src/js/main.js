@@ -15,6 +15,7 @@ import ScrollToError from "./common/_scrollToError";
 import Menu from "./common/_Menu";
 import MobileMenu from "./common/_MobileMenu";
 import Accordion from "./common/blocks/_accordion";
+import SocialShare from "./common/blocks/_social-share";
 
 //Vendor
 import Magnific from "./common/_magnific";
@@ -33,6 +34,7 @@ var App = {
             new Magnific().init();
             new Slider().init();
             new Accordion();
+            new SocialShare();
             new Menu("#nav-primary");
             new MobileMenu();
         }

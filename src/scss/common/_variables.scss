@@ -91,3 +91,9 @@ $breakpoint-map: (
     lg: 1024px,
     xl: 1200px
 );
+
+/**
+ * SVG icon defaults
+ */
+ $icon-height: 44px; //Recommended minimum size from Apples Human Interface Guidelines
+ $icon-width: 44px; //Recommended minimum size from Apples Human Interface Guidelines

@@ -1,14 +1,19 @@
 .ginput_right.address_country,
 .ginput_container_select {
-  select {
-    height: 36px;
-  }
+    select {
+        height: 36px;
+    }
 }
 
 .gform_wrapper {
-  input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="image"]):not([type="file"]),
-  textarea {
-    border: 1px solid;
-    border-radius: 5px;
-  }
+    input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="image"]):not([type="file"]),
+    textarea {
+        border: 1px solid;
+        border-radius: 5px;
+    }
+}
+
+.gform_button {
+    @include button();
+    @include button-colours(--primary);
 }
