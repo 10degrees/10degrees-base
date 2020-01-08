@@ -6,7 +6,6 @@
  * Then call it on the relevant page below or in the common function to be run on every page.
  *
  */
-import "@babel/polyfill/dist/polyfill";
 //Utilities
 import AjaxForm from "./common/_ajaxForm";
 import ScrollToId from "./common/_scrollToId";

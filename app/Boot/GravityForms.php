@@ -5,6 +5,8 @@ namespace App\Boot;
 /**
  * Gravity forms integration
  *
+ * Set options for integration in setOptions()
+ *
  * @category Theme
  * @package  TenDegrees/10degrees-base
  * @author   10 Degrees <wordpress@10degrees.uk>
@@ -14,20 +16,83 @@ namespace App\Boot;
  */
 class GravityForms
 {
+
+    protected $options;
+
     /**
      * Constructor
      */
     public function __construct()
     {
-        add_filter('gform_submit_button', [$this, 'convertGFormsToButton'], 10, 5);
-        add_filter('gform_next_button', [$this, 'convertGFormsToButton'], 10, 5);
-        add_filter('gform_previous_button', [$this, 'convertGFormsToButton'], 10, 5);
-        add_filter('gform_address_types', [$this, 'ukAddressFormat'], 10, 2);
-        //add_filter( 'gform_field_validation', [$this, 'ukCustomAddressValidation'], 10, 4 );
-        // Enable the "hidden" setting for labels
-        add_filter('gform_enable_field_label_visibility_settings', '__return_true');
+        $this->setOptions();
+        $this->main();
     }
+
+    /**
+     * Set options for this class
+     *
+     * @return void
+     */
+    private function setOptions()
+    {
+        $this->options =  [
+            'disable_default_css' => true,
+            'override_default_buttons' => false,
+            'override_address_types' => false,
+        ];
+    }
+
+    /**
+     * Main method
+     *
+     * @return void
+     */
+    private function main()
+    {
+        $this->disableCSS();
+        $this->overrideDefaultButtons();
+        $this->overrideAddressFields();
+    }
+
     
+    /**
+     * Override buttons
+     *
+     * @return void
+     */
+    private function overrideAddressFields()
+    {
+        if ($this->options['override_default_buttons']) {
+            add_filter('override_address_types', [$this, 'ukAddressFormat'], 10, 2);
+        }
+    }
+
+    /**
+     * Disable Gravity forms default CSS
+     *
+     * @return void
+     */
+    private function disableCSS()
+    {
+        if ($this->options['disable_default_css']) {
+            add_filter('pre_option_rg_gforms_disable_css', '__return_true');
+        }
+    }
+
+    /**
+     * Replace default previous/next/submit buttonas
+     *
+     * @return void
+     */
+    public function overrideDefaultButtons()
+    {
+        if ($this->options['override_default_buttons']) {
+            add_filter('gform_submit_button', [$this, 'convertGFormsToButton'], 10, 5);
+            add_filter('gform_next_button', [$this, 'convertGFormsToButton'], 10, 5);
+            add_filter('gform_previous_button', [$this, 'convertGFormsToButton'], 10, 5);
+        }
+    }
+
     /**
      * Change Gravity Forms form nav inputs to a button elements
      *
@@ -97,7 +162,7 @@ class GravityForms
      *
      * @return array $result
      */
-    public function ukCustomAddressValidation($result, $value, $form, $field)
+    private function ukCustomAddressValidation($result, $value, $form, $field)
     {
         if ($result['is_valid']) {
             foreach ($form['fields'] as &$field) {
