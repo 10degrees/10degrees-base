@@ -23,6 +23,9 @@
 
         if (!empty($output)) {
             echo  '<ul class="social-links">' . join(' ', $output) . '</ul>';
+        } else if(is_admin())  {
+            //Prompt user to add links if none supplied
+            echo '<a href="/wp-admin/admin.php?page=wpseo_social" target="__blank">'.__('Please add your social media links (opens in new tab)', '@textdomain').'</a>';
         }
         ?>
 
