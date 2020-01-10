@@ -99,7 +99,7 @@ wp.domReady(() => {
     wp.blocks.unregisterBlockType("core/tag-cloud");
 
     // Embeds
-    // wp.blocks.unregisterBlockType("core-embed/wordpress");
+    wp.blocks.unregisterBlockType("core-embed/wordpress");
     wp.blocks.unregisterBlockType("core-embed/soundcloud");
     wp.blocks.unregisterBlockType("core-embed/spotify");
     wp.blocks.unregisterBlockType("core-embed/flickr");
