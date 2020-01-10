@@ -1,40 +1,80 @@
-<?php if (count($socialNetworks)) : ?>
-    <div <?php td_block_class($block, 'social-share-block'); ?>>
+<?php
+$url = urlencode(rtrim($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], '/'));
+$title = urlencode(get_the_title());
+$excerpt = urlencode(get_the_excerpt());
+$featured_image_url = get_the_post_thumbnail_url();//Fallback to site logo
+if (!$featured_image_url && $logo = get_field('site_logo', 'option')) {
+    $featured_image_url =  wp_get_attachment_image_src($logo['id']);
+}
 
-        <span class="screen-reader-text"><?php esc_html_e('Share this page', '@textdomain'); ?></span>
+$socialNetworks = [];
+if (get_field('show_facebook')) {
+    $socialNetworks['facebook'] = [
+        'url' =>  'https://www.facebook.com/sharer/sharer.php?u='.$url.'&t='.$title,
+        'icon' => 'social-icons/facebook.svg'
+    ];
+}
 
-        <a href="#after-share-links" class="screen-reader-text screen-reader-text--display-on-focus screen-reader-text--skiplink"><?php esc_html_e('Skip sharing options', '@textdomain'); ?></a>
+//NB. LinkedIn share throws an error for any URL with the .local TLD
+if (get_field('show_linkedin')) {
+    $socialNetworks['linkedin'] = [
+        'url' =>  'https://www.linkedin.com/sharing/share-offsite/?url='.$url,
+        'icon' => 'social-icons/linkedin.svg'
+    ];
+}
 
-        <div class="container">
+if (get_field('show_twitter')) {
+    $socialNetworks['twitter'] = [
+        'url' =>  'http://twitter.com/share?text='.$title.'+'.$url.'&url='.$url,
+        'icon' => 'social-icons/twitter.svg'
+    ];
+}
 
-            <ul class="share-links">
+if (get_field('show_pinterest')) {
+    $socialNetworks['pinterest'] = [
+        'url' => 'http://pinterest.com/pin/create/button/?url='.$url.'&media='.$featured_image_url.'&description='.$excerpt,
+        'icon' => 'social-icons/pinterest.svg'
+    ];
+}
 
-                <li class="webshare-list-item">
-                    <button class="webshare-button">
-                        <?php echo td_get_svg('social-icons/share.svg'); ?>
-                        <p><?php _e('Share', '@textdomain'); ?></p>
-                    </button>
-                </li>
+if (count($socialNetworks)) :?>
+<div <?php td_block_class($block, 'social-share-block'); ?>>
 
-                <?php 
-                foreach ($socialNetworks as $network => $options) : ?>
-                    <li>
-                        <a href="<?php echo $options['url']; ?>">
-                            <?php echo td_get_svg($options['icon']); ?>
-                            <span class="screen-reader-text">
+    <span class="screen-reader-text"><?php esc_html_e('Share this page', '@textdomain'); ?></span>
+
+    <a href="#after-share-links" class="screen-reader-text screen-reader-text--display-on-focus screen-reader-text--skiplink"><?php esc_html_e('Skip sharing options', '@textdomain'); ?></a>
+
+    <div class="container">
+
+        <ul class="share-links">
+
+            <li class="webshare-list-item">
+                <button class="webshare-button">
+                    <?php echo td_get_svg('social-icons/share.svg'); ?>
+                    <p><?php _e('Share', '@textdomain'); ?></p>
+                </button>
+            </li>
+
+            <?php
+            foreach ($socialNetworks as $network => $options) : ?>
+                <li>
+                    <a href="<?php echo $options['url']; ?>">
+                        <?php echo td_get_svg($options['icon']); ?>
+                        <span class="screen-reader-text">
                             <?php
-                                _e('Share on ', 'lboxcomms');
-                                echo ucwords($network); ?>
-                            </span>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
+                            _e('Share on ', 'lboxcomms');
+                            echo ucwords($network); ?>
+                        </span>
+                    </a>
+                </li>
+            <?php endforeach; ?>
 
-            </ul>
-
-        </div>
-
-        <div id="after-share-links"></div>
+        </ul>
 
     </div>
+
+    <div id="after-share-links"></div>
+
+</div>
+
 <?php endif; ?>

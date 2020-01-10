@@ -48,51 +48,12 @@ class SocialShare extends AbstractBlockRegistration
      */
     public function render($block)
     {
+        // convert name ("acf/testimonial") into path friendly slug ("testimonial")
         $slug = str_replace('acf/', '', $block['name']);
-        $url = urlencode(rtrim($_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], '/'));
-        $title = urlencode(get_the_title());
-        $excerpt = urlencode(get_the_excerpt());
-        $featured_image_url = get_the_post_thumbnail_url();//Fallback to site logo
-        if (!$featured_image_url && $logo = get_field('site_logo', 'option')) {
-            $featured_image_url =  wp_get_attachment_image_src($logo['id']);
+        
+        // include a template part from within the "views/blocks" folder
+        if (file_exists(get_theme_file_path("/partials/blocks/{$slug}.php"))) {
+            include get_theme_file_path("/partials/blocks/{$slug}.php");
         }
-
-        $options = $block['data'];
-
-        // Check both field name and key as updates to the options in the admin area change which one is available
-        $socialNetworks = [];
-        if ($options['show_facebook'] || $options['key_show_facebook']) {
-            $socialNetworks['facebook'] = [
-                'url' =>  'https://www.facebook.com/sharer/sharer.php?u='.$url.'&t='.$title,
-                'icon' => 'social-icons/facebook.svg'
-            ];
-        }
-
-        //NB. LinkedIn share throws an error for any URL with the .local TLD
-        if ($options['show_linkedin'] || $options['key_show_linkedin']) {
-            $socialNetworks['linkedin'] = [
-                'url' =>  'https://www.linkedin.com/sharing/share-offsite/?url='.$url,
-                'icon' => 'social-icons/linkedin.svg'
-            ];
-        }
-
-        if ($options['show_twitter'] || $options['key_show_twitter']) {
-            $socialNetworks['twitter'] = [
-                'url' =>  'http://twitter.com/share?text='.$title.'+'.$url.'&url='.$url,
-                'icon' => 'social-icons/twitter.svg'
-            ];
-        }
-
-        if ($options['show_pinterest'] || $options['key_show_pinterest']) {
-            $socialNetworks['pinterest'] = [
-                'url' => 'http://pinterest.com/pin/create/button/?url='.$url.'&media='.$featured_image_url.'&description='.$excerpt,
-                'icon' => 'social-icons/pinterest.svg'
-            ];
-        }
-
-        echo td_view("partials/blocks/{$slug}", [
-            'block' => $block,
-            'socialNetworks' => $socialNetworks
-        ]);
     }
 }

@@ -32,7 +32,7 @@ class SocialShare extends AbstractFieldRegistration
                 'title' => 'Block: Social Share',
                 'fields' => array(
                     array(
-                        'key' => 'key_show_facebook',
+                        'key' => 'field_5e0f551eee2ed',
                         'label' => 'Show Facebook',
                         'name' => 'show_facebook',
                         'type' => 'true_false',
@@ -51,7 +51,7 @@ class SocialShare extends AbstractFieldRegistration
                         'ui_off_text' => '',
                     ),
                     array(
-                        'key' => 'key_show_linkedin',
+                        'key' => 'field_5e0f5537ee2ee',
                         'label' => 'Show Linkedin',
                         'name' => 'show_linkedin',
                         'type' => 'true_false',
@@ -70,7 +70,7 @@ class SocialShare extends AbstractFieldRegistration
                         'ui_off_text' => '',
                     ),
                     array(
-                        'key' => 'key_show_twitter',
+                        'key' => 'field_5e0f5542ee2ef',
                         'label' => 'Show Twitter',
                         'name' => 'show_twitter',
                         'type' => 'true_false',
@@ -89,7 +89,7 @@ class SocialShare extends AbstractFieldRegistration
                         'ui_off_text' => '',
                     ),
                     array(
-                        'key' => 'key_show_pinterest',
+                        'key' => 'field_5e0f554aee2f0',
                         'label' => 'Show Pinterest',
                         'name' => 'show_pinterest',
                         'type' => 'true_false',
