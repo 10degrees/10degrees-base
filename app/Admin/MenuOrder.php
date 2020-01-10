@@ -33,6 +33,7 @@ class MenuOrder
         return array(
             'index.php',
             'separator1',
+            'admin.php?page=wpengine-common',
             'edit.php',
             'edit.php?post_type=page'
         );
