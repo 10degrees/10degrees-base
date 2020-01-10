@@ -1,49 +1,44 @@
 /*
  * Styles for front end
  */
-@import "common/_reset.scss";
 
-@import "mixins/_prop";
-@import "mixins/_screen-reader-text";
-@import "mixins/_bp";
-@import "mixins/_bg-cover";
-@import "mixins/_bp";
-@import "mixins/_buttons";
-@import "mixins/_clearfix";
-@import "mixins/_custom-checkbox";
-@import "mixins/_embed-container";
-@import "mixins/_ie-only";
-@import "mixins/_image";
-@import "mixins/_list-unstyled";
-@import "mixins/_old-ie";
-@import "mixins/_screen-reader-text";
-@import "mixins/_containers";
+/* utils */
+@import "utils/utils";
 
-@import "common/_variables";
-@import "common/_root";
-@import "common/_colours";
-@import "common/_type";
-@import "common/_social-brands";
-@import "common/_svg";
-@import "common/_grid";
-@import "common/blocks/_blocks";
+/* reset */
+@import "common/reset";
 
-@import "components/_sticky-footer";
-@import "components/_header";
-@import "components/_footer";
-@import "components/_block-wrapper";
-@import "components/_pagination";
-@import "components/_embeds";
-@import "components/_magnific-popup";
-@import "components/_nav-primary";
-@import "components/_forms";
+/* vendor */
+@import "vendor/magnific-popup/main";
 
-@import "templates/_index";
-@import "templates/_404";
-@import "templates/_page";
+/* blocks */
+@import "common/blocks/blocks";
 
-@import "vendor/magnific-popup/_main";
+/* common */
+@import "common/root";
+@import "common/colours";
+@import "common/type";
+@import "common/social-brands";
+@import "common/svg";
+@import "common/grid";
 
+/* components */
+@import "components/sticky-footer";
+@import "components/header";
+@import "components/footer";
+@import "components/block-wrapper";
+@import "components/pagination";
+@import "components/embeds";
+@import "components/magnific-popup";
+@import "components/nav-primary";
+@import "components/forms";
+
+/* templates */
+@import "templates/index";
+@import "templates/404";
+@import "templates/page";
+
+/* shame */
 article > * {
     &.wp-block-quote.is-style-large {
         margin: 0;
@@ -54,46 +49,11 @@ article > * {
     }
 }
 
-// mixins
-// typography
-// containers
-// breakpoints
-
-// variables
-
-// @import "mixins/_mixins";
-// @import "common/_global";
-// @import "common/_type";
-// @import "common/_utilities";
-// // Vendor
-// @import "vendor/grid/_grid";
-// @import "vendor/animate/_animate";
-
-// @import "vendor/_datepicker";
-// @import "vendor/_slick";
-// // 10° components
-// @import "components/_breadcrumbs";
-// @import "components/_fancy-gallery";
-// @import "components/_menu-icon"; // */ TO-DO Remove in favour of SVG/*
-// @import "components/_menu";
-// @import "components/_pagination";
-// @import "components/_wp-classes";
-// @import "components/_accordion"; // */ TO-DO Remove in favour of 10up accordion/*
-// // @import "components/_fonts";
-// @import "components/_svg-icons";
-// @import "components/_gravity-forms"; // Gravity Forms simple overrides */ TO-DO /*
-// @import "components/_forms"; // Gravity Forms simple overrides */ TO-DO /*
-// // Global base
-// @import "common/_base";
-// // Templates
-// @import "templates/_front-page";
-// @import "templates/_page";
-// @import "templates/_page-builder";
-// @import "templates/woocommerce/_woocommerce";
-// // Print
-// @media only print {
-//     @import "common/_print";
-// }
-
-// @import "common/_type.scss";
-// @import "mixins/_index.scss";
+/* removed from mixins */
+.screen-reader-text {
+    @include screen-reader-text();
+}
+/* removed from mixins */
+.screen-reader-text--display-on-focus:focus {
+    @include sr-only-show-on-focus();
+}

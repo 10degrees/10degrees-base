@@ -1,0 +1,87 @@
+/* utils */
+/**
+ * This file imports all variables, mixins and functions. There should not be
+ * anything that directly generates output.
+ */
+/* variables */
+/*
+ * Project variables
+ */
+/* Colours */
+/*
+ * Colour variables.
+ *
+ * If you alter variable names, also update EditorColourPalette.php
+ * These cascade to block editor colour palette.
+ *
+ * Sass variables need to be interpolated
+ *
+ * Don't use --text as this causes a collision with WordPress default classes.
+ */
+/*
+ * Layout variables.
+ *
+ * Used for the block-wrapper and more layout options.
+ */
+/* Typography */
+/*
+ * Breakpoint variables.
+ *
+ * Used for bp() mixin and bp() function
+ */
+/**
+ * SVG icon defaults
+ */
+/* mixins */
+/*
+ * Generate a media query based on convenient names such as sm, md , lg. The
+ * names are set in a $breakpoints-map.
+ *
+ * Usage:
+ *
+ * @include bp(sm); // @media only screen and (min-width: 480px)
+ *
+ * @include bp($max: sm);  // @media only screen and (max-width: 480px)
+ *
+ * @include bp(sm, md);  // @media only screen and (min-width: 480px) and (max-width: 768px)
+ *
+ * @include bp(sm, $type: print);  // @media print and (min-width: 480px)
+ *
+ * @include bp(sm, md, print);  // @media print and (min-width: 480px) and (max-width: 768px)
+ */
+/**
+ * Button mixins.
+ *
+ * For WordPress to work with buttons more efficiently, we seperate colours from
+ * the rest of the button styles. This reduces the amount of duplicate CSS when
+ * compiled.
+ *
+ * Buttons have the class .link-button.
+ * Additional classes can be a combination of:
+ *   .is-style-full
+ *   .is-style-outline
+ *   .has-[colour-name]-button-color
+*/
+/**
+ * The button styles.
+ */
+/**
+ * The colours for a regular button.
+ */
+/**
+ * The colours for an outlined button.
+ */
+/* aliases - for the heathens who bastardise the English language */
+/**
+ * Checkbox override
+ */
+/**
+ * This mixin targets Internet Explorer 10 and 11. Edge does not match with this
+ * mixin.
+ */
+/* functions */
+/**
+ * Return the breakpoint from the map.
+ */
+
+/*# sourceMappingURL=maps/editor-classic-66ea8db8ae.css.map */

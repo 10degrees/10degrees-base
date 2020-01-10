@@ -2,17 +2,12 @@
  * Styles for /wp-admin
  */
 
-//  @import "common/_reset.scss";
-@import "mixins/prop";
+/* utils */
+@import "utils/utils";
 
-//  @import "mixins/_screen-reader-text";
-@import "mixins/_bp";
+/* common */
+@import "common/root";
 
-@import "common/_variables";
-@import "common/_root";
-// @import "common/_type.scss";
-//  @import "common/_social-brands.scss";
-
-//  @import "common/container";
-//  @import "common/header";
-//  @import "common/footer";
+/* admin */
+@import "admin/block-editor";
+@import "admin/type";

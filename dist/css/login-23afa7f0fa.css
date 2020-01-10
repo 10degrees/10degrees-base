@@ -1,0 +1,198 @@
+/*
+ * Styles for /wp-login.php
+ */
+/* utils */
+/**
+ * This file imports all variables, mixins and functions. There should not be
+ * anything that directly generates output.
+ */
+/* variables */
+/*
+ * Project variables
+ */
+/* Colours */
+/*
+ * Colour variables.
+ *
+ * If you alter variable names, also update EditorColourPalette.php
+ * These cascade to block editor colour palette.
+ *
+ * Sass variables need to be interpolated
+ *
+ * Don't use --text as this causes a collision with WordPress default classes.
+ */
+/*
+ * Layout variables.
+ *
+ * Used for the block-wrapper and more layout options.
+ */
+/* Typography */
+/*
+ * Breakpoint variables.
+ *
+ * Used for bp() mixin and bp() function
+ */
+/**
+ * SVG icon defaults
+ */
+/* mixins */
+/*
+ * Generate a media query based on convenient names such as sm, md , lg. The
+ * names are set in a $breakpoints-map.
+ *
+ * Usage:
+ *
+ * @include bp(sm); // @media only screen and (min-width: 480px)
+ *
+ * @include bp($max: sm);  // @media only screen and (max-width: 480px)
+ *
+ * @include bp(sm, md);  // @media only screen and (min-width: 480px) and (max-width: 768px)
+ *
+ * @include bp(sm, $type: print);  // @media print and (min-width: 480px)
+ *
+ * @include bp(sm, md, print);  // @media print and (min-width: 480px) and (max-width: 768px)
+ */
+/**
+ * Button mixins.
+ *
+ * For WordPress to work with buttons more efficiently, we seperate colours from
+ * the rest of the button styles. This reduces the amount of duplicate CSS when
+ * compiled.
+ *
+ * Buttons have the class .link-button.
+ * Additional classes can be a combination of:
+ *   .is-style-full
+ *   .is-style-outline
+ *   .has-[colour-name]-button-color
+*/
+/**
+ * The button styles.
+ */
+/**
+ * The colours for a regular button.
+ */
+/**
+ * The colours for an outlined button.
+ */
+/* aliases - for the heathens who bastardise the English language */
+/**
+ * Checkbox override
+ */
+/**
+ * This mixin targets Internet Explorer 10 and 11. Edge does not match with this
+ * mixin.
+ */
+/* functions */
+/**
+ * Return the breakpoint from the map.
+ */
+/* reset */
+/*
+ * This is Andy Bell's modern CSS reset
+ * Modern browsers don't need the normalize.css heavy approach
+ * @link https://hankchizljaw.com/wrote/a-modern-css-reset/
+ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0; }
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0; }
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  background-color: white; }
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none; }
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto; }
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block; }
+
+/* Natural flow and rhythm in articles by default
+ * This is opinionated and intended to make working with component-based systems easier
+ * If you don't know about the lobotomised owl, search that term for the ALA article
+ * @link https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/
+ */
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit; }
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important; } }
+
+.login {
+  background: white;
+  /* Set the size of the login logo */
+  /* Hide the "Back to (website)" link */
+  /* Hide the "Log in" link on the last password page, as it's pointless*/
+  /* Center align the Lost Password link */ }
+  .login h1 a {
+    background-image: url("../img/logo-login.svg");
+    background-size: 250px;
+    width: 320px;
+    height: 150px; }
+  .login p#backtoblog {
+    display: none; }
+  .login.login-action-lostpassword p#nav {
+    display: none; }
+  .login.login-action-login p#nav {
+    text-align: center; }
+  .login input#wp-submit {
+    background-color: blue;
+    border-color: #0000e6; }
+    .login input#wp-submit:hover, .login input#wp-submit:focus {
+      background-color: #0000cc;
+      border-color: #0000b3; }
+  .login .message {
+    border-left-color: blue; }
+  .login form {
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .login .button-primary {
+    text-shadow: none; }
+
+.wp-admin #wp-auth-check-wrap #wp-auth-check {
+  background-color: white; }
+
+/*# sourceMappingURL=maps/login-23afa7f0fa.css.map */

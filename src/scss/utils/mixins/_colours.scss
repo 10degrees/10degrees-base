@@ -1,0 +1,25 @@
+// helpful wrapper for colour
+@mixin colour($value) {
+    @include prop(color, $value);
+}
+
+// helpful wrapper for background colour
+@mixin background-colour($value) {
+    @include prop(background-color, $value);
+}
+
+// helpful wrapper for border colour
+@mixin border-colour($value) {
+    @include prop(border-color, $value);
+}
+
+/* aliases - for the heathens who bastardise the English language */
+@mixin color($value) {
+    @include colour($value);
+}
+@mixin background-color($value) {
+    @include background-colour($value);
+}
+@mixin border-color($value) {
+    @include border-colour($value);
+}

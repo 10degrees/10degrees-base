@@ -1,0 +1,9 @@
+/**
+ * This mixin targets Internet Explorer 10 and 11. Edge does not match with this
+ * mixin.
+ */
+@mixin ie-only {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
