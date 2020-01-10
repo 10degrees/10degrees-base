@@ -80,11 +80,11 @@ async function buildJS() {
                                             targets: {
                                                 browsers: ["> 0.1%"]
                                             },
-                                            useBuiltIns: "usage",//apply pollyfills
-                                            corejs: "2",
+                                            useBuiltIns: "usage", //apply pollyfills
+                                            corejs: "3"
                                         }
                                     ]
-                                ],
+                                ]
                             }),
                             terser()
                         ]
