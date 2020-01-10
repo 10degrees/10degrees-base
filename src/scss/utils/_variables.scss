@@ -1,5 +1,8 @@
-/*
+/**
  * Project variables
+ *
+ * All the Sass variables used throughout the theme. This file shouldn't output
+ * any actual CSS on compilation.
  */
 
 /* Colours */
@@ -49,7 +52,7 @@ $colour-map: (
 /*
  * Layout variables.
  *
- * Used for the block-wrapper and more layout options.
+ * Used for the wrapper and more layout options.
  */
 $layout-map: (
     --horizontal-gap: 1rem,
@@ -95,5 +98,5 @@ $breakpoint-map: (
 /**
  * SVG icon defaults
  */
- $icon-height: 44px; //Recommended minimum size from Apples Human Interface Guidelines
- $icon-width: 44px; //Recommended minimum size from Apples Human Interface Guidelines
+$icon-height: 44px; //Recommended minimum size from Apples Human Interface Guidelines
+$icon-width: 44px; //Recommended minimum size from Apples Human Interface Guidelines

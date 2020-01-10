@@ -17,66 +17,6 @@ msgstr ""
 msgid "Sorry, that page does not exist."
 msgstr ""
 
-#: base.php:25
-msgid "Skip to main content"
-msgstr ""
-
-#: base.php:26
-msgid "Skip to footer"
-msgstr ""
-
-#: index.php:18
-msgid "Sorry, no results were found."
-msgstr ""
-
-#: partials/comment.php:6
-msgid "%1$s"
-msgstr ""
-
-#: partials/comment.php:9
-msgid "(Edit)"
-msgstr ""
-
-#: partials/comment.php:13
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: partials/comments.php:18
-msgid "&larr; Older comments"
-msgstr ""
-
-#: partials/comments.php:21
-msgid "Newer comments &rarr;"
-msgstr ""
-
-#: partials/comments.php:29, partials/comments.php:33
-msgid "Comments are closed."
-msgstr ""
-
-#: partials/footer.php:15
-msgid "WordPress by"
-msgstr ""
-
-#: partials/footer.php:15
-msgid "10 Degrees"
-msgstr ""
-
-#: partials/header.php:9
-msgid "Add a logo in Site settings"
-msgstr ""
-
-#: partials/header.php:15
-msgid "Toggle Navigation"
-msgstr ""
-
-#: partials/post-header.php:5
-msgid "By"
-msgstr ""
-
-#: templates/custom.php:3
-msgid "Custom"
-msgstr ""
-
 #: app/Admin/EditorColourPalette.php:38
 msgid "Primary"
 msgstr ""
@@ -137,6 +77,18 @@ msgstr ""
 msgid "Page Not Found"
 msgstr ""
 
+#: base.php:25
+msgid "Skip to main content"
+msgstr ""
+
+#: base.php:26
+msgid "Skip to footer"
+msgstr ""
+
+#: index.php:18
+msgid "Sorry, no results were found."
+msgstr ""
+
 #: partials/blocks/social-links.php:3
 msgid "Find us on social media"
 msgstr ""
@@ -149,15 +101,15 @@ msgstr ""
 msgid "Please add your social media links (opens in new tab)"
 msgstr ""
 
-#: partials/blocks/social-share.php:4
+#: partials/blocks/social-share.php:43
 msgid "Share this page"
 msgstr ""
 
-#: partials/blocks/social-share.php:6
+#: partials/blocks/social-share.php:45
 msgid "Skip sharing options"
 msgstr ""
 
-#: partials/blocks/social-share.php:15
+#: partials/blocks/social-share.php:54
 msgid "Share"
 msgstr ""
 
@@ -167,4 +119,52 @@ msgstr ""
 
 #: partials/cli-templates/block-partial.php:5
 msgid "Skip __BLOCK_NAME__"
+msgstr ""
+
+#: partials/comment.php:6
+msgid "%1$s"
+msgstr ""
+
+#: partials/comment.php:9
+msgid "(Edit)"
+msgstr ""
+
+#: partials/comment.php:13
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: partials/comments.php:18
+msgid "&larr; Older comments"
+msgstr ""
+
+#: partials/comments.php:21
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: partials/comments.php:29, partials/comments.php:33
+msgid "Comments are closed."
+msgstr ""
+
+#: partials/footer.php:15
+msgid "WordPress by"
+msgstr ""
+
+#: partials/footer.php:15
+msgid "10 Degrees"
+msgstr ""
+
+#: partials/header.php:9
+msgid "Add a logo in Site settings"
+msgstr ""
+
+#: partials/header.php:15
+msgid "Toggle Navigation"
+msgstr ""
+
+#: partials/post-header.php:5
+msgid "By"
+msgstr ""
+
+#: templates/custom.php:3
+msgid "Custom"
 msgstr ""

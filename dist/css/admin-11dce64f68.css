@@ -1,0 +1,188 @@
+@charset "UTF-8";
+/*
+ * Styles for /wp-admin
+ */
+/* utils */
+/**
+ * This file imports all variables, mixins and functions. There should not be
+ * anything that directly generates output.
+ */
+/* variables */
+/**
+ * Project variables
+ *
+ * All the Sass variables used throughout the theme. This file shouldn't output
+ * any actual CSS on compilation.
+ */
+/* Colours */
+/*
+ * Colour variables.
+ *
+ * If you alter variable names, also update EditorColourPalette.php
+ * These cascade to block editor colour palette.
+ *
+ * Sass variables need to be interpolated
+ *
+ * Don't use --text as this causes a collision with WordPress default classes.
+ */
+/*
+ * Layout variables.
+ *
+ * Used for the wrapper and more layout options.
+ */
+/* Typography */
+/*
+ * Breakpoint variables.
+ *
+ * Used for bp() mixin and bp() function
+ */
+/**
+ * SVG icon defaults
+ */
+/* mixins */
+/*
+ * Generate a media query based on convenient names such as sm, md , lg. The
+ * names are set in a $breakpoints-map.
+ *
+ * Usage:
+ *
+ * @include bp(sm); // @media only screen and (min-width: 480px)
+ *
+ * @include bp($max: sm);  // @media only screen and (max-width: 480px)
+ *
+ * @include bp(sm, md);  // @media only screen and (min-width: 480px) and (max-width: 768px)
+ *
+ * @include bp(sm, $type: print);  // @media print and (min-width: 480px)
+ *
+ * @include bp(sm, md, print);  // @media print and (min-width: 480px) and (max-width: 768px)
+ */
+/**
+ * Button mixins.
+ *
+ * For WordPress to work with buttons more efficiently, we seperate colours from
+ * the rest of the button styles. This reduces the amount of duplicate CSS when
+ * compiled.
+ *
+ * Buttons have the class .link-button.
+ * Additional classes can be a combination of:
+ *   .is-style-full
+ *   .is-style-outline
+ *   .has-[colour-name]-button-color
+*/
+/**
+ * The button styles.
+ */
+/**
+ * The colours for a regular button.
+ */
+/**
+ * The colours for an outlined button.
+ */
+/* aliases - for the heathens who bastardise the English language */
+/**
+ * Checkbox override
+ */
+/**
+ * This mixin targets Internet Explorer 10 and 11. Edge does not match with this
+ * mixin.
+ */
+/* functions */
+/**
+ * Return the breakpoint from the map.
+ */
+/* common */
+/*
+ * CSS custom properties
+ * We can finally spell "colour" correctly 👍
+ *
+ * Custom properties can be applied to html or :root
+ * :root will target root selector of SVGs as well, for example
+ */
+:root {
+  --primary: red;
+  --primary-text: #fff;
+  --primary-hover: darkred;
+  --secondary: green;
+  --secondary-text: #fff;
+  --secondary-hover: darkgreen;
+  --tertiary: pink;
+  --tertiary-text: #212121;
+  --tertiary-hover: purple;
+  --white: #fff;
+  --white-text: #212121;
+  --white-hover: #eeeeee;
+  --body-text: #212121;
+  --body-text-text: #fff;
+  --body-text-hover: #616161;
+  --link: blue;
+  --link-hover: darkblue;
+  --horizontal-gap: 1rem;
+  --vertical-gap: 2rem;
+  --max-content-width: 920px;
+  --max-container-width: 1200px; }
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; }
+
+.screen-reader-text--display-on-focus:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
+/* admin */
+.editor-styles-wrapper {
+  font-family: var(--font-family) !important; }
+
+/* Post title width */
+.editor-post-title__block.wp-block {
+  max-width: var(--max-content-width);
+  /* Post title styling */ }
+  .editor-post-title__block.wp-block .editor-post-title__input {
+    font-family: var(--font-family) !important; }
+
+/* Main column width */
+.wp-block {
+  max-width: var(--max-content-width);
+  /* Wide column width */
+  /* Full column width */ }
+  .wp-block[data-align="wide"] {
+    max-width: var(--max-container-width); }
+  .wp-block[data-align="full"] {
+    max-width: none; }
+
+.wp-block-embed {
+  min-width: 100%; }
+  .wp-block-embed iframe {
+    max-width: 100% !important; }
+
+.acf-accordion[class*='block-'],
+.acf-accordion[class^='block-'] {
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+.editor-post-title .editor-post-title__input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
+
+/*# sourceMappingURL=maps/admin-11dce64f68.css.map */

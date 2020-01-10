@@ -1,55 +1,60 @@
 /*
  * Styles for /wp-login.php
  */
-@import "common/_variables";
+/* utils */
+@import "utils/utils";
+
+/* reset */
+@import "common/reset";
+@import "common/screen-reader";
 
 $brand: blue;
 $login-color: $brand;
 .login {
-  background: white;
-  /* Set the size of the login logo */
-  h1 a {
-    background-image: url("../img/logo-login.svg");
-    background-size: 250px;
-    width: 320px;
-    height: 150px;
-  }
-  /* Hide the "Back to (website)" link */
-  p#backtoblog {
-    display: none;
-  }
-  /* Hide the "Log in" link on the last password page, as it's pointless*/
-  &.login-action-lostpassword p#nav {
-    display: none;
-  }
-  /* Center align the Lost Password link */
-  &.login-action-login p#nav {
-    text-align: center;
-  }
-  input#wp-submit {
-    background-color: $login-color;
-    border-color: darken($login-color, 5%);
-    &:hover,
-    &:focus {
-      background-color: darken($login-color, 10%);
-      border-color: darken($login-color, 15%);
+    background: white;
+    /* Set the size of the login logo */
+    h1 a {
+        background-image: url("../img/logo-login.svg");
+        background-size: 250px;
+        width: 320px;
+        height: 150px;
     }
-  }
-  .message {
-    border-left-color: $login-color;
-  }
-  form {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-  .button-primary {
-    text-shadow: none;
-  }
+    /* Hide the "Back to (website)" link */
+    p#backtoblog {
+        display: none;
+    }
+    /* Hide the "Log in" link on the last password page, as it's pointless*/
+    &.login-action-lostpassword p#nav {
+        display: none;
+    }
+    /* Center align the Lost Password link */
+    &.login-action-login p#nav {
+        text-align: center;
+    }
+    input#wp-submit {
+        background-color: $login-color;
+        border-color: darken($login-color, 5%);
+        &:hover,
+        &:focus {
+            background-color: darken($login-color, 10%);
+            border-color: darken($login-color, 15%);
+        }
+    }
+    .message {
+        border-left-color: $login-color;
+    }
+    form {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .button-primary {
+        text-shadow: none;
+    }
 }
 
 // Match colours to modal shown when the login cookie expires
 .wp-admin {
-  #wp-auth-check-wrap #wp-auth-check {
-    background-color: white;
-  }
+    #wp-auth-check-wrap #wp-auth-check {
+        background-color: white;
+    }
 }

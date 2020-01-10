@@ -1,19 +1,24 @@
 //@import "common/variables";
 //@import "common/_root";
 
-@import "common/_variables";
+/* utils */
+@import "utils/utils";
 
-@import "mixins/_prop";
-@import "mixins/_bp";
-@import "mixins/_buttons";
+/* common */
+//@import "common/root";
 
 .editor-styles-wrapper {
-    @import "admin/_type";
-    @import "common/_social-brands";
-    @import "common/_svg";
-    @import "common/_type";
-    @import "common/_colours";
-    @import "common/blocks/_blocks";
+    /* blocks */
+    @import "common/blocks/blocks";
+
+    /* common */
+    //@import "admin/_type";
+    @import "common/social-brands";
+    @import "common/svg";
+    @import "common/type";
+    @import "common/colours";
+
+    @import "admin/_block-editor";
 }
 
-@import "admin/_block-editor";
+//

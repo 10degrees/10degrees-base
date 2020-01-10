@@ -1,5 +1,14 @@
-/*
+/* utils */
+/**
+ * This file imports all variables, mixins and functions. There should not be
+ * anything that directly generates output.
+ */
+/* variables */
+/**
  * Project variables
+ *
+ * All the Sass variables used throughout the theme. This file shouldn't output
+ * any actual CSS on compilation.
  */
 /* Colours */
 /*
@@ -15,7 +24,7 @@
 /*
  * Layout variables.
  *
- * Used for the block-wrapper and more layout options.
+ * Used for the wrapper and more layout options.
  */
 /* Typography */
 /*
@@ -26,6 +35,7 @@
 /**
  * SVG icon defaults
  */
+/* mixins */
 /*
  * Generate a media query based on convenient names such as sm, md , lg. The
  * names are set in a $breakpoints-map.
@@ -64,335 +74,30 @@
 /**
  * The colours for an outlined button.
  */
+/* aliases - for the heathens who bastardise the English language */
+/**
+ * Checkbox override
+ */
+/**
+ * This mixin targets Internet Explorer 10 and 11. Edge does not match with this
+ * mixin.
+ */
+/* functions */
+/**
+ * Return the breakpoint from the map.
+ */
+/* common */
 .editor-styles-wrapper {
+  /* blocks */
+  /* common */
   /*
  * Base typography
  */
   /*
  * Loop through all colours and output WordPress colour classes.
- */ }
-  .editor-styles-wrapper .editor-post-title .editor-post-title__input {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; }
-  .editor-styles-wrapper svg.svg-inline--fa {
-    height: 44px;
-    width: 44px; }
-    .editor-styles-wrapper svg.svg-inline--fa.fa-facebook-f {
-      width: 22.9988px; }
-      .editor-styles-wrapper svg.svg-inline--fa.fa-facebook-f path {
-        fill: #3b5998; }
-    .editor-styles-wrapper svg.svg-inline--fa.fa-twitter path {
-      fill: #55acee; }
-    .editor-styles-wrapper svg.svg-inline--fa.fa-linkedin path {
-      fill: #0976b4; }
-    .editor-styles-wrapper svg.svg-inline--fa.fa-instagram path {
-      fill: #405de6; }
-    .editor-styles-wrapper svg.svg-inline--fa.fa-youtube {
-      width: 49.5px; }
-      .editor-styles-wrapper svg.svg-inline--fa.fa-youtube path {
-        fill: #e52d27; }
-    .editor-styles-wrapper svg.svg-inline--fa.fa-pinterest path {
-      fill: #bd081c; }
-  .editor-styles-wrapper html {
-    font-size: 100%;
-    font-size: 16px;
-    line-height: 1.5; }
-  .editor-styles-wrapper body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-size: 16px;
-    color: var(--text, );
-    background-color: white;
-    font-weight: 400; }
-  .editor-styles-wrapper h1,
-  .editor-styles-wrapper h2,
-  .editor-styles-wrapper h3,
-  .editor-styles-wrapper h4,
-  .editor-styles-wrapper h5,
-  .editor-styles-wrapper h6,
-  .editor-styles-wrapper .wp-block-heading h1,
-  .editor-styles-wrapper .wp-block-heading h2,
-  .editor-styles-wrapper .wp-block-heading h3,
-  .editor-styles-wrapper .wp-block-heading h4,
-  .editor-styles-wrapper .wp-block-heading h5,
-  .editor-styles-wrapper .wp-block-heading h6 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    margin-top: 0;
-    margin-bottom: 1.5rem; }
-    .editor-styles-wrapper h1.is-style-underline,
-    .editor-styles-wrapper h2.is-style-underline,
-    .editor-styles-wrapper h3.is-style-underline,
-    .editor-styles-wrapper h4.is-style-underline,
-    .editor-styles-wrapper h5.is-style-underline,
-    .editor-styles-wrapper h6.is-style-underline,
-    .editor-styles-wrapper .wp-block-heading h1.is-style-underline,
-    .editor-styles-wrapper .wp-block-heading h2.is-style-underline,
-    .editor-styles-wrapper .wp-block-heading h3.is-style-underline,
-    .editor-styles-wrapper .wp-block-heading h4.is-style-underline,
-    .editor-styles-wrapper .wp-block-heading h5.is-style-underline,
-    .editor-styles-wrapper .wp-block-heading h6.is-style-underline {
-      text-decoration: underline; }
-  .editor-styles-wrapper h1,
-  .editor-styles-wrapper .h1,
-  .editor-styles-wrapper .wp-block-heading h1 {
-    font-size: 1.3125rem;
-    line-height: 1.1428; }
-    @media only screen and (min-width: 768px) {
-      .editor-styles-wrapper h1,
-      .editor-styles-wrapper .h1,
-      .editor-styles-wrapper .wp-block-heading h1 {
-        font-size: 2.25rem;
-        line-height: 1.1111; } }
-    @media only screen and (min-width: 1024px) {
-      .editor-styles-wrapper h1,
-      .editor-styles-wrapper .h1,
-      .editor-styles-wrapper .wp-block-heading h1 {
-        font-size: 3rem;
-        line-height: 0.9583; } }
-  .editor-styles-wrapper h2,
-  .editor-styles-wrapper .h2,
-  .editor-styles-wrapper .wp-block-heading h2 {
-    font-size: 1.125rem;
-    line-height: 1.333; }
-    @media only screen and (min-width: 768px) {
-      .editor-styles-wrapper h2,
-      .editor-styles-wrapper .h2,
-      .editor-styles-wrapper .wp-block-heading h2 {
-        font-size: 1.5rem;
-        line-height: 1; } }
-    @media only screen and (min-width: 1024px) {
-      .editor-styles-wrapper h2,
-      .editor-styles-wrapper .h2,
-      .editor-styles-wrapper .wp-block-heading h2 {
-        font-size: 1.875rem;
-        line-height: 1.333; } }
-  .editor-styles-wrapper h3,
-  .editor-styles-wrapper .h3,
-  .editor-styles-wrapper .wp-block-heading h3 {
-    font-size: 1.125rem;
-    line-height: 1.333; }
-    @media only screen and (min-width: 768px) {
-      .editor-styles-wrapper h3,
-      .editor-styles-wrapper .h3,
-      .editor-styles-wrapper .wp-block-heading h3 {
-        font-size: 1.3125rem;
-        line-height: 1.1428; } }
-    @media only screen and (min-width: 1024px) {
-      .editor-styles-wrapper h3,
-      .editor-styles-wrapper .h3,
-      .editor-styles-wrapper .wp-block-heading h3 {
-        font-size: 1.5rem;
-        line-height: 1.333; } }
-  .editor-styles-wrapper h4,
-  .editor-styles-wrapper .h4,
-  .editor-styles-wrapper .wp-block-heading h4 {
-    font-size: 1rem;
-    line-height: 1.6; }
-    @media only screen and (min-width: 768px) {
-      .editor-styles-wrapper h4,
-      .editor-styles-wrapper .h4,
-      .editor-styles-wrapper .wp-block-heading h4 {
-        font-size: 1.125rem;
-        line-height: 1.333; } }
-  .editor-styles-wrapper h5,
-  .editor-styles-wrapper .h5,
-  .editor-styles-wrapper .wp-block-heading h5 {
-    font-size: 0.875rem;
-    line-height: 1.1428; }
-    @media only screen and (min-width: 1024px) {
-      .editor-styles-wrapper h5,
-      .editor-styles-wrapper .h5,
-      .editor-styles-wrapper .wp-block-heading h5 {
-        font-size: 1rem;
-        line-height: 1.5; } }
-  .editor-styles-wrapper h6,
-  .editor-styles-wrapper .h6,
-  .editor-styles-wrapper .wp-block-heading h6 {
-    font-size: 0.875rem;
-    line-height: 1.1428; }
-  .editor-styles-wrapper p,
-  .editor-styles-wrapper .wp-block p,
-  .editor-styles-wrapper .wp-block-button__link {
-    margin: 0 0 1.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-size: 0.875rem;
-    line-height: 1.7142; }
-    @media only screen and (min-width: 768px) {
-      .editor-styles-wrapper p,
-      .editor-styles-wrapper .wp-block p,
-      .editor-styles-wrapper .wp-block-button__link {
-        font-size: 1rem;
-        line-height: 1.5; } }
-  .editor-styles-wrapper p.has-large-font-size,
-  .editor-styles-wrapper .wp-block p.has-large-font-size {
-    font-size: 0.875rem;
-    line-height: 1.7142; }
-    @media only screen and (min-width: 768px) {
-      .editor-styles-wrapper p.has-large-font-size,
-      .editor-styles-wrapper .wp-block p.has-large-font-size {
-        font-size: 1.3125rem;
-        line-height: 1.5238; } }
-    @media only screen and (min-width: 1024px) {
-      .editor-styles-wrapper p.has-large-font-size,
-      .editor-styles-wrapper .wp-block p.has-large-font-size {
-        font-size: 1.5rem;
-        line-height: 1.3333; } }
-  .editor-styles-wrapper p.has-small-font-size,
-  .editor-styles-wrapper .wp-block p.has-small-font-size {
-    font-size: 0.875rem;
-    line-height: 1.7142; }
-  .editor-styles-wrapper small,
-  .editor-styles-wrapper .small {
-    font-size: 90%; }
-  .editor-styles-wrapper ul,
-  .editor-styles-wrapper ol,
-  .editor-styles-wrapper .wp-block ul,
-  .editor-styles-wrapper .wp-block ol {
-    margin-top: 0;
-    margin-bottom: 1.5rem; }
-    .editor-styles-wrapper ul ul,
-    .editor-styles-wrapper ul ol,
-    .editor-styles-wrapper ol ul,
-    .editor-styles-wrapper ol ol,
-    .editor-styles-wrapper .wp-block ul ul,
-    .editor-styles-wrapper .wp-block ul ol,
-    .editor-styles-wrapper .wp-block ol ul,
-    .editor-styles-wrapper .wp-block ol ol {
-      margin-bottom: 0; }
-    .editor-styles-wrapper ul li,
-    .editor-styles-wrapper ol li,
-    .editor-styles-wrapper .wp-block ul li,
-    .editor-styles-wrapper .wp-block ol li {
-      font-size: 0.875rem;
-      line-height: 1.7142; }
-      @media only screen and (min-width: 768px) {
-        .editor-styles-wrapper ul li,
-        .editor-styles-wrapper ol li,
-        .editor-styles-wrapper .wp-block ul li,
-        .editor-styles-wrapper .wp-block ol li {
-          font-size: 1rem;
-          line-height: 1.5; } }
-    .editor-styles-wrapper ul.is-style-icon,
-    .editor-styles-wrapper ol.is-style-icon,
-    .editor-styles-wrapper .wp-block ul.is-style-icon,
-    .editor-styles-wrapper .wp-block ol.is-style-icon {
-      list-style-image: url("../img/list-icon.svg"); }
-      .editor-styles-wrapper ul.is-style-icon li,
-      .editor-styles-wrapper ol.is-style-icon li,
-      .editor-styles-wrapper .wp-block ul.is-style-icon li,
-      .editor-styles-wrapper .wp-block ol.is-style-icon li {
-        padding-left: 5px; }
-  .editor-styles-wrapper a,
-  .editor-styles-wrapper .wp-block a {
-    color: blue;
-    color: var(--link, blue);
-    text-decoration: none; }
-    .editor-styles-wrapper a:hover, .editor-styles-wrapper a:focus,
-    .editor-styles-wrapper .wp-block a:hover,
-    .editor-styles-wrapper .wp-block a:focus {
-      color: darkblue;
-      color: var(--link-hover, darkblue);
-      text-decoration: underline; }
-  .editor-styles-wrapper .has-primary-background-color {
-    background-color: red;
-    background-color: var(--primary, red); }
-  .editor-styles-wrapper .has-primary-color {
-    color: red;
-    color: var(--primary, red); }
-  .editor-styles-wrapper .has-primary-text-background-color {
-    background-color: #fff;
-    background-color: var(--primary-text, #fff); }
-  .editor-styles-wrapper .has-primary-text-color {
-    color: #fff;
-    color: var(--primary-text, #fff); }
-  .editor-styles-wrapper .has-primary-hover-background-color {
-    background-color: darkred;
-    background-color: var(--primary-hover, darkred); }
-  .editor-styles-wrapper .has-primary-hover-color {
-    color: darkred;
-    color: var(--primary-hover, darkred); }
-  .editor-styles-wrapper .has-secondary-background-color {
-    background-color: green;
-    background-color: var(--secondary, green); }
-  .editor-styles-wrapper .has-secondary-color {
-    color: green;
-    color: var(--secondary, green); }
-  .editor-styles-wrapper .has-secondary-text-background-color {
-    background-color: #fff;
-    background-color: var(--secondary-text, #fff); }
-  .editor-styles-wrapper .has-secondary-text-color {
-    color: #fff;
-    color: var(--secondary-text, #fff); }
-  .editor-styles-wrapper .has-secondary-hover-background-color {
-    background-color: darkgreen;
-    background-color: var(--secondary-hover, darkgreen); }
-  .editor-styles-wrapper .has-secondary-hover-color {
-    color: darkgreen;
-    color: var(--secondary-hover, darkgreen); }
-  .editor-styles-wrapper .has-tertiary-background-color {
-    background-color: pink;
-    background-color: var(--tertiary, pink); }
-  .editor-styles-wrapper .has-tertiary-color {
-    color: pink;
-    color: var(--tertiary, pink); }
-  .editor-styles-wrapper .has-tertiary-text-background-color {
-    background-color: #212121;
-    background-color: var(--tertiary-text, #212121); }
-  .editor-styles-wrapper .has-tertiary-text-color {
-    color: #212121;
-    color: var(--tertiary-text, #212121); }
-  .editor-styles-wrapper .has-tertiary-hover-background-color {
-    background-color: purple;
-    background-color: var(--tertiary-hover, purple); }
-  .editor-styles-wrapper .has-tertiary-hover-color {
-    color: purple;
-    color: var(--tertiary-hover, purple); }
-  .editor-styles-wrapper .has-white-background-color {
-    background-color: #fff;
-    background-color: var(--white, #fff); }
-  .editor-styles-wrapper .has-white-color {
-    color: #fff;
-    color: var(--white, #fff); }
-  .editor-styles-wrapper .has-white-text-background-color {
-    background-color: #212121;
-    background-color: var(--white-text, #212121); }
-  .editor-styles-wrapper .has-white-text-color {
-    color: #212121;
-    color: var(--white-text, #212121); }
-  .editor-styles-wrapper .has-white-hover-background-color {
-    background-color: #eeeeee;
-    background-color: var(--white-hover, #eeeeee); }
-  .editor-styles-wrapper .has-white-hover-color {
-    color: #eeeeee;
-    color: var(--white-hover, #eeeeee); }
-  .editor-styles-wrapper .has-body-text-background-color {
-    background-color: #212121;
-    background-color: var(--body-text, #212121); }
-  .editor-styles-wrapper .has-body-text-color {
-    color: #212121;
-    color: var(--body-text, #212121); }
-  .editor-styles-wrapper .has-body-text-text-background-color {
-    background-color: #fff;
-    background-color: var(--body-text-text, #fff); }
-  .editor-styles-wrapper .has-body-text-text-color {
-    color: #fff;
-    color: var(--body-text-text, #fff); }
-  .editor-styles-wrapper .has-body-text-hover-background-color {
-    background-color: #616161;
-    background-color: var(--body-text-hover, #616161); }
-  .editor-styles-wrapper .has-body-text-hover-color {
-    color: #616161;
-    color: var(--body-text-hover, #616161); }
-  .editor-styles-wrapper .has-link-background-color {
-    background-color: blue;
-    background-color: var(--link, blue); }
-  .editor-styles-wrapper .has-link-color {
-    color: blue;
-    color: var(--link, blue); }
-  .editor-styles-wrapper .has-link-hover-background-color {
-    background-color: darkblue;
-    background-color: var(--link-hover, darkblue); }
-  .editor-styles-wrapper .has-link-hover-color {
-    color: darkblue;
-    color: var(--link-hover, darkblue); }
+ */
+  /* Post title width */
+  /* Main column width */ }
   .editor-styles-wrapper .wp-block-audio audio {
     min-width: 100%; }
   .editor-styles-wrapper .wp-block-quote {
@@ -1054,36 +759,349 @@
     padding: 0 20px; }
   .editor-styles-wrapper .accordion.-open .toggle::after {
     transform: rotate(225deg); }
-
-.editor-styles-wrapper {
-  font-family: var(--font-family) !important; }
-
-/* Post title width */
-.editor-post-title__block.wp-block {
-  max-width: var(--max-content-width);
-  /* Post title styling */ }
-  .editor-post-title__block.wp-block .editor-post-title__input {
+  .editor-styles-wrapper svg.svg-inline--fa {
+    height: 44px;
+    width: 44px; }
+    .editor-styles-wrapper svg.svg-inline--fa.fa-facebook-f {
+      width: 22.9988px; }
+      .editor-styles-wrapper svg.svg-inline--fa.fa-facebook-f path {
+        fill: #3b5998; }
+    .editor-styles-wrapper svg.svg-inline--fa.fa-twitter path {
+      fill: #55acee; }
+    .editor-styles-wrapper svg.svg-inline--fa.fa-linkedin path {
+      fill: #0976b4; }
+    .editor-styles-wrapper svg.svg-inline--fa.fa-instagram path {
+      fill: #405de6; }
+    .editor-styles-wrapper svg.svg-inline--fa.fa-youtube {
+      width: 49.5px; }
+      .editor-styles-wrapper svg.svg-inline--fa.fa-youtube path {
+        fill: #e52d27; }
+    .editor-styles-wrapper svg.svg-inline--fa.fa-pinterest path {
+      fill: #bd081c; }
+  .editor-styles-wrapper html {
+    font-size: 100%;
+    font-size: 16px;
+    line-height: 1.5; }
+  .editor-styles-wrapper body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: var(--text, );
+    background-color: white;
+    font-weight: 400; }
+  .editor-styles-wrapper h1,
+  .editor-styles-wrapper h2,
+  .editor-styles-wrapper h3,
+  .editor-styles-wrapper h4,
+  .editor-styles-wrapper h5,
+  .editor-styles-wrapper h6,
+  .editor-styles-wrapper .wp-block-heading h1,
+  .editor-styles-wrapper .wp-block-heading h2,
+  .editor-styles-wrapper .wp-block-heading h3,
+  .editor-styles-wrapper .wp-block-heading h4,
+  .editor-styles-wrapper .wp-block-heading h5,
+  .editor-styles-wrapper .wp-block-heading h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin-top: 0;
+    margin-bottom: 1.5rem; }
+    .editor-styles-wrapper h1.is-style-underline,
+    .editor-styles-wrapper h2.is-style-underline,
+    .editor-styles-wrapper h3.is-style-underline,
+    .editor-styles-wrapper h4.is-style-underline,
+    .editor-styles-wrapper h5.is-style-underline,
+    .editor-styles-wrapper h6.is-style-underline,
+    .editor-styles-wrapper .wp-block-heading h1.is-style-underline,
+    .editor-styles-wrapper .wp-block-heading h2.is-style-underline,
+    .editor-styles-wrapper .wp-block-heading h3.is-style-underline,
+    .editor-styles-wrapper .wp-block-heading h4.is-style-underline,
+    .editor-styles-wrapper .wp-block-heading h5.is-style-underline,
+    .editor-styles-wrapper .wp-block-heading h6.is-style-underline {
+      text-decoration: underline; }
+  .editor-styles-wrapper h1,
+  .editor-styles-wrapper .h1,
+  .editor-styles-wrapper .wp-block-heading h1 {
+    font-size: 1.3125rem;
+    line-height: 1.1428; }
+    @media only screen and (min-width: 768px) {
+      .editor-styles-wrapper h1,
+      .editor-styles-wrapper .h1,
+      .editor-styles-wrapper .wp-block-heading h1 {
+        font-size: 2.25rem;
+        line-height: 1.1111; } }
+    @media only screen and (min-width: 1024px) {
+      .editor-styles-wrapper h1,
+      .editor-styles-wrapper .h1,
+      .editor-styles-wrapper .wp-block-heading h1 {
+        font-size: 3rem;
+        line-height: 0.9583; } }
+  .editor-styles-wrapper h2,
+  .editor-styles-wrapper .h2,
+  .editor-styles-wrapper .wp-block-heading h2 {
+    font-size: 1.125rem;
+    line-height: 1.333; }
+    @media only screen and (min-width: 768px) {
+      .editor-styles-wrapper h2,
+      .editor-styles-wrapper .h2,
+      .editor-styles-wrapper .wp-block-heading h2 {
+        font-size: 1.5rem;
+        line-height: 1; } }
+    @media only screen and (min-width: 1024px) {
+      .editor-styles-wrapper h2,
+      .editor-styles-wrapper .h2,
+      .editor-styles-wrapper .wp-block-heading h2 {
+        font-size: 1.875rem;
+        line-height: 1.333; } }
+  .editor-styles-wrapper h3,
+  .editor-styles-wrapper .h3,
+  .editor-styles-wrapper .wp-block-heading h3 {
+    font-size: 1.125rem;
+    line-height: 1.333; }
+    @media only screen and (min-width: 768px) {
+      .editor-styles-wrapper h3,
+      .editor-styles-wrapper .h3,
+      .editor-styles-wrapper .wp-block-heading h3 {
+        font-size: 1.3125rem;
+        line-height: 1.1428; } }
+    @media only screen and (min-width: 1024px) {
+      .editor-styles-wrapper h3,
+      .editor-styles-wrapper .h3,
+      .editor-styles-wrapper .wp-block-heading h3 {
+        font-size: 1.5rem;
+        line-height: 1.333; } }
+  .editor-styles-wrapper h4,
+  .editor-styles-wrapper .h4,
+  .editor-styles-wrapper .wp-block-heading h4 {
+    font-size: 1rem;
+    line-height: 1.6; }
+    @media only screen and (min-width: 768px) {
+      .editor-styles-wrapper h4,
+      .editor-styles-wrapper .h4,
+      .editor-styles-wrapper .wp-block-heading h4 {
+        font-size: 1.125rem;
+        line-height: 1.333; } }
+  .editor-styles-wrapper h5,
+  .editor-styles-wrapper .h5,
+  .editor-styles-wrapper .wp-block-heading h5 {
+    font-size: 0.875rem;
+    line-height: 1.1428; }
+    @media only screen and (min-width: 1024px) {
+      .editor-styles-wrapper h5,
+      .editor-styles-wrapper .h5,
+      .editor-styles-wrapper .wp-block-heading h5 {
+        font-size: 1rem;
+        line-height: 1.5; } }
+  .editor-styles-wrapper h6,
+  .editor-styles-wrapper .h6,
+  .editor-styles-wrapper .wp-block-heading h6 {
+    font-size: 0.875rem;
+    line-height: 1.1428; }
+  .editor-styles-wrapper p,
+  .editor-styles-wrapper .wp-block p,
+  .editor-styles-wrapper .wp-block-button__link {
+    margin: 0 0 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.7142; }
+    @media only screen and (min-width: 768px) {
+      .editor-styles-wrapper p,
+      .editor-styles-wrapper .wp-block p,
+      .editor-styles-wrapper .wp-block-button__link {
+        font-size: 1rem;
+        line-height: 1.5; } }
+  .editor-styles-wrapper p.has-large-font-size,
+  .editor-styles-wrapper .wp-block p.has-large-font-size {
+    font-size: 0.875rem;
+    line-height: 1.7142; }
+    @media only screen and (min-width: 768px) {
+      .editor-styles-wrapper p.has-large-font-size,
+      .editor-styles-wrapper .wp-block p.has-large-font-size {
+        font-size: 1.3125rem;
+        line-height: 1.5238; } }
+    @media only screen and (min-width: 1024px) {
+      .editor-styles-wrapper p.has-large-font-size,
+      .editor-styles-wrapper .wp-block p.has-large-font-size {
+        font-size: 1.5rem;
+        line-height: 1.3333; } }
+  .editor-styles-wrapper p.has-small-font-size,
+  .editor-styles-wrapper .wp-block p.has-small-font-size {
+    font-size: 0.875rem;
+    line-height: 1.7142; }
+  .editor-styles-wrapper small,
+  .editor-styles-wrapper .small {
+    font-size: 90%; }
+  .editor-styles-wrapper ul,
+  .editor-styles-wrapper ol,
+  .editor-styles-wrapper .wp-block ul,
+  .editor-styles-wrapper .wp-block ol {
+    margin-top: 0;
+    margin-bottom: 1.5rem; }
+    .editor-styles-wrapper ul ul,
+    .editor-styles-wrapper ul ol,
+    .editor-styles-wrapper ol ul,
+    .editor-styles-wrapper ol ol,
+    .editor-styles-wrapper .wp-block ul ul,
+    .editor-styles-wrapper .wp-block ul ol,
+    .editor-styles-wrapper .wp-block ol ul,
+    .editor-styles-wrapper .wp-block ol ol {
+      margin-bottom: 0; }
+    .editor-styles-wrapper ul li,
+    .editor-styles-wrapper ol li,
+    .editor-styles-wrapper .wp-block ul li,
+    .editor-styles-wrapper .wp-block ol li {
+      font-size: 0.875rem;
+      line-height: 1.7142; }
+      @media only screen and (min-width: 768px) {
+        .editor-styles-wrapper ul li,
+        .editor-styles-wrapper ol li,
+        .editor-styles-wrapper .wp-block ul li,
+        .editor-styles-wrapper .wp-block ol li {
+          font-size: 1rem;
+          line-height: 1.5; } }
+    .editor-styles-wrapper ul.is-style-icon,
+    .editor-styles-wrapper ol.is-style-icon,
+    .editor-styles-wrapper .wp-block ul.is-style-icon,
+    .editor-styles-wrapper .wp-block ol.is-style-icon {
+      list-style-image: url("../img/list-icon.svg"); }
+      .editor-styles-wrapper ul.is-style-icon li,
+      .editor-styles-wrapper ol.is-style-icon li,
+      .editor-styles-wrapper .wp-block ul.is-style-icon li,
+      .editor-styles-wrapper .wp-block ol.is-style-icon li {
+        padding-left: 5px; }
+  .editor-styles-wrapper a,
+  .editor-styles-wrapper .wp-block a {
+    color: blue;
+    color: var(--link, blue);
+    text-decoration: none; }
+    .editor-styles-wrapper a:hover, .editor-styles-wrapper a:focus,
+    .editor-styles-wrapper .wp-block a:hover,
+    .editor-styles-wrapper .wp-block a:focus {
+      color: darkblue;
+      color: var(--link-hover, darkblue);
+      text-decoration: underline; }
+  .editor-styles-wrapper .has-primary-background-color {
+    background-color: red;
+    background-color: var(--primary, red); }
+  .editor-styles-wrapper .has-primary-color {
+    color: red;
+    color: var(--primary, red); }
+  .editor-styles-wrapper .has-primary-text-background-color {
+    background-color: #fff;
+    background-color: var(--primary-text, #fff); }
+  .editor-styles-wrapper .has-primary-text-color {
+    color: #fff;
+    color: var(--primary-text, #fff); }
+  .editor-styles-wrapper .has-primary-hover-background-color {
+    background-color: darkred;
+    background-color: var(--primary-hover, darkred); }
+  .editor-styles-wrapper .has-primary-hover-color {
+    color: darkred;
+    color: var(--primary-hover, darkred); }
+  .editor-styles-wrapper .has-secondary-background-color {
+    background-color: green;
+    background-color: var(--secondary, green); }
+  .editor-styles-wrapper .has-secondary-color {
+    color: green;
+    color: var(--secondary, green); }
+  .editor-styles-wrapper .has-secondary-text-background-color {
+    background-color: #fff;
+    background-color: var(--secondary-text, #fff); }
+  .editor-styles-wrapper .has-secondary-text-color {
+    color: #fff;
+    color: var(--secondary-text, #fff); }
+  .editor-styles-wrapper .has-secondary-hover-background-color {
+    background-color: darkgreen;
+    background-color: var(--secondary-hover, darkgreen); }
+  .editor-styles-wrapper .has-secondary-hover-color {
+    color: darkgreen;
+    color: var(--secondary-hover, darkgreen); }
+  .editor-styles-wrapper .has-tertiary-background-color {
+    background-color: pink;
+    background-color: var(--tertiary, pink); }
+  .editor-styles-wrapper .has-tertiary-color {
+    color: pink;
+    color: var(--tertiary, pink); }
+  .editor-styles-wrapper .has-tertiary-text-background-color {
+    background-color: #212121;
+    background-color: var(--tertiary-text, #212121); }
+  .editor-styles-wrapper .has-tertiary-text-color {
+    color: #212121;
+    color: var(--tertiary-text, #212121); }
+  .editor-styles-wrapper .has-tertiary-hover-background-color {
+    background-color: purple;
+    background-color: var(--tertiary-hover, purple); }
+  .editor-styles-wrapper .has-tertiary-hover-color {
+    color: purple;
+    color: var(--tertiary-hover, purple); }
+  .editor-styles-wrapper .has-white-background-color {
+    background-color: #fff;
+    background-color: var(--white, #fff); }
+  .editor-styles-wrapper .has-white-color {
+    color: #fff;
+    color: var(--white, #fff); }
+  .editor-styles-wrapper .has-white-text-background-color {
+    background-color: #212121;
+    background-color: var(--white-text, #212121); }
+  .editor-styles-wrapper .has-white-text-color {
+    color: #212121;
+    color: var(--white-text, #212121); }
+  .editor-styles-wrapper .has-white-hover-background-color {
+    background-color: #eeeeee;
+    background-color: var(--white-hover, #eeeeee); }
+  .editor-styles-wrapper .has-white-hover-color {
+    color: #eeeeee;
+    color: var(--white-hover, #eeeeee); }
+  .editor-styles-wrapper .has-body-text-background-color {
+    background-color: #212121;
+    background-color: var(--body-text, #212121); }
+  .editor-styles-wrapper .has-body-text-color {
+    color: #212121;
+    color: var(--body-text, #212121); }
+  .editor-styles-wrapper .has-body-text-text-background-color {
+    background-color: #fff;
+    background-color: var(--body-text-text, #fff); }
+  .editor-styles-wrapper .has-body-text-text-color {
+    color: #fff;
+    color: var(--body-text-text, #fff); }
+  .editor-styles-wrapper .has-body-text-hover-background-color {
+    background-color: #616161;
+    background-color: var(--body-text-hover, #616161); }
+  .editor-styles-wrapper .has-body-text-hover-color {
+    color: #616161;
+    color: var(--body-text-hover, #616161); }
+  .editor-styles-wrapper .has-link-background-color {
+    background-color: blue;
+    background-color: var(--link, blue); }
+  .editor-styles-wrapper .has-link-color {
+    color: blue;
+    color: var(--link, blue); }
+  .editor-styles-wrapper .has-link-hover-background-color {
+    background-color: darkblue;
+    background-color: var(--link-hover, darkblue); }
+  .editor-styles-wrapper .has-link-hover-color {
+    color: darkblue;
+    color: var(--link-hover, darkblue); }
+  .editor-styles-wrapper .editor-styles-wrapper {
     font-family: var(--font-family) !important; }
+  .editor-styles-wrapper .editor-post-title__block.wp-block {
+    max-width: var(--max-content-width);
+    /* Post title styling */ }
+    .editor-styles-wrapper .editor-post-title__block.wp-block .editor-post-title__input {
+      font-family: var(--font-family) !important; }
+  .editor-styles-wrapper .wp-block {
+    max-width: var(--max-content-width);
+    /* Wide column width */
+    /* Full column width */ }
+    .editor-styles-wrapper .wp-block[data-align="wide"] {
+      max-width: var(--max-container-width); }
+    .editor-styles-wrapper .wp-block[data-align="full"] {
+      max-width: none; }
+  .editor-styles-wrapper .wp-block-embed {
+    min-width: 100%; }
+    .editor-styles-wrapper .wp-block-embed iframe {
+      max-width: 100% !important; }
+  .editor-styles-wrapper .acf-accordion[class*='block-'],
+  .editor-styles-wrapper .acf-accordion[class^='block-'] {
+    border: 0;
+    padding: 0;
+    margin: 0; }
 
-/* Main column width */
-.wp-block {
-  max-width: var(--max-content-width);
-  /* Wide column width */
-  /* Full column width */ }
-  .wp-block[data-align="wide"] {
-    max-width: var(--max-container-width); }
-  .wp-block[data-align="full"] {
-    max-width: none; }
-
-.wp-block-embed {
-  min-width: 100%; }
-  .wp-block-embed iframe {
-    max-width: 100% !important; }
-
-.acf-accordion[class*='block-'],
-.acf-accordion[class^='block-'] {
-  border: 0;
-  padding: 0;
-  margin: 0; }
-
-/*# sourceMappingURL=maps/editor-block-1e72e47885.css.map */
+/*# sourceMappingURL=maps/editor-block-5269cdde9b.css.map */

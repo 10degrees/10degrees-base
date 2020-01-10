@@ -14,7 +14,7 @@
  **/
 ?>
 
-<div class="block-wrapper">
+<div class="wrapper">
     <?php
     get_template_part('partials/page', 'header');
 

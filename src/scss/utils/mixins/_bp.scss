@@ -1,5 +1,3 @@
-// Breakpoint mixin
-
 /*
  * Generate a media query based on convenient names such as sm, md , lg. The
  * names are set in a $breakpoints-map.
@@ -18,21 +16,17 @@
  */
 
 @mixin bp($min: null, $max: null, $type: only screen) {
-	// get the value/s from the $breakpoints-map
-	$min-value: map-get($breakpoint-map, $min);
-	$max-value: map-get($breakpoint-map, $max);
+    // get the value/s from the $breakpoints-map
+    $min-value: map-get($breakpoint-map, $min);
+    $max-value: map-get($breakpoint-map, $max);
 
-	// build the media query
-	$min: if($min, "(min-width:#{$min-value})", null);
-	$max: if($max, "(max-width:#{$max-value})", null);
-	$and: if($min and $max, " and ", null);
+    // build the media query
+    $min: if($min, "(min-width:#{$min-value})", null);
+    $max: if($max, "(max-width:#{$max-value})", null);
+    $and: if($min and $max, " and ", null);
 
-	// output the media query with the @content
-	@media #{$type} and #{$min $and $max} {
-		@content;
-	}
-}
-
-@function bp($name) {
-	@return map-get($breakpoint-map, $name);
+    // output the media query with the @content
+    @media #{$type} and #{$min $and $max} {
+        @content;
+    }
 }

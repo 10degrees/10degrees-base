@@ -26,7 +26,7 @@ while (have_posts()) :
 endwhile;
 
 ?>
-<!-- <div class="block-wrapper"> -->
+<!-- <div class="wrapper"> -->
 
 
 <?php

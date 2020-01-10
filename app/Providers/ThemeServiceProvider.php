@@ -26,6 +26,7 @@ class ThemeServiceProvider extends ServiceProvider
         '\App\Boot\BaseWrapper',
         '\App\Boot\CliCommands',
         '\App\Boot\Enqueue',
+        '\App\Boot\BlockEmbeds',
         '\App\Boot\RegisterMenus',
         '\App\Boot\RegisterWidgets',
         '\App\Boot\RegisterCustomBlocks',
