@@ -7,8 +7,11 @@
  * anything that directly generates output.
  */
 /* variables */
-/*
+/**
  * Project variables
+ *
+ * All the Sass variables used throughout the theme. This file shouldn't output
+ * any actual CSS on compilation.
  */
 /* Colours */
 /*
@@ -161,6 +164,35 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important; } }
 
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; }
+
+.screen-reader-text--display-on-focus:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
 .login {
   background: white;
   /* Set the size of the login logo */
@@ -195,4 +227,4 @@ select {
 .wp-admin #wp-auth-check-wrap #wp-auth-check {
   background-color: white; }
 
-/*# sourceMappingURL=maps/login-23afa7f0fa.css.map */
+/*# sourceMappingURL=maps/login-45e774f845.css.map */

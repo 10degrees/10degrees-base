@@ -8,8 +8,11 @@
  * anything that directly generates output.
  */
 /* variables */
-/*
+/**
  * Project variables
+ *
+ * All the Sass variables used throughout the theme. This file shouldn't output
+ * any actual CSS on compilation.
  */
 /* Colours */
 /*
@@ -1625,7 +1628,43 @@ svg.svg-inline--fa {
   display: grid;
   grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); }
 
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; }
+
+.screen-reader-text--display-on-focus:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
 /* components */
+article > *.wp-block-quote.is-style-large {
+  margin: 0;
+  padding: 0;
+  background: red;
+  max-width: 100%;
+  text-align: left; }
+
 body {
   display: flex;
   flex-direction: column;
@@ -2093,43 +2132,5 @@ form input[type="checkbox"] {
 	}
 }
  */
-/* shame */
-article > *.wp-block-quote.is-style-large {
-  margin: 0;
-  padding: 0;
-  background: red;
-  max-width: 100%;
-  text-align: left; }
 
-/* removed from mixins */
-.screen-reader-text {
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-  clip-path: inset(50%);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute !important;
-  width: 1px;
-  word-wrap: normal !important; }
-
-/* removed from mixins */
-.screen-reader-text--display-on-focus:focus {
-  background-color: #eee;
-  clip: auto !important;
-  clip-path: none;
-  color: #444;
-  display: block;
-  font-size: 1em;
-  height: auto;
-  left: 5px;
-  line-height: normal;
-  padding: 15px 23px 14px;
-  text-decoration: none;
-  top: 5px;
-  width: auto;
-  z-index: 100000;
-  /* Above WP toolbar. */ }
-
-/*# sourceMappingURL=maps/main-9f5ce03e2d.css.map */
+/*# sourceMappingURL=maps/main-de580dc745.css.map */

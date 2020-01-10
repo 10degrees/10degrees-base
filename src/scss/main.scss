@@ -21,8 +21,10 @@
 @import "common/social-brands";
 @import "common/svg";
 @import "common/grid";
+@import "common/screen-reader";
 
 /* components */
+@import "components/article";
 @import "components/sticky-footer";
 @import "components/header";
 @import "components/footer";
@@ -37,23 +39,3 @@
 @import "templates/index";
 @import "templates/404";
 @import "templates/page";
-
-/* shame */
-article > * {
-    &.wp-block-quote.is-style-large {
-        margin: 0;
-        padding: 0;
-        background: red;
-        max-width: 100%;
-        text-align: left;
-    }
-}
-
-/* removed from mixins */
-.screen-reader-text {
-    @include screen-reader-text();
-}
-/* removed from mixins */
-.screen-reader-text--display-on-focus:focus {
-    @include sr-only-show-on-focus();
-}

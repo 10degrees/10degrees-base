@@ -4,8 +4,11 @@
  * anything that directly generates output.
  */
 /* variables */
-/*
+/**
  * Project variables
+ *
+ * All the Sass variables used throughout the theme. This file shouldn't output
+ * any actual CSS on compilation.
  */
 /* Colours */
 /*
@@ -84,4 +87,4 @@
  * Return the breakpoint from the map.
  */
 
-/*# sourceMappingURL=maps/editor-classic-66ea8db8ae.css.map */
+/*# sourceMappingURL=maps/editor-classic-fe4412c244.css.map */
