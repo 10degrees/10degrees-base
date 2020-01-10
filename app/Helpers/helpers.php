@@ -51,3 +51,21 @@ function td_token($length = 128)
 {
     return bin2hex(random_bytes($length));
 }
+
+
+/**
+ * Get the current post ID (useful in ACF Blocks)
+ *
+ * @return int  ID of the current post
+ */
+function td_post_id()
+{
+    if (is_admin() && function_exists('acf_maybe_get_POST')) :
+        return intval(acf_maybe_get_POST('post_id'));
+    else :
+        global $post;
+        return $post->ID;
+    endif;
+
+    return -1;
+}
