@@ -28,7 +28,7 @@
 /*
  * Layout variables.
  *
- * Used for the block-wrapper and more layout options.
+ * Used for the wrapper and more layout options.
  */
 /* Typography */
 /*
@@ -1821,7 +1821,7 @@ body {
       .header.-primary .toggle {
         display: none; } }
 
-.block-wrapper > header {
+.wrapper > header {
   margin-top: 32px; }
 
 .footer {
@@ -1850,7 +1850,7 @@ body {
         .footer .copyright p {
           margin-bottom: 0; } }
 
-.block-wrapper {
+.wrapper {
   display: grid;
   gap: var(--vertical-gap) 0;
   /*
@@ -1858,45 +1858,45 @@ body {
 [start]                                                                    [end]
 |                                                                              |
 |                                                                              |
-|  [content-start]                                               content-end]  |
+|  [content-start]                                              [content-end]  |
 +--+------------------------------------------------------------------------+--+
 |  |                                                                        |  |
 |  |                        +--------------------+                          |  |
 |  |                        |                    |                          |  |
-|  |                        | .block-wrapper > * |                          |  |
+|  |                        |    .wrapper > *    |                          |  |
 |  |                        |                    |                          |  |
 |  |                        +--------------------+                          |  |
 |  |                                                                        |  |
 |  |                  +---------------------------------+                   |  |
 |  |                  |                                 |                   |  |
-|  |                  |   .block-wrapper > .alignwide   |                   |  |
+|  |                  |      .wrapper > .alignwide      |                   |  |
 |  |                  |                                 |                   |  |
 |  |                  +---------------------------------+                   |  |
 |  |                                                                        |  |
 +--+------------------------------------------------------------------------+--+
 |                                                                              |
-|                         .block-wrapper > .alignfull                          |
+|                            .wrapper > .alignfull                             |
 |                                                                              |
 +------------------------------------------------------------------------------+
 */
   grid: auto/[start] var(--horizontal-gap) [content-start] auto [content-end] var(--horizontal-gap) [end];
   justify-items: center; }
-  .block-wrapper > * {
+  .wrapper > * {
     max-width: 920px;
     max-width: var(--max-content-width, 920px);
     grid-column: content-start / content-end;
     width: 100%;
     margin: 0 auto; }
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-      .block-wrapper > * {
+      .wrapper > * {
         margin-bottom: 2rem;
         margin-bottom: var(--vertical-gap, 2rem);
         margin-left: auto !important;
         margin-right: auto !important; } }
-  .block-wrapper > .alignwide {
+  .wrapper > .alignwide {
     max-width: 1200px;
     max-width: var(--max-container-width, 1200px); }
-  .block-wrapper > .alignfull {
+  .wrapper > .alignfull {
     grid-column: start / end;
     max-width: 100%; }
 
@@ -2133,4 +2133,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-de580dc745.css.map */
+/*# sourceMappingURL=maps/main-d98cba76bf.css.map */
