@@ -670,6 +670,8 @@ svg.svg-inline--fa {
     padding: 0 16px; }
   .wp-block-table table {
     border-collapse: collapse;
+    margin-left: 0;
+    margin-right: 0;
     min-width: 480px; }
     .wp-block-table table td {
       padding: 0.5em; }
@@ -1245,6 +1247,8 @@ svg.svg-inline--fa {
     padding: 0 16px; }
   .wp-block-table table {
     border-collapse: collapse;
+    margin-left: 0;
+    margin-right: 0;
     min-width: 480px; }
     .wp-block-table table td {
       padding: 0.5em; }
@@ -2152,4 +2156,4 @@ article > *.wp-block-quote.is-style-large {
   max-width: 100%;
   text-align: left; }
 
-/*# sourceMappingURL=maps/main-2fd41364d4.css.map */
+/*# sourceMappingURL=maps/main-78efe0be9e.css.map */

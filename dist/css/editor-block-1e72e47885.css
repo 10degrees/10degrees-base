@@ -430,6 +430,8 @@
       padding: 0 16px; }
     .editor-styles-wrapper .wp-block-table table {
       border-collapse: collapse;
+      margin-left: 0;
+      margin-right: 0;
       min-width: 480px; }
       .editor-styles-wrapper .wp-block-table table td {
         padding: 0.5em; }
@@ -973,6 +975,8 @@
       padding: 0 16px; }
     .editor-styles-wrapper .wp-block-table table {
       border-collapse: collapse;
+      margin-left: 0;
+      margin-right: 0;
       min-width: 480px; }
       .editor-styles-wrapper .wp-block-table table td {
         padding: 0.5em; }
@@ -1082,4 +1086,4 @@
   padding: 0;
   margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-8c8b12214f.css.map */
+/*# sourceMappingURL=maps/editor-block-1e72e47885.css.map */
