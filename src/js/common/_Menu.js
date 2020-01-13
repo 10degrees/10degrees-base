@@ -18,7 +18,7 @@ export default class Menu {
     }
     handleEscKey() {
         this.nav.onkeyup = e => {
-            if (e.code === "Escape") {
+            if (e.key === "Escape") {
                 this.closeAll();
             }
         };
