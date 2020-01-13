@@ -22,6 +22,7 @@ export default class SubMenu {
         };
         this.a.onkeyup = e => {
             if (e.key === " " /* Space */) {
+                e.preventDefault();
                 this.toggle();
             }
         };
