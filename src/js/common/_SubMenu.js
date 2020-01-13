@@ -20,9 +20,14 @@ export default class SubMenu {
             e.preventDefault();
             this.toggle();
         };
+        this.a.onkeydown = e => {
+            if (e.key === " " /* Space */) {
+                e.stopPropagation();
+                e.preventDefault();
+            }
+        };
         this.a.onkeyup = e => {
             if (e.key === " " /* Space */) {
-                e.preventDefault();
                 this.toggle();
             }
         };
