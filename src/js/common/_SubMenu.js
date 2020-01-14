@@ -21,13 +21,13 @@ export default class SubMenu {
             this.toggle();
         };
         this.a.onkeydown = e => {
-            if (e.key === " " /* Space */) {
+            if (e.key === " " || e.key === "Spacebar" /* Space */) {
                 e.stopPropagation();
                 e.preventDefault();
             }
         };
         this.a.onkeyup = e => {
-            if (e.key === " " /* Space */) {
+            if (e.key === " " || e.key === "Spacebar" /* Space */) {
                 this.toggle();
             }
         };

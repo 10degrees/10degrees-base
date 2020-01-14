@@ -19,6 +19,11 @@ export default class Menu {
     handleEscKey() {
         this.nav.onkeyup = e => {
             if (e.key === "Escape" || e.key === "Esc") {
+                let openMenu = document.querySelector('a[aria-expanded="true"]');
+                if(openMenu){
+                    openMenu.focus(); // Focus on top level menu item
+                }
+
                 this.closeAll();
             }
         };
