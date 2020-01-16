@@ -1,3 +1,6 @@
+/**
+ * Add focusable="false" to all SVGs to stop IE focusing on them
+ */
 class DisableSVGFocus{
     constructor(){
         this.disableFocus();
