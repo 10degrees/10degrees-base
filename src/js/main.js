@@ -10,6 +10,7 @@
 import AjaxForm from "./common/_ajaxForm";
 import ScrollToId from "./common/_scrollToId";
 import ScrollToError from "./common/_scrollToError";
+import DisableSVGFocus from './common/_DisableSVGFocus';
 //import MobileNav from "./common/_mobile-nav";
 import Menu from "./common/_Menu";
 import MobileMenu from "./common/_MobileMenu";
@@ -26,6 +27,7 @@ var App = {
     // All pages
     common: {
         init: function() {
+            new DisableSVGFocus();
             new AjaxForm().init();
             new ScrollToId().init();
             new ScrollToError().init();
