@@ -37,9 +37,9 @@
 		}
 	}
 
-	&.alignleft,
-	&.aligncenter,
-	&.alignright {
+	&.alignleft table,
+	&.aligncenter table,
+	&.alignright table{
 		// Override default display property for align styles.
 		// The table element needs to be kept as display table
 		// for table features to work reliably.
@@ -52,7 +52,19 @@
 		th {
 			word-break: break-word;
 		}
-    }
+	}
+	
+	&.alignleft table{
+		margin-right: auto;
+	}
+
+	&.aligncenter table {
+		margin: 0 auto;
+	}
+
+	&.alignright table{
+		margin-left: auto;
+	}
     
     &.alignfull {
         padding: 0 16px;

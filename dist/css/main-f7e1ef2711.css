@@ -724,14 +724,24 @@ img.mfp-img {
     .wp-block-table .has-fixed-layout td,
     .wp-block-table .has-fixed-layout th {
       word-break: break-word; }
-  .wp-block-table.alignleft, .wp-block-table.aligncenter, .wp-block-table.alignright {
+  .wp-block-table.alignleft table,
+  .wp-block-table.aligncenter table,
+  .wp-block-table.alignright table {
     display: table;
     width: auto; }
-    .wp-block-table.alignleft td,
-    .wp-block-table.alignleft th, .wp-block-table.aligncenter td,
-    .wp-block-table.aligncenter th, .wp-block-table.alignright td,
-    .wp-block-table.alignright th {
+    .wp-block-table.alignleft table td,
+    .wp-block-table.alignleft table th,
+    .wp-block-table.aligncenter table td,
+    .wp-block-table.aligncenter table th,
+    .wp-block-table.alignright table td,
+    .wp-block-table.alignright table th {
       word-break: break-word; }
+  .wp-block-table.alignleft table {
+    margin-right: auto; }
+  .wp-block-table.aligncenter table {
+    margin: 0 auto; }
+  .wp-block-table.alignright table {
+    margin-left: auto; }
   .wp-block-table.alignfull {
     padding: 0 16px; }
   @media only screen and (max-width: 480px) {
@@ -1835,14 +1845,24 @@ img.mfp-img {
     .wp-block-table .has-fixed-layout td,
     .wp-block-table .has-fixed-layout th {
       word-break: break-word; }
-  .wp-block-table.alignleft, .wp-block-table.aligncenter, .wp-block-table.alignright {
+  .wp-block-table.alignleft table,
+  .wp-block-table.aligncenter table,
+  .wp-block-table.alignright table {
     display: table;
     width: auto; }
-    .wp-block-table.alignleft td,
-    .wp-block-table.alignleft th, .wp-block-table.aligncenter td,
-    .wp-block-table.aligncenter th, .wp-block-table.alignright td,
-    .wp-block-table.alignright th {
+    .wp-block-table.alignleft table td,
+    .wp-block-table.alignleft table th,
+    .wp-block-table.aligncenter table td,
+    .wp-block-table.aligncenter table th,
+    .wp-block-table.alignright table td,
+    .wp-block-table.alignright table th {
       word-break: break-word; }
+  .wp-block-table.alignleft table {
+    margin-right: auto; }
+  .wp-block-table.aligncenter table {
+    margin: 0 auto; }
+  .wp-block-table.alignright table {
+    margin-left: auto; }
   .wp-block-table.alignfull {
     padding: 0 16px; }
   @media only screen and (max-width: 480px) {
@@ -3189,4 +3209,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-7048944079.css.map */
+/*# sourceMappingURL=maps/main-f7e1ef2711.css.map */
