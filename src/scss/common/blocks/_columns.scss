@@ -71,8 +71,8 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@include bp($max: md) {
     .wp-block-column {
-        flex-basis: 100% !important;
+        flex-basis: 100% !important; // To override the inline-style applied by WordPress so the columns stack on mobile
     }
 }

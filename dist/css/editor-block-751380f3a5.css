@@ -118,6 +118,13 @@
   .editor-styles-wrapper .wp-block-audio audio {
     width: 100%;
     min-width: 100%; }
+  .editor-styles-wrapper .wp-block-audio.alignright audio, .editor-styles-wrapper .wp-block-audio.alignleft audio {
+    min-width: 0;
+    width: calc(920px / 2);
+    width: calc(var(--max-content-width) / 2);
+    display: block; }
+  .editor-styles-wrapper .wp-block-audio.alignright audio {
+    margin-left: auto; }
   .editor-styles-wrapper .wp-block-quote {
     margin: 1.5rem 0px;
     position: relative;
@@ -175,7 +182,7 @@
       .editor-styles-wrapper .wp-block-columns .wp-block-column {
         margin-left: 20px;
         margin-right: 20px; } }
-  @media screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     .editor-styles-wrapper .wp-block-column {
       flex-basis: 100% !important; } }
   .editor-styles-wrapper .wp-block-separator {
@@ -837,6 +844,13 @@
   .editor-styles-wrapper .wp-block-audio audio {
     width: 100%;
     min-width: 100%; }
+  .editor-styles-wrapper .wp-block-audio.alignright audio, .editor-styles-wrapper .wp-block-audio.alignleft audio {
+    min-width: 0;
+    width: calc(920px / 2);
+    width: calc(var(--max-content-width) / 2);
+    display: block; }
+  .editor-styles-wrapper .wp-block-audio.alignright audio {
+    margin-left: auto; }
   .editor-styles-wrapper .wp-block-code {
     overflow-x: auto; }
   .editor-styles-wrapper .wp-block-preformatted {
@@ -1556,6 +1570,12 @@
       max-width: calc(920px / 2);
       max-width: calc(var(--max-content-width) / 2);
       width: 100%; }
+    .editor-styles-wrapper .wp-block-cover-image.alignleft,
+    .editor-styles-wrapper .wp-block-cover.alignleft {
+      transform: translateX(-50%); }
+    .editor-styles-wrapper .wp-block-cover-image.alignright,
+    .editor-styles-wrapper .wp-block-cover.alignright {
+      transform: translateX(50%); }
     .editor-styles-wrapper .wp-block-cover-image::after,
     .editor-styles-wrapper .wp-block-cover::after {
       display: block;
@@ -2061,4 +2081,4 @@
     padding: 0;
     margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-fdc482fa32.css.map */
+/*# sourceMappingURL=maps/editor-block-751380f3a5.css.map */

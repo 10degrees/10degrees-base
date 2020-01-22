@@ -14,4 +14,20 @@
 		// We restore this as a min-width instead, for alignments.
 		min-width: 100%;
 	}
+
+	&.alignright,
+	&.alignleft {
+		audio {
+			min-width: 0;
+
+			width: calc(#{map-get($layout-map,--max-content-width)} / 2);
+			width: calc(var(--max-content-width) / 2);
+
+			display: block;
+		}
+	}
+
+	&.alignright audio{
+		margin-left: auto;
+	}
 }

@@ -68,6 +68,14 @@
 		width: 100%;
 	}
 
+	&.alignleft{
+		transform: translateX(-50%);
+	}
+
+	&.alignright {
+		transform: translateX(50%);
+	}
+
 	// Using flexbox without an assigned height property breaks vertical center alignment in IE11.
 	// Appending an empty ::after element tricks IE11 into giving the cover image an implicit height, which sidesteps this issue.
 	&::after {
