@@ -124,7 +124,11 @@ h6,
 
 // Paragraphs
 p,
+p.has-regular-font-size,
+p.has-normal-font-size,
 .wp-block p,
+.wp-block p.has-regular-font-size,
+.wp-block p.has-normal-font-size,
 .wp-block-button__link {
     margin: 0 0 #{$base-line-height}rem;
 
@@ -137,6 +141,16 @@ p,
         font-size: 1rem;
         line-height: 1.5;
     }
+}
+
+p.has-small-font-size,
+.wp-block p.has-small-font-size {
+    font-size: 0.875rem;
+    line-height: 1.7142;
+}
+
+.has-medium-font-size {
+	font-size: 20px;
 }
 
 p.has-large-font-size,
@@ -155,10 +169,9 @@ p.has-large-font-size,
     }
 }
 
-p.has-small-font-size,
-.wp-block p.has-small-font-size {
-    font-size: 0.875rem;
-    line-height: 1.7142;
+.has-larger-font-size, // Not used now, kept because of backward compatibility.
+.has-huge-font-size {
+	font-size: 42px;
 }
 
 // Small

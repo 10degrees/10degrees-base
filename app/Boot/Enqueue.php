@@ -20,6 +20,7 @@ class Enqueue
     public function __construct()
     {
         add_action('wp_enqueue_scripts', [$this, 'style'], 100);
+        add_action('wp_enqueue_scripts', [$this, 'removeBlockCSS'], 100);
         // add_action('wp_enqueue_scripts', [$this, 'styleIe'], 100);
         add_action('wp_enqueue_scripts', [$this, 'scripts'], 100);
         add_action('admin_init', [$this, 'adminStyle'], 100);
@@ -31,6 +32,16 @@ class Enqueue
         // add_action('wp_enqueue_scripts', [$this, 'typekitFont'], 100);
         add_filter('style_loader_src', [$this, 'removeWpVersion'], 9999);
         add_filter('script_loader_src', [$this, 'removeWpVersion'], 9999);
+    }
+
+    /**
+     * Remove the default block styles
+     *
+     * @return void
+     */
+    public function removeBlockCSS()
+    {
+        wp_dequeue_style('wp-block-library');
     }
 
     /**

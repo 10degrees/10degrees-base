@@ -1,0 +1,14 @@
+// Text alignments.
+.has-text-align-center {
+	text-align: center;
+}
+
+.has-text-align-left {
+	/*rtl:ignore*/
+	text-align: left;
+}
+
+.has-text-align-right {
+	/*rtl:ignore*/
+	text-align: right;
+}
