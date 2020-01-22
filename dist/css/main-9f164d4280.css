@@ -1205,9 +1205,7 @@ img.mfp-img {
     grid-row: 2; }
   .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__content {
     grid-column: 1;
-    grid-row: 1; } }
-
-@media only screen and (max-width: 768px) {
+    grid-row: 1; }
   @supports (display: grid) {
     .wp-block-media-text {
       gap: 16px; } }
@@ -1461,9 +1459,7 @@ img.mfp-img {
     grid-row: 2; }
   .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__content {
     grid-column: 1;
-    grid-row: 1; } }
-
-@media only screen and (max-width: 768px) {
+    grid-row: 1; }
   @supports (display: grid) {
     .wp-block-media-text {
       gap: 16px; } }
@@ -2530,4 +2526,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-15b60d16e0.css.map */
+/*# sourceMappingURL=maps/main-9f164d4280.css.map */
