@@ -1954,13 +1954,11 @@ img.mfp-img {
   .social-share-block a {
     display: block; }
 
-.wp-block-categories.alignleft {
-  /*rtl:ignore*/
-  margin-right: 2em; }
-
 .wp-block-categories.alignright {
-  /*rtl:ignore*/
-  margin-left: 2em; }
+  text-align: right; }
+
+.wp-block-categories.aligncenter {
+  text-align: center; }
 
 .wp-block-spacer {
   clear: both; }
@@ -3191,4 +3189,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-a2275b4d68.css.map */
+/*# sourceMappingURL=maps/main-7048944079.css.map */
