@@ -6,14 +6,18 @@
 	margin-right: auto;
 	width: 50%;
 
+	max-width: 100px;
+
 	// Wide style
 	&.is-style-wide {
 		border-bottom-width: 1px;
+		max-width: none;
 	}
 
 	// Block style
 	&.is-style-block {
 		width: 100%;
+		max-width: none;
 	}
 
 	// Dots style
@@ -35,11 +39,6 @@
 			padding-left: 2em;
 			font-family: serif;
 		}
-	}
-
-	// Default, thin style
-	&:not(.is-style-wide):not(.is-style-dots):not(.is-style-block) {
-		max-width: 100px;
 	}
 
 	&.has-background:not(.is-style-dots) {

@@ -595,11 +595,14 @@ img.mfp-img {
   border-color: var(--primary, red);
   margin-left: auto;
   margin-right: auto;
-  width: 50%; }
+  width: 50%;
+  max-width: 100px; }
   .wp-block-separator.is-style-wide {
-    border-bottom-width: 1px; }
+    border-bottom-width: 1px;
+    max-width: none; }
   .wp-block-separator.is-style-block {
-    width: 100%; }
+    width: 100%;
+    max-width: none; }
   .wp-block-separator.is-style-dots {
     background: none !important;
     border: none;
@@ -614,8 +617,6 @@ img.mfp-img {
       letter-spacing: 2em;
       padding-left: 2em;
       font-family: serif; }
-  .wp-block-separator:not(.is-style-wide):not(.is-style-dots):not(.is-style-block) {
-    max-width: 100px; }
   .wp-block-separator.has-background:not(.is-style-dots) {
     border-bottom: none;
     height: 1px; }
@@ -1853,11 +1854,14 @@ img.mfp-img {
   border-color: var(--primary, red);
   margin-left: auto;
   margin-right: auto;
-  width: 50%; }
+  width: 50%;
+  max-width: 100px; }
   .wp-block-separator.is-style-wide {
-    border-bottom-width: 1px; }
+    border-bottom-width: 1px;
+    max-width: none; }
   .wp-block-separator.is-style-block {
-    width: 100%; }
+    width: 100%;
+    max-width: none; }
   .wp-block-separator.is-style-dots {
     background: none !important;
     border: none;
@@ -1872,8 +1876,6 @@ img.mfp-img {
       letter-spacing: 2em;
       padding-left: 2em;
       font-family: serif; }
-  .wp-block-separator:not(.is-style-wide):not(.is-style-dots):not(.is-style-block) {
-    max-width: 100px; }
   .wp-block-separator.has-background:not(.is-style-dots) {
     border-bottom: none;
     height: 1px; }
@@ -3149,4 +3151,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-ba875ae311.css.map */
+/*# sourceMappingURL=maps/main-be25b2e270.css.map */

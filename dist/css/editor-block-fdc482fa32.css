@@ -185,11 +185,14 @@
     border-color: var(--primary, red);
     margin-left: auto;
     margin-right: auto;
-    width: 50%; }
+    width: 50%;
+    max-width: 100px; }
     .editor-styles-wrapper .wp-block-separator.is-style-wide {
-      border-bottom-width: 1px; }
+      border-bottom-width: 1px;
+      max-width: none; }
     .editor-styles-wrapper .wp-block-separator.is-style-block {
-      width: 100%; }
+      width: 100%;
+      max-width: none; }
     .editor-styles-wrapper .wp-block-separator.is-style-dots {
       background: none !important;
       border: none;
@@ -204,8 +207,6 @@
         letter-spacing: 2em;
         padding-left: 2em;
         font-family: serif; }
-    .editor-styles-wrapper .wp-block-separator:not(.is-style-wide):not(.is-style-dots):not(.is-style-block) {
-      max-width: 100px; }
     .editor-styles-wrapper .wp-block-separator.has-background:not(.is-style-dots) {
       border-bottom: none;
       height: 1px; }
@@ -1361,11 +1362,14 @@
     border-color: var(--primary, red);
     margin-left: auto;
     margin-right: auto;
-    width: 50%; }
+    width: 50%;
+    max-width: 100px; }
     .editor-styles-wrapper .wp-block-separator.is-style-wide {
-      border-bottom-width: 1px; }
+      border-bottom-width: 1px;
+      max-width: none; }
     .editor-styles-wrapper .wp-block-separator.is-style-block {
-      width: 100%; }
+      width: 100%;
+      max-width: none; }
     .editor-styles-wrapper .wp-block-separator.is-style-dots {
       background: none !important;
       border: none;
@@ -1380,8 +1384,6 @@
         letter-spacing: 2em;
         padding-left: 2em;
         font-family: serif; }
-    .editor-styles-wrapper .wp-block-separator:not(.is-style-wide):not(.is-style-dots):not(.is-style-block) {
-      max-width: 100px; }
     .editor-styles-wrapper .wp-block-separator.has-background:not(.is-style-dots) {
       border-bottom: none;
       height: 1px; }
@@ -2059,4 +2061,4 @@
     padding: 0;
     margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-2e6be7fe5b.css.map */
+/*# sourceMappingURL=maps/editor-block-fdc482fa32.css.map */
