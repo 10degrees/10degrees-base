@@ -1221,6 +1221,7 @@
   .editor-styles-wrapper p,
   .editor-styles-wrapper p.has-regular-font-size,
   .editor-styles-wrapper p.has-normal-font-size,
+  .editor-styles-wrapper .is-regular-text,
   .editor-styles-wrapper .wp-block p,
   .editor-styles-wrapper .wp-block p.has-regular-font-size,
   .editor-styles-wrapper .wp-block p.has-normal-font-size,
@@ -1233,6 +1234,7 @@
       .editor-styles-wrapper p,
       .editor-styles-wrapper p.has-regular-font-size,
       .editor-styles-wrapper p.has-normal-font-size,
+      .editor-styles-wrapper .is-regular-text,
       .editor-styles-wrapper .wp-block p,
       .editor-styles-wrapper .wp-block p.has-regular-font-size,
       .editor-styles-wrapper .wp-block p.has-normal-font-size,
@@ -1240,28 +1242,45 @@
         font-size: 1rem;
         line-height: 1.5; } }
   .editor-styles-wrapper p.has-small-font-size,
+  .editor-styles-wrapper .is-small-text,
   .editor-styles-wrapper .wp-block p.has-small-font-size {
     font-size: 0.875rem;
     line-height: 1.7142; }
   .editor-styles-wrapper .has-medium-font-size {
     font-size: 20px; }
   .editor-styles-wrapper p.has-large-font-size,
+  .editor-styles-wrapper .is-large-text,
   .editor-styles-wrapper .wp-block p.has-large-font-size {
     font-size: 0.875rem;
     line-height: 1.7142; }
     @media only screen and (min-width: 768px) {
       .editor-styles-wrapper p.has-large-font-size,
+      .editor-styles-wrapper .is-large-text,
       .editor-styles-wrapper .wp-block p.has-large-font-size {
         font-size: 1.3125rem;
         line-height: 1.5238; } }
     @media only screen and (min-width: 1024px) {
       .editor-styles-wrapper p.has-large-font-size,
+      .editor-styles-wrapper .is-large-text,
       .editor-styles-wrapper .wp-block p.has-large-font-size {
         font-size: 1.5rem;
         line-height: 1.3333; } }
   .editor-styles-wrapper .has-larger-font-size,
+  .editor-styles-wrapper .is-larger-text,
   .editor-styles-wrapper .has-huge-font-size {
     font-size: 42px; }
+  .editor-styles-wrapper p.has-drop-cap:not(:focus)::first-letter {
+    float: left;
+    font-size: 8.4em;
+    line-height: 0.68;
+    font-weight: 100;
+    margin: 0.05em 0.1em 0 0;
+    text-transform: uppercase;
+    font-style: normal; }
+  .editor-styles-wrapper p.has-background {
+    padding: 20px 30px; }
+  .editor-styles-wrapper p.has-text-color a {
+    color: inherit; }
   .editor-styles-wrapper small,
   .editor-styles-wrapper .small {
     font-size: 90%; }
@@ -1449,4 +1468,4 @@
     padding: 0;
     margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-dd9e13fb34.css.map */
+/*# sourceMappingURL=maps/editor-block-f7648c167c.css.map */

@@ -126,6 +126,7 @@ h6,
 p,
 p.has-regular-font-size,
 p.has-normal-font-size,
+.is-regular-text,
 .wp-block p,
 .wp-block p.has-regular-font-size,
 .wp-block p.has-normal-font-size,
@@ -144,6 +145,7 @@ p.has-normal-font-size,
 }
 
 p.has-small-font-size,
+.is-small-text,
 .wp-block p.has-small-font-size {
     font-size: 0.875rem;
     line-height: 1.7142;
@@ -154,6 +156,7 @@ p.has-small-font-size,
 }
 
 p.has-large-font-size,
+.is-large-text,
 .wp-block p.has-large-font-size {
     font-size: 0.875rem;
     line-height: 1.7142;
@@ -170,8 +173,31 @@ p.has-large-font-size,
 }
 
 .has-larger-font-size, // Not used now, kept because of backward compatibility.
+.is-larger-text,
 .has-huge-font-size {
 	font-size: 42px;
+}
+
+// Don't show the drop cap when editing the paragraph's content. It causes a
+// number of bugs in combination with `contenteditable` fields. The caret
+// cannot be set around it, caret position calculation fails in Chrome, and
+// typing at the end of the paragraph doesn't work.
+p.has-drop-cap:not(:focus)::first-letter {
+	float: left;
+	font-size: 8.4em;
+	line-height: 0.68;
+	font-weight: 100;
+	margin: 0.05em 0.1em 0 0;
+	text-transform: uppercase;
+	font-style: normal;
+}
+
+p.has-background {
+	padding: 20px 30px;
+}
+
+p.has-text-color a {
+	color: inherit;
 }
 
 // Small

@@ -1884,6 +1884,7 @@ h6,
 p,
 p.has-regular-font-size,
 p.has-normal-font-size,
+.is-regular-text,
 .wp-block p,
 .wp-block p.has-regular-font-size,
 .wp-block p.has-normal-font-size,
@@ -1896,6 +1897,7 @@ p.has-normal-font-size,
     p,
     p.has-regular-font-size,
     p.has-normal-font-size,
+    .is-regular-text,
     .wp-block p,
     .wp-block p.has-regular-font-size,
     .wp-block p.has-normal-font-size,
@@ -1904,6 +1906,7 @@ p.has-normal-font-size,
       line-height: 1.5; } }
 
 p.has-small-font-size,
+.is-small-text,
 .wp-block p.has-small-font-size {
   font-size: 0.875rem;
   line-height: 1.7142; }
@@ -1912,23 +1915,42 @@ p.has-small-font-size,
   font-size: 20px; }
 
 p.has-large-font-size,
+.is-large-text,
 .wp-block p.has-large-font-size {
   font-size: 0.875rem;
   line-height: 1.7142; }
   @media only screen and (min-width: 768px) {
     p.has-large-font-size,
+    .is-large-text,
     .wp-block p.has-large-font-size {
       font-size: 1.3125rem;
       line-height: 1.5238; } }
   @media only screen and (min-width: 1024px) {
     p.has-large-font-size,
+    .is-large-text,
     .wp-block p.has-large-font-size {
       font-size: 1.5rem;
       line-height: 1.3333; } }
 
 .has-larger-font-size,
+.is-larger-text,
 .has-huge-font-size {
   font-size: 42px; }
+
+p.has-drop-cap:not(:focus)::first-letter {
+  float: left;
+  font-size: 8.4em;
+  line-height: 0.68;
+  font-weight: 100;
+  margin: 0.05em 0.1em 0 0;
+  text-transform: uppercase;
+  font-style: normal; }
+
+p.has-background {
+  padding: 20px 30px; }
+
+p.has-text-color a {
+  color: inherit; }
 
 small,
 .small {
@@ -2526,4 +2548,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-9f164d4280.css.map */
+/*# sourceMappingURL=maps/main-91fa818a72.css.map */
