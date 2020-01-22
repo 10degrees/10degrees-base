@@ -1994,6 +1994,16 @@ img.mfp-img {
       object-fit: cover; } }
   .wp-block-video.aligncenter {
     text-align: center; }
+  .wp-block-video.aligncenter video,
+  .wp-block-video.alignleft video,
+  .wp-block-video.alignright video {
+    max-width: calc(920px / 2);
+    max-width: calc(var(--max-content-width) / 2);
+    display: block; }
+  .wp-block-video.alignright video {
+    margin-left: auto; }
+  .wp-block-video.aligncenter video {
+    margin: 0 auto; }
   .wp-block-video figcaption {
     margin-top: 0.5em;
     margin-bottom: 1em; }
@@ -3210,4 +3220,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-f85d167b7b.css.map */
+/*# sourceMappingURL=maps/main-1dd88508c1.css.map */
