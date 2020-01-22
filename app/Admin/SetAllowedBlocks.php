@@ -3,7 +3,7 @@
 namespace App\Admin;
 
 /**
- * Whitelist the blocks available in the Gutenberg editor
+ * Choose which blocks are available in the Gutenberg editor
  * See Confluence for details on how to add a block
  * 
  * @category Theme
@@ -13,7 +13,7 @@ namespace App\Admin;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class WhitelistBlocks
+class SetAllowedBlocks
 {
     /**
      * Array of the allowed block types in the editor

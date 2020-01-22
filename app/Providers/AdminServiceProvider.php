@@ -30,6 +30,6 @@ class AdminServiceProvider extends ServiceProvider
         '\App\Admin\EditorColourPalette',
         '\App\Admin\FontSizes',
         '\App\Admin\ReusableBlockMenu',
-        '\App\Admin\WhitelistBlocks'
+        '\App\Admin\SetAllowedBlocks'
     ];
 }
