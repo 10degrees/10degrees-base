@@ -1656,6 +1656,12 @@ img.mfp-img {
     max-width: calc(920px / 2);
     max-width: calc(var(--max-content-width) / 2);
     width: 100%; }
+  .wp-block-gallery.alignleft,
+  .blocks-gallery-grid.alignleft {
+    transform: translateX(-50%); }
+  .wp-block-gallery.alignright,
+  .blocks-gallery-grid.alignright {
+    transform: translateX(50%); }
   .wp-block-gallery.aligncenter .blocks-gallery-item figure,
   .blocks-gallery-grid.aligncenter .blocks-gallery-item figure {
     justify-content: center; }
@@ -3175,4 +3181,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-ec2da26a21.css.map */
+/*# sourceMappingURL=maps/main-54436b7182.css.map */

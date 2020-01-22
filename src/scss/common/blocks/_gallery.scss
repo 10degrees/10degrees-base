@@ -139,6 +139,14 @@ $grid-size-large: 16px;
 		width: 100%;
 	}
 
+	&.alignleft {
+		transform: translateX(-50%);
+	}
+
+	&.alignright {
+		transform: translateX(50%);
+	}
+
 	// If the gallery is centered, center the content inside as well.
 	&.aligncenter {
 		.blocks-gallery-item figure {
