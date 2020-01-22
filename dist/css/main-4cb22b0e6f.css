@@ -2081,9 +2081,10 @@ img.mfp-img {
   .wp-block-cover-image.has-background-dim.has-background-dim-100 .wp-block-cover__gradient-background,
   .wp-block-cover.has-background-dim.has-background-dim-100 .wp-block-cover__gradient-background {
     opacity: 1; }
-  .wp-block-cover-image.alignleft, .wp-block-cover-image.alignright,
+  .wp-block-cover-image.alignleft, .wp-block-cover-image.alignright, .wp-block-cover-image.aligncenter,
   .wp-block-cover.alignleft,
-  .wp-block-cover.alignright {
+  .wp-block-cover.alignright,
+  .wp-block-cover.aligncenter {
     max-width: calc(920px / 2);
     max-width: calc(var(--max-content-width) / 2);
     width: 100%; }
@@ -3189,4 +3190,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-2a93d83079.css.map */
+/*# sourceMappingURL=maps/main-4cb22b0e6f.css.map */
