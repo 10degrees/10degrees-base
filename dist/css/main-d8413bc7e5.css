@@ -1609,6 +1609,9 @@ img.mfp-img {
   /*rtl:ignore*/
   margin-left: 2em; }
 
+.wp-block-spacer {
+  clear: both; }
+
 .accordion .toggle {
   width: 100%;
   border: 0;
@@ -2606,4 +2609,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-c570546c17.css.map */
+/*# sourceMappingURL=maps/main-d8413bc7e5.css.map */
