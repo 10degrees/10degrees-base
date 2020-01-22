@@ -1612,6 +1612,20 @@ img.mfp-img {
 .wp-block-spacer {
   clear: both; }
 
+.wp-block-video {
+  margin-left: 0;
+  margin-right: 0; }
+  .wp-block-video video {
+    max-width: 100%; }
+  @supports (position: sticky) {
+    .wp-block-video [poster] {
+      object-fit: cover; } }
+  .wp-block-video.aligncenter {
+    text-align: center; }
+  .wp-block-video figcaption {
+    margin-top: 0.5em;
+    margin-bottom: 1em; }
+
 .accordion .toggle {
   width: 100%;
   border: 0;
@@ -2609,4 +2623,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-d8413bc7e5.css.map */
+/*# sourceMappingURL=maps/main-5956a08011.css.map */
