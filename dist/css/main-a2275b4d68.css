@@ -1658,9 +1658,10 @@ img.mfp-img {
   .blocks-gallery-grid .blocks-gallery-image:last-child,
   .blocks-gallery-grid .blocks-gallery-item:last-child {
     margin-right: 0; }
-  .wp-block-gallery.alignleft, .wp-block-gallery.alignright,
+  .wp-block-gallery.alignleft, .wp-block-gallery.alignright, .wp-block-gallery.aligncenter,
   .blocks-gallery-grid.alignleft,
-  .blocks-gallery-grid.alignright {
+  .blocks-gallery-grid.alignright,
+  .blocks-gallery-grid.aligncenter {
     max-width: calc(920px / 2);
     max-width: calc(var(--max-content-width) / 2);
     width: 100%; }
@@ -3190,4 +3191,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-4cb22b0e6f.css.map */
+/*# sourceMappingURL=maps/main-a2275b4d68.css.map */
