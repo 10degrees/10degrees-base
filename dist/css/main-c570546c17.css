@@ -589,9 +589,38 @@ img.mfp-img {
     flex-basis: 100% !important; } }
 
 .wp-block-separator {
+  border: none;
+  border-bottom: 2px solid;
+  border-color: red;
+  border-color: var(--primary, red);
+  margin-left: auto;
+  margin-right: auto;
   width: 50%; }
+  .wp-block-separator.is-style-wide {
+    border-bottom-width: 1px; }
   .wp-block-separator.is-style-block {
     width: 100%; }
+  .wp-block-separator.is-style-dots {
+    background: none !important;
+    border: none;
+    text-align: center;
+    max-width: none;
+    line-height: 1;
+    height: auto; }
+    .wp-block-separator.is-style-dots::before {
+      content: "\00b7 \00b7 \00b7";
+      color: currentColor;
+      font-size: 20px;
+      letter-spacing: 2em;
+      padding-left: 2em;
+      font-family: serif; }
+  .wp-block-separator:not(.is-style-wide):not(.is-style-dots):not(.is-style-block) {
+    max-width: 100px; }
+  .wp-block-separator.has-background:not(.is-style-dots) {
+    border-bottom: none;
+    height: 1px; }
+  .wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
+    height: 2px; }
 
 .block-editor-block-list__block[data-type="core/embed"][data-align="left"],
 .block-editor-block-list__block[data-type="core/embed"][data-align="right"],
@@ -1500,9 +1529,38 @@ img.mfp-img {
     border: 1px solid #212121; }
 
 .wp-block-separator {
+  border: none;
+  border-bottom: 2px solid;
+  border-color: red;
+  border-color: var(--primary, red);
+  margin-left: auto;
+  margin-right: auto;
   width: 50%; }
+  .wp-block-separator.is-style-wide {
+    border-bottom-width: 1px; }
   .wp-block-separator.is-style-block {
     width: 100%; }
+  .wp-block-separator.is-style-dots {
+    background: none !important;
+    border: none;
+    text-align: center;
+    max-width: none;
+    line-height: 1;
+    height: auto; }
+    .wp-block-separator.is-style-dots::before {
+      content: "\00b7 \00b7 \00b7";
+      color: currentColor;
+      font-size: 20px;
+      letter-spacing: 2em;
+      padding-left: 2em;
+      font-family: serif; }
+  .wp-block-separator:not(.is-style-wide):not(.is-style-dots):not(.is-style-block) {
+    max-width: 100px; }
+  .wp-block-separator.has-background:not(.is-style-dots) {
+    border-bottom: none;
+    height: 1px; }
+  .wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
+    height: 2px; }
 
 .social-links-block {
   position: relative; }
@@ -2548,4 +2606,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-91fa818a72.css.map */
+/*# sourceMappingURL=maps/main-c570546c17.css.map */
