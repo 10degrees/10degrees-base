@@ -269,18 +269,10 @@
   .editor-styles-wrapper .wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-2 .wp-block-embed__wrapper::before {
     padding-top: 200%; }
   .editor-styles-wrapper .wp-block-table {
+    overflow-x: auto;
     -webkit-overflow-scrolling: auto; }
-    @media only screen and (max-width: 480px) {
-      .editor-styles-wrapper .wp-block-table {
-        grid-column: start / end;
-        overflow-x: auto;
-        padding: 0 16px; } }
-    @media only screen and (max-width: 480px) {
-      .editor-styles-wrapper .wp-block-table.alignwide {
-        grid-column: start / end; } }
-    .editor-styles-wrapper .wp-block-table.alignfull {
-      padding: 0 16px; }
     .editor-styles-wrapper .wp-block-table table {
+      width: 100%;
       border-collapse: collapse;
       margin-left: 0;
       margin-right: 0;
@@ -291,6 +283,56 @@
     .editor-styles-wrapper .wp-block-table th,
     .editor-styles-wrapper .wp-block-table td {
       border: 1px solid #212121; }
+    .editor-styles-wrapper .wp-block-table .has-fixed-layout {
+      table-layout: fixed;
+      width: 100%; }
+      .editor-styles-wrapper .wp-block-table .has-fixed-layout td,
+      .editor-styles-wrapper .wp-block-table .has-fixed-layout th {
+        word-break: break-word; }
+    .editor-styles-wrapper .wp-block-table.alignleft, .editor-styles-wrapper .wp-block-table.aligncenter, .editor-styles-wrapper .wp-block-table.alignright {
+      display: table;
+      width: auto; }
+      .editor-styles-wrapper .wp-block-table.alignleft td,
+      .editor-styles-wrapper .wp-block-table.alignleft th, .editor-styles-wrapper .wp-block-table.aligncenter td,
+      .editor-styles-wrapper .wp-block-table.aligncenter th, .editor-styles-wrapper .wp-block-table.alignright td,
+      .editor-styles-wrapper .wp-block-table.alignright th {
+        word-break: break-word; }
+    .editor-styles-wrapper .wp-block-table.alignfull {
+      padding: 0 16px; }
+    @media only screen and (max-width: 480px) {
+      .editor-styles-wrapper .wp-block-table.alignwide {
+        grid-column: start / end; } }
+    .editor-styles-wrapper .wp-block-table .has-subtle-light-gray-background-color {
+      background-color: #f3f4f5; }
+    .editor-styles-wrapper .wp-block-table .has-subtle-pale-green-background-color {
+      background-color: #e9fbe5; }
+    .editor-styles-wrapper .wp-block-table .has-subtle-pale-blue-background-color {
+      background-color: #e7f5fe; }
+    .editor-styles-wrapper .wp-block-table .has-subtle-pale-pink-background-color {
+      background-color: #fcf0ef; }
+    .editor-styles-wrapper .wp-block-table.is-style-stripes {
+      border-spacing: 0;
+      border-collapse: inherit;
+      background-color: transparent;
+      border-bottom: 1px solid #f5f5f5; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+        background-color: #f5f5f5; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd) {
+        background-color: #f3f4f5; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd) {
+        background-color: #e9fbe5; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd) {
+        background-color: #e7f5fe; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd) {
+        background-color: #fcf0ef; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes th,
+      .editor-styles-wrapper .wp-block-table.is-style-stripes td {
+        border-color: transparent; }
+    @media only screen and (max-width: 480px) {
+      .editor-styles-wrapper .wp-block-table {
+        grid-column: start / end;
+        overflow-x: auto;
+        padding: 0 16px; } }
   .editor-styles-wrapper .link-button,
   .editor-styles-wrapper .button {
     padding: 0.5rem;
@@ -1014,18 +1056,10 @@
   .editor-styles-wrapper .wp-block-preformatted {
     white-space: normal; }
   .editor-styles-wrapper .wp-block-table {
+    overflow-x: auto;
     -webkit-overflow-scrolling: auto; }
-    @media only screen and (max-width: 480px) {
-      .editor-styles-wrapper .wp-block-table {
-        grid-column: start / end;
-        overflow-x: auto;
-        padding: 0 16px; } }
-    @media only screen and (max-width: 480px) {
-      .editor-styles-wrapper .wp-block-table.alignwide {
-        grid-column: start / end; } }
-    .editor-styles-wrapper .wp-block-table.alignfull {
-      padding: 0 16px; }
     .editor-styles-wrapper .wp-block-table table {
+      width: 100%;
       border-collapse: collapse;
       margin-left: 0;
       margin-right: 0;
@@ -1036,6 +1070,56 @@
     .editor-styles-wrapper .wp-block-table th,
     .editor-styles-wrapper .wp-block-table td {
       border: 1px solid #212121; }
+    .editor-styles-wrapper .wp-block-table .has-fixed-layout {
+      table-layout: fixed;
+      width: 100%; }
+      .editor-styles-wrapper .wp-block-table .has-fixed-layout td,
+      .editor-styles-wrapper .wp-block-table .has-fixed-layout th {
+        word-break: break-word; }
+    .editor-styles-wrapper .wp-block-table.alignleft, .editor-styles-wrapper .wp-block-table.aligncenter, .editor-styles-wrapper .wp-block-table.alignright {
+      display: table;
+      width: auto; }
+      .editor-styles-wrapper .wp-block-table.alignleft td,
+      .editor-styles-wrapper .wp-block-table.alignleft th, .editor-styles-wrapper .wp-block-table.aligncenter td,
+      .editor-styles-wrapper .wp-block-table.aligncenter th, .editor-styles-wrapper .wp-block-table.alignright td,
+      .editor-styles-wrapper .wp-block-table.alignright th {
+        word-break: break-word; }
+    .editor-styles-wrapper .wp-block-table.alignfull {
+      padding: 0 16px; }
+    @media only screen and (max-width: 480px) {
+      .editor-styles-wrapper .wp-block-table.alignwide {
+        grid-column: start / end; } }
+    .editor-styles-wrapper .wp-block-table .has-subtle-light-gray-background-color {
+      background-color: #f3f4f5; }
+    .editor-styles-wrapper .wp-block-table .has-subtle-pale-green-background-color {
+      background-color: #e9fbe5; }
+    .editor-styles-wrapper .wp-block-table .has-subtle-pale-blue-background-color {
+      background-color: #e7f5fe; }
+    .editor-styles-wrapper .wp-block-table .has-subtle-pale-pink-background-color {
+      background-color: #fcf0ef; }
+    .editor-styles-wrapper .wp-block-table.is-style-stripes {
+      border-spacing: 0;
+      border-collapse: inherit;
+      background-color: transparent;
+      border-bottom: 1px solid #f5f5f5; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+        background-color: #f5f5f5; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd) {
+        background-color: #f3f4f5; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd) {
+        background-color: #e9fbe5; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd) {
+        background-color: #e7f5fe; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd) {
+        background-color: #fcf0ef; }
+      .editor-styles-wrapper .wp-block-table.is-style-stripes th,
+      .editor-styles-wrapper .wp-block-table.is-style-stripes td {
+        border-color: transparent; }
+    @media only screen and (max-width: 480px) {
+      .editor-styles-wrapper .wp-block-table {
+        grid-column: start / end;
+        overflow-x: auto;
+        padding: 0 16px; } }
   .editor-styles-wrapper .wp-block-separator {
     border: none;
     border-bottom: 2px solid;
@@ -1541,4 +1625,4 @@
     padding: 0;
     margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-0634220844.css.map */
+/*# sourceMappingURL=maps/editor-block-47f29a4425.css.map */
