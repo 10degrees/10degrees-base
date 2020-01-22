@@ -14,6 +14,9 @@ export default class SubMenu {
         this.a.setAttribute("role", "button");
         this.a.setAttribute("aria-haspopup", "true");
         this.close();
+
+        /* Copy top level link into its submenu */
+        this.copyParentToSubMenu();
     }
     handleClick() {
         this.a.onclick = e => {
@@ -56,5 +59,29 @@ export default class SubMenu {
     }
     close() {
         this.a.setAttribute("aria-expanded", "false");
+    }
+    copyParentToSubMenu(){
+        let url = this.a.href;
+        let text = this.a.textContent;
+
+        let copiedLink = this.createSubMenuItem({
+            url,
+            text
+        });
+
+        this.ul.prepend(copiedLink);
+    }
+
+    createSubMenuItem({url, text}){
+        let listItem = document.createElement('li');
+        listItem.classList.add('menu-item');
+
+        let linkElement = document.createElement('a');
+        linkElement.textContent = text;
+        linkElement.setAttribute('href', url);
+
+        listItem.appendChild(linkElement);
+
+        return listItem;
     }
 }
