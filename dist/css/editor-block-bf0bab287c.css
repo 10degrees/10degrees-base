@@ -89,6 +89,20 @@
 /* common */
 .editor-styles-wrapper {
   /* blocks */
+  /*
+* Here we here not able to use a mobile first CSS approach.
+* Custom widths are set using inline styles, and on mobile,
+* we need 100% width, so we use important to overwrite the inline style.
+* If the style were set on mobile first, on desktop styles,
+* we would have no way of setting the style again to the inline style.
+*/
+  /*
+* Here we here not able to use a mobile first CSS approach.
+* Custom widths are set using inline styles, and on mobile,
+* we need 100% width, so we use important to overwrite the inline style.
+* If the style were set on mobile first, on desktop styles,
+* we would have no way of setting the style again to the inline style.
+*/
   /* common */
   /*
  * Base typography
@@ -669,6 +683,71 @@
         color: var(--link-hover-text, );
         background-color: var(--link-hover-hover, );
         border-color: var(--link-hover-hover, ); }
+  .editor-styles-wrapper .wp-block-media-text {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 50% 1fr; }
+    .editor-styles-wrapper .wp-block-media-text .has-media-on-the-right {
+      grid-template-columns: 1fr 50%; }
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-top .wp-block-media-text__content,
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-top .wp-block-media-text__media {
+    align-self: start; }
+  .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__content,
+  .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__media,
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-center .wp-block-media-text__content,
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-center .wp-block-media-text__media {
+    align-self: center; }
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-bottom .wp-block-media-text__content,
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-bottom .wp-block-media-text__media {
+    align-self: end; }
+  .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__media {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0; }
+  .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__content {
+    grid-column: 2;
+    grid-row: 1;
+    word-break: break-word;
+    padding: 0 8% 0 8%; }
+  .editor-styles-wrapper .wp-block-media-text.has-media-on-the-right .wp-block-media-text__media {
+    grid-column: 2;
+    grid-row: 1; }
+  .editor-styles-wrapper .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+    grid-column: 1;
+    grid-row: 1; }
+  .editor-styles-wrapper .wp-block-media-text > figure > img,
+  .editor-styles-wrapper .wp-block-media-text > figure > video {
+    max-width: unset;
+    width: 100%;
+    vertical-align: middle; }
+  .editor-styles-wrapper .wp-block-media-text.is-image-fill figure.wp-block-media-text__media {
+    height: 100%;
+    min-height: 250px;
+    background-size: cover; }
+  .editor-styles-wrapper .wp-block-media-text.is-image-fill figure.wp-block-media-text__media > img {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0; }
+  @media only screen and (max-width: 768px) {
+    .editor-styles-wrapper .wp-block-media-text.is-stacked-on-mobile {
+      grid-template-columns: 100% !important; }
+      .editor-styles-wrapper .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+        grid-column: 1;
+        grid-row: 1; }
+      .editor-styles-wrapper .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+        grid-column: 1;
+        grid-row: 2; }
+    .editor-styles-wrapper .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__media {
+      grid-column: 1;
+      grid-row: 2; }
+    .editor-styles-wrapper .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__content {
+      grid-column: 1;
+      grid-row: 1; } }
   @media only screen and (max-width: 768px) {
     @supports (display: grid) {
       .editor-styles-wrapper .wp-block-media-text {
@@ -828,6 +907,71 @@
       background-color: var(--primary-hover, darkred);
       border-color: darkred;
       border-color: var(--primary-hover, darkred); }
+  .editor-styles-wrapper .wp-block-media-text {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 50% 1fr; }
+    .editor-styles-wrapper .wp-block-media-text .has-media-on-the-right {
+      grid-template-columns: 1fr 50%; }
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-top .wp-block-media-text__content,
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-top .wp-block-media-text__media {
+    align-self: start; }
+  .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__content,
+  .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__media,
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-center .wp-block-media-text__content,
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-center .wp-block-media-text__media {
+    align-self: center; }
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-bottom .wp-block-media-text__content,
+  .editor-styles-wrapper .wp-block-media-text.is-vertically-aligned-bottom .wp-block-media-text__media {
+    align-self: end; }
+  .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__media {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0; }
+  .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__content {
+    grid-column: 2;
+    grid-row: 1;
+    word-break: break-word;
+    padding: 0 8% 0 8%; }
+  .editor-styles-wrapper .wp-block-media-text.has-media-on-the-right .wp-block-media-text__media {
+    grid-column: 2;
+    grid-row: 1; }
+  .editor-styles-wrapper .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+    grid-column: 1;
+    grid-row: 1; }
+  .editor-styles-wrapper .wp-block-media-text > figure > img,
+  .editor-styles-wrapper .wp-block-media-text > figure > video {
+    max-width: unset;
+    width: 100%;
+    vertical-align: middle; }
+  .editor-styles-wrapper .wp-block-media-text.is-image-fill figure.wp-block-media-text__media {
+    height: 100%;
+    min-height: 250px;
+    background-size: cover; }
+  .editor-styles-wrapper .wp-block-media-text.is-image-fill figure.wp-block-media-text__media > img {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0; }
+  @media only screen and (max-width: 768px) {
+    .editor-styles-wrapper .wp-block-media-text.is-stacked-on-mobile {
+      grid-template-columns: 100% !important; }
+      .editor-styles-wrapper .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+        grid-column: 1;
+        grid-row: 1; }
+      .editor-styles-wrapper .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+        grid-column: 1;
+        grid-row: 2; }
+    .editor-styles-wrapper .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__media {
+      grid-column: 1;
+      grid-row: 2; }
+    .editor-styles-wrapper .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__content {
+      grid-column: 1;
+      grid-row: 1; } }
   @media only screen and (max-width: 768px) {
     @supports (display: grid) {
       .editor-styles-wrapper .wp-block-media-text {
@@ -1307,4 +1451,4 @@
     padding: 0;
     margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-308fabd9c0.css.map */
+/*# sourceMappingURL=maps/editor-block-bf0bab287c.css.map */
