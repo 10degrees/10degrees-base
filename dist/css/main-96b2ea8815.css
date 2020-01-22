@@ -1150,37 +1150,54 @@ img.mfp-img {
 .wp-block-preformatted {
   white-space: normal; }
 
-.wp-block-file.alignfull {
-  padding: 0 16px; }
-
-.wp-block-file .wp-block-file__button {
-  padding: 0.5rem;
-  border: 2px solid transparent;
-  transition: all 0.25s ease;
-  border-radius: 0.25rem;
-  -webkit-appearance: none;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  white-space: nowrap;
-  color: #fff;
-  color: var(--primary-text, #fff);
-  background-color: red;
-  background-color: var(--primary, red);
-  border-color: red;
-  border-color: var(--primary, red); }
-  .wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:focus, .wp-block-file .wp-block-file__button:active, .wp-block-file .wp-block-file__button.active {
-    text-decoration: none; }
-  .wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:focus, .wp-block-file .wp-block-file__button:active, .wp-block-file .wp-block-file__button.active {
+.wp-block-file {
+  margin-bottom: 1.5em; }
+  .wp-block-file.aligncenter {
+    text-align: center; }
+  .wp-block-file.alignright {
+    /*rtl:ignore*/
+    text-align: right; }
+  .wp-block-file.alignfull {
+    padding: 0 16px; }
+  .wp-block-file .wp-block-file__button,
+  .wp-block-file a.wp-block-file__button {
+    padding: 0.5rem;
+    border: 2px solid transparent;
+    transition: all 0.25s ease;
+    border-radius: 0.25rem;
+    -webkit-appearance: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
     color: #fff;
     color: var(--primary-text, #fff);
-    background-color: darkred;
-    background-color: var(--primary-hover, darkred);
-    border-color: darkred;
-    border-color: var(--primary-hover, darkred); }
+    background-color: red;
+    background-color: var(--primary, red);
+    border-color: red;
+    border-color: var(--primary, red); }
+    .wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:focus, .wp-block-file .wp-block-file__button:active, .wp-block-file .wp-block-file__button.active,
+    .wp-block-file a.wp-block-file__button:hover,
+    .wp-block-file a.wp-block-file__button:focus,
+    .wp-block-file a.wp-block-file__button:active,
+    .wp-block-file a.wp-block-file__button.active {
+      text-decoration: none; }
+    .wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:focus, .wp-block-file .wp-block-file__button:active, .wp-block-file .wp-block-file__button.active,
+    .wp-block-file a.wp-block-file__button:hover,
+    .wp-block-file a.wp-block-file__button:focus,
+    .wp-block-file a.wp-block-file__button:active,
+    .wp-block-file a.wp-block-file__button.active {
+      color: #fff;
+      color: var(--primary-text, #fff);
+      background-color: darkred;
+      background-color: var(--primary-hover, darkred);
+      border-color: darkred;
+      border-color: var(--primary-hover, darkred); }
+  .wp-block-file * + .wp-block-file__button {
+    margin-left: 0.75em; }
 
 .wp-block-image.alignfull figcaption {
   padding: 0 16px; }
@@ -2293,4 +2310,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-6bff0bac96.css.map */
+/*# sourceMappingURL=maps/main-96b2ea8815.css.map */
