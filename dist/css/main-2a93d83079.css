@@ -525,7 +525,7 @@ img.mfp-img {
   width: 100%;
   min-width: 100%; }
 
-.wp-block-audio.alignright audio, .wp-block-audio.alignleft audio {
+.wp-block-audio.alignright audio, .wp-block-audio.alignleft audio, .wp-block-audio.aligncenter audio {
   min-width: 0;
   width: calc(920px / 2);
   width: calc(var(--max-content-width) / 2);
@@ -533,6 +533,10 @@ img.mfp-img {
 
 .wp-block-audio.alignright audio {
   margin-left: auto; }
+
+.wp-block-audio.aligncenter audio {
+  margin-left: auto;
+  margin-right: auto; }
 
 .wp-block-quote {
   margin: 1.5rem 0px;
@@ -1307,7 +1311,7 @@ img.mfp-img {
   width: 100%;
   min-width: 100%; }
 
-.wp-block-audio.alignright audio, .wp-block-audio.alignleft audio {
+.wp-block-audio.alignright audio, .wp-block-audio.alignleft audio, .wp-block-audio.aligncenter audio {
   min-width: 0;
   width: calc(920px / 2);
   width: calc(var(--max-content-width) / 2);
@@ -1315,6 +1319,10 @@ img.mfp-img {
 
 .wp-block-audio.alignright audio {
   margin-left: auto; }
+
+.wp-block-audio.aligncenter audio {
+  margin-left: auto;
+  margin-right: auto; }
 
 .wp-block-code {
   overflow-x: auto; }
@@ -3181,4 +3189,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-54436b7182.css.map */
+/*# sourceMappingURL=maps/main-2a93d83079.css.map */
