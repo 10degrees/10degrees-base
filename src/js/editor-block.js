@@ -108,6 +108,12 @@ wp.domReady(() => {
  * @return  {object}            The updated settings
  */
 function disableAlignment( settings, name ) {
+    // Image blocks don't use the supports array for alignment
+    // This avoids the image block having two alignment icons
+    if(name === "core/image"){
+        return settings;
+    }
+
     return {
         ...settings,
         supports: {

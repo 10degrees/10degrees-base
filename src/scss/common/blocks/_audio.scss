@@ -10,30 +10,6 @@
 	audio {
 		width: 100%;
 
-		// The browser natively applies a 300px width to the audio block.
-		// We restore this as a min-width instead, for alignments.
 		min-width: 100%;
-	}
-
-	&.alignright,
-	&.alignleft,
-	&.aligncenter {
-		audio {
-			min-width: 0;
-
-			width: calc(#{map-get($layout-map,--max-content-width)} / 2);
-			width: calc(var(--max-content-width) / 2);
-
-			display: block;
-		}
-	}
-
-	&.alignright audio{
-		margin-left: auto;
-	}
-
-	&.aligncenter audio{
-		margin-left: auto;
-		margin-right: auto;
 	}
 }

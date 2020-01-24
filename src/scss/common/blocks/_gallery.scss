@@ -130,30 +130,6 @@ $grid-size-large: 16px;
 	.blocks-gallery-item:last-child {
 		margin-right: 0;
 	}
-
-	// Apply max-width to floated items that have no intrinsic width.
-	&.alignleft,
-	&.alignright,
-	&.aligncenter {
-		max-width: calc(#{map-get($layout-map,--max-content-width)} / 2);
-        max-width: calc(var(--max-content-width) / 2);
-		width: 100%;
-	}
-
-	&.alignleft {
-		transform: translateX(-50%);
-	}
-
-	&.alignright {
-		transform: translateX(50%);
-	}
-
-	// If the gallery is centered, center the content inside as well.
-	&.aligncenter {
-		.blocks-gallery-item figure {
-			justify-content: center;
-		}
-    }
     
     &.alignfull {
         .blocks-gallery-caption {

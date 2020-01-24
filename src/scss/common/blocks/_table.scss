@@ -37,35 +37,6 @@
 		}
 	}
 
-	&.alignleft table,
-	&.aligncenter table,
-	&.alignright table{
-		// Override default display property for align styles.
-		// The table element needs to be kept as display table
-		// for table features to work reliably.
-		display: table;
-		// Table cannot be 100% width if it is aligned, so set
-		// width as auto.
-		width: auto;
-
-		td,
-		th {
-			word-break: break-word;
-		}
-	}
-	
-	&.alignleft table{
-		margin-right: auto;
-	}
-
-	&.aligncenter table {
-		margin: 0 auto;
-	}
-
-	&.alignright table{
-		margin-left: auto;
-	}
-    
     &.alignfull {
         padding: 0 16px;
     }
