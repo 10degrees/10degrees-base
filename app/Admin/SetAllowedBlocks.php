@@ -22,7 +22,7 @@ class SetAllowedBlocks
      */
     public $allowedBlocks = [
         'core/audio',
-        'core/block',
+        'core/block', // Reusable Blocks
         'core/categories',
         'core/code',
         'core/columns',

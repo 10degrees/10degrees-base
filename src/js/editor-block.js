@@ -75,4 +75,29 @@ wp.domReady(() => {
         label: "Icon"
     });
 
+    
 });
+
+/**
+ * Only allow wide and full alignment in Gutenberg Blocks
+ *
+ * @param   {object}  settings  The block's settings
+ * @param   {string}  name      Name of block
+ *
+ * @return  {object}            The updated settings
+ */
+function disableAlignment( settings, name ) {
+    return {
+        ...settings,
+        supports: {
+            ...settings.supports,
+            align: ["wide", "full"]
+        }
+    }
+}
+ 
+wp.hooks.addFilter(
+    'blocks.registerBlockType',
+    'ten-degrees/register-block-type',
+    disableAlignment
+);
