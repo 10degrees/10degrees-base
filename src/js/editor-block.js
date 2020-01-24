@@ -1,8 +1,17 @@
+
+// Custom Gutenberg Blocks
 import "./blocks/link-button.js";
+
+// Other JavaScript to run in the backend
 import Accordion from "./common/blocks/_accordion";
 new Accordion();
 
-wp.domReady(() => {
+/**
+ * Unregister block styles
+ *
+ * @return  void 
+ */
+function unregisterBlockStyles(){
     wp.blocks.unregisterBlockStyle("core/button", "default");
     //wp.blocks.unregisterBlockStyle("core/button", "outline");
     wp.blocks.unregisterBlockStyle("core/button", "squared");
@@ -14,7 +23,14 @@ wp.domReady(() => {
 
     wp.blocks.unregisterBlockStyle("core/quote", "default");
     wp.blocks.unregisterBlockStyle("core/quote", "large");
+}
 
+/**
+ * Register Custom Block Styles
+ *
+ * @return  void  
+ */
+function registerBlockStyles(){
     wp.blocks.registerBlockStyle("core/button", {
         name: "regular",
         label: "Regular",
@@ -74,9 +90,14 @@ wp.domReady(() => {
         name: "icon",
         label: "Icon"
     });
+}
 
-    
+// DOM is fully loaded
+wp.domReady(() => {
+    unregisterBlockStyles();
+    registerBlockStyles();
 });
+
 
 /**
  * Only allow wide and full alignment in Gutenberg Blocks
