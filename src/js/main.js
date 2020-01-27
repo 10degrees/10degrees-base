@@ -11,9 +11,10 @@ import AjaxForm from "./common/ajax-form";
 import ScrollToId from "./common/scroll-to-id";
 import ScrollToError from "./common/scroll-to-error";
 import DisableSVGFocus from './common/disable-svg-focus';
-//import MobileNav from "./common/_mobile-nav";
 import Menu from "./common/menu";
 import MobileMenu from "./common/mobile-menu";
+
+// Block-related JavaScript
 import Accordion from "./common/blocks/accordion";
 import SocialShare from "./common/blocks/social-share";
 
@@ -31,7 +32,6 @@ var App = {
             new AjaxForm();
             new ScrollToId();
             new ScrollToError();
-            //new MobileNav();
             new Magnific();
             new Slider();
             new Accordion();
