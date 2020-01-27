@@ -67,6 +67,10 @@ $layout-map: (
  * Z-Indicies should be defined in increments of 5 (avoid 99999999999 etc.)
  */
 $z-index-map: (
+    cover-block-video-background: 0,
+    cover-block-background-gradient: 5,
+    cover-block-inner: 5,
+    old-cover-block-text: 5,
     screen-reader-text: 100000 // Above WP Toolbar
 );
 
