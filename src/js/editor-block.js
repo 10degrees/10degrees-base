@@ -12,14 +12,15 @@ import Accordion from "./common/blocks/_accordion";
 
 class BlockEditor {
     constructor(){
-        this.init();
+        this.initBlocks();
         
         wp.domReady(this.domReady)
     }
 
-    init(){
-        new Accordion();
+    initBlocks(){
         new DisableAlignment();
+
+        new Accordion();
     }
 
     domReady(){
