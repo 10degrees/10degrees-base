@@ -1,5 +1,5 @@
 class ScrollToError {
-    init() {
+    constructor(){
         $(document).ready(function() {
             var formPresent = $(".gform_validation_error").length;
             if (formPresent != "0") {

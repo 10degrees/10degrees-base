@@ -29,8 +29,8 @@ var App = {
         init: function() {
             new DisableSVGFocus();
             new AjaxForm();
-            new ScrollToId().init();
-            new ScrollToError().init();
+            new ScrollToId();
+            new ScrollToError();
             //new MobileNav().init();
             new Magnific().init();
             new Slider().init();
