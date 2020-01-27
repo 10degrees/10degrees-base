@@ -31,7 +31,7 @@ var App = {
             new AjaxForm();
             new ScrollToId();
             new ScrollToError();
-            //new MobileNav().init();
+            //new MobileNav();
             new Magnific().init();
             new Slider().init();
             new Accordion();
