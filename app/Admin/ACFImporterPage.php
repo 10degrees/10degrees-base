@@ -34,7 +34,7 @@ class ACFImporterPage
     public function addPage()
     {
         add_submenu_page(
-            "tools.php",
+            "edit.php?post_type=acf-field-group",
             "ACF Field Group Importer",
             "ACF Field Group Importer",
             'manage_options',
@@ -48,27 +48,19 @@ class ACFImporterPage
      *
      * @param   string  $key  An ACF field group key
      *
-     * @return  string        A success or error message
+     * @return  array        Imported field group
      */
     public function importFieldGroup($key)
     {
-        if (!$key) { // No key provided
-            return "Please enter an ACF Group key.";
-        }
-
         $group = acf_get_local_field_group($key);
-
-        if (!acf_get_field_group($key)) { // Field group doesn't exist
-            return "Field group doesn't exist.";
-        }
 
         $fields = acf_get_local_fields($group['key']);
     
         $group['fields'] = $fields;
     
-        acf_import_field_group($group);
+        $fieldGroup = acf_import_field_group($group);
 
-        return "Field group imported.";
+        return $fieldGroup;
     }
 
     /**
@@ -78,7 +70,16 @@ class ACFImporterPage
      */
     public function create_admin_page()
     {
-        $notice = $this->importFieldGroup($_POST['group_key']);
+        $notice = "";
+        $key = $_POST['group_key'];
+        if (!$key) {
+            $notice = "Please enter an ACF field group key.";
+        } elseif (!acf_get_field_group($key)) {
+            $notice = "ACF field group key isn't valid.";
+        } else {
+            $fieldGroup = $this->importFieldGroup($key);
+            $notice = 'ACF field group "' . $fieldGroup['title'] . '" imported.';
+        }
 
         ?> 
         <div class="wrap">
@@ -89,10 +90,10 @@ class ACFImporterPage
                         <div class="form-wrap">
                             <div class="form-field">
                                 <label for="group_key">ACF Group Key</label>
-                                <input type="text" name="group_key" id="group_key" value="<?php echo $groupKey; ?>">
+                                <input type="text" name="group_key" id="group_key">
                             </div>
                             <p class="submit">
-                                <button class="button button-primary">Convert</button>
+                                <button class="button button-primary">Import</button>
                             </p>
                             <p><?php echo $notice; ?></p>
                         </div>

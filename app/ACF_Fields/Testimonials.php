@@ -27,7 +27,7 @@ class Testimonials extends AbstractFieldRegistration
     {
         acf_add_local_field_group(
             array(
-                'key' => 'group_5c2f476d08b99',
+                'key' => 'block-testimonials',
                 'title' => 'Block: Testimonials',
                 'fields' => array(
                     array(
