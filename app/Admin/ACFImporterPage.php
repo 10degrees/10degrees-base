@@ -16,7 +16,19 @@ namespace App\Admin;
  */
 class ACFImporterPage
 {
+    /**
+     * Page Name in URL
+     *
+     * @var string
+     */
     public $pageName = 'acf-importer';
+
+    /**
+     * Name of the page the importer is housed under
+     *
+     * @var string
+     */
+    public $parentPage = 'edit.php?post_type=acf-field-group';
 
     /**
      * Constructor
@@ -35,7 +47,7 @@ class ACFImporterPage
     {
         if (function_exists('acf_add_local_field_group')) {
             add_submenu_page(
-                "edit.php?post_type=acf-field-group",
+                $this->parentPage,
                 "ACF Field Group Importer",
                 "ACF Field Group Importer",
                 'manage_options',
@@ -88,7 +100,7 @@ class ACFImporterPage
             <h1>ACF Field Group Importer</h1>
             <div id="col-left">
                 <div class="col-wrap">
-                    <form method="post" action="tools.php?page=<?php echo $this->pageName?>">
+                    <form method="post" action="<?php echo $this->parentPage . '&page=' . $this->pageName ?>">
                         <div class="form-wrap">
                             <div class="form-field">
                                 <label for="group_key">ACF Field Group Key</label>
