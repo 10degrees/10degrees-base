@@ -69,9 +69,15 @@ class ACFImporterPage
     {
         $group = acf_get_local_field_group($key);
 
-        $fields = acf_get_fields($group['key']);
-    
+        $fields = acf_get_fields($group['key']); // Get the groups fields - recursively
+        
         $group['fields'] = $fields;
+
+        // Setting the ID tells the importer that the group already exists
+        $post = acf_get_field_group_post($key);
+        if ($post) {
+            $group['ID'] = $post->ID;
+        }
     
         $fieldGroup = acf_import_field_group($group);
 
@@ -87,6 +93,7 @@ class ACFImporterPage
     {
         $notice = "";
         $key = $_POST['group_key'];
+
         if (!$key) {
             $notice = "Please enter an ACF field group key.";
         } elseif (!acf_get_field_group($key)) {
