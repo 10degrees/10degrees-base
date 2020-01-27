@@ -31,6 +31,6 @@ class AdminServiceProvider extends ServiceProvider
         '\App\Admin\FontSizes',
         '\App\Admin\ReusableBlockMenu',
         '\App\Admin\SetAllowedBlocks',
-        '\App\Admin\ACFConverterPage'
+        '\App\Admin\ACFImporterPage'
     ];
 }
