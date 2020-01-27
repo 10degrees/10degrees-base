@@ -1,4 +1,4 @@
-import eventPath from "./_eventPath";
+import eventPath from "./event-path";
 
 export default class SubMenu {
     constructor(ul) {

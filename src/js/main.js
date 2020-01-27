@@ -7,19 +7,20 @@
  *
  */
 //Utilities
-import AjaxForm from "./common/_ajaxForm";
-import ScrollToId from "./common/_scrollToId";
-import ScrollToError from "./common/_scrollToError";
-import DisableSVGFocus from './common/_DisableSVGFocus';
-//import MobileNav from "./common/_mobile-nav";
-import Menu from "./common/_Menu";
-import MobileMenu from "./common/_MobileMenu";
-import Accordion from "./common/blocks/_accordion";
-import SocialShare from "./common/blocks/_social-share";
+import AjaxForm from "./common/ajax-form";
+import ScrollToId from "./common/scroll-to-id";
+import ScrollToError from "./common/scroll-to-error";
+import DisableSVGFocus from './common/disable-svg-focus';
+import Menu from "./common/menu";
+import MobileMenu from "./common/mobile-menu";
+
+// Block-related JavaScript
+import Accordion from "./common/blocks/accordion";
+import SocialShare from "./common/blocks/social-share";
 
 //Vendor
-import Magnific from "./common/_magnific";
-import Slider from "./common/_slider";
+import Magnific from "./common/magnific";
+import Slider from "./common/slider";
 
 window.$ = window.jQuery; // Set JQuery Variable
 
@@ -28,12 +29,11 @@ var App = {
     common: {
         init: function() {
             new DisableSVGFocus();
-            new AjaxForm().init();
-            new ScrollToId().init();
-            new ScrollToError().init();
-            //new MobileNav().init();
-            new Magnific().init();
-            new Slider().init();
+            new AjaxForm();
+            new ScrollToId();
+            new ScrollToError();
+            new Magnific();
+            new Slider();
             new Accordion();
             new SocialShare();
             new Menu("#nav-primary");

@@ -1,5 +1,5 @@
 class ScrollToId {
-    init() {
+    constructor(){
         $(".scrollToId").click(function(e) {
             e.preventDefault();
 

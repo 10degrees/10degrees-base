@@ -23,6 +23,5 @@ export default class MobileMenu {
         } else {
             this.open();
         }
-        console.log(this);
     }
 }

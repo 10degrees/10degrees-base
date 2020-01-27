@@ -1,5 +1,5 @@
 class MobileNav {
-	init() {
+	constructor() {
 		this.addNavigationToggle();
 		this.addDropdownToggle();
 	}
