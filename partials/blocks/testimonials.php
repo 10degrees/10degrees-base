@@ -1,33 +1,31 @@
+<?php 
+
+use App\Models\Testimonial;
+
+?>
+
 <section <?php td_block_class($block, 'testimonials'); ?>>
+
     <div class="container">
-        <?php
-        $number_to_show = get_field('number_of_testimonials');
-        $category = get_field('category');
-        ?>
         <div class="grid" style="--columns: <?php echo $number_to_show; ?>;">
             <?php
 
-            $tax_query = array();
-            if ($category) {
-                $tax_query = array(
-                    array(
-                        'taxonomy' => 'testimonial-categories',
-                        'field' => 'slug',
-                        'terms' => $category->slug
-                    )
-                );
+            $testimonials = new Testimonial;
+
+            if ($category = get_field('category')) {
+                $testimonials->whereCategory('testimonial-categories', $category->term_id);
             }
 
-            $testimonials = new WP_Query(array(
-                'post_type' => 'testimonial',
-                'posts_per_page' => $number_to_show,
-                'tax_query' => $tax_query
-            ));
+            $testimonials->paginate(get_field('number_of_testimonials'));
 
-            while ($testimonials->have_posts()) {
-                $testimonials->the_post();
+            while ($testimonials->havePosts()) {
+                $testimonials->thePost();
+
                 get_template_part('partials/content', 'testimonial');
+
             }
+
+            $testimonials->paginationLinks();
 
             wp_reset_postdata();
             ?>
