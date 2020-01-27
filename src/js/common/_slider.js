@@ -1,7 +1,6 @@
 import 'slick-carousel';
 class Slider {
-
-	init() {
+	constructor() {
 
 		var $this = this;
 

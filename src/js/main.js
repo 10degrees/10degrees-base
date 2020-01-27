@@ -33,7 +33,7 @@ var App = {
             new ScrollToError();
             //new MobileNav();
             new Magnific();
-            new Slider().init();
+            new Slider();
             new Accordion();
             new SocialShare();
             new Menu("#nav-primary");
