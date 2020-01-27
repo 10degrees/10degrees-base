@@ -89,7 +89,7 @@ class ACFImporterPage
                     <form method="post" action="tools.php?page=<?php echo $this->pageName?>">
                         <div class="form-wrap">
                             <div class="form-field">
-                                <label for="group_key">ACF Group Key</label>
+                                <label for="group_key">ACF Field Group Key</label>
                                 <input type="text" name="group_key" id="group_key">
                             </div>
                             <p class="submit">
