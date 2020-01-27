@@ -3,9 +3,9 @@
 import "./blocks/link-button.js";
 
 // Admin-Specific JS
-import DisableAlignment from './admin/DisableAlignment';
-import RegisterBlockStyles from './admin/RegisterBlockStyles';
-import UnregisterBlockStyles from "./admin/UnregisterBlockStyles.js";
+import DisableAlignment from './admin/disable-alignment';
+import RegisterBlockStyles from './admin/register-block-styles';
+import UnregisterBlockStyles from "./admin/unregister-block-styles";
 
 // Common JS
 import Accordion from "./common/blocks/_accordion";
@@ -13,7 +13,7 @@ import Accordion from "./common/blocks/_accordion";
 class BlockEditor {
     constructor(){
         this.initBlocks();
-        
+
         wp.domReady(this.domReady)
     }
 
