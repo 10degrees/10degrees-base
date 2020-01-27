@@ -16,8 +16,14 @@ namespace App\Services;
  */
 class WPMetaful
 {
+    /** 
+     * @var array
+     */
     protected $postMeta;
 
+    /**
+     * @var string
+     */
     protected $repeaterName;
 
     /**
