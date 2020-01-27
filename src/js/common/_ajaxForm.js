@@ -3,6 +3,8 @@ class AjaxForm {
 	constructor(){
 		this.formClass = '.js-ajax-form';
 		this.form = false;
+
+		this.init();
 	}
 
 	init() {

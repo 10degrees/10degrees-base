@@ -28,7 +28,7 @@ var App = {
     common: {
         init: function() {
             new DisableSVGFocus();
-            new AjaxForm().init();
+            new AjaxForm();
             new ScrollToId().init();
             new ScrollToError().init();
             //new MobileNav().init();
