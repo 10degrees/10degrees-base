@@ -26,6 +26,11 @@ class ACFImporterPage
         add_action('admin_menu', [$this, 'addPage']);
     }
 
+    /**
+     * Add the page to the WordPress admin area under "Tools"
+     *
+     * @return  void
+     */
     public function addPage()
     {
         add_submenu_page(
@@ -38,49 +43,63 @@ class ACFImporterPage
         );
     }
 
+    /**
+     * Import an ACF field Group
+     *
+     * @param   string  $key  An ACF field group key
+     *
+     * @return  string        A success or error message
+     */
+    public function importFieldGroup($key)
+    {
+        if (!$key) { // No key provided
+            return "Please enter an ACF Group key.";
+        }
+
+        $group = acf_get_local_field_group($key);
+
+        if (!acf_get_field_group($key)) { // Field group doesn't exist
+            return "Field group doesn't exist.";
+        }
+
+        $fields = acf_get_local_fields($group['key']);
+    
+        $group['fields'] = $fields;
+    
+        acf_import_field_group($group);
+
+        return "Field group imported.";
+    }
+
+    /**
+     * Create the page
+     *
+     * @return  void  
+     */
     public function create_admin_page()
     {
-        $notice = '';
-        $groupKey = $_POST['group_key'] ? $_POST['group_key'] : '';
+        $notice = $this->importFieldGroup($_POST['group_key']);
 
-        if ($groupKey) {
-            $group = acf_get_local_field_group($groupKey);
-
-            $fields = acf_get_local_fields($group['key']);
-
-            $group['fields'] = $fields;
-
-            acf_import_field_group($group);
-
-            $notice = "Field group imported.";
-        } else {
-            $notice = '';
-        }
-    
-        
         ?> 
         <div class="wrap">
             <h1>ACF Field Group Importer</h1>
-            <form method="post" action="tools.php?page=<?php echo $this->pageName?>">
-                <table class="form-table">
-                    <tr valign="top">
-                        <th scope="row"><?php _e( 'ACF Group Key' ); ?></th>
-                        <td>
-                            <input type="text" name="group_key" id="group_key" value="<?php echo $groupKey; ?>">
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <td>
-                            <button class="acf-convert-button">Convert</button>
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <td>
+            <div id="col-left">
+                <div class="col-wrap">
+                    <form method="post" action="tools.php?page=<?php echo $this->pageName?>">
+                        <div class="form-wrap">
+                            <div class="form-field">
+                                <label for="group_key">ACF Group Key</label>
+                                <input type="text" name="group_key" id="group_key" value="<?php echo $groupKey; ?>">
+                            </div>
+                            <p class="submit">
+                                <button class="button button-primary">Convert</button>
+                            </p>
                             <p><?php echo $notice; ?></p>
-                        </td>
-                    </tr>   
-                </table>
-            </form>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    <?php }
+    <?php 
+    }
 }
