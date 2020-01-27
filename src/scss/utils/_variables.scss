@@ -61,6 +61,15 @@ $layout-map: (
     --max-container-width: 1200px
 );
 
+/**
+ * Z-Index variables.
+ * 
+ * Z-Indicies should be defined in increments of 5 (avoid 99999999999 etc.)
+ */
+$z-index-map: (
+    screen-reader-text: 100000 // Above WP Toolbar
+);
+
 // merge maps to be output in the :root
 $root-variables: map-merge($colour-map, $layout-map);
 

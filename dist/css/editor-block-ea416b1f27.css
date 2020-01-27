@@ -26,6 +26,11 @@
  *
  * Used for the wrapper and more layout options.
  */
+/**
+ * Z-Index variables.
+ * 
+ * Z-Indicies should be defined in increments of 5 (avoid 99999999999 etc.)
+ */
 /* Typography */
 /*
  * Breakpoint variables.
@@ -2005,4 +2010,4 @@
     padding: 0;
     margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-ff0d208866.css.map */
+/*# sourceMappingURL=maps/editor-block-ea416b1f27.css.map */

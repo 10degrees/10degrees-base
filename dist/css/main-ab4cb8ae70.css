@@ -30,6 +30,11 @@
  *
  * Used for the wrapper and more layout options.
  */
+/**
+ * Z-Index variables.
+ * 
+ * Z-Indicies should be defined in increments of 5 (avoid 99999999999 etc.)
+ */
 /* Typography */
 /*
  * Breakpoint variables.
@@ -2602,8 +2607,7 @@ svg.svg-inline--fa {
   text-decoration: none;
   top: 5px;
   width: auto;
-  z-index: 100000;
-  /* Above WP toolbar. */ }
+  z-index: 100000; }
 
 .has-text-align-center {
   text-align: center; }
@@ -3092,4 +3096,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-b193183a7e.css.map */
+/*# sourceMappingURL=maps/main-ab4cb8ae70.css.map */
