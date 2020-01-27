@@ -20,6 +20,13 @@ class WPQueryBuilder
      * @var string
      */
     protected $postType = 'post';
+    
+    /**
+     * \WP_Query
+     * 
+     * @var null
+     */
+    protected $query = null;
 
     /**
      * The WP_Query args
@@ -38,7 +45,29 @@ class WPQueryBuilder
      */
     public function get()
     {
-        return new \WP_Query($this->getArgs());
+        $this->query = new \WP_Query($this->getArgs());
+        
+        return $this;
+    }
+
+    /** 
+     * Get the generated WP_Query
+     * 
+     * @return bool
+     */
+    public function havePosts()
+    {
+        return $this->query->have_posts();
+    }
+
+    /** 
+     * Get the generated WP_Query
+     * 
+     * @return void
+     */
+    public function thePost()
+    {
+        return $this->query->the_post();
     }
 
     /**
@@ -51,7 +80,7 @@ class WPQueryBuilder
     public function paginate($count = 20)
     {
         $this->take($count);
-        $paged = (get_query_var('page')) ? get_query_var('page') : 1;
+        $paged = (get_query_var('_page')) ? get_query_var('_page') : 1;
         $this->addArg('paged', $paged);
         return $this->get();
     }
@@ -290,5 +319,36 @@ class WPQueryBuilder
         $this->orderBy('distance', 'ASC');
 
         return $this;
+    }
+
+    /**
+     * Pagination implementation for WPQueryBuilder queries
+     *
+     * @return void
+     */
+    public function paginationLinks()
+    {
+        $bignum = 999999999;
+
+        if ($this->query->max_num_pages <= 1) {
+            return;
+        }
+
+        echo '<nav class="pagination">';
+
+        echo paginate_links(
+            array(
+                'format' => '?_page=%#%',
+                'current'       => max(1, get_query_var('_page')),
+                'total'         => $this->query->max_num_pages,
+                'prev_text'     => '&larr;',
+                'next_text'     => '&rarr;',
+                'type'          => 'list',
+                'end_size'      => 3,
+                'mid_size'      => 3,
+            )
+        );
+
+        echo '</nav>';
     }
 }
