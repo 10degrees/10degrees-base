@@ -50,9 +50,11 @@ class WPQueryBuilder
         return $this;
     }
 
-    /** 
-     * Get the generated WP_Query
-     * 
+    /**
+     * Whether current WordPress query has results to loop over.
+     *
+     * @global WP_Query $wp_query WordPress Query object.
+     *
      * @return bool
      */
     public function havePosts()
@@ -60,10 +62,10 @@ class WPQueryBuilder
         return $this->query->have_posts();
     }
 
-    /** 
-     * Get the generated WP_Query
-     * 
-     * @return void
+    /**
+     * Iterate the post index in the loop.
+     *
+     * @global WP_Query $wp_query WordPress Query object.
      */
     public function thePost()
     {
