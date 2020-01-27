@@ -57,18 +57,19 @@ class ACFImporterPage
         }
     }
 
+
     /**
      * Import an ACF field Group
      *
-     * @param   string  $key  An ACF field group key
+     * @param string  $key  An ACF field group key
      *
-     * @return  array        Imported field group
+     * @return array        Imported field group
      */
     public function importFieldGroup($key)
     {
         $group = acf_get_local_field_group($key);
 
-        $fields = acf_get_local_fields($group['key']);
+        $fields = acf_get_fields($group['key']);
     
         $group['fields'] = $fields;
     
@@ -80,7 +81,7 @@ class ACFImporterPage
     /**
      * Create the page
      *
-     * @return  void  
+     * @return void  
      */
     public function create_admin_page()
     {
