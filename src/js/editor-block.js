@@ -14,7 +14,7 @@ class BlockEditor {
     constructor(){
         this.initBlocks();
 
-        wp.domReady(this.domReady)
+        wp.domReady(this.handleDomReady)
     }
 
     initBlocks(){
@@ -23,7 +23,7 @@ class BlockEditor {
         new Accordion();
     }
 
-    domReady(){
+    handleDomReady(){
         new UnregisterBlockStyles();
         new RegisterBlockStyles();
     }
