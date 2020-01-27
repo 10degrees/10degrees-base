@@ -33,14 +33,16 @@ class ACFImporterPage
      */
     public function addPage()
     {
-        add_submenu_page(
-            "edit.php?post_type=acf-field-group",
-            "ACF Field Group Importer",
-            "ACF Field Group Importer",
-            'manage_options',
-            $this->pageName,
-            array($this, 'create_admin_page')
-        );
+        if (function_exists('acf_add_local_field_group')) {
+            add_submenu_page(
+                "edit.php?post_type=acf-field-group",
+                "ACF Field Group Importer",
+                "ACF Field Group Importer",
+                'manage_options',
+                $this->pageName,
+                array($this, 'create_admin_page')
+            );
+        }
     }
 
     /**
