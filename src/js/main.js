@@ -14,8 +14,8 @@ import DisableSVGFocus from './common/_DisableSVGFocus';
 //import MobileNav from "./common/_mobile-nav";
 import Menu from "./common/_Menu";
 import MobileMenu from "./common/_MobileMenu";
-import Accordion from "./common/blocks/_accordion";
-import SocialShare from "./common/blocks/_social-share";
+import Accordion from "./common/blocks/accordion";
+import SocialShare from "./common/blocks/social-share";
 
 //Vendor
 import Magnific from "./common/_magnific";

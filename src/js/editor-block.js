@@ -8,7 +8,7 @@ import RegisterBlockStyles from './admin/register-block-styles';
 import UnregisterBlockStyles from "./admin/unregister-block-styles";
 
 // Common JS
-import Accordion from "./common/blocks/_accordion";
+import Accordion from "./common/blocks/accordion";
 
 class BlockEditor {
     constructor(){
