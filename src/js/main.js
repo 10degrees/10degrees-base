@@ -7,19 +7,19 @@
  *
  */
 //Utilities
-import AjaxForm from "./common/_ajaxForm";
-import ScrollToId from "./common/_scrollToId";
-import ScrollToError from "./common/_scrollToError";
-import DisableSVGFocus from './common/_DisableSVGFocus';
+import AjaxForm from "./common/ajax-form";
+import ScrollToId from "./common/scroll-to-id";
+import ScrollToError from "./common/scroll-to-error";
+import DisableSVGFocus from './common/disable-svg-focus';
 //import MobileNav from "./common/_mobile-nav";
-import Menu from "./common/_Menu";
-import MobileMenu from "./common/_MobileMenu";
+import Menu from "./common/menu";
+import MobileMenu from "./common/mobile-menu";
 import Accordion from "./common/blocks/accordion";
 import SocialShare from "./common/blocks/social-share";
 
 //Vendor
-import Magnific from "./common/_magnific";
-import Slider from "./common/_slider";
+import Magnific from "./common/magnific";
+import Slider from "./common/slider";
 
 window.$ = window.jQuery; // Set JQuery Variable
 

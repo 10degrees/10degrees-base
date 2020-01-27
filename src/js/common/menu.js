@@ -1,5 +1,5 @@
-import SubMenu from "./_SubMenu";
-import eventPath from "./_eventPath";
+import SubMenu from "./sub-menu";
+import eventPath from "./event-path";
 
 export default class Menu {
     constructor(id) {
