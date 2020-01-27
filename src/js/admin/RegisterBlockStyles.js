@@ -1,3 +1,6 @@
+/**
+ * Register custom block styles to Gutenberg blocks
+ */
 class RegisterBlockStyles {
     constructor(){
         this.registerStyles();
