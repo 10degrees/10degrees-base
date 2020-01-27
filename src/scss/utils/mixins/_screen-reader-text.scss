@@ -29,7 +29,7 @@
     text-decoration: none;
     top: 5px;
     width: auto;
-    z-index: 100000; /* Above WP toolbar. */
+    @include z-index(screen-reader-text);
 }
 
 // WP Core convention

@@ -26,6 +26,11 @@
  *
  * Used for the wrapper and more layout options.
  */
+/**
+ * Z-Index variables.
+ * 
+ * Z-Indicies should be defined in increments of 5 (avoid 99999999999 etc.)
+ */
 /* Typography */
 /*
  * Breakpoint variables.
@@ -1439,7 +1444,7 @@
       left: 0;
       bottom: 0;
       right: 0;
-      z-index: 1; }
+      z-index: 5; }
     .editor-styles-wrapper .wp-block-cover-image.has-background-dim:not(.has-background-gradient)::before,
     .editor-styles-wrapper .wp-block-cover-image .wp-block-cover__gradient-background,
     .editor-styles-wrapper .wp-block-cover.has-background-dim:not(.has-background-gradient)::before,
@@ -1518,7 +1523,7 @@
     .editor-styles-wrapper .wp-block-cover-image .wp-block-cover__inner-container,
     .editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container {
       width: calc(100% - 70px);
-      z-index: 1;
+      z-index: 5;
       color: #fafafa; }
     .editor-styles-wrapper .wp-block-cover-image p:not(.has-text-color),
     .editor-styles-wrapper .wp-block-cover-image h1:not(.has-text-color),
@@ -1586,7 +1591,7 @@
   .editor-styles-wrapper .wp-block-cover .wp-block-cover-text {
     font-size: 2em;
     line-height: 1.25;
-    z-index: 1;
+    z-index: 5;
     margin-bottom: 0;
     max-width: var(--max--content-width, );
     padding: 16px;
@@ -2005,4 +2010,4 @@
     padding: 0;
     margin: 0; }
 
-/*# sourceMappingURL=maps/editor-block-ff0d208866.css.map */
+/*# sourceMappingURL=maps/editor-block-b9e7a6337e.css.map */
