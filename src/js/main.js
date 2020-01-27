@@ -32,7 +32,7 @@ var App = {
             new ScrollToId();
             new ScrollToError();
             //new MobileNav();
-            new Magnific().init();
+            new Magnific();
             new Slider().init();
             new Accordion();
             new SocialShare();

@@ -1,8 +1,7 @@
 import 'magnific-popup';
 
 class Magnific {
-
-	init() {
+	constructor() {
 		$('.js-popup').magnificPopup({type:'inline'});
 		
 		$('.js-popup-video').magnificPopup({type:'iframe'});
@@ -13,7 +12,7 @@ class Magnific {
 			gallery: {
 			  enabled: true
 			}
-		  });
+		});
 	}
 
 };
