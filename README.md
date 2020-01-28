@@ -8,6 +8,7 @@ The 10 Degrees base WordPress theme is intended as a quick-start for developers 
 * JavaScript: write ES6 and use Rollup for managing modules
 * PHP: Namespaces and autoloader with many asbtractions and helper functions
 * PHP: [base.php](base.php) wrapper, originally implemented by [Sage theme](https://roots.io/sage/)
+* WP CLI block quickstart command
 
 ## Requirements
 
@@ -29,7 +30,7 @@ Dependencies are managed through [Composer](https://getcomposer.org/) and [Node]
 ### Manual install
 
 1) Download the latest theme release from https://github.com/10degrees/10degrees-base/releases/latest.
-2) Add to you
+2) Upload zip file to Appearance -> Themes.
 
 ## Theme Setup
 
@@ -47,7 +48,11 @@ Find and replace `@textdomain` and `@theme` placeholders in order to set the the
 
 Assets are edited in `src` and compiled to `dist`. CSS and JS are created with a cache-busting content hash string. JS modules are bundled using [rollup.js](https://rollupjs.org/guide/en/). 
 
+Use `gulp` and `gulp watch` to compile.
+
 ## Browser support
+
+All modern browsers and IE10.
 
 ### JavaScript
 
