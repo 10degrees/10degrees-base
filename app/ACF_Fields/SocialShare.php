@@ -18,115 +18,103 @@ use App\ACF_Fields\AbstractFieldRegistration;
  */
 class SocialShare extends AbstractFieldRegistration
 {
-    /**
-     * Register ACF fields for this group
-     *
-     * @return void
-     */
-    public function register()
-    {
-        
-        acf_add_local_field_group(
+    protected $fields = array(
+        'key' => 'group_5e0f551a36595',
+        'title' => 'Block: Social Share',
+        'fields' => array(
             array(
-                'key' => 'group_5e0f551a36595',
-                'title' => 'Block: Social Share',
-                'fields' => array(
-                    array(
-                        'key' => 'field_5e0f551eee2ed',
-                        'label' => 'Show Facebook',
-                        'name' => 'show_facebook',
-                        'type' => 'true_false',
-                        'instructions' => '',
-                        'required' => 0,
-                        'conditional_logic' => 0,
-                        'wrapper' => array(
-                            'width' => '',
-                            'class' => '',
-                            'id' => '',
-                        ),
-                        'message' => '',
-                        'default_value' => 1,
-                        'ui' => 1,
-                        'ui_on_text' => '',
-                        'ui_off_text' => '',
-                    ),
-                    array(
-                        'key' => 'field_5e0f5537ee2ee',
-                        'label' => 'Show Linkedin',
-                        'name' => 'show_linkedin',
-                        'type' => 'true_false',
-                        'instructions' => '',
-                        'required' => 0,
-                        'conditional_logic' => 0,
-                        'wrapper' => array(
-                            'width' => '',
-                            'class' => '',
-                            'id' => '',
-                        ),
-                        'message' => '',
-                        'default_value' => 1,
-                        'ui' => 1,
-                        'ui_on_text' => '',
-                        'ui_off_text' => '',
-                    ),
-                    array(
-                        'key' => 'field_5e0f5542ee2ef',
-                        'label' => 'Show Twitter',
-                        'name' => 'show_twitter',
-                        'type' => 'true_false',
-                        'instructions' => '',
-                        'required' => 0,
-                        'conditional_logic' => 0,
-                        'wrapper' => array(
-                            'width' => '',
-                            'class' => '',
-                            'id' => '',
-                        ),
-                        'message' => '',
-                        'default_value' => 1,
-                        'ui' => 1,
-                        'ui_on_text' => '',
-                        'ui_off_text' => '',
-                    ),
-                    array(
-                        'key' => 'field_5e0f554aee2f0',
-                        'label' => 'Show Pinterest',
-                        'name' => 'show_pinterest',
-                        'type' => 'true_false',
-                        'instructions' => '',
-                        'required' => 0,
-                        'conditional_logic' => 0,
-                        'wrapper' => array(
-                            'width' => '',
-                            'class' => '',
-                            'id' => '',
-                        ),
-                        'message' => '',
-                        'default_value' => 1,
-                        'ui' => 1,
-                        'ui_on_text' => '',
-                        'ui_off_text' => '',
-                    )
+                'key' => 'field_5e0f551eee2ed',
+                'label' => 'Show Facebook',
+                'name' => 'show_facebook',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
                 ),
-                'location' => array(
-                    array(
-                        array(
-                            'param' => 'block',
-                            'operator' => '==',
-                            'value' => 'acf/social-share',
-                        ),
-                    ),
+                'message' => '',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
+            array(
+                'key' => 'field_5e0f5537ee2ee',
+                'label' => 'Show Linkedin',
+                'name' => 'show_linkedin',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
                 ),
-                'menu_order' => 0,
-                'position' => 'normal',
-                'style' => 'default',
-                'label_placement' => 'top',
-                'instruction_placement' => 'label',
-                'hide_on_screen' => '',
-                'active' => true,
-                'description' => '',
+                'message' => '',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
+            array(
+                'key' => 'field_5e0f5542ee2ef',
+                'label' => 'Show Twitter',
+                'name' => 'show_twitter',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
+            array(
+                'key' => 'field_5e0f554aee2f0',
+                'label' => 'Show Pinterest',
+                'name' => 'show_pinterest',
+                'type' => 'true_false',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 1,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
             )
-        );
-
-    }
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'block',
+                    'operator' => '==',
+                    'value' => 'acf/social-share',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    );
 }
