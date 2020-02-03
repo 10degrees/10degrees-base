@@ -140,5 +140,13 @@ class Init
         add_filter('excerpt_length', function ($length) {
             return 10;
         }, 999);//phpcs:ignore
+
+        /**
+         * Adds a custom query var that we use in the WPQueryBuilder for pagination 
+         */
+        add_filter('query_vars', function ( $query_vars ) {
+            $query_vars[] = '_page';
+            return $query_vars;
+        });
     }
 }
