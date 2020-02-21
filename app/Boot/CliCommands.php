@@ -49,7 +49,7 @@ class CliCommands
          *   - used for ACF_Block registration classname
          *   - added to BlockServiceProvider.php
          */
-        $path = trailingslashit(get_template_directory());
+        $theme_path = trailingslashit(get_template_directory());
         $blockName = strtolower($args[0]);
         $blockClassNameParts = explode('-', $args[0]);
         $blockClassName = '';
@@ -63,18 +63,18 @@ class CliCommands
          */
 
          //Check if block already exists! (app/ACF_Blocks)
-        if (file_exists($path.'app/ACF_Blocks/'.$blockClassName.'.php')) {
+        if (file_exists($theme_path.'app/ACF_Blocks/'.$blockClassName.'.php')) {
             \WP_CLI::error('Block file already exists. Get outta here!', false);
         }
 
         //Get template
-        $template = file_get_contents($path.'partials/cli-templates/Block.php');
+        $template = file_get_contents($theme_path.'partials/cli-templates/Block.php');
         //Replace placeholder(s)
         $template = preg_replace('/__BLOCK_CLASSNAME__/', $blockClassName, $template);
         $template = preg_replace('/__BLOCK_TITLE__/', $blockTitle, $template);
         $template = preg_replace('/__BLOCK_NAME__/', $blockTitle, $template);
         //Write file
-        $result = file_put_contents($path.'app/ACF_Blocks/'.$blockClassName.'.php',  $template);
+        $result = file_put_contents($theme_path.'app/ACF_Blocks/'.$blockClassName.'.php',  $template);
 
         if ($result) {
             \WP_CLI::line('Block registration class added');
@@ -85,7 +85,7 @@ class CliCommands
          */
 
         //Get service procider file
-        $block_service_provider_file_contents = file_get_contents($path.'app/Providers/BlockServiceProvider.php');
+        $block_service_provider_file_contents = file_get_contents($theme_path.'app/Providers/BlockServiceProvider.php');
 
         //Pattern tries to match block classname
         $pattern = "'\\App\\ACF_Blocks\\".$blockClassName."'";
@@ -100,7 +100,7 @@ class CliCommands
             $replace = "    '\\App\\ACF_Blocks\\".$blockClassName."',";
             $replace .= "\n    ];";
             $block_service_provider_file_contents = preg_replace("/];/", $replace, $block_service_provider_file_contents);
-            $result = file_put_contents($path.'app/Providers/BlockServiceProvider.php', $block_service_provider_file_contents);
+            $result = file_put_contents($theme_path.'app/Providers/BlockServiceProvider.php', $block_service_provider_file_contents);
             \WP_CLI::line('Block registration class referenced created in BlockServiceProvider');
         }
         
@@ -109,11 +109,11 @@ class CliCommands
          */
 
         //Get template
-        $partial_contents = file_get_contents($path.'partials/cli-templates/block-partial.php');
+        $partial_contents = file_get_contents($theme_path.'partials/cli-templates/block-partial.php');
         //Replace placeholder(s)
         $partial_contents = preg_replace('/__BLOCK_NAME__/', $blockTitle, $partial_contents);
         //Write file
-        $result = file_put_contents($path.'partials/blocks/'.$blockTitle.'.php', $partial_contents);
+        $result = file_put_contents($theme_path.'partials/blocks/'.$blockTitle.'.php', $partial_contents);
 
         if ($result) {
             \WP_CLI::line('Partial created');
@@ -125,22 +125,21 @@ class CliCommands
         \WP_CLI::confirm('Would you like SCSS?', $assoc_args_scss = array());
         
         //Get template
-        $scss_contents = file_get_contents($path.'partials/cli-templates/block-style.scss');
+        $scss_contents = file_get_contents($theme_path.'partials/cli-templates/block-style.scss');
         //Replace placeholder(s)
         $scss_contents = preg_replace('/__BLOCK_NAME__/', $blockName, $scss_contents);
         //Write file
-        $result = file_put_contents($path.'src/scss/common/_'.$blockName.'.scss', $scss_contents);
+        $result = file_put_contents($theme_path.'src/scss/common/blocks/_'.$blockName.'.scss', $scss_contents);
 
         if ($result) {
             \WP_CLI::line('SCSS created');
         }
 
-
-         /**
+        /**
          * Reference SCSS in _blocks.scss
          */
         //Get template
-        $scss_main_contents = file_get_contents($path.'src/scss/common/blocks/_blocks.scss');
+        $scss_main_contents = file_get_contents($theme_path.'src/scss/common/blocks/_blocks.scss');
 
         $pattern = '@import "'.$blockName.'";';
         $result = preg_match($pattern, $scss_main_contents);
@@ -154,7 +153,7 @@ class CliCommands
         }
 
         $scss_main_contents = preg_replace('/__BLOCK_NAME__/', $blockName, $scss_main_contents);
-        $result = file_put_contents($path.'src/scss/common/blocks/_blocks.scss', $scss_main_contents);
+        $result = file_put_contents($theme_path.'src/scss/common/blocks/_blocks.scss', $scss_main_contents);
 
         
         if ($result) {
