@@ -62,22 +62,10 @@ class CliCommands
          * Create block
          */
 
-         //Check if block already exists! (app/ACF_Blocks)
-        if (file_exists($theme_path.'app/ACF_Blocks/'.$blockClassName.'.php')) {
-            \WP_CLI::error('Block file already exists. Get outta here!', false);
-        }
-
-        //Get template
-        $template = file_get_contents($theme_path.'partials/cli-templates/Block.php');
-        //Replace placeholder(s)
-        $template = preg_replace('/__BLOCK_CLASSNAME__/', $blockClassName, $template);
-        $template = preg_replace('/__BLOCK_TITLE__/', $blockTitle, $template);
-        $template = preg_replace('/__BLOCK_NAME__/', $blockTitle, $template);
-        //Write file
-        $result = file_put_contents($theme_path.'app/ACF_Blocks/'.$blockClassName.'.php',  $template);
-
-        if ($result) {
-            \WP_CLI::line('Block registration class added');
+        $create_block_result = $this->createAcfBlock($theme_path, $blockClassName, $blockTitle);
+ 
+        if($create_block_result !== true) {
+            return;
         }
 
         /**
@@ -161,5 +149,45 @@ class CliCommands
         }
         
         \WP_CLI::success('All done. Get outta here!');
+    }
+
+    /**
+     * Creates an ACF block registration class
+     *
+     * @param [type] $theme_path
+     * @param [type] $blockClassName
+     * @param [type] $blockTitle
+     * @param [type] $blockPath
+     * 
+     * @return void
+     */
+    public function createAcfBlock($theme_path, $blockClassName, $blockTitle, $blockPath = 'app/ACF_Blocks/') {
+
+        //Check if block already exists
+        if (file_exists($theme_path.$blockPath.$blockClassName.'.php')) {
+            \WP_CLI::error('Block file already exists. Get outta here!', false);
+            return false;
+        }
+
+        //Get template
+        $template = file_get_contents($theme_path.'partials/cli-templates/Block.php');
+
+        //Replace placeholder(s)
+        $template = preg_replace('/__BLOCK_CLASSNAME__/', $blockClassName, $template);
+        $template = preg_replace('/__BLOCK_TITLE__/', $blockTitle, $template);
+        $template = preg_replace('/__BLOCK_NAME__/', $blockTitle, $template);
+
+        //Write file
+        $result = file_put_contents($theme_path.$blockClassName.$blockClassName.'.php',  $template);
+
+        //Check if successful
+        if (!$result) {
+            \WP_CLI::error('Failed to create file: '.$theme_path.$blockClassName.$blockClassName.'.php', false);
+            return false;
+        }
+
+        //Great success https://untappd.akamaized.net/photo/2017_08_05/c1e3366ff091d1b65c903dddfcd2f036_320x320.jpg
+        return true;
+
     }
 }
