@@ -58,6 +58,7 @@ class CliCommands
         }
         $blockTitle = strtolower($blockName);
 
+
         /**
          * Create block
          */
@@ -72,7 +73,6 @@ class CliCommands
          */
         $this->addClassToBlockServiceProvider($theme_path, $blockClassName);
 
-        
         /**
          * Create partial
          */
@@ -82,18 +82,21 @@ class CliCommands
          * Create SCSS (optional)
          */
         \WP_CLI::confirm('Would you like SCSS?', $assoc_args_scss = array());
-
         $created_scss = $this->createBlockScssFile($theme_path, $blockName);
 
-         /**
+        /**
          * Reference SCSS in _blocks.scss
          */
         if ($created_scss) {
            
             $this->addScssImportStatement($theme_path, $blockName);
         }
+
+        //@TODO finish me
+        //$this->addBlockToAllowedBlocks($theme_path, $blockName);
         
-        \WP_CLI::success('All done');
+        \WP_CLI::success('Great Success! https://untappd.akamaized.net/photo/2017_08_05/c1e3366ff091d1b65c903dddfcd2f036_320x320.jpg');
+        
     }
 
     /**
@@ -135,9 +138,7 @@ class CliCommands
             return false;
         }
 
-        //Great success https://untappd.akamaized.net/photo/2017_08_05/c1e3366ff091d1b65c903dddfcd2f036_320x320.jpg
         return true;
-
     }
 
 
@@ -219,6 +220,7 @@ class CliCommands
 
     public function addScssImportStatement($theme_path, $blockName)
     {
+
         $scss_blocks_path = $theme_path.'src/scss/common/blocks/_blocks.scss';
 
         $scss_main_contents = file_get_contents($scss_blocks_path);
@@ -239,14 +241,54 @@ class CliCommands
         $scss_main_contents = preg_replace('/__BLOCK_NAME__/', $blockName, $scss_main_contents);
         $result = file_put_contents($theme_path.'src/scss/common/blocks/_blocks.scss', $scss_main_contents);
 
-        
         if (!$result) {
             \WP_CLI::error('Failed to reference SCSS in _blocks.scss');
             return false;
-            
         }
 
         \WP_CLI::line('SCSS file imported to _blocks.scss');
         return true;
+    }
+
+    /**
+     * Add to Allowed Blocks
+     *
+     * @return void
+     */
+    public function addBlockToAllowedBlocks($theme_path, $blockName)
+    {
+        $allowed_blocks_filepath = $theme_path.'admin/SetAllowedBlocks.php';
+
+        $allowed_blocks_contents = file_get_contents($allowed_blocks_filepath);
+
+        $pattern = "/acf\/$blockName/";
+
+        $result = preg_match($pattern, $allowed_blocks_contents);
+
+        if ($result) {
+            //If already exists abort
+            \WP_CLI::error('Block already added to AllowedBlocks');
+            return false;
+        }
+
+
+        $pattern = "/public \$allowedBlocks = \[[.\w\W]*(\];)/gmU";
+
+        $replace = "    '\\App\\ACF_Blocks\\".$blockClassName."',";
+
+        $replace .= "\n    ];";
+
+
+
+        $block_service_provider_file_contents = preg_replace("/];/", $replace, $block_service_provider_file_contents);
+        $result = file_put_contents($block_service_provider_path, $block_service_provider_file_contents);
+        \WP_CLI::line('Block registration class referenced created in BlockServiceProvider');
+
+
+
+
+        
+
+        $result = preg_match($pattern, $allowed_blocks_contents);
     }
 }
