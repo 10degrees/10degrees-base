@@ -61,7 +61,6 @@ class CliCommands
         /**
          * Create block
          */
-
         $create_block_result = $this->createAcfBlock($theme_path, $blockClassName, $blockTitle);
  
         if($create_block_result !== true) {
@@ -72,7 +71,7 @@ class CliCommands
          * Reference in block service provider
          */
 
-        //Get service procider file
+        //Get service provider file
         $block_service_provider_file_contents = file_get_contents($theme_path.'app/Providers/BlockServiceProvider.php');
 
         //Pattern tries to match block classname
@@ -163,14 +162,18 @@ class CliCommands
      */
     public function createAcfBlock($theme_path, $blockClassName, $blockTitle, $blockPath = 'app/ACF_Blocks/') {
 
+        //Define paths
+        $block_file_path = $theme_path.$blockPath.$blockClassName.'.php';
+        $block_template_path = $theme_path.'partials/cli-templates/Block.php';
+
         //Check if block already exists
-        if (file_exists($theme_path.$blockPath.$blockClassName.'.php')) {
+        if (file_exists($block_file_path)) {
             \WP_CLI::error('Block file already exists. Get outta here!', false);
             return false;
         }
 
         //Get template
-        $template = file_get_contents($theme_path.'partials/cli-templates/Block.php');
+        $template = file_get_contents($block_template_path);
 
         //Replace placeholder(s)
         $template = preg_replace('/__BLOCK_CLASSNAME__/', $blockClassName, $template);
@@ -178,11 +181,11 @@ class CliCommands
         $template = preg_replace('/__BLOCK_NAME__/', $blockTitle, $template);
 
         //Write file
-        $result = file_put_contents($theme_path.$blockClassName.$blockClassName.'.php',  $template);
+        $result = file_put_contents($block_file_path,  $template);
 
         //Check if successful
         if (!$result) {
-            \WP_CLI::error('Failed to create file: '.$theme_path.$blockClassName.$blockClassName.'.php', false);
+            \WP_CLI::error('Failed to create file: '.$block_file_path, false);
             return false;
         }
 
