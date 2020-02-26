@@ -41,7 +41,7 @@ class ACFImporterPage
     /**
      * Add the page to the WordPress admin area under "Tools"
      *
-     * @return  void
+     * @return void
      */
     public function addPage()
     {
@@ -61,7 +61,7 @@ class ACFImporterPage
     /**
      * Import an ACF field Group
      *
-     * @param string  $key  An ACF field group key
+     * @param string $key An ACF field group key
      *
      * @return array        Imported field group
      */
@@ -87,7 +87,7 @@ class ACFImporterPage
     /**
      * Create the page
      *
-     * @return void  
+     * @return void
      */
     public function create_admin_page()
     {
@@ -123,6 +123,6 @@ class ACFImporterPage
                 </div>
             </div>
         </div>
-    <?php 
+        <?php
     }
 }

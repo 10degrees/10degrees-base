@@ -142,11 +142,14 @@ class Init
         }, 999);//phpcs:ignore
 
         /**
-         * Adds a custom query var that we use in the WPQueryBuilder for pagination 
+         * Adds a custom query var that we use in the WPQueryBuilder for pagination
          */
-        add_filter('query_vars', function ( $query_vars ) {
-            $query_vars[] = '_page';
-            return $query_vars;
-        });
+        add_filter(
+            'query_vars',
+            function ($query_vars) {
+                $query_vars[] = '_page';
+                return $query_vars;
+            }
+        );
     }
 }

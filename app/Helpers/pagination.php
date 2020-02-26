@@ -3,8 +3,8 @@
 /**
  * Numeric page navigation, adapted from Bones.
  *
- * Use the global $wp_query. Should be used in archives only. 
- * For custom queries that require pagination, try the 
+ * Use the global $wp_query. Should be used in archives only.
+ * For custom queries that require pagination, try the
  * WPQueryBuilder with a corresponding model.
  *
  * @return void

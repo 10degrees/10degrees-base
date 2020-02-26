@@ -88,7 +88,6 @@ class CliCommands
          * Reference SCSS in _blocks.scss
          */
         if ($created_scss) {
-           
             $this->addScssImportStatement($theme_path, $blockName);
         }
 
@@ -96,7 +95,6 @@ class CliCommands
         //$this->addBlockToAllowedBlocks($theme_path, $blockName);
         
         \WP_CLI::success('Great Success! https://untappd.akamaized.net/photo/2017_08_05/c1e3366ff091d1b65c903dddfcd2f036_320x320.jpg');
-        
     }
 
     /**
@@ -104,10 +102,10 @@ class CliCommands
      *
      * @param string $theme_path     Path to the theme
      * @param string $blockClassName Classname for block registration
-     * @param string $blockTitle     Kebab-case title 
-     * @param string $blockPath      Path to ACF Block directory relative to theme 
+     * @param string $blockTitle     Kebab-case title
+     * @param string $blockPath      Path to ACF Block directory relative to theme
      *
-     * @return bool Returns true if file created 
+     * @return bool Returns true if file created
      */
     public function createAcfBlock($theme_path, $blockClassName, $blockTitle, $blockPath = 'app/ACF_Blocks/')
     {

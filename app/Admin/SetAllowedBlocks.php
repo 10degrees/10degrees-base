@@ -5,7 +5,7 @@ namespace App\Admin;
 /**
  * Choose which blocks are available in the Gutenberg editor
  * See Confluence for details on how to add a block
- * 
+ *
  * @category Theme
  * @package  TenDegrees/10degrees-base
  * @author   10 Degrees <wordpress@10degrees.uk>

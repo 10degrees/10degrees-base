@@ -6,7 +6,12 @@
     <!-- Use PSR-2 as a base -->
     <rule ref="PSR2"/>
 
-    <file>./app/*</file>
+    <file>.</file>
+
+    <exclude-pattern>*/*.js</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/src/*</exclude-pattern>
+    <exclude-pattern>*/dist/*</exclude-pattern>
 
     <rule ref="PEAR">
         <exclude name="PEAR.Commenting.FileComment.Missing"/>
@@ -15,11 +20,6 @@
     <!-- Allow PHP files with no PHP code in partials -->
     <rule ref="Internal.NoCodeFound">
          <exclude-pattern>partials</exclude-pattern>
-    </rule>
-
-    <!-- Allow long lines -->
-    <rule ref="Generic.Files.LineLength.TooLong">
-        <exclude-pattern>partials</exclude-pattern>
     </rule>
 
 </ruleset>

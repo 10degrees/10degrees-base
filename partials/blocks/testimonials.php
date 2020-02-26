@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use App\Models\Testimonial;
 
@@ -22,7 +22,6 @@ use App\Models\Testimonial;
                 $testimonials->thePost();
 
                 get_template_part('partials/content', 'testimonial');
-
             }
 
             $testimonials->paginationLinks();

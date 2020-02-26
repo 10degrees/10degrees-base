@@ -34,11 +34,11 @@ class BaseWrapper
      */
     public function __construct($template = 'base.php')
     {
-        $this->slug = basename( $template, '.php' );
+        $this->slug = basename($template, '.php');
         $this->templates = array( $template );
         if (self::$base) {
-            $str = substr( $template, 0, -4 );
-            array_unshift( $this->templates, sprintf( $str . '-%s.php', self::$base ) );
+            $str = substr($template, 0, -4);
+            array_unshift($this->templates, sprintf($str . '-%s.php', self::$base));
         }
     }
 

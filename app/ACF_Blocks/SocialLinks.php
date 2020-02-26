@@ -63,10 +63,13 @@ class SocialLinks extends AbstractBlockRegistration
 
         $options = Yoast::getSocialLinkOptions();
         
-        echo td_view("partials/blocks/{$slug}", [
+        echo td_view(
+            "partials/blocks/{$slug}",
+            [
             'options' => $options,
             'seo_data' => get_option('wpseo_social'),
             'block' => $block
-        ]);
+            ]
+        );
     }
 }

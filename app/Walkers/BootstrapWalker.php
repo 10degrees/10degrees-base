@@ -15,7 +15,6 @@ namespace App\Walkers;
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
  * @see https://developer.wordpress.org/reference/classes/walker_nav_menu/
- *
  */
 class BootstrapWalker extends \Walker_Nav_Menu
 {

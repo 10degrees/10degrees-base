@@ -5,7 +5,8 @@
  *
  * @return string
  */
-function td_form_action() {
+function td_form_action()
+{
     return admin_url('admin-ajax.php');
 }
 

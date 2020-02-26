@@ -23,7 +23,7 @@ class WPQueryBuilder
     
     /**
      * \WP_Query
-     * 
+     *
      * @var null
      */
     protected $query = null;
