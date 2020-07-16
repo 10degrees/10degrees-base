@@ -2821,47 +2821,51 @@ body {
 [start]                                                                    [end]
 |                                                                              |
 |                                                                              |
-|  [content-start]                                              [content-end]  |
-+--+------------------------------------------------------------------------+--+
-|  |                                                                        |  |
-|  |                        +--------------------+                          |  |
-|  |                        |                    |                          |  |
-|  |                        |    .wrapper > *    |                          |  |
-|  |                        |                    |                          |  |
-|  |                        +--------------------+                          |  |
-|  |                                                                        |  |
-|  |                  +---------------------------------+                   |  |
-|  |                  |                                 |                   |  |
-|  |                  |      .wrapper > .alignwide      |                   |  |
-|  |                  |                                 |                   |  |
-|  |                  +---------------------------------+                   |  |
-|  |                                                                        |  |
-+--+------------------------------------------------------------------------+--+
+|       [wide-start]    [content-start]  [content-end]     [wide-end]          |
++------------------+--------+--------------------+---------+-------------------+
+|                  |        |                    |         |                   |
+|                  |        +--------------------+         |                   |
+|                  |        |                    |         |                   |
+|                  |        |    .wrapper > *    |         |                   |
+|                  |        |                    |         |                   |
+|                  |        +--------------------+         |                   |
+|                  |        |                    |         |                   |
+|                  +--------+--------------------+---------+                   |
+|                  |                                       |                   |
+|                  |         .wrapper > .alignwide         |                   |
+|                  |                                       |                   |
+|                  +--------+--------------------+---------+                   |
+|                  |        |                    |         |                   |
++------------------+--------+--------------------+---------+-------------------+
 |                                                                              |
 |                            .wrapper > .alignfull                             |
 |                                                                              |
 +------------------------------------------------------------------------------+
 */
-  grid: auto/[start] var(--horizontal-gap) [content-start] auto [content-end] var(--horizontal-gap) [end];
-  justify-items: center; }
+  grid: auto/[start] minmax(var(--horizontal-gap, 1rem), calc((100% - var(--max-container-width)) / 2)) [wide-start] 1fr [content-start] minmax(auto, var(--max-content-width)) [content-end] 1fr [wide-end] minmax(var(--horizontal-gap, 1rem), calc((100% - var(--max-container-width)) / 2)) [end]; }
   .wrapper > * {
-    max-width: 920px;
-    max-width: var(--max-content-width, 920px);
-    grid-column: content-start / content-end;
-    width: 100%;
-    margin: 0 auto; }
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    grid-column: content-start / content-end; }
+    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
       .wrapper > * {
-        margin-bottom: 2rem;
-        margin-bottom: var(--vertical-gap, 2rem);
+        max-width: 920px;
+        max-width: var(--max-content-width, 920px);
         margin-left: auto !important;
-        margin-right: auto !important; } }
+        margin-right: auto !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important; } }
   .wrapper > .alignwide {
-    max-width: 1200px;
-    max-width: var(--max-container-width, 1200px); }
+    grid-column: wide-start / wide-end; }
+    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .wrapper > .alignwide {
+        max-width: 1200px;
+        max-width: var(--max-container-width, 1200px); } }
   .wrapper > .alignfull {
-    grid-column: start / end;
-    max-width: 100%; }
+    grid-column: start / end; }
+    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      .wrapper > .alignfull {
+        max-width: 100%;
+        padding-left: 0 !important;
+        padding-right: 0 !important; } }
 
 .pagination {
   margin: 0 auto 24px;
@@ -3096,4 +3100,4 @@ form input[type="checkbox"] {
 }
  */
 
-/*# sourceMappingURL=maps/main-f89dee479e.css.map */
+/*# sourceMappingURL=maps/main-dc00868ad1.css.map */

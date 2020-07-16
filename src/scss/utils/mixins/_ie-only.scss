@@ -3,7 +3,7 @@
  * mixin.
  */
 @mixin ie-only {
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @media (-ms-high-contrast: none), (-ms-high-contrast: active) {
         @content;
     }
 }

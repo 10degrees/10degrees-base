@@ -6,22 +6,22 @@
 [start]                                                                    [end]
 |                                                                              |
 |                                                                              |
-|  [content-start]                                              [content-end]  |
-+--+------------------------------------------------------------------------+--+
-|  |                                                                        |  |
-|  |                        +--------------------+                          |  |
-|  |                        |                    |                          |  |
-|  |                        |    .wrapper > *    |                          |  |
-|  |                        |                    |                          |  |
-|  |                        +--------------------+                          |  |
-|  |                                                                        |  |
-|  |                  +---------------------------------+                   |  |
-|  |                  |                                 |                   |  |
-|  |                  |      .wrapper > .alignwide      |                   |  |
-|  |                  |                                 |                   |  |
-|  |                  +---------------------------------+                   |  |
-|  |                                                                        |  |
-+--+------------------------------------------------------------------------+--+
+|       [wide-start]    [content-start]  [content-end]     [wide-end]          |
++------------------+--------+--------------------+---------+-------------------+
+|                  |        |                    |         |                   |
+|                  |        +--------------------+         |                   |
+|                  |        |                    |         |                   |
+|                  |        |    .wrapper > *    |         |                   |
+|                  |        |                    |         |                   |
+|                  |        +--------------------+         |                   |
+|                  |        |                    |         |                   |
+|                  +--------+--------------------+---------+                   |
+|                  |                                       |                   |
+|                  |         .wrapper > .alignwide         |                   |
+|                  |                                       |                   |
+|                  +--------+--------------------+---------+                   |
+|                  |        |                    |         |                   |
++------------------+--------+--------------------+---------+-------------------+
 |                                                                              |
 |                            .wrapper > .alignfull                             |
 |                                                                              |
@@ -29,42 +29,50 @@
 */
     grid:
         auto /
-        // The left edge of the grid
         [start]
-        // the first grid track is the horizontal-gap width
-        var(--horizontal-gap)
-        // the left edge of the content
+        minmax(
+            var(--horizontal-gap, 1rem),
+            calc((100% - var(--max-container-width)) / 2)
+        )
+        [wide-start]
+        1fr
         [content-start]
-        // the centre grid track will be take the child width, which will have max-width set on it.
-        auto
-        // the right edge of the content
+        minmax(auto, var(--max-content-width))
         [content-end]
-        // the last grid track is the horizontal-gap width
-        var(--horizontal-gap)
-        // the right edge of the grid.
+        1fr
+        [wide-end]
+        minmax(
+            var(--horizontal-gap, 1rem),
+            calc((100% - var(--max-container-width)) / 2)
+        )
         [end];
 
-    justify-items: center;
-
     & > * {
-        @include prop(max-width, --max-content-width);
         grid-column: content-start / content-end;
-        width: 100%;
-        margin: 0 auto;
 
         // IE fallback for the block vertical rhythm
         @include ie-only {
-            @include prop(margin-bottom, --vertical-gap);
-            // !important overrides individual block margin E.g. blockquote
+            @include prop(max-width, --max-content-width);
             margin-left: auto !important;
             margin-right: auto !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
         }
     }
     & > .alignwide {
-        @include prop(max-width, --max-container-width);
+        grid-column: wide-start / wide-end;
+
+        @include ie-only {
+            @include prop(max-width, --max-container-width);
+        }
     }
     & > .alignfull {
         grid-column: start / end;
-        max-width: 100%;
+
+        @include ie-only {
+            max-width: 100%;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
     }
 }
