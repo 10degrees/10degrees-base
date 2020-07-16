@@ -4,6 +4,7 @@
 
 # Lock files
 package-lock.json
+composer.lock
 yarn.lock
 
 # ignore node dependency directories
@@ -11,6 +12,9 @@ node_modules/
 
 # ignore composer dependency directories
 /vendor/
+
+/dist
+/lang
 
 # ignore OS generated files
 ehthumbs.db
