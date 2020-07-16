@@ -5,9 +5,9 @@ export default class Menu {
     constructor(id) {
         this.nav = document.querySelector(id);
         /* For each sub-menu in the menu, create a new instance of SubMenu */
-        this.subMenus = [...this.nav.querySelectorAll(".sub-menu")].map(
-            e => new SubMenu(e)
-        );
+        this.nav.querySelectorAll(".sub-menu").forEach((e) => {
+            this.subMenus.push(new SubMenu(e));
+        });
         this.init();
     }
     init() {
@@ -17,10 +17,12 @@ export default class Menu {
         this.handleBlur();
     }
     handleEscKey() {
-        this.nav.onkeyup = e => {
+        this.nav.onkeyup = (e) => {
             if (e.key === "Escape" || e.key === "Esc") {
-                let openMenu = document.querySelector('a[aria-expanded="true"]');
-                if(openMenu){
+                let openMenu = document.querySelector(
+                    'a[aria-expanded="true"]'
+                );
+                if (openMenu) {
                     openMenu.focus(); // Focus on top level menu item
                 }
 
@@ -29,7 +31,7 @@ export default class Menu {
         };
     }
     handleBlur() {
-        document.documentElement.addEventListener("click", e => {
+        document.documentElement.addEventListener("click", (e) => {
             if (!eventPath(e).includes(this.nav)) {
                 this.closeAll();
             }
