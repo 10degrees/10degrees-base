@@ -27,13 +27,14 @@
 |                                                                              |
 +------------------------------------------------------------------------------+
 */
+    $wide-width: minmax(
+        var(--horizontal-gap, 1rem),
+        calc((100% - var(--max-container-width)) / 2)
+    );
     grid:
         auto /
         [start]
-        minmax(
-            var(--horizontal-gap, 1rem),
-            calc((100% - var(--max-container-width)) / 2)
-        )
+        $wide-width
         [wide-start]
         1fr
         [content-start]
@@ -41,10 +42,7 @@
         [content-end]
         1fr
         [wide-end]
-        minmax(
-            var(--horizontal-gap, 1rem),
-            calc((100% - var(--max-container-width)) / 2)
-        )
+        $wide-width
         [end];
 
     & > * {
