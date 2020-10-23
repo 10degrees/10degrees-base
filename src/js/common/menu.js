@@ -4,11 +4,10 @@ import eventPath from "./event-path";
 export default class Menu {
     constructor(id) {
         this.nav = document.querySelector(id);
-        this.subMenus = [];
         /* For each sub-menu in the menu, create a new instance of SubMenu */
-        this.nav.querySelectorAll(".sub-menu").forEach((e) => {
-            this.subMenus.push(new SubMenu(e));
-        });
+        this.subMenus = [...this.nav.querySelectorAll(".sub-menu")].map(
+            e => new SubMenu(e)
+        );
         this.init();
     }
     init() {
