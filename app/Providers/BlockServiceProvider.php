@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Inc\ServiceProvider;
+use App\Support\ServiceProvider;
 
 /**
  * Registers blocks
