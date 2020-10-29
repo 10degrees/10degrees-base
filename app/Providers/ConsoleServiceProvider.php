@@ -26,6 +26,7 @@ class ConsoleServiceProvider extends ServiceProvider
         \App\Support\Console\Commands\MakeController::class,
         \App\Support\Console\Commands\MakeModel::class,
         \App\Support\Console\Commands\MakeProvider::class,
+        \App\Support\Console\Commands\MakeShortcode::class,
     ];
 
     /**

@@ -2,7 +2,7 @@
 
 namespace App\Shortcodes;
 
-use App\Shortcodes\Shortcode;
+use App\Support\WordPress\Shortcode;
 
 /**
  * Provides a shortcode for buttons
@@ -41,15 +41,15 @@ class ButtonShortcode extends Shortcode
      *
      * @return string
      */
-    public function handle()
+    public function handle(): string
     {
         $permalink = $this->getPermalink();
 
         if ($permalink) {
-            return '<a class="' . $this->class . '" href="' . $permalink . '">' . $this->text . '</a>';
+            return '<a class="' . $this->class . '" href="' . $permalink . '">' . $this->content . '</a>';
         }
 
-        return;
+        return '';
     }
 
     /**
