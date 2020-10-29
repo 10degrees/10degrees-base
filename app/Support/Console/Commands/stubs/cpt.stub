@@ -1,0 +1,29 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Support\WordPress\Cpt;
+
+class {{ class }} extends Cpt
+{
+    /**
+     * Define the post type
+     *
+     * @var string
+     */
+    protected $postType = '{{ posttype }}';
+
+    /**
+     * Define the plural title
+     *
+     * @var string
+     */
+    protected $plural = '{{ plural }}';
+
+    /**
+     * Define the singular title
+     *
+     * @var string
+     */
+    protected $singular = '{{ singular }}';
+}

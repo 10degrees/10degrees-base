@@ -1,0 +1,32 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Support\Console\Command;
+
+class {{ class }} extends Command
+{
+    /**
+     * The command signature.
+     *
+     * @var string
+     */
+    protected $signature = '{{ command }}';
+
+    /**
+     * The command description.
+     *
+     * @var string
+     */
+    protected $description = 'Command description';
+
+    /**
+     * Handle the command call.
+     *
+     * @return void
+     */
+    protected function handle(): void
+    {
+        $this->success('Done');
+    }
+}

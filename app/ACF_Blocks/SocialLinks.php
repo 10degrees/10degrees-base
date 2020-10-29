@@ -24,7 +24,7 @@ class SocialLinks extends AbstractBlockRegistration
      */
     public function __construct()
     {
-        if (function_exists('acf_register_block_type') && is_plugin_active('wordpress-seo/wp-seo.php')) {
+        if (function_exists('acf_register_block_type') && function_exists('is_plugin_active') && is_plugin_active('wordpress-seo/wp-seo.php')) {
             $this->register();
         }
     }
@@ -43,9 +43,9 @@ class SocialLinks extends AbstractBlockRegistration
                 'render_callback' => [$this, 'render'],
                 'category' => 'common',
                 'icon' => 'admin-links',
-                'keywords' => array( 'social','custom','links'),
+                'keywords' => array('social', 'custom', 'links'),
                 'supports' => array(
-                'align' => array('wide', 'full')
+                    'align' => array('wide', 'full')
                 )
             ]
         );
@@ -62,13 +62,13 @@ class SocialLinks extends AbstractBlockRegistration
         $slug = str_replace('acf/', '', $block['name']);
 
         $options = Yoast::getSocialLinkOptions();
-        
+
         echo td_view(
             "partials/blocks/{$slug}",
             [
-            'options' => $options,
-            'seo_data' => get_option('wpseo_social'),
-            'block' => $block
+                'options' => $options,
+                'seo_data' => get_option('wpseo_social'),
+                'block' => $block
             ]
         );
     }

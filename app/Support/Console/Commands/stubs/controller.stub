@@ -1,0 +1,21 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Support\Http\Request;
+use App\Support\Routing\Controller;
+
+class {{ class }} extends Controller
+{
+    /**
+     * Handle the request.
+     *
+     * @param \App\Support\Http\Request $request The request object.
+     *
+     * @return string
+     */
+    public function __invoke(Request $request): string
+    {
+        return $request;
+    }
+}

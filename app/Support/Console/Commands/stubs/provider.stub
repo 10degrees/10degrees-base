@@ -1,0 +1,13 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Support\ServiceProvider;
+
+class {{ class }} extends ServiceProvider
+{
+    /**
+     * The classes to autoload
+     */
+    protected $classes = [];
+}
