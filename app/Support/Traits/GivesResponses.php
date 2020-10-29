@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace App\Support\Traits;
 
 /**
  * A trait for objects that give reponses

@@ -2,9 +2,9 @@
 
 namespace App\Controllers\Abstractions;
 
-use App\Traits\GivesResponses;
-use App\Traits\RedirectsUsers;
-use App\Traits\ValidatesRequests;
+use App\Support\Traits\GivesResponses;
+use App\Support\Traits\RedirectsUsers;
+use App\Support\Traits\ValidatesRequests;
 
 //@TODO check class description
 /**
@@ -20,7 +20,7 @@ use App\Traits\ValidatesRequests;
 class HandlesRestApi
 {
     use RedirectsUsers, GivesResponses, ValidatesRequests;
-    
+
     /**
      * The rest api endpoint.
      *
@@ -60,10 +60,10 @@ class HandlesRestApi
     public function register()
     {
         //phpcs:ignore
-        register_rest_route( 'api', $this->endpoint, [
+        register_rest_route('api', $this->endpoint, [
             'methods' => $this->getMethods(),
             'callback' => [$this, $this->callback],
-        ]);//phpcs:ignore
+        ]); //phpcs:ignore
     }
 
     /**

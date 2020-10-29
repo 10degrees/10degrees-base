@@ -2,8 +2,8 @@
 
 namespace App\Controllers\Abstractions;
 
-use App\Traits\RedirectsUsers;
-use App\Traits\ValidatesRequests;
+use App\Support\Traits\RedirectsUsers;
+use App\Support\Traits\ValidatesRequests;
 
 /**
  * Base class for registering actions
