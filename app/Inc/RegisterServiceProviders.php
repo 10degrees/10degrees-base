@@ -2,7 +2,7 @@
 
 namespace App\Inc;
 
-use App\Inc\ServiceProvider;
+use App\Support\ServiceProvider;
 
 /**
  * Registers service providers
@@ -23,14 +23,14 @@ class RegisterServiceProviders extends ServiceProvider
      */
     protected $classes = [
         \App\Providers\ConsoleServiceProvider::class,
-        '\App\Providers\ConfigServiceProvider',
-        '\App\Providers\AdminServiceProvider',
-        '\App\Providers\ThemeServiceProvider',
-        '\App\Providers\CptServiceProvider',
-        '\App\Providers\BlockServiceProvider',
-        '\App\Providers\ShortcodeServiceProvider',
-        '\App\Providers\ControllerServiceProvider',
-        '\App\Providers\FieldServiceProvider'
-        // '\App\Providers\WoocommerceServiceProvider',
+        \App\Providers\ConfigServiceProvider::class,
+        \App\Providers\AdminServiceProvider::class,
+        \App\Providers\ThemeServiceProvider::class,
+        \App\Providers\CptServiceProvider::class,
+        \App\Providers\BlockServiceProvider::class,
+        \App\Providers\ShortcodeServiceProvider::class,
+        \App\Providers\ControllerServiceProvider::class,
+        \App\Providers\FieldServiceProvider::class,
+        // \App\Providers\WoocommerceServiceProvider::class,
     ];
 }
