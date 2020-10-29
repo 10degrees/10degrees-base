@@ -22,15 +22,15 @@ class AdminServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        '\App\Admin\Login',
-        '\App\Admin\DashboardBranding',
-        '\App\Admin\CleanUp',
-        '\App\Admin\Acf',
-        '\App\Admin\MenuOrder',
-        '\App\Admin\EditorColourPalette',
-        '\App\Admin\FontSizes',
-        '\App\Admin\ReusableBlockMenu',
-        '\App\Admin\SetAllowedBlocks',
-        '\App\Admin\ACFImporterPage'
+        \App\Admin\Login::class,
+        \App\Admin\DashboardBranding::class,
+        \App\Admin\CleanUp::class,
+        \App\Admin\Acf::class,
+        \App\Admin\MenuOrder::class,
+        \App\Admin\EditorColourPalette::class,
+        \App\Admin\FontSizes::class,
+        \App\Admin\ReusableBlockMenu::class,
+        \App\Admin\SetAllowedBlocks::class,
+        \App\Admin\ACFImporterPage::class,
     ];
 }

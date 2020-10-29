@@ -22,16 +22,16 @@ class ControllerServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        
+
         /**
          * Web Controllers
          */
-        '\App\Controllers\Web\ExampleController',
-        
+        \App\Controllers\Web\ExampleController::class,
+
         /**
          * REST API Controllers
          */
-        // '\App\Controllers\Api\ExampleRestApiController',
-        
+        // \App\Controllers\Api\ExampleRestApiController::class,
+
     ];
 }

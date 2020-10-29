@@ -22,9 +22,9 @@ class BlockServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        '\App\ACF_Blocks\Testimonials',
-        '\App\ACF_Blocks\Accordion',
-        '\App\ACF_Blocks\SocialLinks',
-        '\App\ACF_Blocks\SocialShare',
+        \App\ACF_Blocks\Testimonials::class,
+        \App\ACF_Blocks\Accordion::class,
+        \App\ACF_Blocks\SocialLinks::class,
+        \App\ACF_Blocks\SocialShare::class,
     ];
 }

@@ -22,6 +22,6 @@ class WoocommerceServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        // '\App\Woocommerce\TemplateActions\Archive',
+        // \App\Woocommerce\TemplateActions\Archive::class,
     ];
 }
