@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Support\Console\Commands;
+
+use App\Support\Console\GeneratorCommand;
+
+class MakeJob extends GeneratorCommand
+{
+    /**
+     * The type of class being generated.
+     *
+     * @var string
+     */
+    protected $type = 'Job';
+
+    /**
+     * The command signature.
+     *
+     * @var string
+     */
+    protected $signature = 'make:job {name : The job class}
+                                     {--force : Overwrite the job if it exists}';
+
+    /**
+     * The command description.
+     *
+     * @var string
+     */
+    protected $description = 'Make a job';
+
+    /**
+     * Get the stub path.
+     *
+     * @return string
+     */
+    protected function getStub(): string
+    {
+        return __DIR__ . '/stubs/job.stub';
+    }
+
+    /**
+     * Get the default namespace for the class.
+     *
+     * @param  string  $rootNamespace
+     * @return string
+     */
+    protected function getDefaultNamespace($rootNamespace)
+    {
+        return $rootNamespace . '\Jobs';
+    }
+}
