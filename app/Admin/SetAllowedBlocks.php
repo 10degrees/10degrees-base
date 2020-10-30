@@ -55,6 +55,9 @@ class SetAllowedBlocks
         'gravityforms/form',
         'map-block-leaflet/map-block-leaflet',
         'core/missing',
+        /**
+         * No for ACF blocks? They are automatically added to the whitelist!
+         */
     ];
 
     /**
