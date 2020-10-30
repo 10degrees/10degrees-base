@@ -29,6 +29,18 @@ class MakeBlock extends GeneratorCommand
     protected $description = 'Make a block';
 
     /**
+     * Handle further calls
+     *
+     * @return void
+     */
+    protected function handle(): void
+    {
+        parent::handle();
+
+        $this->call("make:blockpartial {$this->argument('name')}");
+    }
+
+    /**
      * Replace the class name for the given stub.
      *
      * @param string $stub The stub contents
@@ -40,7 +52,15 @@ class MakeBlock extends GeneratorCommand
     {
         $stub = parent::replaceClass($stub, $name);
 
-        return str_replace('{{ shortcode }}', $this->option('shortcode'), $stub);
+        return str_replace(
+            ['{{ name }}', '{{ title }}', '{{ icon }}'],
+            [
+                strtolower($this->argument('name')),
+                $this->ask('What is the title?'),
+                $this->ask('What is the icon? (without "dashicon-"'),
+            ],
+            $stub
+        );
     }
 
     /**

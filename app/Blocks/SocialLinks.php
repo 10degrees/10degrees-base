@@ -6,7 +6,9 @@ use App\Boot\Yoast;
 use App\Support\WordPress\Block;
 
 /**
- * Social
+ * Accordion block
+ *
+ * Provides an ACF block to display an accordion
  *
  * @category Theme
  * @package  TenDegrees/10degrees-base
@@ -18,38 +20,38 @@ use App\Support\WordPress\Block;
 class SocialLinks extends Block
 {
     /**
+     * A unique name that identifies the block (without namespace)
+     *
+     * @var string
+     */
+    protected $name = 'social-links';
+
+    /**
+     * The block options
+     *
+     * @var array
+     */
+    protected $options = [
+        'title'       => 'Social links',
+        'description' => 'Add links to social media.',
+        'icon'        => 'admin-links',
+        'category'    => 'theme',
+        'keywords'    => ['social', 'custom', 'links'],
+        'supports'    => ['align' => ['wide', 'full']],
+    ];
+
+    /**
      * Constructor
      *
      * Only register the class if ACF is active
      */
     public function __construct()
     {
-        if (function_exists('acf_register_block_type') && function_exists('is_plugin_active') && is_plugin_active('wordpress-seo/wp-seo.php')) {
-            $this->register();
+        if (function_exists('is_plugin_active') && is_plugin_active('wordpress-seo/wp-seo.php')) {
+            parent::__construct();
         }
     }
-    /**
-     * Declare ACF blocks for Block Editor
-     *
-     * @return void
-     */
-    public function register()
-    {
-        acf_register_block(
-            [
-                'name' => 'social-links',
-                'title' => __('Social links'),
-                'description' => __('Add links to social media.'), //@TODO add namespace
-                'render_callback' => [$this, 'render'],
-                'category' => 'common',
-                'icon' => 'admin-links',
-                'keywords' => array('social', 'custom', 'links'),
-                'supports' => array(
-                    'align' => array('wide', 'full')
-                )
-            ]
-        );
-    }
+
     /**
      * Callback to render ACF blocks
      *
@@ -57,18 +59,14 @@ class SocialLinks extends Block
      *
      * @return void
      */
-    public function render($block)
+    public function render(array $block): void
     {
-        $slug = str_replace('acf/', '', $block['name']);
-
-        $options = Yoast::getSocialLinkOptions();
-
         echo td_view(
-            "partials/blocks/{$slug}",
+            "partials/blocks/{$this->name}",
             [
-                'options' => $options,
+                'options'  => Yoast::getSocialLinkOptions(),
                 'seo_data' => get_option('wpseo_social'),
-                'block' => $block
+                'block'    => $block,
             ]
         );
     }

@@ -5,7 +5,9 @@ namespace App\Blocks;
 use App\Support\WordPress\Block;
 
 /**
- * Social Share Block
+ * Accordion block
+ *
+ * Provides an ACF block to display an accordion
  *
  * @category Theme
  * @package  TenDegrees/10degrees-base
@@ -16,44 +18,24 @@ use App\Support\WordPress\Block;
  */
 class SocialShare extends Block
 {
+    /**
+     * A unique name that identifies the block (without namespace)
+     *
+     * @var string
+     */
+    protected $name = 'social-share';
 
     /**
-     * Declare ACF blocks for Block Editor
+     * The block options
      *
-     * @return void
+     * @var array
      */
-    public function register()
-    {
-        acf_register_block(
-            [
-                'name' => 'social-share',
-                'title' => __('Social share'),
-                'description' => __('Add share buttons.'), //@TODO add namespace
-                'render_callback' => [$this, 'render'],
-                'category' => 'common',
-                'icon' => 'share',
-                'keywords' => array('social', 'custom', 'share'),
-                'supports' => array(
-                    'align' => array('wide', 'full')
-                )
-            ]
-        );
-    }
-    /**
-     * Callback to render ACF blocks
-     *
-     * @param $block Name of block
-     *
-     * @return void
-     */
-    public function render($block)
-    {
-        // convert name ("acf/testimonial") into path friendly slug ("testimonial")
-        $slug = str_replace('acf/', '', $block['name']);
-
-        // include a template part from within the "views/blocks" folder
-        if (file_exists(get_theme_file_path("/partials/blocks/{$slug}.php"))) {
-            include get_theme_file_path("/partials/blocks/{$slug}.php");
-        }
-    }
+    protected $options = [
+        'title'       => 'Social share',
+        'description' => 'Add share buttons.',
+        'icon'        => 'share',
+        'category'    => 'theme',
+        'keywords'    => ['social', 'custom', 'share'],
+        'supports'    => ['align' => ['wide', 'full']],
+    ];
 }

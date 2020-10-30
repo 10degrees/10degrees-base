@@ -5,7 +5,7 @@ namespace App\Blocks;
 use App\Support\WordPress\Block;
 
 /**
- * Accordion
+ * Accordion block
  *
  * Provides an ACF block to display an accordion
  *
@@ -19,43 +19,23 @@ use App\Support\WordPress\Block;
 class Accordion extends Block
 {
     /**
-     * Declare ACF blocks for Block Editor
+     * A unique name that identifies the block (without namespace)
      *
-     * @return void
+     * @var string
      */
-    public function register()
-    {
-        acf_register_block(
-            [
-                'name' => 'accordion',
-                'title' => __('Accordion'),
-                'description' => __('An accordion, with a heading and content.'), //@TODO add namespace
-                'render_callback' => [$this, 'render'],
-                'category' => 'common',
-                'icon' => 'arrow-down',
-                'keywords' => array('accordion'),
-                'supports' => array(
-                    'align' => array('wide', 'full')
-                )
-            ]
-        );
-    }
+    protected $name = 'accordion';
 
     /**
-     * Callback to render ACF blocks
+     * The block options
      *
-     * @param $block Name of block
-     *
-     * @return void
+     * @var array
      */
-    public function render($block)
-    {
-        // convert name ("acf/testimonial") into path friendly slug ("testimonial")
-        $slug = str_replace('acf/', '', $block['name']);
-
-        // include a template part from within the "views/blocks" folder
-        if (file_exists(get_theme_file_path("/partials/blocks/{$slug}.php"))) {
-            include get_theme_file_path("/partials/blocks/{$slug}.php");
-        }
-    }
+    protected $options = [
+        'title'       => 'Accordion',
+        'description' => 'An accordion, with a heading and content.',
+        'icon'        => 'arrow-down',
+        'category'    => 'theme',
+        'keywords'    => ['accordion'],
+        'supports'    => ['align' => ['wide', 'full']],
+    ];
 }

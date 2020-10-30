@@ -16,4 +16,30 @@ use App\Support\WordPress\Block;
  */
 class {{ class }} extends Block
 {
+    /**
+     * A unique name that identifies the block (without namespace)
+     *
+     * @var string
+     */
+    protected $name = '{{ name }}';
+
+    /**
+     * The block options
+     *
+     * @var array
+     */
+    protected $options = [
+        'title'       => '{{ title }}',
+        'description' => 'Block description',
+        'icon'        => '{{ icon }}',
+        'category'    => 'theme',
+        'keywords'    => ['{{ name }}'],
+        'supports'    => ['align' => ['wide', 'full']],
+        'example'  => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [],
+            ],
+        ],
+    ];
 }

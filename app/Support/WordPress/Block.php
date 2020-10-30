@@ -15,13 +15,40 @@ namespace App\Support\WordPress;
 abstract class Block
 {
     /**
-     * Constructor
+     * A unique name that identifies the block (without namespace)
      *
-     * Only register the class if ACF is active
+     * @var string
+     */
+    protected $name = '';
+
+    /**
+     * The block options
+     *
+     * @var array
+     */
+    protected $options = [
+        'title'       => '',
+        'description' => '',
+        'icon'        => '',
+        'category'    => 'theme',
+        'keywords'    => ['theme', 'block'],
+        'supports'    => ['align' => ['wide', 'full']],
+    ];
+
+    /**
+     * Constructor
      */
     public function __construct()
     {
         $this->register();
+
+        add_filter(
+            'allowed_block_types',
+            function ($blocks) {
+                $blocks[] = 'acf/' . $this->name;
+                return $blocks;
+            }
+        );
     }
 
     /**
@@ -29,5 +56,28 @@ abstract class Block
      *
      * @return void
      */
-    abstract public function register();
+    protected function register(): void
+    {
+        acf_register_block(
+            array_merge(
+                $this->options,
+                [
+                    'name'            => $this->name,
+                    'render_callback' => [$this, 'render'],
+                ]
+            )
+        );
+    }
+
+    /**
+     * Callback to render ACF blocks
+     *
+     * @param $block Name of block
+     *
+     * @return void
+     */
+    public function render(array $block)
+    {
+        echo td_view("partials/blocks/{$this->name}", compact('block'));
+    }
 }
