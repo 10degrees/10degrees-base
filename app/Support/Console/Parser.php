@@ -5,12 +5,22 @@ namespace App\Support\Console;
 use Exception;
 use Illuminate\Support\Str;
 
+/**
+ * Parse a command signature
+ *
+ * @category Theme
+ * @package  TenDegrees/10degrees-base
+ * @author   10 Degrees <wordpress@10degrees.uk>
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html GPL-2.0+
+ * @link     https://github.com/10degrees/10degrees-base
+ * @since    2.0.0
+ */
 class Parser
 {
     /**
      * Parse the given console command definition into an array.
      *
-     * @param  string  $expression
+     * @param string $expression The signature to parse
      *
      * @return array
      */
@@ -30,7 +40,8 @@ class Parser
     /**
      * Extract the name of the command from the expression.
      *
-     * @param  string  $expression
+     * @param string $expression The expression from which to extract the name
+     *
      * @return string
      *
      * @throws \Exception
@@ -47,7 +58,7 @@ class Parser
     /**
      * Extract all of the parameters from the tokens.
      *
-     * @param  array  $tokens
+     * @param array $tokens Te tokens extracted from the signature
      *
      * @return array
      */
@@ -71,7 +82,7 @@ class Parser
     /**
      * Parse an argument expression.
      *
-     * @param  string  $token
+     * @param string $token The argument token
      *
      * @return array
      */
@@ -106,7 +117,7 @@ class Parser
     /**
      * Parse an option expression.
      *
-     * @param  string  $token
+     * @param string $token The option/flag token
      *
      * @return array
      */
@@ -141,7 +152,7 @@ class Parser
     /**
      * Parse the token into its token and description segments.
      *
-     * @param  string  $token
+     * @param string $token The token to extract the description from
      *
      * @return array
      */

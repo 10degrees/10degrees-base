@@ -41,10 +41,11 @@ class MakeJob extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param  string  $rootNamespace
+     * @param string $rootNamespace The root namespace
+     *
      * @return string
      */
-    protected function getDefaultNamespace($rootNamespace)
+    protected function getDefaultNamespace(string $rootNamespace): string
     {
         return $rootNamespace . '\Jobs';
     }

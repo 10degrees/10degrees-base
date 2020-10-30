@@ -4,6 +4,16 @@ namespace App\Support\Console;
 
 use function WP_CLI\Utils\make_progress_bar as wpcli_make_progress_bar;
 
+/**
+ * Create a progress bar
+ *
+ * @category Theme
+ * @package  TenDegrees/10degrees-base
+ * @author   10 Degrees <wordpress@10degrees.uk>
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html GPL-2.0+
+ * @link     https://github.com/10degrees/10degrees-base
+ * @since    2.0.0
+ */
 class ProgressBar
 {
     /**
@@ -23,7 +33,7 @@ class ProgressBar
     /**
      * Assign the count
      *
-     * @param integer $count
+     * @param integer $count The progress bar count
      *
      * @return void
      */
@@ -35,7 +45,7 @@ class ProgressBar
     /**
      * Set a progress bar message.
      *
-     * @param string $message
+     * @param string $message The message to display
      *
      * @return \App\Support\Console\ProgressBar
      */

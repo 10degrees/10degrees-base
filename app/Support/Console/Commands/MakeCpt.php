@@ -48,11 +48,12 @@ class MakeCpt extends GeneratorCommand
     /**
      * Replace the class name for the given stub.
      *
-     * @param  string  $stub
-     * @param  string  $name
+     * @param string $stub The stub contents
+     * @param string $name The classname to replace
+     *
      * @return string
      */
-    protected function replaceClass($stub, $name)
+    protected function replaceClass(string $stub, string $name): string
     {
         $stub = parent::replaceClass($stub, $name);
 
@@ -80,10 +81,11 @@ class MakeCpt extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param  string  $rootNamespace
+     * @param string $rootNamespace The root namespace
+     *
      * @return string
      */
-    protected function getDefaultNamespace($rootNamespace)
+    protected function getDefaultNamespace(string $rootNamespace): string
     {
         return $rootNamespace . '\Cpt';
     }

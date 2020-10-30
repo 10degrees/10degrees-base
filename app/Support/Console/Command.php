@@ -7,6 +7,16 @@ use App\Support\Console\ProgressBar;
 use WP_CLI;
 use function WP_CLI\Utils\format_items as wpcli_format_items;
 
+/**
+ * The base command class
+ *
+ * @category Theme
+ * @package  TenDegrees/10degrees-base
+ * @author   10 Degrees <wordpress@10degrees.uk>
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html GPL-2.0+
+ * @link     https://github.com/10degrees/10degrees-base
+ * @since    2.0.0
+ */
 abstract class Command
 {
     /**
@@ -70,8 +80,10 @@ abstract class Command
 
     /**
      * Register the WP_CLI command.
+     *
+     * @return void
      */
-    protected function register()
+    protected function register(): void
     {
         WP_CLI::add_command($this->name, $this, $this->synopsis);
     }
@@ -183,7 +195,7 @@ abstract class Command
     /**
      * Send an success to the console.
      *
-     * @var string $message The message to output to the console.
+     * @param string $message The message to output to the console.
      *
      * @return \App\Support\Console\Command
      */
@@ -197,7 +209,7 @@ abstract class Command
     /**
      * Send a warning to the console.
      *
-     * @var string $message The message to output to the console.
+     * @param string $message The message to output to the console.
      *
      * @return \App\Support\Console\Command
      */
@@ -211,7 +223,7 @@ abstract class Command
     /**
      * Send an error to the console.
      *
-     * @var string $message The message to output to the console.
+     * @param string $message The message to output to the console.
      *
      * @return void
      */
@@ -223,28 +235,44 @@ abstract class Command
     /**
      * Send an message to the console.
      *
-     * @var string $message The message to output to the console.
+     * @param string $message The message to output to the console.
      *
      * @return \App\Support\Console\Command
      */
     protected function line(string $message): Command
     {
-        WP_CLI::log(WP_CLI::colorize($message . '%n'));
+        WP_CLI::log($message);
 
+        return $this;
+    }
+
+    /**
+     * Output new lines
+     *
+     * @param integer $lines The number of new lines to output
+     *
+     * @return \App\Support\Console\Command
+     */
+    protected function newLine(int $lines = 1): Command
+    {
+        while ($lines > 0) {
+            $this->line('');
+            $lines--;
+        }
         return $this;
     }
 
     /**
      * Output a table
      *
-     * @param array $headers
-     * @param array $data
+     * @param array $headers The table headers
+     * @param array $data    The table data
      *
      * @return \App\Support\Console\Command
      */
     protected function table(array $headers, array $data): Command
     {
-        $this->line(wpcli_format_items('table', $data, $headers));
+        wpcli_format_items('table', $data, $headers);
 
         return $this;
     }
@@ -252,7 +280,7 @@ abstract class Command
     /**
      * Create a new progress bar
      *
-     * @param integer $count
+     * @param integer $count The progress bar count
      *
      * @return \App\Support\Console\ProgressBar
      */
@@ -264,8 +292,8 @@ abstract class Command
     /**
      * Ask the user to confirm an action.
      *
-     * @param string $message The message to post to the console.
-     * @param bool   $skip    Should the confirm be skipped?
+     * @param string $question The message to post to the console.
+     * @param bool   $skip     Should the confirm be skipped?
      *
      * @return bool
      */

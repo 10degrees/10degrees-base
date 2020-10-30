@@ -5,6 +5,16 @@ namespace App\Support\Console;
 use App\Support\Console\Command;
 use App\Support\Filesystem\Filesystem;
 
+/**
+ * A file generator class
+ *
+ * @category Theme
+ * @package  TenDegrees/10degrees-base
+ * @author   10 Degrees <wordpress@10degrees.uk>
+ * @license  https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html GPL-2.0+
+ * @link     https://github.com/10degrees/10degrees-base
+ * @since    2.0.0
+ */
 abstract class GeneratorCommand extends Command
 {
     /**
@@ -114,14 +124,12 @@ abstract class GeneratorCommand extends Command
      *
      * @return string
      */
-    abstract protected function getStub();
+    abstract protected function getStub(): string;
 
     /**
      * Execute the console command.
      *
-     * @return bool|null
-     *
-     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     * @return void
      */
     protected function handle(): void
     {
@@ -160,10 +168,11 @@ abstract class GeneratorCommand extends Command
     /**
      * Parse the class name and format according to the root namespace.
      *
-     * @param  string  $name
+     * @param string $name The name to qualify
+     *
      * @return string
      */
-    protected function qualifyClass($name)
+    protected function qualifyClass(string $name): string
     {
         $name = ltrim($name, '\\/');
 
@@ -183,10 +192,11 @@ abstract class GeneratorCommand extends Command
     /**
      * Get the default namespace for the class.
      *
-     * @param  string  $rootNamespace
+     * @param string $rootNamespace The root namespace
+     *
      * @return string
      */
-    protected function getDefaultNamespace($rootNamespace)
+    protected function getDefaultNamespace(string $rootNamespace): string
     {
         return $rootNamespace;
     }
@@ -194,10 +204,11 @@ abstract class GeneratorCommand extends Command
     /**
      * Determine if the class already exists.
      *
-     * @param  string  $rawName
+     * @param string $rawName The clasname
+     *
      * @return bool
      */
-    protected function alreadyExists($rawName)
+    protected function alreadyExists(string $rawName): bool
     {
         return $this->files->exists($this->getPath($this->qualifyClass($rawName)));
     }
@@ -205,10 +216,11 @@ abstract class GeneratorCommand extends Command
     /**
      * Get the destination class path.
      *
-     * @param  string  $name
+     * @param string $name The filename
+     *
      * @return string
      */
-    protected function getPath($name)
+    protected function getPath(string $name): string
     {
         $position = strpos($name, $this->rootNamespace());
 
@@ -222,7 +234,8 @@ abstract class GeneratorCommand extends Command
     /**
      * Build the directory for the class if necessary.
      *
-     * @param  string  $path
+     * @param string $path Make the directory recursively
+     *
      * @return string
      */
     protected function makeDirectory(string $path): string
@@ -238,12 +251,11 @@ abstract class GeneratorCommand extends Command
     /**
      * Build the class with the given name.
      *
-     * @param  string  $name
-     * @return string
+     * @param string $name The name to build the class from
      *
-     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     * @return string
      */
-    protected function buildClass($name)
+    protected function buildClass(string $name): string
     {
         $stub = $this->files->get($this->getStub());
 
@@ -253,11 +265,12 @@ abstract class GeneratorCommand extends Command
     /**
      * Replace the namespace for the given stub.
      *
-     * @param  string  $stub
-     * @param  string  $name
+     * @param string $stub The stub contents
+     * @param string $name The namespace name
+     *
      * @return $this
      */
-    protected function replaceNamespace(&$stub, $name)
+    protected function replaceNamespace(string &$stub, string $name)
     {
         $searches = [
             ['DummyNamespace', 'DummyRootNamespace'],
@@ -279,10 +292,11 @@ abstract class GeneratorCommand extends Command
     /**
      * Get the full namespace for a given class, without the class name.
      *
-     * @param  string  $name
+     * @param string $name The classname
+     *
      * @return string
      */
-    protected function getNamespace($name)
+    protected function getNamespace(string $name): string
     {
         return trim(implode('\\', array_slice(explode('\\', $name), 0, -1)), '\\');
     }
@@ -290,11 +304,12 @@ abstract class GeneratorCommand extends Command
     /**
      * Replace the class name for the given stub.
      *
-     * @param  string  $stub
-     * @param  string  $name
+     * @param string $stub The stub contents
+     * @param string $name The classname to replace
+     *
      * @return string
      */
-    protected function replaceClass($stub, $name)
+    protected function replaceClass(string $stub, string $name): string
     {
         $class = str_replace($this->getNamespace($name) . '\\', '', $name);
 
@@ -304,10 +319,11 @@ abstract class GeneratorCommand extends Command
     /**
      * Alphabetically sorts the imports for the given stub.
      *
-     * @param  string  $stub
+     * @param string $stub The stub contents
+     *
      * @return string
      */
-    protected function sortImports($stub)
+    protected function sortImports(string $stub): string
     {
         if (preg_match('/(?P<imports>(?:use [^;]+;$\n?)+)/m', $stub, $match)) {
             $imports = explode("\n", trim($match['imports']));
@@ -325,7 +341,7 @@ abstract class GeneratorCommand extends Command
      *
      * @return string
      */
-    protected function getNameInput()
+    protected function getNameInput(): string
     {
         return trim($this->argument('name'));
     }
@@ -335,7 +351,7 @@ abstract class GeneratorCommand extends Command
      *
      * @return string
      */
-    protected function rootNamespace()
+    protected function rootNamespace(): string
     {
         return 'App\\';
     }
@@ -343,10 +359,11 @@ abstract class GeneratorCommand extends Command
     /**
      * Checks whether the given name is reserved.
      *
-     * @param  string  $name
+     * @param string $name The name to check
+     *
      * @return bool
      */
-    protected function isReservedName($name)
+    protected function isReservedName(string $name): bool
     {
         $name = strtolower($name);
 
