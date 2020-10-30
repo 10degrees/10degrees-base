@@ -37,5 +37,11 @@ class SocialShare extends Block
         'category'    => 'theme',
         'keywords'    => ['social', 'custom', 'share'],
         'supports'    => ['align' => ['wide', 'full']],
+        'example'  => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [],
+            ],
+        ],
     ];
 }

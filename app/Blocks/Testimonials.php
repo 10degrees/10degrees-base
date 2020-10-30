@@ -37,5 +37,11 @@ class Testimonials extends Block
         'category'    => 'theme',
         'keywords'    => ['testimonial', 'quote'],
         'supports'    => ['align' => ['wide', 'full']],
+        'example'  => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [],
+            ],
+        ],
     ];
 }

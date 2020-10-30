@@ -37,5 +37,11 @@ class Accordion extends Block
         'category'    => 'theme',
         'keywords'    => ['accordion'],
         'supports'    => ['align' => ['wide', 'full']],
+        'example'  => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [],
+            ],
+        ],
     ];
 }

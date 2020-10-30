@@ -38,6 +38,12 @@ class SocialLinks extends Block
         'category'    => 'theme',
         'keywords'    => ['social', 'custom', 'links'],
         'supports'    => ['align' => ['wide', 'full']],
+        'example'  => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [],
+            ],
+        ],
     ];
 
     /**
