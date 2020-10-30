@@ -3,7 +3,7 @@
 namespace App\Admin;
 
 /**
- * Choose which blocks are available in the Gutenberg editor
+     * Choose which blocks are available in the Gutenberg editor
  * See Confluence for details on how to add a block
  *
  * @category Theme
@@ -56,7 +56,7 @@ class SetAllowedBlocks
         'map-block-leaflet/map-block-leaflet',
         'core/missing',
         /**
-         * No for ACF blocks? They are automatically added to the whitelist!
+         * No ACF blocks? They are automatically added to the whitelist!
          */
     ];
 
