@@ -37,7 +37,7 @@ class MakeBlock extends GeneratorCommand
     {
         parent::handle();
 
-        $this->call("make:blockpartial {$this->argument('name')}");
+        $this->call("make:partial {$this->argument('name')} --block");
     }
 
     /**

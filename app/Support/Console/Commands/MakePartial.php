@@ -4,21 +4,22 @@ namespace App\Support\Console\Commands;
 
 use App\Support\Console\GeneratorCommand;
 
-class MakeBlockPartial extends GeneratorCommand
+class MakePartial extends GeneratorCommand
 {
     /**
      * The type of class being generated.
      *
      * @var string
      */
-    protected $type = 'BlockPartial';
+    protected $type = 'Partial';
 
     /**
      * The command signature.
      *
      * @var string
      */
-    protected $signature = 'make:blockpartial {name : The block partial name}
+    protected $signature = 'make:partial {name : The block partial name}
+                                              {--block : Is this a block partial?}
                                               {--force : Overwrite the block partial if it exists}';
 
     /**
@@ -26,7 +27,7 @@ class MakeBlockPartial extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = 'Make a block partial';
+    protected $description = 'Make a partial';
 
     /**
      * Replace the class name for the given stub.
@@ -50,7 +51,10 @@ class MakeBlockPartial extends GeneratorCommand
      */
     protected function getStub(): string
     {
-        return __DIR__ . '/stubs/block.partial.stub';
+        if ($this->option('block')) {
+            return __DIR__ . '/stubs/partial.block.stub';
+        }
+        return __DIR__ . '/stubs/partial.stub';
     }
 
     /**
@@ -62,6 +66,9 @@ class MakeBlockPartial extends GeneratorCommand
      */
     protected function getPath(string $name): string
     {
-        return get_template_directory() . '/partials/blocks/' . strtolower($this->argument('name')) . '.php';
+        if ($this->option('block')) {
+            return get_template_directory() . '/partials/blocks/' . strtolower($this->argument('name')) . '.php';
+        }
+        return get_template_directory() . '/partials/' . strtolower($this->argument('name')) . '.php';
     }
 }

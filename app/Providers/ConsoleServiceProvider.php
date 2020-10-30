@@ -24,12 +24,12 @@ class ConsoleServiceProvider extends ServiceProvider
      */
     protected $classes = [
         \App\Support\Console\Commands\MakeBlock::class,
-        \App\Support\Console\Commands\MakeBlockPartial::class,
         \App\Support\Console\Commands\MakeCommand::class,
         \App\Support\Console\Commands\MakeCpt::class,
         \App\Support\Console\Commands\MakeController::class,
         \App\Support\Console\Commands\MakeJob::class,
         \App\Support\Console\Commands\MakeModel::class,
+        \App\Support\Console\Commands\MakePartial::class,
         \App\Support\Console\Commands\MakeProvider::class,
         \App\Support\Console\Commands\MakeShortcode::class,
     ];
