@@ -52,10 +52,6 @@ class SetAllowedBlocks
         'core/table',
         'core/video',
         'custom-blocks/link-button',
-        'acf/accordion',
-        'acf/social-links',
-        'acf/social-share',
-        'acf/testimonials',
         'gravityforms/form',
         'map-block-leaflet/map-block-leaflet',
         'core/missing',
@@ -72,9 +68,10 @@ class SetAllowedBlocks
     /**
      * Set the blocks allowed in the editor
      *
-     * @param array/bool $allowed_blocks Array of allowed block types or true/false to enable/disable blocks
+     * @param array|bool $allowed_blocks Allowed block types or true/false to
+     *                                   enable/disable blocks
      *
-     * @return array                   Array of allowed blocks
+     * @return array
      */
     public function setAllowedBlocks($allowed_blocks)
     {
