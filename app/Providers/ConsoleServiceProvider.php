@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use App\Support\Console\Console;
+use ReflectionClass;
+use App\Support\Console\Command;
 use App\Support\ServiceProvider;
+use Symfony\Component\Finder\Finder;
 
 /**
  * Registers console commands
@@ -39,8 +41,35 @@ class ConsoleServiceProvider extends ServiceProvider
             return;
         }
 
-        Console::load(get_template_directory() . '/app/Console/Commands');
+        $this->load(get_template_directory() . '/app/Console/Commands');
 
         parent::__construct();
+    }
+
+    /**
+     * Load commands from the console directory
+     *
+     * @param string $path The directory paths to load
+     *
+     * @return void
+     */
+    public function load(string $path): void
+    {
+        if (!is_dir($path)) {
+            return;
+        }
+
+        foreach ((new Finder)->in($path)->files() as $command) {
+
+            $command = 'App\\Console\\Commands\\' . str_replace(
+                ['/', '.php'],
+                ['\\', ''],
+                $command->getRelativePathname()
+            );
+
+            if (is_subclass_of($command, Command::class) && !(new ReflectionClass($command))->isAbstract()) {
+                new $command;
+            }
+        }
     }
 }
