@@ -22,9 +22,21 @@ class BlockServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        \App\ACF_Blocks\Testimonials::class,
-        \App\ACF_Blocks\Accordion::class,
-        \App\ACF_Blocks\SocialLinks::class,
-        \App\ACF_Blocks\SocialShare::class,
+        \App\Blocks\Testimonials::class,
+        \App\Blocks\Accordion::class,
+        \App\Blocks\SocialLinks::class,
+        \App\Blocks\SocialShare::class,
     ];
+
+    /**
+     * Only boot the services if ACF is active
+     */
+    public function __construct()
+    {
+        if (!function_exists('acf_register_block_type')) {
+            return;
+        }
+
+        parent::__construct();
+    }
 }

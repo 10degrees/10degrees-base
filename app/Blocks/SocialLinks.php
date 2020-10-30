@@ -1,9 +1,9 @@
 <?php
 
-namespace App\ACF_Blocks;
+namespace App\Blocks;
 
-use App\ACF_Blocks\AbstractBlockRegistration;
 use App\Boot\Yoast;
+use App\Support\WordPress\Block;
 
 /**
  * Social
@@ -15,7 +15,7 @@ use App\Boot\Yoast;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class SocialLinks extends AbstractBlockRegistration
+class SocialLinks extends Block
 {
     /**
      * Constructor

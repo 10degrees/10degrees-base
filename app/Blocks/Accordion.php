@@ -1,13 +1,13 @@
 <?php
 
-namespace App\ACF_Blocks;
+namespace App\Blocks;
 
-use App\ACF_Blocks\AbstractBlockRegistration;
+use App\Support\WordPress\Block;
 
 /**
- * Testimonials
+ * Accordion
  *
- * Provides an ACF block to display testimonials
+ * Provides an ACF block to display an accordion
  *
  * @category Theme
  * @package  TenDegrees/10degrees-base
@@ -16,7 +16,7 @@ use App\ACF_Blocks\AbstractBlockRegistration;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class Testimonials extends AbstractBlockRegistration
+class Accordion extends Block
 {
     /**
      * Declare ACF blocks for Block Editor
@@ -27,13 +27,16 @@ class Testimonials extends AbstractBlockRegistration
     {
         acf_register_block(
             [
-                'name' => 'testimonials',
-                'title' => __('Testimonials'),
-                'description' => __('Displays a number of testimonials from a category.'), //@TODO add namespace
+                'name' => 'accordion',
+                'title' => __('Accordion'),
+                'description' => __('An accordion, with a heading and content.'), //@TODO add namespace
                 'render_callback' => [$this, 'render'],
                 'category' => 'common',
-                'icon' => 'admin-comments',
-                'keywords' => array( 'testimonial', 'quote' ),
+                'icon' => 'arrow-down',
+                'keywords' => array('accordion'),
+                'supports' => array(
+                    'align' => array('wide', 'full')
+                )
             ]
         );
     }
@@ -49,7 +52,7 @@ class Testimonials extends AbstractBlockRegistration
     {
         // convert name ("acf/testimonial") into path friendly slug ("testimonial")
         $slug = str_replace('acf/', '', $block['name']);
-        
+
         // include a template part from within the "views/blocks" folder
         if (file_exists(get_theme_file_path("/partials/blocks/{$slug}.php"))) {
             include get_theme_file_path("/partials/blocks/{$slug}.php");

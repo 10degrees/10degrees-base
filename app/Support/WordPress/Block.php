@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ACF_Blocks;
+namespace App\Support\WordPress;
 
 /**
  * Abstract block registration
@@ -12,7 +12,7 @@ namespace App\ACF_Blocks;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-abstract class AbstractBlockRegistration
+abstract class Block
 {
     /**
      * Constructor
@@ -21,8 +21,13 @@ abstract class AbstractBlockRegistration
      */
     public function __construct()
     {
-        if (function_exists('acf_register_block_type')) {
-            $this->register();
-        }
+        $this->register();
     }
+
+    /**
+     * Register the block
+     *
+     * @return void
+     */
+    abstract public function register();
 }
