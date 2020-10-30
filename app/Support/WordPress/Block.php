@@ -33,6 +33,12 @@ abstract class Block
         'category'    => 'theme',
         'keywords'    => ['theme', 'block'],
         'supports'    => ['align' => ['wide', 'full']],
+        'example'  => [
+            'attributes' => [
+                'mode' => 'preview',
+                'data' => [],
+            ],
+        ],
     ];
 
     /**
@@ -42,13 +48,21 @@ abstract class Block
     {
         $this->register();
 
-        add_filter(
-            'allowed_block_types',
-            function ($blocks) {
-                $blocks[] = 'acf/' . $this->name;
-                return $blocks;
-            }
-        );
+        add_filter('allowed_block_types', [$this, 'allowBlockType']);
+    }
+
+    /**
+     * Add this block to the allow list of blocks
+     *
+     * @param array $blocks The list of allowed blocks
+     *
+     * @return array
+     */
+    public function allowBlockType(array $blocks): array
+    {
+        $blocks[] = 'acf/' . $this->name;
+
+        return $blocks;
     }
 
     /**
@@ -58,14 +72,22 @@ abstract class Block
      */
     protected function register(): void
     {
-        acf_register_block(
-            array_merge(
-                $this->options,
-                [
-                    'name'            => $this->name,
-                    'render_callback' => [$this, 'render'],
-                ]
-            )
+        acf_register_block($this->getBlockOptions());
+    }
+
+    /**
+     * Get the options for block registration
+     *
+     * @return array
+     */
+    protected function getBlockOptions(): array
+    {
+        return array_merge(
+            $this->options,
+            [
+                'name'            => $this->name,
+                'render_callback' => [$this, 'render'],
+            ]
         );
     }
 

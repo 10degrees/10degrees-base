@@ -20,19 +20,6 @@ use Symfony\Component\Finder\Finder;
 class BlockServiceProvider extends ServiceProvider
 {
     /**
-     * List the admin specific classes that need to be booted on every request
-     *
-     * @var array
-     */
-    protected $classes = [
-        #\App\Blocks\Testimonials::class,
-        #\App\Blocks\Accordion::class,
-        #\App\Blocks\AdminLinks::class,
-        #\App\Blocks\SocialLinks::class,
-        #\App\Blocks\SocialShare::class,
-    ];
-
-    /**
      * Only boot the services if ACF is active
      */
     public function __construct()
@@ -66,7 +53,7 @@ class BlockServiceProvider extends ServiceProvider
     }
 
     /**
-     * Load commands from the console directory
+     * Load blocks from the block directory
      *
      * @param string $path The directory paths to load
      *

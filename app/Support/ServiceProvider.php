@@ -15,6 +15,13 @@ namespace App\Support;
 abstract class ServiceProvider
 {
     /**
+     * The classes to initialize.
+     *
+     * @var array
+     */
+    protected $classes = [];
+
+    /**
      * Constructor
      */
     public function __construct()
