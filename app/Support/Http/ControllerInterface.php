@@ -1,12 +1,11 @@
 <?php
 
-namespace {{ namespace }};
+namespace App\Support\Http;
 
 use App\Support\Http\Request;
-use App\Support\Routing\Controller;
 
 /**
- * A controller class
+ * The controller interface
  *
  * @category Theme
  * @package  TenDegrees/10degrees-base
@@ -15,17 +14,14 @@ use App\Support\Routing\Controller;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class {{ class }} extends Controller
+interface ControllerInterface
 {
     /**
-     * Handle the request.
+     * Handle the request
      *
-     * @param \App\Support\Http\Request $request The request object.
+     * @param App\Support\Http\Request $request The request object
      *
-     * @return string
+     * @return mixed
      */
-    public function __invoke(Request $request): string
-    {
-        return $request;
-    }
+    public function handle(Request $request);
 }

@@ -19,6 +19,9 @@ class MakeController extends GeneratorCommand
      * @var string
      */
     protected $signature = 'make:controller {name : The controller class}
+                                            {--rest : Is a REST controller}
+                                            {--action=action : The AJAX action}
+                                            {--url=url : The REST url}
                                             {--force : Overwrite the controller if it exists}';
 
     /**
@@ -29,13 +32,35 @@ class MakeController extends GeneratorCommand
     protected $description = 'Make a controller';
 
     /**
+     * Replace the class name for the given stub.
+     *
+     * @param string $stub The stub contents
+     * @param string $name The classname to replace
+     *
+     * @return string
+     */
+    protected function replaceClass(string $stub, string $name): string
+    {
+        $stub = parent::replaceClass($stub, $name);
+
+        return str_replace(
+            ['{{ action }}', '{{ url }}'],
+            [$this->option('action'), $this->option('url')],
+            $stub
+        );
+    }
+
+    /**
      * Get the stub path.
      *
      * @return string
      */
     protected function getStub(): string
     {
-        return __DIR__ . '/stubs/controller.stub';
+        if ($this->option('rest')) {
+            return __DIR__ . '/stubs/controller.rest.stub';
+        }
+        return __DIR__ . '/stubs/controller.ajax.stub';
     }
 
     /**
@@ -47,6 +72,6 @@ class MakeController extends GeneratorCommand
      */
     protected function getDefaultNamespace(string $rootNamespace): string
     {
-        return $rootNamespace . '\Controllers';
+        return $rootNamespace . '\Http\Controllers';
     }
 }

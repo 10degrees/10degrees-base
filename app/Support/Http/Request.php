@@ -31,4 +31,26 @@ class Request
     {
         return json_encode($this->request);
     }
+
+
+    public function has(string $key)
+    {
+        return isset($this->request[$key]);
+    }
+    public function get(string $key)
+    {
+        return $this->request[$key] ?? null;
+    }
+    public function input(string $key)
+    {
+        return $this->request[$key] ?? null;
+    }
+    public function method()
+    {
+        return $this->request['_method'] ?? $_SERVER['REQUEST_METHOD'];
+    }
+    public function header(string $key)
+    {
+        return '';
+    }
 }

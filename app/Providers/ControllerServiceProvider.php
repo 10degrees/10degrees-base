@@ -17,21 +17,21 @@ use App\Support\ServiceProvider;
 class ControllerServiceProvider extends ServiceProvider
 {
     /**
-     * List the admin specific classes that need to be booted on every request
+     * The AJAX and REST controllers
      *
      * @var array
      */
     protected $classes = [
 
         /**
-         * Web Controllers
+         * AJAX Controllers
          */
-        \App\Controllers\Web\ExampleController::class,
+        \App\Http\Controllers\ExampleAjaxController::class,
 
         /**
          * REST API Controllers
          */
-        // \App\Controllers\Api\ExampleRestApiController::class,
+        \App\Http\Controllers\ExampleRestController::class,
 
     ];
 }
