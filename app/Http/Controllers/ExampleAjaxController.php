@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Support\Http\AjaxController;
+use App\Support\Http\AjaxController as Controller;
 use App\Support\Http\Request;
 
 /**
@@ -15,7 +15,7 @@ use App\Support\Http\Request;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class ExampleAjaxController extends AjaxController
+class ExampleAjaxController extends Controller
 {
     /**
      * The AJAX action
@@ -43,6 +43,6 @@ class ExampleAjaxController extends AjaxController
      */
     public function handle(Request $request)
     {
-        die($request);
+        return $request;
     }
 }

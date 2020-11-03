@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Support\Http\Request;
-use App\Support\Http\RestController;
+use App\Support\Http\RestController as Controller;
 
 /**
  * An example REST controller
@@ -15,7 +15,7 @@ use App\Support\Http\RestController;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class ExampleRestController extends RestController
+class ExampleRestController extends Controller
 {
     /**
      * The REST route
@@ -49,6 +49,6 @@ class ExampleRestController extends RestController
      */
     public function handle(Request $request)
     {
-        die($request);
+        return $request;
     }
 }

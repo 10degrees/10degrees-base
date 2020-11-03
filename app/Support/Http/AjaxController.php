@@ -62,11 +62,11 @@ abstract class AjaxController implements ControllerInterface
     public function register()
     {
         return (new Pipeline())
-            ->send(new Request($_GET, $_POST))
+            ->send(new Request())
             ->through($this->middleware)
             ->then(
                 function ($request) {
-                    return $this->handle($request);
+                    die($this->handle($request));
                 }
             );
     }

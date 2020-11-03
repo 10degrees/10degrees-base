@@ -78,16 +78,16 @@ abstract class RestController implements ControllerInterface
      *
      * @param \WP_REST_Request $wpRequest The WordPress request object
      *
-     * @return \Closure|mixed
+     * @return \Closure
      */
     public function resolveClosure(WP_REST_Request $wpRequest)
     {
         return (new Pipeline())
-            ->send(new Request($_GET, $_POST))
+            ->send(new Request())
             ->through($this->middleware)
             ->then(
                 function ($request) {
-                    return $this->handle($request);
+                    die($this->handle($request));
                 }
             );
     }
