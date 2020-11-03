@@ -1,6 +1,5 @@
 <?php
 
-use App\Support\Http\Request;
 use App\Support\Http\Response;
 use App\Support\View\View;
 use App\Support\Routing\URL;
@@ -20,9 +19,62 @@ if (!function_exists('abort')) {
     }
 }
 
+if (!function_exists('ajax')) {
+    /**
+     * Return the ajax URL with the action
+     *
+     * @param string $action The ajax action
+     *
+     * @return string
+     */
+    function ajax(string $action = ''): string
+    {
+        return url()->ajax($action);
+    }
+}
+
+if (!function_exists('asset')) {
+    /**
+     * Return an instance of the app or an app binding.
+     *
+     * @param string $path     The asset path
+     * @param bool   $absolute Is absolute or relative URL
+     *
+     * @return string
+     */
+    function asset(string $path, bool $absolute = true): string
+    {
+        return url()->asset($path, $absolute);
+    }
+}
+
+if (!function_exists('csrf_field')) {
+    /**
+     * Return the csrf field.
+     *
+     * @return string
+     */
+    function csrf_field(): string
+    {
+        return wp_nonce_field('_token', '_token');
+    }
+}
+
+if (!function_exists('csrf_token')) {
+    /**
+     * Return the csrf token.
+     *
+     * @return string
+     */
+    function csrf_token(): string
+    {
+        return wp_create_nonce('_token');
+    }
+}
+
 if (!function_exists('dd')) {
     /**
-     * Die and dump.
+     * Dump and die.
      *
      * @param mixed ...$args The arguments to dump and die
      *
@@ -64,6 +116,20 @@ if (!function_exists('inline_svg')) {
     }
 }
 
+if (!function_exists('method_field')) {
+    /**
+     * Return the method field.
+     *
+     * @param string $method The HTTP method
+     *
+     * @return void
+     */
+    function method_field(string $method): void
+    {
+        echo '<input type="hidden" name="_method" value="' . esc_attr($method) . '" />';
+    }
+}
+
 if (!function_exists('response')) {
     /**
      * Return a response
@@ -100,7 +166,7 @@ if (!function_exists('url')) {
 
 if (!function_exists('view')) {
     /**
-     * Undocumented function
+     * Return a view
      *
      * @param string $path The view path
      * @param array  $data The view data
