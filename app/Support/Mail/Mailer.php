@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mailer;
+namespace App\Support\Mail;
 
 /**
  * One central location to send all mail in the theme
@@ -21,10 +21,10 @@ abstract class Mailer
      * @param string $subject Email subject line
      * @param string $message Email content
      *
-     * @return void
+     * @return bool
      */
-    public function sendTo($email, $subject, $message)
+    public function sendTo(string $email, string $subject, string $message): bool
     {
-        wp_mail($email, $subject, $message);
+        return wp_mail($email, $subject, $message);
     }
 }

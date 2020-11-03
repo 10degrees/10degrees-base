@@ -40,12 +40,22 @@ class ConsoleServiceProvider extends ServiceProvider
      */
     public function __construct()
     {
+        /**
+         * If not running the console then bail.
+         */
         if (!class_exists('WP_CLI')) {
             return;
         }
 
+        /**
+         * Autoload all commands in the Commands directory. This means commands
+         * are instantly available to the console.
+         */
         $this->load(get_template_directory() . '/app/Console/Commands');
 
+        /**
+         * Call the parent constructor to continue booting the provider.
+         */
         parent::__construct();
     }
 
@@ -63,7 +73,6 @@ class ConsoleServiceProvider extends ServiceProvider
         }
 
         foreach ((new Finder)->in($path)->files() as $command) {
-
             $command = 'App\\Console\\Commands\\' . str_replace(
                 ['/', '.php'],
                 ['\\', ''],

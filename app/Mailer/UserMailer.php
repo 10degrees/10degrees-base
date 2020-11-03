@@ -2,7 +2,8 @@
 
 namespace App\Mailer;
 
-use App\Mailer\Mailer;
+use App\Support\Mail\Mailer;
+use WP_User;
 
 /**
  * Concrete implementation of Mailer for sending email to users
@@ -19,14 +20,15 @@ class UserMailer extends Mailer
     /**
      * Send an email notification
      *
-     * @param WP_User $user A WordPress user
+     * @param \WP_User $user A WordPress user
      *
-     * @return void
+     * @return bool
      */
-    public function notify($user)
+    public function notify(WP_User $user): bool
     {
         $subject = 'Some notifiation';
         $template = td_view('partials/emails/notify');
+
         return $this->sendTo($user->email(), $subject, $template);
     }
 }
