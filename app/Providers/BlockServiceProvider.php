@@ -24,14 +24,27 @@ class BlockServiceProvider extends ServiceProvider
      */
     public function __construct()
     {
+        /**
+         * If ACF isn't loaded then bail.
+         */
         if (!function_exists('acf_register_block_type')) {
             return;
         }
+
+        /**
+         * Add a custom block category to keep custom blocks together.
+         */
         add_filter('block_categories', [$this, 'addBlockCategory']);
 
+        /**
+         * Autoload all blocks in the Blocks directory. This saves having to
+         * manually add it to the block provider.
+         */
         $this->load(get_template_directory() . '/app/Blocks');
 
-
+        /**
+         * Call the parent constructor to continue booting the provider.
+         */
         parent::__construct();
     }
 
@@ -48,7 +61,6 @@ class BlockServiceProvider extends ServiceProvider
             'slug'  => 'theme',
             'title' => __('@theme', '@textdomain'),
         ];
-
         return $categories;
     }
 
@@ -66,7 +78,6 @@ class BlockServiceProvider extends ServiceProvider
         }
 
         foreach ((new Finder)->in($path)->files() as $block) {
-
             $block = 'App\\Blocks\\' . str_replace(
                 ['/', '.php'],
                 ['\\', ''],
