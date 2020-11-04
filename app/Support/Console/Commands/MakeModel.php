@@ -19,6 +19,7 @@ class MakeModel extends GeneratorCommand
      * @var string
      */
     protected $signature = 'make:model {name : The name of model}
+                                       {--posts-table : Extend the posts table}
                                        {--force : Overwrite the model if it exists}';
 
     /**
@@ -29,12 +30,30 @@ class MakeModel extends GeneratorCommand
     protected $description = 'Make a model';
 
     /**
+     * Replace the class name for the given stub.
+     *
+     * @param string $stub The stub contents
+     * @param string $name The classname to replace
+     *
+     * @return string
+     */
+    protected function replaceClass(string $stub, string $name): string
+    {
+        $stub = parent::replaceClass($stub, $name);
+
+        return str_replace('{{ table }}', strtolower($this->argument('name')), $stub);
+    }
+
+    /**
      * Get the stub path.
      *
      * @return string
      */
     protected function getStub(): string
     {
+        if ($this->option('posts-table')) {
+            return __DIR__ . '/stubs/model.posts.stub';
+        }
         return __DIR__ . '/stubs/model.stub';
     }
 

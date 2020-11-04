@@ -2,7 +2,7 @@
 
 namespace {{ namespace }};
 
-use Corcel\Model;
+use Corcel\Model\Post as Model;
 
 /**
  * Extend an eloquent model
@@ -21,5 +21,5 @@ class {{ class }} extends Model
      *
      * @var string
      */
-    protected $table = '{{ table }}';
+    protected $postType = '{{ table }}';
 }

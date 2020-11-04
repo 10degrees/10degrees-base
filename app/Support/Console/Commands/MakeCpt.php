@@ -41,7 +41,7 @@ class MakeCpt extends GeneratorCommand
         $model = $this->option('model') ?? $this->confirm('Create a model?');
 
         if ($model) {
-            $this->call("make:model {$this->argument('name')}");
+            $this->call("make:model {$this->argument('name')} --posts-table");
         }
     }
 
