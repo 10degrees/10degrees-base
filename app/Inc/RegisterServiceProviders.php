@@ -24,6 +24,7 @@ class RegisterServiceProviders extends ServiceProvider
     protected $classes = [
         \App\Providers\ConsoleServiceProvider::class,
         \App\Providers\ConfigServiceProvider::class,
+        \App\Providers\DatabaseServiceProvider::class,
         \App\Providers\AdminServiceProvider::class,
         \App\Providers\ThemeServiceProvider::class,
         \App\Providers\CptServiceProvider::class,
