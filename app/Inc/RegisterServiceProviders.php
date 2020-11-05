@@ -22,9 +22,7 @@ class RegisterServiceProviders extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        \App\Support\Console\ConsoleServiceProvider::class,
         \App\Providers\ConfigServiceProvider::class,
-        \App\Providers\DatabaseServiceProvider::class,
         \App\Providers\AdminServiceProvider::class,
         \App\Providers\ThemeServiceProvider::class,
         \App\Providers\CptServiceProvider::class,
@@ -33,5 +31,7 @@ class RegisterServiceProviders extends ServiceProvider
         \App\Providers\ControllerServiceProvider::class,
         \App\Providers\FieldServiceProvider::class,
         // \App\Providers\WoocommerceServiceProvider::class,
+        \App\Support\Console\ConsoleServiceProvider::class,
+        \App\Support\Database\DatabaseServiceProvider::class,
     ];
 }

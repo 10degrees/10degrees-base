@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Support\Database;
 
 use App\Support\ServiceProvider;
 use Corcel\Database;
