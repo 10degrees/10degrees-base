@@ -3,7 +3,7 @@
 namespace App\Support\Console;
 
 use App\Support\Console\Command;
-use App\Support\Filesystem\Filesystem;
+use Illuminate\Filesystem\Filesystem;
 
 /**
  * A file generator class
@@ -20,7 +20,7 @@ abstract class GeneratorCommand extends Command
     /**
      * The filesystem instance.
      *
-     * @var \App\Support\Filesystem\Filesystem
+     * @var \Illuminate\Filesystem\Filesystem
      */
     protected $files;
 

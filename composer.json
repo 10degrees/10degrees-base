@@ -13,7 +13,8 @@
 		"composer/installers": "^1.9",
 		"illuminate/translation": "^8.13",
 		"illuminate/validation": "^8.13",
-		"johnbillion/extended-cpts": "^4.4"
+		"johnbillion/extended-cpts": "^4.4",
+		"illuminate/filesystem": "^8.13"
 	},
 	"autoload": {
 		"psr-4": {
