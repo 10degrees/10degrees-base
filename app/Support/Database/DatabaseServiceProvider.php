@@ -22,9 +22,7 @@ class DatabaseServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $classes = [
-        \App\Cpt\Testimonials::class,
-    ];
+    protected $classes = [];
 
     /**
      * Create the database connection for eloquent models
