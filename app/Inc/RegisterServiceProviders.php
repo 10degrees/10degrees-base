@@ -22,16 +22,24 @@ class RegisterServiceProviders extends ServiceProvider
      * @var array
      */
     protected $classes = [
+
+        /**
+         * Core providers
+         */
+        \App\Support\Console\ConsoleServiceProvider::class,
+        \App\Support\Database\DatabaseServiceProvider::class,
+        \App\Support\WordPress\BlockServiceProvider::class,
+
+        /**
+         * Theme providers
+         */
         \App\Providers\ConfigServiceProvider::class,
         \App\Providers\AdminServiceProvider::class,
         \App\Providers\ThemeServiceProvider::class,
         \App\Providers\CptServiceProvider::class,
-        \App\Providers\BlockServiceProvider::class,
         \App\Providers\ShortcodeServiceProvider::class,
         \App\Providers\ControllerServiceProvider::class,
         \App\Providers\FieldServiceProvider::class,
         // \App\Providers\WoocommerceServiceProvider::class,
-        \App\Support\Console\ConsoleServiceProvider::class,
-        \App\Support\Database\DatabaseServiceProvider::class,
     ];
 }

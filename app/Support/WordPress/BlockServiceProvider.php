@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Support\WordPress;
 
 use ReflectionClass;
 use App\Support\ServiceProvider;

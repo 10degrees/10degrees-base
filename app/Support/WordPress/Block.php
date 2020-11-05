@@ -48,18 +48,21 @@ abstract class Block
     {
         $this->register();
 
-        add_filter('allowed_block_types', [$this, 'allowBlockType']);
+        add_filter('allowed_block_types', [$this, 'allowBlockType'], 999);
     }
 
     /**
      * Add this block to the allow list of blocks
      *
-     * @param array $blocks The list of allowed blocks
+     * @param array|bool $blocks The list of allowed blocks
      *
      * @return array
      */
-    public function allowBlockType(array $blocks): array
+    public function allowBlockType($blocks): array
     {
+        if (!is_array($blocks)) {
+            $blocks = [];
+        }
         $blocks[] = 'acf/' . $this->name;
 
         return $blocks;
