@@ -29,9 +29,9 @@ class ButtonShortcode extends Shortcode
      * @var array
      */
     public $defaultAttributes = [
-        'class' => 'button',
-        'link' => '#',
-        'text' => '',
+        'class'   => 'button',
+        'link'    => '#',
+        'text'    => '',
         'post_id' => null,
     ];
 
@@ -57,7 +57,7 @@ class ButtonShortcode extends Shortcode
      *
      * @return string
      */
-    private function getPermalink()
+    protected function getPermalink()
     {
         if ($this->post_id) {
             $permalink = get_permalink($this->post_id);
