@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\WPQueryBuilder;
+use Corcel\Model\Post as Model;
 
 /**
- * //@TODO ask Ralph about this weird abstract stuff
- * //Are we really wrapping WP Query to set the post type?
+ * Extend an eloquent model
  *
  * @category Theme
  * @package  TenDegrees/10degrees-base
@@ -15,7 +14,12 @@ use App\Models\WPQueryBuilder;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class Testimonial extends WPQueryBuilder
+class Testimonial extends Model
 {
+    /**
+     * The name of the post type
+     *
+     * @var string
+     */
     protected $postType = 'testimonial';
 }
