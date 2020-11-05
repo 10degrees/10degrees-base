@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Support\Console;
 
 use ReflectionClass;
 use App\Support\Console\Command;

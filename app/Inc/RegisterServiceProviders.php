@@ -22,7 +22,7 @@ class RegisterServiceProviders extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        \App\Providers\ConsoleServiceProvider::class,
+        \App\Support\Console\ConsoleServiceProvider::class,
         \App\Providers\ConfigServiceProvider::class,
         \App\Providers\DatabaseServiceProvider::class,
         \App\Providers\AdminServiceProvider::class,
