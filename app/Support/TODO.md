@@ -20,15 +20,16 @@ the hood for maximum WP compatability.
 -   add helpers/namespace helpers/remove duplicate "view" helpers
 -   remove helpers glob loading
 -   fix `Mailer` class to allow for collections/arrays of emails
+-   make `Mailer`, `PendingMail` and `Mailable` class to work more like laravel
 -   implement queues as composer package doesn't work with other packages
--   Use Illuminate packages e.g. Collection/Str/Arr
+-   Use Illuminate packages e.g. `Collection`/`Str`/`Arr`
 -   update composer to require all packages used - don't rely on it existing
 -   add PHP version to composer
--   Container
+-   `Container`
 -   Application (Kernel/bootstrapper like L@\*%v3l)
--   Facades
--   Auth facade e.g. `Auth::user()`
--   blade templates
+-   `Facade`
+-   `Auth` facade e.g. `Auth::user()`
+-   blade templates???
 -   move all templates to templates/resources folder to keep root tidy
 -   routes file e.g.
     `Ajax::listen('action_name', \App\Http\Controllers\AjaxController::class)`
