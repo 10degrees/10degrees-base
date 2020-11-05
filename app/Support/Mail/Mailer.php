@@ -52,21 +52,6 @@ abstract class Mailer
     protected $attachments = [];
 
     /**
-     * Send the email to multiple recipients
-     *
-     * @param array $emails The email addresses or users
-     *
-     * @return App\Support\Mail\Mailer
-     */
-    public function toAll(array $emails): Mailer
-    {
-        foreach ($emails as $email) {
-            $this->to($email);
-        }
-        return $this;
-    }
-
-    /**
      * Set a recipient
      *
      * @param \WP_User|string $user The user or email address
@@ -283,5 +268,27 @@ abstract class Mailer
             $this->headers,
             $this->attachments
         );
+    }
+
+    /**
+     * Render the email
+     *
+     * @return string
+     */
+    public function render(): string
+    {
+        $this->build();
+
+        return $this->message;
+    }
+
+    /**
+     * Render the email
+     *
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return $this->render();
     }
 }
