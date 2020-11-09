@@ -22,8 +22,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $actions = [
-        'init' => [
-            #\App\Listeners\DoSomething::class,
+        'admin_menu' => [
+            \App\Listeners\Admin\RegisterReusableBlockMenu::class,
         ],
     ];
 
