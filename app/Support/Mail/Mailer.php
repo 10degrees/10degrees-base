@@ -2,6 +2,8 @@
 
 namespace App\Support\Mail;
 
+use Corcel\Model\User;
+use Illuminate\Support\Arr;
 use WP_User;
 
 /**
@@ -54,26 +56,89 @@ abstract class Mailer
     /**
      * Set a recipient
      *
-     * @param \WP_User|string $user The user or email address
+     * @param mixed $users The user or email address or an array of users
      *
      * @return App\Support\Mail\Mailer
      */
-    public function to($user): Mailer
+    public function to($users): Mailer
     {
-        $this->to[] = $this->resolveEmailAddress($user);
-
+        foreach ($this->normalizeUsers($users) as $user) {
+            $this->to[] = $user;
+        }
         return $this;
     }
+
+    /**
+     * Set the Cc header
+     *
+     * @param mixed $users The user or email address or an array of users
+     *
+     * @return App\Support\Mail\Mailer
+     */
+    public function cc($users): Mailer
+    {
+        foreach ($this->normalizeUsers($users) as $user) {
+            $this->header("Cc: {$user}");
+        }
+        return $this;
+    }
+
+    /**
+     * Set the Bcc header
+     *
+     * @param mixed $users The user or email address or an array of users
+     *
+     * @return App\Support\Mail\Mailer
+     */
+    public function bcc($users): Mailer
+    {
+        foreach ($this->normalizeUsers($users) as $user) {
+            $this->header("Bcc: {$user}");
+        }
+        return $this;
+    }
+
+    /**
+     * Set the From and Reply-To headers
+     *
+     * @param Corcel\Model\User|\WP_User|string $user The user or email address
+     *
+     * @return App\Support\Mail\Mailer
+     */
+    public function from($user): Mailer
+    {
+        $email = $this->resolveEmailAddress($user);
+
+        return $this->header("From: {$email}")->header("Reply-To: {$email}");
+    }
+
+    /**
+     * Normalize a user or array of users
+     *
+     * @param mixed $users The user or email addresses
+     *
+     * @return array
+     */
+    protected function normalizeUsers($users): array
+    {
+        $formatted = [];
+
+        foreach (Arr::wrap($users) as $user) {
+            $formatted[] = $this->resolveEmailAddress($user);
+        }
+        return $formatted;
+    }
+
     /**
      * Resolve the email address from a user
      *
-     * @param \WP_User|string $user The user to resolve
+     * @param Corsel\Model\User|\WP_User|string $user The user to resolve
      *
-     * @return void
+     * @return string
      */
-    protected function resolveEmailAddress($user)
+    protected function resolveEmailAddress($user): string
     {
-        if ($user instanceof WP_User) {
+        if ($user instanceof WP_User || $user instanceof User) {
             return $this->formatEmailAddress(
                 $user->user_email,
                 $user->user_nicename ?? ''
@@ -90,51 +155,9 @@ abstract class Mailer
      *
      * @return string
      */
-    public function formatEmailAddress(string $email, string $name = ''): string
+    protected function formatEmailAddress(string $email, string $name = ''): string
     {
-        return "{$name} <{$email}>";
-    }
-
-    /**
-     * Set the Cc header
-     *
-     * @param \WP_User|string $user The user or email address
-     *
-     * @return App\Support\Mail\Mailer
-     */
-    public function cc($user): Mailer
-    {
-        $email = $this->resolveEmailAddress($user);
-
-        return $this->header("Cc: {$email}");
-    }
-
-    /**
-     * Set the Bcc header
-     *
-     * @param \WP_User|string $user The user or email address
-     *
-     * @return App\Support\Mail\Mailer
-     */
-    public function bcc($user): Mailer
-    {
-        $email = $this->resolveEmailAddress($user);
-
-        return $this->header("Bcc: {$email}");
-    }
-
-    /**
-     * Set the From and Reply-To headers
-     *
-     * @param \WP_User|string $user The user or email address
-     *
-     * @return App\Support\Mail\Mailer
-     */
-    public function from($user): Mailer
-    {
-        $email = $this->resolveEmailAddress($user);
-
-        return $this->header("From: {$email}")->header("Reply-To: {$email}");
+        return trim("{$name} <{$email}>");
     }
 
     /**
