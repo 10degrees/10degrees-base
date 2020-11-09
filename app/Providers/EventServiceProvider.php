@@ -46,5 +46,7 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $subscribers = [];
+    protected $subscribers = [
+        \App\Listeners\Admin\Login::class,
+    ];
 }

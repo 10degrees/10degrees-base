@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Admin;
+namespace App\Listeners\Admin;
+
+use App\Support\Events\Dispatcher;
 
 /**
- * Login page customisations
+ * Subscribe to some events
  *
  * @category Theme
  * @package  TenDegrees/10degrees-base
@@ -15,14 +17,18 @@ namespace App\Admin;
 class Login
 {
     /**
-     * Constructor
+     * Subscribe to some events
+     *
+     * @param \App\Support\Events\Dispatcher $event The event dispatcher
+     *
+     * @return void
      */
-    public function __construct()
+    public function subscribe(Dispatcher $event): void
     {
-        add_action('login_head', [$this, 'loginCss']);
-        add_filter('login_headerurl', [$this, 'loginLogoUrl']);
-        add_filter('login_headertext', [$this, 'loginLogoUrlTitle']);
-        add_action('login_footer', [$this, 'loginCheckedRememberMe']);
+        $event->listen('login_head', [$this, 'loginCss']);
+        $event->listen('login_headerurl', [$this, 'loginLogoUrl']);
+        $event->listen('login_headertext', [$this, 'loginLogoUrlTitle']);
+        $event->listen('login_footer', [$this, 'loginCheckedRememberMe']);
     }
 
     /**

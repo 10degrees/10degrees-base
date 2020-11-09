@@ -22,7 +22,6 @@ class AdminServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        \App\Admin\Login::class,
         \App\Admin\DashboardBranding::class,
         \App\Admin\CleanUp::class,
         \App\Admin\Acf::class,
