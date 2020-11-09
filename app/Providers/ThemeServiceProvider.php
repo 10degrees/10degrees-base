@@ -24,7 +24,6 @@ class ThemeServiceProvider extends ServiceProvider
     protected $classes = [
         \App\Boot\Init::class,
         \App\Boot\BaseWrapper::class,
-        \App\Boot\CliCommands::class,
         \App\Boot\Enqueue::class,
         \App\Boot\BlockEmbeds::class,
         \App\Boot\RegisterMenus::class,
