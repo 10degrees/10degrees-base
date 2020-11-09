@@ -28,12 +28,14 @@ class ConsoleServiceProvider extends ServiceProvider
         \App\Support\Console\Commands\MakeCpt::class,
         \App\Support\Console\Commands\MakeController::class,
         \App\Support\Console\Commands\MakeJob::class,
+        \App\Support\Console\Commands\MakeListener::class,
         \App\Support\Console\Commands\MakeMail::class,
         \App\Support\Console\Commands\MakeMiddleware::class,
         \App\Support\Console\Commands\MakeModel::class,
         \App\Support\Console\Commands\MakePartial::class,
         \App\Support\Console\Commands\MakeProvider::class,
         \App\Support\Console\Commands\MakeShortcode::class,
+        \App\Support\Console\Commands\MakeSubscriber::class,
     ];
 
     /**

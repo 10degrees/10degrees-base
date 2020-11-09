@@ -33,6 +33,7 @@ class RegisterServiceProviders extends ServiceProvider
         /**
          * Theme providers
          */
+        \App\Providers\EventServiceProvider::class,
         \App\Providers\ConfigServiceProvider::class,
         \App\Providers\AdminServiceProvider::class,
         \App\Providers\ThemeServiceProvider::class,
