@@ -40,7 +40,7 @@ class Testimonials
      */
     public function __construct()
     {
-        $this->register();
+        add_action('init', [$this, 'register']);
     }
 
     /**

@@ -25,6 +25,12 @@ class EventServiceProvider extends ServiceProvider
         'admin_menu' => [
             \App\Listeners\Admin\RegisterReusableBlockMenu::class,
         ],
+        'after_setup_theme' => [
+            \App\Listeners\RegisterMenus::class,
+        ],
+        'widgets_init' => [
+            \App\Listeners\RegisterWidgets::class,
+        ],
     ];
 
     /**
@@ -33,19 +39,12 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $filters = [
-        'the_title' => [
-            #App\Listeners\FilterTheTitle::class,
-            #\App\Listeners\FilterTheTitleAgain::class,
-        ],
-    ];
+    protected $filters = [];
 
     /**
      * The subscribers. These are passed the event dispatcher instance.
      *
      * @var array
      */
-    protected $subscribers = [
-        #\App\Listeners\DoSomething::class,
-    ];
+    protected $subscribers = [];
 }

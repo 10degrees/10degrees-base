@@ -26,8 +26,6 @@ class ThemeServiceProvider extends ServiceProvider
         \App\Boot\BaseWrapper::class,
         \App\Boot\Enqueue::class,
         \App\Boot\BlockEmbeds::class,
-        \App\Boot\RegisterMenus::class,
-        \App\Boot\RegisterWidgets::class,
         \App\Boot\RegisterCustomBlocks::class,
         \App\Boot\ACFToTheContent::class,
         \App\Boot\GoogleMapsAPIIntegration::class,

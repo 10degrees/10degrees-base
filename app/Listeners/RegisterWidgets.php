@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Boot;
+namespace App\Listeners;
 
 /**
- * Register the widgets for the theme.
+ * Handle the event listener
  *
  * @category Theme
  * @package  TenDegrees/10degrees-base
@@ -28,19 +28,11 @@ class RegisterWidgets
     ];
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->register();
-    }
-
-    /**
-     * Registers widgets
+     * Handle an event
      *
      * @return void
      */
-    public function register()
+    public function handle(): void
     {
         foreach ($this->widgets as $key => $label) {
             register_sidebar(

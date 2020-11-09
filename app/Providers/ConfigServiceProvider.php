@@ -23,6 +23,6 @@ class ConfigServiceProvider extends ServiceProvider
      */
     protected $classes = [
         \App\Config\Mail::class,
-        \App\Config\Queue::class,
+        #\App\Config\Queue::class,
     ];
 }
