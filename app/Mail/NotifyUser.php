@@ -3,7 +3,6 @@
 namespace App\Mail;
 
 use App\Support\Mail\Mailer;
-use WP_User;
 
 /**
  * Bulid an email
@@ -18,22 +17,13 @@ use WP_User;
 class NotifyUser extends Mailer
 {
     /**
-     * The user
-     *
-     * @var \WP_User
-     */
-    protected $user;
-
-    /**
      * Create a new message instance.
-     *
-     * @param \WP_User $user The user
      *
      * @return void
      */
-    public function __construct(WP_User $user)
+    public function __construct()
     {
-        $this->user = $user;
+        # code...
     }
 
     /**
@@ -43,8 +33,6 @@ class NotifyUser extends Mailer
      */
     public function build(): Mailer
     {
-        return $this->to($this->user)
-            ->subject('User notified')
-            ->view('partials.emails.notify');
+        return $this->subject('User notified')->view('partials.emails.notify');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Support\Mail;
 
 use Corcel\Model\User;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Arr;
 use WP_User;
 
@@ -123,7 +124,9 @@ abstract class Mailer
     {
         $formatted = [];
 
-        foreach (Arr::wrap($users) as $user) {
+        $users = is_array($users) || $users instanceof Collection ? $users : [$users];
+
+        foreach ($users as $user) {
             $formatted[] = $this->resolveEmailAddress($user);
         }
         return $formatted;
@@ -132,7 +135,7 @@ abstract class Mailer
     /**
      * Resolve the email address from a user
      *
-     * @param Corsel\Model\User|\WP_User|string $user The user to resolve
+     * @param Corcel\Model\User|\WP_User|string $user The user to resolve
      *
      * @return string
      */

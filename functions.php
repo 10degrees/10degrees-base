@@ -6,6 +6,9 @@
  * If this file is accessed directory, then abort.
  *
  */
+
+use App\Mail\NotifyUser;
+
 if (!defined('WPINC')) {
     die;
 }
