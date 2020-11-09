@@ -19,11 +19,11 @@ class {{ class }}
     /**
      * Subscribe to some events
      *
-     * @param \App\Support\Events\Dispatcher $event The event dispatcher
+     * @param \App\Support\Events\Dispatcher $events The event dispatcher
      *
      * @return void
      */
-    public function subscribe(Dispatcher $event): void
+    public function subscribe(Dispatcher $events): void
     {
         # code...
     }

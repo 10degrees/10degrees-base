@@ -19,29 +19,26 @@ class Login
     /**
      * Subscribe to some events
      *
-     * @param \App\Support\Events\Dispatcher $event The event dispatcher
+     * @param \App\Support\Events\Dispatcher $events The event dispatcher
      *
      * @return void
      */
-    public function subscribe(Dispatcher $event): void
+    public function subscribe(Dispatcher $events): void
     {
-        $event->listen('login_head', [$this, 'loginCss']);
-        $event->listen('login_headerurl', [$this, 'loginLogoUrl']);
-        $event->listen('login_headertext', [$this, 'loginLogoUrlTitle']);
-        $event->listen('login_footer', [$this, 'loginCheckedRememberMe']);
+        $events->listen('login_enqueue_scripts', [$this, 'enqueueScripts']);
+        $events->listen('login_headerurl', [$this, 'loginLogoUrl']);
+        $events->listen('login_headertext', [$this, 'loginLogoUrlTitle']);
+        $events->listen('login_footer', [$this, 'loginCheckedRememberMe']);
     }
 
     /**
-     * Login screen
-     *
-     * Add CSS in the file referenced below, then create the appropriate
-     * logo in assets/img/logo-login.png
+     * Enqueue the login CSS
      *
      * @return void
      */
-    public function loginCss()
+    public function enqueueScripts()
     {
-        echo '<link rel="stylesheet" type="text/css" href="' . get_stylesheet_directory_uri() . td_asset_path('css/login.css') . '" />';
+        wp_enqueue_style('td-login', get_template_directory_uri() . td_asset_path('css/login.css'), [], null);
     }
 
     /**
