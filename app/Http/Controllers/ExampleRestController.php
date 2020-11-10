@@ -22,7 +22,7 @@ class ExampleRestController extends Controller
      *
      * @var string
      */
-    protected $url = 'example/url';
+    protected $url = 'example/{id}/url/{name?}';
 
     /**
      * The REST route method

@@ -43,6 +43,6 @@ class ExampleAjaxController extends Controller
      */
     public function handle(Request $request)
     {
-        dd($request->server('REQUEST_URI'));
+        return $request;
     }
 }

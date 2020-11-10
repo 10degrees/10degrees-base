@@ -47,6 +47,6 @@ class {{ class }} extends Controller
      */
     public function handle(Request $request)
     {
-        die($request);
+        return $request;
     }
 }

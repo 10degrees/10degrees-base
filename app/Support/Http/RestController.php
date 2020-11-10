@@ -65,12 +65,24 @@ abstract class RestController implements ControllerInterface
     {
         register_rest_route(
             $this->namespace,
-            $this->url,
+            $this->parseUrl($this->url),
             [
                 'methods'  => $this->method,
                 'callback' => [$this, 'resolveClosure'],
             ]
         );
+    }
+
+    /**
+     * Parse the url into a WordPress readable format
+     *
+     * @param string $url The URL to parse
+     *
+     * @return string
+     */
+    public function parseUrl(string $url): string
+    {
+        return preg_replace('@\/\{([\w]+?)(\?)?\}@', '\/?(?P<$1>[a-zA-Z0-9-]+)$2', $url);
     }
 
     /**
