@@ -2,33 +2,11 @@
 
 namespace App\Support\Http;
 
+use Illuminate\Http\Request as IlluminateRequest;
 use JsonSerializable;
 
-class Request implements JsonSerializable
+class Request extends IlluminateRequest implements JsonSerializable
 {
-    /**
-     * The request items
-     *
-     * @var array
-     */
-    protected $request = [];
-
-    /**
-     * Build the request object
-     */
-    public function __construct()
-    {
-        $this->request = array_merge($_GET, $_POST);
-    }
-
-
-
-
-
-
-
-
-
     /**
      * Get the request path
      *
@@ -36,7 +14,7 @@ class Request implements JsonSerializable
      */
     public function path(): string
     {
-        return strtok($_SERVER['REQUEST_URI'], '?');
+        return strtok($this->server('REQUEST_URI'), '?');
     }
 
     /**
@@ -68,7 +46,7 @@ class Request implements JsonSerializable
      */
     public function url(): string
     {
-        return home_url(strtok($_SERVER['REQUEST_URI'], '?'));
+        return home_url(strtok($this->server('REQUEST_URI'), '?'));
     }
 
     /**
@@ -78,17 +56,7 @@ class Request implements JsonSerializable
      */
     public function fullUrl(): string
     {
-        return home_url($_SERVER['REQUEST_URI']);
-    }
-
-    /**
-     * Get the scheme
-     *
-     * @return string
-     */
-    public function getScheme(): string
-    {
-        return $this->isSecure() ? 'https' : 'http';
+        return home_url($this->server('REQUEST_URI'));
     }
 
     /**
@@ -102,100 +70,22 @@ class Request implements JsonSerializable
     }
 
     /**
-     * Get the method of the request, or the override method
-     *
-     * @return string
-     */
-    public function method(): string
-    {
-        $realMethod = $this->getRealMethod();
-
-        if ($realMethod !== 'POST') {
-            return $realMethod;
-        }
-
-        $method = strtoupper($this->input('_method'));
-
-        if (in_array($method, ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'CONNECT', 'OPTIONS', 'PATCH', 'PURGE', 'TRACE'], true)) {
-            return $method;
-        }
-        return $realMethod;
-    }
-
-    /**
-     * Get the real method of the request.
-     *
-     * @return string
-     */
-    public function getRealMethod(): string
-    {
-        return strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
-    }
-
-    /**
-     * Check if the methods match.
-     *
-     * @param string $method The method to check
-     *
-     * @return bool
-     */
-    public function isMethod(string $method): bool
-    {
-        return $this->method() === strtoupper($method);
-    }
-
-    /**
-     * Get a request by the key.
-     *
-     * @param string|null $key     The key to check for
-     * @param mixed       $default The fallback value
-     *
-     * @return mixed
-     */
-    public function input(?string $key = null, $default = null)
-    {
-        if ($key) {
-            return $this->request[$key] ?? $default;
-        }
-        return $this->request;
-    }
-
-
-
-
-
-
-
-
-
-
-
-    /**
-     * Convert the request object to JSON
+     * Convert the request into a json string
      *
      * @return string
      */
     public function __toString(): string
     {
-        return json_encode($this->request);
-    }
-    public function jsonSerialize()
-    {
-        return $this->request;
+        return json_encode($this);
     }
 
-
-    public function has(string $key)
+    /**
+     * Only serialize the parameter bag
+     *
+     * @return void
+     */
+    public function jsonSerialize(): array
     {
-        return isset($this->request[$key]);
-    }
-    public function get(string $key)
-    {
-        return $this->request[$key] ?? null;
-    }
-
-    public function header(string $key)
-    {
-        return '';
+        return $this->all();
     }
 }

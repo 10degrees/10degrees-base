@@ -83,11 +83,11 @@ abstract class RestController implements ControllerInterface
     public function resolveClosure(WP_REST_Request $wpRequest)
     {
         return (new Pipeline())
-            ->send(new Request())
+            ->send(Request::capture())
             ->through($this->middleware)
             ->then(
-                function ($request) {
-                    die($this->handle($request));
+                function ($request) use ($wpRequest) {
+                    die($this->handle($request->merge($wpRequest->get_url_params())));
                 }
             );
     }
