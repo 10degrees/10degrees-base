@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Support\Console\Commands;
 
-use App\Support\Console\Command;
+use App\Support\Console\GeneratorCommand;
 
 /**
  * Create a wp-cli command
@@ -14,14 +14,22 @@ use App\Support\Console\Command;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class ACFExport extends Command
+class ACFExport extends GeneratorCommand
 {
+    /**
+     * The type of class being generated.
+     *
+     * @var string
+     */
+    protected $type = 'ACFFieldGroup';
+
     /**
      * The command signature.
      *
      * @var string
      */
-    protected $signature = 'acf:export {key : The field group\'s key}';
+    protected $signature = 'acf:export {key : The field group\'s key}
+                                        {name : The field group class}';
 
     /**
      * The command description.
@@ -31,12 +39,17 @@ class ACFExport extends Command
     protected $description = 'Export an ACF Field Group into PHP';
 
     /**
-     * Handle the command call.
+     * Replace the class name for the given stub.
      *
-     * @return void
+     * @param string $stub The stub contents
+     * @param string $name The classname to replace
+     *
+     * @return string
      */
-    protected function handle(): void
+    protected function replaceClass(string $stub, string $name): string
     {
+        $stub = parent::replaceClass($stub, $name);
+
         if(!class_exists('ACF')){
             $this->error('ACF isn\'t installed.');
         }
@@ -49,7 +62,11 @@ class ACFExport extends Command
             $this->error('Couldn\'t find a field group with that key.');
         }
 
-        $this->success('ACF Group imported.');
+        return str_replace(
+            ['{{ fields }}'],
+            [var_export($exportedFieldGroup, true)],
+            $stub
+        );
     }
 
     /**
@@ -72,5 +89,27 @@ class ACFExport extends Command
         $fieldGroup = acf_prepare_field_group_for_export($fieldGroup);
 
         return $fieldGroup;
+    }
+
+    /**
+     * Get the stub path.
+     *
+     * @return string
+     */
+    protected function getStub(): string
+    {
+        return __DIR__ . '/stubs/acffield.stub';
+    }
+
+    /**
+     * Get the default namespace for the class.
+     *
+     * @param string $rootNamespace The root namespace
+     *
+     * @return string
+     */
+    protected function getDefaultNamespace(string $rootNamespace): string
+    {
+        return $rootNamespace . '\ACF_Fields';
     }
 }

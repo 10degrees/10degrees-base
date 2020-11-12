@@ -34,6 +34,7 @@ class ConsoleServiceProvider extends ServiceProvider
         \App\Support\Console\Commands\MakePartial::class,
         \App\Support\Console\Commands\MakeProvider::class,
         \App\Support\Console\Commands\MakeShortcode::class,
+        \App\Support\Console\Commands\ACFExport::class,
     ];
 
     /**
