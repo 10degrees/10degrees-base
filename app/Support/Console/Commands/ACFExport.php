@@ -21,7 +21,7 @@ class ACFExport extends GeneratorCommand
      *
      * @var string
      */
-    protected $type = 'ACFFieldGroup';
+    protected $type = 'FieldGroup';
 
     /**
      * The command signature.
@@ -29,7 +29,8 @@ class ACFExport extends GeneratorCommand
      * @var string
      */
     protected $signature = 'acf:export {key : The field group\'s key}
-                                        {name : The field group class} {--force : Overwrite the controller if it exists}';
+                                        {name : The field group class} 
+                                        {--force : Overwrite the controller if it exists}';
 
     /**
      * The command description.
