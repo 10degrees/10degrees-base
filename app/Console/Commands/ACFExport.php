@@ -21,7 +21,7 @@ class ACFExport extends Command
      *
      * @var string
      */
-    protected $signature = 'acf:export';
+    protected $signature = 'acf:export {key : The field group\'s key}';
 
     /**
      * The command description.
@@ -37,6 +37,36 @@ class ACFExport extends Command
      */
     protected function handle(): void
     {
+        $fieldGroupKey = $this->argument('key');
+
+        $exportedFieldGroup = $this->getExportedFieldGroup($fieldGroupKey);
+
+        if(!$exportedFieldGroup){
+            $this->error('Couldn\'t find a field group with that key.');
+        }
+
         $this->success('ACF Group imported.');
+    }
+
+    /**
+     * Get the exported field group for the given key
+     *
+     * @param   string  $key  ACF Field Group key
+     *
+     * @return  array|false        Exported Field Group
+     */
+    private function getExportedFieldGroup($key)
+    {
+        $fieldGroup = acf_get_field_group($key);
+
+        if(!$fieldGroup){
+            return false;
+        }
+
+        $fieldGroup['fields'] = acf_get_fields($fieldGroup);
+
+        $fieldGroup = acf_prepare_field_group_for_export($fieldGroup);
+
+        return $fieldGroup;
     }
 }
