@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use ReflectionClass;
 use App\Support\ServiceProvider;
+use App\ACF_Fields\AbstractFieldRegistration;
+use Symfony\Component\Finder\Finder;
 
 /**
  * Registers ACF fields
@@ -16,18 +19,51 @@ use App\Support\ServiceProvider;
  */
 class FieldServiceProvider extends ServiceProvider
 {
+
+    public function __construct()
+    {
+        /**
+         * If ACF isn't loaded then bail.
+         */
+        if(!class_exists('ACF')){
+            return;
+        }
+
+        /**
+         * Autoload all field groups in the ACF_Fields directory. This saves having to
+         * manually add it to the Field provider.
+         */
+        $this->load(get_template_directory() . '/app/ACF_Fields');
+
+        /**
+         * Call the parent constructor to continue booting the provider.
+         */
+        parent::__construct();
+    }
+
     /**
-     * List the acf field specific classes that need to be booted on every request
+     * Load field groups from the ACF_Fields directory
      *
-     * @var array
+     * @param string $path The directory paths to load
+     *
+     * @return void
      */
-    protected $classes = [
-        \App\ACF_Fields\SiteSettings::class,
-        \App\ACF_Fields\Testimonials::class,
-        \App\ACF_Fields\Accordion::class,
-        \App\ACF_Fields\SocialShare::class,
-        // \App\ACF_Fields\ProtectContent::class,
-        // \App\ACF_Fields\PageBuilder::class,
-        // \App\ACF_Fields\LoginSettings::class,
-    ];
+    protected function load(string $path): void
+    {
+        if (!is_dir($path)) {
+            return;
+        }
+
+        foreach ((new Finder)->in($path)->files() as $field_group) {
+            $field_group = 'App\\ACF_Fields\\' . str_replace(
+                ['/', '.php'],
+                ['\\', ''],
+                $field_group->getRelativePathname()
+            );
+
+            if (is_subclass_of($field_group, AbstractFieldRegistration::class) && !(new ReflectionClass($field_group))->isAbstract()) {
+                new $field_group;
+            }
+        }
+    }
 }
