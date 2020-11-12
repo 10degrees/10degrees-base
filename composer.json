@@ -15,7 +15,8 @@
 		"illuminate/validation": "^8.13",
 		"johnbillion/extended-cpts": "^4.4",
 		"illuminate/filesystem": "^8.13",
-		"illuminate/http": "^8.13"
+		"illuminate/http": "^8.13",
+		"erusev/parsedown": "^1.7"
 	},
 	"autoload": {
 		"psr-4": {

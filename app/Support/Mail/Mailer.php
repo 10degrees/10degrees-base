@@ -2,10 +2,11 @@
 
 namespace App\Support\Mail;
 
+use App\Support\Events\Event;
 use Corcel\Model\User;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Support\Arr;
 use WP_User;
+use Parsedown;
 
 /**
  * The base Mailer class
@@ -32,6 +33,13 @@ abstract class Mailer
      * @var string
      */
     protected $subject = '';
+
+    /**
+     * The email plain text body
+     *
+     * @var string
+     */
+    protected $plainText = '';
 
     /**
      * The email body
@@ -204,6 +212,30 @@ abstract class Mailer
         $this->header('Content-Type: text/html; charset=UTF-8');
 
         $this->message = view($path, $data);
+
+        return $this;
+    }
+
+    /**
+     * Set the mail contents to a multipart email parsed from markdown
+     *
+     * @param string $path The view path
+     * @param array  $data The view data
+     *
+     * @return App\Support\Mail\Mailer
+     */
+    public function markdown(string $path, array $data = []): Mailer
+    {
+        $this->plainText = view($path, $data);
+
+        $this->message = (new Parsedown)->text($this->plainText);
+
+        Event::listen(
+            'phpmailer_init',
+            function ($phpmailer) {
+                $phpmailer->AltBody = $this->plainText;
+            }
+        );
 
         return $this;
     }
