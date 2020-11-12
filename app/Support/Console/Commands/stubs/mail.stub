@@ -33,6 +33,7 @@ class {{ class }} extends Mailer
      */
     public function build(): Mailer
     {
-        return $this->subject('email:subject')->view('partials.emails.notify');
+        return $this->subject('email:subject')
+            ->markdown('partials.emails.markdown');
     }
 }

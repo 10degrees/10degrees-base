@@ -4,6 +4,7 @@
 /**
  * If this file is accessed directory, then abort.
  */
+
 if (!defined('WPINC')) {
     die;
 }

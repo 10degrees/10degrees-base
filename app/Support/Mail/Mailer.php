@@ -46,7 +46,7 @@ abstract class Mailer
      *
      * @var string
      */
-    protected $message = '';
+    protected $body = '';
 
     /**
      * The headers to send with the email
@@ -186,21 +186,21 @@ abstract class Mailer
     }
 
     /**
-     * Set the email message
+     * Set the email body
      *
-     * @param string $message The email message
+     * @param string $body The email body
      *
      * @return App\Support\Mail\Mailer
      */
-    public function message(string $message): Mailer
+    public function message(string $body): Mailer
     {
-        $this->message = $message;
+        $this->body = $body;
 
         return $this;
     }
 
     /**
-     * Set the email message with a view
+     * Set the email body with a view
      *
      * @param string $path The view path
      * @param array  $data The view data
@@ -211,7 +211,7 @@ abstract class Mailer
     {
         $this->header('Content-Type: text/html; charset=UTF-8');
 
-        $this->message = view($path, $data);
+        $this->body = view($path, $data);
 
         return $this;
     }
@@ -228,7 +228,7 @@ abstract class Mailer
     {
         $this->plainText = view($path, $data);
 
-        $this->message = (new Parsedown)->text($this->plainText);
+        $this->body = (new Parsedown)->text($this->plainText);
 
         Event::listen(
             'phpmailer_init',
@@ -322,7 +322,7 @@ abstract class Mailer
         return wp_mail(
             $this->to,
             $this->subject,
-            $this->message,
+            $this->body,
             $this->headers,
             $this->attachments
         );
@@ -337,7 +337,7 @@ abstract class Mailer
     {
         $this->build();
 
-        return $this->message;
+        return $this->body;
     }
 
     /**
