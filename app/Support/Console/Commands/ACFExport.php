@@ -21,7 +21,7 @@ class ACFExport extends GeneratorCommand
      *
      * @var string
      */
-    protected $type = 'FieldGroup';
+    protected $type = 'Field Group';
 
     /**
      * The command signature.
