@@ -1,9 +1,9 @@
 <?php
 
-namespace App\ACF_Fields;
+namespace App\Support\WordPress;
 
 /**
- * AbstractFieldRegistration
+ * Field Group
  *
  * @category Theme
  * @package  TenDegrees/10degrees-base
@@ -12,7 +12,7 @@ namespace App\ACF_Fields;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-abstract class AbstractFieldRegistration
+abstract class FieldGroup
 {
     /**
      * ACF fields to register. Overriden in extending class.

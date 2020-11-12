@@ -2,7 +2,7 @@
 
 namespace App\ACF_Fields;
 
-use App\ACF_Fields\AbstractFieldRegistration;
+use App\Support\WordPress\FieldGroup;
 
 /**
  * Social Share
@@ -16,7 +16,7 @@ use App\ACF_Fields\AbstractFieldRegistration;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class SocialShare extends AbstractFieldRegistration
+class SocialShare extends FieldGroup
 {
     protected $fields = array(
         'key' => 'group_5e0f551a36595',

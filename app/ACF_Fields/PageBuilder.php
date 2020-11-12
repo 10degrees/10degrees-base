@@ -2,7 +2,7 @@
 
 namespace App\ACF_Fields;
 
-use App\ACF_Fields\AbstractFieldRegistration;
+use App\Support\WordPress\FieldGroup;
 
 /**
  * Page builder
@@ -16,7 +16,7 @@ use App\ACF_Fields\AbstractFieldRegistration;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class PageBuilder extends AbstractFieldRegistration
+class PageBuilder extends FieldGroup
 {
     protected $fields = array(
         'key' => 'group_56054cb459ca7',

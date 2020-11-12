@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use ReflectionClass;
 use App\Support\ServiceProvider;
-use App\ACF_Fields\AbstractFieldRegistration;
+use App\Support\WordPress\FieldGroup;
 use Symfony\Component\Finder\Finder;
 
 /**
@@ -61,7 +61,7 @@ class FieldServiceProvider extends ServiceProvider
                 $field_group->getRelativePathname()
             );
 
-            if (is_subclass_of($field_group, AbstractFieldRegistration::class) && !(new ReflectionClass($field_group))->isAbstract()) {
+            if (is_subclass_of($field_group, FieldGroup::class) && !(new ReflectionClass($field_group))->isAbstract()) {
                 new $field_group;
             }
         }
