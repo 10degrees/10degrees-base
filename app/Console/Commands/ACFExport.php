@@ -37,6 +37,10 @@ class ACFExport extends Command
      */
     protected function handle(): void
     {
+        if(!class_exists('ACF')){
+            $this->error('ACF isn\'t installed.');
+        }
+
         $fieldGroupKey = $this->argument('key');
 
         $exportedFieldGroup = $this->getExportedFieldGroup($fieldGroupKey);
