@@ -1,7 +1,3 @@
-
-// Custom Gutenberg Blocks
-import "./blocks/link-button.js";
-
 // Admin-Specific JS
 import DisableAlignment from './admin/disable-alignment';
 import RegisterBlockStyles from './admin/register-block-styles';

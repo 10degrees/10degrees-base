@@ -9,18 +9,18 @@
 function td_asset_path($filename)
 {
     //@TODO capitalize this function
-    
+
     // Cache the decoded manifest so that we only read it in once.
     static $manifest = null;
     if (null === $manifest) {
-        $manifest_path = get_stylesheet_directory() . '/dist/rev-manifest.json';
+        $manifest_path = get_stylesheet_directory() . '/dist/mix-manifest.json';
         $manifest = file_exists($manifest_path)
             ? json_decode(file_get_contents($manifest_path), true)
             : [];
     }
     // If the manifest contains the requested file, return the hashed name.
-    if (array_key_exists($filename, $manifest)) {
-        return '/dist/' . $manifest[ $filename ];
+    if (array_key_exists('/' . $filename, $manifest)) {
+        return '/dist/' . $manifest['/' . $filename];
     }
 
     // Assume the file has not been hashed when it was not found within the

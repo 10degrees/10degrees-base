@@ -24,7 +24,7 @@ class SocialLinks extends AbstractBlockRegistration
      */
     public function __construct()
     {
-        if (function_exists('acf_register_block_type') && is_plugin_active('wordpress-seo/wp-seo.php')) {
+        if (function_exists('acf_register_block_type')) {
             $this->register();
         }
     }
