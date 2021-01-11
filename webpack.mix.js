@@ -47,11 +47,6 @@ mix
         outputFormat: 'json',
         combineAssets: true,
     })
-    .polyfill({
-        enabled: true,
-        useBuiltIns: "usage",
-        targets: {"ie": 11}
-    })
     .copyWatched("src/fonts", "dist/fonts")
     .sourceMaps(true, "source-map")
     .webpackConfig({
