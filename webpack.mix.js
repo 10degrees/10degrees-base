@@ -77,5 +77,6 @@ if (mix.inProduction()) {
 wpPot({
     destFile: "lang/@textdomain.pot",
     domain: "@textdomain",
-    package: "@theme"
+    package: "@theme",
+    src: ['**/*.php', '!vendor/**/*.php'],
 });
