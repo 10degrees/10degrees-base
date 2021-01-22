@@ -29,6 +29,7 @@ class RegisterServiceProviders extends ServiceProvider
         \App\Support\Console\ConsoleServiceProvider::class,
         \App\Support\Database\DatabaseServiceProvider::class,
         \App\Support\WordPress\BlockServiceProvider::class,
+        \App\Support\WordPress\CptServiceProvider::class,
 
         /**
          * Theme providers
@@ -37,7 +38,6 @@ class RegisterServiceProviders extends ServiceProvider
         \App\Providers\ConfigServiceProvider::class,
         \App\Providers\AdminServiceProvider::class,
         \App\Providers\ThemeServiceProvider::class,
-        \App\Providers\CptServiceProvider::class,
         \App\Providers\ShortcodeServiceProvider::class,
         \App\Providers\ControllerServiceProvider::class,
         \App\Providers\FieldServiceProvider::class,

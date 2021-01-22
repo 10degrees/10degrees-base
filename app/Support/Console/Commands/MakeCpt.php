@@ -87,6 +87,6 @@ class MakeCpt extends GeneratorCommand
      */
     protected function getDefaultNamespace(string $rootNamespace): string
     {
-        return $rootNamespace . '\Cpt';
+        return $rootNamespace . '\Cpts';
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Cpt;
+namespace App\Cpts;
 
 use App\Support\WordPress\Cpt;
 
@@ -59,7 +59,7 @@ class Testimonial extends Cpt
                 'rewrite'           => true,
                 'query_var'         => true,
                 'menu_position'     => null,
-                'menu_icon'         => 'dashicons-superhero',
+                'menu_icon'         => 'dashicons-format-quote',
                 'show_in_rest'      => true,
                 'rest_base'         => $this->singular,
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Providers;
+namespace App\Models;
 
-use App\Support\ServiceProvider;
+use Corcel\Model\Post as Model;
 
 /**
- * Registers Custom post types
+ * Extend an eloquent model
  *
  * @category Theme
  * @package  TenDegrees/10degrees-base
@@ -14,14 +14,12 @@ use App\Support\ServiceProvider;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class CptServiceProvider extends ServiceProvider
+class Student extends Model
 {
     /**
-     * List the classes that need to be booted on every request
+     * The name of the post type
      *
-     * @var array
+     * @var string
      */
-    protected $classes = [
-        \App\Cpt\Testimonial::class,
-    ];
+    protected $postType = 'student';
 }
