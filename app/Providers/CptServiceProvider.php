@@ -22,6 +22,6 @@ class CptServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        \App\Cpt\Testimonials::class,
+        \App\Cpt\Testimonial::class,
     ];
 }

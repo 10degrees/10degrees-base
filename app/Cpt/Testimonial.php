@@ -1,6 +1,6 @@
 <?php
 
-namespace {{ namespace }};
+namespace App\Cpt;
 
 use App\Support\WordPress\Cpt;
 
@@ -14,28 +14,28 @@ use App\Support\WordPress\Cpt;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class {{ class }} extends Cpt
+class Testimonial extends Cpt
 {
     /**
      * Define the post type
      *
      * @var string
      */
-    protected $postType = '{{ posttype }}';
+    protected $postType = 'testimonial';
 
     /**
      * Define the plural title
      *
      * @var string
      */
-    protected $plural = '{{ plural }}';
+    protected $plural = 'Testimonials';
 
     /**
      * Define the singular title
      *
      * @var string
      */
-    protected $singular = '{{ singular }}';
+    protected $singular = 'Testimonial';
 
     /**
      * Register the post type
@@ -64,8 +64,8 @@ class {{ class }} extends Cpt
                 'rest_base'         => $this->singular,
 
                 'admin_cols' => [
-                    '{{ posttype }}-category' => [
-                        'taxonomy' => '{{ posttype }}-category',
+                    'testimonial-category' => [
+                        'taxonomy' => 'testimonial-category',
                     ],
                     'post_date' => [
                         'title'      => __('Added', 'Date'),
@@ -77,9 +77,9 @@ class {{ class }} extends Cpt
                     ],
                 ],
                 'admin_filters' => [
-                    '{{ posttype }}-category' => [
+                    'testimonial-category' => [
                         'title'    => 'Category',
-                        'taxonomy' => '{{ posttype }}-category',
+                        'taxonomy' => 'testimonial-category',
                     ],
                 ],
             ],
@@ -100,7 +100,7 @@ class {{ class }} extends Cpt
     {
         // see https://github.com/johnbillion/extended-cpts/wiki for more options
         register_extended_taxonomy(
-            '{{ posttype }}-category',
+            'testimonial-category',
             $this->postType,
             [
                 'public'           => true,
@@ -118,7 +118,7 @@ class {{ class }} extends Cpt
             [
                 'singular' => 'Category',
                 'plural'   => 'Categories',
-                'slug'     => '{{ posttype }}-category',
+                'slug'     => 'testimonial-category',
             ]
         );
     }
