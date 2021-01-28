@@ -8,7 +8,7 @@ const {
 // Register editor components
 const {
     InspectorControls,
-} = wp.editor;
+} = wp.blockEditor;
 
 const { __ } = wp.i18n;
 

@@ -28,15 +28,15 @@ const classNames = (...args) =>
 
 // Register editor components
 const {
-    AlignmentToolbar,
+    InspectorControls,
+    PanelColorSettings,
     BlockControls,
     RichText,
     URLInput,
-    InspectorControls,
-    PanelColorSettings,
+    AlignmentToolbar,
     getColorClassName,
-    withColors
-} = wp.editor;
+    withColors,
+} = wp.blockEditor;
 
 // Register components
 const {
@@ -170,7 +170,7 @@ registerBlockType(BLOCK_NAME, {
                     tagName: "span",
                     placeholder: __("Button text...", "@textdomain"),
                     value: buttonText,
-                    formattingControls: [],
+                    allowedFormats: [],
                     className: classNames(
                         "link-button",
                         buttonColor.class,
