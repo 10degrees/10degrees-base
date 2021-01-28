@@ -23,12 +23,18 @@ h3,
 h4,
 h5,
 h6,
-.wp-block-heading h1,
-.wp-block-heading h2,
-.wp-block-heading h3,
-.wp-block-heading h4,
-.wp-block-heading h5,
-.wp-block-heading h6 {
+h1.wp-block,
+h2.wp-block,
+h3.wp-block,
+h4.wp-block,
+h5.wp-block,
+h6.wp-block,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
     font-family: $base-font;
     margin-top: 0;
     margin-bottom: #{$base-line-height}rem;
@@ -42,7 +48,7 @@ h6,
 // Use heading classes to change visual display while retaining semantic hierarchy
 h1,
 .h1,
-.wp-block-heading h1 {
+h1.wp-block {
     font-size: 1.3125rem;
     line-height: 1.1428;
 
@@ -59,7 +65,7 @@ h1,
 
 h2,
 .h2,
-.wp-block-heading h2 {
+h2.wp-block {
     font-size: 1.125rem;
     line-height: 1.333;
 
@@ -76,7 +82,7 @@ h2,
 
 h3,
 .h3,
-.wp-block-heading h3 {
+h3.wp-block {
     font-size: 1.125rem;
     line-height: 1.333;
 
@@ -93,7 +99,7 @@ h3,
 
 h4,
 .h4,
-.wp-block-heading h4 {
+h4.wp-block {
     font-size: 1rem;
     line-height: 1.6;
 
@@ -105,7 +111,7 @@ h4,
 
 h5,
 .h5,
-.wp-block-heading h5 {
+h5.wp-block {
     font-size: 0.875rem;
     line-height: 1.1428;
 
@@ -117,7 +123,7 @@ h5,
 
 h6,
 .h6,
-.wp-block-heading h6 {
+h6.block {
     font-size: 0.875rem;
     line-height: 1.1428;
 }
