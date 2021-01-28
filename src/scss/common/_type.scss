@@ -11,7 +11,7 @@ html {
 body {
     font-family: $base-font;
     font-size: $base-font-size;
-    @include colour(--text);
+    @include colour(--body-text);
     background-color: $base-background-colour;
     font-weight: $base-font-weight;
 }
