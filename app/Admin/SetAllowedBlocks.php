@@ -48,6 +48,7 @@ class SetAllowedBlocks
         'core/table',
         'core/video',
         'custom-blocks/link-button',
+        'custom-blocks/spacer',
         'acf/accordion',
         'acf/social-links',
         'acf/social-share',

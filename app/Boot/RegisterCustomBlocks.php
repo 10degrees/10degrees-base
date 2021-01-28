@@ -21,7 +21,8 @@ class RegisterCustomBlocks
      * @var array
      */
     protected $customBlocks = [
-        'link-button'
+        'link-button',
+        'spacer',
     ];
 
     /**
