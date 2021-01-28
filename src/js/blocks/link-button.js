@@ -17,7 +17,7 @@ const blockMeta = {
     description: __("Add a customizable link button.", "@textdomain"),
     icon: blockIcon,
     category: "custom-blocks",
-    keywords: [__("button", "@textdomain"), __("link", "@textdomain")]
+    keywords: [__("button", "@textdomain"), __("link", "@textdomain")],
 };
 
 // Register block
@@ -99,29 +99,23 @@ registerBlockType(BLOCK_NAME, {
         } = attributes;
 
         return [
-            el(
-                InspectorControls,
-                {},
-                el(PanelColorSettings, {
-                    title: __("Button colours", "@textdomain"),
-                    colorSettings: [
+            <InspectorControls>
+                <PanelColorSettings
+                    title={__("Button colours", "@textdomain")}
+                    colorSettings={[
                         {
                             value: buttonColor.color,
                             onChange: setButtonColor,
                             label: __("Choose a colour", "@textdomain")
                         }
-                    ]
-                }),
-                el(
-                    PanelBody,
-                    { title: __("Link settings", "@textdomain") },
-                    el(
-                        PanelRow,
-                        {},
-                        el(ToggleControl, {
-                            label: __("Open in new tab", "@textdomain"),
-                            checked: buttonTarget,
-                            onChange: value => {
+                    ]}
+                />
+                <PanelBody title={ __("Link settings", "@textdomain") }>
+                    <PanelRow>
+                        <ToggleControl
+                            label={__("Open in new tab", "@textdomain")}
+                            checked={buttonTarget}
+                            onChange={value => {
                                 const attr = "noreferrer noopener";
                                 setAttributes({ buttonTarget: value });
 
@@ -138,63 +132,43 @@ registerBlockType(BLOCK_NAME, {
                                         });
                                     }
                                 }
-                            }
-                        })
-                    ),
-                    el(
-                        PanelRow,
-                        {},
-                        el(TextControl, {
-                            label: __("Link rel", "@textdomain"),
-                            value: buttonRel,
-                            onChange: value =>
-                                setAttributes({ buttonRel: value })
-                        })
-                    )
-                )
-            ),
-            el(
-                BlockControls,
-                {},
-                el(AlignmentToolbar, {
-                    value: buttonAlignment,
-                    onChange: value => setAttributes({ buttonAlignment: value })
-                })
-            ),
-            el(
-                "div",
-                {
-                    className: `has-text-align-${buttonAlignment}`
-                },
-                el(RichText, {
-                    tagName: "span",
-                    placeholder: __("Button text...", "@textdomain"),
-                    value: buttonText,
-                    allowedFormats: [],
-                    className: classNames(
-                        "link-button",
-                        buttonColor.class,
-                        className
-                    ),
-                    onChange: value => setAttributes({ buttonText: value })
-                })
-            ),
+                            }}
+                        />
+                    </PanelRow>
+                    <PanelRow>
+                        <TextControl
+                            label={__("Link rel", "@textdomain")}
+                            value={buttonRel}
+                            onChange={value => setAttributes({ buttonRel: value })}
+                        />
+                    </PanelRow>
+                </PanelBody>
+            </InspectorControls>,
+            <BlockControls>
+                <AlignmentToolbar
+                    value={buttonAlignment}
+                    onChange={value => setAttributes({buttonAlignment: value})}
+                />
+            </BlockControls>,
+            <div className={`has-text-align-${buttonAlignment}`}>
+                <RichText
+                    tagName="span"
+                    placeholder={__("Button text...", "@textdomain")}
+                    value={buttonText}
+                    allowedFormats={[]}
+                    className={classNames("link-button", buttonColor.class, className)}
+                    onChange={value => setAttributes({buttonText: value})}
+                />
+            </div>,
             isSelected &&
-                el(
-                    BaseControl,
-                    {
-                        label: __("Link", "@textdomain"),
-                        id: "link-button-1",
-                        className: "wp-block-button__inline-link"
-                    },
-                    el(URLInput, {
-                        id: "link-button-1",
-                        className:
-                            "wp-block-button__inline-link-input is-full-width has-border",
-                        value: buttonUrl,
-                        onChange: value => setAttributes({ buttonUrl: value })
-                    })
-                )
+                <BaseControl label={__("Link", "@textdomain")} id="link-button-1" className="wp-block-button__inline-link">
+                    <URLInput
+                        id="link-button-1"
+                        className="wp-block-button__inline-link-input is-full-width has-border"
+                        value={buttonUrl}
+                        onChange={value => setAttributes({buttonUrl: value})}
+                    />
+                </BaseControl>
         ];
     }),
 
@@ -213,27 +187,17 @@ registerBlockType(BLOCK_NAME, {
         const buttonColorClass =
             getColorClassName("button-color", buttonColor) || "";
 
-        return el(
-            "div",
-            {
-                className: buttonAlignment
-                    ? `has-text-align-${buttonAlignment}`
-                    : ""
-            },
-            el(
-                "a",
-                {
-                    href: buttonUrl,
-                    target: buttonTarget ? "_blank" : null,
-                    rel: buttonRel,
-                    className: classNames(
-                        "link-button",
-                        buttonColorClass,
-                        className
-                    )
-                },
-                el(RichText.Content, { value: buttonText })
-            )
+        return (
+            <div className={buttonAlignment ? `has-text-align-${buttonAlignment}` : ''}>
+                <a
+                    href={buttonUrl}
+                    target={buttonTarget ? "_blank" : null}
+                    rel={buttonRel}
+                    className={classNames("link-button", buttonColorClass, className)}
+                >
+                    <RichText.Content value={buttonText}/>
+                </a>
+            </div>
         );
     }
 });
