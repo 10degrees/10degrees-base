@@ -35,7 +35,18 @@ class MenuOrder
             'separator1',
             'wpengine-common',
             'edit.php',
-            'edit.php?post_type=page'
+            'edit-comments.php',
+            'edit.php?post_type=page',
+            'edit.php?post_type=testimonial',
+            'separator1',
+            'upload.php', //media
+            'users.php', //users
+            'plugins.php', //plugins
+            'separator-last',
+            'themes.php', //appearance
+            'tools.php', //tools
+            'options-general.php', //WordPress options
+            'acf-options-site-settings',
         );
     }
 }
