@@ -31,7 +31,7 @@ class Accordion extends AbstractBlockRegistration
                 'title' => __('Accordion'),
                 'description' => __('An accordion, with a heading and content.'), //@TODO add namespace
                 'render_callback' => [$this, 'render'],
-                'category' => 'common',
+                'category' => 'custom-blocks',
                 'icon' => 'arrow-down',
                 'keywords' => array( 'accordion'),
                 'supports' => array(

@@ -30,7 +30,7 @@ class SocialShare extends AbstractBlockRegistration
                 'title' => __('Social share'),
                 'description' => __('Add share buttons.'), //@TODO add namespace
                 'render_callback' => [$this, 'render'],
-                'category' => 'common',
+                'category' => 'custom-blocks',
                 'icon' => 'share',
                 'keywords' => array( 'social','custom','share'),
                 'supports' => array(

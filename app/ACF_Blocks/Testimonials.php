@@ -31,7 +31,7 @@ class Testimonials extends AbstractBlockRegistration
                 'title' => __('Testimonials'),
                 'description' => __('Displays a number of testimonials from a category.'), //@TODO add namespace
                 'render_callback' => [$this, 'render'],
-                'category' => 'common',
+                'category' => 'custom-blocks',
                 'icon' => 'admin-comments',
                 'keywords' => array( 'testimonial', 'quote' ),
             ]
