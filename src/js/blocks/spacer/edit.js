@@ -26,96 +26,47 @@ export default function edit({
     } = attributes;
 
     return [
-        el(
-            InspectorControls,
-            {},
-            el(
-                PanelBody,
-                { title: __("Spacer settings", "@textdomain") },
-                el(
-                    PanelRow,
-                    {},
-                    el(
-                        RangeControl,
-                        {
-                            label: __("Mobile Spacing", "@textdomain"),
-                            value: mobileSpacing,
-                            onChange: (mobileSpacing) => setAttributes({mobileSpacing}),
-                            min: 0,
-                            max: 1000,
-                            initialPosition : 30,
-                            separatorType: "fullWidth",
-                        }
-                    )
-                ),
-                el(
-                    PanelRow,
-                    {},
-                    el(
-                        RangeControl,
-                        {
-                            label: __("Tablet Spacing", "@textdomain"),
-                            value: tabletSpacing,
-                            onChange: (tabletSpacing) => setAttributes({tabletSpacing}),
-                            min: 0,
-                            max: 1000,
-                            initialPosition : 30,
-                            separatorType: "fullWidth",
-                        }
-                    )
-                ),
-                el(
-                    PanelRow,
-                    {},
-                    el(
-                        RangeControl,
-                        {
-                            label: __("Desktop Spacing", "@textdomain"),
-                            value: desktopSpacing,
-                            onChange: (desktopSpacing) => setAttributes({desktopSpacing}),
-                            min: 0,
-                            max: 1000,
-                            initialPosition : 50,
-                            separatorType: "fullWidth",
-                        }
-                    )
-                ),
-            )
-        ),
-        el(
-            "div",
-            {
-                className: className
-            },
-            [
-                el(
-                    "div",
-                    {
-                        style: {
-                            height: mobileSpacing+ "px"
-                        },
-                        className: "spacer -mobile-only"
-                    }
-                ),
-                el(
-                    "div",
-                    {
-                        style: {
-                            height: tabletSpacing+ "px",
-                        },
-                        className: "spacer -tablet-only"
-                    }
-                ),
-                el(
-                    "div",
-                    {
-                        style: {
-                            height: desktopSpacing+ "px",
-                        },
-                        className: "spacer -desktop-only"
-                    }
-                )
-            ]
-        )
+        <InspectorControls>
+            <PanelBody title={__("Spacer settings", "@textdomain")}>
+                <PanelRow>
+                    <RangeControl
+                        label={__("Mobile Spacing", "@textdomain")}
+                        value={mobileSpacing}
+                        min="0"
+                        max="1000"
+                        onChange={mobileSpacing => setAttributes({mobileSpacing})}
+                        initialPosition="30"
+                        separatorType="fullWidth"
+                    />
+                </PanelRow>
+                <PanelRow>
+                    <RangeControl
+                        label={__("Tablet Spacing", "@textdomain")}
+                        value={tabletSpacing}
+                        min="0"
+                        max="1000"
+                        onChange={tabletSpacing => setAttributes({tabletSpacing})}
+                        initialPosition="30"
+                        separatorType="fullWidth"
+                    />
+                </PanelRow>
+                <PanelRow>
+                    <RangeControl
+                        label={__("Desktop Spacing", "@textdomain")}
+                        value={desktopSpacing}
+                        min="0"
+                        max="1000"
+                        onChange={desktopSpacing => setAttributes({desktopSpacing})}
+                        initialPosition="50"
+                        separatorType="fullWidth"
+                    />
+                </PanelRow>
+            </PanelBody>
+        </InspectorControls>,
+        <div className={className}>
+            <div class="spacer -mobile-only" style={{height: mobileSpacing + "px"}}></div>
+            <div class="spacer -tablet-only" style={{height: tabletSpacing + "px"}}></div>
+            <div class="spacer -desktop-only" style={{height: desktopSpacing + "px"}}></div>
+        </div>
     ];
 };

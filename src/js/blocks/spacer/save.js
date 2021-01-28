@@ -1,5 +1,3 @@
-const { createElement: el } = wp.element;
-
 export default function save({ attributes }) {
     const {
         mobileSpacing,
@@ -8,39 +6,11 @@ export default function save({ attributes }) {
         className
     } = attributes;
 
-    return el(
-        "div",
-        {
-            className: className
-        },
-        [
-            el(
-                "div",
-                {
-                    style: {
-                        height: mobileSpacing+ "px"
-                    },
-                    className: "spacer -mobile-only"
-                }
-            ),
-            el(
-                "div",
-                {
-                    style: {
-                        height: tabletSpacing+ "px",
-                    },
-                    className: "spacer -tablet-only"
-                }
-            ),
-            el(
-                "div",
-                {
-                    style: {
-                        height: desktopSpacing+ "px",
-                    },
-                    className: "spacer -desktop-only"
-                }
-            )
-        ]
+    return (
+        <div className={className}>
+            <div class="spacer -mobile-only" style={{height: mobileSpacing + "px"}}></div>
+            <div class="spacer -tablet-only" style={{height: tabletSpacing + "px"}}></div>
+            <div class="spacer -desktop-only" style={{height: desktopSpacing + "px"}}></div>
+        </div>
     );
 };
