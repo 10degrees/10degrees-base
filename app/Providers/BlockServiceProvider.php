@@ -22,7 +22,6 @@ class BlockServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        '\App\ACF_Blocks\Testimonials',
         '\App\ACF_Blocks\Accordion',
         '\App\ACF_Blocks\SocialLinks',
         '\App\ACF_Blocks\SocialShare',
