@@ -55,14 +55,7 @@ All modern browsers and IE11.
 
 Code is transpiled to support IE11+ using Babel.
 
-Support is defined in `package.json`, under browserslist. The default is:
-
-    "> 1%",
-    "last 2 versions"
-
-Alter as required from the [browserslist](https://github.com/ai/browserslist) syntax. This is replicated in the `gulpfile.js`.
-
 ### CSS
 
-CSS Grid is used, with a single-column fallback provided for IE10+.
+CSS Grid is used, with a single-column fallback provided for IE11+.
 CSS Custom Properties are used sparingly with fallbacks.
