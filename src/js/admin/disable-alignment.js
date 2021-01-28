@@ -18,7 +18,7 @@ class DisableAlignment {
     disableAlignment(settings, name){
         // Image blocks don't use the supports array for alignment
         // This avoids the image block having two alignment icons
-        if(name === "core/image"){
+        if(name === "core/image" || name === "custom-blocks/link-button" || name === "custom-blocks/spacer"){
             return settings;
         }
 

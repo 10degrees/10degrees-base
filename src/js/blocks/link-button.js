@@ -17,7 +17,7 @@ const blockMeta = {
     description: __("Add a customizable link button.", "@textdomain"),
     icon: blockIcon,
     category: "custom-blocks",
-    keywords: [__("button", "@textdomain"), __("link", "@textdomain")]
+    keywords: [__("button", "@textdomain"), __("link", "@textdomain")],
 };
 
 // Register block
