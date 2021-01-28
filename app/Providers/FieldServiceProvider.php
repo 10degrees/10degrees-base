@@ -26,7 +26,6 @@ class FieldServiceProvider extends ServiceProvider
         '\App\ACF_Fields\Accordion',
         '\App\ACF_Fields\SocialShare'
         // '\App\ACF_Fields\ProtectContent',
-        // '\App\ACF_Fields\PageBuilder',
         // '\App\ACF_Fields\LoginSettings'
     ];
 }

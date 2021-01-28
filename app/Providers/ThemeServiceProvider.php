@@ -30,7 +30,6 @@ class ThemeServiceProvider extends ServiceProvider
         '\App\Boot\RegisterMenus',
         '\App\Boot\RegisterWidgets',
         '\App\Boot\RegisterCustomBlocks',
-        '\App\Boot\ACFToTheContent',
         '\App\Boot\GoogleMapsAPIIntegration',
         '\App\Boot\CleanUp',
         '\App\Boot\RealtimeFindAndReplace',
