@@ -4,15 +4,15 @@
  *
  * Usage:
  *
- * @include bp(sm); // @media only screen and (min-width: 480px)
+ * @include bp(sm); // @media only screen and (min-width: 600px)
  *
- * @include bp($max: sm);  // @media only screen and (max-width: 480px)
+ * @include bp($max: sm);  // @media only screen and (max-width: 600px)
  *
- * @include bp(sm, md);  // @media only screen and (min-width: 480px) and (max-width: 768px)
+ * @include bp(sm, md);  // @media only screen and (min-width: 600px) and (max-width: 900px)
  *
- * @include bp(sm, $type: print);  // @media print and (min-width: 480px)
+ * @include bp(sm, $type: print);  // @media print and (min-width: 600px)
  *
- * @include bp(sm, md, print);  // @media print and (min-width: 480px) and (max-width: 768px)
+ * @include bp(sm, md, print);  // @media print and (min-width: 600px) and (max-width: 900px)
  */
 
 @mixin bp($min: null, $max: null, $type: only screen, $map: $breakpoint-map) {

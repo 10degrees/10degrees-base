@@ -2,7 +2,7 @@
     display: none;
     width: 100%;
 
-    @include bp(sm) {
+    @include bp(md) {
         display: block;
         width: auto;
     }
@@ -16,7 +16,7 @@
         padding: 0;
     }
     & > ul {
-        @include bp(sm) {
+        @include bp(md) {
             display: flex;
         }
     }
@@ -28,13 +28,13 @@
         position: relative;
     }
     li .sub-menu {
-        @include bp(sm) {
+        @include bp(md) {
             position: absolute;
             top: 100%;
         }
     }
     li .sub-menu .sub-menu {
-        @include bp(sm) {
+        @include bp(md) {
             top: 0;
             left: 100%;
         }

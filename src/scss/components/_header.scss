@@ -23,53 +23,6 @@
         border: 1px solid $grey-5;
         border-radius: 5px;
     }
-    /*
-  .nav.-primary {
-    display: none;
-    flex-basis: 100%;
-    flex-grow: 1;
-    margin: 20px 0;
-
-    a {
-      display: block;
-      position: relative;
-      padding: 5px 0;
-    }
-
-    .menu-item-has-children > a::after {
-      display: inline-block;
-      margin-left: 5px;
-      vertical-align: 5px;
-      content: "";
-      border-top: 5px solid;
-      border-right: 5px solid transparent;
-      border-bottom: 0;
-      border-left: 5px solid transparent;
-      position: absolute;
-      top: 50%;
-      transform: translate3d(0, -50%, 0);
-      right: 0;
-    }
-
-    .menu-item-has-children > [aria-expanded="true"]::after {
-      border-bottom: 5px solid;
-      border-top: 0;
-    }
-
-    .sub-menu {
-      display: none;
-
-      padding-left: 10px;
-
-      &.-open {
-        display: block;
-      }
-    }
-
-    &.-open {
-      display: block;
-    }
-  }*/
 
     @include bp(md) {
         .logo {
@@ -79,75 +32,6 @@
         .toggle {
             display: none;
         }
-        /*
-        .nav.-primary {
-            display: block;
-            flex-basis: auto;
-            flex-grow: 0;
-            margin: 0;
-
-            ul {
-                display: flex;
-            }
-
-            a {
-                margin-right: 30px;
-                padding: 0;
-            }
-
-            .menu-item {
-                &.menu-item-has-children {
-                    position: relative;
-
-                    > a::after {
-                        right: -15px;
-                    }
-                }
-
-                &:last-child a {
-                    margin-right: 0;
-                }
-
-                // First level dropdown menu
-                .sub-menu {
-                    position: absolute;
-                    left: 0;
-                    top: 35px;
-                    padding: 0 20px 0 15px;
-                    background-color: #fff;
-                    border: 1px solid $grey-4;
-                    white-space: nowrap;
-
-                    .menu-item-has-children > a::after {
-                        margin-right: 5px;
-                    }
-
-                    a {
-                        margin: 10px 0;
-                    }
-
-                    // Second level and above dropdown toggle
-                    .menu-item-has-children > a::after {
-                        display: inline-block;
-                        margin-left: 7.5px;
-                        vertical-align: middle;
-                        content: "";
-                        border-left: 5px solid;
-                        border-top: 5px solid transparent;
-                        border-right: 0;
-                        border-bottom: 5px solid transparent;
-                    }
-
-                    // Second level and above dropdown menu
-                    .sub-menu {
-                        left: calc(
-                            100% + 20px
-                        ); // 20px for the .sub-menu padding
-                        top: -1px; // To acount for the 1px border
-                    }
-                }
-            }
-        }*/
     }
 }
 
