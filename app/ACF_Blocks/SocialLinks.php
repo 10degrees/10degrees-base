@@ -41,7 +41,7 @@ class SocialLinks extends AbstractBlockRegistration
                 'title' => __('Social links'),
                 'description' => __('Add links to social media.'), //@TODO add namespace
                 'render_callback' => [$this, 'render'],
-                'category' => 'common',
+                'category' => 'custom-blocks',
                 'icon' => 'admin-links',
                 'keywords' => array( 'social','custom','links'),
                 'supports' => array(
