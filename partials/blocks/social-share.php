@@ -62,7 +62,7 @@ if (count($socialNetworks)) :?>
                         <?php echo td_get_svg($options['icon']); ?>
                         <span class="screen-reader-text">
                             <?php
-                            _e('Share on ', 'lboxcomms');
+                            _e('Share on ', '@textdomain');
                             echo ucwords($network); ?>
                         </span>
                     </a>
