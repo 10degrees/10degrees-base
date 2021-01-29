@@ -5,20 +5,19 @@
 The 10 Degrees base WordPress theme is intended as a quick-start for developers and requires configuration before using. It uses a number of concepts from Laravel, and aims to make development more standardised and accessible. Where possible, [PSR-2](https://www.php-fig.org/psr/psr-2/) style guidelines are mandated with a custom ruleset.
 
 * CSS: SASS preprocessor for CSS
-* JavaScript: write ES6 and use Rollup for managing modules
+* JavaScript: ES6 ready
 * PHP: Namespaces and autoloader with many asbtractions and helper functions
 * PHP: [base.php](base.php) wrapper, originally implemented by [Sage theme](https://roots.io/sage/)
 * WP CLI block quickstart command
 
 ## Requirements
 
-* WordPress >= 4.7
+* WordPress >= 5.6
 * PHP >= 7.0
 * Composer
 * Node
-* Gulp
 
-Dependencies are managed through [Composer](https://getcomposer.org/) and [Node](https://nodejs.org). Please ensure both are installed. [Gulp](https://gulpjs.com/) is required to compile assets.
+Dependencies are managed through [Composer](https://getcomposer.org/) and [Node](https://nodejs.org). Please ensure both are installed.
 
 ## Installation
 
@@ -46,26 +45,17 @@ Find and replace `@textdomain` and `@theme` placeholders in order to set the the
 
 ## Compiling assets
 
-Assets are edited in `src` and compiled to `dist`. CSS and JS are created with a cache-busting content hash string. JS modules are bundled using [rollup.js](https://rollupjs.org/guide/en/). 
-
-Use `gulp` and `gulp watch` to compile.
+Assets are edited in `src` and compiled to `dist`. Files are given a cache-busting version when compiled for production only. Use `npm run watch` and `npm run dev` when compiling for development. Use `npm run production` when compiling for production.
 
 ## Browser support
 
-All modern browsers and IE10.
+All modern browsers and IE11.
 
 ### JavaScript
 
-Code is transpiled to support IE10+ using Babel.
-
-Support is defined in `package.json`, under browserslist. The default is:
-
-    "> 1%",
-    "last 2 versions"
-
-Alter as required from the [browserslist](https://github.com/ai/browserslist) syntax. This is replicated in the `gulpfile.js`.
+Code is transpiled to support IE11+ using Babel.
 
 ### CSS
 
-CSS Grid is used, with a single-column fallback provided for IE10+.
+CSS Grid is used, with a single-column fallback provided for IE11+.
 CSS Custom Properties are used sparingly with fallbacks.
