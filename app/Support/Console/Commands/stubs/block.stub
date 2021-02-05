@@ -2,7 +2,7 @@
 
 namespace {{ namespace }};
 
-use App\Support\WordPress\Block;
+use App\Support\Acf\Block;
 
 /**
  * Register a block

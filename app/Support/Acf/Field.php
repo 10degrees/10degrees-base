@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Acf\Fields;
+namespace App\Support\Acf;
 
 /**
  * AbstractFieldRegistration
@@ -12,14 +12,14 @@ namespace App\Acf\Fields;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-abstract class AbstractFieldRegistration
+abstract class Field
 {
     /**
      * ACF fields to register. Overriden in extending class.
      *
      * @var array
      */
-    protected $fields = array();
+    protected $fields = [];
 
     /**
      * Constructor

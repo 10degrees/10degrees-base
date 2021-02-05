@@ -2,7 +2,7 @@
 
 namespace App\Acf\Fields;
 
-use App\Acf\Fields\AbstractFieldRegistration;
+use App\Support\Acf\Field;
 
 /**
  * Social Share
@@ -16,8 +16,13 @@ use App\Acf\Fields\AbstractFieldRegistration;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class SocialShare extends AbstractFieldRegistration
+class SocialShare extends Field
 {
+    /**
+     * The field group exported from ACF
+     *
+     * @var array
+     */
     protected $fields = array(
         'key' => 'group_5e0f551a36595',
         'title' => 'Block: Social Share',

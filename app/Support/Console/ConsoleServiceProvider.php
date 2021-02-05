@@ -27,6 +27,7 @@ class ConsoleServiceProvider extends ServiceProvider
         \App\Support\Console\Commands\MakeCommand::class,
         \App\Support\Console\Commands\MakeCpt::class,
         \App\Support\Console\Commands\MakeController::class,
+        \App\Support\Console\Commands\MakeField::class,
         \App\Support\Console\Commands\MakeJob::class,
         \App\Support\Console\Commands\MakeListener::class,
         \App\Support\Console\Commands\MakeMail::class,

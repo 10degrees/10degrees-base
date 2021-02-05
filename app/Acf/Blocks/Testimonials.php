@@ -2,7 +2,7 @@
 
 namespace App\Acf\Blocks;
 
-use App\Support\WordPress\Block;
+use App\Support\Acf\Block;
 
 /**
  * Accordion block

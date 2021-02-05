@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Support\WordPress;
+namespace App\Support\Acf;
 
 /**
  * Abstract block registration

@@ -2,7 +2,7 @@
 
 namespace App\Acf\Fields;
 
-use App\Acf\Fields\AbstractFieldRegistration;
+use App\Support\Acf\Field;
 
 /**
  * Site Settings
@@ -16,8 +16,13 @@ use App\Acf\Fields\AbstractFieldRegistration;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class SiteSettings extends AbstractFieldRegistration
+class SiteSettings extends Field
 {
+    /**
+     * The field group exported from ACF
+     *
+     * @var array
+     */
     protected $fields =  array(
         'key' => 'group_5dcbdab2874f3',
         'title' => 'Site settings',

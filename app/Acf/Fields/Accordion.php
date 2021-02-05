@@ -2,7 +2,7 @@
 
 namespace App\Acf\Fields;
 
-use App\Acf\Fields\AbstractFieldRegistration;
+use App\Support\Acf\Field;
 
 /**
  * Accordion
@@ -16,7 +16,7 @@ use App\Acf\Fields\AbstractFieldRegistration;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class Accordion extends AbstractFieldRegistration
+class Accordion extends Field
 {
     protected $fields = array(
         'key' => 'group_5df8cc1a275ca',

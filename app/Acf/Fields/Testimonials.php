@@ -2,7 +2,7 @@
 
 namespace App\Acf\Fields;
 
-use App\Acf\Fields\AbstractFieldRegistration;
+use App\Support\Acf\Field;
 
 /**
  * Testimonials
@@ -16,8 +16,13 @@ use App\Acf\Fields\AbstractFieldRegistration;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class Testimonials extends AbstractFieldRegistration
+class Testimonials extends Field
 {
+    /**
+     * The field group exported from ACF
+     *
+     * @var array
+     */
     protected $fields = array(
         'key' => 'block-testimonials',
         'title' => 'Block: Testimonials',

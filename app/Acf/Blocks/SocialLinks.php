@@ -3,7 +3,7 @@
 namespace App\Acf\Blocks;
 
 use App\Boot\Yoast;
-use App\Support\WordPress\Block;
+use App\Support\Acf\Block;
 
 /**
  * Accordion block
