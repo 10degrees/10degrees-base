@@ -1,8 +1,8 @@
 <?php
 
-namespace App\ACF_Fields;
+namespace App\Acf\Fields;
 
-use App\ACF_Fields\AbstractFieldRegistration;
+use App\Acf\Fields\AbstractFieldRegistration;
 
 /**
  * Site Settings
@@ -97,7 +97,7 @@ class SiteSettings extends AbstractFieldRegistration
                 'media_upload' => 1,
                 'delay' => 0,
             ),
-            
+
         ),
         'location' => array(
             array(

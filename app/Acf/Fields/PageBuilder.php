@@ -1,8 +1,8 @@
 <?php
 
-namespace App\ACF_Fields;
+namespace App\Acf\Fields;
 
-use App\ACF_Fields\AbstractFieldRegistration;
+use App\Acf\Fields\AbstractFieldRegistration;
 
 /**
  * Page builder
@@ -94,8 +94,7 @@ class PageBuilder extends AbstractFieldRegistration
                                     '33 / 66' => '33 / 66',
                                     '66 / 33' => '66 / 33',
                                 ),
-                                'default_value' => array(
-                                ),
+                                'default_value' => array(),
                                 'allow_null' => 0,
                                 'multiple' => 0,
                                 'ui' => 0,

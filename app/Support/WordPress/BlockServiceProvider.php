@@ -40,7 +40,7 @@ class BlockServiceProvider extends ServiceProvider
          * Autoload all blocks in the Blocks directory. This saves having to
          * manually add it to the block provider.
          */
-        $this->load(get_template_directory() . '/app/Blocks');
+        $this->load(get_template_directory() . '/app/Acf/Blocks');
 
         /**
          * Call the parent constructor to continue booting the provider.
@@ -78,7 +78,7 @@ class BlockServiceProvider extends ServiceProvider
         }
 
         foreach ((new Finder)->in($path)->files() as $block) {
-            $block = 'App\\Blocks\\' . str_replace(
+            $block = 'App\\Acf\\Blocks\\' . str_replace(
                 ['/', '.php'],
                 ['\\', ''],
                 $block->getRelativePathname()

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\ACF_Fields;
+namespace App\Acf\Fields;
 
-use App\ACF_Fields\AbstractFieldRegistration;
+use App\Acf\Fields\AbstractFieldRegistration;
 
 /**
  * Login Settings
@@ -65,8 +65,7 @@ class LoginSettings extends AbstractFieldRegistration
                 'post_type' => array(
                     0 => 'page',
                 ),
-                'taxonomy' => array(
-                ),
+                'taxonomy' => array(),
                 'allow_null' => 0,
                 'multiple' => 0,
                 'allow_archives' => 1,
@@ -95,8 +94,7 @@ class LoginSettings extends AbstractFieldRegistration
                 'post_type' => array(
                     0 => 'page',
                 ),
-                'taxonomy' => array(
-                ),
+                'taxonomy' => array(),
                 'allow_null' => 0,
                 'multiple' => 0,
                 'allow_archives' => 1,

@@ -22,12 +22,12 @@ class FieldServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        \App\ACF_Fields\SiteSettings::class,
-        \App\ACF_Fields\Testimonials::class,
-        \App\ACF_Fields\Accordion::class,
-        \App\ACF_Fields\SocialShare::class,
-        // \App\ACF_Fields\ProtectContent::class,
-        // \App\ACF_Fields\PageBuilder::class,
-        // \App\ACF_Fields\LoginSettings::class,
+        \App\Acf\Fields\SiteSettings::class,
+        \App\Acf\Fields\Testimonials::class,
+        \App\Acf\Fields\Accordion::class,
+        \App\Acf\Fields\SocialShare::class,
+        // \App\Acf\Fields\ProtectContent::class,
+        // \App\Acf\Fields\PageBuilder::class,
+        // \App\Acf\Fields\LoginSettings::class,
     ];
 }

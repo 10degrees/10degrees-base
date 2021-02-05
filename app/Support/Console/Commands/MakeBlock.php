@@ -82,6 +82,6 @@ class MakeBlock extends GeneratorCommand
      */
     protected function getDefaultNamespace(string $rootNamespace): string
     {
-        return $rootNamespace . '\Blocks';
+        return $rootNamespace . '\Acf\Blocks';
     }
 }

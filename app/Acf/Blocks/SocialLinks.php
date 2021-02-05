@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Blocks;
+namespace App\Acf\Blocks;
 
 use App\Boot\Yoast;
 use App\Support\WordPress\Block;

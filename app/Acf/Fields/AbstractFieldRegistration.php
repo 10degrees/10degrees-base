@@ -1,6 +1,6 @@
 <?php
 
-namespace App\ACF_Fields;
+namespace App\Acf\Fields;
 
 /**
  * AbstractFieldRegistration

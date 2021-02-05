@@ -1,8 +1,8 @@
 <?php
 
-namespace App\ACF_Fields;
+namespace App\Acf\Fields;
 
-use App\ACF_Fields\AbstractFieldRegistration;
+use App\Acf\Fields\AbstractFieldRegistration;
 
 /**
  * Social Share

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Blocks;
+namespace App\Acf\Blocks;
 
 use App\Support\WordPress\Block;
 
@@ -16,14 +16,14 @@ use App\Support\WordPress\Block;
  * @link     https://github.com/10degrees/10degrees-base
  * @since    2.0.0
  */
-class Testimonials extends Block
+class Accordion extends Block
 {
     /**
      * A unique name that identifies the block (without namespace)
      *
      * @var string
      */
-    protected $name = 'testimonials';
+    protected $name = 'accordion';
 
     /**
      * The block options
@@ -31,11 +31,11 @@ class Testimonials extends Block
      * @var array
      */
     protected $options = [
-        'title'       => 'Testimonials',
-        'description' => 'Displays a number of testimonials from a category.',
-        'icon'        => 'admin-comments',
+        'title'       => 'Accordion',
+        'description' => 'An accordion, with a heading and content.',
+        'icon'        => 'arrow-down',
         'category'    => 'theme',
-        'keywords'    => ['testimonial', 'quote'],
+        'keywords'    => ['accordion'],
         'supports'    => ['align' => ['wide', 'full']],
         'example'  => [
             'attributes' => [
