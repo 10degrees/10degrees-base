@@ -23,7 +23,7 @@ if (!$heading) {
                 class="toggle"
                 id="<?php echo $toggle_id; ?>"
                 aria-controls="<?php echo $content_id; ?>">
-                <?php echo $heading; ?>
+                <?php esc_html_e($heading); ?>
             </button>
         </p>
         <?php if ($content = get_field('content')): ?>
