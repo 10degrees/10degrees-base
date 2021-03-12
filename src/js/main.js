@@ -6,6 +6,9 @@
  * Then call it on the relevant page below or in the common function to be run on every page.
  *
  */
+
+import 'alpinejs';
+
 //Utilities
 import AjaxForm from "./common/ajax-form";
 import ScrollToId from "./common/scroll-to-id";
@@ -15,7 +18,6 @@ import Menu from "./common/menu";
 import MobileMenu from "./common/mobile-menu";
 
 // Block-related JavaScript
-import Accordion from "./common/blocks/accordion";
 import SocialShare from "./common/blocks/social-share";
 
 //Vendor
@@ -34,7 +36,6 @@ var App = {
             new ScrollToError();
             new Magnific();
             new Slider();
-            new Accordion();
             new SocialShare();
             new Menu("#nav-primary");
             new MobileMenu();
