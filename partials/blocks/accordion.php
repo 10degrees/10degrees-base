@@ -6,7 +6,7 @@ $heading = get_field('heading');
 
 if (!$heading) { 
     if (is_admin()) { ?>
-        <p><?php _e('Heading is required. Nothing will be shown on the frontend.'); ?></p>
+        <p><?php _e('Heading is required. Nothing will be shown on the frontend.', '@textdomain'); ?></p>
     <?php }
     return;
 } ?>
