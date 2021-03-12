@@ -1,11 +1,10 @@
 <?php
-    $toggle_id = uniqid('accordion-toggle-', true);
-    $content_id = uniqid('accordion-content-', true);
+$toggle_id = uniqid('accordion-toggle-', true);
+$content_id = uniqid('accordion-content-', true);
 
-    $heading = get_field('heading');
-?>
+$heading = get_field('heading');
 
-<?php if (!$heading) { 
+if (!$heading) { 
     if (is_admin()) { ?>
         <p><?php _e('Heading is required. Nothing will be shown on the frontend.'); ?></p>
     <?php }
