@@ -33,7 +33,13 @@
             left: 100%;
         }
     }
-    a {
+    .dropdown {
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    a,
+    .dropdown {
         padding: 1rem 2rem;
         display: block;
         color: inherit;

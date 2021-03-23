@@ -1,5 +1,9 @@
+<?php
+
+use App\Walkers\AlpineJSWalker; ?>
+
 <header
-    x-data="{showMenu: false}"
+    x-data="{showMenu: false, openMenus: []}"
     class="header -primary"
     @load.window="showMenu = window.innerWidth > 900"
     @resize.window="showMenu = window.innerWidth > 900">
@@ -34,7 +38,8 @@
                     'container_class'      => 'nav -primary',
                     'container_id'   => 'nav-primary',
                     'depth'          => 5,
-                    'menu_class'     => ''
+                    'menu_class'     => '',
+                    'walker' => new AlpineJSWalker(),
                 )
             );
             ?>
