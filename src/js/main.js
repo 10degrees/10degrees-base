@@ -15,7 +15,6 @@ import ScrollToId from "./common/scroll-to-id";
 import ScrollToError from "./common/scroll-to-error";
 import DisableSVGFocus from './common/disable-svg-focus';
 import Menu from "./common/menu";
-import MobileMenu from "./common/mobile-menu";
 
 // Block-related JavaScript
 import SocialShare from "./common/blocks/social-share";
@@ -38,7 +37,6 @@ var App = {
             new Slider();
             new SocialShare();
             new Menu("#nav-primary");
-            new MobileMenu();
         }
     },
     // Home page

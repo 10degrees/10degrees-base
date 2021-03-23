@@ -11,6 +11,10 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+
+        @include bp(md){
+            flex-wrap: nowrap;
+        }
     }
 
     .logo img {
@@ -22,6 +26,14 @@
         background-color: transparent;
         border: 1px solid $grey-5;
         border-radius: 5px;
+    }
+
+    .nav-container {
+        width: 100%;
+
+        @include bp(md){
+            display: block;
+        }
     }
 
     @include bp(md) {

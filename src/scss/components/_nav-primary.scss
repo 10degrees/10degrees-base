@@ -1,13 +1,7 @@
 .nav.-primary {
-    display: none;
-    width: 100%;
-
     @include bp(md) {
         display: block;
         width: auto;
-    }
-    &.-open {
-        display: block;
     }
 
     ul {
