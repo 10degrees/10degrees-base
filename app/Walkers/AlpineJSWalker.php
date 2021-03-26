@@ -119,8 +119,8 @@ class AlpineJSWalker extends \Walker_Nav_Menu {
 
         if ($args->walker && $args->walker->has_children) {
             $item_output .= '<button' . $attributes;
-            $item_output .= " @click.prevent='openMenus.push(\"menu-". $item->ID ."\")'";
-            $item_output .= " :aria-expanded='(openMenus.includes(\"menu-". $item->ID ."\")).toString()'";
+            $item_output .= " @click.prevent='toggleMenu(". $item->ID .", ". $item->menu_item_parent .")'";
+            $item_output .= " :aria-expanded='(isMenuOpen(". $item->ID .")).toString()'";
             $item_output .= " class='dropdown'";
             $item_output .= " aria-haspopup='true'";
             $item_output .= '>';
@@ -150,35 +150,5 @@ class AlpineJSWalker extends \Walker_Nav_Menu {
          * @param stdClass $args        An object of wp_nav_menu() arguments.
          */
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-    }
-
-    public function start_lvl( &$output, $depth = 0, $args = null ) {
-        if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
-            $t = '';
-            $n = '';
-        } else {
-            $t = "\t";
-            $n = "\n";
-        }
-        $indent = str_repeat( $t, $depth );
- 
-        // Default class.
-        $classes = array( 'sub-menu' );
- 
-        /**
-         * Filters the CSS class(es) applied to a menu list element.
-         *
-         * @since 4.8.0
-         *
-         * @param string[] $classes Array of the CSS classes that are applied to the menu `<ul>` element.
-         * @param stdClass $args    An object of `wp_nav_menu()` arguments.
-         * @param int      $depth   Depth of menu item. Used for padding.
-         */
-        $class_names = implode( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
-        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
- 
-        $output .= "{$n}{$indent}<ul";
-        $output .= " @click.away='openMenus = []'";
-        $output .= " $class_names>{$n}";
     }
 }
