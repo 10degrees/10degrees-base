@@ -1,3 +1,6 @@
+
+import 'alpinejs';
+
 // Admin-Specific JS
 import DisableAlignment from './admin/disable-alignment';
 import RegisterBlockStyles from './admin/register-block-styles';

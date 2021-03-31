@@ -55,7 +55,8 @@ class SetAllowedBlocks
         'acf/testimonials',
         'gravityforms/form',
         'map-block-leaflet/map-block-leaflet',
-        'core/missing'
+        'core/missing',
+        'acf/posts',
     ];
 
     /**
