@@ -29,5 +29,11 @@ window.menu = function() {
         isMenuOpen(menuID) {
             return this.openMenus.some(openMenuItem => openMenuItem.id === menuID);
         },
+
+        onClickAway(e) {
+            if(!e.target.classList.contains('dropdown')) {
+                this.closeAllMenus();
+            }
+        },
     }
 }

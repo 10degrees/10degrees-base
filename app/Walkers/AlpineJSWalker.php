@@ -120,6 +120,7 @@ class AlpineJSWalker extends \Walker_Nav_Menu {
         if ($args->walker && $args->walker->has_children) {
             $item_output .= '<button' . $attributes;
             $item_output .= " @click.prevent='toggleMenu(". $item->ID .", ". $item->menu_item_parent .")'";
+            $item_output .= " @click.away='onClickAway'";
             $item_output .= " :aria-expanded='(isMenuOpen(". $item->ID .")).toString()'";
             $item_output .= " class='dropdown'";
             $item_output .= " aria-haspopup='true'";
