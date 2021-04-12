@@ -33,9 +33,10 @@ mix
     .options({
         processCssUrls: false
     })
-    .js(["src/js/alpine/menu.js", "src/js/alpine/posts.js", "src/js/main.js"], "dist/js/main.js")
+    .js("src/js/alpine/", "dist/js/")
+    .js(["src/js/alpine/menu.js", "src/js/main.js"], "dist/js/main.js")
     .js("src/js/admin.js", "dist/js")
-    .js(["src/js/alpine/posts.js", "src/js/editor-block.js"], "dist/js/editor-block.js")
+    .js("src/js/editor-block.js", "dist/js")
     .polyfill({
         enabled: true,
         useBuiltIns: "usage",

@@ -1,6 +1,6 @@
 <?php
-$toggle_id = uniqid('accordion-toggle-', true);
-$content_id = uniqid('accordion-content-', true);
+$toggle_id = uniqid('accordion-toggle-');
+$content_id = uniqid('accordion-content-');
 
 $heading = get_field('heading');
 

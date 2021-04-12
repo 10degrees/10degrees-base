@@ -30,6 +30,7 @@ class Posts extends AbstractBlockRegistration
                 'title' => __('Posts'),
                 'render_callback' => [$this, 'render'],
                 'category' => 'custom-blocks',
+                'enqueue_script' => get_template_directory_uri() . '/dist/js/posts.js'
             ]
         );
     }

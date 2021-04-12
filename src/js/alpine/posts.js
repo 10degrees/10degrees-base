@@ -8,7 +8,7 @@ window.posts = function() {
         numberOfPosts: 0,
         totalPages: 0,
         getPosts: function() {
-            fetch('http://basetheme.local/wp-json/wp/v2/categories')
+            fetch('/wp-json/wp/v2/categories')
                 .then(response => response.json())
                 .then(categories => {
                     this.categories = categories;
@@ -19,7 +19,7 @@ window.posts = function() {
             this.posts = [];
             this.isLoading = true;
 
-            let baseURL = 'http://basetheme.local/wp-json/wp/v2/posts?per_page=1';
+            let baseURL = '/wp-json/wp/v2/posts?per_page=2';
 
             if(this.currentCategory) {
                 baseURL += '&categories=' + this.currentCategory;
