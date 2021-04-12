@@ -61,7 +61,7 @@ class {{ class }} extends Cpt
                 'menu_position'     => null,
                 'menu_icon'         => 'dashicons-superhero',
                 'show_in_rest'      => true,
-                'rest_base'         => $this->singular,
+                'rest_base'         => $this->postType,
 
                 'admin_cols' => [
                     '{{ posttype }}-category' => [
