@@ -108,6 +108,6 @@ abstract class Block
     {
         $post = get_post($postId);
         
-        echo td_view("partials/blocks/{$this->name}", compact('block'));
+        echo td_view("partials/blocks/{$this->name}", compact('block', 'post'));
     }
 }
