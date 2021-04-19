@@ -97,12 +97,17 @@ abstract class Block
     /**
      * Callback to render ACF blocks
      *
-     * @param $block Name of block
+     * @param array  $block   Name of block
+     * @param string $content Block content
+     * @param bool   $preview Is preview
+     * @param int    $postId  The post ID
      *
      * @return void
      */
-    public function render(array $block)
+    public function render(array $block, string $content = '', bool $preview = false, int $postId = 0)
     {
+        $post = get_post($postId);
+        
         echo td_view("partials/blocks/{$this->name}", compact('block'));
     }
 }
