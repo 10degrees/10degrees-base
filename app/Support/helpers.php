@@ -2,7 +2,7 @@
 
 use App\Support\Http\Response;
 use App\Support\View\View;
-use App\Support\Routing\URL;
+use App\Support\Routing\Url;
 
 if (!function_exists('abort')) {
     /**
