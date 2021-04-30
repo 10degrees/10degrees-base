@@ -30,11 +30,24 @@ class CleanUp
         add_action('wp_dashboard_setup', [$this, 'cleanUpDashboard']);
 
         add_action('admin_init', [$this, 'dequeueBlockDirectoryAssets']);
+        add_action('customize_register', [$this, 'disableCustomiser']);
 
         remove_action('admin_print_scripts', 'print_emoji_detection_script');
         remove_action('admin_print_styles', 'print_emoji_styles');
 
         $this->maybeDefineDisallowFileEdit();
+    }
+
+    /**
+     * Remove CSS customiser item
+     * 
+     * @param WP_Customize_Manager $wp_customise Customiser Manager
+     *
+     * @return  void
+     */
+    public function disableCustomiser($wp_customise)
+    {
+        $wp_customise->remove_control('custom_css');
     }
 
     /**
