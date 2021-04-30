@@ -27,6 +27,7 @@ class CleanUp
         add_filter('tiny_mce_before_init', [$this, 'forceAdvancedWysiwyg']);
         add_action('admin_notices', [$this, 'restrictUpdateNotification'], 1);
         add_filter('admin_bar_menu', [$this, 'replaceHowdy'], 25);
+        add_filter('admin_bar_menu', [$this, 'removeWordPressLogo'], 30);
         add_action('wp_dashboard_setup', [$this, 'cleanUpDashboard']);
 
         add_action('admin_init', [$this, 'dequeueBlockDirectoryAssets']);
@@ -36,6 +37,18 @@ class CleanUp
         remove_action('admin_print_styles', 'print_emoji_styles');
 
         $this->maybeDefineDisallowFileEdit();
+    }
+
+    /**
+     * Remove WordPress logo from admin bar
+     *
+     * @param   WP_Admin_Bar  $wp_admin_bar  WP_Admin_Bar instance
+     *
+     * @return  void
+     */
+    public function removeWordPressLogo($wp_admin_bar)
+    {
+        $wp_admin_bar->remove_node('wp-logo');
     }
 
     /**
