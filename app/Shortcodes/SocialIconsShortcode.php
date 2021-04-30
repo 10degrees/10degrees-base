@@ -2,7 +2,7 @@
 
 namespace App\Shortcodes;
 
-use App\Shortcodes\Shortcode;
+use App\Support\WordPress\Shortcode;
 
 /**
  * Provides a shortcode for social icons
@@ -24,21 +24,12 @@ class SocialIconsShortcode extends Shortcode
     protected $shortcode = 'socialicons';
 
     /**
-     * Set the default variable attributes
-     *
-     * @var array
-     */
-    public $defaultAttributes = [
-        // 'foo' => 'bar'
-    ];
-
-    /**
      * Handle the incoming shortcode. Variables are available
      * to you as properties of the class
      *
-     * @return td_view
+     * @return string
      */
-    public function handle()
+    public function handle(): string
     {
         return td_view('partials/content-social');
     }

@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Inc\ServiceProvider;
+use App\Support\ServiceProvider;
 
 /**
  * Registers ACF fields
@@ -22,10 +22,12 @@ class FieldServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        '\App\ACF_Fields\SiteSettings',
-        '\App\ACF_Fields\Accordion',
-        '\App\ACF_Fields\SocialShare'
-        // '\App\ACF_Fields\ProtectContent',
-        // '\App\ACF_Fields\LoginSettings'
+        \App\Acf\Fields\SiteSettings::class,
+        \App\Acf\Fields\Testimonials::class,
+        \App\Acf\Fields\Accordion::class,
+        \App\Acf\Fields\SocialShare::class,
+        // \App\Acf\Fields\ProtectContent::class,
+        // \App\Acf\Fields\PageBuilder::class,
+        // \App\Acf\Fields\LoginSettings::class,
     ];
 }

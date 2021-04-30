@@ -1,25 +1,29 @@
 {
-	"name": "10degrees/10degrees-base",
-	"description": "10 Degrees base WordPress theme",
-	"type": "wordpress-theme",
-	"homepage": "https://github.com/10degrees/10degrees-base",
-	"keywords": [
-		"wordpress",
-		"theme"
-	],
-	"license": "MIT",
-	"require": {
-		"composer/installers": "^1.4",
-		"nesbot/carbon": "^1.0",
-		"a5hleyrich/wp-queue": "^1.3",
-		"johnbillion/extended-cpts": "^4.2",
-		"illuminate/filesystem": "^5.8",
-		"illuminate/translation": "^5.8",
-		"illuminate/validation": "^5.8"
-	},
-	"autoload": {
-		"psr-4": {
-			"App\\": "app/"
-		}
-	}
+    "name": "10degrees/10degrees-base",
+    "description": "10 Degrees base WordPress theme",
+    "type": "wordpress-theme",
+    "homepage": "https://github.com/10degrees/10degrees-base",
+    "keywords": [
+        "wordpress",
+        "theme"
+    ],
+    "license": "MIT",
+    "require": {
+        "jgrossi/corcel": "^5.0",
+        "composer/installers": "^1.9",
+        "illuminate/translation": "^8.13",
+        "illuminate/validation": "^8.13",
+        "johnbillion/extended-cpts": "^4.4",
+        "illuminate/filesystem": "^8.13",
+        "illuminate/http": "^8.13",
+        "erusev/parsedown": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/Support/helpers.php"
+        ]
+    }
 }

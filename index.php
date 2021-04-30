@@ -17,7 +17,7 @@ if (!have_posts()) : ?>
     <div class="alert">
         <p><?php _e('Sorry, no results were found.', '@textdomain'); ?></p>
     </div>
-    <?php get_search_form();
+<?php get_search_form();
 endif;
 
 while (have_posts()) :

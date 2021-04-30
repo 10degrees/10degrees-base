@@ -3,7 +3,7 @@
 namespace App\Admin;
 
 /**
- * Choose which blocks are available in the Gutenberg editor
+     * Choose which blocks are available in the Gutenberg editor
  * See Confluence for details on how to add a block
  *
  * @category Theme
@@ -49,13 +49,12 @@ class SetAllowedBlocks
         'core/video',
         'custom-blocks/link-button',
         'custom-blocks/spacer',
-        'acf/accordion',
-        'acf/social-links',
-        'acf/social-share',
-        'acf/testimonials',
         'gravityforms/form',
         'map-block-leaflet/map-block-leaflet',
-        'core/missing'
+        'core/missing',
+        /**
+         * No ACF blocks? They are automatically added to the whitelist!
+         */
     ];
 
     /**
@@ -69,9 +68,10 @@ class SetAllowedBlocks
     /**
      * Set the blocks allowed in the editor
      *
-     * @param array/bool $allowed_blocks Array of allowed block types or true/false to enable/disable blocks
+     * @param array|bool $allowed_blocks Allowed block types or true/false to
+     *                                   enable/disable blocks
      *
-     * @return array                   Array of allowed blocks
+     * @return array
      */
     public function setAllowedBlocks($allowed_blocks)
     {

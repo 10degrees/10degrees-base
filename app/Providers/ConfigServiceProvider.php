@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Inc\ServiceProvider;
+use App\Support\ServiceProvider;
 
 /**
  * Registers configuration services
@@ -22,7 +22,7 @@ class ConfigServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        '\App\Config\Mail',
-        '\App\Config\Queue',
+        \App\Config\Mail::class,
+        #\App\Config\Queue::class,
     ];
 }
