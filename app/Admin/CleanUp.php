@@ -29,10 +29,23 @@ class CleanUp
         add_filter('admin_bar_menu', [$this, 'replaceHowdy'], 25);
         add_action('wp_dashboard_setup', [$this, 'cleanUpDashboard']);
 
+        add_action('admin_init', [$this, 'dequeueBlockDirectoryAssets']);
+
         remove_action('admin_print_scripts', 'print_emoji_detection_script');
         remove_action('admin_print_styles', 'print_emoji_styles');
 
         $this->maybeDefineDisallowFileEdit();
+    }
+
+    /**
+     * Dequeue the block directory assets
+     *
+     * @return  void
+     */
+    public function dequeueBlockDirectoryAssets()
+    {
+        remove_action('enqueue_block_editor_assets', 'wp_enqueue_editor_block_directory_assets');
+        remove_action('enqueue_block_editor_assets', 'enqueue_block_editor_assets');
     }
 
     /**
