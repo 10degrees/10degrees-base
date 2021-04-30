@@ -7,6 +7,7 @@
  *
  * @since 2.0.0
  */
+
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('wrapper'); ?>>
     <?php get_template_part('partials/post', 'header'); ?>

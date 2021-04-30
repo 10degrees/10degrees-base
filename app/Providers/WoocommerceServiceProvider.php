@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Inc\ServiceProvider;
+use App\Support\ServiceProvider;
 
 /**
  * Registers WooCommerce services
@@ -22,6 +22,6 @@ class WoocommerceServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        // '\App\Woocommerce\TemplateActions\Archive',
+        // \App\Woocommerce\TemplateActions\Archive::class,
     ];
 }

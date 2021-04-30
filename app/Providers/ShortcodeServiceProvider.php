@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Inc\ServiceProvider;
+use App\Support\ServiceProvider;
 
 /**
  * Registers shortcodes
@@ -22,7 +22,7 @@ class ShortcodeServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        '\App\Shortcodes\SocialIconsShortcode',
-        '\App\Shortcodes\ButtonShortcode',
+        \App\Shortcodes\SocialIconsShortcode::class,
+        \App\Shortcodes\ButtonShortcode::class,
     ];
 }

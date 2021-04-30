@@ -2,7 +2,7 @@
 
 namespace App\Shortcodes;
 
-use App\Shortcodes\Shortcode;
+use App\Support\WordPress\Shortcode;
 
 /**
  * Provides a shortcode for buttons
@@ -29,9 +29,9 @@ class ButtonShortcode extends Shortcode
      * @var array
      */
     public $defaultAttributes = [
-        'class' => 'button',
-        'link' => '#',
-        'text' => '',
+        'class'   => 'button',
+        'link'    => '#',
+        'text'    => '',
         'post_id' => null,
     ];
 
@@ -41,15 +41,15 @@ class ButtonShortcode extends Shortcode
      *
      * @return string
      */
-    public function handle()
+    public function handle(): string
     {
         $permalink = $this->getPermalink();
 
         if ($permalink) {
-            return '<a class="' . $this->class . '" href="' . $permalink . '">' . $this->text . '</a>';
+            return '<a class="' . $this->class . '" href="' . $permalink . '">' . $this->content . '</a>';
         }
 
-        return;
+        return '';
     }
 
     /**
@@ -57,7 +57,7 @@ class ButtonShortcode extends Shortcode
      *
      * @return string
      */
-    private function getPermalink()
+    protected function getPermalink()
     {
         if ($this->post_id) {
             $permalink = get_permalink($this->post_id);

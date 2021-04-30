@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Base template
  *
@@ -16,27 +17,27 @@
 
 <html class="no-js" <?php language_attributes(); ?>>
 
-    <?php get_template_part('partials/head'); ?>
+<?php get_template_part('partials/head'); ?>
 
-    <body <?php body_class(); ?>>
+<body <?php body_class(); ?>>
 
-        <?php wp_body_open(); ?>
+    <?php wp_body_open(); ?>
 
-        <a href="#main" class="screen-reader-text screen-reader-text--display-on-focus"><?php esc_html_e('Skip to main content', '@textdomain'); ?></a>
-        <a href="#footer" class="screen-reader-text screen-reader-text--display-on-focus"><?php esc_html_e('Skip to footer', '@textdomain'); ?></a>
+    <a href="#main" class="screen-reader-text screen-reader-text--display-on-focus"><?php esc_html_e('Skip to main content', '@textdomain'); ?></a>
+    <a href="#footer" class="screen-reader-text screen-reader-text--display-on-focus"><?php esc_html_e('Skip to footer', '@textdomain'); ?></a>
 
-        <?php
-            do_action('get_header');
-            get_template_part('partials/header');
-        ?>
+    <?php
+    do_action('get_header');
+    get_template_part('partials/header');
+    ?>
 
-        <main id="main">
-            <?php get_template_part('partials/breadcrumbs'); ?>
-            <?php require \App\Boot\BaseWrapper::$main_template; ?>
-        </main>
+    <main id="main">
+        <?php get_template_part('partials/breadcrumbs'); ?>
+        <?php require \App\Boot\BaseWrapper::$main_template; ?>
+    </main>
 
-        <?php get_template_part('partials/footer'); ?>
+    <?php get_template_part('partials/footer'); ?>
 
-    </body>
+</body>
 
 </html>
