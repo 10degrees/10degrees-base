@@ -21,11 +21,5 @@
 		"psr-4": {
 			"App\\": "app/"
 		}
-	},
-	"scripts": {
-		"post-install-cmd": [
-			"chmod +x .change.sh",
-			"echo 'Now run .change.sh script to change theme name and textdomain'"
-		]
 	}
 }
