@@ -1,6 +1,5 @@
 .footer {
 	background-color: $grey-2;
-	text-align: center;
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
 	.nav {
@@ -10,18 +9,25 @@
 			margin: 5px 0;
 		}
 	}
+
+	.left {
+		margin-bottom: 1rem;
+
+		@include bp(md){
+			margin-bottom: 0;
+		}
+	}
+
 	.copyright {
 		@include alignwide;
 
-		p:last-child {
+		p {
 			margin-bottom: 0;
 		}
 		@include bp(md) {
 			display: flex;
 			justify-content: space-between;
-			p {
-				margin-bottom: 0;
-			}
+			align-items: flex-end;
 		}
 	}
 }
