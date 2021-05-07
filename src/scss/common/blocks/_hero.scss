@@ -1,0 +1,7 @@
+.wp-block-theme-hero-sidebar {
+    padding: 12rem 0;
+
+    &:not([class*="has-"]) {
+        background-color: $grey-4;
+    }
+}

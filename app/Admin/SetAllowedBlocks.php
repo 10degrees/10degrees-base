@@ -48,6 +48,7 @@ class SetAllowedBlocks
         'core/video',
         'theme/link-button',
         'theme/spacer',
+        'theme/hero-sidebar',
         'gravityforms/form',
         'map-block-leaflet/map-block-leaflet',
         'core/missing',
