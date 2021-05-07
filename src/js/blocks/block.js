@@ -1,14 +1,7 @@
 import {registerBlockType, registerBlockStyle} from '@wordpress/blocks';
 class Block {
     registerBlock(){
-
-        // Add attribute for alignment if we don't have one
-        if(!this.attributes['align']) {
-            this.attributes['align'] = {
-                type: "string",
-                default: ''
-            };
-        }
+        this.setAttributes();
 
         registerBlockType(this.name, {
             ...this.meta,
@@ -25,6 +18,22 @@ class Block {
                 }
             }
         });
+    }
+
+    setAttributes() {
+        if(!this.attributes) {
+            this.attributes = {};
+        }
+
+        let alignment = {
+            type: 'string',
+            default: this.alignment ? this.alignment : ''
+        };
+
+        // Add attribute for alignment if we don't have one
+        if(!this.attributes['align']) {
+            this.attributes['align'] = alignment;
+        }
     }
 
     registerStyles(){
