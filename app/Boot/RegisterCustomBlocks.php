@@ -31,7 +31,6 @@ class RegisterCustomBlocks
     public function __construct()
     {
         add_action('init', [$this,'registerBlocks']);
-        add_filter('block_categories', [$this, 'registerCategories'], 10, 2);
     }
 
     /**
@@ -42,28 +41,7 @@ class RegisterCustomBlocks
     public function registerBlocks()
     {
         foreach ($this->customBlocks as $blockName) {
-            register_block_type('custom-blocks/' . $blockName, []);
+            register_block_type('theme/' . $blockName, []);
         }
-    }
-
-    /**
-     * Register custom block categories.
-     *
-     * @param array   $categories The block category array.
-     * @param WP_Post $post       The post object.
-     *
-     * @return array
-     */
-    public function registerCategories($categories, $post)
-    {
-        return array_merge(
-            $categories,
-            [
-                [
-                    'slug'  => 'custom-blocks',
-                    'title' => __('Custom Blocks', '@textdomain'),
-                ],
-            ]
-        );
     }
 }

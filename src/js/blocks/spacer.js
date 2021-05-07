@@ -8,13 +8,13 @@ class Spacer extends Block {
     constructor(){
         super();
 
-        this.name = 'custom-blocks/spacer';
+        this.name = 'theme/spacer';
 
         this.meta = {
             title: __("Spacer", "@textdomain"),
             description: __("Add a section of empty space.", "@textdomain"),
             icon: blockIcon,
-            category: "custom-blocks",
+            category: "theme",
             keywords: [__("spacer", "@textdomain"), __("empty", "@textdomain")]
         };
 

@@ -11,12 +11,12 @@ class LinkButton extends Block {
     constructor(){
         super();
 
-        this.name = "custom-blocks/link-button";
+        this.name = "theme/link-button";
         this.meta = {
             title: __("Link Button", "@textdomain"),
             description: __("Add a customizable link button.", "@textdomain"),
             icon: <Icon icon="button" />,
-            category: "custom-blocks",
+            category: "theme",
             keywords: [__("button", "@textdomain"), __("link", "@textdomain")],
         };
 
