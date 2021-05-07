@@ -14,7 +14,7 @@ class Post extends Component {
             <div>
                 {imageElement}
                 <p>{title}</p>
-                <p>{excerpt}</p>
+                <div dangerouslySetInnerHTML={{__html: excerpt}}></div>
                 <a href={link}>Read More</a>
             </div>
         )

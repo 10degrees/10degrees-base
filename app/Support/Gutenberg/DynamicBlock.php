@@ -10,6 +10,13 @@ abstract class DynamicBlock {
      */
     protected $name = '';
 
+    /**
+     * The block attributes
+     *
+     * @var array
+     */
+    protected $attribute = [];
+
     public function __construct()
     {
         $this->register();
@@ -20,7 +27,8 @@ abstract class DynamicBlock {
         register_block_type(
             $this->name,
             [
-                'render_callback' => [$this, 'render']
+                'render_callback' => [$this, 'render'],
+                'attributes' => $this->attributes,
             ]
         );
     }
