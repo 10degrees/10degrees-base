@@ -4,11 +4,11 @@ import {InspectorControls, PanelColorSettings, InnerBlocks, useBlockProps, withC
 import {__} from '@wordpress/i18n';
 import {registerBlockType} from '@wordpress/blocks';
 
-class HeroSidebar extends Block {
+class Hero extends Block {
     constructor() {
         super();
 
-        this.name = "theme/hero-sidebar";
+        this.name = "theme/hero";
         this.meta = {
             title: __("Hero", "@textdomain"),
             description: __("Hero block, using sidebar attributes", "@textdomain"),
@@ -88,4 +88,4 @@ class HeroSidebar extends Block {
     }
 }
 
-new HeroSidebar();
+new Hero();
