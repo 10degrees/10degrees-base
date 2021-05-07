@@ -1,94 +1,84 @@
-const { __ } = wp.i18n;
-const { createElement: el } = wp.element;
-
-const BLOCK_NAME = "custom-blocks/link-button";
-
-const blockIcon = el(
-    "svg",
-    { width: 24, height: 24 },
-    el("path", {
-        d:
-            "M19 6H5c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H5V8h14v8z"
-    })
-);
-
-const blockMeta = {
-    title: __("Link Button", "@textdomain"),
-    description: __("Add a customizable link button.", "@textdomain"),
-    icon: blockIcon,
-    category: "custom-blocks",
-    keywords: [__("button", "@textdomain"), __("link", "@textdomain")],
-};
-
-// Register block
-const { registerBlockType, registerBlockStyle } = wp.blocks;
+import Block from "./block";
+import {registerBlockType} from '@wordpress/blocks';
+import {__} from '@wordpress/i18n';
+import {InspectorControls, PanelColorSettings, BlockControls, RichText, URLInput, AlignmentToolbar, getColorClassName, withColors} from '@wordpress/block-editor';
+import {PanelBody, PanelRow, ToggleControl, TextControl, BaseControl, Icon} from '@wordpress/components';
 
 const classNames = (...args) =>
     [...new Set([...args].filter(i => typeof i == "string"))].join(" ");
 
-// Register editor components
-const {
-    InspectorControls,
-    PanelColorSettings,
-    BlockControls,
-    RichText,
-    URLInput,
-    AlignmentToolbar,
-    getColorClassName,
-    withColors,
-} = wp.blockEditor;
+class LinkButton extends Block {
+    constructor(){
+        super();
 
-// Register components
-const {
-    IconButton,
-    Dashicon,
-    PanelBody,
-    PanelRow,
-    ToggleControl,
-    TextControl,
-    BaseControl
-} = wp.components;
+        this.name = "custom-blocks/link-button";
+        this.meta = {
+            title: __("Link Button", "@textdomain"),
+            description: __("Add a customizable link button.", "@textdomain"),
+            icon: <Icon icon="button" />,
+            category: "custom-blocks",
+            keywords: [__("button", "@textdomain"), __("link", "@textdomain")],
+        };
 
-const blockAttributes = {
-    buttonText: {
-        type: "string"
-    },
-    buttonUrl: {
-        type: "string",
-        source: "attribute",
-        selector: "a",
-        attribute: "href"
-    },
-    buttonTarget: {
-        type: "boolean",
-        default: false
-    },
-    buttonRel: {
-        type: "string",
-        default: null
-    },
-    buttonAlignment: {
-        type: "string",
-        default: "left"
-    },
-    buttonColor: {
-        type: "string"
+        this.attributes = {
+            buttonText: {
+                type: "string"
+            },
+            buttonUrl: {
+                type: "string",
+                source: "attribute",
+                selector: "a",
+                attribute: "href"
+            },
+            buttonTarget: {
+                type: "boolean",
+                default: false
+            },
+            buttonRel: {
+                type: "string",
+                default: null
+            },
+            buttonAlignment: {
+                type: "string",
+                default: "left"
+            },
+            buttonColor: {
+                type: "string"
+            }
+        };
+
+        this.styles = [
+            {
+                name: "outline",
+                label: "Outline"
+            },
+            {
+                name: "full",
+                label: "Full width"
+            },
+        ];
+
+        this.registerBlock();
+        this.registerStyles();
     }
-};
 
-// Register the block
-registerBlockType(BLOCK_NAME, {
-    ...blockMeta,
-    attributes: blockAttributes,
+    registerBlock(){
+        registerBlockType(this.name, {
+            ...this.meta,
+            attributes: this.attributes,
 
-    // Render the block components
-    edit: withColors("buttonColor")(function({
+            edit: withColors("buttonColor")(this.edit),
+            save: this.save,
+        });
+    }
+
+    edit({
         attributes,
         setAttributes,
         isSelected,
         setButtonColor,
         buttonColor
-    }) {
+    }){
         const {
             buttonText,
             buttonUrl,
@@ -170,10 +160,9 @@ registerBlockType(BLOCK_NAME, {
                     />
                 </BaseControl>
         ];
-    }),
+    }
 
-    // Save the attributes and markup
-    save({ attributes }) {
+    save({attributes}) {
         const {
             buttonText,
             buttonUrl,
@@ -195,19 +184,11 @@ registerBlockType(BLOCK_NAME, {
                     rel={buttonRel}
                     className={classNames("link-button", buttonColorClass, className)}
                 >
-                    <RichText.Content value={buttonText}/>
+                    {buttonText}
                 </a>
             </div>
         );
     }
-});
+}
 
-registerBlockStyle(BLOCK_NAME, {
-    name: "full",
-    label: "Full Width"
-});
-
-registerBlockStyle(BLOCK_NAME, {
-    name: "outline",
-    label: "Outline"
-});
+new LinkButton();

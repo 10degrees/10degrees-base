@@ -1,2 +1,2 @@
-import "./blocks/link-button.js";
-import "./blocks/spacer/index";
+import "./blocks/link-button";
+import "./blocks/spacer";
