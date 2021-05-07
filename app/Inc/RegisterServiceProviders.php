@@ -29,6 +29,7 @@ class RegisterServiceProviders extends ServiceProvider
         \App\Support\Console\ConsoleServiceProvider::class,
         \App\Support\Database\DatabaseServiceProvider::class,
         \App\Support\Acf\BlockServiceProvider::class,
+        \App\Support\Gutenberg\DynamicBlockServiceProvider::class,
         \App\Support\WordPress\CptServiceProvider::class,
 
         /**

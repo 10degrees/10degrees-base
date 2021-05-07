@@ -49,6 +49,7 @@ class SetAllowedBlocks
         'theme/link-button',
         'theme/spacer',
         'theme/hero',
+        'theme/latest-posts',
         'gravityforms/form',
         'map-block-leaflet/map-block-leaflet',
         'core/missing',

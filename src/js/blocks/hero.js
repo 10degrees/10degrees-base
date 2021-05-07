@@ -11,7 +11,6 @@ class Hero extends Block {
         this.name = "theme/hero";
         this.meta = {
             title: __("Hero", "@textdomain"),
-            description: __("Hero block, using sidebar attributes", "@textdomain"),
             icon: <Icon icon="megaphone" />,
             category: "theme",
             keywords: [__("sidebar", "@textdomain"), __("hero", "@textdomain")],
