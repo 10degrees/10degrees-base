@@ -34,6 +34,7 @@ class CleanUp
         add_filter('feed_links_show_comments_feed', '__return_false');
         add_filter('tiny_mce_plugins', [$this, 'disableEmojisTinyMce']);
         add_filter('wp_resource_hints', [$this, 'disableEmojiDnsPrefetch'], 10, 2);
+        add_filter('xmlrpc_enabled', '__return_false');
     }
 
     /**
