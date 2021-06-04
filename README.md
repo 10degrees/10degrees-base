@@ -49,13 +49,4 @@ Assets are edited in `src` and compiled to `dist`. Files are given a cache-busti
 
 ## Browser support
 
-All modern browsers and IE11.
-
-### JavaScript
-
-Code is transpiled to support IE11+ using Babel.
-
-### CSS
-
-CSS Grid is used, with a single-column fallback provided for IE11+.
-CSS Custom Properties are used sparingly with fallbacks.
+All modern browsers.
