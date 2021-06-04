@@ -3,7 +3,7 @@
 use App\Walkers\AlpineJSWalker; ?>
 
 <header
-    x-data="menu()"
+    x-data="td_menu()"
     class="header -primary"
     @load.window="showMenu = window.innerWidth > 900"
     @resize.window="showMenu = window.innerWidth > 900">

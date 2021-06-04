@@ -1,4 +1,4 @@
-window.menu = function() {
+window.td_menu = function() {
     return {
         showMenu: false,
         openMenus: [],

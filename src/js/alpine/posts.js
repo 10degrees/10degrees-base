@@ -1,4 +1,4 @@
-window.posts = function() {
+window.td_posts = function() {
     return {
         posts: [],
         categories: [],
