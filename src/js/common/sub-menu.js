@@ -22,9 +22,6 @@ export default class SubMenu {
         document.documentElement.addEventListener("click", closeOnBlur, false);
         document.documentElement.addEventListener("keyup", closeOnBlur, false);
     }
-    open() {
-        this.a.setAttribute("aria-expanded", "true");
-    }
     close() {
         this.a.setAttribute("aria-expanded", "false");
     }
