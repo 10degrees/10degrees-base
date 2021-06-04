@@ -7,8 +7,6 @@
  *
  */
 
-import 'alpinejs';
-
 //Utilities
 import AjaxForm from "./common/ajax-form";
 import ScrollToId from "./common/scroll-to-id";

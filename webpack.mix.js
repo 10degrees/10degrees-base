@@ -34,13 +34,17 @@ mix
         processCssUrls: false
     })
     .js([
-            "src/js/alpine/menu.js",
-            "src/js/alpine/posts.js",
-            "src/js/alpine/social-share.js",
-            "src/js/main.js"
+        "src/js/alpine/menu.js",
+        "src/js/alpine/posts.js",
+        "src/js/alpine/social-share.js",
+        "src/js/main.js"
     ], "dist/js/main.js")
     .js("src/js/admin.js", "dist/js")
-    .js("src/js/editor-block.js", "dist/js")
+    .js([
+        "src/js/editor-block.js",
+        "src/js/alpine/posts.js",
+        "src/js/alpine/social-share.js",
+    ], "dist/js/editor-block.js")
     .polyfill({
         enabled: true,
         useBuiltIns: "usage",

@@ -32,6 +32,8 @@ class Enqueue
         // add_action('wp_enqueue_scripts', [$this, 'typekitFont'], 100);
         add_filter('style_loader_src', [$this, 'removeWpVersion'], 9999);
         add_filter('script_loader_src', [$this, 'removeWpVersion'], 9999);
+
+        add_filter('script_loader_tag', [$this, 'addScriptAttributes'], 11, 3);
     }
 
     /**
@@ -88,12 +90,37 @@ class Enqueue
      */
     public function scripts()
     {
-        // die(td_asset_path('js/main.js'));
-        wp_register_script('td-main', get_stylesheet_directory_uri() . td_asset_path('js/main.js'), ['jquery'], '', true);
+        wp_enqueue_script('alpinejs', 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js', [], '', true);
+        wp_enqueue_script('alpinejs-IE', 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine-ie11.min.js', [], '', true);
+        
+        wp_register_script('td-main', get_stylesheet_directory_uri() . td_asset_path('js/main.js'), ['jquery', 'alpinejs', 'alpinejs-IE'], '', true);
         if (is_single() && comments_open() && get_option('thread_comments')) {
             wp_enqueue_script('comment-reply');
         }
+
         wp_enqueue_script('td-main');
+    }
+
+    /**
+     * Add attributes to loaded script tags
+     *
+     * @param $tag string The <script> tag
+     * @param $handle string The script's handle
+     * @param $src string The script's source URL
+     *
+     * @return string The new <script> tag
+     */
+    public function addScriptAttributes($tag, $handle, $src)
+    {
+        if ('alpinejs' === $handle) {
+            return '<script type="module" src="' . esc_url($src) . '"></script>';
+        }
+
+        if ('alpinejs-IE' === $handle) {
+            return '<script nomodule src="' . esc_url($src) . '" defer></script>';
+        }
+
+        return $tag;
     }
 
     /**
@@ -113,7 +140,10 @@ class Enqueue
      */
     public function blockEditorScript()
     {
-        wp_enqueue_script('td-editor-block-script', get_stylesheet_directory_uri() . td_asset_path('js/editor-block.js'), ['wp-blocks', 'wp-dom','wp-edit-post'], '', true);
+        wp_enqueue_script('alpinejs', 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js', [], '', true);
+        wp_enqueue_script('alpinejs-IE', 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine-ie11.min.js', [], '', true);
+
+        wp_enqueue_script('td-editor-block-script', get_stylesheet_directory_uri() . td_asset_path('js/editor-block.js'), ['wp-blocks', 'wp-dom','wp-edit-post', 'alpinejs', 'alpinejs-IE'], '', true);
 
         wp_enqueue_script('td-blocks-script', get_stylesheet_directory_uri() . td_asset_path('js/blocks.js'), ['wp-blocks', 'wp-dom', 'wp-edit-post'], '', true);
     }
