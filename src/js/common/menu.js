@@ -13,8 +13,6 @@ export default class Menu {
     init() {
         /* Escape key closes all menus */
         this.handleEscKey();
-        /* Clicking of the menu closes all menus */
-        this.handleBlur();
     }
     handleEscKey() {
         this.nav.onkeyup = (e) => {
@@ -29,13 +27,6 @@ export default class Menu {
                 this.closeAll();
             }
         };
-    }
-    handleBlur() {
-        document.documentElement.addEventListener("click", (e) => {
-            if (!eventPath(e).includes(this.nav)) {
-                this.closeAll();
-            }
-        });
     }
     closeAll() {
         for (let ul of this.subMenus) {
