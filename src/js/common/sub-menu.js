@@ -19,7 +19,6 @@ export default class SubMenu {
                 this.close();
             }
         };
-        document.documentElement.addEventListener("click", closeOnBlur, false);
         document.documentElement.addEventListener("keyup", closeOnBlur, false);
     }
     close() {
