@@ -14,7 +14,6 @@ import AjaxForm from "./common/ajax-form";
 import ScrollToId from "./common/scroll-to-id";
 import ScrollToError from "./common/scroll-to-error";
 import DisableSVGFocus from './common/disable-svg-focus';
-import Menu from "./common/menu";
 
 //Vendor
 import Magnific from "./common/magnific";
@@ -32,7 +31,6 @@ var App = {
             new ScrollToError();
             new Magnific();
             new Slider();
-            new Menu("#nav-primary");
         }
     },
     // Home page
