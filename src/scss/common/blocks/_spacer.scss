@@ -1,35 +1,25 @@
-.wp-block-spacer {
+.spacer {
 	clear: both;
-}
 
-.wp-block-custom-blocks-spacer {
-	.spacer {
-		clear: both;
-	
-		&.-mobile-only {
-			@include bp(md){
-				display: none;
-			}
+	height: 0.75rem;
+
+	@include bp(md){
+		height: 1.5rem;
+	}
+
+	&.-medium {
+		height: 1.5rem;
+
+		@include bp(md){
+			height: 3.125rem;
 		}
-	
-		&.-tablet-only {
-			display: none;
-	
-			@include bp(md){
-				display: block;
-			}
-			
-			@include bp(lg){
-				display: none;
-			}
-		}
-		
-		&.-desktop-only {
-			display: none;
-	
-			@include bp(lg){
-				display: block;
-			}
+	}
+
+	&.-large {
+		height: 3.125rem;
+
+		@include bp(md){
+			height: 6.25rem;
 		}
 	}
 }
