@@ -23,6 +23,7 @@ class DashboardBranding
     {
         add_action('admin_init', [$this, 'defineColorScheme'], 10);
         add_action('user_register', [$this, 'setColorScheme']);
+        add_action('admin_head', [$this, 'editButton']);
     }
 
     /**
@@ -57,5 +58,28 @@ class DashboardBranding
         );
     
         wp_update_user($args);
+    }
+
+    /**
+     * Change post edit button from WP logo
+     *
+     * @return void
+     */
+    public function editButton()
+    {
+        ?>
+        <style>
+        .edit-post-fullscreen-mode-close.has-icon svg {
+            display: none !important;
+        }
+        .edit-post-fullscreen-mode-close.has-icon {
+            color: transparent ;
+            background: url('<?php echo td_img_path('dashboard.svg'); ?>') no-repeat 50% 50% / 100% auto !important;
+            height: 46px;
+            width: 46px;
+            margin: 8px;
+        }
+        </style>
+        <?php
     }
 }
