@@ -25,5 +25,6 @@ class BlockServiceProvider extends ServiceProvider
         '\App\ACF_Blocks\Accordion',
         '\App\ACF_Blocks\SocialLinks',
         '\App\ACF_Blocks\SocialShare',
+        '\App\ACF_Blocks\Posts',
     ];
 }
