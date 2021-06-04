@@ -1,0 +1,42 @@
+.modal {
+    @include background-colour(--white);
+
+    max-width: 750px;
+    padding: 2rem;
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+
+    .modal-footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .confirm {
+        @include button();
+        background-color: #047857;
+        @include colour(--white);
+
+        border-radius: 0.25rem;
+
+        &:focus,
+        &:hover {
+            background-color: #064E3B;
+        }
+    }
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.5);
+}

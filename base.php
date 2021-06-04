@@ -38,6 +38,8 @@
 
     <?php get_template_part('partials/footer'); ?>
 
+    <?php get_template_part('partials/ie-modal'); ?>
+
 </body>
 
 </html>
