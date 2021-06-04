@@ -17,7 +17,6 @@ import DisableSVGFocus from './common/disable-svg-focus';
 
 //Vendor
 import Magnific from "./common/magnific";
-import Slider from "./common/slider";
 
 window.$ = window.jQuery; // Set JQuery Variable
 
@@ -30,7 +29,6 @@ var App = {
             new ScrollToId();
             new ScrollToError();
             new Magnific();
-            new Slider();
         }
     },
     // Home page

@@ -48,7 +48,6 @@
     "laravel-mix-polyfill": "^2.0.0",
     "laravel-mix-versionhash": "^1.1.7",
     "magnific-popup": "^1.1.0",
-    "slick-carousel": "^1.8.1",
     "wp-pot": "^1.9.6"
   }
 }
