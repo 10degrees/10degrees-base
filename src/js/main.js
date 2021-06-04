@@ -16,9 +16,6 @@ import ScrollToError from "./common/scroll-to-error";
 import DisableSVGFocus from './common/disable-svg-focus';
 import Menu from "./common/menu";
 
-// Block-related JavaScript
-import SocialShare from "./common/blocks/social-share";
-
 //Vendor
 import Magnific from "./common/magnific";
 import Slider from "./common/slider";
@@ -35,7 +32,6 @@ var App = {
             new ScrollToError();
             new Magnific();
             new Slider();
-            new SocialShare();
             new Menu("#nav-primary");
         }
     },

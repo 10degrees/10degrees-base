@@ -44,12 +44,12 @@ if (count($socialNetworks)) :?>
 
     <a href="#after-share-links" class="screen-reader-text screen-reader-text--display-on-focus screen-reader-text--skiplink"><?php esc_html_e('Skip sharing options', '@textdomain'); ?></a>
 
-    <div class="container">
+    <div x-data="td_social_share()" x-init="init" class="container">
 
         <ul class="share-links">
 
-            <li class="webshare-list-item">
-                <button class="webshare-button">
+            <li x-show="shareSupported" class="webshare-list-item">
+                <button @click="sharePage" class="webshare-button">
                     <?php echo td_get_svg('social-icons/share.svg'); ?>
                     <p><?php _e('Share', '@textdomain'); ?></p>
                 </button>
@@ -57,7 +57,7 @@ if (count($socialNetworks)) :?>
 
             <?php
             foreach ($socialNetworks as $network => $options) : ?>
-                <li>
+                <li x-show="!shareSupported">
                     <a href="<?php echo $options['url']; ?>">
                         <?php echo td_get_svg($options['icon']); ?>
                         <span class="screen-reader-text">
