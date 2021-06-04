@@ -30,6 +30,15 @@ window.td_menu = function() {
             return this.openMenus.some(openMenuItem => openMenuItem.id === menuID);
         },
 
+        onEscape(e) {
+            this.closeAllMenus();
+
+            let topLevelButton = e.currentTarget.querySelector('button');
+            if(topLevelButton){
+                topLevelButton.focus();
+            }
+        },
+
         onClickAway(e) {
             if(!e.target.classList.contains('dropdown')) {
                 this.closeAllMenus();

@@ -55,7 +55,11 @@ class AlpineJSWalker extends \Walker_Nav_Menu {
         $id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
         $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
      
-        $output .= $indent . '<li' . $id . $class_names . '>';
+        $output .= $indent . '<li' . $id . $class_names;
+        if($depth === 0) {
+            $output .= ' @keydown.escape="onEscape($event)"';
+        }
+        $output .= '>';
      
         $atts           = array();
         $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
