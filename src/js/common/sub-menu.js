@@ -1,4 +1,4 @@
-import eventPath from "./event-path";
+import eventPath from "../utils/event-path";
 
 export default class SubMenu {
     constructor(ul) {
@@ -23,9 +23,9 @@ export default class SubMenu {
         document.documentElement.addEventListener("keyup", closeOnBlur, false);
     }
     open() {
-        // this.a.setAttribute("aria-expanded", "true");
+        this.a.setAttribute("aria-expanded", "true");
     }
     close() {
-        // this.a.setAttribute("aria-expanded", "false");
+        this.a.setAttribute("aria-expanded", "false");
     }
 }
