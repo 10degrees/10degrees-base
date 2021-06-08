@@ -34,5 +34,6 @@ class ThemeServiceProvider extends ServiceProvider
         \App\Boot\GravityForms::class,
         \App\Boot\Yoast::class,
         \App\Boot\WPHead::class,
+        \App\Boot\Users::class,
     ];
 }
