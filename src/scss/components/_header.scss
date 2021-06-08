@@ -31,8 +31,16 @@
     .nav-container {
         width: 100%;
 
+        &.-hidden {
+            display: none;
+        }
+
         @include bp(md){
             display: block;
+
+            &.-hidden {
+                display: block;
+            }
         }
     }
 

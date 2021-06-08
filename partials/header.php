@@ -4,9 +4,7 @@ use App\Walkers\AlpineJSWalker; ?>
 
 <header
     x-data="td_menu()"
-    class="header -primary"
-    @load.window="showMenu = window.innerWidth > 900"
-    @resize.window="showMenu = window.innerWidth > 900">
+    class="header -primary">
     <div class="container content">
         <div class="logo" itemscope itemtype="http://schema.org/Organization">
             <a itemprop="url" href="<?php echo esc_url(home_url('/')); ?>">
@@ -29,7 +27,7 @@ use App\Walkers\AlpineJSWalker; ?>
             aria-label="<?php esc_html_e('Toggle Navigation', '@textdomain'); ?>">
             <span class="icon">Open</span>
         </button>
-        <div class="nav-container" x-show="showMenu">
+        <div class="nav-container" :class="{'-hidden': !showMenu}">
             <?php
             wp_nav_menu(
                 array(

@@ -125,11 +125,11 @@ msgstr ""
 msgid "10 Degrees"
 msgstr ""
 
-#: ../partials/header.php:17
+#: ../partials/header.php:15
 msgid "Add a logo in Site settings"
 msgstr ""
 
-#: ../partials/header.php:29
+#: ../partials/header.php:27
 msgid "Toggle Navigation"
 msgstr ""
 
