@@ -36,23 +36,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 h1,
 .h1 {
     font-size: 1.3125rem;
-    line-height: 1.1428;
+    line-height: 1.14;
 
     @include bp(md) {
         font-size: 2.25rem;
-        line-height: 1.1111;
+        line-height: 1.11;
     }
 
     @include bp(lg) {
         font-size: 3rem;
-        line-height: 0.9583;
+        line-height: 0.95;
     }
 }
 
 h2,
 .h2 {
     font-size: 1.125rem;
-    line-height: 1.333;
+    line-height: 1.33;
 
     @include bp(md) {
         font-size: 1.5rem;
@@ -61,23 +61,23 @@ h2,
 
     @include bp(lg) {
         font-size: 1.875rem;
-        line-height: 1.333;
+        line-height: 1.33;
     }
 }
 
 h3,
 .h3 {
     font-size: 1.125rem;
-    line-height: 1.333;
+    line-height: 1.33;
 
     @include bp(md) {
         font-size: 1.3125rem;
-        line-height: 1.1428;
+        line-height: 1.14;
     }
 
     @include bp(lg) {
         font-size: 1.5rem;
-        line-height: 1.333;
+        line-height: 1.33;
     }
 }
 
@@ -88,14 +88,14 @@ h4,
 
     @include bp(md) {
         font-size: 1.125rem;
-        line-height: 1.333;
+        line-height: 1.33;
     }
 }
 
 h5,
 .h5 {
     font-size: 0.875rem;
-    line-height: 1.1428;
+    line-height: 1.14;
 
     @include bp(lg) {
         font-size: 1rem;
@@ -106,7 +106,7 @@ h5,
 h6,
 .h6 {
     font-size: 0.875rem;
-    line-height: 1.1428;
+    line-height: 1.14;
 }
 
 // Paragraphs
@@ -117,7 +117,7 @@ p.has-regular-font-size {
     font-family: $base-font;
 
     font-size: 0.875rem;
-    line-height: 1.7142;
+    line-height: 1.7;
 
     @include bp(md) {
         font-size: 1rem;
@@ -127,21 +127,21 @@ p.has-regular-font-size {
 
 p.has-small-font-size {
     font-size: 0.875rem;
-    line-height: 1.7142;
+    line-height: 1.7;
 }
 
 p.has-large-font-size {
     font-size: 0.875rem;
-    line-height: 1.7142;
+    line-height: 1.7;
 
     @include bp(md) {
         font-size: 1.3125rem;
-        line-height: 1.5238;
+        line-height: 1.5;
     }
 
     @include bp(lg) {
         font-size: 1.5rem;
-        line-height: 1.3333;
+        line-height: 1.33;
     }
 }
 
@@ -191,7 +191,7 @@ ol {
 
     li {
         font-size: 0.875rem;
-        line-height: 1.7142;
+        line-height: 1.7;
 
         @include bp(md) {
             font-size: 1rem;
@@ -203,13 +203,13 @@ ol {
         list-style-image: url("../img/list-icon.svg");
 
         li {
-            padding-left: 5px;
+            padding-left: 0.25rem;
         }
     }
 }
 
 // Links
-a:not(.acf-button):not(.acf-icon){
+a:not([class|=acf]){
     @include colour(--link);
     text-decoration: none;
 
