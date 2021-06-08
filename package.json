@@ -43,7 +43,6 @@
     "laravel-mix": "^6.0.19",
     "laravel-mix-clean": "^0.1.0",
     "laravel-mix-copy-watched": "^2.2.4",
-    "laravel-mix-polyfill": "^2.0.0",
     "laravel-mix-versionhash": "^2.0.1",
     "magnific-popup": "^1.1.0",
     "wp-pot": "^1.9.6"

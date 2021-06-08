@@ -1,6 +1,5 @@
 let mix = require('laravel-mix');
 require('laravel-mix-versionhash')
-require('laravel-mix-polyfill');
 require('laravel-mix-copy-watched');
 require('laravel-mix-clean');
 require('@tinypixelco/laravel-mix-wp-blocks');
@@ -46,13 +45,6 @@ mix
         "src/js/alpine/posts.js",
         "src/js/alpine/social-share.js",
     ], "dist/js/gutenberg.js")
-    .polyfill({
-        enabled: true,
-        useBuiltIns: "usage",
-        targets: {
-            "ie": 11
-        }
-    })
     .block("src/js/blocks.js", "dist/js", { // WordPress Block Compilation
         outputFormat: 'json',
         combineAssets: true,
