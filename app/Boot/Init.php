@@ -117,6 +117,14 @@ class Init
          */
         add_theme_support('html5', ['script', 'style', 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption']);
 
+
+        /**
+         * Remove support for Block Patterns
+         * 
+         * @link https://make.wordpress.org/core/2020/07/16/block-patterns-in-wordpress-5-5/
+         */
+        remove_theme_support('core-block-patterns');
+
         /*
          * Add post formats
          */
