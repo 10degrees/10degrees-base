@@ -11,7 +11,6 @@
 import AjaxForm from "./common/ajax-form";
 import ScrollToId from "./common/scroll-to-id";
 import ScrollToError from "./common/scroll-to-error";
-import DisableSVGFocus from './common/disable-svg-focus';
 
 //Vendor
 import Magnific from "./common/magnific";
@@ -22,7 +21,6 @@ var App = {
     // All pages
     common: {
         init: function() {
-            new DisableSVGFocus();
             new AjaxForm();
             new ScrollToId();
             new ScrollToError();
