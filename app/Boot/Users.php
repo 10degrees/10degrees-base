@@ -25,6 +25,10 @@ class Users
      */
     public function disableUserEndpoints($endpoints)
     {
+        if (is_user_logged_in()){
+           return $endpoints;
+        }
+
         if (isset($endpoints['/wp/v2/users'])) {
             unset($endpoints['/wp/v2/users']);
         }
