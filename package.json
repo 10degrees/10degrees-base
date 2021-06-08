@@ -20,12 +20,11 @@
     "url": "https://github.com/thecodercoder/frontend-boilerplate/issues"
   },
   "scripts": {
-    "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "npm run development -- --watch",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production"
   },
   "homepage": "https://github.com/thecodercoder/frontend-boilerplate#readme",
   "devDependencies": {
@@ -41,11 +40,11 @@
     "copy-webpack-plugin": "^5.1.1",
     "core-js": "^3.9.1",
     "imagemin-webpack-plugin": "^2.4.2",
-    "laravel-mix": "^5.0.7",
+    "laravel-mix": "^6.0.19",
     "laravel-mix-clean": "^0.1.0",
     "laravel-mix-copy-watched": "^2.2.4",
     "laravel-mix-polyfill": "^2.0.0",
-    "laravel-mix-versionhash": "^1.1.7",
+    "laravel-mix-versionhash": "^2.0.1",
     "magnific-popup": "^1.1.0",
     "wp-pot": "^1.9.6"
   }
