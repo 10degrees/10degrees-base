@@ -38,7 +38,7 @@ if (get_field('show_pinterest')) {
 }
 
 if (count($socialNetworks)) :?>
-<div <?php td_block_class($block, 'social-share-block'); ?>>
+<div <?php td_block_class($block, 'td-social-share'); ?>>
 
     <span class="screen-reader-text"><?php esc_html_e('Share this page', '@textdomain'); ?></span>
 
