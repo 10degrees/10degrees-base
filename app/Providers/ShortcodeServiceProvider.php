@@ -22,7 +22,6 @@ class ShortcodeServiceProvider extends ServiceProvider
      * @var array
      */
     protected $classes = [
-        \App\Shortcodes\SocialIconsShortcode::class,
         \App\Shortcodes\ButtonShortcode::class,
     ];
 }
