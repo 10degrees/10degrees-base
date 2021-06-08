@@ -23,7 +23,6 @@ class FieldServiceProvider extends ServiceProvider
      */
     protected $classes = [
         \App\Acf\Fields\SiteSettings::class,
-        \App\Acf\Fields\Testimonials::class,
         \App\Acf\Fields\Accordion::class,
         \App\Acf\Fields\SocialShare::class,
         \App\Acf\Fields\Spacer::class,
