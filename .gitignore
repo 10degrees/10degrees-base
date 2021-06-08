@@ -14,7 +14,6 @@ node_modules/
 /vendor/
 
 /dist
-/lang
 
 # ignore OS generated files
 ehthumbs.db
