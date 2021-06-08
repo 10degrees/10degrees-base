@@ -130,7 +130,7 @@ class Enqueue
      */
     public function blockEditorStyle()
     {
-        wp_enqueue_style('td-editor-block-style', get_stylesheet_directory_uri() . td_asset_path('css/editor-block.css'), '', '', 'screen');
+        wp_enqueue_style('td-editor-block-style', get_stylesheet_directory_uri() . td_asset_path('css/gutenberg.css'), '', '', 'screen');
     }
 
     /**

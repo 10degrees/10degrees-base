@@ -28,7 +28,7 @@ mix
     .sass("src/scss/main.scss", "dist/css")
     .sass("src/scss/admin.scss", "dist/css")
     .sass("src/scss/editor-classic.scss", "dist/css")
-    .sass("src/scss/editor-block.scss", "dist/css")
+    .sass("src/scss/gutenberg.scss", "dist/css")
     .sass("src/scss/login.scss", "dist/css")
     .options({
         processCssUrls: false
