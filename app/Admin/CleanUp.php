@@ -36,7 +36,22 @@ class CleanUp
         remove_action('admin_print_scripts', 'print_emoji_detection_script');
         remove_action('admin_print_styles', 'print_emoji_styles');
 
+        add_filter('block_editor_settings', [$this, 'removeEditorStyles']);
+
         $this->maybeDefineDisallowFileEdit();
+    }
+
+    /**
+     * Remove the editor inline styles
+     *
+     * @param   array  $editorSettings  Array of settings
+     *
+     * @return  array                   Array of settings
+     */
+    public function removeEditorStyles($editorSettings)
+    {
+        unset($editorSettings['styles'][0]);
+        return $editorSettings;
     }
 
     /**

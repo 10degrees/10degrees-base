@@ -23,12 +23,6 @@ h3,
 h4,
 h5,
 h6,
-h1.wp-block,
-h2.wp-block,
-h3.wp-block,
-h4.wp-block,
-h5.wp-block,
-h6.wp-block,
 .h1,
 .h2,
 .h3,
@@ -51,8 +45,7 @@ h6.wp-block,
 // Heading-specific sizes
 // Use heading classes to change visual display while retaining semantic hierarchy
 h1,
-.h1,
-h1.wp-block {
+.h1 {
     font-size: 1.3125rem;
     line-height: 1.1428;
 
@@ -68,8 +61,7 @@ h1.wp-block {
 }
 
 h2,
-.h2,
-h2.wp-block {
+.h2 {
     font-size: 1.125rem;
     line-height: 1.333;
 
@@ -85,8 +77,7 @@ h2.wp-block {
 }
 
 h3,
-.h3,
-h3.wp-block {
+.h3 {
     font-size: 1.125rem;
     line-height: 1.333;
 
@@ -102,8 +93,7 @@ h3.wp-block {
 }
 
 h4,
-.h4,
-h4.wp-block {
+.h4 {
     font-size: 1rem;
     line-height: 1.6;
 
@@ -114,8 +104,7 @@ h4.wp-block {
 }
 
 h5,
-.h5,
-h5.wp-block {
+.h5 {
     font-size: 0.875rem;
     line-height: 1.1428;
 
@@ -126,21 +115,14 @@ h5.wp-block {
 }
 
 h6,
-.h6,
-h6.wp-block {
+.h6 {
     font-size: 0.875rem;
     line-height: 1.1428;
 }
 
 // Paragraphs
 p,
-p.has-regular-font-size,
-p.has-normal-font-size,
-.is-regular-text,
-.wp-block p,
-.wp-block p.has-regular-font-size,
-.wp-block p.has-normal-font-size,
-.wp-block-button__link {
+p.has-regular-font-size {
     margin: 0 0 #{$base-line-height}rem;
 
     font-family: $base-font;
@@ -154,20 +136,12 @@ p.has-normal-font-size,
     }
 }
 
-p.has-small-font-size,
-.is-small-text,
-.wp-block p.has-small-font-size {
+p.has-small-font-size {
     font-size: 0.875rem;
     line-height: 1.7142;
 }
 
-.has-medium-font-size {
-	font-size: 20px;
-}
-
-p.has-large-font-size,
-.is-large-text,
-.wp-block p.has-large-font-size {
+p.has-large-font-size {
     font-size: 0.875rem;
     line-height: 1.7142;
 
@@ -180,12 +154,6 @@ p.has-large-font-size,
         font-size: 1.5rem;
         line-height: 1.3333;
     }
-}
-
-.has-larger-font-size, // Not used now, kept because of backward compatibility.
-.is-larger-text,
-.has-huge-font-size {
-	font-size: 42px;
 }
 
 // Don't show the drop cap when editing the paragraph's content. It causes a
@@ -203,7 +171,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 p.has-background {
-	padding: 20px 30px;
+	padding: 1.25rem 2rem;
 }
 
 p.has-text-color a {
@@ -216,13 +184,17 @@ small,
     font-size: 90%;
 }
 
+ul {
+    list-style-type: disc;
+}
+
 // Unordered and Ordered lists
 ul,
-ol,
-.wp-block ul,
-.wp-block ol {
+ol {
     margin-top: 0;
     margin-bottom: #{$base-line-height}rem;
+    padding-left: 0;
+
     ul,
     ol {
         margin-bottom: 0;
@@ -248,8 +220,7 @@ ol,
 }
 
 // Links
-a,
-.wp-block a {
+a {
     @include colour(--link);
     text-decoration: none;
 
