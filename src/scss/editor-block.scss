@@ -1,20 +1,16 @@
-//@import "common/variables";
-//@import "common/_root";
-
 /* utils */
 @import "utils/utils";
 
 /* common */
-//@import "common/root";
+@import "common/root";
 
 .editor-styles-wrapper {
-    padding: 10px;
+    padding: 0.625rem;
 
     /* blocks */
     @import "common/blocks/blocks";
 
     /* common */
-    //@import "admin/_type";
     @import "common/social-brands";
     @import "common/svg";
     @import "common/type";
@@ -23,5 +19,3 @@
 
     @import "admin/_block-editor";
 }
-
-//
