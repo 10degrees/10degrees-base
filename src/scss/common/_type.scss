@@ -42,6 +42,10 @@ h6.wp-block,
     &.is-style-underline {
         text-decoration: underline;
     }
+
+    &[id] {
+        scroll-margin-top: 2rem;
+    }
 }
 
 // Heading-specific sizes

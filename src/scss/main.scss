@@ -40,3 +40,9 @@
 @import "templates/index";
 @import "templates/404";
 @import "templates/page";
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
