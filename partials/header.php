@@ -25,7 +25,7 @@ use App\Walkers\AlpineJSWalker; ?>
             type="button"
             aria-controls="nav-primary"
             aria-label="<?php esc_html_e('Toggle Navigation', '@textdomain'); ?>">
-            <span class="icon">Open</span>
+            <span x-text="showMenu ? 'Close' : 'Open'" class="icon"></span>
         </button>
         <div class="nav-container" :class="{'-hidden': !showMenu}">
             <?php
