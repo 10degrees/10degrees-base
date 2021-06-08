@@ -6,10 +6,19 @@ window.td_social_share = function() {
         },
         sharePage() {
             navigator.share({
-                title: $("head title").text(),
-                text: $('[property="og:description"]').prop('content'),
+                title: document.title,
+                text: this.getShareContent(),
                 url: location.href
             });
+        },
+        getShareContent(){
+            let descriptionElement = document.querySelector('[property="og:description"]');
+
+            if(!descriptionElement) {
+                return '';
+            }
+
+            return descriptionElement.getAttribute('content');
         }
     }
 }
