@@ -26,7 +26,7 @@ class FieldServiceProvider extends ServiceProvider
         \App\Acf\Fields\Testimonials::class,
         \App\Acf\Fields\Accordion::class,
         \App\Acf\Fields\SocialShare::class,
-        // \App\Acf\Fields\Spacer::class,
+        \App\Acf\Fields\Spacer::class,
         // \App\Acf\Fields\ProtectContent::class,
         // \App\Acf\Fields\PageBuilder::class,
         // \App\Acf\Fields\LoginSettings::class,
