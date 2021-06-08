@@ -9,10 +9,12 @@ window.td_menu = function() {
                     this.closeAllMenus();
                 }
 
-                this.openMenus.push({
+                this.openMenus = this.openMenus.concat({
                     id: menuItemID,
                     parent: parentID,
                 });
+
+
                 return;
             }
 

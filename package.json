@@ -38,7 +38,6 @@
   "dependencies": {
     "@tinypixelco/laravel-mix-wp-blocks": "^1.1.0",
     "@wordpress/dependency-extraction-webpack-plugin": "^2.8.0",
-    "alpinejs": "^2.8.1",
     "copy-webpack-plugin": "^5.1.1",
     "core-js": "^3.9.1",
     "imagemin-webpack-plugin": "^2.4.2",
