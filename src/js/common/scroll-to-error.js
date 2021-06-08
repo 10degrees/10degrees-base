@@ -1,20 +1,17 @@
 class ScrollToError {
     constructor(){
-        $(document).ready(function() {
-            var formPresent = $(".gform_validation_error").length;
-            if (formPresent != "0") {
-                var firstError = $(".validation_message").first();
-                var target = $(firstError)
-                    .parent()
-                    .find(".gfield_label");
-                $("html, body").animate(
-                    {
-                        scrollTop: $(target).offset().top - 50
-                    },
-                    1000
-                );
-            }
-        });
+        let hasError = document.querySelector('.gform_validation_error');
+        let firstError = document.querySelector('.validation_message');
+
+        if(!hasError || !firstError){
+            return;
+        }
+
+        let target = firstError.parentNode.querySelector('.gfield_label');
+
+        $("html, body").animate({
+            scrollTop: $(target).offset().top - 10
+        }, 1000);
     }
 };
 
