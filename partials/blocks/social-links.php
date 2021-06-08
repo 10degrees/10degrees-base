@@ -1,4 +1,4 @@
-<div <?php td_block_class($block, 'social-links-block'); ?>>
+<div <?php td_block_class($block, 'td-social-links'); ?>>
 
     <span class="screen-reader-text"><?php esc_html_e('Find us on social media', '@textdomain'); ?></span>
 

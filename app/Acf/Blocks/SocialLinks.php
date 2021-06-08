@@ -53,9 +53,21 @@ class SocialLinks extends Block
      */
     public function __construct()
     {
-        if (function_exists('is_plugin_active') && is_plugin_active('wordpress-seo/wp-seo.php')) {
+        if(is_admin()){
+            // is_plugin_active is only available from this hook onwards
+            add_action('admin_init', function() {
+                if ($this->shouldShowBlock()) {
+                    parent::__construct();
+                }
+            });
+        } else {
             parent::__construct();
         }
+    }
+
+    private function shouldShowBlock()
+    {
+        return function_exists('is_plugin_active') && is_plugin_active('wordpress-seo/wp-seo.php');
     }
 
     /**
