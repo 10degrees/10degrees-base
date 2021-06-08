@@ -4,7 +4,7 @@ import RegisterBlockStyles from './admin/register-block-styles';
 import UnregisterBlockStyles from "./admin/unregister-block-styles";
 import EmbedAllowList from './admin/embed-allow-list';
 
-class BlockEditor {
+class Gutenberg {
     constructor(){
         this.initBlocks();
 
@@ -22,4 +22,4 @@ class BlockEditor {
     }
 }
 
-new BlockEditor();
+new Gutenberg();
