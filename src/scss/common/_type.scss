@@ -17,18 +17,7 @@ body {
 }
 
 // Headings
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: $base-font;
     margin-top: 0;
     margin-bottom: #{$base-line-height}rem;
@@ -220,7 +209,7 @@ ol {
 }
 
 // Links
-a {
+a:not(.acf-button):not(.acf-icon){
     @include colour(--link);
     text-decoration: none;
 
