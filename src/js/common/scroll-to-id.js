@@ -1,16 +1,22 @@
 class ScrollToId {
     constructor(){
-        $(".scrollToId").click(function(e) {
+        let links = document.querySelectorAll('.scrollToId');
+
+        for(let link of links){
+            this.addScrollEventListener(link);
+        }
+    }
+
+    addScrollEventListener(element)
+    {
+        element.addEventListener('click', e => {
             e.preventDefault();
 
-            var target = $(this).attr("href");
+            let target = e.currentTarget.getAttribute('href');
 
-            $("html, body").animate(
-                {
-                    scrollTop: $(target).offset().top
-                },
-                1000
-            );
+            $("html, body").animate({
+                scrollTop: $(target).offset().top
+            }, 1000);
         });
     }
 };
