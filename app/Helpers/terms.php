@@ -11,7 +11,6 @@
  */
 function td_get_post_terms($taxonomy_slug, $single = false, $fields = 'all')
 {
-
     $terms = wp_get_post_terms(get_the_id(), $taxonomy_slug, array("fields" => $fields));
 
     if (!count($terms)) {

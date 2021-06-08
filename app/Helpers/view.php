@@ -12,7 +12,6 @@
  */
 function td_view($fileName, $vars = array())
 {
-
     foreach ($vars as $key => $value) {
         ${$key} = $value;
     }
