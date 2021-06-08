@@ -57,15 +57,15 @@ msgstr ""
 msgid "Custom Blocks"
 msgstr ""
 
-#: ../app/Helpers/td_title.php:55
+#: ../app/Helpers/td_title.php:22
 msgid "Page Not Found"
 msgstr ""
 
-#: ../app/Helpers/td_title.php:53
+#: ../app/Helpers/td_title.php:20
 msgid "Search Results for %s"
 msgstr ""
 
-#: ../app/Helpers/td_title.php:14
+#: ../app/Helpers/td_title.php:15
 msgid "Latest Posts"
 msgstr ""
 
