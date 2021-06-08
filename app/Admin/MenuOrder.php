@@ -38,6 +38,7 @@ class MenuOrder
             'edit-comments.php',
             'edit.php?post_type=page',
             'edit.php?post_type=testimonial',
+            'edit.php?post_type=student',
             'separator1',
             'upload.php', //media
             'users.php', //users
