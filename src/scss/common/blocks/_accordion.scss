@@ -1,10 +1,10 @@
-.accordion {
+.td-accordion {
     .toggle {
         width: 100%;
         border: 0;
 
         text-align: left;
-        padding: 10px 20px;
+        padding: 0.75rem 1.25rem;
 
         @include background-color(--primary);
         @include colour(--primary-text);
@@ -17,13 +17,13 @@
 
         &::after {
             content:"";
-            padding: 3px;
+            padding: 0.25rem;
             display: inline-block;
             border-style: solid;
             @include prop('border-color', --primary-text);
-            border-width: 0 3px 3px 0;
+            border-width: 0 0.25rem 0.25rem 0;
 
-            margin-left: 20px;
+            margin-left: 1.25rem;
 
             transform: rotate(45deg);
             transition: transform 0.3s;
@@ -31,7 +31,7 @@
     }
 
     .content {
-        padding: 0 20px;
+        padding: 0 1.25rem;
     }
 
     &.-open{

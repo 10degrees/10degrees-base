@@ -14,7 +14,7 @@ if (!$heading) {
 <div
     x-data="{open : false}"
     :class="{'-open' : open}"
-    <?php td_block_class($block, 'accordion'); ?>>
+    <?php td_block_class($block, 'td-accordion'); ?>>
     <div class="container">
         <p>
             <button
