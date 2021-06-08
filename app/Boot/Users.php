@@ -13,6 +13,7 @@ class Users
     public function __construct()
     {
         add_filter('rest_endpoints', [$this, 'disableUserEndpoints']);
+        add_action('init', [$this, 'removeRoles']);
     }
 
     /**
@@ -33,5 +34,17 @@ class Users
         }
     
         return $endpoints;
+    }
+
+    /**
+     * Remove roles that aren't used often
+     *
+     * @return  void
+     */
+    public function removeRoles()
+    {
+        remove_role('author');
+        remove_role('contributor');
+        remove_role('subscriber');
     }
 }
