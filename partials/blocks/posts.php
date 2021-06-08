@@ -1,4 +1,4 @@
-<div class="posts" x-data="td_posts()" x-init="getPosts()">
+<div class="td-posts" x-data="td_posts()" x-init="getPosts()">
     <select name="categories" id="categories" @change="changeCategory" x-model="currentCategory">
         <option value="">Select a category</option>
         <template x-for="category in categories" :key="category.id">
