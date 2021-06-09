@@ -6,18 +6,7 @@ class RegisterBlockStyles {
         this.registerStyles();
     }
 
-    registerStyles(){
-        wp.blocks.registerBlockStyle("core/button", {
-            name: "regular",
-            label: "Regular",
-            isDefault: true
-        });
-    
-        wp.blocks.registerBlockStyle("core/button", {
-            name: "full",
-            label: "Full Width"
-        });
-    
+    registerStyles(){    
         wp.blocks.registerBlockStyle("core/heading", {
             name: "default",
             label: "Default",

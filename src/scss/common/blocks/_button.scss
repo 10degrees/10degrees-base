@@ -1,13 +1,8 @@
-.link-button,
 .td-button {
     // include the button (except colours - these are set seperately)
     @include button;
 
-    // set the default colours
-    &:not([class*="has-"]):not(.is-style-outline) {
-        @include button-colours(--primary);
-    }
-    &:not([class*="has-"]).is-style-outline {
+    &.is-style-outline {
         @include button-outline-colours(--primary);
     }
 

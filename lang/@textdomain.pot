@@ -53,10 +53,6 @@ msgstr ""
 msgid "Continued"
 msgstr ""
 
-#: ../app/Boot/RegisterCustomBlocks.php:64
-msgid "Custom Blocks"
-msgstr ""
-
 #: ../app/Helpers/td_title.php:22
 msgid "Page Not Found"
 msgstr ""
@@ -151,6 +147,10 @@ msgstr ""
 
 #: ../partials/blocks/accordion.php:9
 msgid "Heading is required. Nothing will be shown on the frontend."
+msgstr ""
+
+#: ../partials/blocks/button.php:9
+msgid "Please provide a link for the button to go to."
 msgstr ""
 
 #: ../partials/blocks/posts.php:10
