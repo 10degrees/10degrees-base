@@ -12,11 +12,17 @@ class ScrollToId {
         element.addEventListener('click', e => {
             e.preventDefault();
 
-            let target = e.currentTarget.getAttribute('href');
+            let targetID = e.currentTarget.getAttribute('href');
 
-            $("html, body").animate({
-                scrollTop: $(target).offset().top
-            }, 1000);
+            let target = document.querySelector(targetID);
+
+            if (!target) {
+                return;
+            }
+
+            let scrollPosition = target.getBoundingClientRect().top + document.body.scrollTop;
+
+            window.scrollTo(0, scrollPosition);
         });
     }
 };
