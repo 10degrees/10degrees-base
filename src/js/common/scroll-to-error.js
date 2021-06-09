@@ -9,9 +9,9 @@ class ScrollToError {
 
         let target = firstError.parentNode.querySelector('.gfield_label');
 
-        $("html, body").animate({
-            scrollTop: $(target).offset().top - 10
-        }, 1000);
+        let scrollPosition = target.getBoundingClientRect().top + document.body.scrollTop;
+
+        window.scrollTo(0, scrollPosition - 10);
     }
 };
 
