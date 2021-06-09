@@ -28,6 +28,7 @@
     cursor: pointer;
     background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
     white-space: nowrap;
+    text-decoration: none;
 
     &:hover,
     &:focus,
@@ -52,6 +53,7 @@
         @include colour(#{$color}-text);
         @include background-colour(#{$color}-hover);
         @include border-colour(#{$color}-hover);
+        text-decoration: none;
     }
 }
 
@@ -70,6 +72,7 @@
         @include colour(#{$color}-text);
         @include background-colour(#{$color}-hover);
         @include border-colour(#{$color}-hover);
+        text-decoration: none;
     }
 }
 
