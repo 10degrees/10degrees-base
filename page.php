@@ -14,6 +14,6 @@
  **/
 
 while (have_posts()) :
-    the_post(); ?> <a class="scrollToId" href="#list">Scroll</a><?php
+    the_post();
     get_template_part('partials/content', 'page');
 endwhile;
