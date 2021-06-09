@@ -30,7 +30,7 @@ class Button extends Block
      */
     protected $options = [
         'title'       => 'Button',
-        'description' => 'Block description',
+        'description' => 'A button that links to a URL',
         'icon'        => 'button',
         'category'    => 'theme',
         'keywords'    => ['button'],

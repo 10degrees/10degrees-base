@@ -26,5 +26,6 @@ class FieldServiceProvider extends ServiceProvider
         \App\Acf\Fields\Accordion::class,
         \App\Acf\Fields\SocialShare::class,
         \App\Acf\Fields\Spacer::class,
+        \App\Acf\Fields\Button::class,
     ];
 }
