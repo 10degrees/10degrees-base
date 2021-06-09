@@ -32,7 +32,7 @@ class SocialShare extends Block
      */
     protected $options = [
         'title'       => 'Social share',
-        'description' => 'Add share buttons.',
+        'description' => 'Add buttons to share the current post/page.',
         'icon'        => 'share',
         'category'    => 'theme',
         'keywords'    => ['social', 'custom', 'share'],

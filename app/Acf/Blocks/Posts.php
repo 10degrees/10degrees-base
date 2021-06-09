@@ -32,6 +32,7 @@ class Posts extends Block
      */
     protected $options = [
         'title' => 'Posts',
+        'description' => 'An in-page filterable list of posts, with pagination.',
         'icon'        => 'format-aside',
         'category'    => 'theme',
         'keywords'    => ['posts'],

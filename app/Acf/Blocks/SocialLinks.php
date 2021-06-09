@@ -33,7 +33,7 @@ class SocialLinks extends Block
      */
     protected $options = [
         'title'       => 'Social links',
-        'description' => 'Add links to social media.',
+        'description' => 'Add links to your social media accounts.',
         'icon'        => 'admin-links',
         'category'    => 'theme',
         'keywords'    => ['social', 'custom', 'links'],
