@@ -46,7 +46,6 @@ class SetAllowedBlocks
         'core/separator',
         'core/table',
         'core/video',
-        'custom-blocks/link-button',
         'gravityforms/form',
         'map-block-leaflet/map-block-leaflet',
         'core/missing',

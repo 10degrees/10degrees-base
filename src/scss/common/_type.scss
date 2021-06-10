@@ -113,7 +113,11 @@ h6,
 p,
 p.has-regular-font-size {
     margin: 0 0 #{$base-line-height}rem;
+}
 
+p,
+p.has-regular-font-size,
+.td-button {
     font-family: $base-font;
 
     font-size: 0.875rem;

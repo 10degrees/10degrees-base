@@ -54,3 +54,19 @@ function td_post_id()
 
     return -1;
 }
+
+/**
+ * Get the link attributes from an ACF link field
+ *
+ * @param   array  $link  ACF Link data
+ *
+ * @return  array         Link data
+ */
+function td_get_link_attributes($link)
+{
+    $link_url = $link['url'];
+    $link_title = $link['title'];
+    $link_target = $link['target'] ? $link['target'] : '_self';
+
+    return [$link_url, $link_title, $link_target];
+}
