@@ -3,6 +3,7 @@
 namespace App\Support\Console\Commands;
 
 use App\Support\Console\GeneratorCommand;
+use Illuminate\Support\Str;
 
 class MakeBlock extends GeneratorCommand
 {
@@ -37,7 +38,7 @@ class MakeBlock extends GeneratorCommand
     {
         parent::handle();
 
-        $this->call("make:partial {$this->argument('name')} --block");
+        $this->call("make:partial {$this->resolveBlockName()} --block");
     }
 
     /**
@@ -55,12 +56,22 @@ class MakeBlock extends GeneratorCommand
         return str_replace(
             ['{{ name }}', '{{ title }}', '{{ icon }}'],
             [
-                strtolower($this->argument('name')),
+                $this->resolveBlockName(),
                 $this->ask('What is the title?'),
                 $this->ask('What is the icon? (without "dashicon-"'),
             ],
             $stub
         );
+    }
+
+    /**
+     * Get the block name in kebab-case.
+     *
+     * @return string
+     */
+    protected function resolveBlockName()
+    {
+        return Str::kebab($this->argument('name'));
     }
 
     /**
