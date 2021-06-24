@@ -1,4 +1,4 @@
-<div <?php td_block_class($block, '{{ name }}'); ?>>
+<div <?php td_block_class($block, 'td-{{ name }}'); ?>>
 
     <?php echo $block['title']; ?>
 
