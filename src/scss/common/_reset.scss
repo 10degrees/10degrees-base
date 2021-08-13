@@ -8,13 +8,13 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  @apply box-border;
 }
 
 /* Remove default padding */
 ul[class],
 ol[class] {
-  padding: 0;
+  @apply p-0;
 }
 
 /* Remove default margin */
@@ -32,21 +32,20 @@ figcaption,
 blockquote,
 dl,
 dd {
-  margin: 0;
+  @apply m-0;
 }
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
+  @apply min-h-screen bg-white;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  background-color: white;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
-  list-style: none;
+  @apply list-none;
 }
 
 /* A elements that don't have a class get default styles */
@@ -56,17 +55,7 @@ a:not([class]) {
 
 /* Make images easier to work with */
 img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Natural flow and rhythm in articles by default
- * This is opinionated and intended to make working with component-based systems easier
- * If you don't know about the lobotomised owl, search that term for the ALA article
- * @link https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/
- */
-article > * + * {
-  // margin-top: 1em;
+  @apply max-w-full block;
 }
 
 /* Inherit fonts for inputs and buttons */

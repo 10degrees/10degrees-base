@@ -10,8 +10,9 @@
     }
 
     .confirm {
-        @include button();
-        @apply bg-green text-white rounded hover:bg-green-800 focus:bg-green-800;
+        --button-color: #047857;
+        --button-text: #fff;
+        --button-hover: #064E3B;
     }
 }
 

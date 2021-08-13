@@ -4,26 +4,19 @@
 
 html {
     font-size: 100%;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
+    @apply text-base;
 }
 
 body {
-    font-family: $base-font;
-    font-size: $base-font-size;
-    @include colour(--body-text);
-    background-color: $base-background-colour;
-    font-weight: $base-font-weight;
+    @apply text-base font-sans text-black bg-white font-normal;
 }
 
 // Headings
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: $base-font;
-    margin-top: 0;
-    margin-bottom: #{$base-line-height}rem;
+    @apply font-sans mt-0 mb-6;
 
     &.is-style-underline {
-        text-decoration: underline;
+        @apply underline;
     }
 
     &[id] {
@@ -35,118 +28,53 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 // Use heading classes to change visual display while retaining semantic hierarchy
 h1,
 .h1 {
-    font-size: 1.3125rem;
-    line-height: 1.14;
-
-    @include bp(md) {
-        font-size: 2.25rem;
-        line-height: 1.11;
-    }
-
-    @include bp(lg) {
-        font-size: 3rem;
-        line-height: 0.95;
-    }
+    @apply text-3xl md:text-4xl;
 }
 
 h2,
 .h2 {
-    font-size: 1.125rem;
-    line-height: 1.33;
-
-    @include bp(md) {
-        font-size: 1.5rem;
-        line-height: 1;
-    }
-
-    @include bp(lg) {
-        font-size: 1.875rem;
-        line-height: 1.33;
-    }
+    @apply text-2xl md:text-3xl
 }
 
 h3,
 .h3 {
-    font-size: 1.125rem;
-    line-height: 1.33;
-
-    @include bp(md) {
-        font-size: 1.3125rem;
-        line-height: 1.14;
-    }
-
-    @include bp(lg) {
-        font-size: 1.5rem;
-        line-height: 1.33;
-    }
+    @apply text-lg md:text-2xl;
 }
 
 h4,
 .h4 {
-    font-size: 1rem;
-    line-height: 1.6;
-
-    @include bp(md) {
-        font-size: 1.125rem;
-        line-height: 1.33;
-    }
+    @apply text-base md:text-lg;
 }
 
 h5,
 .h5 {
-    font-size: 0.875rem;
-    line-height: 1.14;
-
-    @include bp(lg) {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
+    @apply text-sm md:text-base;
 }
 
 h6,
 .h6 {
-    font-size: 0.875rem;
-    line-height: 1.14;
+    @apply text-sm;
 }
 
 // Paragraphs
 p,
 p.has-regular-font-size {
-    margin: 0 0 #{$base-line-height}rem;
+    @apply mb-6;
 }
 
 p,
 p.has-regular-font-size,
 .td-button {
+    @apply font-sans text-base;
     font-family: $base-font;
-
-    font-size: 0.875rem;
-    line-height: 1.7;
-
-    @include bp(md) {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
 }
 
 p.has-small-font-size {
-    font-size: 0.875rem;
-    line-height: 1.7;
+    @apply text-sm;
 }
 
 p.has-large-font-size {
-    font-size: 0.875rem;
-    line-height: 1.7;
-
-    @include bp(md) {
-        font-size: 1.3125rem;
-        line-height: 1.5;
-    }
-
-    @include bp(lg) {
-        font-size: 1.5rem;
-        line-height: 1.33;
-    }
+    @apply text-lg;
 }
 
 // Don't show the drop cap when editing the paragraph's content. It causes a
@@ -154,64 +82,39 @@ p.has-large-font-size {
 // cannot be set around it, caret position calculation fails in Chrome, and
 // typing at the end of the paragraph doesn't work.
 p.has-drop-cap:not(:focus)::first-letter {
-	float: left;
-	font-size: 8.4em;
-	line-height: 0.68;
-	font-weight: 100;
-	margin: 0.05em 0.1em 0 0;
-	text-transform: uppercase;
-	font-style: normal;
+    @apply float-left text-9xl font-thin mr-0.5 uppercase;
 }
 
 p.has-background {
-	padding: 1.25rem 2rem;
-}
-
-p.has-text-color a {
-	color: inherit;
+    @apply py-5 px-8;
 }
 
 // Small
 small,
 .small {
-    font-size: 90%;
+    @apply text-sm;
 }
 
 ul {
-    list-style-type: disc;
+    @apply list-disc;
 }
 
 // Unordered and Ordered lists
 ul,
 ol {
-    margin-top: 0;
-    margin-bottom: #{$base-line-height}rem;
-    padding-left: 0;
+    @apply mt-0 pl-0 mb-6;
 
     ul,
     ol {
-        margin-bottom: 0;
+        @apply mb-0;
     }
 
     li {
-        font-size: 0.875rem;
-        line-height: 1.7;
-
-        @include bp(md) {
-            font-size: 1rem;
-            line-height: 1.5;
-        }
+        @apply text-sm md:text-base;
     }
 }
 
 // Links
 a:not([class|=acf]){
-    @include colour(--link);
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-        @include colour(--link-hover);
-        text-decoration: underline;
-    }
+    @apply text-blue no-underline hover:text-blue-800 focus:text-blue-800 hover:underline focus:underline;
 }

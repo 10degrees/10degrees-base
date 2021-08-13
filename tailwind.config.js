@@ -26,7 +26,15 @@ module.exports = {
       overlay : {
         DEFAULT: 'rgba(0, 0, 0, 0.5)'
       },
-      transparent: 'transparent'
+      blue: {
+        DEFAULT: 'blue',
+        '800': 'darkblue',
+      },
+      black: 'black',
+      transparent: 'transparent',
+      'button-bg': 'var(--button-colour)',
+      'button-text': 'var(--button-text)',
+      'button-hover': 'var(--button-hover)'
     },
     extend: {
       rotate: {

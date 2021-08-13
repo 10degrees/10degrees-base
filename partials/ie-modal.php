@@ -4,7 +4,7 @@
         <p><?php _e("This site doesn't support Internet Explorer, so some pages might not look correct and some functionality might not work as expected.", '@textdomain'); ?></p>
 
         <div class="modal-footer">
-            <button @click.prevent="showModal = false" class="confirm"><?php _e('Understood, please continue', '@textdomain'); ?></button>
+            <button @click.prevent="showModal = false" class="td-button confirm"><?php _e('Understood, please continue', '@textdomain'); ?></button>
         </div>
     </div>
 </div>

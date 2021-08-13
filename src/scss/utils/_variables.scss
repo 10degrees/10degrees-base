@@ -19,6 +19,12 @@ $grey-8: #616161;
 $grey-9: #424242;
 $grey-10: #212121;
 
+:root {
+    --button-colour: red;
+    --button-text: #fff;
+    --button-hover: darkred;
+}
+
 /*
  * Colour variables.
  *
@@ -45,8 +51,6 @@ $colour-map: (
     --body-text: #{$grey-10},
     --body-text-text: #fff,
     --body-text-hover: #{$grey-8},
-    --link: blue,
-    --link-hover: darkblue
 );
 
 /*
@@ -77,15 +81,10 @@ $z-index-map: (
 // merge maps to be output in the :root
 $root-variables: map-merge($colour-map, $layout-map);
 
-// Base background-color
-$base-background-colour: white;
-
 /* Typography */
 
 // Base typography
 $base-font-size: 16px;
-$base-line-height: 1.5;
-$base-font-weight: 400;
 
 // Font stacks
 $sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,

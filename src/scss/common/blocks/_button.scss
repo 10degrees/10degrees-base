@@ -1,9 +1,12 @@
 .td-button {
     // include the button (except colours - these are set seperately)
-    @include button;
+    @apply p-2 border-2 border-transparent transition-colors rounded appearance-none inline-block text-center align-middle cursor-pointer whitespace-nowrap no-underline text-button-text bg-button-bg border-button-bg hover:no-underline focus:no-underline hover:bg-button-hover focus:bg-button-hover hover:border-button-hover focus:border-button-hover;
+
+    touch-action: manipulation;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
 
     &.is-style-outline {
-        @include button-outline-colours(--primary);
+        @apply bg-transparent border-button-bg text-button-bg hover:text-button-text hover:bg-button-bg hover:no-underline focus:no-underline;
     }
 
     // full width button
@@ -12,16 +15,20 @@
     }
 }
 
-// loop over available colours and create a classname
-@each $prop, $value in $colour-map {
-    // strip "--" from the beginning of the variable name.
-    $name: str-slice($prop, 3);
+.td-button.has-primary-button-color {
+    --button-colour: red;
+    --button-text: #fff;
+    --button-hover: darkred;
+}
 
-    .td-button.has-#{$name}-button-color {
-        @include button-colours($prop);
+.td-button.has-secondary-button-color {
+    --button-colour: green;
+    --button-text: #fff;
+    --button-hover: darkgreen;
+}
 
-        &.is-style-outline {
-            @include button-outline-colours($prop);
-        }
-    }
+.td-button.has-tertiary-button-color {
+    --button-colour: pink;
+    --button-text: #fff;
+    --button-hover: purple;
 }
