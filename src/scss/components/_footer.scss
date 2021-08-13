@@ -1,33 +1,11 @@
 .footer {
-	background-color: $grey-2;
-	padding-top: 1.5rem;
-	padding-bottom: 1.5rem;
 	.nav {
-		margin-bottom: 1.5rem;
 		.menu-item a {
-			display: inline-block;
-			margin: 5px 0;
-		}
-	}
-
-	.left {
-		margin-bottom: 1rem;
-
-		@include bp(md){
-			margin-bottom: 0;
+			@apply inline-block my-1;
 		}
 	}
 
 	.copyright {
 		@include alignwide;
-
-		p {
-			margin-bottom: 0;
-		}
-		@include bp(md) {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-end;
-		}
 	}
 }

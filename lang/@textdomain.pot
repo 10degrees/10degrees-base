@@ -165,7 +165,7 @@ msgstr ""
 msgid "Skip social media links"
 msgstr ""
 
-#: ../partials/blocks/social-links.php:26
+#: ../partials/blocks/social-links.php:28
 msgid "Please add your social media links (opens in new tab)"
 msgstr ""
 

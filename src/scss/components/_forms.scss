@@ -12,18 +12,10 @@ form {
 	input[type="tel"],
 	select,
 	input[type="color"] {
-		width: 100%;
-		font-weight: 400;
-		min-height: 50px;
-		background: white;
-		border-radius: 0.25rem;
-		border: 1px solid $grey-7;
+		@apply w-full font-normal bg-white rounded border border-grey-700;
 
 		&.highlighted {
-			background: #fffdea !important;
-		}
-		.gfield_error & {
-			background: white !important;
+			@apply bg-grey-100;
 		}
 	}
 

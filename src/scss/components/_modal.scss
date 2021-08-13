@@ -1,42 +1,20 @@
 .modal {
-    @include background-colour(--white);
-
-    max-width: 750px;
-    padding: 2rem;
+    @apply bg-white max-w-3xl p-8;
 
     > *:last-child {
-        margin-bottom: 0;
+        @apply mb-0;
     }
 
     .modal-footer {
-        display: flex;
-        justify-content: flex-end;
+        @apply flex content-end;
     }
 
     .confirm {
         @include button();
-        background-color: #047857;
-        @include colour(--white);
-
-        border-radius: 0.25rem;
-
-        &:focus,
-        &:hover {
-            background-color: #064E3B;
-        }
+        @apply bg-green text-white rounded hover:bg-green-800 focus:bg-green-800;
     }
 }
 
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-color: rgba(0, 0, 0, 0.5);
+    @apply fixed inset-0 h-screen w-full flex items-center justify-center bg-overlay;
 }
