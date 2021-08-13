@@ -1,25 +1,11 @@
 .td-spacer {
-	clear: both;
-
-	height: 0.75rem;
-
-	@include bp(md){
-		height: 1.5rem;
-	}
+	@apply h-3 md:h-6;
 
 	&.-medium {
-		height: 1.5rem;
-
-		@include bp(md){
-			height: 3.125rem;
-		}
+		@apply h-6 md:h-12;
 	}
 
 	&.-large {
-		height: 3.125rem;
-
-		@include bp(md){
-			height: 6.25rem;
-		}
+		@apply h-12 md:h-24;
 	}
 }

@@ -30,7 +30,8 @@ mix
     .sass("src/scss/gutenberg.scss", "dist/css")
     .sass("src/scss/login.scss", "dist/css")
     .options({
-        processCssUrls: false
+        processCssUrls: false,
+        postCss: [require('tailwindcss')]
     })
     .js([
         "src/js/alpine/menu.js",
