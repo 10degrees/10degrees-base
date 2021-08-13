@@ -38,7 +38,7 @@ if (get_field('show_pinterest')) {
 }
 
 if (count($socialNetworks)) :?>
-<div <?php td_block_class($block, 'td-social-share'); ?>>
+<div <?php td_block_class($block, 'relative d-social-share'); ?>>
 
     <span class="screen-reader-text"><?php esc_html_e('Share this page', '@textdomain'); ?></span>
 
@@ -46,7 +46,7 @@ if (count($socialNetworks)) :?>
 
     <div x-data="td_social_share()" x-init="init" class="container">
 
-        <ul class="share-links">
+        <ul class="share-links flex list-none space-x-2">
 
             <li x-show="shareSupported" class="webshare-list-item">
                 <button @click="sharePage" class="webshare-button">
@@ -58,7 +58,7 @@ if (count($socialNetworks)) :?>
             <?php
             foreach ($socialNetworks as $network => $options) : ?>
                 <li x-show="!shareSupported">
-                    <a href="<?php echo $options['url']; ?>">
+                    <a class="block" href="<?php echo $options['url']; ?>">
                         <?php echo td_get_svg($options['icon']); ?>
                         <span class="screen-reader-text">
                             <?php
