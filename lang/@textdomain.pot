@@ -73,10 +73,6 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: ../app/Support/Acf/BlockServiceProvider.php:62
-msgid "@theme"
-msgstr ""
-
 #: ../base.php:26
 msgid "Skip to main content"
 msgstr ""
