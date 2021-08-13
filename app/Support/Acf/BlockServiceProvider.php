@@ -32,11 +32,6 @@ class BlockServiceProvider extends ServiceProvider
         }
 
         /**
-         * Add a custom block category to keep custom blocks together.
-         */
-        add_filter('block_categories', [$this, 'addBlockCategory']);
-
-        /**
          * Autoload all blocks in the Blocks directory. This saves having to
          * manually add it to the block provider.
          */
@@ -46,22 +41,6 @@ class BlockServiceProvider extends ServiceProvider
          * Call the parent constructor to continue booting the provider.
          */
         parent::__construct();
-    }
-
-    /**
-     * Add a block category to show what blocka are custom
-     *
-     * @param array $categories The block categories
-     *
-     * @return array
-     */
-    public function addBlockCategory(array $categories): array
-    {
-        $categories[] = [
-            'slug'  => 'theme',
-            'title' => __('@theme', '@textdomain'),
-        ];
-        return $categories;
     }
 
     /**

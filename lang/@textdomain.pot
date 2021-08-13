@@ -149,7 +149,7 @@ msgstr ""
 msgid "Heading is required. Nothing will be shown on the frontend."
 msgstr ""
 
-#: ../partials/blocks/button.php:9
+#: ../partials/blocks/button.php:10
 msgid "Please provide a link for the button to go to."
 msgstr ""
 
