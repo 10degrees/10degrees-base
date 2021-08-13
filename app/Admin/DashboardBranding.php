@@ -79,6 +79,9 @@ class DashboardBranding
             width: 46px;
             margin: 8px;
         }
+        .edit-post-fullscreen-mode-close.has-icon::before {
+            content: normal;
+        }
         </style>
         <?php
     }
