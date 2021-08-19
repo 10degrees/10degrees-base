@@ -19,6 +19,18 @@ if (!defined('WPINC')) {
     die;
 }
 
+add_action('after_switch_theme', function (string $oldName, WP_Theme $oldTheme) {
+    if (!class_exists('ACF')) {
+        add_action('admin_head', function () {
+            echo '<div class="notice notice-error">';
+            echo '<p>' . __('ACF is not activated!', '@textdomain') . '</p>';
+            echo '</div>';
+        });
+        switch_theme($oldTheme->stylesheet);
+        return false;
+    }
+}, 10, 2);
+
 /**
  * Composer
  */
