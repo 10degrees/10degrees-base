@@ -29,7 +29,7 @@ add_action(
             'admin_head',
             function () {
                 echo '<div class="notice notice-error">';
-                echo '<p>ACF is not activated! <a href="' . admin_url('plugins.php') . '">Activate ACF</a></p>';
+                echo '<p>This theme requires the Advanced Custom Fields plugin to be activated. <a href="' . admin_url('plugins.php') . '">Activate</a></p>';
                 echo '</div>';
             }
         );
