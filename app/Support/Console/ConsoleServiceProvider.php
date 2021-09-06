@@ -37,6 +37,7 @@ class ConsoleServiceProvider extends ServiceProvider
         \App\Support\Console\Commands\MakeProvider::class,
         \App\Support\Console\Commands\MakeShortcode::class,
         \App\Support\Console\Commands\MakeSubscriber::class,
+        \App\Support\Console\Commands\SetEnvironment::class,
     ];
 
     /**
