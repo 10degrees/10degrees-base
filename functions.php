@@ -19,6 +19,41 @@ if (!defined('WPINC')) {
     die;
 }
 
+add_action(
+    'after_switch_theme',
+    function (string $oldName, WP_Theme $oldTheme) {
+        if (class_exists('ACF')) {
+            return true;
+        }
+        add_action(
+            'admin_head',
+            function () {
+                echo '<div class="notice notice-error">';
+                echo '<p>This theme requires the Advanced Custom Fields plugin to be activated. <a href="' . admin_url('plugins.php') . '">Activate</a></p>';
+                echo '</div>';
+            }
+        );
+        switch_theme($oldTheme->stylesheet);
+        return false;
+    },
+    10,
+    2
+);
+
+add_filter(
+    "plugin_action_links",
+    function (array $actions, string $plugin_file) {
+        if ($plugin_file === "advanced-custom-fields-pro/acf.php") {
+            unset($actions["deactivate"]);
+            unset($actions["delete"]);
+            $actions["theme-guard"] = '<a class="delete">Deactivate the theme before deactivating ACF.</a>';
+        }
+        return $actions;
+    },
+    10,
+    2
+);
+
 /**
  * Composer
  */
