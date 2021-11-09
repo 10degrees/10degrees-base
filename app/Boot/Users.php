@@ -13,7 +13,7 @@ class Users
     public function __construct()
     {
         add_filter('rest_endpoints', [$this, 'disableUserEndpoints']);
-        add_action('init', [$this, 'removeRoles']);
+        // add_action('after_switch_theme', [$this, 'removeRoles']);
     }
 
     /**
@@ -36,7 +36,7 @@ class Users
         if (isset($endpoints['/wp/v2/users/(?P<id>[\d]+)'])) {
             unset($endpoints['/wp/v2/users/(?P<id>[\d]+)']);
         }
-    
+
         return $endpoints;
     }
 
