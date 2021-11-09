@@ -15,7 +15,7 @@
             <p><?php echo '&copy;&nbsp;2009 - ' . date('Y') . '&nbsp;' . get_bloginfo('name'); ?>.</p>
             <?php the_privacy_policy_link(); ?>
         </div>
-        <p><?php esc_html_e('WordPress by', '@textdomain'); ?>&nbsp;<a href="https://www.10degrees.uk" rel="nofollow"><?php esc_html_e('10 Degrees', '@textdomain'); ?></a></p>
+        <p><?php esc_html_e('Website by', '@textdomain'); ?>&nbsp;<a href="https://www.10degrees.uk" rel="nofollow"><?php esc_html_e('10 Degrees', '@textdomain'); ?></a></p>
     </div>
 </footer>
 
