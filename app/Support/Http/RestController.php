@@ -69,6 +69,7 @@ abstract class RestController implements ControllerInterface
             [
                 'methods'  => $this->method,
                 'callback' => [$this, 'resolveClosure'],
+                'permission_callback' => '__return_true'
             ]
         );
     }
