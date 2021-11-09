@@ -110,7 +110,7 @@ msgid "Comments are closed."
 msgstr ""
 
 #: ../partials/footer.php:18
-msgid "WordPress by"
+msgid "Website by"
 msgstr ""
 
 #: ../partials/footer.php:18
