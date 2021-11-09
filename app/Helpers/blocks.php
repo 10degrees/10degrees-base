@@ -21,9 +21,6 @@ function td_block_class(array $block, string $classes = '') : void
     if (! empty($block['className'])) {
         $classes[] = trim($block['className']);
     }
-    if (! empty($block['align'])) {
-        $classes[] = 'align' . $block['align'];
-    }
     if (! empty($block['id'])) {
         $classes[] = str_replace('_', '-', $block['id']);
     }
