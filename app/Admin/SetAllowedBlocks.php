@@ -59,7 +59,7 @@ class SetAllowedBlocks
      */
     public function __construct()
     {
-        add_filter('allowed_block_types', [$this, 'setAllowedBlocks']);
+        add_filter('allowed_block_types_all', [$this, 'setAllowedBlocks']);
     }
 
     /**

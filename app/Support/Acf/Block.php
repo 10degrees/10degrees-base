@@ -48,7 +48,7 @@ abstract class Block
     {
         $this->register();
 
-        add_filter('allowed_block_types', [$this, 'allowBlockType'], 999);
+        add_filter('allowed_block_types_all', [$this, 'allowBlockType'], 999);
     }
 
     /**
@@ -107,7 +107,7 @@ abstract class Block
     public function render(array $block, string $content = '', bool $preview = false, int $postId = 0)
     {
         $post = get_post($postId);
-        
+
         echo td_view("partials/blocks/{$this->name}", compact('block', 'post'));
     }
 }
