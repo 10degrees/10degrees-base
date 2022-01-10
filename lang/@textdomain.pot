@@ -161,11 +161,7 @@ msgstr ""
 msgid "Find us on social media"
 msgstr ""
 
-#: ../partials/blocks/social-links.php:5
-msgid "Skip social media links"
-msgstr ""
-
-#: ../partials/blocks/social-links.php:28
+#: ../partials/blocks/social-links.php:26
 msgid "Please add your social media links (opens in new tab)"
 msgstr ""
 
@@ -173,15 +169,11 @@ msgstr ""
 msgid "Share this page"
 msgstr ""
 
-#: ../partials/blocks/social-share.php:45
-msgid "Skip sharing options"
-msgstr ""
-
-#: ../partials/blocks/social-share.php:54
+#: ../partials/blocks/social-share.php:52
 msgid "Share"
 msgstr ""
 
-#: ../partials/blocks/social-share.php:65
+#: ../partials/blocks/social-share.php:63
 msgid "Share on "
 msgstr ""
 

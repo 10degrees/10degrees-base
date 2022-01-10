@@ -2,7 +2,7 @@
 
 $size = get_field('size');
 
-$classes = ['clear-both'];
+$classes = ['td-spacer', 'clear-both'];
 
 if ($size === 'medium') {
     $classes = array_merge($classes, ['h-6', 'md:h-12']);

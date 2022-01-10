@@ -24,34 +24,24 @@
 
 // Override video margin-left/right: 0;
 .wp-block-video.wp-block {
-	margin-left: auto;
-	margin-right: auto;
+  @apply mx-auto;
 }
 
 // Embedded blocks styling
 .wp-block-embed {
-  min-width: 100%;
+  @apply min-w-full;
 
   iframe {
     max-width: 100% !important;
   }
 }
 
-// Override the .acf-accordion styles applied by ACF for our Accordion block
-.acf-accordion[class*='block-'],
-.acf-accordion[class^='block-'] {
-    border: 0;
-    padding: 0;
-    margin: 0;
-}
-
 .td-spacer {
-	background-color: $grey-3;
+  @apply bg-grey-500;
 }
 
 .block-editor-block-list__layout.is-root-container > .wp-block[data-align=full] {
-  margin-left: -10px;
-  margin-right: -10px;
+  @apply -ml-2.5 -mr-2.5;
 }
 
 .wp-align-wrapper {
@@ -60,7 +50,7 @@
 
 .wp-align-wrapper > .wp-block,
 .wp-align-wrapper.wp-align-full {
-  max-width: none;
+  @apply max-w-none;
 }
 
 .wp-align-wrapper.wp-align-wide {

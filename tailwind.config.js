@@ -9,6 +9,7 @@ module.exports = {
       grey: {
         '100': '#fafafa',
         '200': '#f5f5f5',
+        '300': '#eeeeee',
         '500': '#bdbdbd',
         '700': '#757575'
       },
