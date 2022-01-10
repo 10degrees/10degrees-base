@@ -31,7 +31,7 @@
     get_template_part('partials/header');
     ?>
 
-    <main id="main">
+    <main id="main" class="flex-grow">
         <?php get_template_part('partials/breadcrumbs'); ?>
         <?php require \App\Boot\BaseWrapper::$main_template; ?>
     </main>

@@ -1,12 +1,8 @@
 .pagination {
-  margin: 0 auto 24px;
+  @apply mx-auto mt-0 mb-6;
   max-width: var(--max-content-width);
 
   ul {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    position: relative;
-    flex-direction: row;
+    @apply flex w-full justify-between relative;
   }
 }

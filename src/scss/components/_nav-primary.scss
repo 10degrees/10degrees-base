@@ -1,59 +1,40 @@
 .nav.-primary {
-    @include bp(md) {
-        display: block;
-        width: auto;
-    }
+    @apply md:block md:w-auto;
 
     ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
+        @apply list-none m-0 p-0;
     }
     & > ul {
-        @include bp(md) {
-            display: flex;
-        }
+        @apply md:flex;
     }
     & .sub-menu {
-        background: #fff;
-        box-shadow: 0 0 4px rgba(#000, 0.1);
+        @apply bg-white shadow;
     }
     li {
-        position: relative;
+        @apply relative;
     }
     li .sub-menu {
-        @include bp(md) {
-            position: absolute;
-            top: 100%;
-        }
+        @apply md:absolute top-full;
     }
     li .sub-menu .sub-menu {
-        @include bp(md) {
-            top: 0;
-            left: 100%;
-        }
+        @apply md:top-0 left-full;
     }
     .dropdown {
-        border: 0;
-        background-color: transparent;
-        cursor: pointer;
+        @apply border-0 bg-transparent cursor-pointer;
     }
     a,
     .dropdown {
-        padding: 1rem 2rem;
-        display: block;
+        @apply py-4 px-8 block no-underline;
         color: inherit;
-        text-decoration: none;
 
         &:hover,
         &[aria-expanded="true"] {
             background: #eee;
         }
         &.dropdown::after {
+            @apply inline-block ml-2 align-middle;
+            
             content: "";
-            display: inline-block;
-            margin-left: 0.5rem;
-            vertical-align: middle;
             border: 0.25rem solid transparent;
             border-bottom: 0;
             border-top-color: currentColor;
@@ -65,7 +46,7 @@
         }
 
         &[aria-expanded="false"] + .sub-menu {
-            display: none;
+            @apply hidden;
         }
     }
 }

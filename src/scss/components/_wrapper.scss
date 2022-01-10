@@ -1,5 +1,5 @@
 .wrapper {
-    display: grid;
+    @apply grid;
     gap: var(--vertical-gap) 0;
     /*
 
@@ -68,7 +68,7 @@
         grid-column: start / end;
 
         @include ie-only {
-            max-width: 100%;
+            @apply max-w-full;
             padding-left: 0 !important;
             padding-right: 0 !important;
         }
