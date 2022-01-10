@@ -114,6 +114,7 @@ class {{ class }} extends Cpt
                 'checked_ontop'    => null,
                 'admin_cols'       => null,
                 'required'         => false,
+                'show_in_rest'     => true,
             ],
             [
                 'singular' => 'Category',
