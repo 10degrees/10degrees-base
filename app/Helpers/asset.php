@@ -46,28 +46,22 @@ function td_img_path($filePath = '')
  * Returns the SVG, the whole SVG and nothing
  * but the SVG, so help me Matt Mullenweg.
  *
- * @param $svg string File name & relative path e.g. social-icons/facebook.svg
+ * @param $svg string File name & relative path e.g. social-icons/facebook. If no .svg on the end
+ * it will automatically be added.
  *
  * @return string The SVG XML markup
  */
 function td_get_svg($svg)
 {
-    ob_start();
-    td_print_svg(td_img_path($svg));
-    return ob_get_clean();
-}
-
-/**
- * Print svg code from given path. Compatible with acf
- *
- * @param string $icon Path to file
- *
- * @return void
- */
-function td_print_svg($icon)
-{
-    if (false !== strpos($icon, '.svg')) {
-        $icon = str_replace(site_url(), '', $icon);
-        include ABSPATH . $icon;
+    if (false === strpos($svg, '.svg')) {
+        $svg .= '.svg';
     }
+
+    ob_start();
+
+    $imagePath = td_img_path($svg);
+    $icon = str_replace(site_url(), '', $imagePath);
+    include ABSPATH . $icon;
+
+    return ob_get_clean();
 }
