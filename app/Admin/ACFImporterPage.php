@@ -92,7 +92,7 @@ class ACFImporterPage
     public function create_admin_page()
     {
         $notice = "";
-        $key = $_POST['group_key'];
+        $key = $_POST['group_key'] ?? null;
 
         if (!$key) {
             $notice = "Please enter an ACF field group key.";
