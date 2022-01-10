@@ -1,7 +1,3 @@
-.screen-reader-text {
-    @include screen-reader-text();
-}
-
-.screen-reader-text--display-on-focus:focus {
+.sr-only-on-focus:focus {
     @include sr-only-show-on-focus();
 }

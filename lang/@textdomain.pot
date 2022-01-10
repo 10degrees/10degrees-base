@@ -1,4 +1,4 @@
-# Copyright (C) 2021 @theme
+# Copyright (C) 2022 @theme
 # This file is distributed under the same license as the @theme package.
 msgid ""
 msgstr ""

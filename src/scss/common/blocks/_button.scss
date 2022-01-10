@@ -11,7 +11,7 @@
 
     // full width button
     &.is-style-full {
-        width: 100%;
+        @apply w-full;
     }
 }
 

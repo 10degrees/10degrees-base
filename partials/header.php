@@ -17,7 +17,7 @@ use App\Walkers\AlpineJSWalker; ?>
                     esc_html_e('Add a logo in Site settings', '@textdomain');
                 endif;
                 ?>
-                <span class="screen-reader-text"><?php echo get_bloginfo('name'); ?></span>
+                <span class="sr-only"><?php echo get_bloginfo('name'); ?></span>
             </a>
         </div>
         <button

@@ -40,15 +40,13 @@ if (get_field('show_pinterest')) {
 if (count($socialNetworks)) :?>
 <div <?php td_block_class($block, 'relative d-social-share'); ?>>
 
-    <span class="screen-reader-text"><?php esc_html_e('Share this page', '@textdomain'); ?></span>
-
-    <a href="#after-share-links" class="screen-reader-text screen-reader-text--display-on-focus screen-reader-text--skiplink"><?php esc_html_e('Skip sharing options', '@textdomain'); ?></a>
+    <span class="sr-only"><?php esc_html_e('Share this page', '@textdomain'); ?></span>
 
     <div x-data="td_social_share()" x-init="init" class="container">
 
         <ul class="share-links flex list-none space-x-2">
 
-            <li x-show="shareSupported" class="webshare-list-item">
+            <li x-show="shareSupported" class="webshare-list-item text-center leading-none">
                 <button @click="sharePage" class="webshare-button">
                     <?php echo td_get_svg('social-icons/share.svg'); ?>
                     <p><?php _e('Share', '@textdomain'); ?></p>
@@ -57,10 +55,10 @@ if (count($socialNetworks)) :?>
 
             <?php
             foreach ($socialNetworks as $network => $options) : ?>
-                <li x-show="!shareSupported">
+                <li class="text-center leading-none" x-show="!shareSupported">
                     <a class="block" href="<?php echo $options['url']; ?>">
                         <?php echo td_get_svg($options['icon']); ?>
-                        <span class="screen-reader-text">
+                        <span class="sr-only">
                             <?php
                             _e('Share on ', '@textdomain');
                             echo ucwords($network); ?>
@@ -72,8 +70,6 @@ if (count($socialNetworks)) :?>
         </ul>
 
     </div>
-
-    <div id="after-share-links"></div>
 
 </div>
 

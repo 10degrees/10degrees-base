@@ -1,8 +1,6 @@
 <div <?php td_block_class($block, 'relative td-social-links'); ?>>
 
-    <span class="screen-reader-text"><?php esc_html_e('Find us on social media', '@textdomain'); ?></span>
-
-    <a href="#after-social-links" class="screen-reader-text screen-reader-text--display-on-focus screen-reader-text--skiplink"><?php esc_html_e('Skip social media links', '@textdomain'); ?></a>
+    <span class="sr-only"><?php esc_html_e('Find us on social media', '@textdomain'); ?></span>
 
     <div class="container">
 
@@ -15,7 +13,7 @@
                 $url = $settings['prepend'] . $url;
             }
             if ($url && !empty($settings['icon'])) {
-                $output[] = '<li class="text-center leading-none"><a href="' . esc_url_raw($url) . '"  target="_blank" rel="noopener noreferrer">' . $settings['icon'] . '<span class="screen-reader-text">' . $social . '</span></a></li>';
+                $output[] = '<li class="text-center leading-none"><a href="' . esc_url_raw($url) . '"  target="_blank" rel="noopener noreferrer">' . $settings['icon'] . '<span class="sr-only">' . $social . '</span></a></li>';
             }
         }
 
@@ -29,7 +27,5 @@
         <?php } ?>
 
     </div>
-
-    <div id="after-social-links"></div>
 
 </div>
