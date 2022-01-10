@@ -37,6 +37,7 @@ class Accordion extends Block
         'category'    => 'theme',
         'keywords'    => ['accordion'],
         'supports'    => ['align' => ['wide', 'full']],
+        'enqueue_script' => 'https://unpkg.com/@alpinejs/collapse@3.5.0/dist/cdn.min.js',
         'example'  => [
             'attributes' => [
                 'mode' => 'preview',

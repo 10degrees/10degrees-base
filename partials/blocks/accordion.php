@@ -29,6 +29,7 @@ if (!$heading) {
         <?php if ($content = get_field('content')): ?>
             <div
                 x-show="open"
+                x-collapse
                 class="content"
                 id="<?php echo $content_id; ?>"
                 aria-labelledby="<?php echo $toggle_id; ?>">
