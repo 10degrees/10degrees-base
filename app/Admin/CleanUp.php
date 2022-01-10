@@ -36,7 +36,7 @@ class CleanUp
         remove_action('admin_print_scripts', 'print_emoji_detection_script');
         remove_action('admin_print_styles', 'print_emoji_styles');
 
-        add_filter('block_editor_settings', [$this, 'removeEditorStyles']);
+        add_filter('block_editor_settings_all', [$this, 'removeEditorStyles']);
 
         $this->maybeDefineDisallowFileEdit();
     }
