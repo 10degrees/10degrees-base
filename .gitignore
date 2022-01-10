@@ -2,11 +2,6 @@
 .*
 ~*
 
-# Lock files
-package-lock.json
-composer.lock
-yarn.lock
-
 # ignore node dependency directories
 node_modules/
 
