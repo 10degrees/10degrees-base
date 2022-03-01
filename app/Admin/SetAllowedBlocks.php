@@ -50,7 +50,7 @@ class SetAllowedBlocks
         'map-block-leaflet/map-block-leaflet',
         'core/missing',
         /**
-         * No ACF blocks? They are automatically added to the whitelist!
+         * No ACF blocks? They are automatically added to the allowlist!
          */
     ];
 
