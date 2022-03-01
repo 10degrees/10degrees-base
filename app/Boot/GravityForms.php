@@ -62,7 +62,7 @@ class GravityForms
      */
     private function overrideAddressFields()
     {
-        if ($this->options['override_default_buttons']) {
+        if ($this->options['override_address_types']) {
             add_filter('override_address_types', [$this, 'ukAddressFormat'], 10, 2);
         }
     }
