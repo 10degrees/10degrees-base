@@ -78,7 +78,7 @@ class Enqueue
      */
     public function scripts()
     {
-        wp_enqueue_script('alpinejs', 'https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js', ['block-acf-accordion'], '', true);
+        wp_enqueue_script('alpinejs', 'https://unpkg.com/alpinejs@3.5.0/dist/cdn.min.js', [], '', true);
 
         wp_register_script('td-main', get_stylesheet_directory_uri() . td_asset_path('js/main.js'), ['jquery', 'alpinejs'], '', true);
         if (is_single() && comments_open() && get_option('thread_comments')) {
