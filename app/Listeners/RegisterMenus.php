@@ -15,6 +15,13 @@ namespace App\Listeners;
 class RegisterMenus
 {
     /**
+     * The event priority
+     *
+     * @var integer
+     */
+    public static $priority = 10;
+
+    /**
      * Handle an event
      *
      * @return void
