@@ -15,6 +15,13 @@ namespace App\Listeners;
 class RegisterWidgets
 {
     /**
+     * The event priority
+     *
+     * @var integer
+     */
+    public static $priority = 10;
+
+    /**
      * The Widgets to register with the theme
      *
      * Example:
