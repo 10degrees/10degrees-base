@@ -48,12 +48,12 @@ class EventServiceProvider extends ServiceProvider
     {
         foreach ($this->actions as $action => $listeners) {
             foreach ($listeners as $listener) {
-                Event::listen($action, $listener);
+                Event::listen($action, $listener, $listener::$priority ?? 10);
             }
         }
         foreach ($this->filters as $filter => $listeners) {
             foreach ($listeners as $listener) {
-                Event::listen($filter, $listener);
+                Event::listen($filter, $listener, $listener::$priority ?? 10);
             }
         }
         foreach ($this->subscribers as $subscriber) {
