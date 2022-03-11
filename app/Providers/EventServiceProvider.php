@@ -31,6 +31,12 @@ class EventServiceProvider extends ServiceProvider
         'allowed_block_types_all' => [
             \App\Listeners\Admin\SetAllowedBlocks::class,
         ],
+        'custom_menu_order' => [
+            '__return_true',
+        ],
+        'menu_order' => [
+            \App\Listeners\Admin\MenuOrder::class,
+        ],
         'widgets_init' => [
             \App\Listeners\RegisterWidgets::class,
         ],

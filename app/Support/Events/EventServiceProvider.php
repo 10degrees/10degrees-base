@@ -40,7 +40,13 @@ class EventServiceProvider extends ServiceProvider
     {
         foreach ($this->listeners as $event => $listeners) {
             foreach ($listeners as $listener) {
-                Event::listen($event, $listener, $listener::$priority ?? 10);
+                if (is_string($listener) && class_exists($listener)) {
+                    $priority = $listener::$priority ?? 10;
+                } else {
+                    $priority = 10;
+                }
+
+                Event::listen($event, $listener, $priority);
             }
         }
 
