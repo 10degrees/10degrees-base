@@ -21,7 +21,7 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $actions = [
+    protected $listeners = [
         'admin_menu' => [
             \App\Listeners\Admin\RegisterReusableBlockMenu::class,
         ],
@@ -35,14 +35,6 @@ class EventServiceProvider extends ServiceProvider
             \App\Listeners\RegisterWidgets::class,
         ],
     ];
-
-    /**
-     * The filters to "listen" to. Filters and actions use the same API under
-     * the hood so they are seperated purely for readablilty.
-     *
-     * @var array
-     */
-    protected $filters = [];
 
     /**
      * The subscribers. These are passed the event dispatcher instance.

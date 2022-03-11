@@ -18,19 +18,11 @@ use App\Support\ServiceProvider;
 class EventServiceProvider extends ServiceProvider
 {
     /**
-     * The actions to "listen" to.
+     * The events to "listen" to.
      *
      * @var array
      */
-    protected $actions = [];
-
-    /**
-     * The filters to "listen" to. Filters and actions use the same API under
-     * the hood so they are seperated purely for readablilty.
-     *
-     * @var array
-     */
-    protected $filters = [];
+    protected $listeners = [];
 
     /**
      * The subscribers. These are passed the event dispatcher instance.
@@ -46,16 +38,12 @@ class EventServiceProvider extends ServiceProvider
      */
     public function call()
     {
-        foreach ($this->actions as $action => $listeners) {
+        foreach ($this->listeners as $event => $listeners) {
             foreach ($listeners as $listener) {
-                Event::listen($action, $listener, $listener::$priority ?? 10);
+                Event::listen($event, $listener, $listener::$priority ?? 10);
             }
         }
-        foreach ($this->filters as $filter => $listeners) {
-            foreach ($listeners as $listener) {
-                Event::listen($filter, $listener, $listener::$priority ?? 10);
-            }
-        }
+
         foreach ($this->subscribers as $subscriber) {
             Event::subscribe($subscriber);
         }
