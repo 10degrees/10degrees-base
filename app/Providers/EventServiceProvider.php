@@ -28,6 +28,9 @@ class EventServiceProvider extends ServiceProvider
         'after_setup_theme' => [
             \App\Listeners\RegisterMenus::class,
         ],
+        'allowed_block_types_all' => [
+            \App\Listeners\Admin\SetAllowedBlocks::class,
+        ],
         'widgets_init' => [
             \App\Listeners\RegisterWidgets::class,
         ],

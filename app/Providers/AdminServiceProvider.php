@@ -28,7 +28,6 @@ class AdminServiceProvider extends ServiceProvider
         \App\Admin\MenuOrder::class,
         \App\Admin\EditorColourPalette::class,
         \App\Admin\FontSizes::class,
-        \App\Admin\SetAllowedBlocks::class,
         \App\Admin\ACFImporterPage::class,
         \App\Admin\DuplicateBlocks::class,
     ];

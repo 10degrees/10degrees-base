@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Admin;
+namespace App\Listeners\Admin;
 
 /**
-     * Choose which blocks are available in the Gutenberg editor
- * See Confluence for details on how to add a block
+ * Handle the event listener
  *
  * @category Theme
  * @package  TenDegrees/10degrees-base
@@ -15,6 +14,13 @@ namespace App\Admin;
  */
 class SetAllowedBlocks
 {
+    /**
+     * The event priority
+     *
+     * @var integer
+     */
+    public static $priority = 10;
+
     /**
      * Array of the allowed block types in the editor
      *
@@ -36,6 +42,7 @@ class SetAllowedBlocks
         'core/html',
         'core/image',
         'core/list',
+        'core/missing',
         'core/more',
         'core/media-text',
         'core/nextpage',
@@ -48,29 +55,15 @@ class SetAllowedBlocks
         'core/video',
         'gravityforms/form',
         'map-block-leaflet/map-block-leaflet',
-        'core/missing',
-        /**
-         * No ACF blocks? They are automatically added to the allowlist!
-         */
+        // No ACF blocks? They are automatically added to the allowlist!
     ];
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        add_filter('allowed_block_types_all', [$this, 'setAllowedBlocks']);
-    }
-
-    /**
-     * Set the blocks allowed in the editor
+     * Handle an event
      *
-     * @param array|bool $allowed_blocks Allowed block types or true/false to
-     *                                   enable/disable blocks
-     *
-     * @return array
+     * @return mixed
      */
-    public function setAllowedBlocks($allowed_blocks)
+    public function handle()
     {
         return $this->allowedBlocks;
     }
