@@ -9,6 +9,7 @@
     ],
     "license": "MIT",
     "require": {
+        "php": "^8.0",
         "jgrossi/corcel": "^5.0",
         "composer/installers": "^1.9",
         "illuminate/translation": "^8.13",
@@ -25,5 +26,11 @@
         "files": [
             "app/Support/helpers.php"
         ]
+    },
+    "config": {
+        "platform-check": false,
+        "allow-plugins": {
+            "composer/installers": true
+        }
     }
 }

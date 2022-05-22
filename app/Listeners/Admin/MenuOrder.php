@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Admin;
+namespace App\Listeners\Admin;
 
 /**
- * Rearrange the admin menu items
+ * Handle the event listener
  *
  * @category Theme
  * @package  TenDegrees/10degrees-base
@@ -15,22 +15,20 @@ namespace App\Admin;
 class MenuOrder
 {
     /**
-     * Constructor
+     * The event priority
+     *
+     * @var integer
      */
-    public function __construct()
-    {
-        add_filter('custom_menu_order', '__return_true');
-        add_filter('menu_order', [$this, 'moveMenuItems']);
-    }
+    public static $priority = 10;
 
     /**
-     * Set the new admin menu item order
+     * Handle an event
      *
-     * @return array List of menu items in their new order
+     * @return mixed
      */
-    public function moveMenuItems()
+    public function handle()
     {
-        return array(
+        return [
             'index.php',
             'separator1',
             'wpengine-common',
@@ -47,6 +45,6 @@ class MenuOrder
             'tools.php', //tools
             'options-general.php', //WordPress options
             'acf-options-site-settings',
-        );
+        ];
     }
 }
