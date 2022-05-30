@@ -157,7 +157,7 @@ class Url
      */
     public function redirect(string $url, int $status = 302): void
     {
-        die(wp_redirect($url, $status));
+        die(wp_redirect($url, $status, 'WordPress Theme'));
     }
 
     /**
