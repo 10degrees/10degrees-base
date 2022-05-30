@@ -24,7 +24,7 @@ trait RedirectsUsers
      */
     public function redirect($url, $status = 302)
     {
-        wp_safe_redirect($url, $status);
+        wp_safe_redirect($url, $status, 'WordPress Theme');
         exit;
     }
 
@@ -38,7 +38,7 @@ trait RedirectsUsers
      */
     public function redirectExternal($url, $status = 302)
     {
-        wp_redirect($url, $status);
+        wp_redirect($url, $status, 'WordPress Theme');
         exit;
     }
 }
