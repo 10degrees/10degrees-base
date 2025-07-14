@@ -25,5 +25,10 @@
         "files": [
             "app/Support/helpers.php"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
     }
 }
