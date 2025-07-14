@@ -23,53 +23,56 @@ class Spacer extends Field
      *
      * @var array
      */
-    protected $fields = array(
-        'key' => 'group_60ba3d7c64880',
-        'title' => 'Block: Spacer',
-        'fields' => array(
-            array(
-                'key' => 'field_60ba3d80aaed4',
-                'label' => 'Size',
-                'name' => 'size',
-                'type' => 'select',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array(
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'choices' => array(
-                    'small' => 'Small',
-                    'medium' => 'Medium',
-                    'large' => 'Large',
-                ),
-                'default_value' => false,
-                'allow_null' => 0,
-                'multiple' => 0,
-                'ui' => 0,
-                'return_format' => 'value',
-                'ajax' => 0,
-                'placeholder' => '',
-            ),
-        ),
-        'location' => array(
-            array(
+    protected function fields(): array
+    {
+        return [
+            'key' => 'group_60ba3d7c64880',
+            'title' => 'Block: Spacer',
+            'fields' => array(
                 array(
-                    'param' => 'block',
-                    'operator' => '==',
-                    'value' => 'acf/spacer',
+                    'key' => 'field_60ba3d80aaed4',
+                    'label' => 'Size',
+                    'name' => 'size',
+                    'type' => 'select',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'choices' => array(
+                        'small' => 'Small',
+                        'medium' => 'Medium',
+                        'large' => 'Large',
+                    ),
+                    'default_value' => false,
+                    'allow_null' => 0,
+                    'multiple' => 0,
+                    'ui' => 0,
+                    'return_format' => 'value',
+                    'ajax' => 0,
+                    'placeholder' => '',
                 ),
             ),
-        ),
-        'menu_order' => 0,
-        'position' => 'normal',
-        'style' => 'default',
-        'label_placement' => 'top',
-        'instruction_placement' => 'label',
-        'hide_on_screen' => '',
-        'active' => true,
-        'description' => '',
-    );
+            'location' => array(
+                array(
+                    array(
+                        'param' => 'block',
+                        'operator' => '==',
+                        'value' => 'acf/spacer',
+                    ),
+                ),
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => true,
+            'description' => '',
+        ];
+    }
 }
