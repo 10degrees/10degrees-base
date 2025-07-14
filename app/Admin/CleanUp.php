@@ -26,7 +26,7 @@ class CleanUp
         add_filter('wpseo_metabox_prio', [$this, 'moveYoastToBottomOfEditPage']);
         add_filter('tiny_mce_before_init', [$this, 'forceAdvancedWysiwyg']);
         add_action('admin_notices', [$this, 'restrictUpdateNotification'], 1);
-        add_filter('admin_bar_menu', [$this, 'replaceHowdy'], 25);
+        add_filter('admin_bar_menu', [$this, 'replaceHowdy'], 9992);
         add_filter('admin_bar_menu', [$this, 'removeWordPressLogo'], 30);
         add_action('wp_dashboard_setup', [$this, 'cleanUpDashboard']);
 
@@ -156,7 +156,7 @@ class CleanUp
     {
         $my_account = $wp_admin_bar->get_node('my-account');
 
-        $newtitle = str_replace('How are you,', 'Your account: ', $my_account->title);
+        $newtitle = str_replace('Howdy,', 'Your account: ', $my_account->title);
 
         $wp_admin_bar->add_node(
             array(

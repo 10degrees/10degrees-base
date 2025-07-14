@@ -23,5 +23,8 @@ class {{ class }} extends Field
      *
      * @var array
      */
-    protected $fields = [];
+    protected function fields(): array
+    {
+        return [];
+    }
 }

@@ -15,11 +15,18 @@ namespace App\Support\Acf;
 abstract class Field
 {
     /**
-     * ACF fields to register. Overriden in extending class.
+     * Determine whether to wrap the field registration in an init action
      *
-     * @var array
+     * @var boolean
      */
-    protected $fields = [];
+    protected static bool $useInitAction = false;
+
+    /**
+     * init action to use if useInitAction is true
+     *
+     * @var string
+     */
+    protected static string $initAction = 'init';
 
     /**
      * Constructor
@@ -27,7 +34,20 @@ abstract class Field
     public function __construct()
     {
         if (function_exists('acf_add_local_field_group')) {
-            acf_add_local_field_group($this->fields);
+            if (static::$useInitAction) {
+                add_action(static::$initAction, function () {
+                    acf_add_local_field_group($this->fields());
+                });
+            } else {
+                acf_add_local_field_group($this->fields());
+            }
         }
     }
+
+    /**
+     * Get the fields
+     *
+     * @return array
+     */
+    abstract protected function fields(): array;
 }

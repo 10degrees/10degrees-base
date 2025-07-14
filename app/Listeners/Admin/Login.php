@@ -29,6 +29,7 @@ class Login
         $events->listen('login_headerurl', [$this, 'loginLogoUrl']);
         $events->listen('login_headertext', [$this, 'loginLogoUrlTitle']);
         $events->listen('login_footer', [$this, 'loginCheckedRememberMe']);
+        $events->listen('login_head', [$this, 'maybeOverrideLoginLogo']);
     }
 
     /**
@@ -69,5 +70,29 @@ class Login
     public function loginCheckedRememberMe()
     {
         echo "<script>document.getElementById('rememberme').checked = true;</script>";
+    }
+
+    /**
+     * Maybe override login logo if Customiser logo is set
+     *
+     * @return void
+     */
+    public function maybeOverrideLoginLogo()
+    {
+        $custom_logo_id = get_theme_mod('custom_logo');
+        $logo_url = $custom_logo_id ? wp_get_attachment_image_url($custom_logo_id, 'full') : null;
+
+        if (!$logo_url) {
+            return; // Use the default SCSS logo in login.scss
+        }
+
+        echo '<style>
+        body.login h1 a {
+            background-image: url("' . esc_url($logo_url) . '") !important;
+            background-size: contain;
+            width: 320px;
+            height: 150px;
+        }
+        </style>';
     }
 }
