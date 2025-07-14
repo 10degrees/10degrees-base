@@ -20,17 +20,18 @@
     "url": "https://github.com/thecodercoder/frontend-boilerplate/issues"
   },
   "scripts": {
-    "development": "mix",
-    "dev": "mix",
-    "watch": "mix watch",
-    "watch-poll": "mix watch -- --watch-options-poll=1000",
-    "hot": "mix watch --hot",
-    "production": "mix --production"
+    "development": "cross-env NODE_OPTIONS=--openssl-legacy-provider mix",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider mix",
+    "watch": "cross-env NODE_OPTIONS=--openssl-legacy-provider mix watch",
+    "watch-poll": "cross-env mix watch -- --watch-options-poll=1000",
+    "hot": "cross-env NODE_OPTIONS=--openssl-legacy-provider mix watch --hot",
+    "production": "cross-env NODE_OPTIONS=--openssl-legacy-provider mix --production"
   },
   "homepage": "https://github.com/thecodercoder/frontend-boilerplate#readme",
   "devDependencies": {
     "@wordpress/babel-preset-default": "^4.19.0",
     "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.3",
     "sass": "^1.27.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.12"
