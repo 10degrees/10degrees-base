@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-require('laravel-mix-versionhash')
+require('laravel-mix-versionhash');
 require('laravel-mix-copy-watched');
 require('laravel-mix-clean');
 require('@tinypixelco/laravel-mix-wp-blocks');
@@ -17,11 +17,6 @@ let wpPot = require('wp-pot');
  */
 
 mix
-    .webpackConfig({
-        externals: {
-            'jquery': 'jQuery'
-        }
-    })
     .clean()
     .setPublicPath("dist")
     .sass("src/scss/main.scss", "dist/css")
@@ -52,6 +47,9 @@ mix
     .copyWatched("src/fonts", "dist/fonts")
     .sourceMaps(true, "source-map")
     .webpackConfig({
+        externals: {
+            'jquery': 'jQuery'
+        },
         plugins: [
             new CopyWebpackPlugin([{ // Copy images
                 from: 'src/img',

@@ -136,7 +136,7 @@ class AlpineJSWalker extends \Walker_Nav_Menu
         $atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args, $depth);
 
         $attributes = '';
-        if ($args->walker && $args->walker->has_children) {
+        if ($args->walker ?? null && $args->walker->has_children) {
             unset($atts['href']);
         }
         foreach ($atts as $attr => $value) {
@@ -161,9 +161,9 @@ class AlpineJSWalker extends \Walker_Nav_Menu
          */
         $title = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
 
-        $item_output  = $args->before;
+        $item_output  = $args->before ?? '';
 
-        if ($args->walker && $args->walker->has_children) {
+        if ($args->walker ?? null && $args->walker->has_children) {
             $item_output .= '<button' . $attributes;
             $item_output .= " @click.prevent='toggleMenu(" . $item->ID . ", " . $item->menu_item_parent . ")'";
             $item_output .= " @click.away='onClickAway'";
@@ -175,11 +175,11 @@ class AlpineJSWalker extends \Walker_Nav_Menu
             $item_output .= '</button>';
         } else {
             $item_output .= '<a' . $attributes . '>';
-            $item_output .= $args->link_before . $title . $args->link_after;
+            $item_output .= $args->link_before ?? '' . $title . ($args->link_after ?? '');
             $item_output .= '</a>';
         }
 
-        $item_output .= $args->after;
+        $item_output .= $args->after ?? '';
 
 
         /**
