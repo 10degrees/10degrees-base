@@ -25,10 +25,8 @@ class AdminServiceProvider extends ServiceProvider
         \App\Admin\DashboardBranding::class,
         \App\Admin\CleanUp::class,
         \App\Admin\Acf::class,
-        \App\Admin\MenuOrder::class,
         \App\Admin\EditorColourPalette::class,
         \App\Admin\FontSizes::class,
-        \App\Admin\SetAllowedBlocks::class,
         \App\Admin\ACFImporterPage::class,
         \App\Admin\DuplicateBlocks::class,
     ];

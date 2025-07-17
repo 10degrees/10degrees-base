@@ -15,6 +15,13 @@ namespace App\Listeners\Admin;
 class RegisterReusableBlockMenu
 {
     /**
+     * The event priority
+     *
+     * @var integer
+     */
+    public static $priority = 10;
+
+    /**
      * The name used on the edit page.
      *
      * @var string
