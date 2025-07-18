@@ -47,9 +47,6 @@ mix
     .copyWatched("src/fonts", "dist/fonts")
     .sourceMaps(true, "source-map")
     .webpackConfig({
-        externals: {
-            'jquery': 'jQuery'
-        },
         plugins: [
             new CopyWebpackPlugin([{ // Copy images
                 from: 'src/img',
