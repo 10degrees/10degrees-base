@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Boot;
- 
+
 /**
  * Google Maps API Instructions
  *
@@ -63,13 +63,20 @@ class GoogleMapsAPIIntegration
     /**
      * Enqueues the Google Maps API JS with your API key. Feel free to
      * add conditionals here if only required on specific page
-     * templates or custom post types.
-     *
+     * templates or custom post types. 
+     * 
+     * initGoogleMaps callback defined in \src\js\common\google-map-init.js
+     * 
      * @return void
      */
     public function enqueue()
     {
-        wp_enqueue_script('google-maps', '//maps.googleapis.com/maps/api/js?key=' . $this->apiKey, array(), '3', true);
-        wp_enqueue_script('google-map-init');
+        wp_enqueue_script(
+            'google-maps',
+            '//maps.googleapis.com/maps/api/js?key=' . $this->apiKey . '&callback=initGoogleMaps',
+            array(),
+            '3',
+            true
+        );
     }
 }

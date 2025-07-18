@@ -14,6 +14,8 @@ import ScrollToError from "./common/scroll-to-error";
 
 //Vendor
 import Magnific from "./common/magnific";
+import GoogleMapInit from "./common/google-map-init";
+
 
 window.$ = window.jQuery; // Set JQuery Variable
 
@@ -25,6 +27,7 @@ var App = {
             new ScrollToId();
             new ScrollToError();
             new Magnific();
+            new GoogleMapInit();
         }
     },
     // Home page
