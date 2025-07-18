@@ -13,7 +13,6 @@ import ScrollToId from "./common/scroll-to-id";
 import ScrollToError from "./common/scroll-to-error";
 
 //Vendor
-import Magnific from "./common/magnific";
 import GoogleMapInit from "./common/google-map-init";
 
 
@@ -26,7 +25,6 @@ var App = {
             new AjaxForm();
             new ScrollToId();
             new ScrollToError();
-            new Magnific();
             new GoogleMapInit();
         }
     },
