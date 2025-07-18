@@ -1,96 +1,65 @@
 class AjaxForm {
+    constructor() {
+        this.formClass = '.js-ajax-form';
+        this.init();
+    }
 
-	constructor(){
-		this.formClass = '.js-ajax-form';
-		this.form = false;
+    init() {
+        document.body.addEventListener('submit', (e) => {
+            const target = e.target;
+            if (target.matches(this.formClass)) {
+                e.preventDefault();
+                this.handleSubmit(target);
+            }
+        });
 
-		this.init();
-	}
+        this.maybeSubmitOnLoad();
+    }
 
-	init() {
+    handleSubmit(form) {
+        this.showLoading(form);
 
-		var $this = this;
+        const actionUrl = form.getAttribute('action');
+        const formData = new FormData(form);
 
-		$( "body" ).on( "submit", $this.formClass, function(e) {
+        fetch(actionUrl, {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.text())
+        .then(result => this.handleSuccess(result, form))
+        .catch(error => {
+            console.error("AJAX error:", error);
+        });
+    }
 
-			e.preventDefault();
+    handleSuccess(result, form) {
+        const refreshTarget = form.getAttribute('data-refresh');
+        if (refreshTarget) {
+            const targetEl = document.querySelector(refreshTarget);
+            if (targetEl) {
+                targetEl.innerHTML = result;
+            }
+        }
+    }
 
-			$this.form = $(this);
+    showLoading(form) {
+        const refreshTarget = form.getAttribute('data-refresh');
+        if (refreshTarget) {
+            const targetEl = document.querySelector(refreshTarget);
+            if (targetEl) {
+                targetEl.innerHTML = '<div class="loading"><i class="fas fa-sync fa-spin"></i></div>';
+            }
+        }
+    }
 
-			$this.submit();
-			
-		});
-
-		$this.maybeSubmitOnLoad();
-
-	}
-
-	submit() {
-
-		this.loadingState();
-
-		var $this = this;
-
-		$.ajax({
-		    type: "POST",
-		    url: this.form.attr('action'),
-		    data: {
-				action : this.form.find('input[name="_action"]').val(),
-				data : this.form.serialize()
-		    },
-		    success: function(result) {
-		
-		    	$this.success(result);
-		
-		    },
-		    error: function(data){
-		
-		    	console.log("error");
-		    	console.log(data);
-		
-			},
-		});
-
-	}
-
-	success(result) {
-
-		var refresh_target = this.form.attr('data-refresh');
-
-		if (typeof this.form.attr('data-refresh') != 'undefined') {
-
-			$(refresh_target).html(result);
-
-		}
-
-	}
-
-	loadingState() {
-
-		var refresh_target = this.form.attr('data-refresh');
-
-		if (typeof this.form.attr('data-refresh') != 'undefined') {
-
-			$(refresh_target).html('<div class="loading"><i class="fas fa-sync fa-spin"></i></div>');
-
-		}
-
-	}
-
-	maybeSubmitOnLoad() {
-
-		$.each($(this.formClass), function() {
-
-			if (typeof $(this).attr('data-submit-on-load') != 'undefined') {
-
-				$(this).submit();
-
-			}
-			
-		});
-
-	}
-
-};
+    maybeSubmitOnLoad() {
+        document.querySelectorAll(this.formClass).forEach(form => {
+            if (form.hasAttribute('data-submit-on-load')) {
+                form.dispatchEvent(new Event('submit', { bubbles: true }));
+            }
+        });
+    }
+}
 
 export default AjaxForm;

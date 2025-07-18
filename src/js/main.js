@@ -1,22 +1,10 @@
-/**
- *
- * To create new scripts create a partial inside src and write your code there either inside
- * a function or object oriented.
- *
- * Then call it on the relevant page below or in the common function to be run on every page.
- *
- */
-
-//Utilities
+// Utilities
 import AjaxForm from "./common/ajax-form";
 import ScrollToId from "./common/scroll-to-id";
 import ScrollToError from "./common/scroll-to-error";
 
-//Vendor
+// Vendor
 import GoogleMapInit from "./common/google-map-init";
-
-
-window.$ = window.jQuery; // Set JQuery Variable
 
 var App = {
     // All pages
@@ -59,13 +47,15 @@ var UTIL = {
     loadEvents: function() {
         UTIL.fire("common");
 
-        $.each(
-            document.body.className.replace(/-/g, "_").split(/\s+/),
-            function(i, classnm) {
+        document.body.className
+            .replace(/-/g, "_")
+            .split(/\s+/)
+            .forEach((classnm) => {
                 UTIL.fire(classnm);
-            }
-        );
+            });
     }
 };
 
-$(document).ready(UTIL.loadEvents());
+document.addEventListener("DOMContentLoaded", () => {
+    UTIL.loadEvents();
+});
