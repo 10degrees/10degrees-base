@@ -5,7 +5,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
   &.admin-bar {
-    @include bp(md) {
+    min-height: calc(100vh - 46px);
+    @include bp(783px) {
       min-height: calc(100vh - 32px);
     }
   }
