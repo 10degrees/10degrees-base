@@ -5,10 +5,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   &.admin-bar {
-    min-height: calc(100vh - 46px);
-    @include bp(783px) {
-      min-height: calc(100vh - 32px);
-    }
+    min-height: calc(100vh - var(--wp-admin--admin-bar--height));
   }
   #main {
     flex-grow: 1;
