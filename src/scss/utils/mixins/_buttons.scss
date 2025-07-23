@@ -1,3 +1,5 @@
+@use "colours" as c;
+
 /**
  * Button mixins.
  *
@@ -42,17 +44,17 @@
  * The colours for a regular button.
  */
 @mixin button-colours($color) {
-    @include colour(#{$color}-text);
-    @include background-colour($color);
-    @include border-colour($color);
+    @include c.colour(#{$color}-text);
+    @include c.background-colour($color);
+    @include c.border-colour($color);
 
     &:hover,
     &:focus,
     &:active,
     &.active {
-        @include colour(#{$color}-text);
-        @include background-colour(#{$color}-hover);
-        @include border-colour(#{$color}-hover);
+        @include c.colour(#{$color}-text);
+        @include c.background-colour(#{$color}-hover);
+        @include c.border-colour(#{$color}-hover);
         text-decoration: none;
     }
 }
@@ -61,7 +63,7 @@
  * The colours for an outlined button.
  */
 @mixin button-outline-colours($color) {
-    @include colour($color);
+    @include c.colour($color);
     background-color: transparent;
     border-color: currentColor;
 
@@ -69,9 +71,9 @@
     &:focus,
     &:active,
     &.active {
-        @include colour(#{$color}-text);
-        @include background-colour(#{$color}-hover);
-        @include border-colour(#{$color}-hover);
+        @include c.colour(#{$color}-text);
+        @include c.background-colour(#{$color}-hover);
+        @include c.border-colour(#{$color}-hover);
         text-decoration: none;
     }
 }

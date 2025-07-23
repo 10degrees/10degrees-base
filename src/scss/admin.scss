@@ -1,13 +1,4 @@
-/*
- * Styles for /wp-admin
- */
-
-/* utils */
-@import "utils/utils";
-
-/* common */
-@import "common/root";
-@import "common/screen-reader";
-
-/* admin */
-@import "admin/dashboard";
+@use "utils";
+@use "common/root";
+@use "common/screen-reader";
+@use "admin/dashboard";

@@ -1,5 +1,9 @@
+@use "../utils/mixins/colours" as c;
+@use "../utils/mixins/buttons" as b;
+
+
 .modal {
-    @include background-colour(--white);
+    @include c.background-colour(--white);
 
     max-width: 750px;
     padding: 2rem;
@@ -14,9 +18,9 @@
     }
 
     .confirm {
-        @include button();
+        @include b.button();
         background-color: #047857;
-        @include colour(--white);
+        @include c.colour(--white);
 
         border-radius: 0.25rem;
 

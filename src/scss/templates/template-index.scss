@@ -1,0 +1,9 @@
+.blog {
+  article {
+    &:first-of-type {
+      margin-top: 24px;
+    }
+
+    margin-bottom: 24px;
+  }
+}

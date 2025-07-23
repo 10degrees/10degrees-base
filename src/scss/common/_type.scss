@@ -1,26 +1,30 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins/colours" as c;
+@use "../utils/mixins/bp";
+
 /*
  * Base typography
  */
 
 html {
     font-size: 100%;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
+    font-size: v.$base-font-size;
+    line-height: v.$base-line-height;
 }
 
 body {
-    font-family: $base-font;
-    font-size: $base-font-size;
-    @include colour(--body-text);
-    background-color: $base-background-colour;
-    font-weight: $base-font-weight;
+    font-family: v.$base-font;
+    font-size: v.$base-font-size;
+    @include c.colour(--body-text);
+    background-color: v.$base-background-colour;
+    font-weight: v.$base-font-weight;
 }
 
 // Headings
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: $base-font;
+    font-family: v.$base-font;
     margin-top: 0;
-    margin-bottom: #{$base-line-height}rem;
+    margin-bottom: #{v.$base-line-height}rem;
 
     &.is-style-underline {
         text-decoration: underline;
@@ -32,18 +36,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 // Heading-specific sizes
-// Use heading classes to change visual display while retaining semantic hierarchy
 h1,
 .h1 {
     font-size: 1.3125rem;
     line-height: 1.14;
 
-    @include bp(md) {
+    @include bp.bp(md) {
         font-size: 2.25rem;
         line-height: 1.11;
     }
 
-    @include bp(lg) {
+    @include bp.bp(lg) {
         font-size: 3rem;
         line-height: 0.95;
     }
@@ -54,12 +57,12 @@ h2,
     font-size: 1.125rem;
     line-height: 1.33;
 
-    @include bp(md) {
+    @include bp.bp(md) {
         font-size: 1.5rem;
         line-height: 1;
     }
 
-    @include bp(lg) {
+    @include bp.bp(lg) {
         font-size: 1.875rem;
         line-height: 1.33;
     }
@@ -70,12 +73,12 @@ h3,
     font-size: 1.125rem;
     line-height: 1.33;
 
-    @include bp(md) {
+    @include bp.bp(md) {
         font-size: 1.3125rem;
         line-height: 1.14;
     }
 
-    @include bp(lg) {
+    @include bp.bp(lg) {
         font-size: 1.5rem;
         line-height: 1.33;
     }
@@ -86,7 +89,7 @@ h4,
     font-size: 1rem;
     line-height: 1.6;
 
-    @include bp(md) {
+    @include bp.bp(md) {
         font-size: 1.125rem;
         line-height: 1.33;
     }
@@ -97,7 +100,7 @@ h5,
     font-size: 0.875rem;
     line-height: 1.14;
 
-    @include bp(lg) {
+    @include bp.bp(lg) {
         font-size: 1rem;
         line-height: 1.5;
     }
@@ -112,18 +115,17 @@ h6,
 // Paragraphs
 p,
 p.has-regular-font-size {
-    margin: 0 0 #{$base-line-height}rem;
+    margin: 0 0 #{v.$base-line-height}rem;
 }
 
 p,
 p.has-regular-font-size,
 .td-button {
-    font-family: $base-font;
-
+    font-family: v.$base-font;
     font-size: 0.875rem;
     line-height: 1.7;
 
-    @include bp(md) {
+    @include bp.bp(md) {
         font-size: 1rem;
         line-height: 1.5;
     }
@@ -138,21 +140,18 @@ p.has-large-font-size {
     font-size: 0.875rem;
     line-height: 1.7;
 
-    @include bp(md) {
+    @include bp.bp(md) {
         font-size: 1.3125rem;
         line-height: 1.5;
     }
 
-    @include bp(lg) {
+    @include bp.bp(lg) {
         font-size: 1.5rem;
         line-height: 1.33;
     }
 }
 
-// Don't show the drop cap when editing the paragraph's content. It causes a
-// number of bugs in combination with `contenteditable` fields. The caret
-// cannot be set around it, caret position calculation fails in Chrome, and
-// typing at the end of the paragraph doesn't work.
+// Drop cap suppression in editor
 p.has-drop-cap:not(:focus)::first-letter {
 	float: left;
 	font-size: 8.4em;
@@ -171,7 +170,7 @@ p.has-text-color a {
 	color: inherit;
 }
 
-// Small
+// Small text
 small,
 .small {
     font-size: 90%;
@@ -181,11 +180,11 @@ ul {
     list-style-type: disc;
 }
 
-// Unordered and Ordered lists
+// Lists
 ul,
 ol {
     margin-top: 0;
-    margin-bottom: #{$base-line-height}rem;
+    margin-bottom: #{v.$base-line-height}rem;
     padding-left: 0;
 
     ul,
@@ -197,7 +196,7 @@ ol {
         font-size: 0.875rem;
         line-height: 1.7;
 
-        @include bp(md) {
+        @include bp.bp(md) {
             font-size: 1rem;
             line-height: 1.5;
         }
@@ -206,12 +205,12 @@ ol {
 
 // Links
 a:not([class|=acf]){
-    @include colour(--link);
+    @include c.colour(--link);
     text-decoration: none;
 
     &:hover,
     &:focus {
-        @include colour(--link-hover);
+        @include c.colour(--link-hover);
         text-decoration: underline;
     }
 }

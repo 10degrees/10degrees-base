@@ -1,3 +1,6 @@
+@use "../../utils/mixins/colours" as c;
+@use "../../utils/mixins/prop" as p;
+
 .td-accordion {
     .toggle {
         width: 100%;
@@ -6,8 +9,8 @@
         text-align: left;
         padding: 0.75rem 1.25rem;
 
-        @include background-color(--primary);
-        @include colour(--primary-text);
+        @include c.background-colour(--primary);
+        @include c.colour(--primary-text);
 
         display: flex;
         align-items: center;
@@ -20,7 +23,7 @@
             padding: 0.25rem;
             display: inline-block;
             border-style: solid;
-            @include prop('border-color', --primary-text);
+            @include p.prop('border-color', --primary-text);
             border-width: 0 0.25rem 0.25rem 0;
 
             margin-left: 1.25rem;

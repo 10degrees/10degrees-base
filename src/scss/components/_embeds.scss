@@ -1,3 +1,5 @@
+@use "../utils/mixins/bp";
+
 [class*="wp-block-embed"] {
   &[class*="-youtube"] {
     .wp-block-embed__wrapper:before {
@@ -48,7 +50,7 @@
     }
   }
 
-  @include bp($max: sm) {
+  @include bp.bp($max: sm) {
     // Facebook block iframe styling for mobile
     &[class*="-facebook"] {
       .fb_iframe_widget span,

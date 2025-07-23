@@ -1,6 +1,0 @@
-/**
- * Return the breakpoint from the map.
- */
-@function px2rem($px, $base: $base-font-size){
-		@return ($px / ($px * 0 + 1)) / ($base / ($base * 0 + 1)) * 1rem;
-}

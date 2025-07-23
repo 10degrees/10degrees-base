@@ -86,3 +86,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/* default scroll behavious */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}

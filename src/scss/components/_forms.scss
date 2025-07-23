@@ -1,3 +1,6 @@
+@use "../utils/mixins/custom-checkbox" as cc;
+@use "../utils/variables" as v;
+
 form {
 	textarea,
 	input[type="text"],
@@ -17,7 +20,7 @@ form {
 		min-height: 50px;
 		background: white;
 		border-radius: 0.25rem;
-		border: 1px solid $grey-7;
+		border: 1px solid v.$grey-7;
 
 		&.highlighted {
 			background: #fffdea !important;
@@ -28,6 +31,6 @@ form {
 	}
 
 	input[type="checkbox"] {
-		@include custom-checkbox();
+		@include cc.custom-checkbox();
 	}
 }

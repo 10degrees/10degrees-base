@@ -1,5 +1,5 @@
 /* utils */
-@import "utils/utils";
+@import "utils";
 
 /* common */
 @import "common/root";
@@ -8,7 +8,7 @@
     padding: 0.625rem;
 
     /* blocks */
-    @import "common/blocks/blocks";
+    @import "common/blocks";
 
     /* common */
     @import "common/social-brands";
