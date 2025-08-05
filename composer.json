@@ -32,5 +32,10 @@
         "allow-plugins": {
             "composer/installers": true
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "npm install"
+        ]
     }
 }
