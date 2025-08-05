@@ -34,7 +34,7 @@
         }
     },
     "scripts": {
-        "post-install-cmd": [
+        "post-create-project-cmd": [
             "App\\Support\\Composer\\Composer::postInstall",
             "npm install"
         ]
