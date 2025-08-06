@@ -9,8 +9,7 @@
 /vendor/
 
 /dist/
-/lang/*
-!/lang/.gitkeep
+/lang/
 
 # ignore OS generated files
 ehthumbs.db
