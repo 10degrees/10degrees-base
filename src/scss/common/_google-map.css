@@ -5,7 +5,6 @@
     margin: 20px 0;
 }
 
-// Fixes potential theme css conflict.
 .acf-map img {
    max-width: inherit !important;
 }

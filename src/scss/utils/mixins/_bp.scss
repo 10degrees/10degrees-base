@@ -1,3 +1,6 @@
+@use "../variables" as v;
+@use "sass:map";
+
 /*
  * Generate a media query based on convenient names such as sm, md , lg. The
  * names are set in a $breakpoints-map.
@@ -15,10 +18,10 @@
  * @include bp(sm, md, print);  // @media print and (min-width: 600px) and (max-width: 900px)
  */
 
-@mixin bp($min: null, $max: null, $type: only screen, $map: $breakpoint-map) {
+@mixin bp($min: null, $max: null, $type: only screen, $map: v.$breakpoint-map) {
     // get the value/s from the $map
-    $min-value: if(map-get($map, $min), map-get($map, $min), $min);
-    $max-value: if(map-get($map, $max), map-get($map, $max), $max);
+    $min-value: if(map.get($map, $min), map.get($map, $min), $min);
+    $max-value: if(map.get($map, $max), map.get($map, $max), $max);
 
     // build the media query
     $min: if($min, "(min-width:#{$min-value})", null);

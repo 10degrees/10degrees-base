@@ -1,3 +1,5 @@
+@use "prop" as p;
+
 @mixin _container {
 	margin-right: auto;
 	margin-left: auto;
@@ -6,11 +8,11 @@
 }
 
 @mixin content {
-	@include prop(max-width, --max-content-width);
+	@include p.prop(max-width, --max-content-width);
 	@include _container;
 }
 
 @mixin alignwide {
-	@include prop(max-width, --max-container-width);
+	@include p.prop(max-width, --max-container-width);
 	@include _container;
 }

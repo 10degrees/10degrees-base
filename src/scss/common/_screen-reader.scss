@@ -1,7 +1,9 @@
+@use "../utils/mixins/screen-reader-text" as sr;
+
 .screen-reader-text {
-    @include screen-reader-text();
+    @include sr.screen-reader-text();
 }
 
 .screen-reader-text--display-on-focus:focus {
-    @include sr-only-show-on-focus();
+    @include sr.sr-only-show-on-focus();
 }

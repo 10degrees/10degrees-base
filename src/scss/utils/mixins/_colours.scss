@@ -1,16 +1,18 @@
+@use "prop" as p;
+
 // helpful wrapper for colour
 @mixin colour($value) {
-    @include prop(color, $value);
+    @include p.prop(color, $value);
 }
 
 // helpful wrapper for background colour
 @mixin background-colour($value) {
-    @include prop(background-color, $value);
+    @include p.prop(background-color, $value);
 }
 
 // helpful wrapper for border colour
 @mixin border-colour($value) {
-    @include prop(border-color, $value);
+    @include p.prop(border-color, $value);
 }
 
 /* aliases - for the heathens who bastardise the English language */

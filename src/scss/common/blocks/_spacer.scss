@@ -1,16 +1,18 @@
+@use '../../utils/mixins/bp' as bp;
+
 .td-spacer {
 	clear: both;
 
 	height: 0.75rem;
 
-	@include bp(md){
+	@include bp.bp(md){
 		height: 1.5rem;
 	}
 
 	&.-medium {
 		height: 1.5rem;
 
-		@include bp(md){
+		@include bp.bp(md){
 			height: 3.125rem;
 		}
 	}
@@ -18,7 +20,7 @@
 	&.-large {
 		height: 3.125rem;
 
-		@include bp(md){
+		@include bp.bp(md){
 			height: 6.25rem;
 		}
 	}

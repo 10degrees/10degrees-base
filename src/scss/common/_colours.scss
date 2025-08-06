@@ -1,17 +1,21 @@
+@use "../utils/mixins/colours" as c;
+@use "../utils/variables" as v;
+@use "sass:string";
+
 /*
  * Loop through all colours and output WordPress colour classes.
  */
-@each $prop, $value in $colour-map {
+@each $prop, $value in v.$colour-map {
 	// slice off the '--' from the beginning of the colour name
-	$name: str-slice($prop, 3);
+	$name: string.slice($prop, 3);
 
 	// background colour
 	.has-#{$name}-background-color {
-		@include background-colour($prop);
+		@include c.background-colour($prop);
 	}
 
 	// color
 	.has-#{$name}-color {
-		@include colour($prop);
+		@include c.colour($prop);
 	}
 }

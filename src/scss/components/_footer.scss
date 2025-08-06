@@ -1,5 +1,9 @@
+@use "../utils/variables" as v;
+@use "../utils/mixins/bp";
+@use "../utils/mixins/containers" as c;
+
 .footer {
-	background-color: $grey-2;
+	background-color: v.$grey-2;
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
 	.nav {
@@ -13,18 +17,18 @@
 	.left {
 		margin-bottom: 1rem;
 
-		@include bp(md){
+		@include bp.bp(md){
 			margin-bottom: 0;
 		}
 	}
 
 	.copyright {
-		@include alignwide;
+		@include c.alignwide;
 
 		p {
 			margin-bottom: 0;
 		}
-		@include bp(md) {
+		@include bp.bp(md) {
 			display: flex;
 			justify-content: space-between;
 			align-items: flex-end;

@@ -1,39 +1,42 @@
-$icon-width-facebook: $icon-height * 0.5227; //Use ratio for non-square icons : width/height
-$icon-width-youtube: $icon-height * 1.125; //Use ratio for non-square icons : width/height
+@use "../utils/variables" as v;
+@use "./social-brands" as s;
+
+$icon-width-facebook: v.$icon-height * 0.5227; //Use ratio for non-square icons : width/height
+$icon-width-youtube: v.$icon-height * 1.125; //Use ratio for non-square icons : width/height
 
 svg.svg-inline--fa {
-    height: $icon-height;
-    width: $icon-width;
+    height: v.$icon-height;
+    width: v.$icon-width;
     &.fa-facebook-f {
         width: $icon-width-facebook;
         path {
-            fill: $facebook;
+            fill: s.$facebook;
         }
     }
     &.fa-twitter {
         path {
-            fill: $twitter;
+            fill: s.$twitter;
         }
     }
     &.fa-linkedin {
         path {
-            fill: $linkedin;
+            fill: s.$linkedin;
         }
     }
     &.fa-instagram {
         path {
-            fill: $instagram;
+            fill: s.$instagram;
         }
     }
     &.fa-youtube {
         width: $icon-width-youtube;
         path {
-            fill: $youtube;
+            fill: s.$youtube;
         }
     }
     &.fa-pinterest {
         path {
-            fill: $pinterest;
+            fill: s.$pinterest;
         }
     }
 }

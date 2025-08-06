@@ -1,9 +1,13 @@
+@use '../../utils/variables' as v;
+@use '../../utils/mixins/buttons' as b;
+@use "sass:string";
+
 .td-button {
     // include the button (except colours - these are set seperately)
-    @include button;
+    @include b.button;
 
     &.is-style-outline {
-        @include button-outline-colours(--primary);
+        @include b.button-outline-colours(--primary);
     }
 
     // full width button
@@ -13,15 +17,15 @@
 }
 
 // loop over available colours and create a classname
-@each $prop, $value in $colour-map {
+@each $prop, $value in v.$colour-map {
     // strip "--" from the beginning of the variable name.
-    $name: str-slice($prop, 3);
+    $name: string.slice($prop, 3);
 
     .td-button.has-#{$name}-button-color {
-        @include button-colours($prop);
+        @include b.button-colours($prop);
 
         &.is-style-outline {
-            @include button-outline-colours($prop);
+            @include b.button-outline-colours($prop);
         }
     }
 }

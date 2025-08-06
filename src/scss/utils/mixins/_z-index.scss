@@ -1,3 +1,6 @@
+@use "../variables" as v;
+@use "sass:map";
+
 @mixin z-index($key){
-    z-index: map-get($z-index-map, $key);
+    z-index: map.get(v.$z-index-map, $key);
 }

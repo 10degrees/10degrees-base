@@ -1,3 +1,5 @@
+@use "../utils/variables" as v;
+
 /*
  * CSS custom properties
  * We can finally spell "colour" correctly 👍
@@ -6,7 +8,7 @@
  * :root will target root selector of SVGs as well, for example
  */
 :root {
-	@each $prop, $variable in $root-variables {
+	@each $prop, $variable in v.$root-variables {
 		#{$prop}: $variable;
 	}
 }

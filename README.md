@@ -23,13 +23,11 @@ Dependencies are managed through [Composer](https://getcomposer.org/) and [Node]
 
 ### Via Composer
 
-1) Add `"10degrees/10degrees-base": "*"` to the `require` section of your site-wide `composer.json`.
-2) Run `composer install`.
-
-### Manual install
-
-1) Download the latest theme release from https://github.com/10degrees/10degrees-base/releases/latest.
-2) Upload zip file to Appearance -> Themes.
+1) Navigate to themes folder
+2) Run `composer create-project 10degrees/10degrees-base [name-of-project]` changing the name of the project
+3) The script will install the theme and composer dependencies
+4) The script will search/replace for @textdomain and @theme placeholders. The `@themedomain` will be "name-of-project" and the `@theme` name will be "Name Of Project"
+5) The script installs npm dependencies
 
 ## Theme Setup
 

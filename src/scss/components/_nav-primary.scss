@@ -1,5 +1,7 @@
+@use "../utils/mixins/bp";
+
 .nav.-primary {
-    @include bp(md) {
+    @include bp.bp(md) {
         display: block;
         width: auto;
     }
@@ -10,7 +12,7 @@
         padding: 0;
     }
     & > ul {
-        @include bp(md) {
+        @include bp.bp(md) {
             display: flex;
         }
     }
@@ -22,13 +24,13 @@
         position: relative;
     }
     li .sub-menu {
-        @include bp(md) {
+        @include bp.bp(md) {
             position: absolute;
             top: 100%;
         }
     }
     li .sub-menu .sub-menu {
-        @include bp(md) {
+        @include bp.bp(md) {
             top: 0;
             left: 100%;
         }
