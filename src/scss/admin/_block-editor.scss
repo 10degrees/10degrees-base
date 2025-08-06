@@ -1,3 +1,5 @@
+@use "../utils/variables" as v;
+
 /* Post title width */
 .editor-post-title__block.wp-block {
   max-width: var(--max-content-width);
@@ -46,7 +48,7 @@
 }
 
 .td-spacer {
-	background-color: $grey-3;
+	background-color: v.$grey-3;
 }
 
 .block-editor-block-list__layout.is-root-container > .wp-block[data-align=full] {

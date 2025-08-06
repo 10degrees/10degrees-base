@@ -1,21 +1,19 @@
 /* utils */
-@import "utils";
+@use "utils";
 
 /* common */
-@import "common/root";
+@use "common/root";
 
-.editor-styles-wrapper {
-    padding: 0.625rem;
+
 
     /* blocks */
-    @import "common/blocks";
+    @use "common/blocks";
 
     /* common */
-    @import "common/social-brands";
-    @import "common/svg";
-    @import "common/type";
-    @import "common/colours";
-    @import "common/alignment";
+    @use "common/social-brands";
+    @use "common/svg";
+    @use "common/type";
+    @use "common/colours";
+    @use "common/alignment";
 
-    @import "admin/_block-editor";
-}
+    @use "admin/_block-editor";

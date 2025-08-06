@@ -1,16 +1,13 @@
-@use "../../utils/mixins/colours" as c;
-@use "../../utils/mixins/prop" as p;
-
 .td-accordion {
-    .toggle {
+   & .toggle {
         width: 100%;
         border: 0;
 
         text-align: left;
         padding: 0.75rem 1.25rem;
 
-        @include c.background-colour(--primary);
-        @include c.colour(--primary-text);
+        background-color: var(--secondary);
+        color: var(--primary-text);
 
         display: flex;
         align-items: center;
@@ -23,7 +20,7 @@
             padding: 0.25rem;
             display: inline-block;
             border-style: solid;
-            @include p.prop('border-color', --primary-text);
+            border-color: var(--primary-text);
             border-width: 0 0.25rem 0.25rem 0;
 
             margin-left: 1.25rem;
@@ -33,12 +30,12 @@
         }
     }
 
-    .content {
+    & .content {
         padding: 0 1.25rem;
     }
 
     &.-open{
-        .toggle::after {
+        & .toggle::after {
             transform: rotate(225deg);
         }
     }
