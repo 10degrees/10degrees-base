@@ -1,3 +1,5 @@
+@use "z-index" as z;
+
 // Only display content to screen readers
 //
 // See: http://a11yproject.com/posts/how-to-hide-content/
@@ -29,7 +31,7 @@
     text-decoration: none;
     top: 5px;
     width: auto;
-    @include z-index(screen-reader-text);
+    @include z.z-index(screen-reader-text);
 }
 
 // WP Core convention

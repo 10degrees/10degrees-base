@@ -1,3 +1,7 @@
+@use "../utils/mixins/ie-only" as ie;
+@use "../utils/mixins/prop" as p;
+
+
 .wrapper {
     display: grid;
     gap: var(--vertical-gap) 0;
@@ -49,8 +53,8 @@
         grid-column: content-start / content-end;
 
         // IE fallback for the block vertical rhythm
-        @include ie-only {
-            @include prop(max-width, --max-content-width);
+        @include ie.ie-only {
+            @include p.prop(max-width, --max-content-width);
             margin-left: auto !important;
             margin-right: auto !important;
             padding-left: 1rem !important;
@@ -60,14 +64,14 @@
     & > .alignwide {
         grid-column: wide-start / wide-end;
 
-        @include ie-only {
-            @include prop(max-width, --max-container-width);
+        @include ie.ie-only {
+            @include p.prop(max-width, --max-container-width);
         }
     }
     & > .alignfull {
         grid-column: start / end;
 
-        @include ie-only {
+        @include ie.ie-only {
             max-width: 100%;
             padding-left: 0 !important;
             padding-right: 0 !important;

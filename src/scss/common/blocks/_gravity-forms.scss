@@ -1,3 +1,5 @@
+@use '../../utils/mixins/buttons' as b;
+
 .ginput_right.address_country,
 .ginput_container_select {
     select {
@@ -14,6 +16,6 @@
 }
 
 .gform_button {
-    @include button();
-    @include button-colours(--primary);
+    @include b.button();
+    @include b.button-colours(--primary);
 }

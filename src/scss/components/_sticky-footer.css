@@ -1,5 +1,4 @@
-// Sticky footer
-// Ensures the footer doesn't float at the bottom of the content
+/* Sticky footer Ensures the footer doesn't float at the bottom of the content */
 body {
   display: flex;
   flex-direction: column;

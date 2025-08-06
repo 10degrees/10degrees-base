@@ -1,5 +1,8 @@
+@use "../variables" as v;
+@use "sass:map";
+
 // CSS Custom Properties mixin
 @mixin prop($prop, $value) {
-    #{$prop}: map-get($root-variables, $value);
-    #{$prop}: var($value, map-get($root-variables, $value));
+    #{$prop}: map.get(v.$root-variables, $value);
+    #{$prop}: var($value, map.get(v.$root-variables, $value));
 }

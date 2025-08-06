@@ -1,6 +1,9 @@
+@use "../variables" as v;
+@use "sass:map";
+
 /**
  * Return the breakpoint from the map.
  */
 @function bp($name) {
-    @return map-get($breakpoint-map, $name);
+    @return map.get(v.$breakpoint-map, $name);
 }

@@ -1,10 +1,14 @@
+@use "../utils/mixins/containers" as c;
+@use "../utils/mixins/bp";
+@use "../utils/variables" as v;
+
 .header.-primary {
-    background-color: $grey-2;
+    background-color: v.$grey-2;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 
     .content {
-        @include alignwide;
+        @include c.alignwide;
 
         display: flex;
         flex-direction: row;
@@ -12,7 +16,7 @@
         align-items: center;
         flex-wrap: wrap;
 
-        @include bp(md){
+        @include bp.bp(md){
             flex-wrap: nowrap;
         }
     }
@@ -24,7 +28,7 @@
 
     .toggle {
         background-color: transparent;
-        border: 1px solid $grey-5;
+        border: 1px solid v.$grey-5;
         border-radius: 5px;
     }
 
@@ -35,7 +39,7 @@
             display: none;
         }
 
-        @include bp(md){
+        @include bp.bp(md){
             display: block;
 
             &.-hidden {
@@ -44,7 +48,7 @@
         }
     }
 
-    @include bp(md) {
+    @include bp.bp(md) {
         .logo {
             margin-right: 15px;
         }
