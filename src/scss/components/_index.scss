@@ -1,11 +1,12 @@
-@forward "article";
-@forward "sticky-footer";
 @forward "header";
 @forward "footer";
 @forward "wrapper";
-@forward "pagination";
 @forward "embeds";
 @forward "nav-primary";
 @forward "forms";
 @forward "modal";
 @forward "password-form";
+
+@import "./components/_article.css";
+@import "./components/_pagination.css";
+@import "./components/_sticky-footer.css";

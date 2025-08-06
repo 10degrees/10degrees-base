@@ -1,4 +1,4 @@
 @use "utils";
 @use "common/root";
 @use "common/screen-reader";
-@use "admin/dashboard";
+@import "./admin/_dashboard.css";

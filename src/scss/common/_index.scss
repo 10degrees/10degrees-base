@@ -1,4 +1,3 @@
-@forward "reset";
 @forward "blocks";
 @forward "root";
 @forward "colours";
@@ -6,5 +5,9 @@
 @forward "social-brands";
 @forward "svg";
 @forward "screen-reader";
-@forward "alignment";
-@forward "google-map";
+
+// whilst the files are being imported with @use/@forward, the relative path of
+// the css import starts from the root rather than this file.
+@import "./common/_reset.css";
+@import "./common/_alignment.css";
+@import "./common/_google-map.css";
